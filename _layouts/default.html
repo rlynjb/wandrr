@@ -9,11 +9,11 @@
 
     <div class="page-content">
       <div class="wrapper">
-        {{ content }}
-        
         {% for category in site.categories %}
-          <b>Tags: </b>{{ category | first }}
+          {{ category | first }}
         {% endfor %}
+        <hr>
+        {{ content }}
       </div>
     </div>
 
