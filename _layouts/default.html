@@ -10,8 +10,10 @@
     <div class="page-content">
       <div class="wrapper">
         {{ content }}
-
-        <b>Tags: </b>{{ page.categories | join: ', ' }}
+        
+        {% for category in site.categories %}
+          <b>Tags: </b>{{ category | first }}
+        {% endfor %}
       </div>
     </div>
 
