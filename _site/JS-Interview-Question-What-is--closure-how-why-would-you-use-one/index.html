@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Wandrr.io</title>
-  <meta name="description" content="This is a blog about travel and tech.
-">
+  <title>JS Interview Question: What is a closure, and how/why would you use one?</title>
+  <meta name="description" content="What is a closure, and how/why would you use one?">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.wandrr.io/">
+  <link rel="canonical" href="http://www.wandrr.io/JS-Interview-Question-What-is--closure-how-why-would-you-use-one">
   <link rel="alternate" type="application/rss+xml" title="Wandrr.io" href="http://www.wandrr.io/feed.xml" />
 </head>
 
@@ -67,125 +66,46 @@
     <div class="page-content">
       <div class="wrapper">
         <div class="col-left">
-          <div class="home">
+          <div class="post">
 
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Jan 19, 2016</span>
+  <header class="post-header">
+    <h1 class="post-title">JS Interview Question: What is a closure, and how/why would you use one?</h1>
+    <p class="post-meta">
+      Jan 12, 2016
+      
+       • javascriptinterview question
+    </p>
+  </header>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Whats-difference-between-call-and-apply">JS Interview Question: What’s the difference between .call and .apply?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 14, 2016</span>
+  <article class="post-content">
+    <h3 id="what-is-a-closure-and-howwhy-would-you-use-one">What is a closure, and how/why would you use one?</h3>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Difference-between-function-Person-var-person-Person-and-var-person-new-Person">JS Interview Question: Difference between: function Person(){}, var person = Person(), and var person = new Person()?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 13, 2016</span>
+<p>Closures are inner functions inside of an outer function. They have their own local scope and has access to outer function’s scope, parameters (but NOT arguments object), and they also have access to global variables.
+From what I understand, Closures is a neat way to deal with scope issues. Reasons we use Closures is because Javascript is a function-level scope rather than as with other languages, block-level scope and Javascript is an asynchronous/event driven language. Example that Closure is frequently used is jQuery (ex. click()).</p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Whats-difference-between-host-objects-native-objects">JS Interview Question: What’s the difference between host objects and native objects?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 13, 2016</span>
+<p>This is how Closures work. 
+1. After its outer function has been executed and has returned a value, closures can still run.
+2. Closures store references to the outer function’s variable, hence, we will always have access to the updated values of outer function’s variables.
+3. Since we have access to the updated values of outer function’s variables. We will have issue/bugs when a variable changes via for loop, but this can be fixed by using IIFE, Immediately Invoked Function Expression.</p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-How-do-you-organize-your-code-module-pattern-classical-inheritance">JS Interview Question: How do you organize your code? (module pattern, classical inheritance?)</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 12, 2016</span>
+<p>Below is a sample code of using Closure with IIFE.</p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Whats-typical-use-case-for-anonymous-functions">JS Interview Question: What’s a typical use case for anonymous functions?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 12, 2016</span>
+<ul>
+  <li><em>Note, IIFE or Immediately Invoked Function Expression is another Javascript concept.</em></li>
+</ul>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-What-is--closure-how-why-would-you-use-one">JS Interview Question: What is a closure, and how/why would you use one?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 9, 2016</span>
+<iframe height="268" scrolling="no" src="//codepen.io/rlynjb/embed/vLZeyq/?height=268&amp;theme-id=20698&amp;default-tab=js" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="http://codepen.io/rlynjb/pen/vLZeyq/">learning javascript closures</a> by rlynjb (<a href="http://codepen.io/rlynjb">@rlynjb</a>) on <a href="http://codepen.io">CodePen</a>.
+</iframe>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-What-difference-between-variable-null-undefined-undeclared">JS Interview Question: What’s the difference between a variable that is: null, undefined or undeclared?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 8, 2016</span>
+<hr />
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-What-do-you-think-AMD-vs-CommonJS">JS Interview Question: What do you think of AMD vs CommonJS?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 8, 2016</span>
+<p>References:</p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Explain-why-the-following-doesnt-work-as-IIFE">JS Interview Question: Explain why the following doesn’t work as an IIFE</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 5, 2016</span>
+<ul>
+  <li><a href="http://javascriptissexy.com/understand-javascript-closures-with-ease/">Understand JavaScript Closures With Ease</a></li>
+</ul>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Explain-how-this-works-JavaScript">JS Interview Question: Explain how this work in JavaScript</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 5, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Explain-how-prototypal-inheritance-works">JS Interview Question: Explain how prototypal inheritance works</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 5, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Explain-event-delegation">JS Interview Question: Explain event delegation</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 4, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/welcome-to-jekyll">Welcome to Jekyll!</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 4, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/responsive-email">Responsive Email</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+  </article>
 
 </div>
 

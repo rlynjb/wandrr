@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Wandrr.io</title>
-  <meta name="description" content="This is a blog about travel and tech.
-">
+  <title>JS Interview Question: What’s the difference between a variable that is: null, undefined or undeclared?</title>
+  <meta name="description" content="What’s the difference between a variable that is: null, undefined or undeclared?">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.wandrr.io/">
+  <link rel="canonical" href="http://www.wandrr.io/JS-Interview-Question-What-difference-between-variable-null-undefined-undeclared">
   <link rel="alternate" type="application/rss+xml" title="Wandrr.io" href="http://www.wandrr.io/feed.xml" />
 </head>
 
@@ -67,125 +66,37 @@
     <div class="page-content">
       <div class="wrapper">
         <div class="col-left">
-          <div class="home">
+          <div class="post">
 
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Jan 19, 2016</span>
+  <header class="post-header">
+    <h1 class="post-title">JS Interview Question: What’s the difference between a variable that is: null, undefined or undeclared?</h1>
+    <p class="post-meta">
+      Jan 9, 2016
+      
+       • javascriptinterview question
+    </p>
+  </header>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Whats-difference-between-call-and-apply">JS Interview Question: What’s the difference between .call and .apply?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 14, 2016</span>
+  <article class="post-content">
+    <h3 id="whats-the-difference-between-a-variable-that-is-null-undefined-or-undeclared">What’s the difference between a variable that is: null, undefined or undeclared?</h3>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Difference-between-function-Person-var-person-Person-and-var-person-new-Person">JS Interview Question: Difference between: function Person(){}, var person = Person(), and var person = new Person()?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 13, 2016</span>
+<h4 id="how-would-you-go-about-checking-for-any-of-these-states">How would you go about checking for any of these states?</h4>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Whats-difference-between-host-objects-native-objects">JS Interview Question: What’s the difference between host objects and native objects?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 13, 2016</span>
+<p>From what I understand, in Javascript, undefined and null are somewhat related on what value a variable contains. The case for undeclared differs. It tackles on how a variable is defined and how javascript treats these variables. So I am going to discuss undefined and null first since both are on Data Type category.
+undefined is a variable that has been declared but no value exists and is a type of itself ‘undefined’.
+null is a value of a variable and is a type of object.
+We use ‘console.log();’ and ‘type of’ to check if a variable is undefined or null.</p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-How-do-you-organize-your-code-module-pattern-classical-inheritance">JS Interview Question: How do you organize your code? (module pattern, classical inheritance?)</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 12, 2016</span>
+<p>ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
+undeclared variables is a variable that has been declared without ‘var’ keyword.
+testVar = ‘hello world’;
+as opposed to
+var testVar = ‘hello world’;
+When former code is executed, undeclared variables are created as global variable and they are configurable (ex. can be deleted).</p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Whats-typical-use-case-for-anonymous-functions">JS Interview Question: What’s a typical use case for anonymous functions?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 12, 2016</span>
+<p>ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var</p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-What-is--closure-how-why-would-you-use-one">JS Interview Question: What is a closure, and how/why would you use one?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 9, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-What-difference-between-variable-null-undefined-undeclared">JS Interview Question: What’s the difference between a variable that is: null, undefined or undeclared?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 8, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-What-do-you-think-AMD-vs-CommonJS">JS Interview Question: What do you think of AMD vs CommonJS?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 8, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Explain-why-the-following-doesnt-work-as-IIFE">JS Interview Question: Explain why the following doesn’t work as an IIFE</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 5, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Explain-how-this-works-JavaScript">JS Interview Question: Explain how this work in JavaScript</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 5, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Explain-how-prototypal-inheritance-works">JS Interview Question: Explain how prototypal inheritance works</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 5, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Explain-event-delegation">JS Interview Question: Explain event delegation</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 4, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/welcome-to-jekyll">Welcome to Jekyll!</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 4, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/responsive-email">Responsive Email</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+  </article>
 
 </div>
 

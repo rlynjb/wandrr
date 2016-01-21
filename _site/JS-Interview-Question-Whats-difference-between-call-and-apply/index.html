@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Wandrr.io</title>
-  <meta name="description" content="This is a blog about travel and tech.
-">
+  <title>JS Interview Question: What’s the difference between .call and .apply?</title>
+  <meta name="description" content="What’s the difference between .call and .apply?">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.wandrr.io/">
+  <link rel="canonical" href="http://www.wandrr.io/JS-Interview-Question-Whats-difference-between-call-and-apply">
   <link rel="alternate" type="application/rss+xml" title="Wandrr.io" href="http://www.wandrr.io/feed.xml" />
 </head>
 
@@ -67,125 +66,73 @@
     <div class="page-content">
       <div class="wrapper">
         <div class="col-left">
-          <div class="home">
+          <div class="post">
 
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Jan 19, 2016</span>
+  <header class="post-header">
+    <h1 class="post-title">JS Interview Question: What’s the difference between .call and .apply?</h1>
+    <p class="post-meta">
+      Jan 19, 2016
+      
+       • javascriptinterview question
+    </p>
+  </header>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Whats-difference-between-call-and-apply">JS Interview Question: What’s the difference between .call and .apply?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 14, 2016</span>
+  <article class="post-content">
+    <h3 id="whats-the-difference-between-call-and-apply">What’s the difference between .call and .apply?</h3>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Difference-between-function-Person-var-person-Person-and-var-person-new-Person">JS Interview Question: Difference between: function Person(){}, var person = Person(), and var person = new Person()?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 13, 2016</span>
+<h4 id="recalling-the-basics">Recalling the basics</h4>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Whats-difference-between-host-objects-native-objects">JS Interview Question: What’s the difference between host objects and native objects?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 13, 2016</span>
+<p>Remember, in JavaScript, everything are objects, even Functions, and every objects has their properties and methods. Both .apply and .call are methods of Function object.</p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-How-do-you-organize-your-code-module-pattern-classical-inheritance">JS Interview Question: How do you organize your code? (module pattern, classical inheritance?)</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 12, 2016</span>
+<hr />
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Whats-typical-use-case-for-anonymous-functions">JS Interview Question: What’s a typical use case for anonymous functions?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 12, 2016</span>
+<h4 id="how-do-apply-or-call-work">How do .apply or .call work?</h4>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-What-is--closure-how-why-would-you-use-one">JS Interview Question: What is a closure, and how/why would you use one?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 9, 2016</span>
+<p>Invoking a function with .apply and .call allows us to point an object to the invoked function by passing in the object as first argument and second argument (and so on) as its values.</p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-What-difference-between-variable-null-undefined-undeclared">JS Interview Question: What’s the difference between a variable that is: null, undefined or undeclared?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 8, 2016</span>
+<p>The function’s ‘this’ keyword will be manipulated when invoked with .apply or .call.</p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-What-do-you-think-AMD-vs-CommonJS">JS Interview Question: What do you think of AMD vs CommonJS?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 8, 2016</span>
+<p>From what I understand, .apply and .call are methods we use to assign the ‘this’ keyword from the invoked function to reference to an object for the duration of the method invocation.</p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Explain-why-the-following-doesnt-work-as-IIFE">JS Interview Question: Explain why the following doesn’t work as an IIFE</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 5, 2016</span>
+<p>Below is a code example with commented explanation.</p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Explain-how-this-works-JavaScript">JS Interview Question: Explain how this work in JavaScript</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 5, 2016</span>
+<iframe height="268" scrolling="no" src="//codepen.io/rlynjb/embed/JGOmwp/?height=268&amp;theme-id=20698&amp;default-tab=js" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="http://codepen.io/rlynjb/pen/JGOmwp/">learning JavaScript's .apply and .call</a> by rlynjb (<a href="http://codepen.io/rlynjb">@rlynjb</a>) on <a href="http://codepen.io">CodePen</a>.
+</iframe>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Explain-how-prototypal-inheritance-works">JS Interview Question: Explain how prototypal inheritance works</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 5, 2016</span>
+<hr />
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Explain-event-delegation">JS Interview Question: Explain event delegation</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 4, 2016</span>
+<h4 id="so-whats-the-difference-between-apply-and-call">So what’s the difference between .apply and .call?</h4>
 
-        <h2>
-          <a class="post-link" href="/welcome-to-jekyll">Welcome to Jekyll!</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 4, 2015</span>
+<p>Besides passing in an argument to a .call or .apply methods that references to the ‘this’ keyword of an invoked function, we can also pass in a 2nd argument or more. A good mnemonic to explain their differences are:</p>
 
-        <h2>
-          <a class="post-link" href="/responsive-email">Responsive Email</a>
-        </h2>
-      </li>
-    
-  </ul>
+<p>.Call Counts the number of arguments separated by Comma</p>
 
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+<p>.call method accepts one or more arguments as objects and requires to be listed explicitly, means, it is a fixed number of arguments.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">foo</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">object</span><span class="p">,</span> <span class="err">“</span><span class="nx">other</span> <span class="nx">argument</span><span class="err">”</span><span class="p">,</span> <span class="err">“</span><span class="nx">another</span> <span class="nx">one</span><span class="err">”</span><span class="p">);</span></code></pre></div>
+
+<p>while</p>
+
+<p>.Apply uses Array as an Argument</p>
+
+<p>.apply method requires an array as its 2nd argument. This method is used if you don’t know the number of arguments to be passed or the arguments is already in an array.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">foo</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">object</span><span class="p">,</span> <span class="p">[</span><span class="err">“</span><span class="nx">argument1</span><span class="err">”</span><span class="p">,</span> <span class="err">“</span><span class="nx">argument2</span><span class="err">”</span><span class="p">,</span> <span class="err">“</span><span class="nx">argument3</span><span class="err">”</span><span class="p">]);</span></code></pre></div>
+
+<ul>
+  <li><em>Open CodePen above for Code sample</em></li>
+</ul>
+
+<hr />
+
+<h4 id="references">References:</h4>
+
+<ul>
+  <li><a href="http://stackoverflow.com/questions/1986896/what-is-the-difference-between-call-and-apply/1987244">What is the difference between call and apply?</a></li>
+  <li><a href="http://odetocode.com/blogs/scott/archive/2007/07/04/function-apply-and-function-call-in-javascript.aspx">Function.apply and Function.call in JavaScript</a></li>
+</ul>
+
+  </article>
 
 </div>
 

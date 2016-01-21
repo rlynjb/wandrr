@@ -6,9 +6,365 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 21 Jan 2016 12:29:55 -0800</pubDate>
-    <lastBuildDate>Thu, 21 Jan 2016 12:29:55 -0800</lastBuildDate>
+    <pubDate>Thu, 21 Jan 2016 13:15:25 -0800</pubDate>
+    <lastBuildDate>Thu, 21 Jan 2016 13:15:25 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>JS Interview Question: What’s the difference between .call and .apply?</title>
+        <description>&lt;h3 id=&quot;whats-the-difference-between-call-and-apply&quot;&gt;What’s the difference between .call and .apply?&lt;/h3&gt;
+
+&lt;h4 id=&quot;recalling-the-basics&quot;&gt;Recalling the basics&lt;/h4&gt;
+
+&lt;p&gt;Remember, in JavaScript, everything are objects, even Functions, and every objects has their properties and methods. Both .apply and .call are methods of Function object.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;how-do-apply-or-call-work&quot;&gt;How do .apply or .call work?&lt;/h4&gt;
+
+&lt;p&gt;Invoking a function with .apply and .call allows us to point an object to the invoked function by passing in the object as first argument and second argument (and so on) as its values.&lt;/p&gt;
+
+&lt;p&gt;The function’s ‘this’ keyword will be manipulated when invoked with .apply or .call.&lt;/p&gt;
+
+&lt;p&gt;From what I understand, .apply and .call are methods we use to assign the ‘this’ keyword from the invoked function to reference to an object for the duration of the method invocation.&lt;/p&gt;
+
+&lt;p&gt;Below is a code example with commented explanation.&lt;/p&gt;
+
+&lt;iframe height=&quot;268&quot; scrolling=&quot;no&quot; src=&quot;//codepen.io/rlynjb/embed/JGOmwp/?height=268&amp;amp;theme-id=20698&amp;amp;default-tab=js&quot; frameborder=&quot;no&quot; allowtransparency=&quot;true&quot; allowfullscreen=&quot;true&quot; style=&quot;width: 100%;&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/rlynjb/pen/JGOmwp/&quot;&gt;learning JavaScript's .apply and .call&lt;/a&gt; by rlynjb (&lt;a href=&quot;http://codepen.io/rlynjb&quot;&gt;@rlynjb&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
+&lt;/iframe&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;so-whats-the-difference-between-apply-and-call&quot;&gt;So what’s the difference between .apply and .call?&lt;/h4&gt;
+
+&lt;p&gt;Besides passing in an argument to a .call or .apply methods that references to the ‘this’ keyword of an invoked function, we can also pass in a 2nd argument or more. A good mnemonic to explain their differences are:&lt;/p&gt;
+
+&lt;p&gt;.Call Counts the number of arguments separated by Comma&lt;/p&gt;
+
+&lt;p&gt;.call method accepts one or more arguments as objects and requires to be listed explicitly, means, it is a fixed number of arguments.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;other&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;argument&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;another&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;one&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;while&lt;/p&gt;
+
+&lt;p&gt;.Apply uses Array as an Argument&lt;/p&gt;
+
+&lt;p&gt;.apply method requires an array as its 2nd argument. This method is used if you don’t know the number of arguments to be passed or the arguments is already in an array.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;argument1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;argument2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;argument3&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Open CodePen above for Code sample&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;references&quot;&gt;References:&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/1986896/what-is-the-difference-between-call-and-apply/1987244&quot;&gt;What is the difference between call and apply?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://odetocode.com/blogs/scott/archive/2007/07/04/function-apply-and-function-call-in-javascript.aspx&quot;&gt;Function.apply and Function.call in JavaScript&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 19 Jan 2016 02:47:13 -0800</pubDate>
+        <link>http://www.wandrr.io/JS-Interview-Question-Whats-difference-between-call-and-apply</link>
+        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Whats-difference-between-call-and-apply</guid>
+        
+        <category>javascript</category>
+        
+        <category>interview question</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>JS Interview Question: Difference between: function Person(){}, var person = Person(), and var person = new Person()?</title>
+        <description>&lt;h3 id=&quot;js-interview-question-difference-between-function-person-var-person--person-and-var-person--new-person&quot;&gt;JS Interview Question: Difference between: function Person(){}, var person = Person(), and var person = new Person()?&lt;/h3&gt;
+
+&lt;p&gt;There are different ways (not to be exact) we can use functions in JavaScript, but with the given code below highlights important differences on how functions work.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// code here&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Function Declaration&lt;/strong&gt;
+Code above declares a function statement (statements perform an action) but does not execute, however, it does get registered into the global namespace.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Function Expression&lt;/strong&gt;
+A variable ‘var person’ has been defined and contains a value reference to a Person function. Any JavaScript Expressions (including Function Expressions) always returns a value. This may also be an Anonymous function if no name has been assign to a function but wrapped in parenthesis to be interpreted as an expression.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Function Constructor&lt;/strong&gt;
+By adding the keyword ‘new’. We are instantiating a new object of the Person class constructor. A function declaration is just a regular function unless it has been instantiated, it then becomes a class constructor.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;References:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.2ality.com/2012/09/expressions-vs-statements.html&quot;&gt;Expressions versus statements in JavaScript&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 14 Jan 2016 02:47:13 -0800</pubDate>
+        <link>http://www.wandrr.io/JS-Interview-Question-Difference-between-function-Person-var-person-Person-and-var-person-new-Person</link>
+        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Difference-between-function-Person-var-person-Person-and-var-person-new-Person</guid>
+        
+        <category>javascript</category>
+        
+        <category>interview question</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>JS Interview Question: What’s the difference between host objects and native objects?</title>
+        <description>&lt;h3 id=&quot;whats-the-difference-between-host-objects-and-native-objects&quot;&gt;What’s the difference between host objects and native objects?&lt;/h3&gt;
+
+&lt;p&gt;From what I understand, objects are divided from which environment and language they are supplied: Host Objects and Native Objects.
+Host Objects are objects supplied by a certain environment. They are not always the same because each environment differs and contains host objects that accommodates execution of ECMAScript. Example, browser environment supplies objects such as window. While a node.js/server environment supplies objects such as NodeList.
+Native Objects or Built-in Objects are standard built-in objects provided by Javascript. Native objects is sometimes referred to as ‘Global Objects’ since they are objects Javascript has provided natively available for use.
+There are various articles categorizing these native global objects but its number differs, so for accuracy (I believe), I recommend the official Mozilla Doc as reference. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
+Javascript is mainly constructed by these categorized native global objects. These objects can be used either as Constructor (String(), Number(), Boolean()) or as Primitive Value, like literally as a value :-D (‘string’, 123, true).&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;References:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://programmerinnervoice.wordpress.com/2013/07/22/host-objects-vs-native-objects/&quot;&gt;Host objects Vs Native objects In JavaScript&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects&quot;&gt;Standard built-in objects&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 13 Jan 2016 02:47:13 -0800</pubDate>
+        <link>http://www.wandrr.io/JS-Interview-Question-Whats-difference-between-host-objects-native-objects</link>
+        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Whats-difference-between-host-objects-native-objects</guid>
+        
+        <category>javascript</category>
+        
+        <category>interview question</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>JS Interview Question: How do you organize your code? (module pattern, classical inheritance?)</title>
+        <description>&lt;h3 id=&quot;how-do-you-organize-your-code-module-pattern-classical-inheritance&quot;&gt;How do you organize your code? (module pattern, classical inheritance?)&lt;/h3&gt;
+
+&lt;p&gt;There are several options in implementing Module Pattern. An option I mostly use is Object Literal Notation for encapsulating and organizing my code, but upon further readings, Module Pattern using Anonymous Closures, Global Import, and Module Export have sparked my interest as it provides more features for private and public var/methods. It still uses object literal but as to return values from the scoping function.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;In JavaScript, the Module pattern is used to further emulate the concept of classes in such a way that we’re able to include both public/private methods and variables inside a single object, thus shielding particular parts from the global scope.&lt;/p&gt;
+
+  &lt;p&gt;– Addy Osmani, Learning Javascript Design Patterns&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;There are popular javascript module framework that specifically implemented Module Pattern such as Dojo, ExtJS, YUI, and jQuery. Good to know if your new to learning Javascript concepts and have heard of these technologies before those popular MVC frameworks (Angular.js, Ember.js, Backbone.js) emerged.
+Another implementation of module pattern popularized Christian Heilmann (which I think is pretty clean and neat) is The Revealing Module Pattern. It’s pretty much the same with the standard Module Pattern except it uses the return object literal properties as references to variables and functions from the scoping function to export variables and methods.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;References:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript&quot;&gt;Learning JavaScript Design Patterns&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html&quot;&gt;JavaScript Module Pattern: In-Depth&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 13 Jan 2016 02:47:13 -0800</pubDate>
+        <link>http://www.wandrr.io/JS-Interview-Question-How-do-you-organize-your-code-module-pattern-classical-inheritance</link>
+        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-How-do-you-organize-your-code-module-pattern-classical-inheritance</guid>
+        
+        <category>javascript</category>
+        
+        <category>interview question</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>JS Interview Question: What’s a typical use case for anonymous functions?</title>
+        <description>&lt;h3 id=&quot;whats-a-typical-use-case-for-anonymous-functions&quot;&gt;What’s a typical use case for anonymous functions?&lt;/h3&gt;
+
+&lt;p&gt;Since Anonymous Functions are function expressions rather than the regular function declaration which are statements. Function expressions are more flexible. We can assign functions to variables, object properties, pass them as arguments to other functions, and even write a simple one line code enclosed in an anonymous functions.&lt;/p&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;squaredArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;inputArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;With ES6 syntax this becomes even more concise.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;squaredArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;inputArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Another typical example would be an anonymous function used by popular frameworks used as IIFE (Immediate Invoked Function Expression).&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  
+&lt;span class=&quot;p&quot;&gt;})();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Tue, 12 Jan 2016 02:47:13 -0800</pubDate>
+        <link>http://www.wandrr.io/JS-Interview-Question-Whats-typical-use-case-for-anonymous-functions</link>
+        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Whats-typical-use-case-for-anonymous-functions</guid>
+        
+        <category>javascript</category>
+        
+        <category>interview question</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>JS Interview Question: What is a closure, and how/why would you use one?</title>
+        <description>&lt;h3 id=&quot;what-is-a-closure-and-howwhy-would-you-use-one&quot;&gt;What is a closure, and how/why would you use one?&lt;/h3&gt;
+
+&lt;p&gt;Closures are inner functions inside of an outer function. They have their own local scope and has access to outer function’s scope, parameters (but NOT arguments object), and they also have access to global variables.
+From what I understand, Closures is a neat way to deal with scope issues. Reasons we use Closures is because Javascript is a function-level scope rather than as with other languages, block-level scope and Javascript is an asynchronous/event driven language. Example that Closure is frequently used is jQuery (ex. click()).&lt;/p&gt;
+
+&lt;p&gt;This is how Closures work. 
+1. After its outer function has been executed and has returned a value, closures can still run.
+2. Closures store references to the outer function’s variable, hence, we will always have access to the updated values of outer function’s variables.
+3. Since we have access to the updated values of outer function’s variables. We will have issue/bugs when a variable changes via for loop, but this can be fixed by using IIFE, Immediately Invoked Function Expression.&lt;/p&gt;
+
+&lt;p&gt;Below is a sample code of using Closure with IIFE.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Note, IIFE or Immediately Invoked Function Expression is another Javascript concept.&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;iframe height=&quot;268&quot; scrolling=&quot;no&quot; src=&quot;//codepen.io/rlynjb/embed/vLZeyq/?height=268&amp;amp;theme-id=20698&amp;amp;default-tab=js&quot; frameborder=&quot;no&quot; allowtransparency=&quot;true&quot; allowfullscreen=&quot;true&quot; style=&quot;width: 100%;&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/rlynjb/pen/vLZeyq/&quot;&gt;learning javascript closures&lt;/a&gt; by rlynjb (&lt;a href=&quot;http://codepen.io/rlynjb&quot;&gt;@rlynjb&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
+&lt;/iframe&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;References:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://javascriptissexy.com/understand-javascript-closures-with-ease/&quot;&gt;Understand JavaScript Closures With Ease&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 12 Jan 2016 02:47:13 -0800</pubDate>
+        <link>http://www.wandrr.io/JS-Interview-Question-What-is--closure-how-why-would-you-use-one</link>
+        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-What-is--closure-how-why-would-you-use-one</guid>
+        
+        <category>javascript</category>
+        
+        <category>interview question</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>JS Interview Question: What’s the difference between a variable that is: null, undefined or undeclared?</title>
+        <description>&lt;h3 id=&quot;whats-the-difference-between-a-variable-that-is-null-undefined-or-undeclared&quot;&gt;What’s the difference between a variable that is: null, undefined or undeclared?&lt;/h3&gt;
+
+&lt;h4 id=&quot;how-would-you-go-about-checking-for-any-of-these-states&quot;&gt;How would you go about checking for any of these states?&lt;/h4&gt;
+
+&lt;p&gt;From what I understand, in Javascript, undefined and null are somewhat related on what value a variable contains. The case for undeclared differs. It tackles on how a variable is defined and how javascript treats these variables. So I am going to discuss undefined and null first since both are on Data Type category.
+undefined is a variable that has been declared but no value exists and is a type of itself ‘undefined’.
+null is a value of a variable and is a type of object.
+We use ‘console.log();’ and ‘type of’ to check if a variable is undefined or null.&lt;/p&gt;
+
+&lt;p&gt;ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
+undeclared variables is a variable that has been declared without ‘var’ keyword.
+testVar = ‘hello world’;
+as opposed to
+var testVar = ‘hello world’;
+When former code is executed, undeclared variables are created as global variable and they are configurable (ex. can be deleted).&lt;/p&gt;
+
+&lt;p&gt;ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var&lt;/p&gt;
+</description>
+        <pubDate>Sat, 09 Jan 2016 02:47:13 -0800</pubDate>
+        <link>http://www.wandrr.io/JS-Interview-Question-What-difference-between-variable-null-undefined-undeclared</link>
+        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-What-difference-between-variable-null-undefined-undeclared</guid>
+        
+        <category>javascript</category>
+        
+        <category>interview question</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>JS Interview Question: What do you think of AMD vs CommonJS?</title>
+        <description>&lt;p&gt;AMD and CommonJS are both Javascript module loader. They accomplish the same task but works different.
+AMD is better for browser, hence, the name ‘Asynchronous’, as it loads each distinct module in async manner instead of loading in one large file. No extra steps are required to use AMD, it works out-of-the-box. In my opinion, as it is its in Asynchronous nature, it makes alot of async http requests and may not be as performant as described by other devs.
+While, CommonJS, is a standard, mostly used in servers and it loads modules synchronously, though extra step is required if you want your JS file size to be minified and compressed.&lt;/p&gt;
+
+&lt;p&gt;Why do we need to use Javascript module loader?
+Usually, JS files are loaded in order via script tag in HTML templates, but files and code gets complicated once an application becomes large. Javascript module loaders lets us separate our code into modules and include a specific module in another module. This lets us import what module is required and load only the necessary. Better Javascript file size load and better code compartmentalization, means, JS module loader mitigates away the danger of global-namespace issue.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;further-readings&quot;&gt;Further readings:&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://0fps.net/2013/01/22/commonjs-why-and-how/&quot;&gt;CommonJS: Why and How&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.millermedeiros.com/amd-is-better-for-the-web-than-commonjs-modules/&quot;&gt;AMD is better for the web than CommonJS modules&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 08 Jan 2016 02:47:13 -0800</pubDate>
+        <link>http://www.wandrr.io/JS-Interview-Question-What-do-you-think-AMD-vs-CommonJS</link>
+        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-What-do-you-think-AMD-vs-CommonJS</guid>
+        
+        <category>javascript</category>
+        
+        <category>interview question</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>JS Interview Question: Explain why the following doesn’t work as an IIFE</title>
+        <description>&lt;h3 id=&quot;explain-why-the-following-doesnt-work-as-an-iife-function-foo--what-needs-to-be-changed-to-properly-make-it-an-iife&quot;&gt;Explain why the following doesn’t work as an IIFE: function foo(){ }();. What needs to be changed to properly make it an IIFE?&lt;/h3&gt;
+
+&lt;p&gt;What is IIFE?&lt;/p&gt;
+
+&lt;p&gt;An IIFE (pronouced as ‘iffy’) is an abbreviation for Immediately Invoked Function Expression. It is a common Javascript design pattern used by popular JS libraries such as jQuery, Backbone.js. Purpose of using an IIFE is to maintain code inside of a local scope. This means, to be able to use global object inside of IIFE, you will need to pass it as arguments.&lt;/p&gt;
+
+&lt;p&gt;As for an explanation, the following code doesn’t work as an IIFE because it is a function declaration, it does invoked immediately due to its parenthesis at the end, but there are downsides to using this approach.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  
+&lt;span class=&quot;p&quot;&gt;}();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;First, it unnecessarily takes up a name in the global namespace, increasing the possibility of name collisions. Second, the intentions of this code aren’t as self-documenting as an IIFE. And third, because it is named and isn’t self-documenting it might accidentally be invoked more than once.&lt;/p&gt;
+
+  &lt;p&gt;– http://adripofjavascript.com/blog/drips/an-introduction-to-iffes-immediately-invoked-function-expressions.html&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;For the above code to be considered an IIFE, it needs to be an anonymous function, a function without a name, this is because IIFE needs to be Invoked Immediately without invoking it a function name. We also need to wrap the anonymous function with parenthesis, so the Javascript parser treats our anonymous function as a function expression.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  
+&lt;span class=&quot;p&quot;&gt;}());&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;A function expression is when you assign a function to a variable or property of an object. Anything that is a Javascript expression, including function expression, returns a value.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;references&quot;&gt;References:&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://adripofjavascript.com/blog/drips/an-introduction-to-iffes-immediately-invoked-function-expressions.html&quot;&gt;An Introduction to IIFEs - Immediately Invoked Function Expressions&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://gregfranko.com/blog/i-love-my-iife/&quot;&gt;I Love My IIFE - Greg Franko&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 08 Jan 2016 02:47:13 -0800</pubDate>
+        <link>http://www.wandrr.io/JS-Interview-Question-Explain-why-the-following-doesnt-work-as-IIFE</link>
+        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Explain-why-the-following-doesnt-work-as-IIFE</guid>
+        
+        <category>javascript</category>
+        
+        <category>interview question</category>
+        
+        
+      </item>
     
       <item>
         <title>JS Interview Question: Explain how this work in JavaScript</title>
@@ -31,144 +387,6 @@
         <category>javascript</category>
         
         <category>interview question</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>JS Interview Question: Explain how prototypal inheritance works</title>
-        <description>&lt;p&gt;Everything in Javascript is an object. Even when creating a Class is an Object via an Object Literal or Constructor Function. This is how Javascript does class-based programming as to other traditional Object-Oriented Programming languages where they use the keyword ‘class’ and ‘inheritance’.&lt;/p&gt;
-
-&lt;p&gt;Javascript’s version of class-based programming and other traditional class-based programming languages work with the same concept but does not work exactly similar. There are differences in its keyword, syntax, and how it works. There are also debates regarding pros and cons of Javascript’s version of class-based programming, but for simplicity’s sake and learning purposes, I do not want to go over those issues. See details here [http://www.2ality.com/2011/11/javascript-classes.html].&lt;/p&gt;
-
-&lt;p&gt;So, the core idea of Prototypal Inheritance is that an object can point to another object and inherit all its properties. The main purpose is to allow multiple instances of an object to share common properties, hence, the Singleton Pattern.&lt;/p&gt;
-
-&lt;p&gt;Below is a sample code with comments and caption to better see how it works:&lt;/p&gt;
-
-&lt;p&gt;After going through the code, its best to read further about Prototypal Inheritance from mozilla doc. Code example below is just one of many ways of implementing Prototypal Inheritance.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain&quot;&gt;developer.mozilla.org&lt;/a&gt;&lt;/p&gt;
-
-&lt;iframe height=&quot;268&quot; scrolling=&quot;no&quot; src=&quot;//codepen.io/rlynjb/embed/xZqJNL/?height=268&amp;amp;theme-id=20698&amp;amp;default-tab=js&quot; frameborder=&quot;no&quot; allowtransparency=&quot;true&quot; allowfullscreen=&quot;true&quot; style=&quot;width: 100%;&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/rlynjb/pen/xZqJNL/&quot;&gt;learning prototypal inheritance&lt;/a&gt; by rlynjb (&lt;a href=&quot;http://codepen.io/rlynjb&quot;&gt;@rlynjb&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
-&lt;/iframe&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;reference&quot;&gt;Reference:&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.htmlgoodies.com/html5/tutorials/javascript-prototypical-inheritance-explained.html#fbid=iKcMD3kLi8E&quot;&gt;htmlgoodies.com&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Tue, 05 Jan 2016 02:47:13 -0800</pubDate>
-        <link>http://www.wandrr.io/JS-Interview-Question-Explain-how-prototypal-inheritance-works</link>
-        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Explain-how-prototypal-inheritance-works</guid>
-        
-        <category>javascript</category>
-        
-        <category>interview question</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>JS Interview Question: Explain event delegation</title>
-        <description>&lt;p&gt;Event Delegation is a methodology in Javascript where instead of coding an event listener for every similar child elements in a parent element, this method will only let you create one event listener to trigger all child elements. Each child element will be differentiated or targeted by a unique ID.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 05 Jan 2016 02:47:13 -0800</pubDate>
-        <link>http://www.wandrr.io/JS-Interview-Question-Explain-event-delegation</link>
-        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Explain-event-delegation</guid>
-        
-        <category>javascript</category>
-        
-        <category>interview question</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
-
-&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
-
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Tom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 04 Jan 2016 02:47:13 -0800</pubDate>
-        <link>http://www.wandrr.io/welcome-to-jekyll</link>
-        <guid isPermaLink="true">http://www.wandrr.io/welcome-to-jekyll</guid>
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Responsive Email</title>
-        <description>&lt;p&gt;I’ve been working on this new project, Creating Responsive Emails, and I thought of blogging my experience and sharing them to you! ☺..&lt;/p&gt;
-
-&lt;p&gt;I first found out about Responsive Email through this website, http://www.zurb.com/playground/responsive-email-templates. They offer pre-made html email templates ready for you to use. My experience using these templates is that they aren’t really compatible with most of the email web clients with older browser versions.&lt;/p&gt;
-
-&lt;p&gt;I used http://emailonacid.com/ to test these templates. It works on most mobile devices, but doesn’t on most web desktop clients except for apple mails, outlook express, and live mail.&lt;/p&gt;
-
-&lt;p&gt;I did more research and found this, http://www.campaignmonitor.com/guides/mobile/. Instead of using div tags and floats, we can actually use tables and its attributes.&lt;/p&gt;
-
-&lt;p&gt;Coding email templates for browser and email client compatibility issues was a trial and error experience. Bugs occur more on email web client with older browser version than on mobile devices. I’m surprise Gmail had more bugs than yahoo mail and aol.&lt;/p&gt;
-
-&lt;p&gt;I ended up coding my own Responsive Email layout template by using:&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;table-tags-instead-of-div-tags&quot;&gt;Table tags instead of Div tags&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;CSS properties: max-width, width&lt;/li&gt;
-  &lt;li&gt;Table attributes: align=”left”, width=”400px” instead of floats&lt;/li&gt;
-  &lt;li&gt;cellspacing and cellpadding instead of margin and padding&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;also-here-are-some-tips-i-found-from-campaignmonitorcom-on-coding-html-for-emails&quot;&gt;Also, here are some tips I found from campaignmonitor.com on coding html for emails.&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Set width in cell instead of relying on table. Use pixel instead or percentage.Use cellpadding parameter when setting padding for cells instead of using CSS padding.&lt;/li&gt;
-  &lt;li&gt;Nest tables inside your table. ☺&lt;/li&gt;
-  &lt;li&gt;set a background color on the container table, do not set it on body tag because some email clients ignore them.&lt;/li&gt;
-  &lt;li&gt;remove any whitespace&lt;/li&gt;
-  &lt;li&gt;use inline css or css inliner for repeated tags&lt;/li&gt;
-  &lt;li&gt;for images, always use alt attributes&lt;/li&gt;
-  &lt;li&gt;use captions for important images&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;refer-to-this-link-for-css-support&quot;&gt;refer to this link for css support&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.campaignmonitor.com/css/&quot;&gt;campaignmonitor.com/css&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.campaignmonitor.com/guides/&quot;&gt;campaignmonitor.com/guides&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://putsmail.com/&quot;&gt;putsmail.com&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://beaker.mailchimp.com/inline-css&quot;&gt;beaker.mailchimp.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sun, 04 Jan 2015 02:47:13 -0800</pubDate>
-        <link>http://www.wandrr.io/responsive-email</link>
-        <guid isPermaLink="true">http://www.wandrr.io/responsive-email</guid>
-        
-        <category>css</category>
-        
-        <category>responsive</category>
-        
-        <category>email</category>
         
         
       </item>
