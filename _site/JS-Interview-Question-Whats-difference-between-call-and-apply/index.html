@@ -80,19 +80,17 @@
   <article class="post-content">
     <h3 id="whats-the-difference-between-call-and-apply">What’s the difference between .call and .apply?</h3>
 
-<h4 id="recalling-the-basics">Recalling the basics</h4>
-
-<p>Remember, in JavaScript, everything are objects, even Functions, and every objects has their properties and methods. Both .apply and .call are methods of Function object.</p>
+<p><strong>Recalling the basics</strong> <br />
+Remember, in JavaScript, everything are objects, even Functions, and every objects has their properties and methods. Both <code>.apply</code> and <code>.call</code> are methods of Function object.</p>
 
 <hr />
 
-<h4 id="how-do-apply-or-call-work">How do .apply or .call work?</h4>
+<p><strong>How do .apply or .call work?</strong> <br />
+Invoking a function with <code>.apply</code> and <code>.call</code> allows us to point an object to the invoked function by passing in the object as first argument and second argument (and so on) as its values.</p>
 
-<p>Invoking a function with .apply and .call allows us to point an object to the invoked function by passing in the object as first argument and second argument (and so on) as its values.</p>
+<p>The function’s <code>this</code> keyword will be manipulated when invoked with <code>.apply</code> or <code>.call</code>.</p>
 
-<p>The function’s ‘this’ keyword will be manipulated when invoked with .apply or .call.</p>
-
-<p>From what I understand, .apply and .call are methods we use to assign the ‘this’ keyword from the invoked function to reference to an object for the duration of the method invocation.</p>
+<p>From what I understand, <code>.apply</code> and <code>.call</code> are methods we use to assign the <code>this</code> keyword from the invoked function to reference to an object for the duration of the method invocation.</p>
 
 <p>Below is a code example with commented explanation.</p>
 
@@ -101,31 +99,26 @@
 
 <hr />
 
-<h4 id="so-whats-the-difference-between-apply-and-call">So what’s the difference between .apply and .call?</h4>
+<p><strong>So what’s the difference between .apply and .call?</strong> <br />
+Besides passing in an argument to a <code>.call</code> or <code>.apply</code> methods that references to the <code>this</code> keyword of an invoked function, we can also pass in a 2nd argument or more. A good mnemonic to explain their differences are:</p>
 
-<p>Besides passing in an argument to a .call or .apply methods that references to the ‘this’ keyword of an invoked function, we can also pass in a 2nd argument or more. A good mnemonic to explain their differences are:</p>
-
-<p>.Call Counts the number of arguments separated by Comma</p>
-
-<p>.call method accepts one or more arguments as objects and requires to be listed explicitly, means, it is a fixed number of arguments.</p>
+<p><em><code>.call</code> Counts the number of arguments separated by Comma</em> <br />
+.call method accepts one or more arguments as objects and requires to be listed explicitly, means, it is a fixed number of arguments.</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">foo</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">object</span><span class="p">,</span> <span class="err">“</span><span class="nx">other</span> <span class="nx">argument</span><span class="err">”</span><span class="p">,</span> <span class="err">“</span><span class="nx">another</span> <span class="nx">one</span><span class="err">”</span><span class="p">);</span></code></pre></div>
 
-<p>while</p>
+<p><em>… while …</em></p>
 
-<p>.Apply uses Array as an Argument</p>
-
-<p>.apply method requires an array as its 2nd argument. This method is used if you don’t know the number of arguments to be passed or the arguments is already in an array.</p>
+<p><em><code>.apply</code> uses Array as an Argument</em> <br />
+.apply method requires an array as its 2nd argument. This method is used if you don’t know the number of arguments to be passed or the arguments is already in an array.</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">foo</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">object</span><span class="p">,</span> <span class="p">[</span><span class="err">“</span><span class="nx">argument1</span><span class="err">”</span><span class="p">,</span> <span class="err">“</span><span class="nx">argument2</span><span class="err">”</span><span class="p">,</span> <span class="err">“</span><span class="nx">argument3</span><span class="err">”</span><span class="p">]);</span></code></pre></div>
 
-<ul>
-  <li><em>Open CodePen above for Code sample</em></li>
-</ul>
+<p>** <em>Open CodePen above for Code sample</em></p>
 
 <hr />
 
-<h4 id="references">References:</h4>
+<h5 id="references"><strong>References:</strong></h5>
 
 <ul>
   <li><a href="http://stackoverflow.com/questions/1986896/what-is-the-difference-between-call-and-apply/1987244">What is the difference between call and apply?</a></li>

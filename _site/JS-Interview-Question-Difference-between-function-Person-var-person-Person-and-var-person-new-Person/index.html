@@ -86,22 +86,26 @@
   <span class="c1">// code here</span>
 <span class="p">}</span></code></pre></div>
 
-<p><strong>Function Declaration</strong>
+<p><strong>Function Declaration</strong> <br />
 Code above declares a function statement (statements perform an action) but does not execute, however, it does get registered into the global namespace.</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">person</span> <span class="o">=</span> <span class="nx">Person</span><span class="p">()</span></code></pre></div>
-
-<p><strong>Function Expression</strong>
-A variable ‘var person’ has been defined and contains a value reference to a Person function. Any JavaScript Expressions (including Function Expressions) always returns a value. This may also be an Anonymous function if no name has been assign to a function but wrapped in parenthesis to be interpreted as an expression.</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">person</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">()</span></code></pre></div>
-
-<p><strong>Function Constructor</strong>
-By adding the keyword ‘new’. We are instantiating a new object of the Person class constructor. A function declaration is just a regular function unless it has been instantiated, it then becomes a class constructor.</p>
 
 <hr />
 
-<p>References:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">person</span> <span class="o">=</span> <span class="nx">Person</span><span class="p">()</span></code></pre></div>
+
+<p><strong>Function Expression</strong> <br />
+A variable ‘var person’ has been defined and contains a value reference to a Person function. Any JavaScript Expressions (including Function Expressions) always returns a value. This may also be an Anonymous function if no name has been assign to a function but wrapped in parenthesis to be interpreted as an expression.</p>
+
+<hr />
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">person</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">()</span></code></pre></div>
+
+<p><strong>Function Constructor</strong> <br />
+By adding the keyword <code>new</code>. We are instantiating a new object of the Person class constructor. A function declaration is just a regular function unless it has been instantiated, it then becomes a class constructor.</p>
+
+<hr />
+
+<h5 id="references"><strong>References:</strong></h5>
 
 <ul>
   <li><a href="http://www.2ality.com/2012/09/expressions-vs-statements.html">Expressions versus statements in JavaScript</a></li>
