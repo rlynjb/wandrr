@@ -80,26 +80,29 @@
   <article class="post-content">
     <h3 id="what-is-a-closure-and-howwhy-would-you-use-one">What is a closure, and how/why would you use one?</h3>
 
-<p>Closures are inner functions inside of an outer function. They have their own local scope and has access to outer function’s scope, parameters (but NOT arguments object), and they also have access to global variables.
-From what I understand, Closures is a neat way to deal with scope issues. Reasons we use Closures is because Javascript is a function-level scope rather than as with other languages, block-level scope and Javascript is an asynchronous/event driven language. Example that Closure is frequently used is jQuery (ex. click()).</p>
+<p>Closures are inner functions inside of an outer function. They have their own local scope and has access to outer function’s scope, parameters (but NOT arguments object), and they also have access to global variables.</p>
 
-<p>This is how Closures work. 
+<p>From what I understand, Closures is a neat way to deal with scope issues. Reasons we use Closures is because Javascript is a function-level scope rather than as with other languages, block-level scope and Javascript is an asynchronous/event driven language. Example that Closure is frequently used is jQuery (ex. click()).</p>
+
+<hr />
+
+<p><strong>This is how Closures work.</strong> <br />
 1. After its outer function has been executed and has returned a value, closures can still run.
 2. Closures store references to the outer function’s variable, hence, we will always have access to the updated values of outer function’s variables.
 3. Since we have access to the updated values of outer function’s variables. We will have issue/bugs when a variable changes via for loop, but this can be fixed by using IIFE, Immediately Invoked Function Expression.</p>
 
+<hr />
+
 <p>Below is a sample code of using Closure with IIFE.</p>
 
-<ul>
-  <li><em>Note, IIFE or Immediately Invoked Function Expression is another Javascript concept.</em></li>
-</ul>
+<p>** <em>Note, IIFE or Immediately Invoked Function Expression is another Javascript concept.</em></p>
 
 <iframe height="268" scrolling="no" src="//codepen.io/rlynjb/embed/vLZeyq/?height=268&amp;theme-id=20698&amp;default-tab=js" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="http://codepen.io/rlynjb/pen/vLZeyq/">learning javascript closures</a> by rlynjb (<a href="http://codepen.io/rlynjb">@rlynjb</a>) on <a href="http://codepen.io">CodePen</a>.
-  </iframe>
+</iframe>
 
 <hr />
 
-<p>References:</p>
+<h5 id="references"><strong>References:</strong></h5>
 
 <ul>
   <li><a href="http://javascriptissexy.com/understand-javascript-closures-with-ease/">Understand JavaScript Closures With Ease</a></li>

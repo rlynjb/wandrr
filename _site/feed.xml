@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 21 Jan 2016 15:03:42 -0800</pubDate>
-    <lastBuildDate>Thu, 21 Jan 2016 15:03:42 -0800</lastBuildDate>
+    <pubDate>Thu, 21 Jan 2016 15:14:59 -0800</pubDate>
+    <lastBuildDate>Thu, 21 Jan 2016 15:14:59 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -383,26 +383,29 @@ By adding the keyword &lt;code&gt;new&lt;/code&gt;. We are instantiating a new o
         <title>JS Interview Question: What is a closure, and how/why would you use one?</title>
         <description>&lt;h3 id=&quot;what-is-a-closure-and-howwhy-would-you-use-one&quot;&gt;What is a closure, and how/why would you use one?&lt;/h3&gt;
 
-&lt;p&gt;Closures are inner functions inside of an outer function. They have their own local scope and has access to outer function’s scope, parameters (but NOT arguments object), and they also have access to global variables.
-From what I understand, Closures is a neat way to deal with scope issues. Reasons we use Closures is because Javascript is a function-level scope rather than as with other languages, block-level scope and Javascript is an asynchronous/event driven language. Example that Closure is frequently used is jQuery (ex. click()).&lt;/p&gt;
+&lt;p&gt;Closures are inner functions inside of an outer function. They have their own local scope and has access to outer function’s scope, parameters (but NOT arguments object), and they also have access to global variables.&lt;/p&gt;
 
-&lt;p&gt;This is how Closures work. 
+&lt;p&gt;From what I understand, Closures is a neat way to deal with scope issues. Reasons we use Closures is because Javascript is a function-level scope rather than as with other languages, block-level scope and Javascript is an asynchronous/event driven language. Example that Closure is frequently used is jQuery (ex. click()).&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;This is how Closures work.&lt;/strong&gt; &lt;br /&gt;
 1. After its outer function has been executed and has returned a value, closures can still run.
 2. Closures store references to the outer function’s variable, hence, we will always have access to the updated values of outer function’s variables.
 3. Since we have access to the updated values of outer function’s variables. We will have issue/bugs when a variable changes via for loop, but this can be fixed by using IIFE, Immediately Invoked Function Expression.&lt;/p&gt;
 
+&lt;hr /&gt;
+
 &lt;p&gt;Below is a sample code of using Closure with IIFE.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;em&gt;Note, IIFE or Immediately Invoked Function Expression is another Javascript concept.&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;** &lt;em&gt;Note, IIFE or Immediately Invoked Function Expression is another Javascript concept.&lt;/em&gt;&lt;/p&gt;
 
 &lt;iframe height=&quot;268&quot; scrolling=&quot;no&quot; src=&quot;//codepen.io/rlynjb/embed/vLZeyq/?height=268&amp;amp;theme-id=20698&amp;amp;default-tab=js&quot; frameborder=&quot;no&quot; allowtransparency=&quot;true&quot; allowfullscreen=&quot;true&quot; style=&quot;width: 100%;&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/rlynjb/pen/vLZeyq/&quot;&gt;learning javascript closures&lt;/a&gt; by rlynjb (&lt;a href=&quot;http://codepen.io/rlynjb&quot;&gt;@rlynjb&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
-  &lt;/iframe&gt;
+&lt;/iframe&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;References:&lt;/p&gt;
+&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://javascriptissexy.com/understand-javascript-closures-with-ease/&quot;&gt;Understand JavaScript Closures With Ease&lt;/a&gt;&lt;/li&gt;
@@ -423,21 +426,33 @@ From what I understand, Closures is a neat way to deal with scope issues. Reason
         <title>JS Interview Question: What’s the difference between a variable that is: null, undefined or undeclared?</title>
         <description>&lt;h3 id=&quot;whats-the-difference-between-a-variable-that-is-null-undefined-or-undeclared&quot;&gt;What’s the difference between a variable that is: null, undefined or undeclared?&lt;/h3&gt;
 
-&lt;h4 id=&quot;how-would-you-go-about-checking-for-any-of-these-states&quot;&gt;How would you go about checking for any of these states?&lt;/h4&gt;
+&lt;h3 id=&quot;how-would-you-go-about-checking-for-any-of-these-states&quot;&gt;How would you go about checking for any of these states?&lt;/h3&gt;
 
-&lt;p&gt;From what I understand, in Javascript, undefined and null are somewhat related on what value a variable contains. The case for undeclared differs. It tackles on how a variable is defined and how javascript treats these variables. So I am going to discuss undefined and null first since both are on Data Type category.
-undefined is a variable that has been declared but no value exists and is a type of itself ‘undefined’.
-null is a value of a variable and is a type of object.
-We use ‘console.log();’ and ‘type of’ to check if a variable is undefined or null.&lt;/p&gt;
+&lt;p&gt;From what I understand, in Javascript, &lt;code&gt;undefined&lt;/code&gt; and &lt;code&gt;null&lt;/code&gt; are somewhat related on what value a variable contains. The case for &lt;code&gt;undeclared&lt;/code&gt; differs. It tackles on how a variable is defined and how javascript treats these variables. So I am going to discuss undefined and null first since both are on Data Type category.&lt;/p&gt;
 
-&lt;p&gt;ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
-undeclared variables is a variable that has been declared without ‘var’ keyword.
-testVar = ‘hello world’;
-as opposed to
-var testVar = ‘hello world’;
-When former code is executed, undeclared variables are created as global variable and they are configurable (ex. can be deleted).&lt;/p&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;undefined&lt;/code&gt; is a variable that has been declared but no value exists and is a type of itself ‘undefined’.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;null&lt;/code&gt; is a value of a variable and is a type of object.&lt;/p&gt;
+
+&lt;p&gt;We use &lt;code&gt;console.log();&lt;/code&gt; and &lt;code&gt;type of&lt;/code&gt; to check if a variable is &lt;code&gt;undefined&lt;/code&gt; or &lt;code&gt;null&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures&quot;&gt;JavaScript data types and data structures&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;code&gt;undeclared&lt;/code&gt; variables is a variable that has been declared without &lt;code&gt;var&lt;/code&gt; keyword.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;testVar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;hello world&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;as opposed to&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;testVar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;hello world&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;When former code is executed, &lt;code&gt;undeclared&lt;/code&gt; variables are created as global variable and they are configurable (ex. can be deleted).&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var&quot;&gt;JavaScript data types and data structures: var&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sat, 09 Jan 2016 02:47:13 -0800</pubDate>
         <link>http://www.wandrr.io/JS-Interview-Question-What-difference-between-variable-null-undefined-undeclared</link>
