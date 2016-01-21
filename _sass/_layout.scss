@@ -29,13 +29,15 @@
     }
 
     h1 {
-      margin: 0;
+      margin: 1em 0 0;
       font-size: 3em;
+      line-height: 1;
     }
 
     i {
       font-family: $base-font-family;
       font-size: 1.2em;
+      padding-left: 10px;
     }
 }
 

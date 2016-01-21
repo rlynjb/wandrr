@@ -165,11 +165,13 @@ pre {
   .site-title:hover {
     text-decoration: none; }
   .site-title h1 {
-    margin: 0;
-    font-size: 3em; }
+    margin: 1em 0 0;
+    font-size: 3em;
+    line-height: 1; }
   .site-title i {
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 1.2em; }
+    font-size: 1.2em;
+    padding-left: 10px; }
 
 .site-nav {
   float: right;
