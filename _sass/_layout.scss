@@ -21,7 +21,21 @@
 
     &,
     &:visited {
-        color: $grey-color-dark;
+        color: #fff;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 3em;
+    }
+
+    i {
+      font-family: $base-font-family;
+      font-size: 1.2em;
     }
 }
 

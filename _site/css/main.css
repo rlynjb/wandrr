@@ -161,7 +161,15 @@ pre {
   float: left;
   font-family: 'Lobster Two', cursive; }
   .site-title, .site-title:visited {
-    color: #424242; }
+    color: #fff; }
+  .site-title:hover {
+    text-decoration: none; }
+  .site-title h1 {
+    margin: 0;
+    font-size: 3em; }
+  .site-title i {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.2em; }
 
 .site-nav {
   float: right;
