@@ -4,7 +4,6 @@
 .site-header {
     border-top: 5px solid $grey-color-dark;
     border-bottom: 1px solid $grey-color-light;
-    min-height: 22em;
     background: url('/images/739BBHC8KM.jpg');
     background-size: 100%;
     background-position: 0 -38em;
@@ -15,7 +14,7 @@
 
 .site-title {
     display: block;
-    margin-bottom: 0;
+    margin: 2em 0 1em;
     float: left;
     font-family: 'Lobster Two', cursive;
     text-shadow: 1px 1px 5px #000;
@@ -30,7 +29,7 @@
     }
 
     h1 {
-      margin: 1em 0 0;
+      margin: 0;
       font-size: 3em;
       line-height: 1;
     }
