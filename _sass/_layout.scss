@@ -216,9 +216,10 @@
 }
 
 .post-title {
-    font-size: 42px;
-    letter-spacing: -1px;
-    line-height: 1;
+    font-size: 35px;
+    line-height: 1.1;
+    color: #3d3d3d;
+    font-weight: 600;
 
     @include media-query($on-laptop) {
         font-size: 36px;
@@ -238,6 +239,8 @@
 
     h3 {
         font-size: 26px;
+        line-height: 1.2;
+        color: rgba(0,0,0,0.44);
 
         @include media-query($on-laptop) {
             font-size: 22px;

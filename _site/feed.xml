@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 21 Jan 2016 13:35:30 -0800</pubDate>
-    <lastBuildDate>Thu, 21 Jan 2016 13:35:30 -0800</lastBuildDate>
+    <pubDate>Thu, 21 Jan 2016 14:25:31 -0800</pubDate>
+    <lastBuildDate>Thu, 21 Jan 2016 14:25:31 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -45,9 +45,8 @@ document.write(‘&amp;lt;h1&amp;gt;hello world&amp;lt;/h1&amp;gt;’);
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Feature Detection&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Feature detection is just a way of determining if a feature exists in certain browsers. A good example is a modern HTML5 feature ‘Location’.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Feature Detection&lt;/strong&gt; &lt;br /&gt;
+Feature detection is just a way of determining if a feature exists in certain browsers. A good example is a modern HTML5 feature ‘Location’.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;geolocation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;// detect users location here B-) and do something awesome&lt;/span&gt;
@@ -55,27 +54,23 @@ document.write(‘&amp;lt;h1&amp;gt;hello world&amp;lt;/h1&amp;gt;’);
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Feature Inference&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Feature Inference is when you have determined a feature exists and assumed the next web technology feature you are implementing unto your app exists as well. Its usually bad practice to assume, so its better to explicitly specify features you want to detect and plan a fallback action.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Feature Inference&lt;/strong&gt; &lt;br /&gt;
+Feature Inference is when you have determined a feature exists and assumed the next web technology feature you are implementing unto your app exists as well. Its usually bad practice to assume, so its better to explicitly specify features you want to detect and plan a fallback action.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;UA String&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;UA String or User Agent String is a string text of data that each browsers send and can be access via navigator.userAgent. These “string text of data” contains information of the browser environment you are targeting.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;UA String&lt;/strong&gt; &lt;br /&gt;
+UA String or User Agent String is a string text of data that each browsers send and can be access via navigator.userAgent. These “string text of data” contains information of the browser environment you are targeting.&lt;/p&gt;
 
 &lt;p&gt;If you open your console and run&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;
-navigator.userAgent
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userAgent&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;You’ll see it outputs a “string text of data” containing complete information of the environment you are currently using. Since this is an old way of doing detection, this method can be easily spoofed, thus, may not be the best route to take. Ref: https://en.wikipedia.org/wiki/User_agent&lt;/p&gt;
+&lt;p&gt;You’ll see it outputs a “string text of data” containing complete information of the environment you are currently using. Since this is an old way of doing detection, this method can be easily spoofed, thus, may not be the best route to take. &lt;a href=&quot;https://en.wikipedia.org/wiki/User_agent&quot;&gt;Ref: Wikipedia - User Agent&lt;/a&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;A JavaScript library I love using is Modernizr&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;A JavaScript library I love using is Modernizr&lt;/strong&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Modernizr is a small piece of JavaScript code that automatically detects the availability of next-generation web technologies in your user’s browsers. Rather than blacklisting entire ranges of browsers based on “UA sniffing,” Modernizr uses feature detection to allow you to easily tailor your user’s experiences based on the actual capabilities of their browser.&lt;/p&gt;
@@ -85,7 +80,7 @@ navigator.userAgent
 
 &lt;hr /&gt;
 
-&lt;h4 id=&quot;references&quot;&gt;References:&lt;/h4&gt;
+&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/a/20105074/4538744&quot;&gt;What’s the difference between feature detection, feature inference, and using the UA string&lt;/a&gt;&lt;/li&gt;

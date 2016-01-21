@@ -147,7 +147,7 @@ pre {
  custom overrides
  */
 hr {
-  margin: 5em 16em;
+  margin: 3em 13em;
   border-style: dashed;
   border-color: lightgray; }
 
@@ -308,9 +308,10 @@ p {
   margin-bottom: 30px; }
 
 .post-title {
-  font-size: 42px;
-  letter-spacing: -1px;
-  line-height: 1; }
+  font-size: 35px;
+  line-height: 1.1;
+  color: #3d3d3d;
+  font-weight: 600; }
   @media screen and (max-width: 800px) {
     .post-title {
       font-size: 36px; } }
@@ -323,7 +324,9 @@ p {
       .post-content h2 {
         font-size: 28px; } }
   .post-content h3 {
-    font-size: 26px; }
+    font-size: 26px;
+    line-height: 1.2;
+    color: rgba(0, 0, 0, 0.44); }
     @media screen and (max-width: 800px) {
       .post-content h3 {
         font-size: 22px; } }

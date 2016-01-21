@@ -84,9 +84,8 @@
 
 <hr />
 
-<p><strong><em>Feature Detection</em></strong></p>
-
-<p>Feature detection is just a way of determining if a feature exists in certain browsers. A good example is a modern HTML5 feature ‘Location’.</p>
+<p><strong>Feature Detection</strong> <br />
+Feature detection is just a way of determining if a feature exists in certain browsers. A good example is a modern HTML5 feature ‘Location’.</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">if</span> <span class="p">(</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">geolocation</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// detect users location here B-) and do something awesome</span>
@@ -94,27 +93,23 @@
 
 <hr />
 
-<p><strong><em>Feature Inference</em></strong></p>
-
-<p>Feature Inference is when you have determined a feature exists and assumed the next web technology feature you are implementing unto your app exists as well. Its usually bad practice to assume, so its better to explicitly specify features you want to detect and plan a fallback action.</p>
+<p><strong>Feature Inference</strong> <br />
+Feature Inference is when you have determined a feature exists and assumed the next web technology feature you are implementing unto your app exists as well. Its usually bad practice to assume, so its better to explicitly specify features you want to detect and plan a fallback action.</p>
 
 <hr />
 
-<p><strong><em>UA String</em></strong></p>
-
-<p>UA String or User Agent String is a string text of data that each browsers send and can be access via navigator.userAgent. These “string text of data” contains information of the browser environment you are targeting.</p>
+<p><strong>UA String</strong> <br />
+UA String or User Agent String is a string text of data that each browsers send and can be access via navigator.userAgent. These “string text of data” contains information of the browser environment you are targeting.</p>
 
 <p>If you open your console and run</p>
 
-<p><code>
-navigator.userAgent
-</code></p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span></code></pre></div>
 
-<p>You’ll see it outputs a “string text of data” containing complete information of the environment you are currently using. Since this is an old way of doing detection, this method can be easily spoofed, thus, may not be the best route to take. Ref: https://en.wikipedia.org/wiki/User_agent</p>
+<p>You’ll see it outputs a “string text of data” containing complete information of the environment you are currently using. Since this is an old way of doing detection, this method can be easily spoofed, thus, may not be the best route to take. <a href="https://en.wikipedia.org/wiki/User_agent">Ref: Wikipedia - User Agent</a></p>
 
 <hr />
 
-<p><strong><em>A JavaScript library I love using is Modernizr</em></strong></p>
+<p><strong>A JavaScript library I love using is Modernizr</strong></p>
 
 <blockquote>
   <p>Modernizr is a small piece of JavaScript code that automatically detects the availability of next-generation web technologies in your user’s browsers. Rather than blacklisting entire ranges of browsers based on “UA sniffing,” Modernizr uses feature detection to allow you to easily tailor your user’s experiences based on the actual capabilities of their browser.</p>
@@ -124,7 +119,7 @@ navigator.userAgent
 
 <hr />
 
-<h4 id="references">References:</h4>
+<h5 id="references"><strong>References:</strong></h5>
 
 <ul>
   <li><a href="http://stackoverflow.com/a/20105074/4538744">What’s the difference between feature detection, feature inference, and using the UA string</a></li>
