@@ -14,9 +14,14 @@
         </div>
 
         <div class="col-right">
+          <h2>What this is about..</h2>
+          <ul>
           {% for category in site.categories %}
-            {{ category | first }}
+            <li>
+              {{ category | first }}
+            </li>
           {% endfor %}
+          </ul>
         </div>
       </div>
     </div>
