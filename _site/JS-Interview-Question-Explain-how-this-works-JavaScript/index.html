@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>JS Interview Question: Explain how this work in JavaScript</title>
-  <meta name="description" content="From what I understand, ‘this’ refers to itself, to its own object or global object.">
+  <meta name="description" content="From what I understand, this refers to itself, to its own object or global object.">
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="http://www.wandrr.io/JS-Interview-Question-Explain-how-this-works-JavaScript">
@@ -78,17 +78,19 @@
   </header>
 
   <article class="post-content">
-    <p>From what I understand, ‘this’ refers to itself, to its own object or global object.</p>
+    <p>From what I understand, <code>this</code> refers to itself, to its own object or global object.</p>
 
-<p>Using ‘this’ are partitioned in 3 locations of code. These are in functions, outside of functions (global scope, ex: window object), and in Javascript’s eval() function.</p>
+<p>Using <code>this</code> are partitioned in 3 locations of code. These are in functions, outside of functions (global scope, ex: window object), and in Javascript’s eval() function.</p>
 
 <p>Common pitfalls when using ‘this’ are usually relevant to scope issues in real functions, methods, and constructors. Though there are ways to fix these common issues by using ES5, bind() or ES6 arrow functions, =&gt;</p>
 
 <hr />
 
-<h4 id="references">References:</h4>
+<h5 id="references"><strong>References:</strong></h5>
 
-<p><a href="http://www.2ality.com/2014/05/this.html">2ality.com</a></p>
+<ul>
+  <li><a href="http://www.2ality.com/2014/05/this.html">JavaScript’s “this”: how it works, where it can trip you up</a></li>
+</ul>
 
   </article>
 

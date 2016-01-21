@@ -80,9 +80,10 @@
   <article class="post-content">
     <h3 id="explain-why-the-following-doesnt-work-as-an-iife-function-foo--what-needs-to-be-changed-to-properly-make-it-an-iife">Explain why the following doesn’t work as an IIFE: function foo(){ }();. What needs to be changed to properly make it an IIFE?</h3>
 
-<p>What is IIFE?</p>
+<p><strong>What is IIFE?</strong> <br />
+An IIFE (pronouced as ‘iffy’) is an abbreviation for Immediately Invoked Function Expression. It is a common Javascript design pattern used by popular JS libraries such as jQuery, Backbone.js. Purpose of using an IIFE is to maintain code inside of a local scope. This means, to be able to use global object inside of IIFE, you will need to pass it as arguments.</p>
 
-<p>An IIFE (pronouced as ‘iffy’) is an abbreviation for Immediately Invoked Function Expression. It is a common Javascript design pattern used by popular JS libraries such as jQuery, Backbone.js. Purpose of using an IIFE is to maintain code inside of a local scope. This means, to be able to use global object inside of IIFE, you will need to pass it as arguments.</p>
+<hr />
 
 <p>As for an explanation, the following code doesn’t work as an IIFE because it is a function declaration, it does invoked immediately due to its parenthesis at the end, but there are downsides to using this approach.</p>
 
@@ -96,6 +97,8 @@
   <p>– http://adripofjavascript.com/blog/drips/an-introduction-to-iffes-immediately-invoked-function-expressions.html</p>
 </blockquote>
 
+<hr />
+
 <p>For the above code to be considered an IIFE, it needs to be an anonymous function, a function without a name, this is because IIFE needs to be Invoked Immediately without invoking it a function name. We also need to wrap the anonymous function with parenthesis, so the Javascript parser treats our anonymous function as a function expression.</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
@@ -106,7 +109,7 @@
 
 <hr />
 
-<h4 id="references">References:</h4>
+<h5 id="references"><strong>References:</strong></h5>
 
 <ul>
   <li><a href="http://adripofjavascript.com/blog/drips/an-introduction-to-iffes-immediately-invoked-function-expressions.html">An Introduction to IIFEs - Immediately Invoked Function Expressions</a></li>
