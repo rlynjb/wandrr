@@ -9,11 +9,15 @@
 
     <div class="page-content">
       <div class="wrapper">
-        {% for category in site.categories %}
-          {{ category | first }}
-        {% endfor %}
-        <hr>
-        {{ content }}
+        <div class="col-left">
+          {{ content }}
+        </div>
+
+        <div class="col-right">
+          {% for category in site.categories %}
+            {{ category | first }}
+          {% endfor %}
+        </div>
       </div>
     </div>
 
