@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "JS Interview Question: When would you use document.write()?"
+title: "When would you use document.write()?"
 date: 2016-01-20 10:47:13
 tags:
 - javascript

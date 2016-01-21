@@ -6,12 +6,12 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 21 Jan 2016 15:23:39 -0800</pubDate>
-    <lastBuildDate>Thu, 21 Jan 2016 15:23:39 -0800</lastBuildDate>
+    <pubDate>Thu, 21 Jan 2016 15:37:20 -0800</pubDate>
+    <lastBuildDate>Thu, 21 Jan 2016 15:37:20 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>JS Interview Question: When would you use document.write()?</title>
+        <title>When would you use document.write()?</title>
         <description>&lt;h3 id=&quot;when-would-you-use-documentwrite&quot;&gt;When would you use document.write()?&lt;/h3&gt;
 
 &lt;p&gt;When &lt;code&gt;document.write()&lt;/code&gt; is executed after page load, it replaces the entire header and body tag with the given parameter value in string. An invocation could look like this:&lt;/p&gt;
@@ -37,7 +37,7 @@
       </item>
     
       <item>
-        <title>JS Interview Question: What’s the difference between feature detection, feature inference, and using the UA string?</title>
+        <title>What’s the difference between feature detection, feature inference, and using the UA string?</title>
         <description>&lt;h3 id=&quot;whats-the-difference-between-feature-detection-feature-inference-and-using-the-ua-string&quot;&gt;What’s the difference between feature detection, feature inference, and using the UA string?&lt;/h3&gt;
 
 &lt;p&gt;These 3 are just practices of determining if a certain web technology feature exists in a user’s browser or environment. Though features may vary with not just modern web technology but with programming languages as well.&lt;/p&gt;
@@ -97,7 +97,7 @@ UA String or User Agent String is a string text of data that each browsers send 
       </item>
     
       <item>
-        <title>JS Interview Question: Explain Function.prototype.bind</title>
+        <title>Explain Function.prototype.bind</title>
         <description>&lt;h3 id=&quot;explain-functionprototypebind&quot;&gt;Explain Function.prototype.bind&lt;/h3&gt;
 
 &lt;p&gt;It took me awhile to understand how &lt;code&gt;this&lt;/code&gt; keyword works, but after reading about bind method, its starting to make sense regarding the context of an object set explicitly and being able to access with &lt;code&gt;this&lt;/code&gt; keyword.&lt;/p&gt;
@@ -167,7 +167,7 @@ Other two are &lt;code&gt;apply() &amp;amp; call()&lt;/code&gt;. Difference betw
       </item>
     
       <item>
-        <title>JS Interview Question: What’s the difference between .call and .apply?</title>
+        <title>What’s the difference between .call and .apply?</title>
         <description>&lt;h3 id=&quot;whats-the-difference-between-call-and-apply&quot;&gt;What’s the difference between .call and .apply?&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;Recalling the basics&lt;/strong&gt; &lt;br /&gt;
@@ -227,7 +227,7 @@ Besides passing in an argument to a &lt;code&gt;.call&lt;/code&gt; or &lt;code&g
       </item>
     
       <item>
-        <title>JS Interview Question: Difference between: function Person(){}, var person = Person(), and var person = new Person()?</title>
+        <title>Difference between: function Person(){}, var person = Person(), and var person = new Person()?</title>
         <description>&lt;h3 id=&quot;js-interview-question-difference-between-function-person-var-person--person-and-var-person--new-person&quot;&gt;JS Interview Question: Difference between: function Person(){}, var person = Person(), and var person = new Person()?&lt;/h3&gt;
 
 &lt;p&gt;There are different ways (not to be exact) we can use functions in JavaScript, but with the given code below highlights important differences on how functions work.&lt;/p&gt;
@@ -273,7 +273,7 @@ By adding the keyword &lt;code&gt;new&lt;/code&gt;. We are instantiating a new o
       </item>
     
       <item>
-        <title>JS Interview Question: What’s the difference between host objects and native objects?</title>
+        <title>What’s the difference between host objects and native objects?</title>
         <description>&lt;h3 id=&quot;whats-the-difference-between-host-objects-and-native-objects&quot;&gt;What’s the difference between host objects and native objects?&lt;/h3&gt;
 
 &lt;p&gt;From what I understand, objects are divided from which environment and language they are supplied: &lt;strong&gt;Host Objects&lt;/strong&gt; and &lt;strong&gt;Native Objects&lt;/strong&gt;.&lt;/p&gt;
@@ -310,7 +310,7 @@ By adding the keyword &lt;code&gt;new&lt;/code&gt;. We are instantiating a new o
       </item>
     
       <item>
-        <title>JS Interview Question: How do you organize your code? (module pattern, classical inheritance?)</title>
+        <title>How do you organize your code? (module pattern, classical inheritance?)</title>
         <description>&lt;h3 id=&quot;how-do-you-organize-your-code-module-pattern-classical-inheritance&quot;&gt;How do you organize your code? (module pattern, classical inheritance?)&lt;/h3&gt;
 
 &lt;p&gt;There are several options in implementing Module Pattern. An option I mostly use is Object Literal Notation for encapsulating and organizing my code, but upon further readings, Module Pattern using Anonymous Closures, Global Import, and Module Export have sparked my interest as it provides more features for private and public var/methods. It still uses object literal but as to return values from the scoping function.&lt;/p&gt;
@@ -346,7 +346,7 @@ By adding the keyword &lt;code&gt;new&lt;/code&gt;. We are instantiating a new o
       </item>
     
       <item>
-        <title>JS Interview Question: What’s a typical use case for anonymous functions?</title>
+        <title>What’s a typical use case for anonymous functions?</title>
         <description>&lt;h3 id=&quot;whats-a-typical-use-case-for-anonymous-functions&quot;&gt;What’s a typical use case for anonymous functions?&lt;/h3&gt;
 
 &lt;p&gt;Since Anonymous Functions are function expressions rather than the regular function declaration which are statements. Function expressions are more flexible. We can assign functions to variables, object properties, pass them as arguments to other functions, and even write a simple one line code enclosed in an anonymous functions.&lt;/p&gt;
@@ -380,7 +380,7 @@ By adding the keyword &lt;code&gt;new&lt;/code&gt;. We are instantiating a new o
       </item>
     
       <item>
-        <title>JS Interview Question: What is a closure, and how/why would you use one?</title>
+        <title>What is a closure, and how/why would you use one?</title>
         <description>&lt;h3 id=&quot;what-is-a-closure-and-howwhy-would-you-use-one&quot;&gt;What is a closure, and how/why would you use one?&lt;/h3&gt;
 
 &lt;p&gt;Closures are inner functions inside of an outer function. They have their own local scope and has access to outer function’s scope, parameters (but NOT arguments object), and they also have access to global variables.&lt;/p&gt;

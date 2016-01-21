@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "JS Interview Question: Difference between: function Person(){}, var person = Person(), and var person = new Person()?"
+title: "Difference between: function Person(){}, var person = Person(), and var person = new Person()?"
 date: 2016-01-14 10:47:13
 tags:
 - javascript

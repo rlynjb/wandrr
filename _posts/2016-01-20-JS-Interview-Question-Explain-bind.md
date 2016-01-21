@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "JS Interview Question: Explain Function.prototype.bind"
+title: "Explain Function.prototype.bind"
 date: 2016-01-20 10:47:13
 tags:
 - javascript

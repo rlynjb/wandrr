@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "JS Interview Question: What’s the difference between feature detection, feature inference, and using the UA string?"
+title: "What’s the difference between feature detection, feature inference, and using the UA string?"
 date: 2016-01-20 10:47:13
 tags:
 - javascript

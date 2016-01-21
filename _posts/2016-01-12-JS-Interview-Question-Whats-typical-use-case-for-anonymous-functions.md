@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "JS Interview Question: What’s a typical use case for anonymous functions?"
+title: "What’s a typical use case for anonymous functions?"
 date: 2016-01-12 10:47:13
 tags:
 - javascript

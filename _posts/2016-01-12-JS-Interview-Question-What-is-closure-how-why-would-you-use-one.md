@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "JS Interview Question: What is a closure, and how/why would you use one?"
+title: "What is a closure, and how/why would you use one?"
 date: 2016-01-12 10:47:13
 tags:
 - javascript
