@@ -80,15 +80,22 @@
   <article class="post-content">
     <h3 id="whats-the-difference-between-host-objects-and-native-objects">What’s the difference between host objects and native objects?</h3>
 
-<p>From what I understand, objects are divided from which environment and language they are supplied: Host Objects and Native Objects.
-Host Objects are objects supplied by a certain environment. They are not always the same because each environment differs and contains host objects that accommodates execution of ECMAScript. Example, browser environment supplies objects such as window. While a node.js/server environment supplies objects such as NodeList.
-Native Objects or Built-in Objects are standard built-in objects provided by Javascript. Native objects is sometimes referred to as ‘Global Objects’ since they are objects Javascript has provided natively available for use.
-There are various articles categorizing these native global objects but its number differs, so for accuracy (I believe), I recommend the official Mozilla Doc as reference. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
-Javascript is mainly constructed by these categorized native global objects. These objects can be used either as Constructor (String(), Number(), Boolean()) or as Primitive Value, like literally as a value :-D (‘string’, 123, true).</p>
+<p>From what I understand, objects are divided from which environment and language they are supplied: <strong>Host Objects</strong> and <strong>Native Objects</strong>.</p>
+
+<p><strong>Host Objects</strong> are objects supplied by a certain environment. They are not always the same because each environment differs and contains host objects that accommodates execution of ECMAScript. Example, browser environment supplies objects such as window. While a node.js/server environment supplies objects such as NodeList.</p>
+
+<p><strong>Native Objects</strong> or Built-in Objects are standard built-in objects provided by Javascript. Native objects is sometimes referred to as ‘Global Objects’ since they are objects Javascript has provided natively available for use.</p>
 
 <hr />
 
-<p>References:</p>
+<p>There are various articles categorizing these native global objects but its number differs, so for accuracy (I believe), I recommend the official Mozilla Doc as reference.
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">Ref: developer.mozilla.org - Global Objects</a></p>
+
+<p>Javascript is mainly constructed by these categorized native global objects. These objects can be used either as Constructor (String(), Number(), Boolean()) or as Primitive Value, like literally as a value :-D (‘string’, 123, true).</p>
+
+<hr />
+
+<h5 id="references"><strong>References:</strong></h5>
 
 <ul>
   <li><a href="https://programmerinnervoice.wordpress.com/2013/07/22/host-objects-vs-native-objects/">Host objects Vs Native objects In JavaScript</a></li>

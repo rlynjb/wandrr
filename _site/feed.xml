@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 21 Jan 2016 14:49:44 -0800</pubDate>
-    <lastBuildDate>Thu, 21 Jan 2016 14:49:44 -0800</lastBuildDate>
+    <pubDate>Thu, 21 Jan 2016 15:03:42 -0800</pubDate>
+    <lastBuildDate>Thu, 21 Jan 2016 15:03:42 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -276,15 +276,22 @@ By adding the keyword &lt;code&gt;new&lt;/code&gt;. We are instantiating a new o
         <title>JS Interview Question: What’s the difference between host objects and native objects?</title>
         <description>&lt;h3 id=&quot;whats-the-difference-between-host-objects-and-native-objects&quot;&gt;What’s the difference between host objects and native objects?&lt;/h3&gt;
 
-&lt;p&gt;From what I understand, objects are divided from which environment and language they are supplied: Host Objects and Native Objects.
-Host Objects are objects supplied by a certain environment. They are not always the same because each environment differs and contains host objects that accommodates execution of ECMAScript. Example, browser environment supplies objects such as window. While a node.js/server environment supplies objects such as NodeList.
-Native Objects or Built-in Objects are standard built-in objects provided by Javascript. Native objects is sometimes referred to as ‘Global Objects’ since they are objects Javascript has provided natively available for use.
-There are various articles categorizing these native global objects but its number differs, so for accuracy (I believe), I recommend the official Mozilla Doc as reference. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
-Javascript is mainly constructed by these categorized native global objects. These objects can be used either as Constructor (String(), Number(), Boolean()) or as Primitive Value, like literally as a value :-D (‘string’, 123, true).&lt;/p&gt;
+&lt;p&gt;From what I understand, objects are divided from which environment and language they are supplied: &lt;strong&gt;Host Objects&lt;/strong&gt; and &lt;strong&gt;Native Objects&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Host Objects&lt;/strong&gt; are objects supplied by a certain environment. They are not always the same because each environment differs and contains host objects that accommodates execution of ECMAScript. Example, browser environment supplies objects such as window. While a node.js/server environment supplies objects such as NodeList.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Native Objects&lt;/strong&gt; or Built-in Objects are standard built-in objects provided by Javascript. Native objects is sometimes referred to as ‘Global Objects’ since they are objects Javascript has provided natively available for use.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;References:&lt;/p&gt;
+&lt;p&gt;There are various articles categorizing these native global objects but its number differs, so for accuracy (I believe), I recommend the official Mozilla Doc as reference.
+&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects&quot;&gt;Ref: developer.mozilla.org - Global Objects&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Javascript is mainly constructed by these categorized native global objects. These objects can be used either as Constructor (String(), Number(), Boolean()) or as Primitive Value, like literally as a value :-D (‘string’, 123, true).&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://programmerinnervoice.wordpress.com/2013/07/22/host-objects-vs-native-objects/&quot;&gt;Host objects Vs Native objects In JavaScript&lt;/a&gt;&lt;/li&gt;
@@ -314,12 +321,13 @@ Javascript is mainly constructed by these categorized native global objects. The
   &lt;p&gt;– Addy Osmani, Learning Javascript Design Patterns&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;There are popular javascript module framework that specifically implemented Module Pattern such as Dojo, ExtJS, YUI, and jQuery. Good to know if your new to learning Javascript concepts and have heard of these technologies before those popular MVC frameworks (Angular.js, Ember.js, Backbone.js) emerged.
-Another implementation of module pattern popularized Christian Heilmann (which I think is pretty clean and neat) is The Revealing Module Pattern. It’s pretty much the same with the standard Module Pattern except it uses the return object literal properties as references to variables and functions from the scoping function to export variables and methods.&lt;/p&gt;
+&lt;p&gt;There are popular javascript module framework that specifically implemented Module Pattern such as Dojo, ExtJS, YUI, and jQuery. Good to know if your new to learning Javascript concepts and have heard of these technologies before those popular MVC frameworks (Angular.js, Ember.js, Backbone.js) emerged.&lt;/p&gt;
+
+&lt;p&gt;Another implementation of module pattern popularized Christian Heilmann (which I think is pretty clean and neat) is The Revealing Module Pattern. It’s pretty much the same with the standard Module Pattern except it uses the return object literal properties as references to variables and functions from the scoping function to export variables and methods.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;References:&lt;/p&gt;
+&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript&quot;&gt;Learning JavaScript Design Patterns&lt;/a&gt;&lt;/li&gt;
@@ -390,7 +398,7 @@ From what I understand, Closures is a neat way to deal with scope issues. Reason
 &lt;/ul&gt;
 
 &lt;iframe height=&quot;268&quot; scrolling=&quot;no&quot; src=&quot;//codepen.io/rlynjb/embed/vLZeyq/?height=268&amp;amp;theme-id=20698&amp;amp;default-tab=js&quot; frameborder=&quot;no&quot; allowtransparency=&quot;true&quot; allowfullscreen=&quot;true&quot; style=&quot;width: 100%;&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/rlynjb/pen/vLZeyq/&quot;&gt;learning javascript closures&lt;/a&gt; by rlynjb (&lt;a href=&quot;http://codepen.io/rlynjb&quot;&gt;@rlynjb&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
-&lt;/iframe&gt;
+  &lt;/iframe&gt;
 
 &lt;hr /&gt;
 
@@ -401,8 +409,8 @@ From what I understand, Closures is a neat way to deal with scope issues. Reason
 &lt;/ul&gt;
 </description>
         <pubDate>Tue, 12 Jan 2016 02:47:13 -0800</pubDate>
-        <link>http://www.wandrr.io/JS-Interview-Question-What-is--closure-how-why-would-you-use-one</link>
-        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-What-is--closure-how-why-would-you-use-one</guid>
+        <link>http://www.wandrr.io/JS-Interview-Question-What-is-closure-how-why-would-you-use-one</link>
+        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-What-is-closure-how-why-would-you-use-one</guid>
         
         <category>javascript</category>
         

@@ -21,12 +21,12 @@ Below is a sample code of using Closure with IIFE.
 
   * _Note, IIFE or Immediately Invoked Function Expression is another Javascript concept._
 
-<iframe height='268' scrolling='no' src='//codepen.io/rlynjb/embed/vLZeyq/?height=268&theme-id=20698&default-tab=js' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/rlynjb/pen/vLZeyq/'>learning javascript closures</a> by rlynjb (<a href='http://codepen.io/rlynjb'>@rlynjb</a>) on <a href='http://codepen.io'>CodePen</a>.
-</iframe>
+  <iframe height='268' scrolling='no' src='//codepen.io/rlynjb/embed/vLZeyq/?height=268&theme-id=20698&default-tab=js' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/rlynjb/pen/vLZeyq/'>learning javascript closures</a> by rlynjb (<a href='http://codepen.io/rlynjb'>@rlynjb</a>) on <a href='http://codepen.io'>CodePen</a>.
+  </iframe>
 
 
------
+  -----
 
-References:
+  References:
 
-- [Understand JavaScript Closures With Ease](http://javascriptissexy.com/understand-javascript-closures-with-ease/)
+  - [Understand JavaScript Closures With Ease](http://javascriptissexy.com/understand-javascript-closures-with-ease/)
