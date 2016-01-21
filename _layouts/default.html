@@ -16,9 +16,9 @@
         <div class="col-right">
           <h2>What this is about..</h2>
           <ul>
-          {% for post in site.categories %}
+          {% for tags in site.tags %}
             <li>
-              <a href="{{ post.url }}">{{ post | first }}</a>
+              <a href="">{{ tags | first }}</a>
             </li>
           {% endfor %}
           </ul>
