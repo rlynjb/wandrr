@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Wandrr.io</title>
-  <meta name="description" content="This is a blog about travel and tech.
-">
+  <title>JS Interview Question: Explain Function.prototype.bind</title>
+  <meta name="description" content="Explain Function.prototype.bind">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.wandrr.io/">
+  <link rel="canonical" href="http://www.wandrr.io/JS-Interview-Question-Explain-bind">
   <link rel="alternate" type="application/rss+xml" title="Wandrr.io" href="http://www.wandrr.io/feed.xml" />
 </head>
 
@@ -67,149 +66,74 @@
     <div class="page-content">
       <div class="wrapper">
         <div class="col-left">
-          <div class="home">
+          <div class="post">
 
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Jan 20, 2016</span>
+  <header class="post-header">
+    <h1 class="post-title">JS Interview Question: Explain Function.prototype.bind</h1>
+    <p class="post-meta">
+      Jan 20, 2016
+      
+       • javascriptinterview question
+    </p>
+  </header>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-When-would-you-use-document-write">JS Interview Question: When would you use document.write()?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 20, 2016</span>
+  <article class="post-content">
+    <h3 id="explain-functionprototypebind">Explain Function.prototype.bind</h3>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Whats-difference-between-feature-detection-feature-inference-UA-string">JS Interview Question: What’s the difference between feature detection, feature inference, and using the UA string?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 20, 2016</span>
+<p>It took me awhile to understand how ‘this’ keyword works, but after reading about bind method, its starting to make sense regarding the context of an object set explicitly and being able to access with ‘this’ keyword.</p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Explain-bind">JS Interview Question: Explain Function.prototype.bind</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 19, 2016</span>
+<hr />
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Whats-difference-between-call-and-apply">JS Interview Question: What’s the difference between .call and .apply?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 14, 2016</span>
+<p><strong><em>A common issue that arise when we use functions is dealing with a function’s scope and an object’s context.</em></strong></p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Difference-between-function-Person-var-person-Person-and-var-person-new-Person">JS Interview Question: Difference between: function Person(){}, var person = Person(), and var person = new Person()?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 13, 2016</span>
+<p><em>** it’s important to understand the difference between function scope and object context.</em></p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Whats-difference-between-host-objects-native-objects">JS Interview Question: What’s the difference between host objects and native objects?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 13, 2016</span>
+<p>Every function has its own scope with visible and accessible variables, but when we define closures, these inner functions creates its own scope as well. If we were to access the outer function’s context from inner functions (closures), we will need to declare a variable specifying the outer function’s context.</p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-How-do-you-organize-your-code-module-pattern-classical-inheritance">JS Interview Question: How do you organize your code? (module pattern, classical inheritance?)</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 12, 2016</span>
+<p><code>
+var self = this;
+</code></p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Whats-typical-use-case-for-anonymous-functions">JS Interview Question: What’s a typical use case for anonymous functions?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 12, 2016</span>
+<p>To avoid polluting an outer function’s scope, we can use bind method instead. Once we invoked a function with bind method, it bounds our closure or inner function with the outer function’s scope.</p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-What-is--closure-how-why-would-you-use-one">JS Interview Question: What is a closure, and how/why would you use one?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 9, 2016</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// some content </span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span></code></pre></div>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-What-difference-between-variable-null-undefined-undeclared">JS Interview Question: What’s the difference between a variable that is: null, undefined or undeclared?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 8, 2016</span>
+<p>We are also able to pass in 2nd arguments if needed.</p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-What-do-you-think-AMD-vs-CommonJS">JS Interview Question: What do you think of AMD vs CommonJS?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 8, 2016</span>
+<p>Though, IE8 and below doesn’t support bind(), there is a polyfill available to fix this issue. Polyfill here and more info: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind</p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Explain-why-the-following-doesnt-work-as-IIFE">JS Interview Question: Explain why the following doesn’t work as an IIFE</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 5, 2016</span>
+<hr />
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Explain-how-this-works-JavaScript">JS Interview Question: Explain how this work in JavaScript</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 5, 2016</span>
+<p>There are other methods of setting the scope of a function. Other two are apply() and call().
+Difference between apply() &amp; call() and bind() method is:
+Functions invoked with apply() &amp; call() methods gets executed first and of course, we also pass along the function’s scope as well
+… while …
+Functions invoked with bind() method just sets the scope, but doesn’t get executed. Awesome! B-)</p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Explain-how-prototypal-inheritance-works">JS Interview Question: Explain how prototypal inheritance works</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 5, 2016</span>
+<hr />
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Explain-event-delegation">JS Interview Question: Explain event delegation</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 4, 2016</span>
+<p>Now another issue is when we pass around functions. Its function context actually changes as well depending on where the function is invoked. It doesn’t necessarily bound to a specific object as we expect it to be bound to, rather, it may also bound to a global object, other outer objects, or even an HTML element, depending on where we invoked the function.</p>
 
-        <h2>
-          <a class="post-link" href="/welcome-to-jekyll">Welcome to Jekyll!</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 4, 2015</span>
+<p><em>** Note, that invoking a function is different from creating a new instance of an object.</em></p>
 
-        <h2>
-          <a class="post-link" href="/responsive-email">Responsive Email</a>
-        </h2>
-      </li>
-    
-  </ul>
+<p>Below is an interesting (coz its new to me) Code sample with commented out explanation. It shows how ‘this’ keyword can be mistakenly bound to an HTML element and how bind() can fix it.</p>
 
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+<iframe height="268" scrolling="no" src="//codepen.io/rlynjb/embed/qbpZVX/?height=268&amp;theme-id=20698&amp;default-tab=js" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="http://codepen.io/rlynjb/pen/qbpZVX/">Learning Javascript's bind method</a> by rlynjb (<a href="http://codepen.io/rlynjb">@rlynjb</a>) on <a href="http://codepen.io">CodePen</a>.
+</iframe>
+
+<hr />
+
+<h4 id="references">References:</h4>
+
+<ul>
+  <li><a href="http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals">JavaScript’s Apply, Call, and Bind Methods are Essential for JavaScript Professionals</a></li>
+  <li><a href="http://krasimirtsonev.com/blog/article/JavaScript-bind-function-setting-a-scope">JavaScript: bind function</a></li>
+</ul>
+
+  </article>
 
 </div>
 

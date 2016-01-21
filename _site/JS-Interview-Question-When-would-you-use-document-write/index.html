@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Wandrr.io</title>
-  <meta name="description" content="This is a blog about travel and tech.
-">
+  <title>JS Interview Question: When would you use document.write()?</title>
+  <meta name="description" content="When would you use document.write()?">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.wandrr.io/">
+  <link rel="canonical" href="http://www.wandrr.io/JS-Interview-Question-When-would-you-use-document-write">
   <link rel="alternate" type="application/rss+xml" title="Wandrr.io" href="http://www.wandrr.io/feed.xml" />
 </head>
 
@@ -67,149 +66,33 @@
     <div class="page-content">
       <div class="wrapper">
         <div class="col-left">
-          <div class="home">
+          <div class="post">
 
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Jan 20, 2016</span>
+  <header class="post-header">
+    <h1 class="post-title">JS Interview Question: When would you use document.write()?</h1>
+    <p class="post-meta">
+      Jan 20, 2016
+      
+       • javascriptinterview question
+    </p>
+  </header>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-When-would-you-use-document-write">JS Interview Question: When would you use document.write()?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 20, 2016</span>
+  <article class="post-content">
+    <h3 id="when-would-you-use-documentwrite">When would you use document.write()?</h3>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Whats-difference-between-feature-detection-feature-inference-UA-string">JS Interview Question: What’s the difference between feature detection, feature inference, and using the UA string?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 20, 2016</span>
+<p>When document.write() is executed after page load, it replaces the entire header and body tag with the given parameter value in string. An invocation could look like this:</p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Explain-bind">JS Interview Question: Explain Function.prototype.bind</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 19, 2016</span>
+<p><code>
+document.write(‘&lt;h1&gt;hello world&lt;/h1&gt;’);
+</code></p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Whats-difference-between-call-and-apply">JS Interview Question: What’s the difference between .call and .apply?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 14, 2016</span>
+<p>When working with web application, it is uncommon task to overwrite an entire page, hence why using document.write() is bad practice. It cannot inject string text into a given node point unlike jQuery library selectors and native JavaScript methods. Ref: https://developer.mozilla.org/en-US/docs/Web/API/Document</p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Difference-between-function-Person-var-person-Person-and-var-person-new-Person">JS Interview Question: Difference between: function Person(){}, var person = Person(), and var person = new Person()?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 13, 2016</span>
+<p>Another reason not to use document.write() is it doesn’t support XHTML, but its not an issue since most web development uses HTML. Since document.write() fires after a page has finish loading, it causes performance issues and sometimes, may not even fire at all.</p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Whats-difference-between-host-objects-native-objects">JS Interview Question: What’s the difference between host objects and native objects?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 13, 2016</span>
+<p>The only seem appropriate usage for document.write() is when working third parties like Google Analytics and such for including their scripts. This is because document.write() is mostly available in any browser. Since third party companies have no control over the user’s browser dependencies (ex. jQuery), document.write() can be used as a fallback or a default method.</p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-How-do-you-organize-your-code-module-pattern-classical-inheritance">JS Interview Question: How do you organize your code? (module pattern, classical inheritance?)</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 12, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Whats-typical-use-case-for-anonymous-functions">JS Interview Question: What’s a typical use case for anonymous functions?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 12, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-What-is--closure-how-why-would-you-use-one">JS Interview Question: What is a closure, and how/why would you use one?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 9, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-What-difference-between-variable-null-undefined-undeclared">JS Interview Question: What’s the difference between a variable that is: null, undefined or undeclared?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 8, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-What-do-you-think-AMD-vs-CommonJS">JS Interview Question: What do you think of AMD vs CommonJS?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 8, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Explain-why-the-following-doesnt-work-as-IIFE">JS Interview Question: Explain why the following doesn’t work as an IIFE</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 5, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Explain-how-this-works-JavaScript">JS Interview Question: Explain how this work in JavaScript</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 5, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Explain-how-prototypal-inheritance-works">JS Interview Question: Explain how prototypal inheritance works</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 5, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Explain-event-delegation">JS Interview Question: Explain event delegation</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 4, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/welcome-to-jekyll">Welcome to Jekyll!</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 4, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/responsive-email">Responsive Email</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+  </article>
 
 </div>
 

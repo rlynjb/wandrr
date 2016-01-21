@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Wandrr.io</title>
-  <meta name="description" content="This is a blog about travel and tech.
-">
+  <title>JS Interview Question: What’s the difference between feature detection, feature inference, and using the UA string?</title>
+  <meta name="description" content="What’s the difference between feature detection, feature inference, and using the UA string?">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.wandrr.io/">
+  <link rel="canonical" href="http://www.wandrr.io/JS-Interview-Question-Whats-difference-between-feature-detection-feature-inference-UA-string">
   <link rel="alternate" type="application/rss+xml" title="Wandrr.io" href="http://www.wandrr.io/feed.xml" />
 </head>
 
@@ -67,149 +66,71 @@
     <div class="page-content">
       <div class="wrapper">
         <div class="col-left">
-          <div class="home">
+          <div class="post">
 
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Jan 20, 2016</span>
+  <header class="post-header">
+    <h1 class="post-title">JS Interview Question: What’s the difference between feature detection, feature inference, and using the UA string?</h1>
+    <p class="post-meta">
+      Jan 20, 2016
+      
+       • javascriptinterview question
+    </p>
+  </header>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-When-would-you-use-document-write">JS Interview Question: When would you use document.write()?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 20, 2016</span>
+  <article class="post-content">
+    <h3 id="whats-the-difference-between-feature-detection-feature-inference-and-using-the-ua-string">What’s the difference between feature detection, feature inference, and using the UA string?</h3>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Whats-difference-between-feature-detection-feature-inference-UA-string">JS Interview Question: What’s the difference between feature detection, feature inference, and using the UA string?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 20, 2016</span>
+<p>These 3 are just practices of determining if a certain web technology feature exists in a user’s browser or environment. Though features may vary with not just modern web technology but with programming languages as well.</p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Explain-bind">JS Interview Question: Explain Function.prototype.bind</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 19, 2016</span>
+<hr />
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Whats-difference-between-call-and-apply">JS Interview Question: What’s the difference between .call and .apply?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 14, 2016</span>
+<p><strong><em>Feature Detection</em></strong></p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Difference-between-function-Person-var-person-Person-and-var-person-new-Person">JS Interview Question: Difference between: function Person(){}, var person = Person(), and var person = new Person()?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 13, 2016</span>
+<p>Feature detection is just a way of determining if a feature exists in certain browsers. A good example is a modern HTML5 feature ‘Location’.</p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Whats-difference-between-host-objects-native-objects">JS Interview Question: What’s the difference between host objects and native objects?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 13, 2016</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">if</span> <span class="p">(</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">geolocation</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// detect users location here B-) and do something awesome</span>
+<span class="p">}</span></code></pre></div>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-How-do-you-organize-your-code-module-pattern-classical-inheritance">JS Interview Question: How do you organize your code? (module pattern, classical inheritance?)</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 12, 2016</span>
+<hr />
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Whats-typical-use-case-for-anonymous-functions">JS Interview Question: What’s a typical use case for anonymous functions?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 12, 2016</span>
+<p><strong><em>Feature Inference</em></strong></p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-What-is--closure-how-why-would-you-use-one">JS Interview Question: What is a closure, and how/why would you use one?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 9, 2016</span>
+<p>Feature Inference is when you have determined a feature exists and assumed the next web technology feature you are implementing unto your app exists as well. Its usually bad practice to assume, so its better to explicitly specify features you want to detect and plan a fallback action.</p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-What-difference-between-variable-null-undefined-undeclared">JS Interview Question: What’s the difference between a variable that is: null, undefined or undeclared?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 8, 2016</span>
+<hr />
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-What-do-you-think-AMD-vs-CommonJS">JS Interview Question: What do you think of AMD vs CommonJS?</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 8, 2016</span>
+<p><strong><em>UA String</em></strong></p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Explain-why-the-following-doesnt-work-as-IIFE">JS Interview Question: Explain why the following doesn’t work as an IIFE</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 5, 2016</span>
+<p>UA String or User Agent String is a string text of data that each browsers send and can be access via navigator.userAgent. These “string text of data” contains information of the browser environment you are targeting.</p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Explain-how-this-works-JavaScript">JS Interview Question: Explain how this work in JavaScript</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 5, 2016</span>
+<p>If you open your console and run</p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Explain-how-prototypal-inheritance-works">JS Interview Question: Explain how prototypal inheritance works</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 5, 2016</span>
+<p><code>
+navigator.userAgent
+</code></p>
 
-        <h2>
-          <a class="post-link" href="/JS-Interview-Question-Explain-event-delegation">JS Interview Question: Explain event delegation</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 4, 2016</span>
+<p>You’ll see it outputs a “string text of data” containing complete information of the environment you are currently using. Since this is an old way of doing detection, this method can be easily spoofed, thus, may not be the best route to take. Ref: https://en.wikipedia.org/wiki/User_agent</p>
 
-        <h2>
-          <a class="post-link" href="/welcome-to-jekyll">Welcome to Jekyll!</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 4, 2015</span>
+<hr />
 
-        <h2>
-          <a class="post-link" href="/responsive-email">Responsive Email</a>
-        </h2>
-      </li>
-    
-  </ul>
+<p><strong><em>A JavaScript library I love using is Modernizr</em></strong></p>
 
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+<blockquote>
+  <p>Modernizr is a small piece of JavaScript code that automatically detects the availability of next-generation web technologies in your user’s browsers. Rather than blacklisting entire ranges of browsers based on “UA sniffing,” Modernizr uses feature detection to allow you to easily tailor your user’s experiences based on the actual capabilities of their browser.</p>
+</blockquote>
+
+<p><a href="https://modernizr.com/">Modernizr: the feature detection library for HTML5/CSS3</a></p>
+
+<hr />
+
+<h4 id="references">References:</h4>
+
+<ul>
+  <li><a href="http://stackoverflow.com/a/20105074/4538744">What’s the difference between feature detection, feature inference, and using the UA string</a></li>
+</ul>
+
+  </article>
 
 </div>
 
