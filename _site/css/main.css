@@ -143,6 +143,17 @@ pre {
   .icon > svg path {
     fill: #2d0670; }
 
+/*
+ custom overrides
+ */
+hr {
+  margin: 5em 16em;
+  border-style: dashed;
+  border-color: lightgray; }
+
+p {
+  margin: 2em 0; }
+
 /**
  * Site header
  */
