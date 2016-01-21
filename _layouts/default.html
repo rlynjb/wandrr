@@ -11,18 +11,18 @@
       <div class="wrapper">
         <div class="col-left">
           {{ content }}
-        </div>
+        </div><!-- /col-left -->
 
         <div class="col-right">
           <h2>What this is about..</h2>
           <ul>
-          {% for category in site.categories %}
+          {% for post in site.categories %}
             <li>
-              {{ category | first }}
+              <a href="{{ post.url }}">{{ post | first }}</a>
             </li>
           {% endfor %}
           </ul>
-        </div>
+        </div><!-- /col-right -->
       </div>
     </div>
 
