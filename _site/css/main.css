@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Lobster+Two:400,400italic,700,700italic);
 /**
  * Reset some basic elements
  */
@@ -159,7 +160,8 @@ pre {
   line-height: 56px;
   letter-spacing: -1px;
   margin-bottom: 0;
-  float: left; }
+  float: left;
+  font-family: 'Lobster Two', cursive; }
   .site-title, .site-title:visited {
     color: #424242; }
 
