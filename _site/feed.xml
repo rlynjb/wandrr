@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 21 Jan 2016 11:03:55 -0800</pubDate>
-    <lastBuildDate>Thu, 21 Jan 2016 11:03:55 -0800</lastBuildDate>
+    <pubDate>Thu, 21 Jan 2016 11:22:16 -0800</pubDate>
+    <lastBuildDate>Thu, 21 Jan 2016 11:22:16 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -34,6 +34,67 @@
         <category>jekyll</category>
         
         <category>update</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Responsive Email</title>
+        <description>&lt;p&gt;I’ve been working on this new project, Creating Responsive Emails, and I thought of blogging my experience and sharing them to you! ☺..&lt;/p&gt;
+
+&lt;p&gt;I first found out about Responsive Email through this website, http://www.zurb.com/playground/responsive-email-templates. They offer pre-made html email templates ready for you to use. My experience using these templates is that they aren’t really compatible with most of the email web clients with older browser versions.&lt;/p&gt;
+
+&lt;p&gt;I used http://emailonacid.com/ to test these templates. It works on most mobile devices, but doesn’t on most web desktop clients except for apple mails, outlook express, and live mail.&lt;/p&gt;
+
+&lt;p&gt;I did more research and found this, http://www.campaignmonitor.com/guides/mobile/. Instead of using div tags and floats, we can actually use tables and its attributes.&lt;/p&gt;
+
+&lt;p&gt;Coding email templates for browser and email client compatibility issues was a trial and error experience. Bugs occur more on email web client with older browser version than on mobile devices. I’m surprise Gmail had more bugs than yahoo mail and aol.&lt;/p&gt;
+
+&lt;p&gt;I ended up coding my own Responsive Email layout template by using:&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;table-tags-instead-of-div-tags&quot;&gt;Table tags instead of Div tags&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;CSS properties: max-width, width&lt;/li&gt;
+  &lt;li&gt;Table attributes: align=”left”, width=”400px” instead of floats&lt;/li&gt;
+  &lt;li&gt;cellspacing and cellpadding instead of margin and padding&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;also-here-are-some-tips-i-found-from-campaignmonitorcom-on-coding-html-for-emails&quot;&gt;Also, here are some tips I found from campaignmonitor.com on coding html for emails.&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Set width in cell instead of relying on table. Use pixel instead or percentage.Use cellpadding parameter when setting padding for cells instead of using CSS padding.&lt;/li&gt;
+  &lt;li&gt;Nest tables inside your table. ☺&lt;/li&gt;
+  &lt;li&gt;set a background color on the container table, do not set it on body tag because some email clients ignore them.&lt;/li&gt;
+  &lt;li&gt;remove any whitespace&lt;/li&gt;
+  &lt;li&gt;use inline css or css inliner for repeated tags&lt;/li&gt;
+  &lt;li&gt;for images, always use alt attributes&lt;/li&gt;
+  &lt;li&gt;use captions for important images&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;refer-to-this-link-for-css-support&quot;&gt;refer to this link for css support&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.campaignmonitor.com/css/&quot;&gt;campaignmonitor.com/css&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.campaignmonitor.com/guides/&quot;&gt;campaignmonitor.com/guides&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://putsmail.com/&quot;&gt;putsmail.com&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://beaker.mailchimp.com/inline-css&quot;&gt;beaker.mailchimp.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 04 Jan 2015 02:47:13 -0800</pubDate>
+        <link>http://www.wandrr.io/responsive-email</link>
+        <guid isPermaLink="true">http://www.wandrr.io/responsive-email</guid>
+        
+        <category>css</category>
+        
+        <category>responsive</category>
+        
+        <category>email</category>
         
         
       </item>

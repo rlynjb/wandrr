@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="This is a blog about travel and tech.
-">
+  <title>Responsive Email</title>
+  <meta name="description" content="I’ve been working on this new project, Creating Responsive Emails, and I thought of blogging my experience and sharing them to you! ☺..">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.wandrr.io/about/">
+  <link rel="canonical" href="http://www.wandrr.io/responsive-email">
   <link rel="alternate" type="application/rss+xml" title="Wandrr.io" href="http://www.wandrr.io/feed.xml" />
 </head>
 
@@ -70,11 +69,60 @@
           <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">About</h1>
+    <h1 class="post-title">Responsive Email</h1>
+    <p class="post-meta">
+      Jan 4, 2015
+      
+       • cssresponsiveemail
+    </p>
   </header>
 
   <article class="post-content">
-    <p>Wandrr.io is a combination of two things I love. Outdoor activities and Tech. This website mainly consists of topics regarding outdoor activities, survival info (yes, I get geeky when it comes to survival kits, knowledge, and such) with a touch of Tech (coz I love to code, I want build things that interest me especially tools I find useful).</p>
+    <p>I’ve been working on this new project, Creating Responsive Emails, and I thought of blogging my experience and sharing them to you! ☺..</p>
+
+<p>I first found out about Responsive Email through this website, http://www.zurb.com/playground/responsive-email-templates. They offer pre-made html email templates ready for you to use. My experience using these templates is that they aren’t really compatible with most of the email web clients with older browser versions.</p>
+
+<p>I used http://emailonacid.com/ to test these templates. It works on most mobile devices, but doesn’t on most web desktop clients except for apple mails, outlook express, and live mail.</p>
+
+<p>I did more research and found this, http://www.campaignmonitor.com/guides/mobile/. Instead of using div tags and floats, we can actually use tables and its attributes.</p>
+
+<p>Coding email templates for browser and email client compatibility issues was a trial and error experience. Bugs occur more on email web client with older browser version than on mobile devices. I’m surprise Gmail had more bugs than yahoo mail and aol.</p>
+
+<p>I ended up coding my own Responsive Email layout template by using:</p>
+
+<hr />
+
+<h3 id="table-tags-instead-of-div-tags">Table tags instead of Div tags</h3>
+<ul>
+  <li>CSS properties: max-width, width</li>
+  <li>Table attributes: align=”left”, width=”400px” instead of floats</li>
+  <li>cellspacing and cellpadding instead of margin and padding</li>
+</ul>
+
+<hr />
+
+<h4 id="also-here-are-some-tips-i-found-from-campaignmonitorcom-on-coding-html-for-emails">Also, here are some tips I found from campaignmonitor.com on coding html for emails.</h4>
+
+<ul>
+  <li>Set width in cell instead of relying on table. Use pixel instead or percentage.Use cellpadding parameter when setting padding for cells instead of using CSS padding.</li>
+  <li>Nest tables inside your table. ☺</li>
+  <li>set a background color on the container table, do not set it on body tag because some email clients ignore them.</li>
+  <li>remove any whitespace</li>
+  <li>use inline css or css inliner for repeated tags</li>
+  <li>for images, always use alt attributes</li>
+  <li>use captions for important images</li>
+</ul>
+
+<hr />
+
+<h3 id="refer-to-this-link-for-css-support">refer to this link for css support</h3>
+
+<ul>
+  <li><a href="http://www.campaignmonitor.com/css/">campaignmonitor.com/css</a></li>
+  <li><a href="http://www.campaignmonitor.com/guides/">campaignmonitor.com/guides</a></li>
+  <li><a href="http://putsmail.com/">putsmail.com</a></li>
+  <li><a href="http://beaker.mailchimp.com/inline-css">beaker.mailchimp.com</a></li>
+</ul>
 
   </article>
 
