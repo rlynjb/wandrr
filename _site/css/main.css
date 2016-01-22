@@ -347,6 +347,10 @@ p {
   width: 30%;
   float: right; }
 
+.post {
+  max-width: 700px;
+  margin: 0 auto; }
+
 /**
  * Syntax highlighting styles
  */
