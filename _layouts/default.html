@@ -18,7 +18,7 @@
           <ul>
           {% for tags in site.tags %}
             <li>
-              <a href="/tags/#{{ tags | first }}">{{ tags | first }}</a>
+            <a href="/tags/#{{ tags | first }}">{{ tags | first }} ({{ tags | last | size }})</a>
             </li>
           {% endfor %}
           </ul>
