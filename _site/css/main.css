@@ -160,29 +160,26 @@ p {
 .site-header {
   border-top: 5px solid #424242;
   border-bottom: 1px solid #e8e8e8;
-  background-color: #b5b5b5;
+  background-color: #E0E4E7;
   background-size: 100%;
   background-position: 0 -33em;
   position: relative; }
 
 .site-title {
   display: block;
-  margin: 2em 0 1em;
-  float: left;
-  font-family: 'Lobster Two', cursive;
-  text-shadow: 1px 1px 5px #000; }
+  margin: 1em 0 0;
+  float: left; }
   .site-title, .site-title:visited {
-    color: #fff; }
+    color: #4f4f4f; }
   .site-title:hover {
     text-decoration: none; }
-  .site-title h1 {
+  .site-title h2 {
     margin: 0;
-    font-size: 3em;
+    font-size: 1.9em;
     line-height: 1; }
-  .site-title i {
+  .site-title h4 {
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 1.2em;
-    padding-left: 10px; }
+    font-size: 1em; }
 
 .site-nav {
   float: right;
