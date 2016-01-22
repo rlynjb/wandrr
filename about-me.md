@@ -1,7 +1,11 @@
 ---
 layout: page
 title: About Me
-permalink: /about/
+permalink: /about-me/
 ---
 
-Wandrr.io is a combination of two things I love. Outdoor activities and Tech. This website mainly consists of topics regarding outdoor activities, survival info (yes, I get geeky when it comes to survival kits, knowledge, and such) with a touch of Tech (coz I love to code, I want build things that interest me especially tools I find useful).
+Hi, I'm RLyn. I am a self-taught, goal-oriented Front-End Developer with an enthusiasm for web technology and a long term goal of becoming an efficient programmer. I also love solving coding, UI/UX problems and I embrace challenges.
+
+-----
+
+## My Experiences
