@@ -16,7 +16,7 @@ body {
   font-size: 18px;
   line-height: 1.5;
   font-weight: 300;
-  color: #111;
+  color: #515151;
   background-color: #fdfdfd;
   -webkit-text-size-adjust: 100%; }
 
@@ -160,7 +160,7 @@ p {
 .site-header {
   border-top: 5px solid #424242;
   border-bottom: 1px solid #e8e8e8;
-  background: url("/images/739BBHC8KM.jpg");
+  background-color: #b5b5b5;
   background-size: 100%;
   background-position: 0 -33em;
   position: relative; }
@@ -190,7 +190,7 @@ p {
   .site-nav .menu-icon {
     display: none; }
   .site-nav .page-link {
-    color: #111;
+    color: #515151;
     line-height: 1.5; }
     .site-nav .page-link:not(:first-child) {
       margin-left: 20px; }
