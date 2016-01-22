@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lobster+Two:400,400italic,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Exo:400,300,200,500,600,700);
 /**
  * Reset some basic elements
  */
@@ -168,7 +168,8 @@ p {
 .site-title {
   display: block;
   margin: 1em 0 0;
-  float: left; }
+  float: left;
+  font-family: 'Exo', sans-serif; }
   .site-title, .site-title:visited {
     color: #4f4f4f; }
   .site-title:hover {
@@ -176,10 +177,11 @@ p {
   .site-title h2 {
     margin: 0;
     font-size: 1.9em;
-    line-height: 1; }
+    line-height: 1;
+    font-weight: 400; }
   .site-title h4 {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 1em; }
+    font-size: 1em;
+    font-weight: 400; }
 
 .site-nav {
   float: right;
