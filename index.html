@@ -3,32 +3,7 @@ layout: default
 ---
 
 <div class="home">
-  <div class="col-left">
-    <ul class="post-list">
-      {% for post in site.posts %}
-        <li>
-          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} | {{ post.tags | join: ', ' }}</span>
-          <h2>
-            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-          </h2>
-        </li>
-      {% endfor %}
-    </ul>
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-  </div><!-- /col-left -->
-
-  <div class="col-right">
-    <h3><i>blog is about..</i></h3>
-    <!--
-    <ul>
-    {% for tags in site.tags %}
-      <li>
-      <a href="/tags/#{{ tags | first }}">{{ tags | first }} ({{ tags | last | size }})</a>
-      </li>
-    {% endfor %}
-    </ul>
-    -->
-
+    <h3><i>i blog about..</i></h3>
     {% capture site_tags %}{% for tag in site.tags %}{{ tag[1].size }}#{{ tag | first | downcase }}#{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
     {% assign tag_hashes = site_tags | split:',' | sort %}
     <ul class="list-group">
@@ -44,15 +19,18 @@ layout: default
       {% endfor %}
     </ul>
 
-
-    <h3><i>code samples..</i></h3>
-    <ul>
-      <li>
-        <a href="https://gist.github.com/rlynjb/4daa009d9b65421608f9">Basic Algorithm</a>
-      </li>
-      <li>
-        <a href="https://gist.github.com/rlynjb/fe49919bd0de0f5a2606">Intermediate Algorithm</a>
-      </li>
+    <ul class="post-list">
+      {% for post in site.posts %}
+        <li>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} | {{ post.tags | join: ', ' }}</span>
+          <h2>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h2>
+        </li>
+      {% endfor %}
     </ul>
-  </div><!-- /col-right -->
+    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+
+
 </div>

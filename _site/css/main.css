@@ -65,12 +65,12 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-  color: #2d0670;
+  color: #64459e;
   text-decoration: none; }
   a:visited {
-    color: #2d0670; }
+    color: #64459e; }
   a:hover {
-    color: #2d0670;
+    color: #64459e;
     text-decoration: none; }
 
 /**
@@ -111,16 +111,16 @@ pre {
  * Wrapper
  */
 .wrapper {
-  max-width: -webkit-calc(1000px - (30px * 2));
-  max-width: calc(1000px - (30px * 2));
+  max-width: -webkit-calc(800px - (30px * 2));
+  max-width: calc(800px - (30px * 2));
   margin-right: auto;
   margin-left: auto;
   padding-right: 30px;
   padding-left: 30px; }
   @media screen and (max-width: 800px) {
     .wrapper {
-      max-width: -webkit-calc(1000px - (30px));
-      max-width: calc(1000px - (30px));
+      max-width: -webkit-calc(800px - (30px));
+      max-width: calc(800px - (30px));
       padding-right: 15px;
       padding-left: 15px; } }
 
@@ -141,7 +141,7 @@ pre {
   height: 16px;
   vertical-align: middle; }
   .icon > svg path {
-    fill: #2d0670; }
+    fill: #64459e; }
 
 /*
  custom overrides
@@ -286,7 +286,8 @@ p {
 
 .post-list {
   margin-left: 0;
-  list-style: none; }
+  list-style: none;
+  margin-top: 3em; }
   .post-list > li {
     margin-bottom: 30px; }
 
@@ -337,17 +338,14 @@ p {
 /*
   custom layout
  */
-.col-left {
-  width: 70%;
-  float: left; }
-
-.col-right {
-  width: 30%;
-  float: right; }
-
-.post {
-  max-width: 700px;
-  margin: 0 auto; }
+ul.list-group {
+  margin: 0px; }
+ul li.list-group-item {
+  display: inline-block;
+  background: #ededed;
+  padding: 3px 5px;
+  font-size: 0.7em;
+  border-radius: 7px; }
 
 /**
  * Syntax highlighting styles

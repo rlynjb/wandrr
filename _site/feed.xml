@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Wandrr.io</title>
+    <title>wandrr.io</title>
     <description>This is a blog about travel and tech.
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 22 Jan 2016 12:35:25 -0800</pubDate>
-    <lastBuildDate>Fri, 22 Jan 2016 12:35:25 -0800</lastBuildDate>
+    <pubDate>Fri, 22 Jan 2016 13:50:26 -0800</pubDate>
+    <lastBuildDate>Fri, 22 Jan 2016 13:50:26 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
