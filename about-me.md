@@ -6,6 +6,8 @@ permalink: /about-me/
 
 Hi, I'm RLyn. I am a self-taught, goal-oriented Front-End Developer with an enthusiasm for web technology and a long term goal of becoming an efficient programmer. I also love solving coding, UI/UX problems and I embrace challenges.
 
+I reside in Las Vegas, NV and stack I am currently using for work are: Wordpress and HTML CSS JavaScript, though I do not limit myself with mentioned technologies. In the meantime, I am learning indepth concepts of JavaScripts and solving coding problems/algorithms.
+
 -----
 
 ## My Experiences
