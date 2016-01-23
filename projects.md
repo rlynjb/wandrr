@@ -20,12 +20,21 @@ permalink: /projects/
 - coming soon
 
 
-#### **https://github.com/rlynjb/bitc**
+#### **BitC**
 
-#### **https://github.com/rlynjb/pab**
+- [Link: BitC](https://github.com/rlynjb/bitc)
+- A really darn simple CSS Grid System
+
+#### **PAB - Photo Sharing app**
+
+- [Link: PAB](https://github.com/rlynjb/pab)
+- Learning Backbone.js on this project
 
 -----
 
 ### Codepen projects
 
-#### **http://codepen.io/rlynjb/popular/feed/**
+#### **Codepen - My Popular Pens**
+
+- [Link: My Codepen account](http://codepen.io/rlynjb/popular/feed/)
+- Just those small lil JS toys
