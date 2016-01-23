@@ -36,5 +36,5 @@ permalink: /projects/
 
 #### **Codepen - My Popular Pens**
 
-- [Link: My Codepen account](http://codepen.io/rlynjb/popular/feed/)
+- [Link: My Codepen account](http://codepen.io/rlynjb/pens/popular/)
 - Just those small lil JS toys
