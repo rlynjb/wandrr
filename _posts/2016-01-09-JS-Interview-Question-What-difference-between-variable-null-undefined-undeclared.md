@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "JS Interview Question: What’s the difference between a variable that is: null, undefined or undeclared?"
+title: "What’s the difference between a variable that is: null, undefined or undeclared?"
 date: 2016-01-09 10:47:13
 tags:
 - javascript

@@ -77,67 +77,84 @@
   </header>
 
   <article class="post-content">
-    <p>hello world! welcome to the wonderful world of front end development! Using Jekyll has been an eye opening for me lately, discovering and learning new front end tools that I never knew exis ted! From Github pages to migrating from Wordpress to Jekyll, it has been wonderland for me. No more database, server stuff, and monthly payment for web hosting. Yey! and everything is pret ty much accessable through CLI interface :-)
-I started learning Jekyll through its official site and documentation. http://jekyllrb.com
-Followed the Getting Started documentation and voila! I have Jekyll running on my local dev.</p>
+    <p>hello world! welcome to the wonderful world of front end development! Using Jekyll has been an eye opening for me lately, discovering and learning new front end tools that I never knew exis ted! From Github pages to migrating from Wordpress to Jekyll, it has been wonderland for me. No more database, server stuff, and monthly payment for web hosting. Yey! and everything is pret ty much accessable through CLI interface :-)</p>
 
-<p>I then, migrated my wordpress blog posts, not by using jekyll plugin, but by manually creating a post in Markdown (.md) file format. I did it this way to atleast familiarize myself on getting around jekyll directory structure and its documentation.
-After that, I’ve created its own Github repo, Github page, and pushed the files there.
-I did ran unto a couple of issues with Github failed to generate a page due to some error.</p>
+<p>I started learning Jekyll through its official site and documentation. <a href="http://jekyllrb.com">http://jekyllrb.com</a></p>
+
+<p>Followed the Getting Started documentation and voila! I have Jekyll running on my local dev.</p>
+
+<p>I then, migrated my wordpress blog posts, not by using jekyll plugin, but by manually creating a post in Markdown (.md) file format. I did it this way to atleast familiarize myself on getting around jekyll directory structure and its documentation.</p>
+
+<p>After that, I’ve created its own Github repo, Github page, and pushed the files there.</p>
+
+<p>I did ran unto a couple of issues with Github failed to generate a page due to some error.</p>
 
 <p>For troubleshooting, it led me to this link:
-http://help.github.com/articles/using-jekyll-with-pages#troubleshooting</p>
+<a href="http://help.github.com/articles/using-jekyll-with-pages#troubleshooting">http://help.github.com/articles/using-jekyll-with-pages#troubleshooting</a></p>
 
-<p>Transferring Custom Domain to Github Page
-After troubleshooting, next step was to redirect my domain from my old wordpress website to my new Github Jekyll page. :-D
+<hr />
+
+<h3 id="transferring-custom-domain-to-github-page">Transferring Custom Domain to Github Page</h3>
+
+<p>After troubleshooting, next step was to redirect my domain from my old wordpress website to my new Github Jekyll page. :-D
 The link below pretty much solved this issue.
-https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages
-Simply by creating a CNAME file unto the source directory of my jekyll website and typing my domain name.
-Next, use dig command to retrieve the IP address of your github page (ex. -username-.github.io)</p>
+https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages</p>
 
-<p>dig -username.github.io- +nostats +nocomments +nocmd</p>
+<p>Simply by creating a CNAME file unto the source directory of my jekyll website and typing my domain name.</p>
 
-<p>And use it on your domain DNS Zone file by creating a A (Host) record type. Wait for acouple of minutes and voila! it should work!
-Creating JSON api with Jekyll!
-Now the fun part begins! I always wanted to create an api of my blog contents so I can use it on other projects I develop! and thought of using Jekyll as my CMS. I used wordpress before but since I want to develop myself as a Front End Developer, I want to avoid setting up and configuring server-side CMS, mysql databases and such and invest my time on focusing on front end to ols.
-So with Jekylls’ templating system, it was really simple and elegant to create a .json file of my blog posts. Thanks to the Developmentseed.org team for this post. http://developmentseed.org/blog/2011/09/09/jekyll-github-pages/</p>
+<p>Next, use dig command to retrieve the IP address of your github page (ex. -username-.github.io)</p>
 
-<p>You can find a detailed description of this method (also base from Developmentseed.org) through this link. https://alexpearce.me/2012/04/simple-jekyll-searching/
-Moving on, on the source directory where the feed.xml resides, create a -whatevernameyouwant-.json file, in my case, it was blog.json.
-Inside, I’ve typed:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">dig</span> <span class="o">-</span><span class="nx">username</span><span class="p">.</span><span class="nx">github</span><span class="p">.</span><span class="nx">io</span><span class="o">-</span> <span class="o">+</span><span class="nx">nostats</span> <span class="o">+</span><span class="nx">nocomments</span> <span class="o">+</span><span class="nx">nocmd</span></code></pre></div>
+
+<p>And use it on your domain DNS Zone file by creating a A (Host) record type. Wait for acouple of minutes and voila! it should work!</p>
+
+<hr />
+
+<h3 id="creating-json-api-with-jekyll">Creating JSON api with Jekyll!</h3>
+
+<p>Now the fun part begins! I always wanted to create an api of my blog contents so I can use it on other projects I develop! and thought of using Jekyll as my CMS. I used wordpress before but since I want to develop myself as a Front End Developer, I want to avoid setting up and configuring server-side CMS, mysql databases and such and invest my time on focusing on front end to ols.</p>
+
+<p>So with Jekylls’ templating system, it was really simple and elegant to create a .json file of my blog posts. Thanks to the Developmentseed.org team for this post. http://developmentseed.org/blog/2011/09/09/jekyll-github-pages/</p>
+
+<p>You can find a detailed description of this method (also base from Developmentseed.org) through this link. https://alexpearce.me/2012/04/simple-jekyll-searching/</p>
+
+<p>Moving on, on the source directory where the feed.xml resides, create a -whatevernameyouwant-.json file, in my case, it was blog.json.</p>
+
+<p>Inside, I’ve typed:</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="err">—</span><span class="o">-</span>
 <span class="err">—</span><span class="o">-</span>
 <span class="p">[</span>
-<span class="p">{</span>
-  <span class="err">“</span><span class="nx">site_title</span><span class="err">”</span><span class="o">:</span> <span class="o">&lt;%</span> <span class="nx">site</span><span class="p">.</span><span class="nx">title</span> <span class="o">|</span> <span class="nx">jsonify</span> <span class="o">%&gt;</span><span class="p">,</span>
-  <span class="err">“</span><span class="nx">description</span><span class="err">”</span><span class="o">:</span> <span class="o">&lt;%</span> <span class="nx">site</span><span class="p">.</span><span class="nx">description</span> <span class="o">|</span> <span class="nx">jsonify</span> <span class="o">%&gt;</span><span class="p">,</span>
-  <span class="err">“</span><span class="nx">site_url</span><span class="err">”</span><span class="o">:</span> <span class="err">“</span><span class="o">&lt;%</span> <span class="nx">site</span><span class="p">.</span><span class="nx">url</span> <span class="o">%&gt;&lt;%</span> <span class="nx">site</span><span class="p">.</span><span class="nx">baseurl</span> <span class="o">%&gt;</span><span class="err">/”</span>
-<span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">“</span><span class="nx">site_title</span><span class="err">”</span><span class="o">:</span> <span class="o">&lt;%</span> <span class="nx">site</span><span class="p">.</span><span class="nx">title</span> <span class="o">|</span> <span class="nx">jsonify</span> <span class="o">%&gt;</span><span class="p">,</span>
+    <span class="err">“</span><span class="nx">description</span><span class="err">”</span><span class="o">:</span> <span class="o">&lt;%</span> <span class="nx">site</span><span class="p">.</span><span class="nx">description</span> <span class="o">|</span> <span class="nx">jsonify</span> <span class="o">%&gt;</span><span class="p">,</span>
+    <span class="err">“</span><span class="nx">site_url</span><span class="err">”</span><span class="o">:</span> <span class="err">“</span><span class="o">&lt;%</span> <span class="nx">site</span><span class="p">.</span><span class="nx">url</span> <span class="o">%&gt;&lt;%</span> <span class="nx">site</span><span class="p">.</span><span class="nx">baseurl</span> <span class="o">%&gt;</span><span class="err">/”</span>
+  <span class="p">},</span>
 
-<span class="o">&lt;%</span> <span class="k">for</span> <span class="nx">post</span> <span class="k">in</span> <span class="nx">site</span><span class="p">.</span><span class="nx">posts</span> <span class="o">%&gt;</span>
-<span class="p">{</span>
-  <span class="err">“</span><span class="nx">title</span><span class="err">”</span><span class="o">:</span> <span class="o">&lt;%</span> <span class="nx">post</span><span class="p">.</span><span class="nx">title</span> <span class="o">|</span> <span class="nx">jsonify</span> <span class="o">%&gt;</span><span class="p">,</span>
-  <span class="err">“</span><span class="nx">date</span><span class="err">”</span><span class="o">:</span> <span class="o">&lt;%</span> <span class="nx">post</span><span class="p">.</span><span class="nx">date</span> <span class="o">|</span> <span class="nx">date</span><span class="o">:</span> <span class="err">“</span><span class="o">%</span><span class="nx">a</span><span class="p">,</span> <span class="o">%</span><span class="nx">d</span> <span class="o">%</span><span class="nx">b</span> <span class="o">%</span><span class="nx">Y</span> <span class="o">%</span><span class="nx">H</span><span class="o">:%</span><span class="nx">M</span><span class="o">:%</span><span class="nx">S</span> <span class="o">%</span><span class="nx">z</span><span class="err">”</span> <span class="o">|</span> <span class="nx">jsonify</span> <span class="o">%&gt;</span><span class="p">,</span>
-  <span class="err">“</span><span class="nx">content</span><span class="err">”</span><span class="o">:</span> <span class="o">&lt;%</span> <span class="nx">post</span><span class="p">.</span><span class="nx">content</span> <span class="o">|</span> <span class="nx">jsonify</span> <span class="o">%&gt;</span><span class="p">,</span>
-  <span class="err">“</span><span class="nx">link</span><span class="err">”</span><span class="o">:</span> <span class="o">&lt;%</span> <span class="nx">post</span><span class="p">.</span><span class="nx">url</span> <span class="o">|</span> <span class="nx">prepend</span><span class="o">:</span> <span class="nx">site</span><span class="p">.</span><span class="nx">baseurl</span> <span class="o">|</span> <span class="nx">prepend</span><span class="o">:</span> <span class="nx">site</span><span class="p">.</span><span class="nx">url</span> <span class="o">|</span> <span class="nx">jsonify</span> <span class="o">%&gt;</span>
-<span class="p">},</span>
-<span class="o">&lt;%</span> <span class="nx">endfor</span> <span class="o">%&gt;</span>
+  <span class="o">&lt;%</span> <span class="k">for</span> <span class="nx">post</span> <span class="k">in</span> <span class="nx">site</span><span class="p">.</span><span class="nx">posts</span> <span class="o">%&gt;</span>
+  <span class="p">{</span>
+    <span class="err">“</span><span class="nx">title</span><span class="err">”</span><span class="o">:</span> <span class="o">&lt;%</span> <span class="nx">post</span><span class="p">.</span><span class="nx">title</span> <span class="o">|</span> <span class="nx">jsonify</span> <span class="o">%&gt;</span><span class="p">,</span>
+    <span class="err">“</span><span class="nx">date</span><span class="err">”</span><span class="o">:</span> <span class="o">&lt;%</span> <span class="nx">post</span><span class="p">.</span><span class="nx">date</span> <span class="o">|</span> <span class="nx">date</span><span class="o">:</span> <span class="err">“</span><span class="o">%</span><span class="nx">a</span><span class="p">,</span> <span class="o">%</span><span class="nx">d</span> <span class="o">%</span><span class="nx">b</span> <span class="o">%</span><span class="nx">Y</span> <span class="o">%</span><span class="nx">H</span><span class="o">:%</span><span class="nx">M</span><span class="o">:%</span><span class="nx">S</span> <span class="o">%</span><span class="nx">z</span><span class="err">”</span> <span class="o">|</span> <span class="nx">jsonify</span> <span class="o">%&gt;</span><span class="p">,</span>
+    <span class="err">“</span><span class="nx">content</span><span class="err">”</span><span class="o">:</span> <span class="o">&lt;%</span> <span class="nx">post</span><span class="p">.</span><span class="nx">content</span> <span class="o">|</span> <span class="nx">jsonify</span> <span class="o">%&gt;</span><span class="p">,</span>
+    <span class="err">“</span><span class="nx">link</span><span class="err">”</span><span class="o">:</span> <span class="o">&lt;%</span> <span class="nx">post</span><span class="p">.</span><span class="nx">url</span> <span class="o">|</span> <span class="nx">prepend</span><span class="o">:</span> <span class="nx">site</span><span class="p">.</span><span class="nx">baseurl</span> <span class="o">|</span> <span class="nx">prepend</span><span class="o">:</span> <span class="nx">site</span><span class="p">.</span><span class="nx">url</span> <span class="o">|</span> <span class="nx">jsonify</span> <span class="o">%&gt;</span>
+  <span class="p">},</span>
+  <span class="o">&lt;%</span> <span class="nx">endfor</span> <span class="o">%&gt;</span>
 
-<span class="kc">null</span>
+  <span class="kc">null</span>
 <span class="p">]</span></code></pre></div>
 
-<p>The first and second line are empty YAML front matter. This is just to let Jekyll know that this is a Liquid Template and we can also use the Liquid Template filters and tags.
-The first object contains site information and the second object are the posts wrapped in a template for loop tag. At the very end is a null, this is to avoid EOF (End of File) error when v alidating in http://jsonlint.com/, also Liquid Template Filters are also useful http://jekyllrb.com/docs/templates/ for cleaning up values and catch missing curly brackets, commas, and such .
-After creating and cleaning your json file. on your CLI interface type:</p>
+<p>The first and second line are empty YAML front matter. This is just to let Jekyll know that this is a Liquid Template and we can also use the Liquid Template filters and tags.</p>
 
-<p><code>
-jekyll serve
-</code></p>
+<p>The first object contains site information and the second object are the posts wrapped in a template for loop tag. At the very end is a null, this is to avoid EOF (End of File) error when v alidating in http://jsonlint.com/, also Liquid Template Filters are also useful http://jekyllrb.com/docs/templates/ for cleaning up values and catch missing curly brackets, commas, and such .</p>
+
+<p>After creating and cleaning your json file. on your CLI interface type:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jekyll</span> <span class="nx">serve</span></code></pre></div>
 
 <p>it should give you a local address to where you can view your site locally or push to you github repo.
-you should see your final result on -youraddress.com-/blog.json or again, in my case, its http://rlynb.com/blog.json
-Soo all in all, it took me about 3 days to complete this the migration. Ran into some issues, but it really is just about googling it (lol) and research.</p>
+you should see your final result on -youraddress.com-/blog.json or again, in my case, its http://rlynb.com/blog.json</p>
+
+<p>Soo all in all, it took me about 3 days to complete this the migration. Ran into some issues, but it really is just about googling it (lol) and research.</p>
 
   </article>
 

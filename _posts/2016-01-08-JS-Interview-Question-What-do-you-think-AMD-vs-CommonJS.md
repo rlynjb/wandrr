@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "JS Interview Question: What do you think of AMD vs CommonJS?"
+title: "What do you think of AMD vs CommonJS?"
 date: 2016-01-08 10:47:13
 tags:
 - javascript

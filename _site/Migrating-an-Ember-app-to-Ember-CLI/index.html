@@ -80,36 +80,43 @@
     <p>Turns out there are 2 major ways to migrate an Ember project to Ember-CLI.
 Found this video very useful for finding ways of migrating to Ember-CLI.</p>
 
-<p>http://www.sparkcasts.net/posts/12-moving-to-ember-cli-from-ember-appkit-pro</p>
+<p><a href="http://www.sparkcasts.net/posts/12-moving-to-ember-cli-from-ember-appkit-pro">Moving to Ember CLI from Ember Appkit</a></p>
 
 <p>So with this, I decided to go with Copy &amp; Paste method. I’ve looked online on how people are doing this and I found this article.</p>
 
-<p>https://medium.com/p/450f1ffb1967</p>
+<p><a href="https://medium.com/p/450f1ffb1967">From Gulp.js to ember-cli</a></p>
 
-<p>Moving Forward..
-So with these informations, I was ready to migrate my app to Ember-CLI. Along the way, I came across errors and issues. Below are some useful tips to solve errors.
-Solving errors along the way, Google Dev Console is our friend! So turn on the console to get started.
-If your new to writing ES6 modules syntax, here is a good resource http://www.2ality.com/2014/09/es6-modules-final.html
-Inside config/ -&gt; environment.js.. uncomment out</p>
+<hr />
 
-<p><code>
-ENV.APP.LOG_RESOLVER = true;
-ENV.APP.LOG_ACTIVE_GENERATION = true;
-ENV.APP.LOG_TRANSITIONS = true;
-ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-ENV.APP.LOG_VIEW_LOOKUPS = true;
-</code></p>
+<h3 id="moving-forward">Moving Forward..</h3>
+
+<p>So with these informations, I was ready to migrate my app to Ember-CLI. Along the way, I came across errors and issues. Below are some useful tips to solve errors.</p>
+
+<ul>
+  <li>Solving errors along the way, Google Dev Console is our friend! So turn on the console to get started.</li>
+  <li>If your new to writing ES6 modules syntax, here is a good resource <a href="http://www.2ality.com/2014/09/es6-modules-final.html">ES6 Modules Final</a></li>
+  <li>Inside config/ -&gt; environment.js.. uncomment out</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">ENV</span><span class="p">.</span><span class="nx">APP</span><span class="p">.</span><span class="nx">LOG_RESOLVER</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="nx">ENV</span><span class="p">.</span><span class="nx">APP</span><span class="p">.</span><span class="nx">LOG_ACTIVE_GENERATION</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="nx">ENV</span><span class="p">.</span><span class="nx">APP</span><span class="p">.</span><span class="nx">LOG_TRANSITIONS</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="nx">ENV</span><span class="p">.</span><span class="nx">APP</span><span class="p">.</span><span class="nx">LOG_TRANSITIONS_INTERNAL</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="nx">ENV</span><span class="p">.</span><span class="nx">APP</span><span class="p">.</span><span class="nx">LOG_VIEW_LOOKUPS</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span></code></pre></div>
 
 <p>These will log errors and transitions in your Dev Console.
-Follow Ember-CLI’s documentation on Getting Started section &gt; Folder Structure and its Purpose
-Another important topic is Using Modules &amp; The Resolver</p>
+- Follow Ember-CLI’s documentation on <strong>Getting Started</strong> section &gt; <strong>Folder Structure and its Purpose</strong>
+- Another important topic is <strong>Using Modules &amp; The Resolver</strong></p>
 
-<p>** Note, that the name of the variable used in the exported module doesn’t have any influence on the resolver. It’s the filename that is used to resolve modules.</p>
+<p>** <em>Note, that the name of the variable used in the exported module doesn’t have any influence on the resolver. It’s the filename that is used to resolve modules.</em></p>
 
 <p>So with this, in my opinion, it seems like Ember-CLI has its own way of organizing files (as described “convention over configuration”). I was able to Export one module per file.
-*Please if you found a way to Export multiple modules per file, feel free to share.
-And Naming Convention section
-Also, keep in mind the file path when importing a module.</p>
+** <em>Please if you found a way to Export multiple modules per file, feel free to share.</em></p>
+
+<ul>
+  <li>And Naming Convention section</li>
+  <li>Also, keep in mind the file path when importing a module.</li>
+</ul>
 
   </article>
 

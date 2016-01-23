@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "JS Interview Question: Explain how this work in JavaScript"
+title: "Explain how this work in JavaScript"
 date: 2016-01-05 10:47:13
 tags:
 - javascript

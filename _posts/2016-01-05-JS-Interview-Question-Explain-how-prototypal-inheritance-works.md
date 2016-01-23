@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "JS Interview Question: Explain how prototypal inheritance works"
+title: "Explain how prototypal inheritance works"
 date: 2016-01-05 10:47:13
 tags:
 - javascript

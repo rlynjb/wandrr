@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "JS Interview Question: Explain why the following doesn’t work as an IIFE"
+title: "Explain why the following doesn’t work as an IIFE"
 date: 2016-01-08 10:47:13
 tags:
 - javascript

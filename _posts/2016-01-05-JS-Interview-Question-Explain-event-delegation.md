@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "JS Interview Question: Explain event delegation"
+title: "Explain event delegation"
 date: 2016-01-05 10:47:13
 tags:
 - javascript
