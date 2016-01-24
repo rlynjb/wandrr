@@ -17,8 +17,8 @@ I reside in Las Vegas, NV and stack I am currently using for work are: Wordpress
 
 ### Brydan Solutions
 
-* Front-End Developer/UI Specialist
-* April 2015 - Present
+- Front-End Developer/UI Specialist
+- April 2015 - Present
 
 Maintain and built websites. Responsible for Front-end architecture and stack.
 I am responsible for building these websites, but I do not, alone, fully take credit. I worked with other developers building these projects.
