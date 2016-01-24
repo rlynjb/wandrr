@@ -21,6 +21,12 @@ I reside in Las Vegas, NV and stack I am currently using for work are: Wordpress
 * April 2015 - Present
 
 Maintain and built websites. Responsible for Front-end architecture and stack.
+I am responsible for building these websites, but I do not, alone, fully take credit. I worked with other developers building these projects.
+
+**Projects I've worked on..**
+
+- [Golden Entertainment](http://goldenent.com)
+- [PT's Entertainment Group](#) - coming soon
 
 -----
 
@@ -31,6 +37,10 @@ Maintain and built websites. Responsible for Front-end architecture and stack.
 
 Developed R&D skills and coding skills working in a 3 member development team. Contributed code and features in main web application. Helped optimized CSS in application.
 
+**Main Web Application Project**
+
+- [Persopo](http://persopo.com)
+
 -----
 
 ### Galavantier
@@ -39,3 +49,7 @@ Developed R&D skills and coding skills working in a 3 member development team. C
 * October 2011 - November 2013
 
 Responsible for HTML/CSS, coding email templates, landing pages, prototypes, converting design comps to template using Drupal. Experienced working in a Development team with Agile.
+
+**Main Web Application Project**
+
+- [Galavantier](http://galavantier.com)
