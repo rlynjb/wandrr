@@ -36,6 +36,7 @@ I am responsible for building these websites, but I do not, alone, fully take cr
 * May 2014 - March 2015
 
 Developed R&D skills and coding skills working in a 3 member development team. Contributed code and features in main web application. Helped optimized CSS in application.
+Responsible for converting main web application to responsive website.
 
 **Main Web Application Project**
 
@@ -49,6 +50,7 @@ Developed R&D skills and coding skills working in a 3 member development team. C
 * October 2011 - November 2013
 
 Responsible for HTML/CSS, coding email templates, landing pages, prototypes, converting design comps to template using Drupal. Experienced working in a Development team with Agile.
+Responsible for converting main web application to responsive website.
 
 **Main Web Application Project**
 
