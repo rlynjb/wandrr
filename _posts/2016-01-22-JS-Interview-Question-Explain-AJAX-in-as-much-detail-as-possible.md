@@ -20,30 +20,77 @@ There are many ways we can implement AJAX, via jQuery or native JavaScript. Sinc
 
 -----
 
-To make an HTTP Request to the server, we need to instantiate a class called XMLHttpRequest. Microsoft developed this object called XMLHttp, and then Mozilla developed their own version and called it XMLHttpRequest. If you want to know its history. 
+**A bit of History** <br>
+To make an HTTP Request to the server, we need to instantiate a class called XMLHttpRequest. Microsoft developed this object called XMLHttp, and then Mozilla developed their own version and called it XMLHttpRequest. Other browsers, Safari, including Microsoft, followed and implemented XMLHttpRequest object as well. If you want to know its history. 
 [Ref: Wikipedia - XMLHttpRequest](https://en.wikipedia.org/wiki/XMLHttpRequest)
 
 {% highlight html %}
+<!--
+  This is just a simple AJAX example.
+  credits to developer.mozilla.org for sample code.
+  comments are explained by me. :-p
+-->
+
 <span id="ajaxButton" style="cursor: pointer; text-decoration: underline">
   Make a request
 </span>
 
 <script type="text/javascript">
+  /*
+    here, we are using an IIFE to wrap our code so our
+    variables and closures doesn't pollute the global namespace
+  */
   (function() {
     var httpRequest;
-    
+
+    /*
+      this is an event handler,
+      once user clicked on ajaxButton html element,
+      it will execute the onclick function and call the
+      makeRequest function with a given 'test.html' value on its parameter.
+      the 'test.html' url is just a sample api url which we'll be
+      making a request from a server and expect a server response.
+    */
     document.getElementById("ajaxButton").onclick = function() {
       makeRequest('test.html');
     };
 
     function makeRequest(url) {
+      /*
+        as mentioned above, we need to instantiate a new class 
+        of XMLHttpRequest so we can make a HTTP request to the server.
+        we are assigning this class to a variable defined on our
+        outer scope so its accessible throughout our IIFE scope.
+      */
       httpRequest = new XMLHttpRequest();
 
+      /*
+        were doing a Feature Detection here.
+        as the name implies, we are just checking if
+        XMLHttpRequest host object is NOT available and
+        setting an alert action to notify user if
+        XMLHttpRequest is not available on their browser/environment.
+      */
       if (!httpRequest) {
         alert('Giving up :( Cannot create an XMLHTTP instance');
         return false;
       }
+
+      /*
+        before sending our HTTP server request,
+        we need to set a handler for our server response.
+        We can do this by assigning a function to our
+        XMLHttpRequest object property 'onreadystatechange'.
+        Or
+        We can also assign an anonymous function, so 'onreadystatechange'
+        doesn't need to carry a reference to a function.
+        But for organization, we will just use the former method.
+      */
       httpRequest.onreadystatechange = alertContents;
+
+      /*
+        Now that we have set our request server response handler, 
+      */
       httpRequest.open('GET', url);
       httpRequest.send();
     }

@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 25 Jan 2016 09:53:56 -0800</pubDate>
-    <lastBuildDate>Mon, 25 Jan 2016 09:53:56 -0800</lastBuildDate>
+    <pubDate>Mon, 25 Jan 2016 14:51:45 -0800</pubDate>
+    <lastBuildDate>Mon, 25 Jan 2016 14:51:45 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -25,29 +25,76 @@ AJAX, as in its acronym states, is Asynchronous in nature. This means, it can re
 
 &lt;hr /&gt;
 
-&lt;p&gt;To make an HTTP Request to the server, we need to instantiate a class called XMLHttpRequest. Microsoft developed this object called XMLHttp, and then Mozilla developed their own version and called it XMLHttpRequest. If you want to know its history. 
+&lt;p&gt;&lt;strong&gt;A bit of History&lt;/strong&gt; &lt;br /&gt;
+To make an HTTP Request to the server, we need to instantiate a class called XMLHttpRequest. Microsoft developed this object called XMLHttp, and then Mozilla developed their own version and called it XMLHttpRequest. Other browsers, Safari, including Microsoft, followed and implemented XMLHttpRequest object as well. If you want to know its history. 
 &lt;a href=&quot;https://en.wikipedia.org/wiki/XMLHttpRequest&quot;&gt;Ref: Wikipedia - XMLHttpRequest&lt;/a&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;ajaxButton&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;cursor: pointer; text-decoration: underline&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!--&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;  This is just a simple AJAX example.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;  credits to developer.mozilla.org for sample code.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;  comments are explained by me. :-p&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;--&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;ajaxButton&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;cursor: pointer; text-decoration: underline&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
   Make a request
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
 
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    here, we are using an IIFE to wrap our code so our&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    variables and closures doesn&amp;#39;t pollute the global namespace&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;  */&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;httpRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    
+
+    &lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;      this is an event handler,&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;      once user clicked on ajaxButton html element,&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;      it will execute the onclick function and call the&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;      makeRequest function with a given &amp;#39;test.html&amp;#39; value on its parameter.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;      the &amp;#39;test.html&amp;#39; url is just a sample api url which we&amp;#39;ll be&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;      making a request from a server and expect a server response.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    */&lt;/span&gt;
     &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;ajaxButton&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onclick&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
       &lt;span class=&quot;nx&quot;&gt;makeRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;test.html&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
 
     &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;makeRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        as mentioned above, we need to instantiate a new class &lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        of XMLHttpRequest so we can make a HTTP request to the server.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        we are assigning this class to a variable defined on our&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        outer scope so its accessible throughout our IIFE scope.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;      */&lt;/span&gt;
       &lt;span class=&quot;nx&quot;&gt;httpRequest&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;XMLHttpRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 
+      &lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        were doing a Feature Detection here.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        as the name implies, we are just checking if&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        XMLHttpRequest host object is NOT available and&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        setting an alert action to notify user if&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        XMLHttpRequest is not available on their browser/environment.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;      */&lt;/span&gt;
       &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;httpRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Giving up :( Cannot create an XMLHTTP instance&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
       &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+      &lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        before sending our HTTP server request,&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        we need to set a handler for our server response.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        We can do this by assigning a function to our&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        XMLHttpRequest object property &amp;#39;onreadystatechange&amp;#39;.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        Or&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        We can also assign an anonymous function, so &amp;#39;onreadystatechange&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        doesn&amp;#39;t need to carry a reference to a function.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        But for organization, we will just use the former method.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;      */&lt;/span&gt;
       &lt;span class=&quot;nx&quot;&gt;httpRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onreadystatechange&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;alertContents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+      &lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        Now that we have set our request server response handler, &lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;      */&lt;/span&gt;
       &lt;span class=&quot;nx&quot;&gt;httpRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
       &lt;span class=&quot;nx&quot;&gt;httpRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -215,7 +262,7 @@ Other two are &lt;code&gt;apply() &amp;amp; call()&lt;/code&gt;. Difference betw
 
 &lt;p&gt;Below is an interesting (coz its new to me) Code sample with commented out explanation. It shows how &lt;code&gt;this&lt;/code&gt; keyword can be mistakenly bound to an HTML element and how &lt;code&gt;bind()&lt;/code&gt; can fix it.&lt;/p&gt;
 
-&lt;iframe height=&quot;268&quot; scrolling=&quot;no&quot; src=&quot;//codepen.io/rlynjb/embed/qbpZVX/?height=268&amp;amp;theme-id=20698&amp;amp;default-tab=js&quot; frameborder=&quot;no&quot; allowtransparency=&quot;true&quot; allowfullscreen=&quot;true&quot; style=&quot;width: 100%;&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/rlynjb/pen/qbpZVX/&quot;&gt;Learning Javascript&#39;s bind method&lt;/a&gt; by rlynjb (&lt;a href=&quot;http://codepen.io/rlynjb&quot;&gt;@rlynjb&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
+&lt;iframe height=&quot;268&quot; scrolling=&quot;no&quot; src=&quot;//codepen.io/rlynjb/embed/qbpZVX/?height=268&amp;amp;theme-id=20698&amp;amp;default-tab=js&quot; frameborder=&quot;no&quot; allowtransparency=&quot;true&quot; allowfullscreen=&quot;true&quot; style=&quot;width: 100%;&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/rlynjb/pen/qbpZVX/&quot;&gt;Learning Javascript's bind method&lt;/a&gt; by rlynjb (&lt;a href=&quot;http://codepen.io/rlynjb&quot;&gt;@rlynjb&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
 &lt;/iframe&gt;
 
 &lt;hr /&gt;
@@ -256,7 +303,7 @@ Invoking a function with &lt;code&gt;.apply&lt;/code&gt; and &lt;code&gt;.call&l
 
 &lt;p&gt;Below is a code example with commented explanation.&lt;/p&gt;
 
-&lt;iframe height=&quot;268&quot; scrolling=&quot;no&quot; src=&quot;//codepen.io/rlynjb/embed/JGOmwp/?height=268&amp;amp;theme-id=20698&amp;amp;default-tab=js&quot; frameborder=&quot;no&quot; allowtransparency=&quot;true&quot; allowfullscreen=&quot;true&quot; style=&quot;width: 100%;&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/rlynjb/pen/JGOmwp/&quot;&gt;learning JavaScript&#39;s .apply and .call&lt;/a&gt; by rlynjb (&lt;a href=&quot;http://codepen.io/rlynjb&quot;&gt;@rlynjb&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
+&lt;iframe height=&quot;268&quot; scrolling=&quot;no&quot; src=&quot;//codepen.io/rlynjb/embed/JGOmwp/?height=268&amp;amp;theme-id=20698&amp;amp;default-tab=js&quot; frameborder=&quot;no&quot; allowtransparency=&quot;true&quot; allowfullscreen=&quot;true&quot; style=&quot;width: 100%;&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/rlynjb/pen/JGOmwp/&quot;&gt;learning JavaScript's .apply and .call&lt;/a&gt; by rlynjb (&lt;a href=&quot;http://codepen.io/rlynjb&quot;&gt;@rlynjb&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
 &lt;/iframe&gt;
 
 &lt;hr /&gt;

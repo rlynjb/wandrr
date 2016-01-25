@@ -90,29 +90,76 @@ AJAX, as in its acronym states, is Asynchronous in nature. This means, it can re
 
 <hr />
 
-<p>To make an HTTP Request to the server, we need to instantiate a class called XMLHttpRequest. Microsoft developed this object called XMLHttp, and then Mozilla developed their own version and called it XMLHttpRequest. If you want to know its history. 
+<p><strong>A bit of History</strong> <br />
+To make an HTTP Request to the server, we need to instantiate a class called XMLHttpRequest. Microsoft developed this object called XMLHttp, and then Mozilla developed their own version and called it XMLHttpRequest. Other browsers, Safari, including Microsoft, followed and implemented XMLHttpRequest object as well. If you want to know its history. 
 <a href="https://en.wikipedia.org/wiki/XMLHttpRequest">Ref: Wikipedia - XMLHttpRequest</a></p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;ajaxButton&quot;</span> <span class="na">style=</span><span class="s">&quot;cursor: pointer; text-decoration: underline&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!--</span>
+<span class="c">  This is just a simple AJAX example.</span>
+<span class="c">  credits to developer.mozilla.org for sample code.</span>
+<span class="c">  comments are explained by me. :-p</span>
+<span class="c">--&gt;</span>
+
+<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;ajaxButton&quot;</span> <span class="na">style=</span><span class="s">&quot;cursor: pointer; text-decoration: underline&quot;</span><span class="nt">&gt;</span>
   Make a request
 <span class="nt">&lt;/span&gt;</span>
 
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+  <span class="cm">/*</span>
+<span class="cm">    here, we are using an IIFE to wrap our code so our</span>
+<span class="cm">    variables and closures doesn&#39;t pollute the global namespace</span>
+<span class="cm">  */</span>
   <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">httpRequest</span><span class="p">;</span>
-    
+
+    <span class="cm">/*</span>
+<span class="cm">      this is an event handler,</span>
+<span class="cm">      once user clicked on ajaxButton html element,</span>
+<span class="cm">      it will execute the onclick function and call the</span>
+<span class="cm">      makeRequest function with a given &#39;test.html&#39; value on its parameter.</span>
+<span class="cm">      the &#39;test.html&#39; url is just a sample api url which we&#39;ll be</span>
+<span class="cm">      making a request from a server and expect a server response.</span>
+<span class="cm">    */</span>
     <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;ajaxButton&quot;</span><span class="p">).</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
       <span class="nx">makeRequest</span><span class="p">(</span><span class="s1">&#39;test.html&#39;</span><span class="p">);</span>
     <span class="p">};</span>
 
     <span class="kd">function</span> <span class="nx">makeRequest</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
+      <span class="cm">/*</span>
+<span class="cm">        as mentioned above, we need to instantiate a new class </span>
+<span class="cm">        of XMLHttpRequest so we can make a HTTP request to the server.</span>
+<span class="cm">        we are assigning this class to a variable defined on our</span>
+<span class="cm">        outer scope so its accessible throughout our IIFE scope.</span>
+<span class="cm">      */</span>
       <span class="nx">httpRequest</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
 
+      <span class="cm">/*</span>
+<span class="cm">        were doing a Feature Detection here.</span>
+<span class="cm">        as the name implies, we are just checking if</span>
+<span class="cm">        XMLHttpRequest host object is NOT available and</span>
+<span class="cm">        setting an alert action to notify user if</span>
+<span class="cm">        XMLHttpRequest is not available on their browser/environment.</span>
+<span class="cm">      */</span>
       <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">httpRequest</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Giving up :( Cannot create an XMLHTTP instance&#39;</span><span class="p">);</span>
         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
       <span class="p">}</span>
+
+      <span class="cm">/*</span>
+<span class="cm">        before sending our HTTP server request,</span>
+<span class="cm">        we need to set a handler for our server response.</span>
+<span class="cm">        We can do this by assigning a function to our</span>
+<span class="cm">        XMLHttpRequest object property &#39;onreadystatechange&#39;.</span>
+<span class="cm">        Or</span>
+<span class="cm">        We can also assign an anonymous function, so &#39;onreadystatechange&#39;</span>
+<span class="cm">        doesn&#39;t need to carry a reference to a function.</span>
+<span class="cm">        But for organization, we will just use the former method.</span>
+<span class="cm">      */</span>
       <span class="nx">httpRequest</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="nx">alertContents</span><span class="p">;</span>
+
+      <span class="cm">/*</span>
+<span class="cm">        Now that we have set our request server response handler, </span>
+<span class="cm">      */</span>
       <span class="nx">httpRequest</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="nx">url</span><span class="p">);</span>
       <span class="nx">httpRequest</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
     <span class="p">}</span>
