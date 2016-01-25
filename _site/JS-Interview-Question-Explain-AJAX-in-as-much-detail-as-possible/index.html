@@ -158,10 +158,36 @@ To make an HTTP Request to the server, we need to instantiate a class called XML
       <span class="nx">httpRequest</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="nx">alertContents</span><span class="p">;</span>
 
       <span class="cm">/*</span>
-<span class="cm">        Now that we have set our request server response handler, </span>
+<span class="cm">        Now that we have set our request server response handler,</span>
+<span class="cm">        we&#39;ll need to make the request.</span>
+<span class="cm">        - 1st parameter, is the HTTP request method (GET, POST, DELETE, etc).</span>
+<span class="cm">          There are other request methods, whichever our server supports.</span>
+<span class="cm">          It&#39;s also good practice to define these request methods</span>
+<span class="cm">          in capital letters as per the HTTP standard or there are browsers</span>
+<span class="cm">          (Firefox) that may not be able to process the request.</span>
+<span class="cm">        - 2nd parameter, is the url for the data we are requesting.</span>
+<span class="cm">          Make sure to use the exact domain name or it will throw a &#39;Permission Denied&#39; error.</span>
+<span class="cm">          For security purpose, we cannot make a 3rd party request, if needed,</span>
+<span class="cm">          this is a CORS issue,</span>
+<span class="cm">          ref: https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS</span>
+<span class="cm">        - 3rd parameter, just sets whether the request is asynchronous. This is</span>
+<span class="cm">          optional and default is set to true.</span>
 <span class="cm">      */</span>
       <span class="nx">httpRequest</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="nx">url</span><span class="p">);</span>
+
+      <span class="cm">/*</span>
+<span class="cm">        As the method name implies, this HTTP request object method opens/sends the request.</span>
+<span class="cm">        If we are simply doing a &#39;GET&#39; request, we can leave the parameter empty, but</span>
+<span class="cm">        if we are &#39;POST&#39;ing data, we can pass in a value formatted in either</span>
+<span class="cm">        query string, JSON, SOAP, etc.</span>
+<span class="cm">      */</span>
       <span class="nx">httpRequest</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+
+      <span class="cm">/*</span>
+<span class="cm">        NOTE:</span>
+<span class="cm">        If we want to POST data, we may need to set the MIME type of the request.</span>
+<span class="cm">        Ex: httpRequest.setRequestHeader(&#39;Content-Type&#39;, &#39;application/x-www-form-urlencoded&#39;);</span>
+<span class="cm">      */</span>
     <span class="p">}</span>
 
     <span class="kd">function</span> <span class="nx">alertContents</span><span class="p">()</span> <span class="p">{</span>
@@ -247,6 +273,16 @@ To make an HTTP Request to the server, we need to instantiate a class called XML
 
 </footer>
 
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-72875714-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
 
   </body>
 

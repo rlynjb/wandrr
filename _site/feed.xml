@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 25 Jan 2016 14:51:45 -0800</pubDate>
-    <lastBuildDate>Mon, 25 Jan 2016 14:51:45 -0800</lastBuildDate>
+    <pubDate>Mon, 25 Jan 2016 15:57:42 -0800</pubDate>
+    <lastBuildDate>Mon, 25 Jan 2016 15:57:42 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -93,10 +93,36 @@ To make an HTTP Request to the server, we need to instantiate a class called XML
       &lt;span class=&quot;nx&quot;&gt;httpRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onreadystatechange&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;alertContents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
       &lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;        Now that we have set our request server response handler, &lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        Now that we have set our request server response handler,&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        we&amp;#39;ll need to make the request.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        - 1st parameter, is the HTTP request method (GET, POST, DELETE, etc).&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;          There are other request methods, whichever our server supports.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;          It&amp;#39;s also good practice to define these request methods&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;          in capital letters as per the HTTP standard or there are browsers&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;          (Firefox) that may not be able to process the request.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        - 2nd parameter, is the url for the data we are requesting.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;          Make sure to use the exact domain name or it will throw a &amp;#39;Permission Denied&amp;#39; error.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;          For security purpose, we cannot make a 3rd party request, if needed,&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;          this is a CORS issue,&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;          ref: https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        - 3rd parameter, just sets whether the request is asynchronous. This is&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;          optional and default is set to true.&lt;/span&gt;
 &lt;span class=&quot;cm&quot;&gt;      */&lt;/span&gt;
       &lt;span class=&quot;nx&quot;&gt;httpRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+      &lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        As the method name implies, this HTTP request object method opens/sends the request.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        If we are simply doing a &amp;#39;GET&amp;#39; request, we can leave the parameter empty, but&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        if we are &amp;#39;POST&amp;#39;ing data, we can pass in a value formatted in either&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        query string, JSON, SOAP, etc.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;      */&lt;/span&gt;
       &lt;span class=&quot;nx&quot;&gt;httpRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+      &lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        NOTE:&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        If we want to POST data, we may need to set the MIME type of the request.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        Ex: httpRequest.setRequestHeader(&amp;#39;Content-Type&amp;#39;, &amp;#39;application/x-www-form-urlencoded&amp;#39;);&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;      */&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
     &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;alertContents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;

@@ -89,10 +89,36 @@ To make an HTTP Request to the server, we need to instantiate a class called XML
       httpRequest.onreadystatechange = alertContents;
 
       /*
-        Now that we have set our request server response handler, 
+        Now that we have set our request server response handler,
+        we'll need to make the request.
+        - 1st parameter, is the HTTP request method (GET, POST, DELETE, etc).
+          There are other request methods, whichever our server supports.
+          It's also good practice to define these request methods
+          in capital letters as per the HTTP standard or there are browsers
+          (Firefox) that may not be able to process the request.
+        - 2nd parameter, is the url for the data we are requesting.
+          Make sure to use the exact domain name or it will throw a 'Permission Denied' error.
+          For security purpose, we cannot make a 3rd party request, if needed,
+          this is a CORS issue,
+          ref: https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
+        - 3rd parameter, just sets whether the request is asynchronous. This is
+          optional and default is set to true.
       */
       httpRequest.open('GET', url);
+
+      /*
+        As the method name implies, this HTTP request object method opens/sends the request.
+        If we are simply doing a 'GET' request, we can leave the parameter empty, but
+        if we are 'POST'ing data, we can pass in a value formatted in either
+        query string, JSON, SOAP, etc.
+      */
       httpRequest.send();
+
+      /*
+        NOTE:
+        If we want to POST data, we may need to set the MIME type of the request.
+        Ex: httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      */
     }
 
     function alertContents() {
