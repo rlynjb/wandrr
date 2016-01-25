@@ -14,13 +14,52 @@ AJAX is a way to communicate to the server without reloading the page. Once we r
 
 **Technically..** <br>
 AJAX is acronym for Asynchronous JavaScript and XML. It uses a host object called XMLHttpRequest to communicate to a server-side script to retrieve data formatted in either JSON, XML, HTML, or plain text.
-AJAX, as in its acronym states, is Asynchronous in nature. This means, it can receive data through user or automation event interaction without the need to refresh the page, thus, updating and reloading certain portion of the page.
+AJAX, as in its acronym states, is Asynchronous in nature. This means, it can receive data through user interaction or automation event without the need to refresh the page, thus, updating and reloading certain portion of the page.
 
-There are many ways we can use AJAX, via jQuery or native JavaScript. Since this is for learning purposes, I am going to use native JavaScript, outline the method, and explain how each objects work.
+There are many ways we can implement AJAX, via jQuery or native JavaScript. Since this is for learning purposes, I am going to use native JavaScript, outline the method, and explain how each objects work.
 
 -----
 
-To make an HTTP Request to the server, we need to instantiate a class called XMLHttpRequest. Surprisingly, Microsoft popularized this object. If you want to know its history. Ref: https://en.wikipedia.org/wiki/XMLHttpRequest
+To make an HTTP Request to the server, we need to instantiate a class called XMLHttpRequest. Microsoft developed this object called XMLHttp, and then Mozilla developed their own version and called it XMLHttpRequest. If you want to know its history. 
+[Ref: Wikipedia - XMLHttpRequest](https://en.wikipedia.org/wiki/XMLHttpRequest)
+
+{% highlight html %}
+<span id="ajaxButton" style="cursor: pointer; text-decoration: underline">
+  Make a request
+</span>
+
+<script type="text/javascript">
+  (function() {
+    var httpRequest;
+    
+    document.getElementById("ajaxButton").onclick = function() {
+      makeRequest('test.html');
+    };
+
+    function makeRequest(url) {
+      httpRequest = new XMLHttpRequest();
+
+      if (!httpRequest) {
+        alert('Giving up :( Cannot create an XMLHTTP instance');
+        return false;
+      }
+      httpRequest.onreadystatechange = alertContents;
+      httpRequest.open('GET', url);
+      httpRequest.send();
+    }
+
+    function alertContents() {
+      if (httpRequest.readyState === XMLHttpRequest.DONE) {
+        if (httpRequest.status === 200) {
+          alert(httpRequest.responseText);
+        } else {
+          alert('There was a problem with the request.');
+        }
+      }
+    }
+  })();
+</script>
+{% endhighlight %}
 
 -----
 

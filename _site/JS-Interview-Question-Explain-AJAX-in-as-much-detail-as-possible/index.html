@@ -84,13 +84,50 @@ AJAX is a way to communicate to the server without reloading the page. Once we r
 
 <p><strong>Technically..</strong> <br />
 AJAX is acronym for Asynchronous JavaScript and XML. It uses a host object called XMLHttpRequest to communicate to a server-side script to retrieve data formatted in either JSON, XML, HTML, or plain text.
-AJAX, as in its acronym states, is Asynchronous in nature. This means, it can receive data through user or automation event interaction without the need to refresh the page, thus, updating and reloading certain portion of the page.</p>
+AJAX, as in its acronym states, is Asynchronous in nature. This means, it can receive data through user interaction or automation event without the need to refresh the page, thus, updating and reloading certain portion of the page.</p>
 
-<p>There are many ways we can use AJAX, via jQuery or native JavaScript. Since this is for learning purposes, I am going to use native JavaScript, outline the method, and explain how each objects work.</p>
+<p>There are many ways we can implement AJAX, via jQuery or native JavaScript. Since this is for learning purposes, I am going to use native JavaScript, outline the method, and explain how each objects work.</p>
 
 <hr />
 
-<p>To make an HTTP Request to the server, we need to instantiate a class called XMLHttpRequest. Surprisingly, Microsoft popularized this object. If you want to know its history. Ref: https://en.wikipedia.org/wiki/XMLHttpRequest</p>
+<p>To make an HTTP Request to the server, we need to instantiate a class called XMLHttpRequest. Microsoft developed this object called XMLHttp, and then Mozilla developed their own version and called it XMLHttpRequest. If you want to know its history. 
+<a href="https://en.wikipedia.org/wiki/XMLHttpRequest">Ref: Wikipedia - XMLHttpRequest</a></p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;ajaxButton&quot;</span> <span class="na">style=</span><span class="s">&quot;cursor: pointer; text-decoration: underline&quot;</span><span class="nt">&gt;</span>
+  Make a request
+<span class="nt">&lt;/span&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+  <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">httpRequest</span><span class="p">;</span>
+    
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;ajaxButton&quot;</span><span class="p">).</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">makeRequest</span><span class="p">(</span><span class="s1">&#39;test.html&#39;</span><span class="p">);</span>
+    <span class="p">};</span>
+
+    <span class="kd">function</span> <span class="nx">makeRequest</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">httpRequest</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">httpRequest</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Giving up :( Cannot create an XMLHTTP instance&#39;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="nx">httpRequest</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="nx">alertContents</span><span class="p">;</span>
+      <span class="nx">httpRequest</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="nx">url</span><span class="p">);</span>
+      <span class="nx">httpRequest</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">alertContents</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">httpRequest</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="nx">XMLHttpRequest</span><span class="p">.</span><span class="nx">DONE</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">httpRequest</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">alert</span><span class="p">(</span><span class="nx">httpRequest</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;There was a problem with the request.&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">})();</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
 
 <hr />
 
