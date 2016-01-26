@@ -139,11 +139,24 @@ To make an HTTP Request to the server, we need to instantiate a class called XML
         ref: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest#Properties
       */
       if (httpRequest.readyState === XMLHttpRequest.DONE) {
+        /*
+          Next, we'll check for HTTP Status Code. Most common HTTP Status Codes I've
+          encountered are 200 OK, 403 Forbidden Error, and 500 Server Error.
+          There is a list of HTTP Status Code available online with description of code.
+          This if statement is just checking for which HTTP Status Code to respond to and
+          execute code for whatever we want to do with the data.
+        */
         if (httpRequest.status === 200) {
           alert(httpRequest.responseText);
         } else {
           alert('There was a problem with the request.');
         }
+
+        /*
+          There are 2 options to access data: httpRequest.responseText and httpRequest.responseXML
+          Step above is only valid if asynchronous is set to true, if not, we don't need to specify
+          a function.
+        */
       }
     }
   })();

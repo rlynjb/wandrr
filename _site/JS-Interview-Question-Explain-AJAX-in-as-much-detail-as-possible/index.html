@@ -208,11 +208,24 @@ To make an HTTP Request to the server, we need to instantiate a class called XML
 <span class="cm">        ref: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest#Properties</span>
 <span class="cm">      */</span>
       <span class="k">if</span> <span class="p">(</span><span class="nx">httpRequest</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="nx">XMLHttpRequest</span><span class="p">.</span><span class="nx">DONE</span><span class="p">)</span> <span class="p">{</span>
+        <span class="cm">/*</span>
+<span class="cm">          Next, we&#39;ll check for HTTP Status Code. Most common HTTP Status Codes I&#39;ve</span>
+<span class="cm">          encountered are 200 OK, 403 Forbidden Error, and 500 Server Error.</span>
+<span class="cm">          There is a list of HTTP Status Code available online with description of code.</span>
+<span class="cm">          This if statement is just checking for which HTTP Status Code to respond to and</span>
+<span class="cm">          execute code for whatever we want to do with the data.</span>
+<span class="cm">        */</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">httpRequest</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
           <span class="nx">alert</span><span class="p">(</span><span class="nx">httpRequest</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
         <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
           <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;There was a problem with the request.&#39;</span><span class="p">);</span>
         <span class="p">}</span>
+
+        <span class="cm">/*</span>
+<span class="cm">          There are 2 options to access data: httpRequest.responseText and httpRequest.responseXML</span>
+<span class="cm">          Step above is only valid if asynchronous is set to true, if not, we don&#39;t need to specify</span>
+<span class="cm">          a function.</span>
+<span class="cm">        */</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">})();</span>

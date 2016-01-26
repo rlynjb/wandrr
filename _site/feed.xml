@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 25 Jan 2016 16:46:40 -0800</pubDate>
-    <lastBuildDate>Mon, 25 Jan 2016 16:46:40 -0800</lastBuildDate>
+    <pubDate>Tue, 26 Jan 2016 09:09:30 -0800</pubDate>
+    <lastBuildDate>Tue, 26 Jan 2016 09:09:30 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -143,11 +143,24 @@ To make an HTTP Request to the server, we need to instantiate a class called XML
 &lt;span class=&quot;cm&quot;&gt;        ref: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest#Properties&lt;/span&gt;
 &lt;span class=&quot;cm&quot;&gt;      */&lt;/span&gt;
       &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;httpRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;readyState&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;XMLHttpRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;DONE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;          Next, we&amp;#39;ll check for HTTP Status Code. Most common HTTP Status Codes I&amp;#39;ve&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;          encountered are 200 OK, 403 Forbidden Error, and 500 Server Error.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;          There is a list of HTTP Status Code available online with description of code.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;          This if statement is just checking for which HTTP Status Code to respond to and&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;          execute code for whatever we want to do with the data.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        */&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;httpRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
           &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;httpRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;responseText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
           &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;There was a problem with the request.&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+        &lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;          There are 2 options to access data: httpRequest.responseText and httpRequest.responseXML&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;          Step above is only valid if asynchronous is set to true, if not, we don&amp;#39;t need to specify&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;          a function.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        */&lt;/span&gt;
       &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;})();&lt;/span&gt;
