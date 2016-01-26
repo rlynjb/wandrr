@@ -201,6 +201,12 @@ To make an HTTP Request to the server, we need to instantiate a class called XML
 <span class="cm">      &#39;onreadystatechange&#39; object property above.</span>
 <span class="cm">    */</span>
     <span class="kd">function</span> <span class="nx">alertContents</span><span class="p">()</span> <span class="p">{</span>
+      <span class="cm">/*</span>
+<span class="cm">        this if statement checks for the state of the request.</span>
+<span class="cm">        if the &#39;readyState&#39; has a value of XMLHttpRequest.DONE (evaluating to 4),</span>
+<span class="cm">        it means the server response has been received and its OK for us to continue processing.</span>
+<span class="cm">        ref: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest#Properties</span>
+<span class="cm">      */</span>
       <span class="k">if</span> <span class="p">(</span><span class="nx">httpRequest</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="nx">XMLHttpRequest</span><span class="p">.</span><span class="nx">DONE</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">httpRequest</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
           <span class="nx">alert</span><span class="p">(</span><span class="nx">httpRequest</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>

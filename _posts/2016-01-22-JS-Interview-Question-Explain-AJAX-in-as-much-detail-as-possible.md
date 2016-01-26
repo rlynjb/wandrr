@@ -132,6 +132,12 @@ To make an HTTP Request to the server, we need to instantiate a class called XML
       'onreadystatechange' object property above.
     */
     function alertContents() {
+      /*
+        this if statement checks for the state of the request.
+        if the 'readyState' has a value of XMLHttpRequest.DONE (evaluating to 4),
+        it means the server response has been received and its OK for us to continue processing.
+        ref: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest#Properties
+      */
       if (httpRequest.readyState === XMLHttpRequest.DONE) {
         if (httpRequest.status === 200) {
           alert(httpRequest.responseText);
