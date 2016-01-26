@@ -55,6 +55,9 @@ To make an HTTP Request to the server, we need to instantiate a class called XML
       makeRequest('test.html');
     };
 
+    /*
+      MAKING AN HTTP REQUEST
+    */
     function makeRequest(url) {
       /*
         as mentioned above, we need to instantiate a new class 
@@ -121,6 +124,13 @@ To make an HTTP Request to the server, we need to instantiate a class called XML
       */
     }
 
+    /*
+      HANDLING THE SERVER RESPONSE
+    */
+    /*
+      this is the same function declaration we've assigned to 
+      'onreadystatechange' object property above.
+    */
     function alertContents() {
       if (httpRequest.readyState === XMLHttpRequest.DONE) {
         if (httpRequest.status === 200) {
