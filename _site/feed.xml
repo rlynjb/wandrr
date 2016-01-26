@@ -6,9 +6,72 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 26 Jan 2016 09:31:34 -0800</pubDate>
-    <lastBuildDate>Tue, 26 Jan 2016 09:31:34 -0800</lastBuildDate>
+    <pubDate>Tue, 26 Jan 2016 13:58:58 -0800</pubDate>
+    <lastBuildDate>Tue, 26 Jan 2016 13:58:58 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Explain how JSONP works (and how it's not really AJAX)</title>
+        <description>&lt;h3 id=&quot;explain-how-jsonp-works-and-how-its-not-really-ajax&quot;&gt;Explain how JSONP works (and how it’s not really AJAX).&lt;/h3&gt;
+
+&lt;p&gt;JSONP (acronym for JavaScript Object Notation with Padding) is a common method to retrieve data from another domain and bypass CORS (Cross Origin Resource Sharing) rules.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;An overview of JSONP base on personal experience&lt;/strong&gt;&lt;br /&gt;
+I have used JSONP as a work around to get data by wrapping the response data in JSON format with a function callback set in query string as parameter and setting the callback as an object property of ajax object.&lt;/p&gt;
+
+&lt;p&gt;** &lt;em&gt;Note, I was using jQuery library when implementing AJAX with JSONP&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I’ve also heard of CORS as a set of rules regarding retrieving and transferring data or assets from 3rd parties or different domains from a client. This strictly applies to XMLHttpRequest for security reasons. Making HTTP Requests with XMLHTTPRequest object will only let us make request to our own domain and restricts us from different domain, thus, JSONP was created as a way to bypass this rule.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS&quot;&gt;More about CORS: HTTP access control (CORS)&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;How does JSONP work?&lt;/strong&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;After reading further, implementation of JSONP differ from JavaScript libraries to the actual native JavaScript.
+In native JavaScript, JSONP requests aren’t dispatched with XMLHttpRequest object, rather, a &lt;code&gt;script&lt;/code&gt; tag is added to the DOM, targeting its &lt;code&gt;src&lt;/code&gt; attribute with the url. Reason is &lt;code&gt;script&lt;/code&gt; tag does not have limitation to which domains it can retrieve its scripts from.
+Also, since JavaScript has a global scope, we can reference a function to handle incoming JSON data from a 3rd party api url and link that to our application.
+While, in JavaScript libraries such as jQuery, it automatically generate callback and clean up any inserted &lt;code&gt;script&lt;/code&gt; tags unto the DOM.&lt;/p&gt;
+
+&lt;p&gt;In order for JSON data to be wrapped in a function, the 3rd party API service needs to support JSONP feature. Usually, they will specify on their documentation how to implement JSONP. &lt;a href=&quot;http://forismatic.com/en/api/&quot;&gt;Here is an example: http://forismatic.com/en/api/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If you copy &amp;amp; paste the url below, this will return a simple quote formatted in JSON&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;http://api.forismatic.com/api/1.0/?method=getQuote&amp;amp;lang=en&amp;amp;format=json&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;While this url will return the same result except JSON data will be wrapped with a function since we explicitly specify format as jsonp and gave it a callback function&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;http://api.forismatic.com/api/1.0/?method=getQuote&amp;amp;lang=en&amp;amp;format=jsonp&amp;amp;jsonp=processQuote&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;When this loads unto our application from &lt;code&gt;script&lt;/code&gt; tag, the given callback name (function name) will get registered unto the global scope and will be available for us to use throughout our application.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;JSONP limits us with just retrieving &lt;code&gt;GET&lt;/code&gt; data. It does not let us create, update, or delete &lt;code&gt;CRUD&lt;/code&gt; data. That’s why its just a work around but it does have its advantages. For example, retrieving simple data from a weather api, etc. If you want to take advantage of these other HTTP methods, then its best to build your own simple API Server.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://johnnywey.wordpress.com/2012/05/20/jsonp-how-does-it-work/&quot;&gt;JSONP How does it work&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 26 Jan 2016 02:47:13 -0800</pubDate>
+        <link>http://www.wandrr.io/JS-Interview-Question-Explain-how-JSONP-works</link>
+        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Explain-how-JSONP-works</guid>
+        
+        <category>javascript</category>
+        
+        <category>interview question</category>
+        
+        
+      </item>
     
       <item>
         <title>Explain AJAX in as much detail as possible</title>
@@ -545,49 +608,6 @@ By adding the keyword &lt;code&gt;new&lt;/code&gt;. We are instantiating a new o
         <pubDate>Tue, 12 Jan 2016 02:47:13 -0800</pubDate>
         <link>http://www.wandrr.io/JS-Interview-Question-Whats-typical-use-case-for-anonymous-functions</link>
         <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Whats-typical-use-case-for-anonymous-functions</guid>
-        
-        <category>javascript</category>
-        
-        <category>interview question</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>What is a closure, and how/why would you use one?</title>
-        <description>&lt;h3 id=&quot;what-is-a-closure-and-howwhy-would-you-use-one&quot;&gt;What is a closure, and how/why would you use one?&lt;/h3&gt;
-
-&lt;p&gt;Closures are inner functions inside of an outer function. They have their own local scope and has access to outer function’s scope, parameters (but NOT arguments object), and they also have access to global variables.&lt;/p&gt;
-
-&lt;p&gt;From what I understand, Closures is a neat way to deal with scope issues. Reasons we use Closures is because Javascript is a function-level scope rather than as with other languages, block-level scope and Javascript is an asynchronous/event driven language. Example that Closure is frequently used is jQuery (ex. click()).&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;This is how Closures work.&lt;/strong&gt; &lt;br /&gt;
-1. After its outer function has been executed and has returned a value, closures can still run.
-2. Closures store references to the outer function’s variable, hence, we will always have access to the updated values of outer function’s variables.
-3. Since we have access to the updated values of outer function’s variables. We will have issue/bugs when a variable changes via for loop, but this can be fixed by using IIFE, Immediately Invoked Function Expression.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Below is a sample code of using Closure with IIFE.&lt;/p&gt;
-
-&lt;p&gt;** &lt;em&gt;Note, IIFE or Immediately Invoked Function Expression is another Javascript concept.&lt;/em&gt;&lt;/p&gt;
-
-&lt;iframe height=&quot;268&quot; scrolling=&quot;no&quot; src=&quot;//codepen.io/rlynjb/embed/vLZeyq/?height=268&amp;amp;theme-id=20698&amp;amp;default-tab=js&quot; frameborder=&quot;no&quot; allowtransparency=&quot;true&quot; allowfullscreen=&quot;true&quot; style=&quot;width: 100%;&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/rlynjb/pen/vLZeyq/&quot;&gt;learning javascript closures&lt;/a&gt; by rlynjb (&lt;a href=&quot;http://codepen.io/rlynjb&quot;&gt;@rlynjb&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
-&lt;/iframe&gt;
-
-&lt;hr /&gt;
-
-&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://javascriptissexy.com/understand-javascript-closures-with-ease/&quot;&gt;Understand JavaScript Closures With Ease&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 12 Jan 2016 02:47:13 -0800</pubDate>
-        <link>http://www.wandrr.io/JS-Interview-Question-What-is-closure-how-why-would-you-use-one</link>
-        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-What-is-closure-how-why-would-you-use-one</guid>
         
         <category>javascript</category>
         
