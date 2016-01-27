@@ -6,9 +6,40 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 26 Jan 2016 13:58:58 -0800</pubDate>
-    <lastBuildDate>Tue, 26 Jan 2016 13:58:58 -0800</lastBuildDate>
+    <pubDate>Wed, 27 Jan 2016 09:21:58 -0800</pubDate>
+    <lastBuildDate>Wed, 27 Jan 2016 09:21:58 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Have you ever used JavaScript templating?</title>
+        <description>&lt;h3 id=&quot;have-you-ever-used-javascript-templating-if-so-what-libraries-have-you-used&quot;&gt;Have you ever used JavaScript templating? If so, what libraries have you used?&lt;/h3&gt;
+
+</description>
+        <pubDate>Wed, 27 Jan 2016 02:47:13 -0800</pubDate>
+        <link>http://www.wandrr.io/Have-you-ever-used-JavaScript-templating</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Have-you-ever-used-JavaScript-templating</guid>
+        
+        <category>javascript</category>
+        
+        <category>interview question</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Explain 'hoisting'</title>
+        <description>&lt;h3 id=&quot;explain-hoisting&quot;&gt;Explain ‘hoisting’.&lt;/h3&gt;
+</description>
+        <pubDate>Wed, 27 Jan 2016 02:47:13 -0800</pubDate>
+        <link>http://www.wandrr.io/Explain-hoisting</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Explain-hoisting</guid>
+        
+        <category>javascript</category>
+        
+        <category>interview question</category>
+        
+        
+      </item>
     
       <item>
         <title>Explain how JSONP works (and how it's not really AJAX)</title>
@@ -538,76 +569,6 @@ By adding the keyword &lt;code&gt;new&lt;/code&gt;. We are instantiating a new o
         <pubDate>Wed, 13 Jan 2016 02:47:13 -0800</pubDate>
         <link>http://www.wandrr.io/JS-Interview-Question-Whats-difference-between-host-objects-native-objects</link>
         <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Whats-difference-between-host-objects-native-objects</guid>
-        
-        <category>javascript</category>
-        
-        <category>interview question</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>How do you organize your code? (module pattern, classical inheritance?)</title>
-        <description>&lt;h3 id=&quot;how-do-you-organize-your-code-module-pattern-classical-inheritance&quot;&gt;How do you organize your code? (module pattern, classical inheritance?)&lt;/h3&gt;
-
-&lt;p&gt;There are several options in implementing Module Pattern. An option I mostly use is Object Literal Notation for encapsulating and organizing my code, but upon further readings, Module Pattern using Anonymous Closures, Global Import, and Module Export have sparked my interest as it provides more features for private and public var/methods. It still uses object literal but as to return values from the scoping function.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;In JavaScript, the Module pattern is used to further emulate the concept of classes in such a way that we’re able to include both public/private methods and variables inside a single object, thus shielding particular parts from the global scope.&lt;/p&gt;
-
-  &lt;p&gt;– Addy Osmani, Learning Javascript Design Patterns&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;There are popular javascript module framework that specifically implemented Module Pattern such as Dojo, ExtJS, YUI, and jQuery. Good to know if your new to learning Javascript concepts and have heard of these technologies before those popular MVC frameworks (Angular.js, Ember.js, Backbone.js) emerged.&lt;/p&gt;
-
-&lt;p&gt;Another implementation of module pattern popularized Christian Heilmann (which I think is pretty clean and neat) is The Revealing Module Pattern. It’s pretty much the same with the standard Module Pattern except it uses the return object literal properties as references to variables and functions from the scoping function to export variables and methods.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript&quot;&gt;Learning JavaScript Design Patterns&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html&quot;&gt;JavaScript Module Pattern: In-Depth&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 13 Jan 2016 02:47:13 -0800</pubDate>
-        <link>http://www.wandrr.io/JS-Interview-Question-How-do-you-organize-your-code-module-pattern-classical-inheritance</link>
-        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-How-do-you-organize-your-code-module-pattern-classical-inheritance</guid>
-        
-        <category>javascript</category>
-        
-        <category>interview question</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>What’s a typical use case for anonymous functions?</title>
-        <description>&lt;h3 id=&quot;whats-a-typical-use-case-for-anonymous-functions&quot;&gt;What’s a typical use case for anonymous functions?&lt;/h3&gt;
-
-&lt;p&gt;Since Anonymous Functions are function expressions rather than the regular function declaration which are statements. Function expressions are more flexible. We can assign functions to variables, object properties, pass them as arguments to other functions, and even write a simple one line code enclosed in an anonymous functions.&lt;/p&gt;
-
-&lt;p&gt;Example:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;squaredArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;inputArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;With ES6 syntax this becomes even more concise.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;squaredArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;inputArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Another typical example would be an anonymous function used by popular frameworks used as IIFE (Immediate Invoked Function Expression).&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  
-&lt;span class=&quot;p&quot;&gt;})();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Tue, 12 Jan 2016 02:47:13 -0800</pubDate>
-        <link>http://www.wandrr.io/JS-Interview-Question-Whats-typical-use-case-for-anonymous-functions</link>
-        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Whats-typical-use-case-for-anonymous-functions</guid>
         
         <category>javascript</category>
         
