@@ -49,3 +49,8 @@ These are just a list of commands I find usefule when searching for text or file
 - [cat]()
 - [head]()
 - [tail]()
+
+**VIM - remembering important features**
+
+- `:set tabstop=2`
+- `:set nu`
