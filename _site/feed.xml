@@ -6,14 +6,163 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 27 Jan 2016 09:21:58 -0800</pubDate>
-    <lastBuildDate>Wed, 27 Jan 2016 09:21:58 -0800</lastBuildDate>
+    <pubDate>Wed, 27 Jan 2016 11:03:15 -0800</pubDate>
+    <lastBuildDate>Wed, 27 Jan 2016 11:03:15 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Useful techniques for configuring and managing server</title>
+        <description>&lt;p&gt;Below is a gist of what this post contains.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Some Server stuff techniques&lt;/li&gt;
+  &lt;li&gt;Benefits of checking /var/log/&lt;/li&gt;
+  &lt;li&gt;Checking for CPU or Port processes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;some-server-stuff-techniques&quot;&gt;Some Server stuff techniques&lt;/h3&gt;
+
+&lt;h4 id=&quot;php-and-apache2&quot;&gt;&lt;strong&gt;PHP and Apache2&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;To check a website’s php info: &lt;br /&gt;
+You can use either cli command &lt;code&gt;php&lt;/code&gt; or create a file with phpinfo().&lt;br /&gt;
+Former solution will check for system wide php info.&lt;br /&gt;
+Latter solution will check specific site php info.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;create a &lt;code&gt;foo.php&lt;/code&gt; file&lt;/li&gt;
+  &lt;li&gt;add ff code `&lt;?php phpinfo(); ?&gt;&lt;/li&gt;
+  &lt;li&gt;visit url ‘your-domain.com/foo.php’ and this will display all php configs on a specific website&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Sample uses&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;When updating a &lt;code&gt;php.ini&lt;/code&gt; file and you want to see what a specific website is using. Because there can be multiple &lt;code&gt;php.ini&lt;/code&gt; file somewhere.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;npm-and-nodejs&quot;&gt;&lt;strong&gt;NPM and Nodejs&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;Use NVM when managing different nodejs and npm versions on a server. Saves time!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;benefits-of-checking-varlog&quot;&gt;Benefits of checking /var/log/&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Sample uses&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Monitor a certain IP address activity hitting your server or certain file&lt;/li&gt;
+  &lt;li&gt;Monitor suspicious IP address activity&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;checking-for-cpu-or-port-processes&quot;&gt;Checking for CPU or Port processes&lt;/h3&gt;
+
+&lt;p&gt;Use &lt;code&gt;htop&lt;/code&gt; or &lt;code&gt;top&lt;/code&gt; commands&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;htop&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;top&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Check for an open port by &lt;code&gt;ps aux | grep jekyll&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Kill a process or port by &lt;code&gt;kill -9 PID#&lt;/code&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 28 Jan 2016 02:47:13 -0800</pubDate>
+        <link>http://www.wandrr.io/Useful-techniques-for-configuring-managing-server</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Useful-techniques-for-configuring-managing-server</guid>
+        
+        <category>linux</category>
+        
+        <category>commandline</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Useful commands for navigating directories</title>
+        <description>&lt;p&gt;Below is a gist of what this post contains.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Commands for searching&lt;/li&gt;
+  &lt;li&gt;Commands for sorting files&lt;/li&gt;
+  &lt;li&gt;Opening files&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;commands-for-searching&quot;&gt;Commands for searching&lt;/h3&gt;
+
+&lt;p&gt;These are just a list of commands I find usefule when searching for text or files thoughout Linux system.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://help.ubuntu.com/community/find&quot;&gt;find&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;locate&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;grep&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Sample uses&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Searching for a file throughout the system&lt;/li&gt;
+  &lt;li&gt;Searching for a keyword though a directory&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;commands-for-sorting-files&quot;&gt;Commands for sorting files&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;ls&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;ll&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Sample uses&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Sort files in date &lt;code&gt;ll -tr&lt;/code&gt; to check which files has been modified recently&lt;/li&gt;
+  &lt;li&gt;Check for any suspicious injected files&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;opening-files&quot;&gt;Opening files&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;vim&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;nano&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;cat&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;head&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;tail&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 28 Jan 2016 02:47:13 -0800</pubDate>
+        <link>http://www.wandrr.io/Useful-commands-for-navigating-directories</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Useful-commands-for-navigating-directories</guid>
+        
+        <category>linux</category>
+        
+        <category>commandline</category>
+        
+        
+      </item>
     
       <item>
         <title>Have you ever used JavaScript templating?</title>
         <description>&lt;h3 id=&quot;have-you-ever-used-javascript-templating-if-so-what-libraries-have-you-used&quot;&gt;Have you ever used JavaScript templating? If so, what libraries have you used?&lt;/h3&gt;
 
+&lt;p&gt;Yes, I have used a JavaScript templating engines.&lt;/p&gt;
+
+&lt;p&gt;Libraries I first used was Handlebars.js because it was a dependency for previous Ember.js versions.&lt;/p&gt;
+
+&lt;p&gt;But then, our team decided to replace Handlebars.js with Emblem since the syntax on Emblem is much cleaner. It resembles to coding with Ruby.&lt;/p&gt;
+
+&lt;p&gt;When Ember.js started to release updates on their core versions, we then started to use what the recent Ember.js provides as it is no more a dependency rather is part of the Ember.js core. Their template engine is HTMLBars&lt;/p&gt;
 </description>
         <pubDate>Wed, 27 Jan 2016 02:47:13 -0800</pubDate>
         <link>http://www.wandrr.io/Have-you-ever-used-JavaScript-templating</link>
@@ -29,6 +178,8 @@
       <item>
         <title>Explain 'hoisting'</title>
         <description>&lt;h3 id=&quot;explain-hoisting&quot;&gt;Explain ‘hoisting’.&lt;/h3&gt;
+
+&lt;p&gt;hh&lt;/p&gt;
 </description>
         <pubDate>Wed, 27 Jan 2016 02:47:13 -0800</pubDate>
         <link>http://www.wandrr.io/Explain-hoisting</link>
@@ -486,89 +637,6 @@ Besides passing in an argument to a &lt;code&gt;.call&lt;/code&gt; or &lt;code&g
         <pubDate>Tue, 19 Jan 2016 02:47:13 -0800</pubDate>
         <link>http://www.wandrr.io/JS-Interview-Question-Whats-difference-between-call-and-apply</link>
         <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Whats-difference-between-call-and-apply</guid>
-        
-        <category>javascript</category>
-        
-        <category>interview question</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Difference between: function Person(){}, var person = Person(), and var person = new Person()?</title>
-        <description>&lt;h3 id=&quot;js-interview-question-difference-between-function-person-var-person--person-and-var-person--new-person&quot;&gt;JS Interview Question: Difference between: function Person(){}, var person = Person(), and var person = new Person()?&lt;/h3&gt;
-
-&lt;p&gt;There are different ways (not to be exact) we can use functions in JavaScript, but with the given code below highlights important differences on how functions work.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// code here&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Function Declaration&lt;/strong&gt; &lt;br /&gt;
-Code above declares a function statement (statements perform an action) but does not execute, however, it does get registered into the global namespace.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Function Expression&lt;/strong&gt; &lt;br /&gt;
-A variable ‘var person’ has been defined and contains a value reference to a Person function. Any JavaScript Expressions (including Function Expressions) always returns a value. This may also be an Anonymous function if no name has been assign to a function but wrapped in parenthesis to be interpreted as an expression.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Function Constructor&lt;/strong&gt; &lt;br /&gt;
-By adding the keyword &lt;code&gt;new&lt;/code&gt;. We are instantiating a new object of the Person class constructor. A function declaration is just a regular function unless it has been instantiated, it then becomes a class constructor.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.2ality.com/2012/09/expressions-vs-statements.html&quot;&gt;Expressions versus statements in JavaScript&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 14 Jan 2016 02:47:13 -0800</pubDate>
-        <link>http://www.wandrr.io/JS-Interview-Question-Difference-between-function-Person-var-person-Person-and-var-person-new-Person</link>
-        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Difference-between-function-Person-var-person-Person-and-var-person-new-Person</guid>
-        
-        <category>javascript</category>
-        
-        <category>interview question</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>What’s the difference between host objects and native objects?</title>
-        <description>&lt;h3 id=&quot;whats-the-difference-between-host-objects-and-native-objects&quot;&gt;What’s the difference between host objects and native objects?&lt;/h3&gt;
-
-&lt;p&gt;From what I understand, objects are divided from which environment and language they are supplied: &lt;strong&gt;Host Objects&lt;/strong&gt; and &lt;strong&gt;Native Objects&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Host Objects&lt;/strong&gt; are objects supplied by a certain environment. They are not always the same because each environment differs and contains host objects that accommodates execution of ECMAScript. Example, browser environment supplies objects such as window. While a node.js/server environment supplies objects such as NodeList.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Native Objects&lt;/strong&gt; or Built-in Objects are standard built-in objects provided by Javascript. Native objects is sometimes referred to as ‘Global Objects’ since they are objects Javascript has provided natively available for use.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;There are various articles categorizing these native global objects but its number differs, so for accuracy (I believe), I recommend the official Mozilla Doc as reference.
-&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects&quot;&gt;Ref: developer.mozilla.org - Global Objects&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Javascript is mainly constructed by these categorized native global objects. These objects can be used either as Constructor (String(), Number(), Boolean()) or as Primitive Value, like literally as a value :-D (‘string’, 123, true).&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://programmerinnervoice.wordpress.com/2013/07/22/host-objects-vs-native-objects/&quot;&gt;Host objects Vs Native objects In JavaScript&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects&quot;&gt;Standard built-in objects&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 13 Jan 2016 02:47:13 -0800</pubDate>
-        <link>http://www.wandrr.io/JS-Interview-Question-Whats-difference-between-host-objects-native-objects</link>
-        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Whats-difference-between-host-objects-native-objects</guid>
         
         <category>javascript</category>
         

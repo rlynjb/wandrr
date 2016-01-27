@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Explain 'hoisting'</title>
-  <meta name="description" content="Explain &#8216;hoisting&#8217;.">
+  <title>Useful techniques for configuring and managing server</title>
+  <meta name="description" content="Below is a gist of what this post contains.">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.wandrr.io/Explain-hoisting">
+  <link rel="canonical" href="http://www.wandrr.io/Useful-techniques-for-configuring-managing-server">
   <link rel="alternate" type="application/rss+xml" title="wandrr.io" href="http://www.wandrr.io/feed.xml" />
 </head>
 
@@ -68,18 +68,75 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Explain 'hoisting'</h1>
+    <h1 class="post-title">Useful techniques for configuring and managing server</h1>
     <p class="post-meta">
-      Jan 27, 2016
+      Jan 28, 2016
       
-       • javascript, interview question
+       • linux, commandline
     </p>
   </header>
 
   <article class="post-content">
-    <h3 id="explain-hoisting">Explain ‘hoisting’.</h3>
+    <p>Below is a gist of what this post contains.</p>
 
-<p>hh</p>
+<ul>
+  <li>Some Server stuff techniques</li>
+  <li>Benefits of checking /var/log/</li>
+  <li>Checking for CPU or Port processes</li>
+</ul>
+
+<hr />
+
+<h3 id="some-server-stuff-techniques">Some Server stuff techniques</h3>
+
+<h4 id="php-and-apache2"><strong>PHP and Apache2</strong></h4>
+
+<p>To check a website’s php info: <br />
+You can use either cli command <code>php</code> or create a file with phpinfo().<br />
+Former solution will check for system wide php info.<br />
+Latter solution will check specific site php info.</p>
+
+<ul>
+  <li>create a <code>foo.php</code> file</li>
+  <li>add ff code `<?php phpinfo(); ?></li>
+  <li>visit url ‘your-domain.com/foo.php’ and this will display all php configs on a specific website</li>
+</ul>
+
+<p><strong>Sample uses</strong></p>
+
+<ul>
+  <li>When updating a <code>php.ini</code> file and you want to see what a specific website is using. Because there can be multiple <code>php.ini</code> file somewhere.</li>
+</ul>
+
+<h4 id="npm-and-nodejs"><strong>NPM and Nodejs</strong></h4>
+
+<p>Use NVM when managing different nodejs and npm versions on a server. Saves time!</p>
+
+<hr />
+
+<h3 id="benefits-of-checking-varlog">Benefits of checking /var/log/</h3>
+
+<p><strong>Sample uses</strong></p>
+
+<ul>
+  <li>Monitor a certain IP address activity hitting your server or certain file</li>
+  <li>Monitor suspicious IP address activity</li>
+</ul>
+
+<hr />
+
+<h3 id="checking-for-cpu-or-port-processes">Checking for CPU or Port processes</h3>
+
+<p>Use <code>htop</code> or <code>top</code> commands</p>
+
+<ul>
+  <li><a href="">htop</a></li>
+  <li><a href="">top</a></li>
+</ul>
+
+<p>Check for an open port by <code>ps aux | grep jekyll</code></p>
+
+<p>Kill a process or port by <code>kill -9 PID#</code></p>
 
   </article>
 
