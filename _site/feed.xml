@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 27 Jan 2016 11:03:15 -0800</pubDate>
-    <lastBuildDate>Wed, 27 Jan 2016 11:03:15 -0800</lastBuildDate>
+    <pubDate>Wed, 27 Jan 2016 11:07:45 -0800</pubDate>
+    <lastBuildDate>Wed, 27 Jan 2016 11:07:45 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -153,6 +153,23 @@ Latter solution will check specific site php info.&lt;/p&gt;
       </item>
     
       <item>
+        <title>Explain 'hoisting'</title>
+        <description>&lt;h3 id=&quot;explain-hoisting&quot;&gt;Explain ‘hoisting’.&lt;/h3&gt;
+
+&lt;p&gt;hh&lt;/p&gt;
+</description>
+        <pubDate>Wed, 27 Jan 2016 02:47:13 -0800</pubDate>
+        <link>http://www.wandrr.io/Explain-hoisting</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Explain-hoisting</guid>
+        
+        <category>javascript</category>
+        
+        <category>interview question</category>
+        
+        
+      </item>
+    
+      <item>
         <title>Have you ever used JavaScript templating?</title>
         <description>&lt;h3 id=&quot;have-you-ever-used-javascript-templating-if-so-what-libraries-have-you-used&quot;&gt;Have you ever used JavaScript templating? If so, what libraries have you used?&lt;/h3&gt;
 
@@ -164,26 +181,9 @@ Latter solution will check specific site php info.&lt;/p&gt;
 
 &lt;p&gt;When Ember.js started to release updates on their core versions, we then started to use what the recent Ember.js provides as it is no more a dependency rather is part of the Ember.js core. Their template engine is HTMLBars&lt;/p&gt;
 </description>
-        <pubDate>Wed, 27 Jan 2016 02:47:13 -0800</pubDate>
-        <link>http://www.wandrr.io/Have-you-ever-used-JavaScript-templating</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Have-you-ever-used-JavaScript-templating</guid>
-        
-        <category>javascript</category>
-        
-        <category>interview question</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Explain 'hoisting'</title>
-        <description>&lt;h3 id=&quot;explain-hoisting&quot;&gt;Explain ‘hoisting’.&lt;/h3&gt;
-
-&lt;p&gt;hh&lt;/p&gt;
-</description>
-        <pubDate>Wed, 27 Jan 2016 02:47:13 -0800</pubDate>
-        <link>http://www.wandrr.io/Explain-hoisting</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Explain-hoisting</guid>
+        <pubDate>Wed, 27 Jan 2016 01:47:13 -0800</pubDate>
+        <link>http://www.wandrr.io/JS-Interview-Question-Have-you-ever-used-JavaScript-templating</link>
+        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Have-you-ever-used-JavaScript-templating</guid>
         
         <category>javascript</category>
         
