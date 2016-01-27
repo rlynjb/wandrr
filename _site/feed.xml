@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 27 Jan 2016 14:51:56 -0800</pubDate>
-    <lastBuildDate>Wed, 27 Jan 2016 14:51:56 -0800</lastBuildDate>
+    <pubDate>Wed, 27 Jan 2016 15:38:39 -0800</pubDate>
+    <lastBuildDate>Wed, 27 Jan 2016 15:38:39 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -161,9 +161,9 @@ Latter solution will check specific site php info.&lt;/p&gt;
     
       <item>
         <title>Explain 'hoisting'</title>
-        <description>&lt;p&gt;As defined in dictionary.com, Hoisting means to lift or raise. &lt;strong&gt;In JavaScript&lt;/strong&gt;, Hoisting is when we declare variables and are hoisted to the top of function scope or to the top of the global scope depending on where it is declared. Remember, JavaScript have a &lt;strong&gt;function-level scope&lt;/strong&gt; as oppose to &lt;strong&gt;block-level scope&lt;/strong&gt; in other languages.&lt;/p&gt;
+        <description>&lt;p&gt;As defined in dictionary.com, Hoisting means to lift or raise. &lt;strong&gt;In JavaScript&lt;/strong&gt;, Hoisting is when we declare variables and are hoisted to the top of a function scope or to the top of the global scope depending on where it is declared. Remember, JavaScript have a &lt;strong&gt;function-level scope&lt;/strong&gt; as oppose to &lt;strong&gt;block-level scope&lt;/strong&gt; in other languages.&lt;/p&gt;
 
-&lt;p&gt;** &lt;em&gt;Note, we must first understand the concept of JavaScript Variable Scope&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;** &lt;em&gt;Note, we must first understand the concept of JavaScript Variable Scope as this is the basis of Hoisting&lt;/em&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
