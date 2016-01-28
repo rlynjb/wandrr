@@ -21,12 +21,16 @@ These are just a list of commands I find usefule when searching for text or file
 
 - [find](https://help.ubuntu.com/community/find)
 - [locate]()
-- [grep]()
+- [grep](https://help.ubuntu.com/community/grep)
 
 **Sample uses**
 
 - Searching for a file throughout the system
 - Searching for a keyword though a directory
+
+#### **References:**
+
+- [How To Use Find and Locate to Search for Files on a Linux VPS](https://www.digitalocean.com/community/tutorials/how-to-use-find-and-locate-to-search-for-files-on-a-linux-vps)
 
 -----
 
@@ -39,6 +43,12 @@ These are just a list of commands I find usefule when searching for text or file
 
 - Sort files in date `ll -tr` to check which files has been modified recently
 - Check for any suspicious injected files
+
+-----
+
+### Security File Permissions
+
+- [Understanding and Using File Permissions](https://help.ubuntu.com/community/FilePermissions)
 
 -----
 

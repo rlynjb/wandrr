@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 27 Jan 2016 15:38:39 -0800</pubDate>
-    <lastBuildDate>Wed, 27 Jan 2016 15:38:39 -0800</lastBuildDate>
+    <pubDate>Wed, 27 Jan 2016 16:52:38 -0800</pubDate>
+    <lastBuildDate>Wed, 27 Jan 2016 16:52:38 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -103,7 +103,7 @@ Latter solution will check specific site php info.&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://help.ubuntu.com/community/find&quot;&gt;find&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;&quot;&gt;locate&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;&quot;&gt;grep&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://help.ubuntu.com/community/grep&quot;&gt;grep&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Sample uses&lt;/strong&gt;&lt;/p&gt;
@@ -111,6 +111,12 @@ Latter solution will check specific site php info.&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Searching for a file throughout the system&lt;/li&gt;
   &lt;li&gt;Searching for a keyword though a directory&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-use-find-and-locate-to-search-for-files-on-a-linux-vps&quot;&gt;How To Use Find and Locate to Search for Files on a Linux VPS&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
@@ -127,6 +133,14 @@ Latter solution will check specific site php info.&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Sort files in date &lt;code&gt;ll -tr&lt;/code&gt; to check which files has been modified recently&lt;/li&gt;
   &lt;li&gt;Check for any suspicious injected files&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;security-file-permissions&quot;&gt;Security File Permissions&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://help.ubuntu.com/community/FilePermissions&quot;&gt;Understanding and Using File Permissions&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
