@@ -9,9 +9,16 @@ tags:
 
 Below is a gist of what this post contains.
 
+- Chaging user accounts
 - Commands for searching
 - Commands for sorting files
 - Opening files
+
+-----
+
+### Changing user accounts
+
+- [sudo su commands](https://help.ubuntu.com/community/RootSudo)
 
 -----
 
