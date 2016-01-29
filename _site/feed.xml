@@ -6,9 +6,24 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 28 Jan 2016 13:27:37 -0800</pubDate>
-    <lastBuildDate>Thu, 28 Jan 2016 13:27:37 -0800</lastBuildDate>
+    <pubDate>Thu, 28 Jan 2016 16:21:00 -0800</pubDate>
+    <lastBuildDate>Thu, 28 Jan 2016 16:21:00 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Describe event bubbling</title>
+        <description>
+</description>
+        <pubDate>Fri, 29 Jan 2016 02:47:13 -0800</pubDate>
+        <link>http://www.wandrr.io/Describe-event-bubbling</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Describe-event-bubbling</guid>
+        
+        <category>javascript</category>
+        
+        <category>interview question</category>
+        
+        
+      </item>
     
       <item>
         <title>Explain 'hoisting'</title>
@@ -724,66 +739,6 @@ Other two are &lt;code&gt;apply() &amp;amp; call()&lt;/code&gt;. Difference betw
         <pubDate>Wed, 20 Jan 2016 02:47:13 -0800</pubDate>
         <link>http://www.wandrr.io/JS-Interview-Question-Explain-bind</link>
         <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Explain-bind</guid>
-        
-        <category>javascript</category>
-        
-        <category>interview question</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>What’s the difference between .call and .apply?</title>
-        <description>&lt;h3 id=&quot;whats-the-difference-between-call-and-apply&quot;&gt;What’s the difference between .call and .apply?&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Recalling the basics&lt;/strong&gt; &lt;br /&gt;
-Remember, in JavaScript, everything are objects, even Functions, and every objects has their properties and methods. Both &lt;code&gt;.apply&lt;/code&gt; and &lt;code&gt;.call&lt;/code&gt; are methods of Function object.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;How do .apply or .call work?&lt;/strong&gt; &lt;br /&gt;
-Invoking a function with &lt;code&gt;.apply&lt;/code&gt; and &lt;code&gt;.call&lt;/code&gt; allows us to point an object to the invoked function by passing in the object as first argument and second argument (and so on) as its values.&lt;/p&gt;
-
-&lt;p&gt;The function’s &lt;code&gt;this&lt;/code&gt; keyword will be manipulated when invoked with &lt;code&gt;.apply&lt;/code&gt; or &lt;code&gt;.call&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;From what I understand, &lt;code&gt;.apply&lt;/code&gt; and &lt;code&gt;.call&lt;/code&gt; are methods we use to assign the &lt;code&gt;this&lt;/code&gt; keyword from the invoked function to reference to an object for the duration of the method invocation.&lt;/p&gt;
-
-&lt;p&gt;Below is a code example with commented explanation.&lt;/p&gt;
-
-&lt;iframe height=&quot;268&quot; scrolling=&quot;no&quot; src=&quot;//codepen.io/rlynjb/embed/JGOmwp/?height=268&amp;amp;theme-id=20698&amp;amp;default-tab=js&quot; frameborder=&quot;no&quot; allowtransparency=&quot;true&quot; allowfullscreen=&quot;true&quot; style=&quot;width: 100%;&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/rlynjb/pen/JGOmwp/&quot;&gt;learning JavaScript's .apply and .call&lt;/a&gt; by rlynjb (&lt;a href=&quot;http://codepen.io/rlynjb&quot;&gt;@rlynjb&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
-&lt;/iframe&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;So what’s the difference between .apply and .call?&lt;/strong&gt; &lt;br /&gt;
-Besides passing in an argument to a &lt;code&gt;.call&lt;/code&gt; or &lt;code&gt;.apply&lt;/code&gt; methods that references to the &lt;code&gt;this&lt;/code&gt; keyword of an invoked function, we can also pass in a 2nd argument or more. A good mnemonic to explain their differences are:&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;code&gt;.call&lt;/code&gt; Counts the number of arguments separated by Comma&lt;/em&gt; &lt;br /&gt;
-.call method accepts one or more arguments as objects and requires to be listed explicitly, means, it is a fixed number of arguments.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;other&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;argument&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;another&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;one&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;em&gt;… while …&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;code&gt;.apply&lt;/code&gt; uses Array as an Argument&lt;/em&gt; &lt;br /&gt;
-.apply method requires an array as its 2nd argument. This method is used if you don’t know the number of arguments to be passed or the arguments is already in an array.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;argument1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;argument2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;argument3&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;** &lt;em&gt;Open CodePen above for Code sample&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/1986896/what-is-the-difference-between-call-and-apply/1987244&quot;&gt;What is the difference between call and apply?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://odetocode.com/blogs/scott/archive/2007/07/04/function-apply-and-function-call-in-javascript.aspx&quot;&gt;Function.apply and Function.call in JavaScript&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 19 Jan 2016 02:47:13 -0800</pubDate>
-        <link>http://www.wandrr.io/JS-Interview-Question-Whats-difference-between-call-and-apply</link>
-        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Whats-difference-between-call-and-apply</guid>
         
         <category>javascript</category>
         
