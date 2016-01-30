@@ -75,3 +75,14 @@ With the type of projects we received and working with only a few developers whi
 To differentiate the files in FoundationPress, its good to get acquainted with [Wordpress Template Files](https://developer.wordpress.org/themes/basics/template-files/).
 
 **Prototyping** is easy as adding a page on wordpress admin dashboard and create an instance of a `page.tpl` file and renaming with a given extension of the name of the page you added on wordpress admin dashboard `page-{slug}.php`.
+
+Another technique is if you were to use an **approved design prototype** to multiple pages, you can just convert that `page-{slug}.php` file into a template `/FoundationPress/templates/template-name-here.php`, then disseminate it by setting it as a Template under `Name of page you added > Page Attributes > Template` at wp admin dashboard.
+
+There are many ways you can fully customized a CMS like functionality with wordpress without the need of plugin. All you have to do is enable these features in `functions.php`.
+Some features that are worth noting are:
+
+- Custom Post Type
+- Custom Category and Tags
+- Custom Fields
+
+You can also create a template or prototype for these Custom Post Types. Enable Custom Fields if required for users to input pieces of data and enable Custom Category if you want to sort or filter these items in theme or in wordpress admin custom post type dashboard.

@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 29 Jan 2016 14:59:31 -0800</pubDate>
-    <lastBuildDate>Fri, 29 Jan 2016 14:59:31 -0800</lastBuildDate>
+    <pubDate>Fri, 29 Jan 2016 16:17:02 -0800</pubDate>
+    <lastBuildDate>Fri, 29 Jan 2016 16:17:02 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -112,6 +112,19 @@ I’ve been using Zurb Foundation for quite sometime, and with the recent upgrad
 &lt;p&gt;To differentiate the files in FoundationPress, its good to get acquainted with &lt;a href=&quot;https://developer.wordpress.org/themes/basics/template-files/&quot;&gt;Wordpress Template Files&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Prototyping&lt;/strong&gt; is easy as adding a page on wordpress admin dashboard and create an instance of a &lt;code&gt;page.tpl&lt;/code&gt; file and renaming with a given extension of the name of the page you added on wordpress admin dashboard &lt;code&gt;page-{slug}.php&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Another technique is if you were to use an &lt;strong&gt;approved design prototype&lt;/strong&gt; to multiple pages, you can just convert that &lt;code&gt;page-{slug}.php&lt;/code&gt; file into a template &lt;code&gt;/FoundationPress/templates/template-name-here.php&lt;/code&gt;, then disseminate it by setting it as a Template under &lt;code&gt;Name of page you added &amp;gt; Page Attributes &amp;gt; Template&lt;/code&gt; at wp admin dashboard.&lt;/p&gt;
+
+&lt;p&gt;There are many ways you can fully customized a CMS like functionality with wordpress without the need of plugin. All you have to do is enable these features in &lt;code&gt;functions.php&lt;/code&gt;.
+Some features that are worth noting are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Custom Post Type&lt;/li&gt;
+  &lt;li&gt;Custom Category and Tags&lt;/li&gt;
+  &lt;li&gt;Custom Fields&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can also create a template or prototype for these Custom Post Types. Enable Custom Fields if required for users to input pieces of data and enable Custom Category if you want to sort or filter these items in theme or in wordpress admin custom post type dashboard.&lt;/p&gt;
 </description>
         <pubDate>Fri, 29 Jan 2016 04:07:09 -0800</pubDate>
         <link>http://www.wandrr.io/Front-End-workflow-with-Wordpress</link>
