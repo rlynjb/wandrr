@@ -5,6 +5,7 @@ date: 2016-01-29 12:07:09
 tags:
 - wordpress
 - prototyping
+- workflow
 ---
 
 Prototyping and delivering an end product is one of the things I've been contemplating lately.
