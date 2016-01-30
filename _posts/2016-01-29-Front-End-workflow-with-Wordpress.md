@@ -87,3 +87,15 @@ Some features that are worth noting are:
 - Custom Fields
 
 You can also create a template or prototype for these Custom Post Types. Enable Custom Fields if required for users to input pieces of data and enable Custom Category if you want to sort or filter these items in theme or in wordpress admin custom post type dashboard.
+
+-----
+
+### WP Rest API
+
+When building an application in certain pages of wordpress using JavaScript, we can also take advantage of this plugin [WP Rest API](http://v2.wp-api.org/).
+
+-----
+
+### Managing wordpress with WP-CLI
+
+This has been really helpful especially with checking the status of your wordpress core, plugins, and themes. To avoid cpu usage on wordpress admin dashboard, you can manage your wordpress via cli! [WP-CLI](http://wp-cli.org/)
