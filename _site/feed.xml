@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 29 Jan 2016 16:47:58 -0800</pubDate>
-    <lastBuildDate>Fri, 29 Jan 2016 16:47:58 -0800</lastBuildDate>
+    <pubDate>Mon, 01 Feb 2016 09:00:43 -0800</pubDate>
+    <lastBuildDate>Mon, 01 Feb 2016 09:00:43 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -147,29 +147,6 @@ Some features that are worth noting are:&lt;/p&gt;
         <category>prototyping</category>
         
         <category>workflow</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Wordpress Security Cheatsheet</title>
-        <description>&lt;p&gt;wordpress cli:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://wp-cli.org/&quot;&gt;wp-cli.org&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://codex.wordpress.org/Hardening_WordPress&quot;&gt;Hardening Wordpress&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://codex.wordpress.org/Editing_wp-config.php#Disable_Plugin_and_Theme_Update_and_Installation&quot;&gt;Disable Plugin and Theme Update and Installation&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Fri, 29 Jan 2016 02:47:13 -0800</pubDate>
-        <link>http://www.wandrr.io/Wordpress-Security-Cheatsheet</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Wordpress-Security-Cheatsheet</guid>
-        
-        <category>wordpress</category>
-        
-        <category>security</category>
         
         
       </item>
@@ -328,178 +305,6 @@ Some features that are worth noting are:&lt;/p&gt;
         <category>javascript</category>
         
         <category>interview question</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Useful techniques for configuring and managing server</title>
-        <description>&lt;p&gt;Below is a gist of what this post contains.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Some Server stuff techniques&lt;/li&gt;
-  &lt;li&gt;Benefits of checking /var/log/&lt;/li&gt;
-  &lt;li&gt;Checking for CPU or Port processes&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;some-server-stuff-techniques&quot;&gt;Some Server stuff techniques&lt;/h3&gt;
-
-&lt;h4 id=&quot;php-and-apache2&quot;&gt;&lt;strong&gt;PHP and Apache2&lt;/strong&gt;&lt;/h4&gt;
-
-&lt;p&gt;To check a website’s php info: &lt;br /&gt;
-You can use either cli command &lt;code&gt;php&lt;/code&gt; or create a file with phpinfo().&lt;br /&gt;
-Former solution will check for system wide php info.&lt;br /&gt;
-Latter solution will check specific site php info.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;create a &lt;code&gt;foo.php&lt;/code&gt; file&lt;/li&gt;
-  &lt;li&gt;add ff code `&lt;?php phpinfo(); ?&gt;&lt;/li&gt;
-  &lt;li&gt;visit url ‘your-domain.com/foo.php’ and this will display all php configs on a specific website&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Sample uses&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;When updating a &lt;code&gt;php.ini&lt;/code&gt; file and you want to see what a specific website is using. Because there can be multiple &lt;code&gt;php.ini&lt;/code&gt; file somewhere.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;npm-and-nodejs&quot;&gt;&lt;strong&gt;NPM and Nodejs&lt;/strong&gt;&lt;/h4&gt;
-
-&lt;p&gt;Use NVM when managing different nodejs and npm versions on a server. Saves time!&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;benefits-of-checking-varlog&quot;&gt;Benefits of checking /var/log/&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Sample uses&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Monitor a certain IP address activity hitting your server or certain file&lt;/li&gt;
-  &lt;li&gt;Monitor suspicious IP address activity&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;checking-for-cpu-or-port-processes&quot;&gt;Checking for CPU or Port processes&lt;/h3&gt;
-
-&lt;p&gt;Use &lt;code&gt;htop&lt;/code&gt; or &lt;code&gt;top&lt;/code&gt; commands&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;&quot;&gt;htop&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;&quot;&gt;top&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Check for an open port by &lt;code&gt;ps aux | grep jekyll&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Kill a process or port by &lt;code&gt;kill -9 PID#&lt;/code&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 28 Jan 2016 02:47:13 -0800</pubDate>
-        <link>http://www.wandrr.io/Useful-techniques-for-configuring-managing-server</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Useful-techniques-for-configuring-managing-server</guid>
-        
-        <category>linux</category>
-        
-        <category>commandline</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Useful commands for navigating directories</title>
-        <description>&lt;p&gt;Below is a gist of what this post contains.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Chaging user accounts&lt;/li&gt;
-  &lt;li&gt;Commands for searching&lt;/li&gt;
-  &lt;li&gt;Commands for sorting files&lt;/li&gt;
-  &lt;li&gt;Opening files&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;changing-user-accounts&quot;&gt;Changing user accounts&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://help.ubuntu.com/community/RootSudo&quot;&gt;sudo su commands&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;commands-for-searching&quot;&gt;Commands for searching&lt;/h3&gt;
-
-&lt;p&gt;These are just a list of commands I find usefule when searching for text or files thoughout Linux system.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://help.ubuntu.com/community/find&quot;&gt;find&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;&quot;&gt;locate&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://help.ubuntu.com/community/grep&quot;&gt;grep&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Sample uses&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Searching for a file throughout the system&lt;/li&gt;
-  &lt;li&gt;Searching for a keyword though a directory&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-use-find-and-locate-to-search-for-files-on-a-linux-vps&quot;&gt;How To Use Find and Locate to Search for Files on a Linux VPS&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;commands-for-sorting-files&quot;&gt;Commands for sorting files&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;&quot;&gt;ls&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;&quot;&gt;ll&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Sample uses&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Sort files in date &lt;code&gt;ll -tr&lt;/code&gt; to check which files has been modified recently&lt;/li&gt;
-  &lt;li&gt;Check for any suspicious injected files&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;security-file-permissions&quot;&gt;Security File Permissions&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://help.ubuntu.com/community/FilePermissions&quot;&gt;Understanding and Using File Permissions&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;opening-files&quot;&gt;Opening files&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;&quot;&gt;vim&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;&quot;&gt;nano&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;&quot;&gt;cat&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;&quot;&gt;head&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;&quot;&gt;tail&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;VIM - remembering important features&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;:set tabstop=2&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;:set nu&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 28 Jan 2016 02:47:13 -0800</pubDate>
-        <link>http://www.wandrr.io/Useful-commands-for-navigating-directories</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Useful-commands-for-navigating-directories</guid>
-        
-        <category>linux</category>
-        
-        <category>commandline</category>
         
         
       </item>
@@ -782,6 +587,196 @@ To make an HTTP Request to the server, we need to instantiate a class called XML
         <pubDate>Wed, 20 Jan 2016 02:47:13 -0800</pubDate>
         <link>http://www.wandrr.io/JS-Interview-Question-When-would-you-use-document-write</link>
         <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-When-would-you-use-document-write</guid>
+        
+        <category>javascript</category>
+        
+        <category>interview question</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>What’s the difference between feature detection, feature inference, and using the UA string?</title>
+        <description>&lt;h3 id=&quot;whats-the-difference-between-feature-detection-feature-inference-and-using-the-ua-string&quot;&gt;What’s the difference between feature detection, feature inference, and using the UA string?&lt;/h3&gt;
+
+&lt;p&gt;These 3 are just practices of determining if a certain web technology feature exists in a user’s browser or environment. Though features may vary with not just modern web technology but with programming languages as well.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Feature Detection&lt;/strong&gt; &lt;br /&gt;
+Feature detection is just a way of determining if a feature exists in certain browsers. A good example is a modern HTML5 feature ‘Location’.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;geolocation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// detect users location here B-) and do something awesome&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Feature Inference&lt;/strong&gt; &lt;br /&gt;
+Feature Inference is when you have determined a feature exists and assumed the next web technology feature you are implementing unto your app exists as well. Its usually bad practice to assume, so its better to explicitly specify features you want to detect and plan a fallback action.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;UA String&lt;/strong&gt; &lt;br /&gt;
+UA String or User Agent String is a string text of data that each browsers send and can be access via navigator.userAgent. These “string text of data” contains information of the browser environment you are targeting.&lt;/p&gt;
+
+&lt;p&gt;If you open your console and run&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userAgent&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You’ll see it outputs a “string text of data” containing complete information of the environment you are currently using. Since this is an old way of doing detection, this method can be easily spoofed, thus, may not be the best route to take. &lt;a href=&quot;https://en.wikipedia.org/wiki/User_agent&quot;&gt;Ref: Wikipedia - User Agent&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;A JavaScript library I love using is Modernizr&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Modernizr is a small piece of JavaScript code that automatically detects the availability of next-generation web technologies in your user’s browsers. Rather than blacklisting entire ranges of browsers based on “UA sniffing,” Modernizr uses feature detection to allow you to easily tailor your user’s experiences based on the actual capabilities of their browser.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://modernizr.com/&quot;&gt;Modernizr: the feature detection library for HTML5/CSS3&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/a/20105074/4538744&quot;&gt;What’s the difference between feature detection, feature inference, and using the UA string&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 20 Jan 2016 02:47:13 -0800</pubDate>
+        <link>http://www.wandrr.io/JS-Interview-Question-Whats-difference-between-feature-detection-feature-inference-UA-string</link>
+        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Whats-difference-between-feature-detection-feature-inference-UA-string</guid>
+        
+        <category>javascript</category>
+        
+        <category>interview question</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Explain Function.prototype.bind</title>
+        <description>&lt;h3 id=&quot;explain-functionprototypebind&quot;&gt;Explain Function.prototype.bind&lt;/h3&gt;
+
+&lt;p&gt;It took me awhile to understand how &lt;code&gt;this&lt;/code&gt; keyword works, but after reading about bind method, its starting to make sense regarding the context of an object set explicitly and being able to access with &lt;code&gt;this&lt;/code&gt; keyword.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;A common issue that arise when we use functions is dealing with a function’s scope and an object’s context.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;** it’s important to understand the difference between function scope and object context.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Every function has its own scope with visible and accessible variables, but when we define closures, these inner functions creates its own scope as well. If we were to access the outer function’s context from inner functions (closures), we will need to declare a variable specifying the outer function’s context.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;To avoid polluting an outer function’s scope, we can use bind method instead. Once we invoked a function with bind method, it bounds our closure or inner function with the outer function’s scope.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// some content &lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;We are also able to pass in 2nd arguments if needed.&lt;/p&gt;
+
+&lt;p&gt;Though, IE8 and below doesn’t support &lt;code&gt;bind()&lt;/code&gt;, there is a polyfill available to fix this issue.
+&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind&quot;&gt;Polyfill here and more info&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;There are other methods of setting the scope of a function.&lt;/strong&gt;
+Other two are &lt;code&gt;apply() &amp;amp; call()&lt;/code&gt;. Difference between &lt;code&gt;apply() &amp;amp; call()&lt;/code&gt; and &lt;code&gt;bind()&lt;/code&gt; method is:&lt;/p&gt;
+
+&lt;p&gt;Functions invoked with &lt;code&gt;apply() &amp;amp; call()&lt;/code&gt; methods gets executed first and of course, we also pass along the function’s scope as well&lt;/p&gt;
+
+&lt;p&gt;… while …&lt;/p&gt;
+
+&lt;p&gt;Functions invoked with &lt;code&gt;bind()&lt;/code&gt; method just sets the scope, but doesn’t get executed. Awesome! B-)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Now another issue is when we pass around functions.&lt;/strong&gt; Its function context actually changes as well depending on where the function is invoked. It doesn’t necessarily bound to a specific object as we expect it to be bound to, rather, it may also bound to a global object, other outer objects, or even an HTML element, depending on where we invoked the function.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;** Note, that invoking a function is different from creating a new instance of an object.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Below is an interesting (coz its new to me) Code sample with commented out explanation. It shows how &lt;code&gt;this&lt;/code&gt; keyword can be mistakenly bound to an HTML element and how &lt;code&gt;bind()&lt;/code&gt; can fix it.&lt;/p&gt;
+
+&lt;iframe height=&quot;268&quot; scrolling=&quot;no&quot; src=&quot;//codepen.io/rlynjb/embed/qbpZVX/?height=268&amp;amp;theme-id=20698&amp;amp;default-tab=js&quot; frameborder=&quot;no&quot; allowtransparency=&quot;true&quot; allowfullscreen=&quot;true&quot; style=&quot;width: 100%;&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/rlynjb/pen/qbpZVX/&quot;&gt;Learning Javascript's bind method&lt;/a&gt; by rlynjb (&lt;a href=&quot;http://codepen.io/rlynjb&quot;&gt;@rlynjb&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
+&lt;/iframe&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals&quot;&gt;JavaScript’s Apply, Call, and Bind Methods are Essential for JavaScript Professionals&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://krasimirtsonev.com/blog/article/JavaScript-bind-function-setting-a-scope&quot;&gt;JavaScript: bind function&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 20 Jan 2016 02:47:13 -0800</pubDate>
+        <link>http://www.wandrr.io/JS-Interview-Question-Explain-bind</link>
+        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Explain-bind</guid>
+        
+        <category>javascript</category>
+        
+        <category>interview question</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>What’s the difference between .call and .apply?</title>
+        <description>&lt;h3 id=&quot;whats-the-difference-between-call-and-apply&quot;&gt;What’s the difference between .call and .apply?&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Recalling the basics&lt;/strong&gt; &lt;br /&gt;
+Remember, in JavaScript, everything are objects, even Functions, and every objects has their properties and methods. Both &lt;code&gt;.apply&lt;/code&gt; and &lt;code&gt;.call&lt;/code&gt; are methods of Function object.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;How do .apply or .call work?&lt;/strong&gt; &lt;br /&gt;
+Invoking a function with &lt;code&gt;.apply&lt;/code&gt; and &lt;code&gt;.call&lt;/code&gt; allows us to point an object to the invoked function by passing in the object as first argument and second argument (and so on) as its values.&lt;/p&gt;
+
+&lt;p&gt;The function’s &lt;code&gt;this&lt;/code&gt; keyword will be manipulated when invoked with &lt;code&gt;.apply&lt;/code&gt; or &lt;code&gt;.call&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;From what I understand, &lt;code&gt;.apply&lt;/code&gt; and &lt;code&gt;.call&lt;/code&gt; are methods we use to assign the &lt;code&gt;this&lt;/code&gt; keyword from the invoked function to reference to an object for the duration of the method invocation.&lt;/p&gt;
+
+&lt;p&gt;Below is a code example with commented explanation.&lt;/p&gt;
+
+&lt;iframe height=&quot;268&quot; scrolling=&quot;no&quot; src=&quot;//codepen.io/rlynjb/embed/JGOmwp/?height=268&amp;amp;theme-id=20698&amp;amp;default-tab=js&quot; frameborder=&quot;no&quot; allowtransparency=&quot;true&quot; allowfullscreen=&quot;true&quot; style=&quot;width: 100%;&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/rlynjb/pen/JGOmwp/&quot;&gt;learning JavaScript's .apply and .call&lt;/a&gt; by rlynjb (&lt;a href=&quot;http://codepen.io/rlynjb&quot;&gt;@rlynjb&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
+&lt;/iframe&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;So what’s the difference between .apply and .call?&lt;/strong&gt; &lt;br /&gt;
+Besides passing in an argument to a &lt;code&gt;.call&lt;/code&gt; or &lt;code&gt;.apply&lt;/code&gt; methods that references to the &lt;code&gt;this&lt;/code&gt; keyword of an invoked function, we can also pass in a 2nd argument or more. A good mnemonic to explain their differences are:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;code&gt;.call&lt;/code&gt; Counts the number of arguments separated by Comma&lt;/em&gt; &lt;br /&gt;
+.call method accepts one or more arguments as objects and requires to be listed explicitly, means, it is a fixed number of arguments.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;other&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;argument&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;another&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;one&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;… while …&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;code&gt;.apply&lt;/code&gt; uses Array as an Argument&lt;/em&gt; &lt;br /&gt;
+.apply method requires an array as its 2nd argument. This method is used if you don’t know the number of arguments to be passed or the arguments is already in an array.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;argument1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;argument2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;argument3&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;** &lt;em&gt;Open CodePen above for Code sample&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/1986896/what-is-the-difference-between-call-and-apply/1987244&quot;&gt;What is the difference between call and apply?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://odetocode.com/blogs/scott/archive/2007/07/04/function-apply-and-function-call-in-javascript.aspx&quot;&gt;Function.apply and Function.call in JavaScript&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 19 Jan 2016 02:47:13 -0800</pubDate>
+        <link>http://www.wandrr.io/JS-Interview-Question-Whats-difference-between-call-and-apply</link>
+        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Whats-difference-between-call-and-apply</guid>
         
         <category>javascript</category>
         

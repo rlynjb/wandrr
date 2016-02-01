@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Useful commands for navigating directories"
-date: 2016-01-28 10:47:13
+date: 2015-01-01 01:01:01
 tags:
 - linux
 - commandline
