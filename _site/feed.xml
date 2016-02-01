@@ -6,9 +6,24 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 01 Feb 2016 09:00:43 -0800</pubDate>
-    <lastBuildDate>Mon, 01 Feb 2016 09:00:43 -0800</lastBuildDate>
+    <pubDate>Mon, 01 Feb 2016 12:28:27 -0800</pubDate>
+    <lastBuildDate>Mon, 01 Feb 2016 12:28:27 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Describe event bubbling</title>
+        <description>&lt;p&gt;Event bubbling deals with click events that was initiated in a hierarchy of HTML elements.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 01 Feb 2016 01:02:30 -0800</pubDate>
+        <link>http://www.wandrr.io/Describe-event-bubbling</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Describe-event-bubbling</guid>
+        
+        <category>javascript</category>
+        
+        <category>interview question</category>
+        
+        
+      </item>
     
       <item>
         <title>Front-End Workflow with Wordpress</title>
@@ -147,21 +162,6 @@ Some features that are worth noting are:&lt;/p&gt;
         <category>prototyping</category>
         
         <category>workflow</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Describe event bubbling</title>
-        <description>
-</description>
-        <pubDate>Fri, 29 Jan 2016 02:47:13 -0800</pubDate>
-        <link>http://www.wandrr.io/Describe-event-bubbling</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Describe-event-bubbling</guid>
-        
-        <category>javascript</category>
-        
-        <category>interview question</category>
         
         
       </item>

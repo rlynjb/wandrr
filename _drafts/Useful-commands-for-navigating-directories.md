@@ -65,7 +65,7 @@ These are just a list of commands I find usefule when searching for text or file
 - [nano]()
 - [cat]()
 - [head]()
-- [tail]()
+- [tail](http://www.computerhope.com/unix/utail.htm)
 
 **VIM - remembering important features**
 
