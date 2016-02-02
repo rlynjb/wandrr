@@ -7,10 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Describe event bubbling</title>
-  <meta name="description" content="Event bubbling deals with click events that was initiated in a hierarchy of HTML elements.">
+  <meta name="description" content="Event bubbling is when handlers on a nested DOM are triggered starting from the child element up to its parent element.">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.wandrr.io/Describe-event-bubbling">
+  <link rel="canonical" href="http://www.wandrr.io/JS-Interview-Question-Describe-event-bubbling">
   <link rel="alternate" type="application/rss+xml" title="wandrr.io" href="http://www.wandrr.io/feed.xml" />
 </head>
 
@@ -70,14 +70,72 @@
   <header class="post-header">
     <h1 class="post-title">Describe event bubbling</h1>
     <p class="post-meta">
-      Feb 1, 2016
+      Feb 2, 2016
       
        • javascript, interview question
     </p>
   </header>
 
   <article class="post-content">
-    <p>Event bubbling deals with click events that was initiated in a hierarchy of HTML elements.</p>
+    <p>Event bubbling is when handlers on a nested DOM are triggered starting from the child element up to its parent element.</p>
+
+<p>This means, eventhough we clicked on a child element, its parent element which contains a handler, will be triggered as well. That’s why it’s called <strong>Event bubbling</strong>, it is triggered from innermost child element that has been clicked up through topmost parent element.</p>
+
+<hr />
+
+<h3 id="this-and-eventtarget">this and event.target</h3>
+
+<p>When the innermost child element has been triggered, the event is called <em>‘the target’</em>, <em>‘the originating element’</em>, or <code>event.target</code>. Internet Explorer uses <code>event.srcElement</code> while all W3C-compliant browsers use <code>event.target</code>.</p>
+
+<p>Cross-browser code usually looks like this:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">target</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span> <span class="o">||</span> <span class="nx">event</span><span class="p">.</span><span class="nx">srcElement</span><span class="p">;</span></code></pre></div>
+
+<p>When handlers on its topmost parent elements are triggered, the event is called <code>this</code>.</p>
+
+<p>So when a Event Bubble occurs, <code>this</code> object changes its value going from innermost triggered child element to its topmost parent element, while <code>event.target</code> contains the same value as it holds <em>‘the originating element’</em>.</p>
+
+<hr />
+
+<h3 id="stop-the-event-bubbling">stop the event bubbling</h3>
+
+<p>An event bubble will occur as long as its topmost element contains a handler, even in <code>&lt;html&gt;</code> element.
+We can stop the event bubbling in a certain handler by invoking the following method:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// For W3C-compliant browsers</span>
+<span class="nx">event</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span>
+
+<span class="c1">// For IE&lt;9</span>
+<span class="nx">event</span><span class="p">.</span><span class="nx">cancelBubble</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="c1">// Cross-browser code:</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">event</span> <span class="o">=</span> <span class="nx">event</span> <span class="o">||</span> <span class="nb">window</span><span class="p">.</span><span class="nx">event</span> <span class="c1">// cross-browser event;</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// W3C standard variant</span>
+    <span class="nx">event</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// IE variant</span>
+    <span class="nx">event</span><span class="p">.</span><span class="nx">cancelBubble</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Here is a one-line variant:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">event</span><span class="p">.</span><span class="nx">stopPropagation</span> <span class="o">?</span> <span class="nx">event</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">()</span> <span class="o">:</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">cancelBubble</span><span class="o">=</span><span class="kc">true</span><span class="p">);</span></code></pre></div>
+
+<p><em>* Multiple handlers, initiated in the same element, will get executed.</em></p>
+
+<p>There is a reverse version of Event Bubbling called ‘Capturing’, but I will not go further into it. You can click on the link below for more info.</p>
+
+<hr />
+
+<h5 id="references"><strong>References:</strong></h5>
+
+<ul>
+  <li><a href="http://javascript.info/tutorial/bubbling-and-capturing">Bubbling and capturing</a></li>
+</ul>
 
   </article>
 

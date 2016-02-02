@@ -6,17 +6,75 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 01 Feb 2016 12:28:27 -0800</pubDate>
-    <lastBuildDate>Mon, 01 Feb 2016 12:28:27 -0800</lastBuildDate>
+    <pubDate>Tue, 02 Feb 2016 12:08:56 -0800</pubDate>
+    <lastBuildDate>Tue, 02 Feb 2016 12:08:56 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
         <title>Describe event bubbling</title>
-        <description>&lt;p&gt;Event bubbling deals with click events that was initiated in a hierarchy of HTML elements.&lt;/p&gt;
+        <description>&lt;p&gt;Event bubbling is when handlers on a nested DOM are triggered starting from the child element up to its parent element.&lt;/p&gt;
+
+&lt;p&gt;This means, eventhough we clicked on a child element, its parent element which contains a handler, will be triggered as well. That’s why it’s called &lt;strong&gt;Event bubbling&lt;/strong&gt;, it is triggered from innermost child element that has been clicked up through topmost parent element.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;this-and-eventtarget&quot;&gt;this and event.target&lt;/h3&gt;
+
+&lt;p&gt;When the innermost child element has been triggered, the event is called &lt;em&gt;‘the target’&lt;/em&gt;, &lt;em&gt;‘the originating element’&lt;/em&gt;, or &lt;code&gt;event.target&lt;/code&gt;. Internet Explorer uses &lt;code&gt;event.srcElement&lt;/code&gt; while all W3C-compliant browsers use &lt;code&gt;event.target&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Cross-browser code usually looks like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;srcElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;When handlers on its topmost parent elements are triggered, the event is called &lt;code&gt;this&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;So when a Event Bubble occurs, &lt;code&gt;this&lt;/code&gt; object changes its value going from innermost triggered child element to its topmost parent element, while &lt;code&gt;event.target&lt;/code&gt; contains the same value as it holds &lt;em&gt;‘the originating element’&lt;/em&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;stop-the-event-bubbling&quot;&gt;stop the event bubbling&lt;/h3&gt;
+
+&lt;p&gt;An event bubble will occur as long as its topmost element contains a handler, even in &lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt; element.
+We can stop the event bubbling in a certain handler by invoking the following method:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// For W3C-compliant browsers&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stopPropagation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// For IE&amp;lt;9&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cancelBubble&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Cross-browser code:&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onclick&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// cross-browser event;&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stopPropagation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// W3C standard variant&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stopPropagation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// IE variant&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cancelBubble&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Here is a one-line variant:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stopPropagation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stopPropagation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cancelBubble&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;* Multiple handlers, initiated in the same element, will get executed.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;There is a reverse version of Event Bubbling called ‘Capturing’, but I will not go further into it. You can click on the link below for more info.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://javascript.info/tutorial/bubbling-and-capturing&quot;&gt;Bubbling and capturing&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
-        <pubDate>Mon, 01 Feb 2016 01:02:30 -0800</pubDate>
-        <link>http://www.wandrr.io/Describe-event-bubbling</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Describe-event-bubbling</guid>
+        <pubDate>Tue, 02 Feb 2016 04:08:15 -0800</pubDate>
+        <link>http://www.wandrr.io/JS-Interview-Question-Describe-event-bubbling</link>
+        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Describe-event-bubbling</guid>
         
         <category>javascript</category>
         
