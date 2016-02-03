@@ -6,9 +6,24 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 03 Feb 2016 12:42:53 -0800</pubDate>
-    <lastBuildDate>Wed, 03 Feb 2016 12:42:53 -0800</lastBuildDate>
+    <pubDate>Wed, 03 Feb 2016 13:10:29 -0800</pubDate>
+    <lastBuildDate>Wed, 03 Feb 2016 13:10:29 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Why is extending built-in JavaScript objects not a good idea?</title>
+        <description>
+</description>
+        <pubDate>Wed, 03 Feb 2016 04:46:53 -0800</pubDate>
+        <link>http://www.wandrr.io/Why-is-extending-built-in-JavaScript-objects-not-a-good-idea</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Why-is-extending-built-in-JavaScript-objects-not-a-good-idea</guid>
+        
+        <category>javascript</category>
+        
+        <category>interview question</category>
+        
+        
+      </item>
     
       <item>
         <title>What's the difference between an 'attribute' and a 'property'?</title>
@@ -772,76 +787,6 @@ UA String or User Agent String is a string text of data that each browsers send 
         <pubDate>Wed, 20 Jan 2016 02:47:13 -0800</pubDate>
         <link>http://www.wandrr.io/JS-Interview-Question-Whats-difference-between-feature-detection-feature-inference-UA-string</link>
         <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Whats-difference-between-feature-detection-feature-inference-UA-string</guid>
-        
-        <category>javascript</category>
-        
-        <category>interview question</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Explain Function.prototype.bind</title>
-        <description>&lt;h3 id=&quot;explain-functionprototypebind&quot;&gt;Explain Function.prototype.bind&lt;/h3&gt;
-
-&lt;p&gt;It took me awhile to understand how &lt;code&gt;this&lt;/code&gt; keyword works, but after reading about bind method, its starting to make sense regarding the context of an object set explicitly and being able to access with &lt;code&gt;this&lt;/code&gt; keyword.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;A common issue that arise when we use functions is dealing with a function’s scope and an object’s context.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;** it’s important to understand the difference between function scope and object context.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Every function has its own scope with visible and accessible variables, but when we define closures, these inner functions creates its own scope as well. If we were to access the outer function’s context from inner functions (closures), we will need to declare a variable specifying the outer function’s context.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;To avoid polluting an outer function’s scope, we can use bind method instead. Once we invoked a function with bind method, it bounds our closure or inner function with the outer function’s scope.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// some content &lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;We are also able to pass in 2nd arguments if needed.&lt;/p&gt;
-
-&lt;p&gt;Though, IE8 and below doesn’t support &lt;code&gt;bind()&lt;/code&gt;, there is a polyfill available to fix this issue.
-&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind&quot;&gt;Polyfill here and more info&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;There are other methods of setting the scope of a function.&lt;/strong&gt;
-Other two are &lt;code&gt;apply() &amp;amp; call()&lt;/code&gt;. Difference between &lt;code&gt;apply() &amp;amp; call()&lt;/code&gt; and &lt;code&gt;bind()&lt;/code&gt; method is:&lt;/p&gt;
-
-&lt;p&gt;Functions invoked with &lt;code&gt;apply() &amp;amp; call()&lt;/code&gt; methods gets executed first and of course, we also pass along the function’s scope as well&lt;/p&gt;
-
-&lt;p&gt;… while …&lt;/p&gt;
-
-&lt;p&gt;Functions invoked with &lt;code&gt;bind()&lt;/code&gt; method just sets the scope, but doesn’t get executed. Awesome! B-)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Now another issue is when we pass around functions.&lt;/strong&gt; Its function context actually changes as well depending on where the function is invoked. It doesn’t necessarily bound to a specific object as we expect it to be bound to, rather, it may also bound to a global object, other outer objects, or even an HTML element, depending on where we invoked the function.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;** Note, that invoking a function is different from creating a new instance of an object.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Below is an interesting (coz its new to me) Code sample with commented out explanation. It shows how &lt;code&gt;this&lt;/code&gt; keyword can be mistakenly bound to an HTML element and how &lt;code&gt;bind()&lt;/code&gt; can fix it.&lt;/p&gt;
-
-&lt;iframe height=&quot;268&quot; scrolling=&quot;no&quot; src=&quot;//codepen.io/rlynjb/embed/qbpZVX/?height=268&amp;amp;theme-id=20698&amp;amp;default-tab=js&quot; frameborder=&quot;no&quot; allowtransparency=&quot;true&quot; allowfullscreen=&quot;true&quot; style=&quot;width: 100%;&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/rlynjb/pen/qbpZVX/&quot;&gt;Learning Javascript's bind method&lt;/a&gt; by rlynjb (&lt;a href=&quot;http://codepen.io/rlynjb&quot;&gt;@rlynjb&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
-&lt;/iframe&gt;
-
-&lt;hr /&gt;
-
-&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals&quot;&gt;JavaScript’s Apply, Call, and Bind Methods are Essential for JavaScript Professionals&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://krasimirtsonev.com/blog/article/JavaScript-bind-function-setting-a-scope&quot;&gt;JavaScript: bind function&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 20 Jan 2016 02:47:13 -0800</pubDate>
-        <link>http://www.wandrr.io/JS-Interview-Question-Explain-bind</link>
-        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Explain-bind</guid>
         
         <category>javascript</category>
         
