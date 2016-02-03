@@ -10,7 +10,7 @@
   <meta name="description" content="recalling basics of JavaScript">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.wandrr.io/Whats-the-difference-between-an-attribute-and-a-property">
+  <link rel="canonical" href="http://www.wandrr.io/JS-Interview-Question-Whats-the-difference-between-an-attribute-and-a-property">
   <link rel="alternate" type="application/rss+xml" title="wandrr.io" href="http://www.wandrr.io/feed.xml" />
 </head>
 
@@ -70,7 +70,7 @@
   <header class="post-header">
     <h1 class="post-title">What's the difference between an 'attribute' and a 'property'?</h1>
     <p class="post-meta">
-      Feb 2, 2016
+      Feb 3, 2016
       
        • javascript, interview question
     </p>
@@ -79,33 +79,47 @@
   <article class="post-content">
     <h3 id="recalling-basics-of-javascript">recalling basics of JavaScript</h3>
 
-<p>Everything in JavaScript is an object. These objects are categorized in different types (functions, boolean, string, number, etc) and can also contain properties and methods.</p>
-
-<p>Objects doesn’t just exist in the language itself (JavaScript), but in Browser Object Model (BOM) and Document Object Model (DOM) as well. <a href="http://javascript.info/tutorial/browser-environment">More info on browser environment</a></p>
+<p>Everything in JavaScript is an object. These objects are categorized in different types (functions, boolean, string, number, etc) and can also contain properties and methods.
+Objects doesn’t just exist in the language itself (JavaScript), but in Browser Object Model (BOM) and Document Object Model (DOM) as well. <a href="http://javascript.info/tutorial/browser-environment">More info on browser environment</a></p>
 
 <hr />
 
 <h3 id="objects-in-dom">objects in DOM</h3>
 
-<p>Every element in the DOM is an object and these objects have properties as well. These properties are mapped to an attribute. An attribute is just a string in an element and contains an initial value or a value from its property.</p>
+<p>Every element in the DOM is an object and these objects have properties as well. These properties are mapped to a set of attributes from an <code>html</code> markups. An attribute is just a string in an element (usually, <code>label='value'</code> pair).</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// html element</span>
+<p>Some of the element’s properties get their initial values from attributes with the same or similar names. Some examples below:</p>
+
+<ul>
+  <li><strong>href</strong> property gets its initial value from the <code>href</code> attribute, but there is an interpretation involved.</li>
+  <li><strong>className</strong> property gets its value from <code>class</code> attribute.</li>
+  <li>other properties get their initial values in other ways.</li>
+  <li>an element always has a <strong>style</strong> property, whether it has a <code>style</code> attribute or not.</li>
+  <li>a number of properties write back to the attribute they derived from if you set them, but some may have an interpretation involved. Example: <code>href</code></li>
+</ul>
+
+<p>Consider example below for points above.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// html element markup</span>
 <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s1">&#39;foo.html&#39;</span> <span class="kr">class</span><span class="o">=</span><span class="s1">&#39;test one&#39;</span> <span class="nx">name</span><span class="o">=</span><span class="s1">&#39;fooAnchor&#39;</span> <span class="nx">id</span><span class="o">=</span><span class="s1">&#39;fooAnchor&#39;</span><span class="o">&gt;</span><span class="nx">Hi</span><span class="o">&lt;</span><span class="err">/a&gt;</span>
 
 <span class="c1">// element object</span>
 <span class="o">+-------------------------------------------+</span>
 <span class="o">|</span> <span class="nx">a</span>                                         <span class="o">|</span>
 <span class="o">+-------------------------------------------+</span>
-<span class="o">|</span> <span class="nx">href</span><span class="o">:</span>       <span class="s2">&quot;http://example.com/foo.html&quot;</span> <span class="o">|</span>
-<span class="o">|</span> <span class="nx">name</span><span class="o">:</span>       <span class="s2">&quot;fooAnchor&quot;</span>                   <span class="o">|</span>
-<span class="o">|</span> <span class="nx">id</span><span class="o">:</span>         <span class="s2">&quot;fooAnchor&quot;</span>                   <span class="o">|</span>
-<span class="o">|</span> <span class="nx">className</span><span class="o">:</span>  <span class="s2">&quot;test one&quot;</span>                    <span class="o">|</span>
+<span class="o">|</span> <span class="nx">href</span><span class="o">:</span>      <span class="s2">&quot;http://example.com/foo.html&quot;</span>  <span class="o">|</span>
+<span class="o">|</span> <span class="nx">name</span><span class="o">:</span>      <span class="s2">&quot;fooAnchor&quot;</span>                    <span class="o">|</span>
+<span class="o">|</span> <span class="nx">id</span><span class="o">:</span>        <span class="s2">&quot;fooAnchor&quot;</span>                    <span class="o">|</span>
+<span class="o">|</span> <span class="nx">className</span><span class="o">:</span> <span class="s2">&quot;test one&quot;</span>                     <span class="o">|</span>
 <span class="o">|</span> <span class="nx">attributes</span><span class="o">:</span>                               <span class="o">|</span>
 <span class="o">|</span>    <span class="nx">href</span><span class="o">:</span>  <span class="s2">&quot;foo.html&quot;</span>                      <span class="o">|</span>
 <span class="o">|</span>    <span class="nx">name</span><span class="o">:</span>  <span class="s2">&quot;fooAnchor&quot;</span>                     <span class="o">|</span>
 <span class="o">|</span>    <span class="nx">id</span><span class="o">:</span>    <span class="s2">&quot;fooAnchor&quot;</span>                     <span class="o">|</span>
 <span class="o">|</span>    <span class="kr">class</span><span class="o">:</span> <span class="s2">&quot;test one&quot;</span>                      <span class="o">|</span>
 <span class="o">+-------------------------------------------+</span></code></pre></div>
+
+<p>Most of the time, its better to work with properties. Their values and names tend to be consistent across browsers.
+We’ll only work with attributes when there is no properties set, example is custom attributes <code>data-foobar</code>.</p>
 
 <hr />
 
