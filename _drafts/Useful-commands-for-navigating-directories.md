@@ -9,10 +9,17 @@ tags:
 
 Below is a gist of what this post contains.
 
+- Setting file permissions
 - Chaging user accounts
 - Commands for searching
 - Commands for sorting files
 - Opening files
+
+-----
+
+### Setting File Permissions
+
+- [Ubuntu: FilePermission](https://help.ubuntu.com/community/FilePermissions)
 
 -----
 
