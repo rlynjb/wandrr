@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Useful commands for navigating directories</title>
-  <meta name="description" content="Below is a gist of what this post contains.">
+  <title>Notes on Prototyping</title>
+  <meta name="description" content="This is a continuation of my Front-End workflow with Wordpress post.">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.wandrr.io/Useful-commands-for-navigating-directories">
+  <link rel="canonical" href="http://www.wandrr.io/Notes-on-prototyping">
   <link rel="alternate" type="application/rss+xml" title="wandrr.io" href="http://www.wandrr.io/feed.xml" />
 </head>
 
@@ -68,108 +68,66 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Useful commands for navigating directories</h1>
+    <h1 class="post-title">Notes on Prototyping</h1>
     <p class="post-meta">
       Dec 31, 2014
       
-       • linux, commandline
+       • wordpress, prototyping
     </p>
   </header>
 
   <article class="post-content">
-    <p>Below is a gist of what this post contains.</p>
+    <p>This is a continuation of my <a href="/Front-End-workflow-with-Wordpress">Front-End workflow with Wordpress</a> post.</p>
 
-<ul>
-  <li>Setting file permissions</li>
-  <li>Chaging user accounts</li>
-  <li>Commands for searching</li>
-  <li>Commands for sorting files</li>
-  <li>Opening files</li>
-</ul>
+<p>This blog post contains notes and personal opinion with the tools used for prototyping. This is the actual part of getting dirty with the code and framework.</p>
 
 <hr />
 
-<h3 id="setting-file-permissions">Setting File Permissions</h3>
+<h3 id="advantages-of-using-a-css-preprocessors">Advantages of using a CSS Preprocessors</h3>
 
-<ul>
-  <li><a href="https://help.ubuntu.com/community/FilePermissions">Ubuntu: FilePermission</a></li>
-</ul>
+<p>Here is an interesting article about the <a href="http://1stwebdesigner.com/power-sass-why-use-css-preprocessors/">Power of SASS and its advantages for Front-End Engineers</a></p>
 
-<hr />
+<p>Here are listed <a href="http://blog.blakesimpson.co.uk/read/37-less-sass-the-advantages-of-css-preprocessing-explained">features of CSS Preprocessors</a></p>
 
-<h3 id="changing-user-accounts">Changing user accounts</h3>
-
-<ul>
-  <li><a href="https://help.ubuntu.com/community/RootSudo">sudo su commands</a></li>
-</ul>
+<p><a href="https://developer.chrome.com/devtools/docs/css-preprocessors">Debugging CSS Preprocessor on Chrome Dev Tool</a></p>
 
 <hr />
 
-<h3 id="commands-for-searching">Commands for searching</h3>
+<h3 id="choosing-a-wp-theme-with-foundation-to-work-with">Choosing a WP theme with Foundation to work with</h3>
 
-<p>These are just a list of commands I find usefule when searching for text or files thoughout Linux system.</p>
+<p>So remember my previous blogpost ‘Front-End Workflow with Wordpress’ and mentioned using ‘FoundationPress’. After playing around with the theme further, I decided to go with ‘JointsWP’.</p>
 
-<ul>
-  <li><a href="https://help.ubuntu.com/community/find">find</a></li>
-  <li><a href="">locate</a></li>
-  <li><a href="https://help.ubuntu.com/community/grep">grep</a></li>
-</ul>
+<p>with foundationpress, setting it up was easy and creating templates, but when I got to the header menu template. I was trying to understand what was going on with FoundationPress. It got really confusing on how the menu was set up and the theme itself doens’t have much documentation.</p>
 
-<p><strong>Sample uses</strong></p>
+<p>So i looked further and played around with JointsWP.</p>
 
-<ul>
-  <li>Searching for a file throughout the system</li>
-  <li>Searching for a keyword though a directory</li>
-</ul>
+<p>My first impression was understanding with how they layout their menu was easy. and right off the install, they are using Foundation’s Off-canvas menu. Though I am still wondering why most theme would breakdown its menu html markups to pieces of template.</p>
 
-<h4 id="references"><strong>References:</strong></h4>
+<p>JointsWP also provides documentation for its theme. So besides Zurb Foundation documentation, there is also JointsWP documentation.</p>
 
-<ul>
-  <li><a href="https://www.digitalocean.com/community/tutorials/how-to-use-find-and-locate-to-search-for-files-on-a-linux-vps">How To Use Find and Locate to Search for Files on a Linux VPS</a></li>
-</ul>
+<p>although, FoundationPress provides documentation but it seems like its still underdevelope.</p>
+
+<p>As with other themes, JointsWP did just that but not as confusing as FoundationPress.</p>
 
 <hr />
 
-<h3 id="commands-for-sorting-files">Commands for sorting files</h3>
+<h3 id="starting-workflow">Starting workflow…</h3>
 
-<ul>
-  <li><a href="">ls</a></li>
-  <li><a href="">ll</a></li>
-</ul>
+<p>Create main pages on wordpress dashboard.</p>
 
-<p><strong>Sample uses</strong></p>
+<p>work with header first.. set initial logo and menu items</p>
 
-<ul>
-  <li>Sort files in date <code>ll -tr</code> to check which files has been modified recently</li>
-  <li>Check for any suspicious injected files</li>
-</ul>
+<p>set up Orbitz (carousel), go to zurb foundation documentation for instructions to implement carousel or any other js component.</p>
 
 <hr />
 
-<h3 id="security-file-permissions">Security File Permissions</h3>
+<h3 id="converting-pieces-of-data-to-wp-custom-fields">Converting pieces of data to WP Custom Fields</h3>
 
-<ul>
-  <li><a href="https://help.ubuntu.com/community/FilePermissions">Understanding and Using File Permissions</a></li>
-</ul>
+<p>For this task, I will be using this plugin called <a href="http://www.advancedcustomfields.com/">AdvanceCustomFields</a></p>
 
-<hr />
+<p>It is easier to implement custom fields to posts, custom post type, pages and customize how form will be displayed on wp admin dashboard.</p>
 
-<h3 id="opening-files">Opening files</h3>
-
-<ul>
-  <li><a href="">vim</a></li>
-  <li><a href="">nano</a></li>
-  <li><a href="">cat</a></li>
-  <li><a href="">head</a></li>
-  <li><a href="http://www.computerhope.com/unix/utail.htm">tail</a></li>
-</ul>
-
-<p><strong>VIM - remembering important features</strong></p>
-
-<ul>
-  <li><code>:set tabstop=2</code></li>
-  <li><code>:set nu</code></li>
-</ul>
+<p>It is also developer friendly, providing proper documentation and API.</p>
 
   </article>
 
