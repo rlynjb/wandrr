@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Why is extending built-in JavaScript objects not a good idea?</title>
-  <meta name="description" content="">
+  <meta name="description" content="Extending Built-in Native Javascript Objects is most likely an opinion base rather than facts.Common reasons why extending built-in native Javascript objects...">
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="http://www.wandrr.io/Why-is-extending-built-in-JavaScript-objects-not-a-good-idea">
@@ -77,7 +77,24 @@
   </header>
 
   <article class="post-content">
-    
+    <p>Extending Built-in Native Javascript Objects is most likely an opinion base rather than facts.
+Common reasons why extending built-in native Javascript objects is not a good idea:</p>
+
+<ul>
+  <li>Extending native objects isn’t bad as long as were considering about <strong>standard objects and methods</strong></li>
+  <li>Extending native built-in with custom methods immediately makes “collision” problem apparent</li>
+  <li>It violates <a href="https://www.nczonline.net/blog/2010/03/02/maintainable-javascript-dont-modify-objects-you-down-own/">don’t modify objects you don’t own principle</a></li>
+  <li>It makes code not future-proof</li>
+</ul>
+
+<hr />
+
+<h5 id="references"><strong>References:</strong></h5>
+
+<ul>
+  <li><a href="http://perfectionkills.com/extending-native-builtins/">Extending Built-In Natives. Evil or not?</a></li>
+  <li><a href="https://www.kirupa.com/html5/extending_built_in_objects_javascript.htm">Extending Built-In Objects in Javascript</a></li>
+</ul>
 
   </article>
 
