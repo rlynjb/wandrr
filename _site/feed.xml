@@ -6,9 +6,34 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 23 Feb 2016 13:05:53 -0800</pubDate>
-    <lastBuildDate>Tue, 23 Feb 2016 13:05:53 -0800</lastBuildDate>
+    <pubDate>Tue, 23 Feb 2016 15:09:09 -0800</pubDate>
+    <lastBuildDate>Tue, 23 Feb 2016 15:09:09 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Difference between document load event and document ready event?</title>
+        <description>&lt;p&gt;&lt;code&gt;window.onload&lt;/code&gt; event fires only when contents (images, css, scripts, other 3rd party sources), including the DOM has finished loading.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$(document).ready()&lt;/code&gt; event fires when the HTML DOM has finished loading. It also fires earlier than &lt;code&gt;window.onload&lt;/code&gt;. It will not wait for contents to load.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/3698200/window-onload-vs-document-ready&quot;&gt;window.onload vs $(document).ready()&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 23 Feb 2016 07:08:26 -0800</pubDate>
+        <link>http://www.wandrr.io/JS-Interview-Question-Difference-between-document-load-event-and-document-ready-event</link>
+        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Difference-between-document-load-event-and-document-ready-event</guid>
+        
+        <category>javascript</category>
+        
+        <category>interview question</category>
+        
+        
+      </item>
     
       <item>
         <title>Why is extending built-in JavaScript objects not a good idea?</title>
@@ -802,66 +827,6 @@ To make an HTTP Request to the server, we need to instantiate a class called XML
         <pubDate>Wed, 20 Jan 2016 02:47:13 -0800</pubDate>
         <link>http://www.wandrr.io/JS-Interview-Question-When-would-you-use-document-write</link>
         <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-When-would-you-use-document-write</guid>
-        
-        <category>javascript</category>
-        
-        <category>interview question</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>What’s the difference between feature detection, feature inference, and using the UA string?</title>
-        <description>&lt;h3 id=&quot;whats-the-difference-between-feature-detection-feature-inference-and-using-the-ua-string&quot;&gt;What’s the difference between feature detection, feature inference, and using the UA string?&lt;/h3&gt;
-
-&lt;p&gt;These 3 are just practices of determining if a certain web technology feature exists in a user’s browser or environment. Though features may vary with not just modern web technology but with programming languages as well.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Feature Detection&lt;/strong&gt; &lt;br /&gt;
-Feature detection is just a way of determining if a feature exists in certain browsers. A good example is a modern HTML5 feature ‘Location’.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;geolocation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// detect users location here B-) and do something awesome&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Feature Inference&lt;/strong&gt; &lt;br /&gt;
-Feature Inference is when you have determined a feature exists and assumed the next web technology feature you are implementing unto your app exists as well. Its usually bad practice to assume, so its better to explicitly specify features you want to detect and plan a fallback action.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;UA String&lt;/strong&gt; &lt;br /&gt;
-UA String or User Agent String is a string text of data that each browsers send and can be access via navigator.userAgent. These “string text of data” contains information of the browser environment you are targeting.&lt;/p&gt;
-
-&lt;p&gt;If you open your console and run&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userAgent&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;You’ll see it outputs a “string text of data” containing complete information of the environment you are currently using. Since this is an old way of doing detection, this method can be easily spoofed, thus, may not be the best route to take. &lt;a href=&quot;https://en.wikipedia.org/wiki/User_agent&quot;&gt;Ref: Wikipedia - User Agent&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;A JavaScript library I love using is Modernizr&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Modernizr is a small piece of JavaScript code that automatically detects the availability of next-generation web technologies in your user’s browsers. Rather than blacklisting entire ranges of browsers based on “UA sniffing,” Modernizr uses feature detection to allow you to easily tailor your user’s experiences based on the actual capabilities of their browser.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://modernizr.com/&quot;&gt;Modernizr: the feature detection library for HTML5/CSS3&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/a/20105074/4538744&quot;&gt;What’s the difference between feature detection, feature inference, and using the UA string&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 20 Jan 2016 02:47:13 -0800</pubDate>
-        <link>http://www.wandrr.io/JS-Interview-Question-Whats-difference-between-feature-detection-feature-inference-UA-string</link>
-        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Whats-difference-between-feature-detection-feature-inference-UA-string</guid>
         
         <category>javascript</category>
         
