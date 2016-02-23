@@ -6,34 +6,92 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 19 Feb 2016 16:19:13 -0800</pubDate>
-    <lastBuildDate>Fri, 19 Feb 2016 16:19:13 -0800</lastBuildDate>
+    <pubDate>Tue, 23 Feb 2016 13:05:53 -0800</pubDate>
+    <lastBuildDate>Tue, 23 Feb 2016 13:05:53 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
         <title>Why is extending built-in JavaScript objects not a good idea?</title>
-        <description>&lt;p&gt;Extending Built-in Native Javascript Objects is most likely an opinion base rather than facts.
-Common reasons why extending built-in native Javascript objects is not a good idea:&lt;/p&gt;
+        <description>&lt;p&gt;From what I understand, extending built-in JavaScript objects is most likely an opinion-base rather than facts.
+Before delving into its reasons why its not a good idea to extend built-in JS objects, I will tackle its purpose first to gain an understanding how it works and why its controversial.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;JS comes with essential built-in objects which we can utilize for text, numbers, boolean, data, dates, and much more. As we become familiar with these built-in objects, we’ll find ourselves wanting to do more than what JS provides, that’s where we create our custom built-in objects, hence, &lt;strong&gt;&lt;em&gt;“Extending built-in JS objects”&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;As an example, we can easily encapsulate our code using a function.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;regexIt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// do something with input and&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;and use it by invoking &lt;code&gt;regexIt&lt;/code&gt; function and passing in an argument, as shown below:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Hello World&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;regexIt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, let’s say for instance, this function has become so useful that it should be part of JS String object methods. You know, how JS String has &lt;code&gt;replace()&lt;/code&gt;, &lt;code&gt;indexOf()&lt;/code&gt;, &lt;code&gt;slice()&lt;/code&gt;, &lt;code&gt;substring()&lt;/code&gt;, &lt;code&gt;toUpperCase()&lt;/code&gt;, &lt;code&gt;toLowerCase()&lt;/code&gt;, &lt;code&gt;split()&lt;/code&gt;, just to name a few popular ones. We use these methods as shown below:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Hello World, Foo Bar&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;,&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If we want our &lt;code&gt;regexIt&lt;/code&gt; function to become a method of JS String object, meaning, to be able to use it like this, &lt;code&gt;foo.regexIt()&lt;/code&gt; instead of &lt;code&gt;regexIt(foo)&lt;/code&gt;, we’ll need to use &lt;strong&gt;prototype&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;prototype&quot;&gt;prototype&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;prototype&lt;/code&gt; let’s us insert our custom function to these JS Objects. All objects in JS contains a &lt;code&gt;prototype&lt;/code&gt; property, even the variables we declare. Since we don’t have access to the JS source code, thus, we cannot insert our custom functionality in &lt;code&gt;String&lt;/code&gt; object by fiddling with JS source code, we use the &lt;code&gt;String&lt;/code&gt; object’s &lt;code&gt;prototype&lt;/code&gt; as another approach to insert our functionality.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;regexIt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    Since were attaching our custom function to String object,&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    we don&amp;#39;t need an argument instead, we use &amp;#39;this&amp;#39; to access our argument&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    as it points to the String value attached.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;  */&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// do something with input and&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, we can use our &lt;code&gt;regexIt&lt;/code&gt; method as shown below:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Hello World&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;regexIt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This is because the prototype property provides you with direct access to your String’s insides.
+Best of all, any new arrays you create will also have access to the shuffle functionality by default thanks to how prototype inheritance works.
+- kirupa&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;controversials&quot;&gt;Controversials&lt;/h3&gt;
+
+&lt;p&gt;We’ve seen how easy it is to extend a built-in object’s functionality by declaring properties and methods, but there are contradictions to this practice.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Extending native objects isn’t bad as long as were considering about &lt;strong&gt;standard objects and methods&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;Extending native built-in with custom methods immediately makes “collision” problem apparent&lt;/li&gt;
-  &lt;li&gt;It violates &lt;a href=&quot;https://www.nczonline.net/blog/2010/03/02/maintainable-javascript-dont-modify-objects-you-down-own/&quot;&gt;don’t modify objects you don’t own principle&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;It makes code not future-proof&lt;/li&gt;
+  &lt;li&gt;JavaScript may implement their own version of your custom method in the future (using the same name) and this will override your custom method.&lt;/li&gt;
+  &lt;li&gt;Modifying the behaviour of current built-in JS objects is not a good practice as it breaks its default functionality and it will break your code using that specific built-in JS object method or property.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;When it comes down to extending a built-in JS object, it seems like you just use your best judgement. With given scenarios above, its easy to spot what should be avoided and what are the best approach to fix an issue.&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://perfectionkills.com/extending-native-builtins/&quot;&gt;Extending Built-In Natives. Evil or not?&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.kirupa.com/html5/extending_built_in_objects_javascript.htm&quot;&gt;Extending Built-In Objects in Javascript&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Wed, 03 Feb 2016 04:46:53 -0800</pubDate>
-        <link>http://www.wandrr.io/Why-is-extending-built-in-JavaScript-objects-not-a-good-idea</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Why-is-extending-built-in-JavaScript-objects-not-a-good-idea</guid>
+        <pubDate>Tue, 23 Feb 2016 05:04:54 -0800</pubDate>
+        <link>http://www.wandrr.io/JS-Interview-Question-Why-is-extending-built-in-JavaScript-objects-not-a-good-idea</link>
+        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Why-is-extending-built-in-JavaScript-objects-not-a-good-idea</guid>
         
         <category>javascript</category>
         
