@@ -21,7 +21,7 @@ I reside in Las Vegas, NV and stack I am currently using for work are: Wordpress
 - April 2015 - Present
 
 Maintain and built websites. Responsible for Front-end architecture and stack.
-I am responsible for building these websites, but I do not, alone, fully take credit. I worked with other developers building these projects.
+I am responsible for building these websites, but I do not, alone, fully take credit. I worked with other developers building and maintaining these projects.
 
 **Projects I've worked on..**
 
@@ -38,9 +38,7 @@ I am responsible for building these websites, but I do not, alone, fully take cr
 Developed R&D skills and coding skills working in a 3 member development team. Contributed code and features in main web application. Helped optimized CSS in application.
 Responsible for converting main web application to responsive website.
 
-**Main Web Application Project**
-
-- [Persopo](http://persopo.com)
+**Main Web Application Project**: [Persopo](http://persopo.com)
 
 -----
 
@@ -52,6 +50,4 @@ Responsible for converting main web application to responsive website.
 Responsible for HTML/CSS, coding email templates, landing pages, prototypes, converting design comps to template using Drupal. Experienced working in a Development team with Agile.
 Responsible for converting main web application to responsive website.
 
-**Main Web Application Project**
-
-- [Galavantier](http://galavantier.com)
+**Main Web Application Project**: [Galavantier](http://galavantier.com)

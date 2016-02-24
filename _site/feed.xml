@@ -6,9 +6,33 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 23 Feb 2016 15:09:09 -0800</pubDate>
-    <lastBuildDate>Tue, 23 Feb 2016 15:09:09 -0800</lastBuildDate>
+    <pubDate>Wed, 24 Feb 2016 10:42:14 -0800</pubDate>
+    <lastBuildDate>Wed, 24 Feb 2016 10:42:14 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>What is the difference between == and ===?</title>
+        <description>&lt;p&gt;JavaScript has two sets of Equality operators: &lt;code&gt;==&lt;/code&gt;, &lt;code&gt;!=&lt;/code&gt;  and &lt;code&gt;===&lt;/code&gt;, &lt;code&gt;!==&lt;/code&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/359494/does-it-matter-which-equals-operator-vs-i-use-in-javascript-comparisons&quot;&gt;Does it matter which equals operator (== vs ===) I use in JavaScript comparisons?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators&quot;&gt;Comparison operators&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 23 Feb 2016 07:15:38 -0800</pubDate>
+        <link>http://www.wandrr.io/Difference-between-double-and-triple-equals</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Difference-between-double-and-triple-equals</guid>
+        
+        <category>javascript</category>
+        
+        <category>interview question</category>
+        
+        
+      </item>
     
       <item>
         <title>Difference between document load event and document ready event?</title>
@@ -801,32 +825,6 @@ To make an HTTP Request to the server, we need to instantiate a class called XML
         <pubDate>Fri, 22 Jan 2016 02:47:13 -0800</pubDate>
         <link>http://www.wandrr.io/JS-Interview-Question-Explain-AJAX-in-as-much-detail-as-possible</link>
         <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Explain-AJAX-in-as-much-detail-as-possible</guid>
-        
-        <category>javascript</category>
-        
-        <category>interview question</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>When would you use document.write()?</title>
-        <description>&lt;h3 id=&quot;when-would-you-use-documentwrite&quot;&gt;When would you use document.write()?&lt;/h3&gt;
-
-&lt;p&gt;When &lt;code&gt;document.write()&lt;/code&gt; is executed after page load, it replaces the entire header and body tag with the given parameter value in string. An invocation could look like this:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;h1&amp;gt;hello world&amp;lt;/h1&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;When working with web application, it is uncommon task to overwrite an entire page, hence why using &lt;code&gt;document.write()&lt;/code&gt; is bad practice. It cannot inject string text into a given node point unlike jQuery library selectors and native JavaScript methods.
-&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Document&quot;&gt;Ref: developer.mozilla.org&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Another reason not to use &lt;code&gt;document.write()&lt;/code&gt; is it doesn’t support XHTML, but its not an issue since most web development uses HTML. Since &lt;code&gt;document.write()&lt;/code&gt; fires after a page has finish loading, it causes performance issues and sometimes, may not even fire at all.&lt;/p&gt;
-
-&lt;p&gt;The only seem appropriate usage for &lt;code&gt;document.write()&lt;/code&gt; is when working third parties like Google Analytics and such for including their scripts. This is because &lt;code&gt;document.write()&lt;/code&gt; is mostly available in any browser. Since third party companies have no control over the user’s browser dependencies (ex. jQuery), &lt;code&gt;document.write()&lt;/code&gt; can be used as a fallback or a default method.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 20 Jan 2016 02:47:13 -0800</pubDate>
-        <link>http://www.wandrr.io/JS-Interview-Question-When-would-you-use-document-write</link>
-        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-When-would-you-use-document-write</guid>
         
         <category>javascript</category>
         
