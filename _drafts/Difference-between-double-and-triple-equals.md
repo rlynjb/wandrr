@@ -7,7 +7,12 @@ tags:
 - interview question
 ---
 
-JavaScript has two sets of Equality operators: `==`, `!=`  and `===`, `!==`.
+JavaScript has two sets of **_Equality operators_** archived under [Comparison operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators):
+
+- equality `==` & inequality `!=`
+- strict equality `===` & strict inequality `!==`
+
+We use these operators when comparing 2 operands. They differ on what type of operands are being compared to against.
 
 
 -----
