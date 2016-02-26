@@ -1,16 +1,29 @@
 ---
 layout: post
 title: "Beginning Mobile App Development Journey"
-date: 2015-02-25 13:31:14
+date: 2016-02-26 13:14:59
 tags:
 - mobile development
 ---
 
-I decided to play aorund with Phonegap CLI which is powered with Cordova engine as well.
+This blog post is just my notes on learning how to setup PhoneGap/Cordova locally, build and test via PhoneGap Build.
+If you want to know more about its history and detailed instructions, refer to this book:
 
-I will cover the necessary steps to develop apps with PhoneGap.
-We can develop apps using either PhoneGap CLI or PhoneGap Desktop app.
-For emulating your app, we can either install and configure SDKs or use PhoneGap Build.
+[Packtpub: PhoneGap Mobile Application Development Hotshot](https://www.packtpub.com/application-development/phonegap-3x-mobile-application-development-hotshot)
+<br>
+<img src="https://d1ldz4te4covpm.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/7925OS.jpg"/>
+
+-----
+
+I've been searching for a Mobile App Framework on which I can use languages I'm comfortable with (HTML, CSS, JavaScript) and also will be able to deploy on various devices utilizing native device sensors and functionalities.
+
+I know performance will be an issue when using Mobile App Framework, but considering our project scope, it will not be an issue. Given the timeframe and number of developers, using Mobile App Framework sounds proper.
+
+Here are also some resources [Mobile Frameworks Comparison Chart](http://mobile-frameworks-comparison-chart.com/) and frameworks we've considered that I think worth noting: [Appgyver](http://appgyver.com), [Cordova](https://cordova.apache.org/), [Phonegap](http://phonegap.com/)
+
+### Why choose PhoneGap?
+
+It's opensouce MIT license! and since Cordova powers PhoneGap, I might as well take advantage of the additional features that PhoneGap offers: PhoneGap Build!
 
 -----
 
@@ -19,7 +32,8 @@ For emulating your app, we can either install and configure SDKs or use PhoneGap
 - install node.js and configure platform SDKs (if not using PhoneGap Build)
 - install PhoneGap
   - Adding the PhoneGap CLI enables the use of Adobe's remote building capabilities, which means you don't need to have the platform SDKs installed in order to build your app. (There are caveats here; it is best to refer to the PhoneGap Build website at http://build.phonegap.com for more information.) Installing PhoneGap CLI will also install Cordova CLI, since PhoneGap is powered by Cordova engine.
-
+  - install via npm: `sudo npm install -g phonegap`
+  - check if installed: `phonegap --version`
 - create first project
   - contains:
     - our code
@@ -121,4 +135,25 @@ http://cordova.apache.org/docs/en/dev/cordova/plugins/pluginapis.html#Plugin%20A
 
 Building involves compiling all the native code using the platform SDKs on your machine and then packaging your HTML, JavaScript, and CSS (and any assets) with this code so that it can be deployed to a simulator or device.
 
+**To build your project for a specific platform**
 
+`phonegap local build platform-name`
+
+To build your project remotely using PhoneGap Build, you need to have an account on PhoneGap Build and have all the necessary certificates and provisioning files set up.
+
+`phonegap remote build platform-name`
+
+[https://build.phonegap.com/](https://build.phonegap.com/)
+
+Building remotely using PhoneGap Build is a little different from building locally since you may not see the results of the build instantly; the service will build the code as soon as it has a chance. The only way to verify that things went as expected is to log on to your account at http://build.phonegap.com and verify the results.
+
+-----
+
+### deploy project to a simulator/device
+
+Once we built a project, next is to **Test it**.
+To do this, you can deploy the code to a simulator (which is handy for debugging on your machine) or deploy the code to a device (which is a must to get a feel for how the app performs on a real device). You can do both using either CLIs, depending upon what the platform SDK supports. (For example, some platform SDKs may only support deploying to a simulator.)
+
+To deploy using the PhoneGap CLI, it's important to remember that this only works for local builds. If you built remotely, you need to navigate to http://build.phonegap.com and install from there.
+
+`phonegap local install platform-name`
