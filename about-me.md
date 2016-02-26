@@ -28,7 +28,8 @@ I am responsible for building these websites, but I do not, alone, fully take cr
 
 **Projects I've worked on..**
 
-- [Golden Entertainment](http://goldenent.com)
+- [Golden Entertainment](http://goldenent.com) - Wordpress
+- [Novusvi](http://www.novusvi.com/) - Wordpress, Sass, Gulp, HTML5, JS
 - [PT's Entertainment Group](#) - coming soon
 
 -----
