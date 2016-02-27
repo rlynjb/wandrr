@@ -6,13 +6,13 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 26 Feb 2016 13:16:17 -0800</pubDate>
-    <lastBuildDate>Fri, 26 Feb 2016 13:16:17 -0800</lastBuildDate>
+    <pubDate>Sat, 27 Feb 2016 12:50:11 -0800</pubDate>
+    <lastBuildDate>Sat, 27 Feb 2016 12:50:11 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
         <title>Beginning Mobile App Development Journey</title>
-        <description>&lt;p&gt;This blog post is just my notes on learning how to setup PhoneGap/Cordova locally, build and test via PhoneGap Build.
+        <description>&lt;p&gt;Consider this blog post as my notes on learning how to setup PhoneGap/Cordova locally, build and test via PhoneGap Build.
 If you want to know more about its history and detailed instructions, refer to this book:&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.packtpub.com/application-development/phonegap-3x-mobile-application-development-hotshot&quot;&gt;Packtpub: PhoneGap Mobile Application Development Hotshot&lt;/a&gt;
@@ -29,40 +29,60 @@ If you want to know more about its history and detailed instructions, refer to t
 
 &lt;h3 id=&quot;why-choose-phonegap&quot;&gt;Why choose PhoneGap?&lt;/h3&gt;
 
-&lt;p&gt;It’s opensouce MIT license! and since Cordova powers PhoneGap, I might as well take advantage of the additional features that PhoneGap offers: PhoneGap Build!&lt;/p&gt;
+&lt;p&gt;It’s opensouce MIT license! and since Cordova powers PhoneGap, I might as well take advantage of the additional features that PhoneGap offers: PhoneGap Build! (this is to avoid installing and configuring any platform SDKs locally)&lt;/p&gt;
 
 &lt;hr /&gt;
 
+&lt;p&gt;The following steps are a combination of instructions from mentioned book above and based off of my experience configuring my local development and using 3rd party cloud base services.&lt;/p&gt;
+
 &lt;h3 id=&quot;requirements-and-important-initial-step&quot;&gt;Requirements and important initial step&lt;/h3&gt;
 
+&lt;p&gt;&lt;strong&gt;Installation&lt;/strong&gt;&lt;/p&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;install node.js and configure platform SDKs (if not using PhoneGap Build)&lt;/li&gt;
-  &lt;li&gt;install PhoneGap
+  &lt;li&gt;Install node.js
     &lt;ul&gt;
-      &lt;li&gt;Adding the PhoneGap CLI enables the use of Adobe’s remote building capabilities, which means you don’t need to have the platform SDKs installed in order to build your app. (There are caveats here; it is best to refer to the PhoneGap Build website at http://build.phonegap.com for more information.) Installing PhoneGap CLI will also install Cordova CLI, since PhoneGap is powered by Cordova engine.&lt;/li&gt;
-      &lt;li&gt;install via npm: &lt;code&gt;sudo npm install -g phonegap&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;check if installed: &lt;code&gt;phonegap --version&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;From experience, node.js versions and path can get complicated, I recommended installing node.js via &lt;strong&gt;nvm&lt;/strong&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;create first project
+  &lt;li&gt;install PhoneGap (includes PhoneGap CLI)
     &lt;ul&gt;
-      &lt;li&gt;contains:
+      &lt;li&gt;Adding the PhoneGap CLI enables the use of Adobe’s remote building capabilities, which means you don’t need to have the platform SDKs installed in order to build your app. (There are caveats here; it is best to refer to the PhoneGap Build website at http://build.phonegap.com for more information.) Installing PhoneGap CLI will also install Cordova CLI, since PhoneGap is powered by Cordova engine.&lt;/li&gt;
+      &lt;li&gt;Install via npm: &lt;code&gt;sudo npm install -g phonegap&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Check if installed: &lt;code&gt;phonegap --version&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Starting a project&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Create first project
+    &lt;ul&gt;
+      &lt;li&gt;Contains:
         &lt;ul&gt;
-          &lt;li&gt;our code&lt;/li&gt;
-          &lt;li&gt;other platform-specific code&lt;/li&gt;
-          &lt;li&gt;other assets required to generate an app ready for you to run on a simulator or device&lt;/li&gt;
+          &lt;li&gt;Our code&lt;/li&gt;
+          &lt;li&gt;Other platform-specific code&lt;/li&gt;
+          &lt;li&gt;Other assets required to generate an app ready for you to run on a simulator or device&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;manage project’s platforms&lt;/li&gt;
-  &lt;li&gt;manage project’s plugins&lt;/li&gt;
-  &lt;li&gt;build my project&lt;/li&gt;
-  &lt;li&gt;deploy project to the simulator/device&lt;/li&gt;
+  &lt;li&gt;Manage project’s platforms&lt;/li&gt;
+  &lt;li&gt;Manage project’s plugins&lt;/li&gt;
+  &lt;li&gt;Build my project&lt;/li&gt;
+  &lt;li&gt;Deploy project to the simulator/device&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;When testing our app on a simulator, we either need to install platform SDKs if we where to test it locally.
-To avoid installing and configuring such SDKs, we can rely on PhoneGap Build for this simulating on different OS (Android, iOS, Blackberry, Windows) https://build.phonegap.com&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Additional notes on Build and Deploy&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;When testing our app on a simulator, we either need to install platform SDKs if we where to test it locally.&lt;br /&gt;
+To avoid installing and configuring such SDKs:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;We can rely on &lt;a href=&quot;http://app.phonegap.com/&quot;&gt;PhoneGap Build&lt;/a&gt; to build the project and&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/ripple-emulator-beta/geelfhphabnejjhdalkjhgipohgpdnoc?hl=en&quot;&gt;Ripple Emulator&lt;/a&gt; or &lt;a href=&quot;http://app.phonegap.com/&quot;&gt;The PhoneGap Developer App&lt;/a&gt; for simulating on different OS (Android, iOS, Blackberry, Windows).&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;But a Mac is required to generate the certificates necessary for iOS app signing (even with PhoneGap Build) and is definitely required for deployment to the App Store. The same is true for Windows; you need to deploy to the App Store from Windows only.&lt;/p&gt;
 
@@ -70,56 +90,46 @@ To avoid installing and configuring such SDKs, we can rely on PhoneGap Build for
 
 &lt;h3 id=&quot;create-first-project&quot;&gt;Create first project&lt;/h3&gt;
 
-&lt;p&gt;to create a project with PhoneGap CLI&lt;/p&gt;
+&lt;p&gt;To create a project with PhoneGap CLI, &lt;code&gt;cd&lt;/code&gt; to your projects directory (ex. &lt;code&gt;/www&lt;/code&gt; or &lt;code&gt;/home&lt;/code&gt;)&lt;/p&gt;
 
-&lt;p&gt;run: &lt;code&gt;phonegap create ./PGHelloWorld com.phonegaphotshot.pghelloworld PGHelloWorld&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Run: &lt;code&gt;phonegap create ./PGHelloWorld com.phonegaphotshot.pghelloworld PGHelloWorld&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;the first parameter indicates that a project should be created in a directory specified by the second parameter. The third parameter is the project ID, which must be unique and should be specified in reverse domain-name order. The final parameter is the name of the project.&lt;/p&gt;
+&lt;p&gt;The first parameter indicates that a project should be created in a directory specified by the second parameter. The third parameter is the project ID, which must be unique and should be specified in reverse domain-name order. The final parameter is the name of the project.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;manage-projects-platforms&quot;&gt;manage project’s platforms&lt;/h3&gt;
+&lt;h3 id=&quot;manage-projects-platforms&quot;&gt;Manage project’s platforms&lt;/h3&gt;
 
-&lt;p&gt;in this step, we will specify the platforms that the projects support. besides adding platforms, we can also remove, update, and list out the supported platforms.&lt;/p&gt;
+&lt;p&gt;In this step, we will specify the platforms that the projects support. Besides adding platforms, we can also remove, update, and list out the supported platforms.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;to add platform&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;cordova platform add platform-name&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;To add platform:&lt;/strong&gt; &lt;code&gt;cordova platform add platform-name&lt;/code&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;ios: The iOS platform&lt;/li&gt;
-  &lt;li&gt;android: The Android platform&lt;/li&gt;
-  &lt;li&gt;blackberry10: The BlackBerry 10 OS platform&lt;/li&gt;
-  &lt;li&gt;firefoxos: The Firefox OS platform&lt;/li&gt;
-  &lt;li&gt;wp7: The Windows Phone 7 platform&lt;/li&gt;
-  &lt;li&gt;wp8: The Windows Phone 8 platform&lt;/li&gt;
-  &lt;li&gt;windows 8: The Windows 8 platform&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;ios&lt;/code&gt;: The iOS platform&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;android&lt;/code&gt;: The Android platform&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;blackberry10&lt;/code&gt;: The BlackBerry 10 OS platform&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;firefoxos&lt;/code&gt;: The Firefox OS platform&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;wp7&lt;/code&gt;: The Windows Phone 7 platform&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;wp8&lt;/code&gt;: The Windows Phone 8 platform&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;windows 8&lt;/code&gt;: The Windows 8 platform&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;listing the available platforms&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Listing the available platforms:&lt;/strong&gt; &lt;code&gt;cordova platform ls&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;cordova platform ls&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Removing platforms:&lt;/strong&gt; &lt;code&gt;cordova platform remove platform-name&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;removing platforms&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;cordova platform remove platform-name&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;updating platforms&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;cordova platform update platform-name&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Updating platforms:&lt;/strong&gt; &lt;code&gt;cordova platform update platform-name&lt;/code&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;manage-projects-plugins&quot;&gt;manage project’s plugins&lt;/h3&gt;
+&lt;h3 id=&quot;manage-projects-plugins&quot;&gt;Manage project’s plugins&lt;/h3&gt;
 
 &lt;p&gt;Plugins are the mechanism Cordova uses to provide native functionality to your app. 
 Plugins can be managed using either the Cordova CLI or the PhoneGap CLI (which ends up using the Cordova CLI in the background). The important detail to remember when you use the PhoneGap CLI is that plugins must be installed locally (not remotely).&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;installing plugins&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;To install plugins:&lt;/strong&gt; &lt;code&gt;phonegap local plugin add plugin-name&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;phonegap local plugin add plugin-name&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;http://cordova.apache.org/docs/en/dev/cordova/plugins/pluginapis.html#Plugin%20APIsZ&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://cordova.apache.org/docs/en/dev/cordova/plugins/pluginapis.html#Plugin%20APIsZ&quot;&gt;Official Documentation: Cordova - Plugin APIs&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;phonegap local plugin add org.apache.cordova.device&lt;/li&gt;
@@ -142,42 +152,36 @@ Plugins can be managed using either the Cordova CLI or the PhoneGap CLI (which e
   &lt;li&gt;phonegap local plugin add org.apache.cordova.console&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;listing plugins&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Listing plugins:&lt;/strong&gt; &lt;code&gt;phonegap local plugin list&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;phonegap local plugin list&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;removing plugins&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;phonegap local plugin remove plugin-name&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Removing plugins:&lt;/strong&gt; &lt;code&gt;phonegap local plugin remove plugin-name&lt;/code&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;building-our-project&quot;&gt;building our project&lt;/h3&gt;
+&lt;h3 id=&quot;building-our-project&quot;&gt;Building our project&lt;/h3&gt;
 
 &lt;p&gt;Building involves compiling all the native code using the platform SDKs on your machine and then packaging your HTML, JavaScript, and CSS (and any assets) with this code so that it can be deployed to a simulator or device.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;To build your project for a specific platform&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;To build project remotely via PhoneGap Build:&lt;/strong&gt;&lt;br /&gt;
+&lt;code&gt;phonegap remote build platform-name&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;phonegap local build platform-name&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;To build your project remotely using PhoneGap Build, you need to have an account on PhoneGap Build and have all the necessary certificates and provisioning files set up.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;phonegap remote build platform-name&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://build.phonegap.com/&quot;&gt;https://build.phonegap.com/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Building remotely using PhoneGap Build is a little different from building locally since you may not see the results of the build instantly; the service will build the code as soon as it has a chance. The only way to verify that things went as expected is to log on to your account at http://build.phonegap.com and verify the results.&lt;/p&gt;
+&lt;p&gt;Building remotely using PhoneGap Build is a little different from building locally since you may not see the results of the build instantly; the service will build the code as soon as it has a chance. The only way to verify that things went as expected is to log on to your account at &lt;a href=&quot;https://build.phonegap.com/&quot;&gt;https://build.phonegap.com/&lt;/a&gt; and verify the results.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;deploy-project-to-a-simulatordevice&quot;&gt;deploy project to a simulator/device&lt;/h3&gt;
+&lt;h3 id=&quot;deploy-project-to-a-simulatordevice&quot;&gt;Deploy project to a simulator/device&lt;/h3&gt;
 
 &lt;p&gt;Once we built a project, next is to &lt;strong&gt;Test it&lt;/strong&gt;.
-To do this, you can deploy the code to a simulator (which is handy for debugging on your machine) or deploy the code to a device (which is a must to get a feel for how the app performs on a real device). You can do both using either CLIs, depending upon what the platform SDK supports. (For example, some platform SDKs may only support deploying to a simulator.)&lt;/p&gt;
+To do this, you can deploy the code to a simulator or deploy the code to a device. So far, I’ve only used &lt;a href=&quot;https://chrome.google.com/webstore/detail/ripple-emulator-beta/geelfhphabnejjhdalkjhgipohgpdnoc?hl=en&quot;&gt;Ripple Emulator&lt;/a&gt; to debug and simulate.&lt;/p&gt;
 
-&lt;p&gt;To deploy using the PhoneGap CLI, it’s important to remember that this only works for local builds. If you built remotely, you need to navigate to http://build.phonegap.com and install from there.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;To get started with Ripple Emulator&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;phonegap local install platform-name&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Install Ripple Emulator&lt;/li&gt;
+  &lt;li&gt;Enable it&lt;/li&gt;
+  &lt;li&gt;Run &lt;code&gt;phonegap serve&lt;/code&gt; to retrieve address&lt;/li&gt;
+  &lt;li&gt;Enter local address to Ripple Emulator&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         <pubDate>Fri, 26 Feb 2016 05:14:59 -0800</pubDate>
         <link>http://www.wandrr.io/Beginning-mobile-app-development-journey</link>
@@ -335,7 +339,7 @@ Best of all, any new arrays you create will also have access to the shuffle func
       </item>
     
       <item>
-        <title>What's the difference between an 'attribute' and a 'property'?</title>
+        <title>What&#39;s the difference between an &#39;attribute&#39; and a &#39;property&#39;?</title>
         <description>&lt;h3 id=&quot;recalling-basics-of-javascript&quot;&gt;recalling basics of JavaScript&lt;/h3&gt;
 
 &lt;p&gt;Everything in JavaScript is an object. These objects are categorized in different types (functions, boolean, string, number, etc) and can also contain properties and methods.
@@ -345,7 +349,7 @@ Objects doesn’t just exist in the language itself (JavaScript), but in Browser
 
 &lt;h3 id=&quot;objects-in-dom&quot;&gt;objects in DOM&lt;/h3&gt;
 
-&lt;p&gt;Every element in the DOM is an object and these objects have properties as well. These properties are mapped to a set of attributes from an &lt;code&gt;html&lt;/code&gt; markups. An attribute is just a string in an element (usually, &lt;code&gt;label='value'&lt;/code&gt; pair).&lt;/p&gt;
+&lt;p&gt;Every element in the DOM is an object and these objects have properties as well. These properties are mapped to a set of attributes from an &lt;code&gt;html&lt;/code&gt; markups. An attribute is just a string in an element (usually, &lt;code&gt;label=&#39;value&#39;&lt;/code&gt; pair).&lt;/p&gt;
 
 &lt;p&gt;Some of the element’s properties get their initial values from attributes with the same or similar names. Some examples below:&lt;/p&gt;
 
@@ -616,7 +620,7 @@ Some features that are worth noting are:&lt;/p&gt;
       </item>
     
       <item>
-        <title>Explain 'hoisting'</title>
+        <title>Explain &#39;hoisting&#39;</title>
         <description>&lt;p&gt;As defined in dictionary.com, Hoisting means to lift or raise. &lt;strong&gt;In JavaScript&lt;/strong&gt;, Hoisting is when we declare variables and are hoisted to the top of a function scope or to the top of the global scope depending on where it is declared. Remember, JavaScript have a &lt;strong&gt;function-level scope&lt;/strong&gt; as oppose to &lt;strong&gt;block-level scope&lt;/strong&gt; in other languages.&lt;/p&gt;
 
 &lt;p&gt;** &lt;em&gt;Note, we must first understand the concept of JavaScript Variable Scope as this is the basis of Hoisting&lt;/em&gt;&lt;/p&gt;
@@ -782,7 +786,7 @@ Some features that are worth noting are:&lt;/p&gt;
       </item>
     
       <item>
-        <title>Explain how JSONP works (and how it's not really AJAX)</title>
+        <title>Explain how JSONP works (and how it&#39;s not really AJAX)</title>
         <description>&lt;h3 id=&quot;explain-how-jsonp-works-and-how-its-not-really-ajax&quot;&gt;Explain how JSONP works (and how it’s not really AJAX).&lt;/h3&gt;
 
 &lt;p&gt;JSONP (acronym for JavaScript Object Notation with Padding) is a common method to retrieve data from another domain and bypass CORS (Cross Origin Resource Sharing) rules.&lt;/p&gt;

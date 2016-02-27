@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Beginning Mobile App Development Journey</title>
-  <meta name="description" content="This blog post is just my notes on learning how to setup PhoneGap/Cordova locally, build and test via PhoneGap Build.If you want to know more about its histo...">
+  <meta name="description" content="Consider this blog post as my notes on learning how to setup PhoneGap/Cordova locally, build and test via PhoneGap Build.If you want to know more about its h...">
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="http://www.wandrr.io/Beginning-mobile-app-development-journey">
@@ -77,7 +77,7 @@
   </header>
 
   <article class="post-content">
-    <p>This blog post is just my notes on learning how to setup PhoneGap/Cordova locally, build and test via PhoneGap Build.
+    <p>Consider this blog post as my notes on learning how to setup PhoneGap/Cordova locally, build and test via PhoneGap Build.
 If you want to know more about its history and detailed instructions, refer to this book:</p>
 
 <p><a href="https://www.packtpub.com/application-development/phonegap-3x-mobile-application-development-hotshot">Packtpub: PhoneGap Mobile Application Development Hotshot</a>
@@ -94,40 +94,60 @@ If you want to know more about its history and detailed instructions, refer to t
 
 <h3 id="why-choose-phonegap">Why choose PhoneGap?</h3>
 
-<p>It’s opensouce MIT license! and since Cordova powers PhoneGap, I might as well take advantage of the additional features that PhoneGap offers: PhoneGap Build!</p>
+<p>It’s opensouce MIT license! and since Cordova powers PhoneGap, I might as well take advantage of the additional features that PhoneGap offers: PhoneGap Build! (this is to avoid installing and configuring any platform SDKs locally)</p>
 
 <hr />
 
+<p>The following steps are a combination of instructions from mentioned book above and based off of my experience configuring my local development and using 3rd party cloud base services.</p>
+
 <h3 id="requirements-and-important-initial-step">Requirements and important initial step</h3>
 
+<p><strong>Installation</strong></p>
+
 <ul>
-  <li>install node.js and configure platform SDKs (if not using PhoneGap Build)</li>
-  <li>install PhoneGap
+  <li>Install node.js
     <ul>
-      <li>Adding the PhoneGap CLI enables the use of Adobe’s remote building capabilities, which means you don’t need to have the platform SDKs installed in order to build your app. (There are caveats here; it is best to refer to the PhoneGap Build website at http://build.phonegap.com for more information.) Installing PhoneGap CLI will also install Cordova CLI, since PhoneGap is powered by Cordova engine.</li>
-      <li>install via npm: <code>sudo npm install -g phonegap</code></li>
-      <li>check if installed: <code>phonegap --version</code></li>
+      <li>From experience, node.js versions and path can get complicated, I recommended installing node.js via <strong>nvm</strong></li>
     </ul>
   </li>
-  <li>create first project
+  <li>install PhoneGap (includes PhoneGap CLI)
     <ul>
-      <li>contains:
+      <li>Adding the PhoneGap CLI enables the use of Adobe’s remote building capabilities, which means you don’t need to have the platform SDKs installed in order to build your app. (There are caveats here; it is best to refer to the PhoneGap Build website at http://build.phonegap.com for more information.) Installing PhoneGap CLI will also install Cordova CLI, since PhoneGap is powered by Cordova engine.</li>
+      <li>Install via npm: <code>sudo npm install -g phonegap</code></li>
+      <li>Check if installed: <code>phonegap --version</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Starting a project</strong></p>
+
+<ul>
+  <li>Create first project
+    <ul>
+      <li>Contains:
         <ul>
-          <li>our code</li>
-          <li>other platform-specific code</li>
-          <li>other assets required to generate an app ready for you to run on a simulator or device</li>
+          <li>Our code</li>
+          <li>Other platform-specific code</li>
+          <li>Other assets required to generate an app ready for you to run on a simulator or device</li>
         </ul>
       </li>
     </ul>
   </li>
-  <li>manage project’s platforms</li>
-  <li>manage project’s plugins</li>
-  <li>build my project</li>
-  <li>deploy project to the simulator/device</li>
+  <li>Manage project’s platforms</li>
+  <li>Manage project’s plugins</li>
+  <li>Build my project</li>
+  <li>Deploy project to the simulator/device</li>
 </ul>
 
-<p>When testing our app on a simulator, we either need to install platform SDKs if we where to test it locally.
-To avoid installing and configuring such SDKs, we can rely on PhoneGap Build for this simulating on different OS (Android, iOS, Blackberry, Windows) https://build.phonegap.com</p>
+<p><strong>Additional notes on Build and Deploy</strong></p>
+
+<p>When testing our app on a simulator, we either need to install platform SDKs if we where to test it locally.<br />
+To avoid installing and configuring such SDKs:</p>
+
+<ul>
+  <li>We can rely on <a href="http://app.phonegap.com/">PhoneGap Build</a> to build the project and</li>
+  <li><a href="https://chrome.google.com/webstore/detail/ripple-emulator-beta/geelfhphabnejjhdalkjhgipohgpdnoc?hl=en">Ripple Emulator</a> or <a href="http://app.phonegap.com/">The PhoneGap Developer App</a> for simulating on different OS (Android, iOS, Blackberry, Windows).</li>
+</ul>
 
 <p>But a Mac is required to generate the certificates necessary for iOS app signing (even with PhoneGap Build) and is definitely required for deployment to the App Store. The same is true for Windows; you need to deploy to the App Store from Windows only.</p>
 
@@ -135,56 +155,46 @@ To avoid installing and configuring such SDKs, we can rely on PhoneGap Build for
 
 <h3 id="create-first-project">Create first project</h3>
 
-<p>to create a project with PhoneGap CLI</p>
+<p>To create a project with PhoneGap CLI, <code>cd</code> to your projects directory (ex. <code>/www</code> or <code>/home</code>)</p>
 
-<p>run: <code>phonegap create ./PGHelloWorld com.phonegaphotshot.pghelloworld PGHelloWorld</code></p>
+<p>Run: <code>phonegap create ./PGHelloWorld com.phonegaphotshot.pghelloworld PGHelloWorld</code></p>
 
-<p>the first parameter indicates that a project should be created in a directory specified by the second parameter. The third parameter is the project ID, which must be unique and should be specified in reverse domain-name order. The final parameter is the name of the project.</p>
+<p>The first parameter indicates that a project should be created in a directory specified by the second parameter. The third parameter is the project ID, which must be unique and should be specified in reverse domain-name order. The final parameter is the name of the project.</p>
 
 <hr />
 
-<h3 id="manage-projects-platforms">manage project’s platforms</h3>
+<h3 id="manage-projects-platforms">Manage project’s platforms</h3>
 
-<p>in this step, we will specify the platforms that the projects support. besides adding platforms, we can also remove, update, and list out the supported platforms.</p>
+<p>In this step, we will specify the platforms that the projects support. Besides adding platforms, we can also remove, update, and list out the supported platforms.</p>
 
-<p><strong>to add platform</strong></p>
-
-<p><code>cordova platform add platform-name</code></p>
+<p><strong>To add platform:</strong> <code>cordova platform add platform-name</code></p>
 
 <ul>
-  <li>ios: The iOS platform</li>
-  <li>android: The Android platform</li>
-  <li>blackberry10: The BlackBerry 10 OS platform</li>
-  <li>firefoxos: The Firefox OS platform</li>
-  <li>wp7: The Windows Phone 7 platform</li>
-  <li>wp8: The Windows Phone 8 platform</li>
-  <li>windows 8: The Windows 8 platform</li>
+  <li><code>ios</code>: The iOS platform</li>
+  <li><code>android</code>: The Android platform</li>
+  <li><code>blackberry10</code>: The BlackBerry 10 OS platform</li>
+  <li><code>firefoxos</code>: The Firefox OS platform</li>
+  <li><code>wp7</code>: The Windows Phone 7 platform</li>
+  <li><code>wp8</code>: The Windows Phone 8 platform</li>
+  <li><code>windows 8</code>: The Windows 8 platform</li>
 </ul>
 
-<p><strong>listing the available platforms</strong></p>
+<p><strong>Listing the available platforms:</strong> <code>cordova platform ls</code></p>
 
-<p><code>cordova platform ls</code></p>
+<p><strong>Removing platforms:</strong> <code>cordova platform remove platform-name</code></p>
 
-<p><strong>removing platforms</strong></p>
-
-<p><code>cordova platform remove platform-name</code></p>
-
-<p><strong>updating platforms</strong></p>
-
-<p><code>cordova platform update platform-name</code></p>
+<p><strong>Updating platforms:</strong> <code>cordova platform update platform-name</code></p>
 
 <hr />
 
-<h3 id="manage-projects-plugins">manage project’s plugins</h3>
+<h3 id="manage-projects-plugins">Manage project’s plugins</h3>
 
 <p>Plugins are the mechanism Cordova uses to provide native functionality to your app. 
 Plugins can be managed using either the Cordova CLI or the PhoneGap CLI (which ends up using the Cordova CLI in the background). The important detail to remember when you use the PhoneGap CLI is that plugins must be installed locally (not remotely).</p>
 
-<p><strong>installing plugins</strong></p>
+<p><strong>To install plugins:</strong> <code>phonegap local plugin add plugin-name</code></p>
 
-<p><code>phonegap local plugin add plugin-name</code></p>
-
-<p>http://cordova.apache.org/docs/en/dev/cordova/plugins/pluginapis.html#Plugin%20APIsZ</p>
+<p><a href="http://cordova.apache.org/docs/en/dev/cordova/plugins/pluginapis.html#Plugin%20APIsZ">Official Documentation: Cordova - Plugin APIs</a></p>
 
 <ul>
   <li>phonegap local plugin add org.apache.cordova.device</li>
@@ -207,42 +217,36 @@ Plugins can be managed using either the Cordova CLI or the PhoneGap CLI (which e
   <li>phonegap local plugin add org.apache.cordova.console</li>
 </ul>
 
-<p><strong>listing plugins</strong></p>
+<p><strong>Listing plugins:</strong> <code>phonegap local plugin list</code></p>
 
-<p><code>phonegap local plugin list</code></p>
-
-<p><strong>removing plugins</strong></p>
-
-<p><code>phonegap local plugin remove plugin-name</code></p>
+<p><strong>Removing plugins:</strong> <code>phonegap local plugin remove plugin-name</code></p>
 
 <hr />
 
-<h3 id="building-our-project">building our project</h3>
+<h3 id="building-our-project">Building our project</h3>
 
 <p>Building involves compiling all the native code using the platform SDKs on your machine and then packaging your HTML, JavaScript, and CSS (and any assets) with this code so that it can be deployed to a simulator or device.</p>
 
-<p><strong>To build your project for a specific platform</strong></p>
+<p><strong>To build project remotely via PhoneGap Build:</strong><br />
+<code>phonegap remote build platform-name</code></p>
 
-<p><code>phonegap local build platform-name</code></p>
-
-<p>To build your project remotely using PhoneGap Build, you need to have an account on PhoneGap Build and have all the necessary certificates and provisioning files set up.</p>
-
-<p><code>phonegap remote build platform-name</code></p>
-
-<p><a href="https://build.phonegap.com/">https://build.phonegap.com/</a></p>
-
-<p>Building remotely using PhoneGap Build is a little different from building locally since you may not see the results of the build instantly; the service will build the code as soon as it has a chance. The only way to verify that things went as expected is to log on to your account at http://build.phonegap.com and verify the results.</p>
+<p>Building remotely using PhoneGap Build is a little different from building locally since you may not see the results of the build instantly; the service will build the code as soon as it has a chance. The only way to verify that things went as expected is to log on to your account at <a href="https://build.phonegap.com/">https://build.phonegap.com/</a> and verify the results.</p>
 
 <hr />
 
-<h3 id="deploy-project-to-a-simulatordevice">deploy project to a simulator/device</h3>
+<h3 id="deploy-project-to-a-simulatordevice">Deploy project to a simulator/device</h3>
 
 <p>Once we built a project, next is to <strong>Test it</strong>.
-To do this, you can deploy the code to a simulator (which is handy for debugging on your machine) or deploy the code to a device (which is a must to get a feel for how the app performs on a real device). You can do both using either CLIs, depending upon what the platform SDK supports. (For example, some platform SDKs may only support deploying to a simulator.)</p>
+To do this, you can deploy the code to a simulator or deploy the code to a device. So far, I’ve only used <a href="https://chrome.google.com/webstore/detail/ripple-emulator-beta/geelfhphabnejjhdalkjhgipohgpdnoc?hl=en">Ripple Emulator</a> to debug and simulate.</p>
 
-<p>To deploy using the PhoneGap CLI, it’s important to remember that this only works for local builds. If you built remotely, you need to navigate to http://build.phonegap.com and install from there.</p>
+<p><strong>To get started with Ripple Emulator</strong></p>
 
-<p><code>phonegap local install platform-name</code></p>
+<ul>
+  <li>Install Ripple Emulator</li>
+  <li>Enable it</li>
+  <li>Run <code>phonegap serve</code> to retrieve address</li>
+  <li>Enter local address to Ripple Emulator</li>
+</ul>
 
   </article>
 
