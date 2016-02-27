@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 27 Feb 2016 12:50:11 -0800</pubDate>
-    <lastBuildDate>Sat, 27 Feb 2016 12:50:11 -0800</lastBuildDate>
+    <pubDate>Sat, 27 Feb 2016 12:56:20 -0800</pubDate>
+    <lastBuildDate>Sat, 27 Feb 2016 12:56:20 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -42,7 +42,7 @@ If you want to know more about its history and detailed instructions, refer to t
 &lt;ul&gt;
   &lt;li&gt;Install node.js
     &lt;ul&gt;
-      &lt;li&gt;From experience, node.js versions and path can get complicated, I recommended installing node.js via &lt;strong&gt;nvm&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;From experience, node.js versions and path can get complicated, I recommended installing node.js via &lt;code&gt;nvm&lt;/code&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;install PhoneGap (includes PhoneGap CLI)

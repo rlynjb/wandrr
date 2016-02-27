@@ -34,7 +34,7 @@ The following steps are a combination of instructions from mentioned book above 
 **Installation**
 
 - Install node.js
-  - From experience, node.js versions and path can get complicated, I recommended installing node.js via **nvm**
+  - From experience, node.js versions and path can get complicated, I recommended installing node.js via `nvm`
 - install PhoneGap (includes PhoneGap CLI)
   - Adding the PhoneGap CLI enables the use of Adobe's remote building capabilities, which means you don't need to have the platform SDKs installed in order to build your app. (There are caveats here; it is best to refer to the PhoneGap Build website at http://build.phonegap.com for more information.) Installing PhoneGap CLI will also install Cordova CLI, since PhoneGap is powered by Cordova engine.
   - Install via npm: `sudo npm install -g phonegap`
