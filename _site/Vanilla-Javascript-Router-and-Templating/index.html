@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Explain how JSONP works (and how it's not really AJAX)</title>
-  <meta name="description" content="Explain how JSONP works (and how it&#8217;s not really AJAX).">
+  <title>Vanilla JavaScript Router and Templating</title>
+  <meta name="description" content="I&#8217;m working on a simple app that requires a vanilla JavaScript routing system. Did some readings and it turns out there are various ways we can impleme...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.wandrr.io/JS-Interview-Question-Explain-how-JSONP-works">
+  <link rel="canonical" href="http://www.wandrr.io/Vanilla-Javascript-Router-and-Templating">
   <link rel="alternate" type="application/rss+xml" title="wandrr.io" href="http://www.wandrr.io/feed.xml" />
 </head>
 
@@ -68,64 +68,54 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Explain how JSONP works (and how it's not really AJAX)</h1>
+    <h1 class="post-title">Vanilla JavaScript Router and Templating</h1>
     <p class="post-meta">
-      Jan 26, 2016
+      Feb 29, 2016
       
-       • javascript, interview question
+       • javascript
     </p>
   </header>
 
   <article class="post-content">
-    <h3 id="explain-how-jsonp-works-and-how-its-not-really-ajax">Explain how JSONP works (and how it’s not really AJAX).</h3>
-
-<p>JSONP (acronym for JavaScript Object Notation with Padding) is a common method to retrieve data from another domain and bypass CORS (Cross Origin Resource Sharing) rules.</p>
-
-<p><strong>An overview of JSONP base on personal experience</strong><br />
-I have used JSONP as a work around to get data by wrapping the response data in JSON format with a function callback set in query string as parameter and setting the callback as an object property of ajax object.</p>
-
-<p>** <em>Note, I was using jQuery library when implementing AJAX with JSONP</em></p>
-
-<p>I’ve also heard of CORS as a set of rules regarding retrieving and transferring data or assets from 3rd parties or different domains from a client. This strictly applies to XMLHttpRequest for security reasons. Making HTTP Requests with XMLHTTPRequest object will only let us make request to our own domain and restricts us from different domain, thus, JSONP was created as a way to bypass this rule.</p>
-
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">More about CORS: HTTP access control (CORS)</a></p>
-
-<hr />
-
-<p><strong>How does JSONP work?</strong><br /></p>
-
-<p>After reading further, implementation of JSONP differ from JavaScript libraries to the actual native JavaScript.
-In native JavaScript, JSONP requests aren’t dispatched with XMLHttpRequest object, rather, a <code>script</code> tag is added to the DOM, targeting its <code>src</code> attribute with the url. Reason is <code>script</code> tag does not have limitation to which domains it can retrieve its scripts from.
-Also, since JavaScript has a global scope, we can reference a function to handle incoming JSON data from a 3rd party api url and link that to our application.
-While, in JavaScript libraries such as jQuery, it automatically generate callback and clean up any inserted <code>script</code> tags unto the DOM.</p>
-
-<p>In order for JSON data to be wrapped in a function, the 3rd party API service needs to support JSONP feature. Usually, they will specify on their documentation how to implement JSONP. <a href="http://forismatic.com/en/api/">Here is an example: http://forismatic.com/en/api/</a></p>
-
-<p>If you copy &amp; paste the url below, this will return a simple quote formatted in JSON</p>
-
-<blockquote>
-  <p>http://api.forismatic.com/api/1.0/?method=getQuote&amp;lang=en&amp;format=json</p>
-</blockquote>
-
-<p>While this url will return the same result except JSON data will be wrapped with a function since we explicitly specify format as jsonp and gave it a callback function</p>
-
-<blockquote>
-  <p>http://api.forismatic.com/api/1.0/?method=getQuote&amp;lang=en&amp;format=jsonp&amp;jsonp=processQuote</p>
-</blockquote>
-
-<p>When this loads unto our application from <code>script</code> tag, the given callback name (function name) will get registered unto the global scope and will be available for us to use throughout our application.</p>
-
-<hr />
-
-<p>JSONP limits us with just retrieving <code>GET</code> data. It does not let us create, update, or delete <code>CRUD</code> data. That’s why its just a work around but it does have its advantages. For example, retrieving simple data from a weather api, etc. If you want to take advantage of these other HTTP methods, then its best to build your own simple API Server.</p>
-
-<hr />
-
-<h4 id="references"><strong>References:</strong></h4>
+    <p>I’m working on a simple app that requires a vanilla JavaScript routing system. Did some readings and it turns out there are various ways we can implement a vanilla JS routing system, but I will only mention 3 common methods:</p>
 
 <ul>
-  <li><a href="https://johnnywey.wordpress.com/2012/05/20/jsonp-how-does-it-work/">JSONP How does it work</a></li>
+  <li>Using <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window.onhashchange">onhashchange event</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window.onload">onload event</a>
+    <ul>
+      <li>I believe is the simplest method so far.</li>
+    </ul>
+  </li>
+  <li>Using <a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API">HTML5 History API</a>
+    <ul>
+      <li>Still buggy for cross-browser compatibility</li>
+    </ul>
+  </li>
+  <li>Using small JS plugin called <a href="https://github.com/browserstate/history.js">History.js</a>
+    <ul>
+      <li>This extends HTML5 History API and fixes cross-browser compatibility issues.</li>
+      <li>More info on their <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window.onload">Github Gist - Intelligent State Handling</a></li>
+    </ul>
+  </li>
 </ul>
+
+<p>For this app project, I will use the first method. Thanks to:</p>
+
+<ul>
+  <li><a href="http://joakim.beng.se/blog/posts/a-javascript-router-in-20-lines.html">Joakim Carlstein’s - A JavaScript router in 20 lines</a> and</li>
+  <li><a href="http://ejohn.org/blog/javascript-micro-templating/">John Resig’s - JavaScript Micro-Templating</a>.</li>
+</ul>
+
+<hr />
+
+<h3 id="why-go-this-route">Why go this Route?</h3>
+
+<p>Both each scripts only contains 20 lines of code, overall, its about 40 lines of code compare to using a 3rd-party JS plugin. I wanted to keep my code simple and understanding these scripts source code is easy. Its also a good way to learn Routing and Templating system as well.</p>
+
+<p><strong>For complete example:</strong></p>
+
+<p data-height="268" data-theme-id="20698" data-slug-hash="RaNGvZ" data-default-tab="result" data-user="rlynjb" class="codepen">See the Pen <a href="http://codepen.io/rlynjb/pen/RaNGvZ/">vanilla javascript routing</a> by rlynjb (<a href="http://codepen.io/rlynjb">@rlynjb</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async="" src="//assets.codepen.io/assets/embed/ei.js"></script>
+
 
   </article>
 
