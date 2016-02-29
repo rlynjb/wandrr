@@ -25,7 +25,7 @@ For this app project, I will use the first method. Thanks to:
 
 ### Why go this Route?
 
-Both each scripts only contains 20 lines of code, overall, its about 40 lines of code compare to using a 3rd-party JS plugin. I wanted to keep my code simple and understanding these scripts source code is easy. Its also a good way to learn Routing and Templating system as well.
+Both each scripts only contains 20 lines of code, overall, its about 40 lines of code compare to using a 3rd-party JS plugin. I wanted to keep my code simple and understanding these scripts source code is easy. Its also a good way to learn Routing and Templating system as well. At the moment, I am not concern about cross-browser compatibility and other issues that may arise.
 
 **For complete example:**
 
