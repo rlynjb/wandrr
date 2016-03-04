@@ -16,10 +16,11 @@ For this blog post, I am going to be using AngularJS as my go-to JS Framework fo
 ### Why use Zurb Foundation for Apps? Why not build an app from scratch?
 
 - To avoid spending time on developing the front-end architectural structure of directories and files.
+- To avoid planning and coding front-end workflow and built process
 - To avoid re-coding common JS components, such as Carousel, Modal, etc.
 - To avoid re-coding CSS components, such as Grid system, consistent style of typography, buttons, utilities, etc.
-- To produce a quick prototype to showcase a prospect client.
-- To use prototype and further develop into a production app.
+- To produce a quick prototype to showcase to a prospect client.
+- To further develop the prototype into a production app.
 
 Above are reasons base on my personal opinion. There are different scenarios and situations why we use certain techonology and practice certain methodology. Each company comprise of their own development workflow that fits their business process and be able to produce product base on business requirements.
 

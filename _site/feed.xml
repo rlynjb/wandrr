@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 04 Mar 2016 13:41:11 -0800</pubDate>
-    <lastBuildDate>Fri, 04 Mar 2016 13:41:11 -0800</lastBuildDate>
+    <pubDate>Fri, 04 Mar 2016 14:54:49 -0800</pubDate>
+    <lastBuildDate>Fri, 04 Mar 2016 14:54:49 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -22,10 +22,11 @@
 
 &lt;ul&gt;
   &lt;li&gt;To avoid spending time on developing the front-end architectural structure of directories and files.&lt;/li&gt;
+  &lt;li&gt;To avoid planning and coding front-end workflow and built process&lt;/li&gt;
   &lt;li&gt;To avoid re-coding common JS components, such as Carousel, Modal, etc.&lt;/li&gt;
   &lt;li&gt;To avoid re-coding CSS components, such as Grid system, consistent style of typography, buttons, utilities, etc.&lt;/li&gt;
-  &lt;li&gt;To produce a quick prototype to showcase a prospect client.&lt;/li&gt;
-  &lt;li&gt;To use prototype and further develop into a production app.&lt;/li&gt;
+  &lt;li&gt;To produce a quick prototype to showcase to a prospect client.&lt;/li&gt;
+  &lt;li&gt;To further develop the prototype into a production app.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Above are reasons base on my personal opinion. There are different scenarios and situations why we use certain techonology and practice certain methodology. Each company comprise of their own development workflow that fits their business process and be able to produce product base on business requirements.&lt;/p&gt;
