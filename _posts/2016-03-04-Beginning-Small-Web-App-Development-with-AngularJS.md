@@ -21,7 +21,7 @@ For this blog post, I am going to be using AngularJS as my go-to JS Framework fo
 - To produce a quick prototype to showcase a prospect client.
 - To use prototype and further develop into a production app.
 
-Above are reasons base on my personal opinion. There are different scenarios and situations why we use certain techonology and practice certain methodology. Each company comprise of their own development workflow that fits their business process and requirements.
+Above are reasons base on my personal opinion. There are different scenarios and situations why we use certain techonology and practice certain methodology. Each company comprise of their own development workflow that fits their business process and be able to produce product base on business requirements.
 
 Following link is a solid and comprehensive response to a Quora question regarding which JavaScript Framework should we spend time learning which, I think, it doesn't just apply to JavaScript Frameworks but how we approach a project: [I'm a bit lost in JavaScript framework hell. Should I spend time learning backbone.js or ember.js or can.js or angular.js?](https://www.quora.com/Im-a-bit-lost-in-JavaScript-framework-hell-Should-I-spend-time-learning-backbone-js-or-ember-js-or-can-js-or-angular-js/answer/Michael-Mullany-1?srid=Mz0n)
 
