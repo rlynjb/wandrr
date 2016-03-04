@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 04 Mar 2016 13:09:20 -0800</pubDate>
-    <lastBuildDate>Fri, 04 Mar 2016 13:09:20 -0800</lastBuildDate>
+    <pubDate>Fri, 04 Mar 2016 13:14:46 -0800</pubDate>
+    <lastBuildDate>Fri, 04 Mar 2016 13:14:46 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -97,7 +97,7 @@
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;strong&gt;Update: 03-04-2016&lt;/strong&gt;&lt;/p&gt;
+&lt;h5 id=&quot;update-03-04-2016&quot;&gt;&lt;strong&gt;Update: 03-04-2016&lt;/strong&gt;&lt;/h5&gt;
 
 &lt;h3 id=&quot;delegated-events---click-event-doesnt-work-on-dynamically-generated-elements&quot;&gt;Delegated Events - Click event doesn’t work on dynamically generated elements&lt;/h3&gt;
 

@@ -36,7 +36,7 @@ Both each scripts only contains 20 lines of code, overall, its about 40 lines of
 
 -----
 
-**Update: 03-04-2016**
+##### **Update: 03-04-2016**
 
 ### Delegated Events - Click event doesn't work on dynamically generated elements
 
