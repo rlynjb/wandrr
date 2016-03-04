@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 29 Feb 2016 12:48:49 -0800</pubDate>
-    <lastBuildDate>Mon, 29 Feb 2016 12:48:49 -0800</lastBuildDate>
+    <pubDate>Fri, 04 Mar 2016 10:37:21 -0800</pubDate>
+    <lastBuildDate>Fri, 04 Mar 2016 10:37:21 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -46,11 +46,34 @@
 
 &lt;p&gt;Both each scripts only contains 20 lines of code, overall, its about 40 lines of code compare to using a 3rd-party JS plugin. I wanted to keep my code simple and understanding these scripts source code is easy. Its also a good way to learn Routing and Templating system as well. At the moment, I am not concern about cross-browser compatibility and other issues that may arise.&lt;/p&gt;
 
+&lt;hr /&gt;
+
 &lt;p&gt;&lt;strong&gt;For complete example:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p data-height=&quot;268&quot; data-theme-id=&quot;20698&quot; data-slug-hash=&quot;RaNGvZ&quot; data-default-tab=&quot;result&quot; data-user=&quot;rlynjb&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/rlynjb/pen/RaNGvZ/&quot;&gt;vanilla javascript routing&lt;/a&gt; by rlynjb (&lt;a href=&quot;http://codepen.io/rlynjb&quot;&gt;@rlynjb&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
 &lt;script async=&quot;&quot; src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
 
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Update: 03-04-2016&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;delegated-events---click-event-doesnt-work-on-dynamically-generated-elements&quot;&gt;Delegated Events - Click event doesn’t work on dynamically generated elements&lt;/h3&gt;
+
+&lt;p&gt;This was an issue I’ve come across while using this script. When binding a &lt;code&gt;click&lt;/code&gt; event unto a dynamically generated element, we need to delegate that certain element to its parent element that holds the dynamically generated chiild elements.&lt;/p&gt;
+
+&lt;p&gt;Code would look as follows, using jQuery &lt;code&gt;on&lt;/code&gt; event:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;#view&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;click&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;button#shuffle&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;#view&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/6658752/click-event-doesnt-work-on-dynamically-generated-elements&quot;&gt;Click event doesn’t work on dynamically generated elements&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/8827430/event-delegation-vs-direct-binding-when-adding-complex-elements-to-a-page&quot;&gt;event delegation vs direct binding when adding complex elements to a page&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         <pubDate>Mon, 29 Feb 2016 04:42:24 -0800</pubDate>
         <link>http://www.wandrr.io/Vanilla-Javascript-Router-and-Templating</link>
