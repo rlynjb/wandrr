@@ -6,9 +6,51 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 04 Mar 2016 10:37:21 -0800</pubDate>
-    <lastBuildDate>Fri, 04 Mar 2016 10:37:21 -0800</lastBuildDate>
+    <pubDate>Fri, 04 Mar 2016 13:07:03 -0800</pubDate>
+    <lastBuildDate>Fri, 04 Mar 2016 13:07:03 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Beginning Small Web App Development with AngularJS</title>
+        <description>&lt;p&gt;This is a continuation of my previous blog post &lt;a href=&quot;/Beginning-mobile-app-development-journey/&quot;&gt;Beginning Mobile App Development Journey&lt;/a&gt; as I further explore Hybrid (Mobile and Web) App Development. On my previous blog post, I have successfully installed PhoneGap and was able to run the default PhoneGap app on my Android phone.&lt;/p&gt;
+
+&lt;p&gt;For this blog post, I am going to be using AngularJS as my go-to JS Framework for prototyping, developing small apps, and testing with a Front-end framework: &lt;a href=&quot;http://foundation.zurb.com/apps.html&quot;&gt;Zurb Foundation for Apps&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;why-use-zurb-foundation-for-apps-why-not-build-an-app-from-scratch&quot;&gt;Why use Zurb Foundation for Apps? Why not build an app from scratch?&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;To avoid spending time on developing the front-end architectural structure of directories and files.&lt;/li&gt;
+  &lt;li&gt;To avoid re-coding common JS components, such as Carousel, Modal, etc.&lt;/li&gt;
+  &lt;li&gt;To avoid re-coding CSS components, such as Grid system, consistent style of typography, buttons, utilities, etc.&lt;/li&gt;
+  &lt;li&gt;To produce a quick prototype to showcase a prospect client.&lt;/li&gt;
+  &lt;li&gt;To use prototype and further develop into a production app.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Above are reasons base on my personal opinion. There are different scenarios and situations why we use certain techonology and practice certain methodology. Each company comprise of their own development workflow that fits their business process and requirements.&lt;/p&gt;
+
+&lt;p&gt;Following link is a solid and comprehensive response to a Quora question regarding which JavaScript Framework should we spend time learning which, I think, it doesn’t just apply to JavaScript Frameworks but how we approach a project: &lt;a href=&quot;https://www.quora.com/Im-a-bit-lost-in-JavaScript-framework-hell-Should-I-spend-time-learning-backbone-js-or-ember-js-or-can-js-or-angular-js/answer/Michael-Mullany-1?srid=Mz0n&quot;&gt;I’m a bit lost in JavaScript framework hell. Should I spend time learning backbone.js or ember.js or can.js or angular.js?&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&quot;further-reading&quot;&gt;&lt;strong&gt;Further reading&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.fromdev.com/2015/06/best-books-for-angularjs.html&quot;&gt;Best books for AngularJS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://shop.oreilly.com/product/0636920040156.do&quot;&gt;Frontend Architecture for Design Systems By Micah Godbolt&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 04 Mar 2016 02:43:10 -0800</pubDate>
+        <link>http://www.wandrr.io/Beginning-Small-Web-App-Development-with-AngularJS</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Beginning-Small-Web-App-Development-with-AngularJS</guid>
+        
+        <category>javascript</category>
+        
+        <category>App Development</category>
+        
+        
+      </item>
     
       <item>
         <title>Vanilla JavaScript Router and Templating</title>
@@ -828,29 +870,6 @@ Some features that are worth noting are:&lt;/p&gt;
         <pubDate>Thu, 28 Jan 2016 05:27:00 -0800</pubDate>
         <link>http://www.wandrr.io/JS-Interview-Explain-hoisting</link>
         <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Explain-hoisting</guid>
-        
-        <category>javascript</category>
-        
-        <category>interview question</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Have you ever used JavaScript templating?</title>
-        <description>&lt;h3 id=&quot;have-you-ever-used-javascript-templating-if-so-what-libraries-have-you-used&quot;&gt;Have you ever used JavaScript templating? If so, what libraries have you used?&lt;/h3&gt;
-
-&lt;p&gt;Yes, I have used a JavaScript templating engines.&lt;/p&gt;
-
-&lt;p&gt;Libraries I first used was Handlebars.js because it was a dependency for previous Ember.js versions.&lt;/p&gt;
-
-&lt;p&gt;But then, our team decided to replace Handlebars.js with Emblem since the syntax on Emblem is much cleaner. It resembles to coding with Ruby.&lt;/p&gt;
-
-&lt;p&gt;When Ember.js started to release updates on their core versions, we then started to use what the recent Ember.js provides as it is no more a dependency rather is part of the Ember.js core. Their template engine is HTMLBars&lt;/p&gt;
-</description>
-        <pubDate>Wed, 27 Jan 2016 01:47:13 -0800</pubDate>
-        <link>http://www.wandrr.io/JS-Interview-Question-Have-you-ever-used-JavaScript-templating</link>
-        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Have-you-ever-used-JavaScript-templating</guid>
         
         <category>javascript</category>
         
