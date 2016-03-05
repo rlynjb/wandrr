@@ -6,15 +6,15 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 04 Mar 2016 14:54:49 -0800</pubDate>
-    <lastBuildDate>Fri, 04 Mar 2016 14:54:49 -0800</lastBuildDate>
+    <pubDate>Sat, 05 Mar 2016 10:49:32 -0800</pubDate>
+    <lastBuildDate>Sat, 05 Mar 2016 10:49:32 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
         <title>Beginning Small Web App Development with AngularJS</title>
         <description>&lt;p&gt;This is a continuation of my previous blog post &lt;a href=&quot;/Beginning-mobile-app-development-journey/&quot;&gt;Beginning Mobile App Development Journey&lt;/a&gt; as I further explore Hybrid (Mobile and Web) App Development. On my previous blog post, I have successfully installed PhoneGap and was able to run the default PhoneGap app on my Android phone.&lt;/p&gt;
 
-&lt;p&gt;For this blog post, I am going to be using AngularJS as my go-to JS Framework for prototyping, developing small apps, and testing with a Front-end framework: &lt;a href=&quot;http://foundation.zurb.com/apps.html&quot;&gt;Zurb Foundation for Apps&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For this blog post, I’m using AngularJS as my go-to JS Framework for prototyping, developing small apps, and testing with a Front-end framework: &lt;a href=&quot;http://foundation.zurb.com/apps.html&quot;&gt;Zurb Foundation for Apps&lt;/a&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -32,6 +32,38 @@
 &lt;p&gt;Above are reasons base on my personal opinion. There are different scenarios and situations why we use certain techonology and practice certain methodology. Each company comprise of their own development workflow that fits their business process and be able to produce product base on business requirements.&lt;/p&gt;
 
 &lt;p&gt;Following link is a solid and comprehensive response to a Quora question regarding which JavaScript Framework should we spend time learning which, I think also applies to how we approach a project: &lt;a href=&quot;https://www.quora.com/Im-a-bit-lost-in-JavaScript-framework-hell-Should-I-spend-time-learning-backbone-js-or-ember-js-or-can-js-or-angular-js/answer/Michael-Mullany-1?srid=Mz0n&quot;&gt;I’m a bit lost in JavaScript framework hell. Should I spend time learning backbone.js or ember.js or can.js or angular.js?&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;But if you are someone who is learning Front-End workflow, built process, and such concepts, I wouldn’t recommend Zurb Foundation as it is an &lt;strong&gt;automagic&lt;/strong&gt; framework, thus, preventing you from actual coding and structuring files. If given the time and resources, I honestly would still code in Vanilla JavaScript or choose a framework with less ‘automagic’ nature.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;details-of-angularjs-on-zurb-foundation-for-apps&quot;&gt;Details of AngularJS on Zurb Foundation for Apps&lt;/h3&gt;
+
+&lt;p&gt;This blog post will only cover the AngularJS part of the framework. If you want to know how to setup and know more about the framework. Visit: &lt;a href=&quot;http://foundation.zurb.com/apps.html&quot;&gt;Zurb - Foundation for Apps&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Below are main AngularJS functionalities that Foundation as integrated unto their framework that comprise the basis of Web Application:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Dynamic Routing
+    &lt;ul&gt;
+      &lt;li&gt;name&lt;/li&gt;
+      &lt;li&gt;url&lt;/li&gt;
+      &lt;li&gt;animationIn&lt;/li&gt;
+      &lt;li&gt;animationOut&lt;/li&gt;
+      &lt;li&gt;parent&lt;/li&gt;
+      &lt;li&gt;controller&lt;/li&gt;
+      &lt;li&gt;abstract&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Angular Includes&lt;/li&gt;
+  &lt;li&gt;Enabling HTML5 Mode and working with Angular on a server&lt;/li&gt;
+  &lt;li&gt;Angular and UI Router Helpers
+    &lt;ul&gt;
+      &lt;li&gt;ui-sref&lt;/li&gt;
+      &lt;li&gt;ui-sref-active&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;hr /&gt;
 
@@ -456,7 +488,7 @@ Best of all, any new arrays you create will also have access to the shuffle func
       </item>
     
       <item>
-        <title>What's the difference between an 'attribute' and a 'property'?</title>
+        <title>What&#39;s the difference between an &#39;attribute&#39; and a &#39;property&#39;?</title>
         <description>&lt;h3 id=&quot;recalling-basics-of-javascript&quot;&gt;recalling basics of JavaScript&lt;/h3&gt;
 
 &lt;p&gt;Everything in JavaScript is an object. These objects are categorized in different types (functions, boolean, string, number, etc) and can also contain properties and methods.
@@ -466,7 +498,7 @@ Objects doesn’t just exist in the language itself (JavaScript), but in Browser
 
 &lt;h3 id=&quot;objects-in-dom&quot;&gt;objects in DOM&lt;/h3&gt;
 
-&lt;p&gt;Every element in the DOM is an object and these objects have properties as well. These properties are mapped to a set of attributes from an &lt;code&gt;html&lt;/code&gt; markups. An attribute is just a string in an element (usually, &lt;code&gt;label='value'&lt;/code&gt; pair).&lt;/p&gt;
+&lt;p&gt;Every element in the DOM is an object and these objects have properties as well. These properties are mapped to a set of attributes from an &lt;code&gt;html&lt;/code&gt; markups. An attribute is just a string in an element (usually, &lt;code&gt;label=&#39;value&#39;&lt;/code&gt; pair).&lt;/p&gt;
 
 &lt;p&gt;Some of the element’s properties get their initial values from attributes with the same or similar names. Some examples below:&lt;/p&gt;
 
@@ -737,7 +769,7 @@ Some features that are worth noting are:&lt;/p&gt;
       </item>
     
       <item>
-        <title>Explain 'hoisting'</title>
+        <title>Explain &#39;hoisting&#39;</title>
         <description>&lt;p&gt;As defined in dictionary.com, Hoisting means to lift or raise. &lt;strong&gt;In JavaScript&lt;/strong&gt;, Hoisting is when we declare variables and are hoisted to the top of a function scope or to the top of the global scope depending on where it is declared. Remember, JavaScript have a &lt;strong&gt;function-level scope&lt;/strong&gt; as oppose to &lt;strong&gt;block-level scope&lt;/strong&gt; in other languages.&lt;/p&gt;
 
 &lt;p&gt;** &lt;em&gt;Note, we must first understand the concept of JavaScript Variable Scope as this is the basis of Hoisting&lt;/em&gt;&lt;/p&gt;

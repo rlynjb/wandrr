@@ -9,7 +9,7 @@ tags:
 
 This is a continuation of my previous blog post [Beginning Mobile App Development Journey](/Beginning-mobile-app-development-journey/) as I further explore Hybrid (Mobile and Web) App Development. On my previous blog post, I have successfully installed PhoneGap and was able to run the default PhoneGap app on my Android phone.
 
-For this blog post, I am going to be using AngularJS as my go-to JS Framework for prototyping, developing small apps, and testing with a Front-end framework: [Zurb Foundation for Apps](http://foundation.zurb.com/apps.html)
+For this blog post, I'm using AngularJS as my go-to JS Framework for prototyping, developing small apps, and testing with a Front-end framework: [Zurb Foundation for Apps](http://foundation.zurb.com/apps.html)
 
 -----
 
@@ -25,6 +25,30 @@ For this blog post, I am going to be using AngularJS as my go-to JS Framework fo
 Above are reasons base on my personal opinion. There are different scenarios and situations why we use certain techonology and practice certain methodology. Each company comprise of their own development workflow that fits their business process and be able to produce product base on business requirements.
 
 Following link is a solid and comprehensive response to a Quora question regarding which JavaScript Framework should we spend time learning which, I think also applies to how we approach a project: [I'm a bit lost in JavaScript framework hell. Should I spend time learning backbone.js or ember.js or can.js or angular.js?](https://www.quora.com/Im-a-bit-lost-in-JavaScript-framework-hell-Should-I-spend-time-learning-backbone-js-or-ember-js-or-can-js-or-angular-js/answer/Michael-Mullany-1?srid=Mz0n)
+
+But if you are someone who is learning Front-End workflow, built process, and such concepts, I wouldn't recommend Zurb Foundation as it is an **automagic** framework, thus, preventing you from actual coding and structuring files. If given the time and resources, I honestly would still code in Vanilla JavaScript or choose a framework with less 'automagic' nature.
+
+-----
+
+### Details of AngularJS on Zurb Foundation for Apps
+
+This blog post will only cover the AngularJS part of the framework. If you want to know how to setup and know more about the framework. Visit: [Zurb - Foundation for Apps](http://foundation.zurb.com/apps.html)
+
+Below are main AngularJS functionalities that Foundation as integrated unto their framework that comprise the basis of Web Application:
+
+- Dynamic Routing
+  - name
+  - url
+  - animationIn
+  - animationOut
+  - parent
+  - controller
+  - abstract
+- Angular Includes
+- Enabling HTML5 Mode and working with Angular on a server
+- Angular and UI Router Helpers
+  - ui-sref
+  - ui-sref-active
 
 -----
 
