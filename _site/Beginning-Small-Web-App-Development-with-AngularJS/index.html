@@ -109,21 +109,14 @@
 <ul>
   <li><a href="#dynamic-routing">Dynamic Routing</a>
     <ul>
-      <li>name</li>
-      <li>url</li>
-      <li>animationIn</li>
-      <li>animationOut</li>
-      <li>parent</li>
-      <li>controller</li>
-      <li>abstract</li>
+      <li><a href="#yaml-front-matter-block">name, url, animationIn, animationOut, parent, controller, abstract</a></li>
     </ul>
   </li>
   <li><a href="#angular-includes">Angular Includes</a></li>
   <li><a href="#enabling-html5-mode-and-working-with-angular-on-a-server">Enabling HTML5 Mode and working with Angular on a server</a></li>
   <li><a href="#angular-and-ui-router-helpers">Angular and UI Router Helpers</a>
     <ul>
-      <li>ui-sref</li>
-      <li>ui-sref-active</li>
+      <li><a href="#">ui-sref, ui-sref-active</a></li>
     </ul>
   </li>
 </ul>
@@ -132,14 +125,95 @@
 
 <h2 id="dynamic-routing">Dynamic Routing</h2>
 
-<p>These are the Views and State of a single-page apps. When approaching a project, initial step is we usually defined the url and template of an application. In Foundation for Apps - AngularJS, we approached it as follows:</p>
+<p>These are the Views and State of a single-page apps. When approaching a project, initial step is we usually defined the url and template of an application. In Foundation for Apps - AngularJS, we approached this as follows:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">app</span>
-<span class="o">|--</span> <span class="nx">client</span>
-<span class="o">|</span>  <span class="o">|--</span> <span class="nx">assets</span>
-<span class="o">|</span>  <span class="o">|</span>  <span class="o">|--</span> <span class="nx">templates</span> <span class="o">&lt;-</span> <span class="k">this</span> <span class="nx">is</span> <span class="nx">where</span> <span class="nx">we</span> <span class="nx">create</span> <span class="nx">templates</span> <span class="nx">and</span> <span class="nx">define</span> <span class="nx">route</span> <span class="nx">inside</span> <span class="nx">template</span> <span class="nx">using</span> <span class="nx">front</span><span class="o">-</span><span class="nx">matter</span>
-<span class="o">|</span>  <span class="o">|</span>  <span class="o">|</span>  <span class="o">|--</span> <span class="nx">home</span><span class="p">.</span><span class="nx">html</span>
-<span class="o">|</span>  <span class="o">|</span>  <span class="o">|--</span> <span class="nx">index</span><span class="p">.</span><span class="nx">html</span></code></pre></div>
+<p>Inside <code>clients &gt; templates</code> directory is where we create our templates and define our routes and settings in YAML front matter block format.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Foundation App directory structure</span>
+
+app
+<span class="p">|</span>-- bower_components
+<span class="p">|</span>-- build
+<span class="p">|</span>-- client
+<span class="p">|</span>   <span class="p">|</span>-- assets
+<span class="p">|</span>   <span class="p">|</span>-- templates <span class="c"># where we create our templates</span>
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- home.html
+<span class="p">|</span>   <span class="p">|</span>-- index.html
+<span class="p">|</span>-- etc
+<span class="p">|</span>-- node_modules
+<span class="p">|</span>-- .bowerrc
+<span class="p">|</span>-- .gitignore
+<span class="p">|</span>-- bower.json
+<span class="p">|</span>-- gulpfile.js
+<span class="p">|</span>-- package.json
+<span class="p">|</span>-- readme.md</code></pre></div>
+
+<h3 id="yaml-front-matter-block">YAML Front matter block</h3>
+
+<p>Settings inside template files.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># YAML Front matter block inside templates</span>
+
+---
+name: parent.child
+  <span class="c"># *required</span>
+  <span class="c"># The name of the view.</span>
+  <span class="c"># Refer to this when using ui-sref to link between views.</span>
+  <span class="c"># The name parameter can also use ui-router&#39;s dot notation to indicate a child view.</span>
+url: /child/:id
+  <span class="c"># *required</span>
+  <span class="c"># Defines the URL at which a page can be directly accessed.</span>
+  <span class="c"># When setting up a child view, don&#39;t include the segment of the URL for the parent view—it will be inserted automatically.</span>
+  <span class="c"># In the above example, the final URL is /parent/child, assuming the URL of the parent view is /parent.</span>
+  <span class="c"># A URL can also contain parameters, which will be passed to the view&#39;s controller when it loads.</span>
+  <span class="c"># Learn more about URL parameters on ui-router&#39;s documentation.</span>
+  <span class="c"># https://github.com/angular-ui/ui-router/wiki/URL-Routing#url-parameters</span>
+animationIn: fadeIn
+  <span class="c"># Sets a transition to play when the view animates in.</span>
+  <span class="c"># Refer to the Motion UI documentation to see the list of built-in transitions.</span>
+  <span class="c"># http://foundation.zurb.com/apps/docs/#!/motion-ui</span>
+animationOut: fadeOut
+  <span class="c"># Sets a transition to play when the view animates out.</span>
+parent: name_of_parent_view
+  <span class="c"># Defines the parent view for the current one.</span>
+  <span class="c"># You can use this as an alternative to the parent.child syntax.</span>
+controller: NameOfController
+  <span class="c"># By default, all views use a controller called DefaultController, but this can be changed.</span>
+  <span class="c"># continue below</span>
+abstract: true_or_false
+  <span class="c"># Defines a state as abstract. Abstract states can have child states, but can&#39;t be navigated to directly.</span>
+  <span class="c"># Check out the ui-router documentation to learn more.</span>
+  <span class="c"># https://github.com/angular-ui/ui-router/wiki/Nested-States-%26-Nested-Views#abstract-states</span>
+---</code></pre></div>
+
+<p><strong>controller</strong><br />
+Among other things, the default controller passes a bunch of data through. For instance, all of your front-matter settings will be accessible via <code>vars</code> in your template. <code>angular</code> will return the name of your route while <code>templates/angular.html</code> will return the relative path to the template.</p>
+
+<p>Note that override a controller disables front-matter settings (except dynamic routing). If you want to use your own controller AND keep this feature, you can extend the <code>DefaultController</code>:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;application&#39;</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">&#39;MyController&#39;</span><span class="p">,</span> <span class="nx">MyController</span><span class="p">)</span>
+<span class="p">;</span>
+
+<span class="nx">MyController</span><span class="p">.</span><span class="nx">$inject</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;$scope&#39;</span><span class="p">,</span> <span class="s1">&#39;$stateParams&#39;</span><span class="p">,</span> <span class="s1">&#39;$state&#39;</span><span class="p">,</span> <span class="s1">&#39;$controller&#39;</span><span class="p">];</span>
+
+<span class="kd">function</span> <span class="nx">MyController</span><span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">$stateParams</span><span class="p">,</span> <span class="nx">$state</span><span class="p">,</span> <span class="nx">$controller</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">angular</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">$controller</span><span class="p">(</span><span class="s1">&#39;DefaultController&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">$scope</span><span class="o">:</span> <span class="nx">$scope</span><span class="p">,</span> <span class="nx">$stateParams</span><span class="o">:</span> <span class="nx">$stateParams</span><span class="p">,</span> <span class="nx">$state</span><span class="o">:</span> <span class="nx">$state</span><span class="p">}));</span>
+  <span class="c1">// Your code...</span>
+<span class="p">}</span></code></pre></div>
+
+<hr />
+
+<h2 id="angular-includes">Angular Includes</h2>
+
+<p>If a template becomes complex, we can break it further into <strong>partial</strong> templates and use <strong>Angular Includes</strong> - <code>ng-includes</code> to inject into its parent template.
+The use of single quotes inside the double quotes is <strong>required</strong>. The HTML inside the partial will be placed inside the element with <code>ng-include</code>.</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">ng-include=</span><span class="s">&quot;&#39;path/to/partial.html&#39;&quot;</span><span class="nt">&gt;&lt;/div&gt;</span></code></pre></div>
+
+<hr />
+
+<h2 id="angular-and-ui-router-helpers">Angular and UI Router Helpers</h2>
 
 <hr />
 

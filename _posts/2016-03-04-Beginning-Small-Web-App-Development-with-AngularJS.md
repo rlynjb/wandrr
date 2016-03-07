@@ -35,33 +35,113 @@ But if you are someone who is learning Front-End workflow, built process, and su
 This blog post will only cover the AngularJS part of the framework. If you want to know how to setup and know more about the framework. Visit: [Zurb - Foundation for Apps](http://foundation.zurb.com/apps.html). Below are main AngularJS functionalities that Foundation as integrated unto their framework that comprise the basis of Web Application:
 
 - [Dynamic Routing](#dynamic-routing)
-  - name
-  - url
-  - animationIn
-  - animationOut
-  - parent
-  - controller
-  - abstract
+  - [name, url, animationIn, animationOut, parent, controller, abstract](#yaml-front-matter-block)
 - [Angular Includes](#angular-includes)
 - [Enabling HTML5 Mode and working with Angular on a server](#enabling-html5-mode-and-working-with-angular-on-a-server)
 - [Angular and UI Router Helpers](#angular-and-ui-router-helpers)
-  - ui-sref
-  - ui-sref-active
+  - [ui-sref, ui-sref-active](#)
 
 -----
 
 ## Dynamic Routing
 
-These are the Views and State of a single-page apps. When approaching a project, initial step is we usually defined the url and template of an application. In Foundation for Apps - AngularJS, we approached it as follows:
+These are the Views and State of a single-page apps. When approaching a project, initial step is we usually defined the url and template of an application. In Foundation for Apps - AngularJS, we approached this as follows:
+
+Inside `clients > templates` directory is where we create our templates and define our routes and settings in YAML front matter block format.
+
+{% highlight bash %}
+# Foundation App directory structure
+
+app
+|-- bower_components
+|-- build
+|-- client
+|   |-- assets
+|   |-- templates # where we create our templates
+|   |   |-- home.html
+|   |-- index.html
+|-- etc
+|-- node_modules
+|-- .bowerrc
+|-- .gitignore
+|-- bower.json
+|-- gulpfile.js
+|-- package.json
+|-- readme.md
+{% endhighlight %}
+
+### YAML Front matter block
+
+Settings inside template files.
+
+{% highlight bash %}
+# YAML Front matter block inside templates
+
+---
+name: parent.child
+  # *required
+  # The name of the view.
+  # Refer to this when using ui-sref to link between views.
+  # The name parameter can also use ui-router's dot notation to indicate a child view.
+url: /child/:id
+  # *required
+  # Defines the URL at which a page can be directly accessed.
+  # When setting up a child view, don't include the segment of the URL for the parent view—it will be inserted automatically.
+  # In the above example, the final URL is /parent/child, assuming the URL of the parent view is /parent.
+  # A URL can also contain parameters, which will be passed to the view's controller when it loads.
+  # Learn more about URL parameters on ui-router's documentation.
+  # https://github.com/angular-ui/ui-router/wiki/URL-Routing#url-parameters
+animationIn: fadeIn
+  # Sets a transition to play when the view animates in.
+  # Refer to the Motion UI documentation to see the list of built-in transitions.
+  # http://foundation.zurb.com/apps/docs/#!/motion-ui
+animationOut: fadeOut
+  # Sets a transition to play when the view animates out.
+parent: name_of_parent_view
+  # Defines the parent view for the current one.
+  # You can use this as an alternative to the parent.child syntax.
+controller: NameOfController
+  # By default, all views use a controller called DefaultController, but this can be changed.
+  # continue below
+abstract: true_or_false
+  # Defines a state as abstract. Abstract states can have child states, but can't be navigated to directly.
+  # Check out the ui-router documentation to learn more.
+  # https://github.com/angular-ui/ui-router/wiki/Nested-States-%26-Nested-Views#abstract-states
+---
+{% endhighlight %}
+
+**controller**<br>
+Among other things, the default controller passes a bunch of data through. For instance, all of your front-matter settings will be accessible via `vars` in your template. `angular` will return the name of your route while `templates/angular.html` will return the relative path to the template.
+
+Note that override a controller disables front-matter settings (except dynamic routing). If you want to use your own controller AND keep this feature, you can extend the `DefaultController`:
 
 {% highlight javascript %}
-app
-|-- client
-|  |-- assets
-|  |  |-- templates <- this is where we create templates and define route inside template using front-matter
-|  |  |  |-- home.html
-|  |  |-- index.html 
+angular.module('application')
+  .controller('MyController', MyController)
+;
+
+MyController.$inject = ['$scope', '$stateParams', '$state', '$controller'];
+
+function MyController($scope, $stateParams, $state, $controller) {
+  angular.extend(this, $controller('DefaultController', {$scope: $scope, $stateParams: $stateParams, $state: $state}));
+  // Your code...
+}
 {% endhighlight %}
+
+-----
+
+## Angular Includes
+
+If a template becomes complex, we can break it further into **partial** templates and use **Angular Includes** - `ng-includes` to inject into its parent template.
+The use of single quotes inside the double quotes is **required**. The HTML inside the partial will be placed inside the element with `ng-include`.
+
+{% highlight html %}
+<div ng-include="'path/to/partial.html'"></div>
+{% endhighlight %}
+
+-----
+
+## Angular and UI Router Helpers
 
 -----
 
