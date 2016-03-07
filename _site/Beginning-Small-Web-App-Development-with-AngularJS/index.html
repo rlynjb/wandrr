@@ -104,12 +104,10 @@
 
 <h3 id="details-of-angularjs-on-zurb-foundation-for-apps">Details of AngularJS on Zurb Foundation for Apps</h3>
 
-<p>This blog post will only cover the AngularJS part of the framework. If you want to know how to setup and know more about the framework. Visit: <a href="http://foundation.zurb.com/apps.html">Zurb - Foundation for Apps</a></p>
-
-<p>Below are main AngularJS functionalities that Foundation as integrated unto their framework that comprise the basis of Web Application:</p>
+<p>This blog post will only cover the AngularJS part of the framework. If you want to know how to setup and know more about the framework. Visit: <a href="http://foundation.zurb.com/apps.html">Zurb - Foundation for Apps</a>. Below are main AngularJS functionalities that Foundation as integrated unto their framework that comprise the basis of Web Application:</p>
 
 <ul>
-  <li>Dynamic Routing
+  <li><a href="#dynamic-routing">Dynamic Routing</a>
     <ul>
       <li>name</li>
       <li>url</li>
@@ -120,15 +118,28 @@
       <li>abstract</li>
     </ul>
   </li>
-  <li>Angular Includes</li>
-  <li>Enabling HTML5 Mode and working with Angular on a server</li>
-  <li>Angular and UI Router Helpers
+  <li><a href="#angular-includes">Angular Includes</a></li>
+  <li><a href="#enabling-html5-mode-and-working-with-angular-on-a-server">Enabling HTML5 Mode and working with Angular on a server</a></li>
+  <li><a href="#angular-and-ui-router-helpers">Angular and UI Router Helpers</a>
     <ul>
       <li>ui-sref</li>
       <li>ui-sref-active</li>
     </ul>
   </li>
 </ul>
+
+<hr />
+
+<h2 id="dynamic-routing">Dynamic Routing</h2>
+
+<p>These are the Views and State of a single-page apps. When approaching a project, initial step is we usually defined the url and template of an application. In Foundation for Apps - AngularJS, we approached it as follows:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">app</span>
+<span class="o">|--</span> <span class="nx">client</span>
+<span class="o">|</span>  <span class="o">|--</span> <span class="nx">assets</span>
+<span class="o">|</span>  <span class="o">|</span>  <span class="o">|--</span> <span class="nx">templates</span> <span class="o">&lt;-</span> <span class="k">this</span> <span class="nx">is</span> <span class="nx">where</span> <span class="nx">we</span> <span class="nx">create</span> <span class="nx">templates</span> <span class="nx">and</span> <span class="nx">define</span> <span class="nx">route</span> <span class="nx">inside</span> <span class="nx">template</span> <span class="nx">using</span> <span class="nx">front</span><span class="o">-</span><span class="nx">matter</span>
+<span class="o">|</span>  <span class="o">|</span>  <span class="o">|</span>  <span class="o">|--</span> <span class="nx">home</span><span class="p">.</span><span class="nx">html</span>
+<span class="o">|</span>  <span class="o">|</span>  <span class="o">|--</span> <span class="nx">index</span><span class="p">.</span><span class="nx">html</span></code></pre></div>
 
 <hr />
 

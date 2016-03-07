@@ -32,11 +32,9 @@ But if you are someone who is learning Front-End workflow, built process, and su
 
 ### Details of AngularJS on Zurb Foundation for Apps
 
-This blog post will only cover the AngularJS part of the framework. If you want to know how to setup and know more about the framework. Visit: [Zurb - Foundation for Apps](http://foundation.zurb.com/apps.html)
+This blog post will only cover the AngularJS part of the framework. If you want to know how to setup and know more about the framework. Visit: [Zurb - Foundation for Apps](http://foundation.zurb.com/apps.html). Below are main AngularJS functionalities that Foundation as integrated unto their framework that comprise the basis of Web Application:
 
-Below are main AngularJS functionalities that Foundation as integrated unto their framework that comprise the basis of Web Application:
-
-- Dynamic Routing
+- [Dynamic Routing](#dynamic-routing)
   - name
   - url
   - animationIn
@@ -44,11 +42,26 @@ Below are main AngularJS functionalities that Foundation as integrated unto thei
   - parent
   - controller
   - abstract
-- Angular Includes
-- Enabling HTML5 Mode and working with Angular on a server
-- Angular and UI Router Helpers
+- [Angular Includes](#angular-includes)
+- [Enabling HTML5 Mode and working with Angular on a server](#enabling-html5-mode-and-working-with-angular-on-a-server)
+- [Angular and UI Router Helpers](#angular-and-ui-router-helpers)
   - ui-sref
   - ui-sref-active
+
+-----
+
+## Dynamic Routing
+
+These are the Views and State of a single-page apps. When approaching a project, initial step is we usually defined the url and template of an application. In Foundation for Apps - AngularJS, we approached it as follows:
+
+{% highlight javascript %}
+app
+|-- client
+|  |-- assets
+|  |  |-- templates <- this is where we create templates and define route inside template using front-matter
+|  |  |  |-- home.html
+|  |  |-- index.html 
+{% endhighlight %}
 
 -----
 
