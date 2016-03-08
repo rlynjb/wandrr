@@ -47,7 +47,7 @@ This blog post will only cover the AngularJS part of the framework. If you want 
 
 These are the Views and State of a single-page apps. When approaching a project, initial step is we usually defined the url and template of an application. In Foundation for Apps - AngularJS, we approached this as follows:
 
-Inside `clients > templates` directory is where we create our templates and define our routes and settings in YAML front matter block format.
+Inside `clients > templates` directory is where we create our templates and define our routes and settings in YAML front-matter block format.
 
 {% highlight bash %}
 # Foundation App directory structure
@@ -70,39 +70,36 @@ app
 |-- readme.md
 {% endhighlight %}
 
-### YAML Front matter block
+### YAML Front-matter block
 
 Settings inside template files.
 
 {% highlight bash %}
-# YAML Front matter block inside templates
+# YAML Front-matter block inside templates
 
 ---
 name: parent.child
   # *required
   # The name of the view.
   # Refer to this when using ui-sref to link between views.
-  # The name parameter can also use ui-router's dot notation to indicate a child view.
+  # It can also use ui-router's dot notation to indicate a child view.
 url: /child/:id
   # *required
   # Defines the URL at which a page can be directly accessed.
-  # When setting up a child view, don't include the segment of the URL for the parent view—it will be inserted automatically.
-  # In the above example, the final URL is /parent/child, assuming the URL of the parent view is /parent.
-  # A URL can also contain parameters, which will be passed to the view's controller when it loads.
+  # When setting up a child view, the segment of the URL for the parent view will be inserted automatically.
+  # In the above example, the final URL is /parent/child.
+  # A URL can also contain parameters - `/:id`, which will be passed to the view's controller when it loads.
   # Learn more about URL parameters on ui-router's documentation.
   # https://github.com/angular-ui/ui-router/wiki/URL-Routing#url-parameters
 animationIn: fadeIn
-  # Sets a transition to play when the view animates in.
-  # Refer to the Motion UI documentation to see the list of built-in transitions.
-  # http://foundation.zurb.com/apps/docs/#!/motion-ui
 animationOut: fadeOut
-  # Sets a transition to play when the view animates out.
+  # Sets a transition to play when the view animates in or out.
+  # Refer to the Motion UI documentation for the list of built-in transitions.
+  # http://foundation.zurb.com/apps/docs/#!/motion-ui
 parent: name_of_parent_view
-  # Defines the parent view for the current one.
   # You can use this as an alternative to the parent.child syntax.
 controller: NameOfController
-  # By default, all views use a controller called DefaultController, but this can be changed.
-  # continue below
+  # Description below
 abstract: true_or_false
   # Defines a state as abstract. Abstract states can have child states, but can't be navigated to directly.
   # Check out the ui-router documentation to learn more.
@@ -111,9 +108,10 @@ abstract: true_or_false
 {% endhighlight %}
 
 **controller**<br>
-Among other things, the default controller passes a bunch of data through. For instance, all of your front-matter settings will be accessible via `vars` in your template. `angular` will return the name of your route while `templates/angular.html` will return the relative path to the template.
+Once a View is defined, it uses a controller called `DefaultController`, but this can be overriden by defining your own controller on the template front-matter settings, though, 
+overriding disables front-matter settings (except dynamic routing). If you want to use your own controller AND keep this feature, you can extend the `DefaultController`.
 
-Note that override a controller disables front-matter settings (except dynamic routing). If you want to use your own controller AND keep this feature, you can extend the `DefaultController`:
+The `DefaultController` passes a bunch of data through. For instance, all of your front-matter settings will be accessible via `vars` in your template. `angular` will return the name of your route while `templates/angular.html` will return the relative path to the template.
 
 {% highlight javascript %}
 angular.module('application')
@@ -142,6 +140,33 @@ The use of single quotes inside the double quotes is **required**. The HTML insi
 -----
 
 ## Angular and UI Router Helpers
+
+**ui-sref**<br>
+Foundation for Apps uses UI Router for its routing which allows for named route references. For example:
+
+{% highlight html %}
+<!-- we created a template and defined front-matter settings -->
+---
+name: mypage
+url: my/sub/page
+---
+
+<!-- We can easily linked this template from another page by: -->
+<a ui-sref="mypage">my page</a>
+
+<!-- ui-sref can also take in parameters for pages that accept parameters -->
+---
+name: inbox.message
+url: inbox/:id
+
+<!-- and can be accessed by: -->
+<a ui-sref="inbox.message({ id: 5 })">5th message</a>
+---
+{% endhighlight %}
+
+**ui-sref-active**<br>
+
+
 
 -----
 
