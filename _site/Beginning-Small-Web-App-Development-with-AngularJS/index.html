@@ -116,7 +116,7 @@
   <li><a href="#enabling-html5-mode-and-working-with-angular-on-a-server">Enabling HTML5 Mode and working with Angular on a server</a></li>
   <li><a href="#angular-and-ui-router-helpers">Angular and UI Router Helpers</a>
     <ul>
-      <li><a href="#">ui-sref, ui-sref-active</a></li>
+      <li><a href="#angular-and-ui-router-helpers">ui-sref, ui-sref-active</a></li>
     </ul>
   </li>
 </ul>
@@ -213,28 +213,45 @@ The use of single quotes inside the double quotes is <strong>required</strong>. 
 
 <h2 id="angular-and-ui-router-helpers">Angular and UI Router Helpers</h2>
 
-<p><strong>ui-sref</strong><br />
-Foundation for Apps uses UI Router for its routing which allows for named route references. For example:</p>
+<p><code>ui-sref</code><br />
+Foundation for Apps uses UI Router for its routing which allows for named route references.</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- we created a template and defined front-matter settings --&gt;</span>
+<p><code>ui-sref-active</code>, <code>ui-sref-active-eq</code><br />
+If we have a list of menu links, Foundation for Apps also provides two subtle distinct directives that determines which link is active.</p>
+
+<p>For example:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!--</span>
+<span class="c">  we created a template and defined front-matter settings</span>
+<span class="c">--&gt;</span>
 ---
 name: mypage
 url: my/sub/page
 ---
 
-<span class="c">&lt;!-- We can easily linked this template from another page by: --&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">ui-sref=</span><span class="s">&quot;mypage&quot;</span><span class="nt">&gt;</span>my page<span class="nt">&lt;/a&gt;</span>
+<span class="c">&lt;!--</span>
+<span class="c">  We can easily linked this template from another page by using `name`</span>
+<span class="c">--&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">ui-sref-active=</span><span class="s">&quot;my-active-class&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">ui-sref=</span><span class="s">&quot;mypage&quot;</span><span class="nt">&gt;</span>my page<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">ui-sref-active=</span><span class="s">&quot;my-active-class&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">ui-sref=</span><span class="s">&quot;my2ndpage&quot;</span><span class="nt">&gt;</span>my 2nd page<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
 
-<span class="c">&lt;!-- ui-sref can also take in parameters for pages that accept parameters --&gt;</span>
+<span class="c">&lt;!--</span>
+<span class="c">  ui-sref can also take in parameters for pages that accept parameters</span>
+<span class="c">--&gt;</span>
 ---
 name: inbox.message
 url: inbox/:id
+---
 
-<span class="c">&lt;!-- and can be accessed by: --&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">ui-sref=</span><span class="s">&quot;inbox.message({ id: 5 })&quot;</span><span class="nt">&gt;</span>5th message<span class="nt">&lt;/a&gt;</span>
----</code></pre></div>
-
-<p><strong>ui-sref-active</strong><br /></p>
+<span class="c">&lt;!--</span>
+<span class="c">  and can be accessed by JSON</span>
+<span class="c">--&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">ui-sref-active-eq=</span><span class="s">&quot;my-active-class&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">ui-sref=</span><span class="s">&quot;inbox.message({ id: 4 })&quot;</span><span class="nt">&gt;</span>5th message<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">ui-sref-active-eq=</span><span class="s">&quot;my-active-class&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">ui-sref=</span><span class="s">&quot;inbox.message({ id: 5 })&quot;</span><span class="nt">&gt;</span>5th message<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></code></pre></div>
 
 <hr />
 

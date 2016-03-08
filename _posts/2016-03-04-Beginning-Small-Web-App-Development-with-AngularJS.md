@@ -39,7 +39,7 @@ This blog post will only cover the AngularJS part of the framework. If you want 
 - [Angular Includes](#angular-includes)
 - [Enabling HTML5 Mode and working with Angular on a server](#enabling-html5-mode-and-working-with-angular-on-a-server)
 - [Angular and UI Router Helpers](#angular-and-ui-router-helpers)
-  - [ui-sref, ui-sref-active](#)
+  - [ui-sref, ui-sref-active](#angular-and-ui-router-helpers)
 
 -----
 
@@ -141,30 +141,48 @@ The use of single quotes inside the double quotes is **required**. The HTML insi
 
 ## Angular and UI Router Helpers
 
-**ui-sref**<br>
-Foundation for Apps uses UI Router for its routing which allows for named route references. For example:
+`ui-sref`<br>
+Foundation for Apps uses UI Router for its routing which allows for named route references.
+
+`ui-sref-active`, `ui-sref-active-eq`<br>
+If we have a list of menu links, Foundation for Apps also provides two subtle distinct directives that determines which link is active.
+
+For example:
 
 {% highlight html %}
-<!-- we created a template and defined front-matter settings -->
+<!--
+  we created a template and defined front-matter settings
+-->
 ---
 name: mypage
 url: my/sub/page
 ---
 
-<!-- We can easily linked this template from another page by: -->
-<a ui-sref="mypage">my page</a>
+<!--
+  We can easily linked this template from another page by using `name`
+-->
+<ul>
+  <li ui-sref-active="my-active-class"><a ui-sref="mypage">my page</a></li>
+  <li ui-sref-active="my-active-class"><a ui-sref="my2ndpage">my 2nd page</a></li>
+</ul>
 
-<!-- ui-sref can also take in parameters for pages that accept parameters -->
+<!--
+  ui-sref can also take in parameters for pages that accept parameters
+-->
 ---
 name: inbox.message
 url: inbox/:id
-
-<!-- and can be accessed by: -->
-<a ui-sref="inbox.message({ id: 5 })">5th message</a>
 ---
+
+<!--
+  and can be accessed by JSON
+-->
+<ul>
+  <li ui-sref-active-eq="my-active-class"><a ui-sref="inbox.message({ id: 4 })">5th message</a></li>
+  <li ui-sref-active-eq="my-active-class"><a ui-sref="inbox.message({ id: 5 })">5th message</a></li>
+</ul>
 {% endhighlight %}
 
-**ui-sref-active**<br>
 
 
 

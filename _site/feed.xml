@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 07 Mar 2016 17:09:24 -0800</pubDate>
-    <lastBuildDate>Mon, 07 Mar 2016 17:09:24 -0800</lastBuildDate>
+    <pubDate>Tue, 08 Mar 2016 11:32:16 -0800</pubDate>
+    <lastBuildDate>Tue, 08 Mar 2016 11:32:16 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -51,7 +51,7 @@
   &lt;li&gt;&lt;a href=&quot;#enabling-html5-mode-and-working-with-angular-on-a-server&quot;&gt;Enabling HTML5 Mode and working with Angular on a server&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#angular-and-ui-router-helpers&quot;&gt;Angular and UI Router Helpers&lt;/a&gt;
     &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;ui-sref, ui-sref-active&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#angular-and-ui-router-helpers&quot;&gt;ui-sref, ui-sref-active&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -148,28 +148,45 @@ The use of single quotes inside the double quotes is &lt;strong&gt;required&lt;/
 
 &lt;h2 id=&quot;angular-and-ui-router-helpers&quot;&gt;Angular and UI Router Helpers&lt;/h2&gt;
 
-&lt;p&gt;&lt;strong&gt;ui-sref&lt;/strong&gt;&lt;br /&gt;
-Foundation for Apps uses UI Router for its routing which allows for named route references. For example:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ui-sref&lt;/code&gt;&lt;br /&gt;
+Foundation for Apps uses UI Router for its routing which allows for named route references.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- we created a template and defined front-matter settings --&amp;gt;&lt;/span&gt;
+&lt;p&gt;&lt;code&gt;ui-sref-active&lt;/code&gt;, &lt;code&gt;ui-sref-active-eq&lt;/code&gt;&lt;br /&gt;
+If we have a list of menu links, Foundation for Apps also provides two subtle distinct directives that determines which link is active.&lt;/p&gt;
+
+&lt;p&gt;For example:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!--&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;  we created a template and defined front-matter settings&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;--&amp;gt;&lt;/span&gt;
 ---
 name: mypage
 url: my/sub/page
 ---
 
-&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- We can easily linked this template from another page by: --&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ui-sref=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;mypage&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;my page&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!--&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;  We can easily linked this template from another page by using `name`&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;--&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ui-sref-active=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;my-active-class&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ui-sref=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;mypage&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;my page&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ui-sref-active=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;my-active-class&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ui-sref=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;my2ndpage&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;my 2nd page&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
 
-&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- ui-sref can also take in parameters for pages that accept parameters --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!--&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;  ui-sref can also take in parameters for pages that accept parameters&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;--&amp;gt;&lt;/span&gt;
 ---
 name: inbox.message
 url: inbox/:id
+---
 
-&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- and can be accessed by: --&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ui-sref=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;inbox.message({ id: 5 })&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;5th message&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
----&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;ui-sref-active&lt;/strong&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!--&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;  and can be accessed by JSON&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;--&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ui-sref-active-eq=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;my-active-class&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ui-sref=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;inbox.message({ id: 4 })&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;5th message&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ui-sref-active-eq=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;my-active-class&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ui-sref=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;inbox.message({ id: 5 })&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;5th message&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;hr /&gt;
 
