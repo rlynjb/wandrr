@@ -109,7 +109,7 @@
 <ul>
   <li><a href="#dynamic-routing">Dynamic Routing</a>
     <ul>
-      <li><a href="#yaml-front-matter-block">name, url, animationIn, animationOut, parent, controller, abstract</a></li>
+      <li><a href="#settings-inside-a-template-file">name, url, animationIn, animationOut, parent, controller, abstract</a></li>
     </ul>
   </li>
   <li><a href="#angular-includes">Angular Includes</a></li>
@@ -148,9 +148,7 @@ app
 <span class="p">|</span>-- package.json
 <span class="p">|</span>-- readme.md</code></pre></div>
 
-<h3 id="yaml-front-matter-block">YAML Front-matter block</h3>
-
-<p>Settings inside template files.</p>
+<h3 id="settings-inside-a-template-file">Settings inside a Template file</h3>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># YAML Front-matter block inside templates</span>
 
@@ -208,6 +206,12 @@ overriding disables front-matter settings (except dynamic routing). If you want 
 The use of single quotes inside the double quotes is <strong>required</strong>. The HTML inside the partial will be placed inside the element with <code>ng-include</code>.</p>
 
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">ng-include=</span><span class="s">&quot;&#39;path/to/partial.html&#39;&quot;</span><span class="nt">&gt;&lt;/div&gt;</span></code></pre></div>
+
+<hr />
+
+<h2 id="enabling-html5-mode-and-working-with-angular-on-a-server">Enabling HTML5 Mode and working with Angular on a server</h2>
+
+<p>In single-page application, web pages do not reload rather they use hashtags to navigate throughout the application. Usually, sub urls are prefixed by <code>#/</code> by default in any JavaScript framework or Vanilla JavaScript. AngularJS has a feature <code>$locationProvider</code> that we can configure to display clean url. But to enable HTML5 Mode feature, the server that the app resides needs to support url rewrite.</p>
 
 <hr />
 

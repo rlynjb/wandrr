@@ -35,7 +35,7 @@ But if you are someone who is learning Front-End workflow, built process, and su
 This blog post will only cover the AngularJS part of the framework. If you want to know how to setup and know more about the framework. Visit: [Zurb - Foundation for Apps](http://foundation.zurb.com/apps.html). Below are main AngularJS functionalities that Foundation as integrated unto their framework that comprise the basis of Web Application:
 
 - [Dynamic Routing](#dynamic-routing)
-  - [name, url, animationIn, animationOut, parent, controller, abstract](#yaml-front-matter-block)
+  - [name, url, animationIn, animationOut, parent, controller, abstract](#settings-inside-a-template-file)
 - [Angular Includes](#angular-includes)
 - [Enabling HTML5 Mode and working with Angular on a server](#enabling-html5-mode-and-working-with-angular-on-a-server)
 - [Angular and UI Router Helpers](#angular-and-ui-router-helpers)
@@ -70,9 +70,7 @@ app
 |-- readme.md
 {% endhighlight %}
 
-### YAML Front-matter block
-
-Settings inside template files.
+### Settings inside a Template file
 
 {% highlight bash %}
 # YAML Front-matter block inside templates
@@ -136,6 +134,12 @@ The use of single quotes inside the double quotes is **required**. The HTML insi
 {% highlight html %}
 <div ng-include="'path/to/partial.html'"></div>
 {% endhighlight %}
+
+-----
+
+## Enabling HTML5 Mode and working with Angular on a server
+
+In single-page application, web pages do not reload rather they use hashtags to navigate throughout the application. Usually, sub urls are prefixed by `#/` by default in any JavaScript framework or Vanilla JavaScript. AngularJS has a feature `$locationProvider` that we can configure to display clean url. But to enable HTML5 Mode feature, the server that the app resides needs to support url rewrite.
 
 -----
 

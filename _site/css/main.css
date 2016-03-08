@@ -323,7 +323,8 @@ p {
 .post-content {
   margin-bottom: 30px; }
   .post-content h2 {
-    font-size: 32px; }
+    font-size: 32px;
+    line-height: 1; }
     @media screen and (max-width: 800px) {
       .post-content h2 {
         font-size: 28px; } }
