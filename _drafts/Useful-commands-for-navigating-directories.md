@@ -14,6 +14,8 @@ Below is a gist of what this post contains.
 - Commands for searching
 - Commands for sorting files
 - Opening files
+- SSH and SCP
+- Tar compress and extract
 
 -----
 
@@ -78,3 +80,25 @@ These are just a list of commands I find usefule when searching for text or file
 
 - `:set tabstop=2`
 - `:set nu`
+
+-----
+
+### SSH and SCP
+
+scp with port
+
+`scp -P 21 root@myhost /home/direc/file.tar username@secondhost:/home/dir`
+
+Where -P stands for port number
+
+-----
+
+### Tar compress and extract
+
+compress
+
+`tar -czf folder.tar.gz folder`
+
+extract
+
+`tar -xzf folder.tar.gz`
