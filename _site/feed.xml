@@ -6,9 +6,22 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 08 Mar 2016 15:27:18 -0800</pubDate>
-    <lastBuildDate>Tue, 08 Mar 2016 15:27:18 -0800</lastBuildDate>
+    <pubDate>Thu, 10 Mar 2016 09:55:38 -0800</pubDate>
+    <lastBuildDate>Thu, 10 Mar 2016 09:55:38 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Building a Magic Mirror</title>
+        <description>&lt;p&gt;Building a magic mirror base from &lt;a href=&quot;http://michaelteeuw.nl/post/80391333672/magic-mirror-part-i-the-idea-the-mirror&quot;&gt;Michael Teeuw - Magic Mirror Project&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 10 Mar 2016 01:54:19 -0800</pubDate>
+        <link>http://www.wandrr.io/Building-a-Magic-Mirror</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Building-a-Magic-Mirror</guid>
+        
+        <category>build stuff</category>
+        
+        
+      </item>
     
       <item>
         <title>Beginning Small Web App Development with AngularJS</title>
@@ -891,149 +904,6 @@ Some features that are worth noting are:&lt;/p&gt;
         <category>prototyping</category>
         
         <category>workflow</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Explain 'hoisting'</title>
-        <description>&lt;p&gt;As defined in dictionary.com, Hoisting means to lift or raise. &lt;strong&gt;In JavaScript&lt;/strong&gt;, Hoisting is when we declare variables and are hoisted to the top of a function scope or to the top of the global scope depending on where it is declared. Remember, JavaScript have a &lt;strong&gt;function-level scope&lt;/strong&gt; as oppose to &lt;strong&gt;block-level scope&lt;/strong&gt; in other languages.&lt;/p&gt;
-
-&lt;p&gt;** &lt;em&gt;Note, we must first understand the concept of JavaScript Variable Scope as this is the basis of Hoisting&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;variable-hoisting&quot;&gt;Variable Hoisting&lt;/h3&gt;
-
-&lt;p&gt;Only &lt;strong&gt;variable declarations&lt;/strong&gt; are hoisted to the top and not &lt;strong&gt;variable initializations&lt;/strong&gt; (variable assignments or variables with assigned values).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;First example,&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;  just a simple function declaration.&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;  this function declaration has its own scope.&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;  we are not declaring variables on global scope (outside of function)&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;*/&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;showBar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;1st word &amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// output: undefined&lt;/span&gt;
-  &lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;    Reason why its &amp;#39;undefined&amp;#39; is we did not declare&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;    a variable called &amp;#39;foo&amp;#39; before we called it.&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;    It cannot find variable foo.&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;  */&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;// yey, we finally declared it&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;bar&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;2nd word &amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// output: bar&lt;/span&gt;
-  &lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;    Since we declared variable &amp;#39;foo&amp;#39; after we called it.&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;    It now finds variable foo.&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;  */&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;showBar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;  console output:&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;  1st word undefined&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;  2nd word bar&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;*/&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Second example,&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;  same function declaration, but different Hoisting example&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;*/&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;showBar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;    here, we declared variable &amp;#39;foo&amp;#39; first, and is&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;    located at the very top of function (Hoisting)&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;  */&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;1st word &amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// output: undefined&lt;/span&gt;
-  &lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;    still outputs &amp;#39;undefined&amp;#39;, why?&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;    eventhough we declared variable foo after we called it,&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;    variable foo doesn&amp;#39;t hold any value.&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;    its just a variable declaration without a value.&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;  */&lt;/span&gt;
-
-  &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;bar&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;    here, we are now assigning variable &amp;#39;foo&amp;#39; with a string value.&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;    though, variable assignments aren&amp;#39;t hosted. that is why&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;    our 1st word display is outputting undefined.&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;  */&lt;/span&gt;
-
-  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;2nd word &amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// output: bar&lt;/span&gt;
-  &lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;    since we assigned a value to variable foo.&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;    it now has a value to display&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;  */&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;showBar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;  console output:&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;  1st word undefined&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;  2nd word bar&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;*/&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;function-declarations-overrides-variables-declaration-when-hoisted&quot;&gt;Function Declarations Overrides Variables Declaration When Hoisted&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Function declarations&lt;/strong&gt; and &lt;strong&gt;variables declarations&lt;/strong&gt; will always be hoisted at the top of scope.&lt;br /&gt;
-&lt;strong&gt;Function declarations&lt;/strong&gt; will always override &lt;strong&gt;variable declarations&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;bar&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// output: function&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;although, &lt;strong&gt;variable declarations&lt;/strong&gt; will override &lt;strong&gt;function declarations&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;buzz&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;bar&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// output: string&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Function expressions&lt;/strong&gt; (function assignments) as well as &lt;strong&gt;variable initialization&lt;/strong&gt; (variable assignments) are not hoisted.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;qux&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;buzz&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Also good to note that,&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;In strict mode, an error will occur if you assign a variable a value without first declaring the variable. Always declare your variables.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://javascriptissexy.com/javascript-variable-scope-and-hoisting-explained/&quot;&gt;JavaScript Variable Scope and Hosting Explained&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 28 Jan 2016 05:27:00 -0800</pubDate>
-        <link>http://www.wandrr.io/JS-Interview-Explain-hoisting</link>
-        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Explain-hoisting</guid>
-        
-        <category>javascript</category>
-        
-        <category>interview question</category>
         
         
       </item>
