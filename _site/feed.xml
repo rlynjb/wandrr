@@ -6,9 +6,56 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 11 Mar 2016 11:58:11 -0800</pubDate>
-    <lastBuildDate>Fri, 11 Mar 2016 11:58:11 -0800</lastBuildDate>
+    <pubDate>Wed, 16 Mar 2016 14:15:25 -0700</pubDate>
+    <lastBuildDate>Wed, 16 Mar 2016 14:15:25 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Fiddling with Phonegap's Speech Recognition</title>
+        <description>&lt;p&gt;Hello! Again this is a continuation of my previous blog posts. I am attempting to develop a simple app while blogging my experience and issues I’ve come across.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/Beginning-mobile-app-development-journey&quot;&gt;Beginning Mobile App Developmet Journey&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/Beginning-Small-Web-App-Development-with-AngularJS&quot;&gt;Beginning Small Web App Development with AngularJS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;From my recent blog post &lt;a href=&quot;/Beginning-Small-Web-App-Development-with-AngularJS&quot;&gt;Beginning Small Web App Development with AngularJS&lt;/a&gt;, I was able to:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Setup Zurb Foundation for Apps by creating a directory inside of my phonegap project instance.&lt;/li&gt;
+  &lt;li&gt;Use Zurb Foundation for Apps project directory for development.&lt;/li&gt;
+  &lt;li&gt;Transfer build files to phoengap’s www directory for deployment.&lt;/li&gt;
+  &lt;li&gt;Designed and Developed a simple mobile layout and navigation using Zurb Foundation for Apps.&lt;/li&gt;
+  &lt;li&gt;Use AJAX to locally fetch a .json file and display data.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now, I am extending my app by using Speech Recognition. A typical user scenario would be:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;App has option to use Voice Recognition or Simple Reload Button&lt;/li&gt;
+  &lt;li&gt;If User chose Voice Recogntion, app will enable phone’s voice command sensor&lt;/li&gt;
+  &lt;li&gt;When User says ‘shuffle’, app will reload new data&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;plugins-and-documentations&quot;&gt;Plugins and Documentations&lt;/h3&gt;
+
+&lt;p&gt;Cordova provides a documentation for registered plugins &lt;a href=&quot;http://cordova.apache.org/plugins/&quot;&gt;Cordova Official Documentation Plugins&lt;/a&gt;, but I was not able to find the plugin I needed. Instead, I’ve found the ff. on github and youtube:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/oXiel-iZOos&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/macdonst/SpeechRecognitionPlugin&quot;&gt;Github.com: macdonst - Speech Recognition Plugin&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Video pretty much explains how speech recognition works and discusses various speech recognition APIs available and its brief history. He also showcased sample code and its use cases.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 16 Mar 2016 05:38:53 -0700</pubDate>
+        <link>http://www.wandrr.io/Fiddling-with-phonegap-speech-recognition</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Fiddling-with-phonegap-speech-recognition</guid>
+        
+        <category>mobile development</category>
+        
+        
+      </item>
     
       <item>
         <title>Building a Magic Mirror</title>
@@ -763,147 +810,6 @@ We can stop the event bubbling in a certain handler by invoking the following me
         <category>javascript</category>
         
         <category>interview question</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Front-End Workflow with Wordpress</title>
-        <description>&lt;p&gt;Prototyping and delivering an end product is one of the things I’ve been contemplating lately.
-Being the only designer at work and yet, the one responsible for optimization and performance of Wordpress theme used, I have to find a way to satisfy both design and development.&lt;/p&gt;
-
-&lt;p&gt;Below are my usual workflow.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Gather requirements:&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;What kind of website would it be?&lt;/li&gt;
-      &lt;li&gt;Is there a sitemap or diagram provided?&lt;/li&gt;
-      &lt;li&gt;How many regular pages will it contain?&lt;/li&gt;
-      &lt;li&gt;What are their brand color scheme?&lt;/li&gt;
-      &lt;li&gt;What’s their choice of font/s?&lt;/li&gt;
-      &lt;li&gt;Where can I access their existing assets, images, etc.&lt;/li&gt;
-      &lt;li&gt;Are there sample websites they like?&lt;/li&gt;
-      &lt;li&gt;Do they have an existing website?&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;These are atleast the initial questions that come to mind when gathering requirements.
-Another one would be &lt;strong&gt;planning it out&lt;/strong&gt;. At this phase, I will have to satisfy both our:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;em&gt;Project Manager&lt;/em&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Making sure I can deliver prototypes or layout design base from the gathered requirements.&lt;/li&gt;
-      &lt;li&gt;Meet deadline.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Senior Backend Developer/Engineer&lt;/em&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Making sure I use modern technology, prefer opensource (MIT License).
-        &lt;ul&gt;
-          &lt;li&gt;Github.com will be your bestfriend on this :)&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Use a theme that makes minimal http requests. This is usually up to me on how I build the dependencies/assets.&lt;/li&gt;
-      &lt;li&gt;Convert some pages of wordpress to serve static page.
-        &lt;ul&gt;
-          &lt;li&gt;Example would be 404 page, convert it to static page so it doesn’t need to make a request to DB often.&lt;/li&gt;
-          &lt;li&gt;Wordpress has its way of doing alot of DB queries. Consider minimizing DB queries.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Use minimal plugins as possible. If there is a way to use default Wordpress features, take advantage of it.&lt;/li&gt;
-      &lt;li&gt;When deploying, make sure to set Wordpress securities
-        &lt;ul&gt;
-          &lt;li&gt;Wordpress Hardening documentation&lt;/li&gt;
-          &lt;li&gt;Wordpress Editing wp-config.php documentation&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Also, consider other developers&lt;/em&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Make sure I use a documented theme so other developers can jump on the project as well.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Now with these rules in set. I have come to a conclusion to use &lt;a href=&quot;https://foundationpress.olefredrik.com/&quot;&gt;&lt;strong&gt;FoundationPress&lt;/strong&gt;&lt;/a&gt;.
-We have used paid themes in the past, but the extra features included requires frequent update, no control over assets (HTTP requests) of theme, and in the long run, may not be performant. Also some themes, eventhough configurations was made easy for non-techie users, it makes alot of cpu processes and  database queries. Unnecessary features in theme and plugin dependencies may also become vulnerable to security attacks, bots injecting scripts unto Wordpress directories.
-Rather than configuring themes and some plugins in wordpress admin dashboard, its recommended to do so in wordpress source files instead.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;why-choose-foundationpress&quot;&gt;Why choose FoundationPress?&lt;/h3&gt;
-
-&lt;p&gt;FoundationPress is basically Zurb Foundation framework, but created specifically to work with Wordpress as a theme.
-I’ve been using Zurb Foundation for quite sometime, and with the recent upgrade they made on their framework, its more flexible on how we can include or exclude certain features of what builds a Responsive Website or Web Application, thus, customization of dependencies/assets and small filesize. Also, this framework is well-documented and support from its community is pretty responsive, I would file issues on their github repo and they are very helpful to resolve issues.&lt;/p&gt;
-
-&lt;p&gt;With regards to CSS Animations (yes, I’ve see trends lately where when you scroll a webpage, it would have those nifty animations), Foundation has released &lt;strong&gt;Motion-UI&lt;/strong&gt; which is also included on FoundationPress.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://foundation.zurb.com/&quot;&gt;Foundation Zurb&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/olefredrik/foundationpress&quot;&gt;FoundationPress&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;With the type of projects we received and working with only a few developers while meeting design approval and deadline, using a CSS framework is just proper.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;I don’t need to re-code CSS styles. Good for rapid prototyping and optimize later.&lt;/li&gt;
-  &lt;li&gt;There are also pre-made JavaScript components. Again, good for rapid prototyping and optimize later.&lt;/li&gt;
-  &lt;li&gt;Documentation is on Zurb Foundation website, except custom documentation.&lt;/li&gt;
-  &lt;li&gt;FoundationPress handles the theme’s architecture.
-    &lt;ul&gt;
-      &lt;li&gt;Just by looking at &lt;strong&gt;package.json&lt;/strong&gt;, &lt;strong&gt;bower.json&lt;/strong&gt;, and &lt;strong&gt;gulp.js&lt;/strong&gt;, I can tell how the theme is architectured.&lt;/li&gt;
-      &lt;li&gt;Except for SASS files. Its modules, settings, and dependencies are imported different than JavaScript files.&lt;/li&gt;
-      &lt;li&gt;Motion-UI is still early in development and a bit tricky to implement, but I filed an issue related to setup. &lt;a href=&quot;https://github.com/zurb/motion-ui/issues/56&quot;&gt;Visit filed issue here&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;wordpress-templating&quot;&gt;Wordpress Templating&lt;/h3&gt;
-
-&lt;p&gt;To differentiate the files in FoundationPress, its good to get acquainted with &lt;a href=&quot;https://developer.wordpress.org/themes/basics/template-files/&quot;&gt;Wordpress Template Files&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Prototyping&lt;/strong&gt; is easy as adding a page on wordpress admin dashboard and create an instance of a &lt;code&gt;page.tpl&lt;/code&gt; file and renaming with a given extension of the name of the page you added on wordpress admin dashboard &lt;code&gt;page-{slug}.php&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Another technique is if you were to use an &lt;strong&gt;approved design prototype&lt;/strong&gt; to multiple pages, you can just convert that &lt;code&gt;page-{slug}.php&lt;/code&gt; file into a template &lt;code&gt;/FoundationPress/templates/template-name-here.php&lt;/code&gt;, then disseminate it by setting it as a Template under &lt;code&gt;Name of page you added &amp;gt; Page Attributes &amp;gt; Template&lt;/code&gt; at wp admin dashboard.&lt;/p&gt;
-
-&lt;p&gt;There are many ways you can fully customized a CMS like functionality with wordpress without the need of plugin. All you have to do is enable these features in &lt;code&gt;functions.php&lt;/code&gt;.
-Some features that are worth noting are:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Custom Post Type&lt;/li&gt;
-  &lt;li&gt;Custom Category and Tags&lt;/li&gt;
-  &lt;li&gt;Custom Fields&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;You can also create a template or prototype for these Custom Post Types. Enable Custom Fields if required for users to input pieces of data and enable Custom Category if you want to sort or filter these items in theme or in wordpress admin custom post type dashboard.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;wp-rest-api&quot;&gt;WP Rest API&lt;/h3&gt;
-
-&lt;p&gt;When building an application in certain pages of wordpress using JavaScript, we can also take advantage of this plugin &lt;a href=&quot;http://v2.wp-api.org/&quot;&gt;WP Rest API&lt;/a&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;managing-wordpress-with-wp-cli&quot;&gt;Managing wordpress with WP-CLI&lt;/h3&gt;
-
-&lt;p&gt;This has been really helpful especially with checking the status of your wordpress core, plugins, and themes. To avoid cpu usage on wordpress admin dashboard, you can manage your wordpress via cli! &lt;a href=&quot;http://wp-cli.org/&quot;&gt;WP-CLI&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 29 Jan 2016 04:07:09 -0800</pubDate>
-        <link>http://www.wandrr.io/Front-End-workflow-with-Wordpress</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Front-End-workflow-with-Wordpress</guid>
-        
-        <category>wordpress</category>
-        
-        <category>prototyping</category>
-        
-        <category>workflow</category>
         
         
       </item>
