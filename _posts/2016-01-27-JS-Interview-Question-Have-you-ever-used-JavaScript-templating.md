@@ -3,8 +3,7 @@ layout: post
 title: "Have you ever used JavaScript templating?"
 date: 2016-01-27 09:47:13
 tags:
-- javascript
-- interview question
+- javascript interview questions
 ---
 
 ### Have you ever used JavaScript templating? If so, what libraries have you used?

@@ -3,8 +3,7 @@ layout: post
 title: "How do you organize your code? (module pattern, classical inheritance?)"
 date: 2016-01-13 10:47:13
 tags:
-- javascript
-- interview question
+- javascript interview questions
 ---
 
 ### How do you organize your code? (module pattern, classical inheritance?)

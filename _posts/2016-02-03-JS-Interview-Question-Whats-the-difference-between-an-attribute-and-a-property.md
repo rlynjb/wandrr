@@ -3,8 +3,7 @@ layout: post
 title: "What's the difference between an 'attribute' and a 'property'?"
 date: 2016-02-03 12:41:57
 tags:
-- javascript
-- interview question
+- javascript interview questions
 ---
 
 ### recalling basics of JavaScript

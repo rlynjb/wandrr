@@ -3,8 +3,7 @@ layout: post
 title: "What’s the difference between feature detection, feature inference, and using the UA string?"
 date: 2016-01-20 10:47:13
 tags:
-- javascript
-- interview question
+- javascript interview questions
 ---
 
 ### What’s the difference between feature detection, feature inference, and using the UA string?

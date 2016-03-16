@@ -3,8 +3,7 @@ layout: post
 title: "What is a closure, and how/why would you use one?"
 date: 2016-01-12 10:47:13
 tags:
-- javascript
-- interview question
+- javascript interview questions
 ---
 
 ### What is a closure, and how/why would you use one?

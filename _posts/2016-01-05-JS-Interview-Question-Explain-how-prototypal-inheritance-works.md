@@ -3,8 +3,7 @@ layout: post
 title: "Explain how prototypal inheritance works"
 date: 2016-01-05 10:47:13
 tags:
-- javascript
-- interview question
+- javascript interview questions
 ---
 
 Everything in Javascript is an object. Even when creating a Class is an Object via an Object Literal or Constructor Function. This is how Javascript does class-based programming as to other traditional Object-Oriented Programming languages where they use the keyword ‘class’ and ‘inheritance’.

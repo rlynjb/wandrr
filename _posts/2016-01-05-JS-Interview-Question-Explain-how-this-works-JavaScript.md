@@ -3,8 +3,7 @@ layout: post
 title: "Explain how this work in JavaScript"
 date: 2016-01-05 10:47:13
 tags:
-- javascript
-- interview question
+- javascript interview questions
 ---
 
 From what I understand, `this` refers to itself, to its own object or global object.

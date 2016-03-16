@@ -3,8 +3,7 @@ layout: post
 title: "What’s the difference between host objects and native objects?"
 date: 2016-01-13 10:47:13
 tags:
-- javascript
-- interview question
+- javascript interview questions
 ---
 
 

@@ -3,8 +3,7 @@ layout: post
 title: "Explain 'hoisting'"
 date: 2016-01-28 13:27:00
 tags:
-- javascript
-- interview question
+- javascript interview questions
 ---
 
 As defined in dictionary.com, Hoisting means to lift or raise. **In JavaScript**, Hoisting is when we declare variables and are hoisted to the top of a function scope or to the top of the global scope depending on where it is declared. Remember, JavaScript have a **function-level scope** as oppose to **block-level scope** in other languages.

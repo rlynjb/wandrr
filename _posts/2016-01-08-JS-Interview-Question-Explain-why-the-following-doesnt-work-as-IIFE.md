@@ -3,8 +3,7 @@ layout: post
 title: "Explain why the following doesn’t work as an IIFE"
 date: 2016-01-08 10:47:13
 tags:
-- javascript
-- interview question
+- javascript interview questions
 ---
 
 ### Explain why the following doesn’t work as an IIFE: function foo(){ }();. What needs to be changed to properly make it an IIFE?

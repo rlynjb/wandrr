@@ -3,8 +3,7 @@ layout: post
 title: "Difference between document load event and document ready event?"
 date: 2016-02-23 15:08:26
 tags:
-- javascript
-- interview question
+- javascript interview questions
 ---
 
 `window.onload` event fires only when contents (images, css, scripts, other 3rd party sources), including the DOM has finished loading.

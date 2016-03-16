@@ -3,8 +3,7 @@ layout: post
 title: "Explain AJAX in as much detail as possible"
 date: 2016-01-22 10:47:13
 tags:
-- javascript
-- interview question
+- javascript interview questions
 ---
 
 ### Explain AJAX in as much detail as possible

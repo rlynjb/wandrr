@@ -3,8 +3,7 @@ layout: post
 title: "Describe event bubbling"
 date: 2016-02-02 12:08:15
 tags:
-- javascript
-- interview question
+- javascript interview questions
 ---
 
 Event bubbling is when handlers on a nested DOM are triggered starting from the child element up to its parent element.

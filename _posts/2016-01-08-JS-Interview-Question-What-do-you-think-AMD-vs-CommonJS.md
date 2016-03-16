@@ -3,8 +3,7 @@ layout: post
 title: "What do you think of AMD vs CommonJS?"
 date: 2016-01-08 10:47:13
 tags:
-- javascript
-- interview question
+- javascript interview questions
 ---
 
 AMD and CommonJS are both Javascript module loader. They accomplish the same task but works different.

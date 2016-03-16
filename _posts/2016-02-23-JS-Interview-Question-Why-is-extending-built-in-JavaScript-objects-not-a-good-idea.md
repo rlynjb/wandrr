@@ -3,8 +3,7 @@ layout: post
 title: "Why is extending built-in JavaScript objects not a good idea?"
 date: 2016-02-23 13:04:54
 tags:
-- javascript
-- interview question
+- javascript interview questions
 ---
 
 From what I understand, extending built-in JavaScript objects is most likely an opinion-base rather than facts.

@@ -3,8 +3,7 @@ layout: post
 title: "What is the difference between == and ===?"
 date: 2016-02-23 15:15:38
 tags:
-- javascript
-- interview question
+- javascript interview questions
 ---
 
 JavaScript has two sets of **_Equality operators_** archived under [Comparison operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators):

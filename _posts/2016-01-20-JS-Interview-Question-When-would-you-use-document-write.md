@@ -3,8 +3,7 @@ layout: post
 title: "When would you use document.write()?"
 date: 2016-01-20 10:47:13
 tags:
-- javascript
-- interview question
+- javascript interview questions
 ---
 
 ### When would you use document.write()?

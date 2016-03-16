@@ -3,8 +3,7 @@ layout: post
 title: "What’s the difference between .call and .apply?"
 date: 2016-01-19 10:47:13
 tags:
-- javascript
-- interview question
+- javascript interview questions
 ---
 
 ### What’s the difference between .call and .apply?
