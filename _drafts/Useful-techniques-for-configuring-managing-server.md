@@ -4,7 +4,6 @@ title: "Useful techniques for configuring and managing server"
 date: 2015-01-01 01:01:01
 tags:
 - linux
-- commandline
 ---
 
 Below is a gist of what this post contains.

@@ -4,7 +4,6 @@ title: "Wordpress Security Cheatsheet"
 date: 2015-01-01 01:01:01
 tags:
 - wordpress
-- security
 ---
 
 wordpress cli:

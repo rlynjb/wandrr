@@ -4,7 +4,6 @@ title: "Front-End Workflow with Wordpress"
 date: 2016-01-29 12:07:09
 tags:
 - wordpress
-- prototyping
 - workflow
 ---
 

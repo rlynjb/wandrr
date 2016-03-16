@@ -4,7 +4,6 @@ title: "Notes on Prototyping"
 date: 2015-01-01 01:01:01
 tags:
 - wordpress
-- prototyping
 ---
 
 This is a continuation of my [Front-End workflow with Wordpress](/Front-End-workflow-with-Wordpress) post.

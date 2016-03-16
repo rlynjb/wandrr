@@ -4,7 +4,7 @@ title: "Beginning Small Web App Development with AngularJS"
 date: 2016-03-04 10:43:10
 tags:
 - javascript
-- App Development
+- app development
 ---
 
 This is a continuation of my previous blog post [Beginning Mobile App Development Journey](/Beginning-mobile-app-development-journey/) as I further explore Hybrid (Mobile and Web) App Development. On my previous blog post, I have successfully installed PhoneGap and was able to run the default PhoneGap app on my Android phone.

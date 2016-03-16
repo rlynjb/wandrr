@@ -3,7 +3,7 @@ layout: post
 title: "Keeping Font Icons Minimal"
 date: 2015-01-04 10:47:13
 tags:
-- font icons
+- icons
 ---
 
 Today at work, I’ve found another new tool that takes fontelloing to the next level. lol.. I was assigned to change Font Awesome fonts to http://fontello.com fonts on the entire site. So, I individually searched for the font icons used on the site on Fontello.com. Unfortunately, some icons from Font Awesome aren’t updated on Fontello so I took advantage of the Custom Fo nt sections that Fontello have.

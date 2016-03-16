@@ -3,9 +3,7 @@ layout: post
 title: "Migrating an Ember app to Ember-CLI"
 date: 2015-01-05 10:47:13
 tags:
-- javascript
 - ember.js
-- ember-cli
 ---
 
 Turns out there are 2 major ways to migrate an Ember project to Ember-CLI.

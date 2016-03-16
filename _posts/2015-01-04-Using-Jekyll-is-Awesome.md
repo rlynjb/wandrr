@@ -3,8 +3,7 @@ layout: post
 title: "Using Jekyll is Awesome!"
 date: 2015-01-04 10:47:13
 tags:
-- site static
-- jekyll
+- static site
 ---
 
 hello world! welcome to the wonderful world of front end development! Using Jekyll has been an eye opening for me lately, discovering and learning new front end tools that I never knew exis ted! From Github pages to migrating from Wordpress to Jekyll, it has been wonderland for me. No more database, server stuff, and monthly payment for web hosting. Yey! and everything is pret ty much accessable through CLI interface :-)

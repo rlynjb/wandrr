@@ -3,7 +3,7 @@ layout: post
 title: "Fiddling with Phonegap's Speech Recognition"
 date: 2016-03-16 12:38:53
 tags:
-- mobile development
+- app development
 ---
 
 Hello! Again this is a continuation of my previous blog posts. I am attempting to develop a simple app while blogging my experience and issues I've come across.

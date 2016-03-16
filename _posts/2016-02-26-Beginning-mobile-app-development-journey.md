@@ -3,7 +3,7 @@ layout: post
 title: "Beginning Mobile App Development Journey"
 date: 2016-02-26 13:14:59
 tags:
-- mobile development
+- app development
 ---
 
 Consider this blog post as my notes on learning how to setup PhoneGap/Cordova locally, build and test via PhoneGap Build.

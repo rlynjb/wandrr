@@ -2,7 +2,7 @@
 layout: post
 title: "Responsive Email"
 date: 2015-01-04 10:47:13
-tags: css responsive email
+tags: email
 ---
 
 I’ve been working on this new project, Creating Responsive Emails, and I thought of blogging my experience and sharing them to you! ☺..

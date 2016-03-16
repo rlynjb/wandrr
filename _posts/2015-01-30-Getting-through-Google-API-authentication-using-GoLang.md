@@ -3,7 +3,6 @@ layout: post
 title: "Getting through Google APIs’ authentication using GoLang"
 date: 2015-01-30 10:47:13
 tags:
-- api
 - authentication
 ---
 
