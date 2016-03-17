@@ -168,13 +168,31 @@ Here are also some resources <a href="http://mobile-frameworks-comparison-chart.
 <p>Plugins are the mechanism Cordova uses to provide native functionality to your app. 
 Plugins can be managed using either the Cordova CLI or the PhoneGap CLI (which ends up using the Cordova CLI in the background). The important detail to remember when you use the PhoneGap CLI is that plugins must be installed locally (not remotely).</p>
 
-<p><strong>To install plugins:</strong> <code>phonegap plugin add plugin-name</code></p>
+<p>You can modify the default generated app to take advantage of standard web technologies, but for the app to access device-level features, you need to add plugins.</p>
 
-<p><a href="https://build.phonegap.com/plugins">https://build.phonegap.com/plugins</a></p>
+<p><strong>For list of available plugins via PhoneGap Build:</strong> <a href="https://build.phonegap.com/plugins">https://build.phonegap.com/plugins</a></p>
+
+<p><strong>To install plugins:</strong> <code>phonegap plugin add plugin-name</code></p>
 
 <p><strong>Listing plugins:</strong> <code>phonegap plugin list</code></p>
 
 <p><strong>Removing plugins:</strong> <code>phonegap plugin remove plugin-name</code></p>
+
+<p><strong>Additional Notes on Installing Plugin:</strong></p>
+
+<p>After running <code>phonegap plugin add plugin-name</code>, I got an error on my console like so, <code>Uncaught ReferenceError: SpeechRecognition is not defined</code>.</p>
+
+<p>When we run <code>phonegap plugin add plugin-name</code>, phonegap automatically adds its configuration instance <code>config.xml</code> on installed platforms.</p>
+
+<p>When using PhoneGap Build to build our <code>.apk</code> file, we may need to add:<br />
+<code>&lt;gap:plugin name="SpeechRecognition" value="org.apache.cordova.speech.SpeechRecognition" /&gt;</code><br />
+to our parent level <code>config.xml</code> file.</p>
+
+<p>But we may also need to check if the specific plugin is supported by PhoneGap Build <a href="https://build.phonegap.com/plugins">https://build.phonegap.com/plugins</a></p>
+
+<h5 id="ref-error-uncaught-referenceerror-speechrecognition-is-not-defined-18httpsgithubcommacdonstspeechrecognitionpluginissues18">Ref: <a href="https://github.com/macdonst/SpeechRecognitionPlugin/issues/18">Error: Uncaught ReferenceError: SpeechRecognition is not defined #18</a></h5>
+
+<p>Since I’m using PhoneGap Build to build my <code>.apk</code> file, its best to consult their documentation <a href="http://docs.build.phonegap.com/en_US/configuring_plugins.md.html">http://docs.build.phonegap.com/en_US/configuring_plugins.md.html</a> and also, I have to give props to Adobe for an up-to-date and detailed documentation.</p>
 
 <hr />
 

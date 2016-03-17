@@ -82,13 +82,31 @@ In this step, we will specify the platforms that the projects support. Besides a
 Plugins are the mechanism Cordova uses to provide native functionality to your app. 
 Plugins can be managed using either the Cordova CLI or the PhoneGap CLI (which ends up using the Cordova CLI in the background). The important detail to remember when you use the PhoneGap CLI is that plugins must be installed locally (not remotely).
 
-**To install plugins:** `phonegap plugin add plugin-name`
+You can modify the default generated app to take advantage of standard web technologies, but for the app to access device-level features, you need to add plugins.
 
-[https://build.phonegap.com/plugins](https://build.phonegap.com/plugins)
+**For list of available plugins via PhoneGap Build:** [https://build.phonegap.com/plugins](https://build.phonegap.com/plugins)
+
+**To install plugins:** `phonegap plugin add plugin-name`
 
 **Listing plugins:** `phonegap plugin list`
 
 **Removing plugins:** `phonegap plugin remove plugin-name`
+
+**Additional Notes on Installing Plugin:**
+
+After running `phonegap plugin add plugin-name`, I got an error on my console like so, `Uncaught ReferenceError: SpeechRecognition is not defined`.
+
+When we run `phonegap plugin add plugin-name`, phonegap automatically adds its configuration instance `config.xml` on installed platforms.
+
+When using PhoneGap Build to build our `.apk` file, we may need to add:<br>
+`<gap:plugin name="SpeechRecognition" value="org.apache.cordova.speech.SpeechRecognition" />`<br>
+to our parent level `config.xml` file.
+
+But we may also need to check if the specific plugin is supported by PhoneGap Build [https://build.phonegap.com/plugins](https://build.phonegap.com/plugins)
+
+##### Ref: [Error: Uncaught ReferenceError: SpeechRecognition is not defined #18](https://github.com/macdonst/SpeechRecognitionPlugin/issues/18)
+
+Since I'm using PhoneGap Build to build my `.apk` file, its best to consult their documentation [http://docs.build.phonegap.com/en_US/configuring_plugins.md.html](http://docs.build.phonegap.com/en_US/configuring_plugins.md.html) and also, I have to give props to Adobe for an up-to-date and detailed documentation.
 
 -----
 

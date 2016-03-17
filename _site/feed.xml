@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 17 Mar 2016 10:46:29 -0700</pubDate>
-    <lastBuildDate>Thu, 17 Mar 2016 10:46:29 -0700</lastBuildDate>
+    <pubDate>Thu, 17 Mar 2016 12:29:39 -0700</pubDate>
+    <lastBuildDate>Thu, 17 Mar 2016 12:29:39 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -439,13 +439,31 @@ Here are also some resources &lt;a href=&quot;http://mobile-frameworks-compariso
 &lt;p&gt;Plugins are the mechanism Cordova uses to provide native functionality to your app. 
 Plugins can be managed using either the Cordova CLI or the PhoneGap CLI (which ends up using the Cordova CLI in the background). The important detail to remember when you use the PhoneGap CLI is that plugins must be installed locally (not remotely).&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;To install plugins:&lt;/strong&gt; &lt;code&gt;phonegap plugin add plugin-name&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You can modify the default generated app to take advantage of standard web technologies, but for the app to access device-level features, you need to add plugins.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://build.phonegap.com/plugins&quot;&gt;https://build.phonegap.com/plugins&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;For list of available plugins via PhoneGap Build:&lt;/strong&gt; &lt;a href=&quot;https://build.phonegap.com/plugins&quot;&gt;https://build.phonegap.com/plugins&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;To install plugins:&lt;/strong&gt; &lt;code&gt;phonegap plugin add plugin-name&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Listing plugins:&lt;/strong&gt; &lt;code&gt;phonegap plugin list&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Removing plugins:&lt;/strong&gt; &lt;code&gt;phonegap plugin remove plugin-name&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Additional Notes on Installing Plugin:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;After running &lt;code&gt;phonegap plugin add plugin-name&lt;/code&gt;, I got an error on my console like so, &lt;code&gt;Uncaught ReferenceError: SpeechRecognition is not defined&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;When we run &lt;code&gt;phonegap plugin add plugin-name&lt;/code&gt;, phonegap automatically adds its configuration instance &lt;code&gt;config.xml&lt;/code&gt; on installed platforms.&lt;/p&gt;
+
+&lt;p&gt;When using PhoneGap Build to build our &lt;code&gt;.apk&lt;/code&gt; file, we may need to add:&lt;br /&gt;
+&lt;code&gt;&amp;lt;gap:plugin name=&quot;SpeechRecognition&quot; value=&quot;org.apache.cordova.speech.SpeechRecognition&quot; /&amp;gt;&lt;/code&gt;&lt;br /&gt;
+to our parent level &lt;code&gt;config.xml&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;p&gt;But we may also need to check if the specific plugin is supported by PhoneGap Build &lt;a href=&quot;https://build.phonegap.com/plugins&quot;&gt;https://build.phonegap.com/plugins&lt;/a&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;ref-error-uncaught-referenceerror-speechrecognition-is-not-defined-18httpsgithubcommacdonstspeechrecognitionpluginissues18&quot;&gt;Ref: &lt;a href=&quot;https://github.com/macdonst/SpeechRecognitionPlugin/issues/18&quot;&gt;Error: Uncaught ReferenceError: SpeechRecognition is not defined #18&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;Since I’m using PhoneGap Build to build my &lt;code&gt;.apk&lt;/code&gt; file, its best to consult their documentation &lt;a href=&quot;http://docs.build.phonegap.com/en_US/configuring_plugins.md.html&quot;&gt;http://docs.build.phonegap.com/en_US/configuring_plugins.md.html&lt;/a&gt; and also, I have to give props to Adobe for an up-to-date and detailed documentation.&lt;/p&gt;
 
 &lt;hr /&gt;
 
