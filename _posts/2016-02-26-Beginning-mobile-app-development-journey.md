@@ -7,18 +7,12 @@ tags:
 ---
 
 Consider this blog post as my notes on learning how to setup PhoneGap/Cordova locally, build and test via PhoneGap Build.
-If you want to know more about its history and detailed instructions, refer to this book:
-
-[Packtpub: PhoneGap Mobile Application Development Hotshot](https://www.packtpub.com/application-development/phonegap-3x-mobile-application-development-hotshot)
-<br>
-<img src="https://d1ldz4te4covpm.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/7925OS.jpg"/>
+If you want to know more about its history and detailed instructions, refer to this book: [Packtpub: PhoneGap Mobile Application Development Hotshot](https://www.packtpub.com/application-development/phonegap-3x-mobile-application-development-hotshot)
 
 -----
 
 I've been searching for a Mobile App Framework on which I can use languages I'm comfortable with (HTML, CSS, JavaScript) and also will be able to deploy on various devices utilizing native device sensors and functionalities.
-
 I know performance will be an issue when using Mobile App Framework, but considering our project scope, it will not be an issue. Given the timeframe and number of developers, using Mobile App Framework sounds proper.
-
 Here are also some resources [Mobile Frameworks Comparison Chart](http://mobile-frameworks-comparison-chart.com/) and frameworks we've considered that I think worth noting: [Appgyver](http://appgyver.com), [Cordova](https://cordova.apache.org/), [Phonegap](http://phonegap.com/)
 
 ### Why choose PhoneGap?
@@ -42,25 +36,12 @@ The following steps are a combination of instructions from mentioned book above 
 
 **Starting a project**
 
-- Create first project
-  - Contains:
-    - Our code
-    - Other platform-specific code
-    - Other assets required to generate an app ready for you to run on a simulator or device
-- Manage project's platforms
-- Manage project's plugins
-- Build my project
-- Deploy project to the simulator/device
-
-**Additional notes on Build and Deploy**
-
-When testing our app on a simulator, we either need to install platform SDKs if we where to test it locally.<br>
-To avoid installing and configuring such SDKs:
-
-- We can rely on [PhoneGap Build](http://app.phonegap.com/) to build the project and
-- [Ripple Emulator](https://chrome.google.com/webstore/detail/ripple-emulator-beta/geelfhphabnejjhdalkjhgipohgpdnoc?hl=en) or [The PhoneGap Developer App](http://app.phonegap.com/) for simulating on different OS (Android, iOS, Blackberry, Windows). 
-
-But a Mac is required to generate the certificates necessary for iOS app signing (even with PhoneGap Build) and is definitely required for deployment to the App Store. The same is true for Windows; you need to deploy to the App Store from Windows only.
+- [Create first project](#create-first-project)
+  - Contains: Our code, Other platform-specific code, Other assets required to generate an app ready for you to run on a simulator or device
+- [Manage project's platforms](#manage-projects-platforms)
+- [Manage project's plugins](#manage-projects-plugins)
+- [Build my project](#building-our-project)
+- [Deploy project to the simulator/device](#deploy-project-to-a-simulatordevice)
 
 -----
 
@@ -101,32 +82,13 @@ In this step, we will specify the platforms that the projects support. Besides a
 Plugins are the mechanism Cordova uses to provide native functionality to your app. 
 Plugins can be managed using either the Cordova CLI or the PhoneGap CLI (which ends up using the Cordova CLI in the background). The important detail to remember when you use the PhoneGap CLI is that plugins must be installed locally (not remotely).
 
-**To install plugins:** `phonegap local plugin add plugin-name`
+**To install plugins:** `phonegap plugin add plugin-name`
 
-[Official Documentation: Cordova - Plugin APIs](http://cordova.apache.org/docs/en/dev/cordova/plugins/pluginapis.html#Plugin%20APIsZ)
+[https://build.phonegap.com/plugins](https://build.phonegap.com/plugins)
 
-- phonegap local plugin add org.apache.cordova.device
-- phonegap local plugin add org.apache.cordova.network-information 
-- phonegap local plugin add org.apache.cordova.battery-status
-- phonegap local plugin add org.apache.cordova.device-motion
-- phonegap local plugin add org.apache.cordova.device-orientation 
-- phonegap local plugin add org.apache.cordova.geolocation 
-- phonegap local plugin add org.apache.cordova.camera 
-- phonegap local plugin add org.apache.cordova.media 
-- phonegap local plugin add org.apache.cordova.media-capture 
-- phonegap local plugin add org.apache.cordova.file 
-- phonegap local plugin add org.apache.cordova.file-transfer 
-- phonegap local plugin add org.apache.cordova.dialogs 
-- phonegap local plugin add org.apache.cordova.vibration 
-- phonegap local plugin add org.apache.cordova.contacts 
-- phonegap local plugin add org.apache.cordova.globalization 
-- phonegap local plugin add org.apache.cordova.splashscreen 
-- phonegap local plugin add org.apache.cordova.inappbrowser 
-- phonegap local plugin add org.apache.cordova.console
+**Listing plugins:** `phonegap plugin list`
 
-**Listing plugins:** `phonegap local plugin list`
-
-**Removing plugins:** `phonegap local plugin remove plugin-name`
+**Removing plugins:** `phonegap plugin remove plugin-name`
 
 -----
 
@@ -138,6 +100,8 @@ Building involves compiling all the native code using the platform SDKs on your 
 `phonegap remote build platform-name`
 
 Building remotely using PhoneGap Build is a little different from building locally since you may not see the results of the build instantly; the service will build the code as soon as it has a chance. The only way to verify that things went as expected is to log on to your account at [https://build.phonegap.com/](https://build.phonegap.com/) and verify the results.
+
+> Note: some plugins does not support PhoneGap Build, so its best to setup your build process locally. refer to: [https://build.phonegap.com/plugins](https://build.phonegap.com/plugins)
 
 -----
 
@@ -152,3 +116,17 @@ To do this, you can deploy the code to a simulator or deploy the code to a devic
 - Enable it
 - Run `phonegap serve` to retrieve address
 - Enter local address to Ripple Emulator
+
+-----
+
+**Additional notes on Build and Deploy**
+
+When testing our app on a simulator, we either need to install platform SDKs if we where to test it locally.<br>
+To avoid installing and configuring such SDKs:
+
+- We can rely on [PhoneGap Build](http://app.phonegap.com/) to build the project and
+- [Ripple Emulator](https://chrome.google.com/webstore/detail/ripple-emulator-beta/geelfhphabnejjhdalkjhgipohgpdnoc?hl=en) or [The PhoneGap Developer App](http://app.phonegap.com/) for simulating on different OS (Android, iOS, Blackberry, Windows). 
+
+But a Mac is required to generate the certificates necessary for iOS app signing (even with PhoneGap Build) and is definitely required for deployment to the App Store. The same is true for Windows; you need to deploy to the App Store from Windows only.
+
+
