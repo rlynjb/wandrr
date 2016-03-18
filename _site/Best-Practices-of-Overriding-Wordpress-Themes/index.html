@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Vanilla JavaScript Router and Templating</title>
-  <meta name="description" content="I’m working on a simple app that requires a vanilla JavaScript routing system. Did some readings and it turns out there are various ways we can implement a v...">
+  <title>Best Practices of overriding Wordpress Themes</title>
+  <meta name="description" content="While working on websites using Wordpress and Divi theme, I have came across some best practices for overriding Wordpress themes. So I thought of listing it ...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.wandrr.io/Vanilla-Javascript-Router-and-Templating">
+  <link rel="canonical" href="http://www.wandrr.io/Best-Practices-of-Overriding-Wordpress-Themes">
   <link rel="alternate" type="application/rss+xml" title="wandrr.io" href="http://www.wandrr.io/feed.xml" />
 </head>
 
@@ -68,76 +68,21 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Vanilla JavaScript Router and Templating</h1>
+    <h1 class="post-title">Best Practices of overriding Wordpress Themes</h1>
     <p class="post-meta">
-      Feb 29, 2016
+      Jul 18, 2015
       
-       • javascript
+       • wordpress
     </p>
   </header>
 
   <article class="post-content">
-    <p>I’m working on a simple app that requires a vanilla JavaScript routing system. Did some readings and it turns out there are various ways we can implement a vanilla JS routing system, but I will only mention 3 common methods:</p>
+    <p>While working on websites using Wordpress and Divi theme, I have came across some best practices for overriding Wordpress themes. So I thought of listing it here as a personal note for when working with upcoming Wordpress projects.</p>
 
 <ul>
-  <li>Using <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window.onhashchange">onhashchange event</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window.onload">onload event</a>
-    <ul>
-      <li>I believe is the simplest method so far.</li>
-    </ul>
-  </li>
-  <li>Using <a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API">HTML5 History API</a>
-    <ul>
-      <li>Still buggy for cross-browser compatibility</li>
-    </ul>
-  </li>
-  <li>Using small JS plugin called <a href="https://github.com/browserstate/history.js">History.js</a>
-    <ul>
-      <li>This extends HTML5 History API and fixes cross-browser compatibility issues.</li>
-      <li>More info on their <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window.onload">Github Gist - Intelligent State Handling</a></li>
-    </ul>
-  </li>
-</ul>
-
-<p>For this app project, I will use the first method. Thanks to:</p>
-
-<ul>
-  <li><a href="http://joakim.beng.se/blog/posts/a-javascript-router-in-20-lines.html">Joakim Carlstein’s - A JavaScript router in 20 lines</a> and</li>
-  <li><a href="http://ejohn.org/blog/javascript-micro-templating/">John Resig’s - JavaScript Micro-Templating</a>.</li>
-</ul>
-
-<hr />
-
-<h3 id="why-go-this-route">Why go this Route?</h3>
-
-<p>Both each scripts only contains 20 lines of code, overall, its about 40 lines of code compare to using a 3rd-party JS plugin. I wanted to keep my code simple and understanding these scripts source code is easy. Its also a good way to learn Routing and Templating system as well. At the moment, I am not concern about cross-browser compatibility and other issues that may arise.</p>
-
-<hr />
-
-<p><strong>For complete example:</strong></p>
-
-<p data-height="268" data-theme-id="20698" data-slug-hash="RaNGvZ" data-default-tab="result" data-user="rlynjb" class="codepen">See the Pen <a href="http://codepen.io/rlynjb/pen/RaNGvZ/">vanilla javascript routing</a> by rlynjb (<a href="http://codepen.io/rlynjb">@rlynjb</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-<script async="" src="//assets.codepen.io/assets/embed/ei.js"></script>
-
-<hr />
-
-<h5 id="update-03-04-2016"><strong>Update: 03-04-2016</strong></h5>
-
-<h3 id="delegated-events---click-event-doesnt-work-on-dynamically-generated-elements">Delegated Events - Click event doesn’t work on dynamically generated elements</h3>
-
-<p>This was an issue I’ve come across while using this script. When binding a <code>click</code> event unto a dynamically generated element, we need to delegate that certain element to its parent element that holds the dynamically generated chiild elements.</p>
-
-<p>Code would look as follows, using jQuery <code>on</code> event:</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#view&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="s1">&#39;button#shuffle&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#view&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">getData</span><span class="p">();</span>
-<span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">));</span></code></pre></div>
-
-<h5 id="references"><strong>References:</strong></h5>
-
-<ul>
-  <li><a href="http://stackoverflow.com/questions/6658752/click-event-doesnt-work-on-dynamically-generated-elements">Click event doesn’t work on dynamically generated elements</a></li>
-  <li><a href="http://stackoverflow.com/questions/8827430/event-delegation-vs-direct-binding-when-adding-complex-elements-to-a-page">event delegation vs direct binding when adding complex elements to a page</a></li>
+  <li>First important practice I’ve learned was to create a Wordpress Child Theme. Editing code on Parent theme is a BIG NO-NO as to editing or modifying code on core files/code. Found this Wordpress documentation that helped me get started with creating a Child Theme. https://codex.wordpress.org/Child_Themes</li>
+  <li>Use remove_action() and add_action to override Wordpress functions from functions.php</li>
+  <li>Use remove_shortcode() and add_shortcode to override Wordpress shortcode functions from functions.php</li>
 </ul>
 
   </article>

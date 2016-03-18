@@ -6,12 +6,12 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 17 Mar 2016 12:29:39 -0700</pubDate>
-    <lastBuildDate>Thu, 17 Mar 2016 12:29:39 -0700</lastBuildDate>
+    <pubDate>Thu, 17 Mar 2016 21:43:20 -0700</pubDate>
+    <lastBuildDate>Thu, 17 Mar 2016 21:43:20 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>Fiddling with Phonegap's Speech Recognition</title>
+        <title>Fiddling with Phonegap&#39;s Speech Recognition</title>
         <description>&lt;p&gt;Hello! Again this is a continuation of my previous blog posts. I am attempting to develop a simple app while blogging my experience and issues I’ve come across.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -661,7 +661,7 @@ Best of all, any new arrays you create will also have access to the shuffle func
       </item>
     
       <item>
-        <title>What's the difference between an 'attribute' and a 'property'?</title>
+        <title>What&#39;s the difference between an &#39;attribute&#39; and a &#39;property&#39;?</title>
         <description>&lt;h3 id=&quot;recalling-basics-of-javascript&quot;&gt;recalling basics of JavaScript&lt;/h3&gt;
 
 &lt;p&gt;Everything in JavaScript is an object. These objects are categorized in different types (functions, boolean, string, number, etc) and can also contain properties and methods.
@@ -671,7 +671,7 @@ Objects doesn’t just exist in the language itself (JavaScript), but in Browser
 
 &lt;h3 id=&quot;objects-in-dom&quot;&gt;objects in DOM&lt;/h3&gt;
 
-&lt;p&gt;Every element in the DOM is an object and these objects have properties as well. These properties are mapped to a set of attributes from an &lt;code&gt;html&lt;/code&gt; markups. An attribute is just a string in an element (usually, &lt;code&gt;label='value'&lt;/code&gt; pair).&lt;/p&gt;
+&lt;p&gt;Every element in the DOM is an object and these objects have properties as well. These properties are mapped to a set of attributes from an &lt;code&gt;html&lt;/code&gt; markups. An attribute is just a string in an element (usually, &lt;code&gt;label=&#39;value&#39;&lt;/code&gt; pair).&lt;/p&gt;
 
 &lt;p&gt;Some of the element’s properties get their initial values from attributes with the same or similar names. Some examples below:&lt;/p&gt;
 
