@@ -27,6 +27,14 @@ Now, I am extending my app by using Speech Recognition. A typical user scenario 
 
 -----
 
+### New terms I've come across
+
+While learning how to install and use PhoneGap plugins, below are essential information on understanding the difference between Native Device Sensors/Features and HTML5 API.
+
+[What is a WebView](http://developer.telerik.com/featured/what-is-a-webview/)
+
+-----
+
 ### Plugins and Documentations
 
 Cordova provides a documentation for registered plugins [Cordova Official Documentation Plugins](http://cordova.apache.org/plugins/), but I was not able to find the plugin I needed. Instead, I've found the ff. on github and youtube:
