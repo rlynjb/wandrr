@@ -6,12 +6,12 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 17 Mar 2016 21:43:20 -0700</pubDate>
-    <lastBuildDate>Thu, 17 Mar 2016 21:43:20 -0700</lastBuildDate>
+    <pubDate>Fri, 18 Mar 2016 12:14:37 -0700</pubDate>
+    <lastBuildDate>Fri, 18 Mar 2016 12:14:37 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>Fiddling with Phonegap&#39;s Speech Recognition</title>
+        <title>Fiddling with Phonegap's Speech Recognition</title>
         <description>&lt;p&gt;Hello! Again this is a continuation of my previous blog posts. I am attempting to develop a simple app while blogging my experience and issues I’ve come across.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -348,14 +348,13 @@ url: inbox/:id
     
       <item>
         <title>Beginning Mobile App Development Journey</title>
-        <description>&lt;p&gt;Consider this blog post as my notes on learning how to setup PhoneGap/Cordova locally, build and test via PhoneGap Build.
+        <description>&lt;p&gt;Consider this blog post as my notes on learning how to setup PhoneGap/Cordova locally, build and debug via PhoneGap Build.
 If you want to know more about its history and detailed instructions, refer to this book: &lt;a href=&quot;https://www.packtpub.com/application-development/phonegap-3x-mobile-application-development-hotshot&quot;&gt;Packtpub: PhoneGap Mobile Application Development Hotshot&lt;/a&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;p&gt;I’ve been searching for a Mobile App Framework on which I can use languages I’m comfortable with (HTML, CSS, JavaScript) and also will be able to deploy on various devices utilizing native device sensors and functionalities.
-I know performance will be an issue when using Mobile App Framework, but considering our project scope, it will not be an issue. Given the timeframe and number of developers, using Mobile App Framework sounds proper.
-Here are also some resources &lt;a href=&quot;http://mobile-frameworks-comparison-chart.com/&quot;&gt;Mobile Frameworks Comparison Chart&lt;/a&gt; and frameworks we’ve considered that I think worth noting: &lt;a href=&quot;http://appgyver.com&quot;&gt;Appgyver&lt;/a&gt;, &lt;a href=&quot;https://cordova.apache.org/&quot;&gt;Cordova&lt;/a&gt;, &lt;a href=&quot;http://phonegap.com/&quot;&gt;Phonegap&lt;/a&gt;&lt;/p&gt;
+I know performance will be an issue when using Mobile App Framework, but considering our usual project scope, given the timeframe and number of developers, using Mobile App Framework sounds proper.&lt;/p&gt;
 
 &lt;h3 id=&quot;why-choose-phonegap&quot;&gt;Why choose PhoneGap?&lt;/h3&gt;
 
@@ -363,11 +362,7 @@ Here are also some resources &lt;a href=&quot;http://mobile-frameworks-compariso
 
 &lt;hr /&gt;
 
-&lt;p&gt;The following steps are a combination of instructions from mentioned book above and based off of my experience configuring my local development and using 3rd party cloud base services.&lt;/p&gt;
-
-&lt;h3 id=&quot;requirements-and-important-initial-step&quot;&gt;Requirements and important initial step&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Installation&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;installation&quot;&gt;Installation&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Install node.js
@@ -384,14 +379,10 @@ Here are also some resources &lt;a href=&quot;http://mobile-frameworks-compariso
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;Starting a project&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;starting-a-project-and-workflow&quot;&gt;Starting a project and Workflow&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#create-first-project&quot;&gt;Create first project&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Contains: Our code, Other platform-specific code, Other assets required to generate an app ready for you to run on a simulator or device&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#create-first-project&quot;&gt;Create first project&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#manage-projects-platforms&quot;&gt;Manage project’s platforms&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#manage-projects-plugins&quot;&gt;Manage project’s plugins&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#building-our-project&quot;&gt;Build my project&lt;/a&gt;&lt;/li&gt;
@@ -400,97 +391,79 @@ Here are also some resources &lt;a href=&quot;http://mobile-frameworks-compariso
 
 &lt;hr /&gt;
 
+&lt;h3 id=&quot;two-environments&quot;&gt;Two Environments&lt;/h3&gt;
+
+&lt;p&gt;The PhoneGap command consists of two environments. The first is the local command environment. The local commands execute the command on your local machine. In this case, you must have the target device SDKs configured on your machine. For example, if you want to develop an Android application, you must acquire and configure the Android SDK on your machine.&lt;/p&gt;
+
+&lt;p&gt;The second environment is remote. Command-line commands execute the build process remotely using the cloud-based PhoneGap Build service. In this case, you don’t need to configure any SDK on your local machine.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;I will only focus on remote commands, so I don’t need to setup various platform SDKs locally&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Remote Commands via PhoneGap Build&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Sign up an account: &lt;a href=&quot;http://build.phonegap.com&quot;&gt;http://build.phonegap.com&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Login via CLI: &lt;code&gt;phonegap remote login&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
 &lt;h3 id=&quot;create-first-project&quot;&gt;Create first project&lt;/h3&gt;
 
 &lt;p&gt;To create a project with PhoneGap CLI, &lt;code&gt;cd&lt;/code&gt; to your projects directory (ex. &lt;code&gt;/www&lt;/code&gt; or &lt;code&gt;/home&lt;/code&gt;)&lt;/p&gt;
 
-&lt;p&gt;Run: &lt;code&gt;phonegap create ./PGHelloWorld com.phonegaphotshot.pghelloworld PGHelloWorld&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Run: &lt;code&gt;phonegap create hello com.myapp.hello HelloWorld&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;The first parameter indicates that a project should be created in a directory specified by the second parameter. The third parameter is the project ID, which must be unique and should be specified in reverse domain-name order. The final parameter is the name of the project.&lt;/p&gt;
+&lt;p&gt;First argument &lt;code&gt;hello&lt;/code&gt; specifies a directory for our project.&lt;br /&gt;
+Second argument &lt;code&gt;com.myapp.hello&lt;/code&gt; is our application ID. Its in reverse domain style. We can create something like &lt;code&gt;com.yourdomain.applicationname&lt;/code&gt;&lt;br /&gt;
+Third argument &lt;code&gt;HelloWorld&lt;/code&gt; is our application name. This will be use as the application’s display title. Its optional. If you are not setting the application name, it will use the name from the first argument. If you want to change the name, you can open config.xml and edit the name element.&lt;/p&gt;
+
+&lt;p&gt;Contains: Our code, Other platform-specific code, Other assets required to generate an app ready for you to run on a simulator or device&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;h3 id=&quot;manage-projects-platforms&quot;&gt;Manage project’s platforms&lt;/h3&gt;
 
-&lt;p&gt;In this step, we will specify the platforms that the projects support. Besides adding platforms, we can also remove, update, and list out the supported platforms.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;To add platform:&lt;/strong&gt; &lt;code&gt;cordova platform add platform-name&lt;/code&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;ios&lt;/code&gt;: The iOS platform&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;android&lt;/code&gt;: The Android platform&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;blackberry10&lt;/code&gt;: The BlackBerry 10 OS platform&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;firefoxos&lt;/code&gt;: The Firefox OS platform&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;wp7&lt;/code&gt;: The Windows Phone 7 platform&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;wp8&lt;/code&gt;: The Windows Phone 8 platform&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;windows 8&lt;/code&gt;: The Windows 8 platform&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Listing the available platforms:&lt;/strong&gt; &lt;code&gt;cordova platform ls&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Removing platforms:&lt;/strong&gt; &lt;code&gt;cordova platform remove platform-name&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Updating platforms:&lt;/strong&gt; &lt;code&gt;cordova platform update platform-name&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;PhoneGap Build, remote-based build automatically creates an iOs, Android, and Windows build for you.&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;h3 id=&quot;manage-projects-plugins&quot;&gt;Manage project’s plugins&lt;/h3&gt;
 
-&lt;p&gt;Plugins are the mechanism Cordova uses to provide native functionality to your app. 
-Plugins can be managed using either the Cordova CLI or the PhoneGap CLI (which ends up using the Cordova CLI in the background). The important detail to remember when you use the PhoneGap CLI is that plugins must be installed locally (not remotely).&lt;/p&gt;
-
-&lt;p&gt;You can modify the default generated app to take advantage of standard web technologies, but for the app to access device-level features, you need to add plugins.&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;For list of available plugins via PhoneGap Build:&lt;/strong&gt; &lt;a href=&quot;https://build.phonegap.com/plugins&quot;&gt;https://build.phonegap.com/plugins&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;To install plugins:&lt;/strong&gt; &lt;code&gt;phonegap plugin add plugin-name&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;To install plugins:&lt;/strong&gt; &lt;code&gt;phonegap plugin add &amp;lt;source&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Once a plugin has been successfully added to a project, the plugin APIs can be executed using JavaScript. Each plugin has its own way of accessing native APIs, so read the documentation for each plugin.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Listing plugins:&lt;/strong&gt; &lt;code&gt;phonegap plugin list&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Removing plugins:&lt;/strong&gt; &lt;code&gt;phonegap plugin remove plugin-name&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Additional Notes on Installing Plugin:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;After running &lt;code&gt;phonegap plugin add plugin-name&lt;/code&gt;, I got an error on my console like so, &lt;code&gt;Uncaught ReferenceError: SpeechRecognition is not defined&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;When we run &lt;code&gt;phonegap plugin add plugin-name&lt;/code&gt;, phonegap automatically adds its configuration instance &lt;code&gt;config.xml&lt;/code&gt; on installed platforms.&lt;/p&gt;
-
-&lt;p&gt;When using PhoneGap Build to build our &lt;code&gt;.apk&lt;/code&gt; file, we may need to add:&lt;br /&gt;
-&lt;code&gt;&amp;lt;gap:plugin name=&quot;SpeechRecognition&quot; value=&quot;org.apache.cordova.speech.SpeechRecognition&quot; /&amp;gt;&lt;/code&gt;&lt;br /&gt;
-to our parent level &lt;code&gt;config.xml&lt;/code&gt; file.&lt;/p&gt;
-
-&lt;p&gt;But we may also need to check if the specific plugin is supported by PhoneGap Build &lt;a href=&quot;https://build.phonegap.com/plugins&quot;&gt;https://build.phonegap.com/plugins&lt;/a&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;ref-error-uncaught-referenceerror-speechrecognition-is-not-defined-18httpsgithubcommacdonstspeechrecognitionpluginissues18&quot;&gt;Ref: &lt;a href=&quot;https://github.com/macdonst/SpeechRecognitionPlugin/issues/18&quot;&gt;Error: Uncaught ReferenceError: SpeechRecognition is not defined #18&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;Since I’m using PhoneGap Build to build my &lt;code&gt;.apk&lt;/code&gt; file, its best to consult their documentation &lt;a href=&quot;http://docs.build.phonegap.com/en_US/configuring_plugins.md.html&quot;&gt;http://docs.build.phonegap.com/en_US/configuring_plugins.md.html&lt;/a&gt; and also, I have to give props to Adobe for an up-to-date and detailed documentation.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Removing plugins:&lt;/strong&gt; &lt;code&gt;phonegap plugin remove &amp;lt;id&amp;gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;h3 id=&quot;building-our-project&quot;&gt;Building our project&lt;/h3&gt;
 
-&lt;p&gt;Building involves compiling all the native code using the platform SDKs on your machine and then packaging your HTML, JavaScript, and CSS (and any assets) with this code so that it can be deployed to a simulator or device.&lt;/p&gt;
+&lt;p&gt;PhoneGap Build compiles our application code and plugins only available in PhoneGap Build and builds our application in iOs, Android, and Windows.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;To build project remotely via PhoneGap Build:&lt;/strong&gt;&lt;br /&gt;
-&lt;code&gt;phonegap remote build platform-name&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Building remotely using PhoneGap Build is a little different from building locally since you may not see the results of the build instantly; the service will build the code as soon as it has a chance. The only way to verify that things went as expected is to log on to your account at &lt;a href=&quot;https://build.phonegap.com/&quot;&gt;https://build.phonegap.com/&lt;/a&gt; and verify the results.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Note: some plugins does not support PhoneGap Build, so its best to setup your build process locally. refer to: &lt;a href=&quot;https://build.phonegap.com/plugins&quot;&gt;https://build.phonegap.com/plugins&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;code&gt;phonegap remote build &amp;lt;platform&amp;gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;h3 id=&quot;deploy-project-to-a-simulatordevice&quot;&gt;Deploy project to a simulator/device&lt;/h3&gt;
 
-&lt;p&gt;Once we built a project, next is to &lt;strong&gt;Test it&lt;/strong&gt;.
-To do this, you can deploy the code to a simulator or deploy the code to a device. So far, I’ve only used &lt;a href=&quot;https://chrome.google.com/webstore/detail/ripple-emulator-beta/geelfhphabnejjhdalkjhgipohgpdnoc?hl=en&quot;&gt;Ripple Emulator&lt;/a&gt; to debug and simulate.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Running and Debugging Remote:&lt;/strong&gt;&lt;br /&gt;
+&lt;code&gt;phonegap remote run &amp;lt;platform&amp;gt;&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;To get started with Ripple Emulator&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Refer to &lt;a href=&quot;http://docs.build.phonegap.com/en_US/index.html&quot;&gt;PhoneGap Build Documentation for instructions&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Simulating with Ripple Emulator (locally):&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Install Ripple Emulator&lt;/li&gt;
+  &lt;li&gt;Install &lt;a href=&quot;https://chrome.google.com/webstore/detail/ripple-emulator-beta/geelfhphabnejjhdalkjhgipohgpdnoc?hl=en&quot;&gt;Ripple Emulator&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Enable it&lt;/li&gt;
   &lt;li&gt;Run &lt;code&gt;phonegap serve&lt;/code&gt; to retrieve address&lt;/li&gt;
   &lt;li&gt;Enter local address to Ripple Emulator&lt;/li&gt;
@@ -498,17 +471,9 @@ To do this, you can deploy the code to a simulator or deploy the code to a devic
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;strong&gt;Additional notes on Build and Deploy&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Notes on Submitting to app stores&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;When testing our app on a simulator, we either need to install platform SDKs if we where to test it locally.&lt;br /&gt;
-To avoid installing and configuring such SDKs:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;We can rely on &lt;a href=&quot;http://app.phonegap.com/&quot;&gt;PhoneGap Build&lt;/a&gt; to build the project and&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/ripple-emulator-beta/geelfhphabnejjhdalkjhgipohgpdnoc?hl=en&quot;&gt;Ripple Emulator&lt;/a&gt; or &lt;a href=&quot;http://app.phonegap.com/&quot;&gt;The PhoneGap Developer App&lt;/a&gt; for simulating on different OS (Android, iOS, Blackberry, Windows).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;But a Mac is required to generate the certificates necessary for iOS app signing (even with PhoneGap Build) and is definitely required for deployment to the App Store. The same is true for Windows; you need to deploy to the App Store from Windows only.&lt;/p&gt;
+&lt;p&gt;A Mac is required to generate the certificates necessary for iOS app signing (even with PhoneGap Build) and is definitely required for deployment to the App Store. The same is true for Windows; you need to deploy to the App Store from Windows only.&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 26 Feb 2016 05:14:59 -0800</pubDate>
@@ -661,7 +626,7 @@ Best of all, any new arrays you create will also have access to the shuffle func
       </item>
     
       <item>
-        <title>What&#39;s the difference between an &#39;attribute&#39; and a &#39;property&#39;?</title>
+        <title>What's the difference between an 'attribute' and a 'property'?</title>
         <description>&lt;h3 id=&quot;recalling-basics-of-javascript&quot;&gt;recalling basics of JavaScript&lt;/h3&gt;
 
 &lt;p&gt;Everything in JavaScript is an object. These objects are categorized in different types (functions, boolean, string, number, etc) and can also contain properties and methods.
@@ -671,7 +636,7 @@ Objects doesn’t just exist in the language itself (JavaScript), but in Browser
 
 &lt;h3 id=&quot;objects-in-dom&quot;&gt;objects in DOM&lt;/h3&gt;
 
-&lt;p&gt;Every element in the DOM is an object and these objects have properties as well. These properties are mapped to a set of attributes from an &lt;code&gt;html&lt;/code&gt; markups. An attribute is just a string in an element (usually, &lt;code&gt;label=&#39;value&#39;&lt;/code&gt; pair).&lt;/p&gt;
+&lt;p&gt;Every element in the DOM is an object and these objects have properties as well. These properties are mapped to a set of attributes from an &lt;code&gt;html&lt;/code&gt; markups. An attribute is just a string in an element (usually, &lt;code&gt;label='value'&lt;/code&gt; pair).&lt;/p&gt;
 
 &lt;p&gt;Some of the element’s properties get their initial values from attributes with the same or similar names. Some examples below:&lt;/p&gt;
 
