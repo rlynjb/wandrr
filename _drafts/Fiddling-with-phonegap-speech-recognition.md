@@ -27,11 +27,12 @@ Now, I am extending my app by using Speech Recognition. A typical user scenario 
 
 -----
 
-### New terms I've come across
+### Webviews, Browsers, and Hybrid App
 
-While learning how to install and use PhoneGap plugins, below are essential information on understanding the difference between Native Device Sensors/Features and HTML5 API.
+While learning how to install and use PhoneGap plugins, I've come across terms which I think are essential to understanding the difference between Native Device Sensors/Features and HTML5 API and developing Hybrid Apps.
 
-[What is a WebView](http://developer.telerik.com/featured/what-is-a-webview/)
+- [What is a Hybrid Mobile App](http://developer.telerik.com/featured/what-is-a-hybrid-mobile-app/)
+- [What is a WebView](http://developer.telerik.com/featured/what-is-a-webview/)
 
 -----
 
@@ -43,3 +44,6 @@ Cordova provides a documentation for registered plugins [Cordova Official Docume
 [Github.com: macdonst - Speech Recognition Plugin](https://github.com/macdonst/SpeechRecognitionPlugin)
 
 Video pretty much explains how speech recognition works and discusses various speech recognition APIs available and its brief history. He also showcased sample code and its use cases.
+
+- [HTML5 speech recognition in browser](http://shapeshed.com/html5-speech-recognition-api/)
+- [W3C Community Group Final Report on HTML5 Speech Recognition API](https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html)
