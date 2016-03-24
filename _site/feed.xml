@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 24 Mar 2016 11:16:16 -0700</pubDate>
-    <lastBuildDate>Thu, 24 Mar 2016 11:16:16 -0700</lastBuildDate>
+    <pubDate>Thu, 24 Mar 2016 16:03:16 -0700</pubDate>
+    <lastBuildDate>Thu, 24 Mar 2016 16:03:16 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -41,7 +41,7 @@
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;webviews-browsers-and-hybrid-app&quot;&gt;Webviews, Browsers, and Hybrid App&lt;/h3&gt;
+&lt;h3 id=&quot;webviews-browsers-and-hybrid-app&quot;&gt;WebViews, Browsers, and Hybrid App&lt;/h3&gt;
 
 &lt;p&gt;While learning how to install and use PhoneGap plugins, I’ve come across terms which I think are essential to understanding how native device sensors works in Hybrid Apps and how we can levarage HTML5 technology.&lt;/p&gt;
 
@@ -77,13 +77,13 @@
   &lt;/li&gt;
   &lt;li&gt;Added a plugin I’ve found on &lt;a href=&quot;https://build.phonegap.com/plugins&quot;&gt;https://build.phonegap.com/plugins&lt;/a&gt;
     &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;/Beginning-mobile-app-development-journey/#manage-projects-plugins&quot;&gt;My blog post - Beginning Mobile App Development Journey: Manage Projects Plugins&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;/Beginning-mobile-app-development-journey/#manage-projects-plugins&quot;&gt;Beginning Mobile App Development Journey: Manage Projects Plugins&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;Added a sample Speech Recognition code from &lt;a href=&quot;https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html&quot;&gt;W3C Community Group Final Report on HTML5 Speech Recognition API&lt;/a&gt; unto my &lt;code&gt;app.js&lt;/code&gt; and &lt;code&gt;index.html&lt;/code&gt; file.&lt;/li&gt;
   &lt;li&gt;Build my app via PhoneGap Build by running &lt;code&gt;phonegap remote build &amp;lt;platform&amp;gt;&lt;/code&gt;
     &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;/Beginning-mobile-app-development-journey/#building-our-project&quot;&gt;My blog post - Beginning Mobile App Development Journey: Building Our Project&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;/Beginning-mobile-app-development-journey/#building-our-project&quot;&gt;Beginning Mobile App Development Journey: Building Our Project&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;Once built, installed my app by scanning QR Code on my &lt;a href=&quot;https://build.phonegap.com/apps&quot;&gt;https://build.phonegap.com/apps&lt;/a&gt; dashboard page.&lt;/li&gt;
@@ -95,10 +95,9 @@
 &lt;/ol&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Steps 4 through 6 was an iterative trial and error process.&lt;/p&gt;
+  &lt;p&gt;Steps 4 through 6 was an iterative trial and error process.&lt;br /&gt;
+Debugging JavaScript objects inside of PhoneGap’s Debug Console doesn’t seem to display contents inside of that object. A workaround I’ve come across was to use my Chrome console to check &lt;code&gt;SpeechRecognition&lt;/code&gt; object since HTML5 and the plugin uses the same API. A good article that delved inside HTML5 Speech Recognition object is &lt;a href=&quot;http://shapeshed.com/html5-speech-recognition-api/&quot;&gt;HTML5 Speech Recognition API&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
-
-&lt;p&gt;Debugging JavaScript objects inside of PhoneGap’s Debug Console doesn’t seem to display contents inside of that object. A workaround I’ve come across was to use my Chrome console to check &lt;code&gt;SpeechRecognition&lt;/code&gt; object since HTML5 and the plugin uses the same API. A good article that delved inside HTML5 Speech Recognition object is &lt;a href=&quot;http://shapeshed.com/html5-speech-recognition-api/&quot;&gt;HTML5 Speech Recognition API&lt;/a&gt;.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -110,6 +109,15 @@
   &lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API&quot;&gt;Introduction to the Web Speech API&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2014/01/Web-apps-that-talk-Introduction-to-the-Speech-Synthesis-API&quot;&gt;Introduction to the Speech Synthesis API&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://blog.teamtreehouse.com/accepting-speech-input-html5-forms&quot;&gt;TeamTreeHouse - Accepting Speech Input in HTML5 Forms&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;My goals for this functionality are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;On initial app load, Speech Recognition is disabled&lt;/li&gt;
+  &lt;li&gt;When user clicks on &lt;em&gt;“Speak”&lt;/em&gt; button, Speech Recognition is enabled throughout session&lt;/li&gt;
+  &lt;li&gt;When user says &lt;em&gt;“Shuffle”&lt;/em&gt;, Speech Recognition detects keyword and reloads data&lt;/li&gt;
+  &lt;li&gt;Speech Recognition is enabled unless user clicks &lt;em&gt;“Speak”&lt;/em&gt; button again&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 23 Mar 2016 05:50:29 -0700</pubDate>

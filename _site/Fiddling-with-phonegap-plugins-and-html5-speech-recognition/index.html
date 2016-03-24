@@ -106,7 +106,7 @@
 
 <hr />
 
-<h3 id="webviews-browsers-and-hybrid-app">Webviews, Browsers, and Hybrid App</h3>
+<h3 id="webviews-browsers-and-hybrid-app">WebViews, Browsers, and Hybrid App</h3>
 
 <p>While learning how to install and use PhoneGap plugins, I’ve come across terms which I think are essential to understanding how native device sensors works in Hybrid Apps and how we can levarage HTML5 technology.</p>
 
@@ -142,13 +142,13 @@
   </li>
   <li>Added a plugin I’ve found on <a href="https://build.phonegap.com/plugins">https://build.phonegap.com/plugins</a>
     <ul>
-      <li><a href="/Beginning-mobile-app-development-journey/#manage-projects-plugins">My blog post - Beginning Mobile App Development Journey: Manage Projects Plugins</a></li>
+      <li><a href="/Beginning-mobile-app-development-journey/#manage-projects-plugins">Beginning Mobile App Development Journey: Manage Projects Plugins</a></li>
     </ul>
   </li>
   <li>Added a sample Speech Recognition code from <a href="https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html">W3C Community Group Final Report on HTML5 Speech Recognition API</a> unto my <code>app.js</code> and <code>index.html</code> file.</li>
   <li>Build my app via PhoneGap Build by running <code>phonegap remote build &lt;platform&gt;</code>
     <ul>
-      <li><a href="/Beginning-mobile-app-development-journey/#building-our-project">My blog post - Beginning Mobile App Development Journey: Building Our Project</a></li>
+      <li><a href="/Beginning-mobile-app-development-journey/#building-our-project">Beginning Mobile App Development Journey: Building Our Project</a></li>
     </ul>
   </li>
   <li>Once built, installed my app by scanning QR Code on my <a href="https://build.phonegap.com/apps">https://build.phonegap.com/apps</a> dashboard page.</li>
@@ -160,10 +160,9 @@
 </ol>
 
 <blockquote>
-  <p>Steps 4 through 6 was an iterative trial and error process.</p>
+  <p>Steps 4 through 6 was an iterative trial and error process.<br />
+Debugging JavaScript objects inside of PhoneGap’s Debug Console doesn’t seem to display contents inside of that object. A workaround I’ve come across was to use my Chrome console to check <code>SpeechRecognition</code> object since HTML5 and the plugin uses the same API. A good article that delved inside HTML5 Speech Recognition object is <a href="http://shapeshed.com/html5-speech-recognition-api/">HTML5 Speech Recognition API</a>.</p>
 </blockquote>
-
-<p>Debugging JavaScript objects inside of PhoneGap’s Debug Console doesn’t seem to display contents inside of that object. A workaround I’ve come across was to use my Chrome console to check <code>SpeechRecognition</code> object since HTML5 and the plugin uses the same API. A good article that delved inside HTML5 Speech Recognition object is <a href="http://shapeshed.com/html5-speech-recognition-api/">HTML5 Speech Recognition API</a>.</p>
 
 <hr />
 
@@ -175,6 +174,15 @@
   <li><a href="https://developers.google.com/web/updates/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API">Introduction to the Web Speech API</a></li>
   <li><a href="https://developers.google.com/web/updates/2014/01/Web-apps-that-talk-Introduction-to-the-Speech-Synthesis-API">Introduction to the Speech Synthesis API</a></li>
   <li><a href="http://blog.teamtreehouse.com/accepting-speech-input-html5-forms">TeamTreeHouse - Accepting Speech Input in HTML5 Forms</a></li>
+</ul>
+
+<p>My goals for this functionality are:</p>
+
+<ul>
+  <li>On initial app load, Speech Recognition is disabled</li>
+  <li>When user clicks on <em>“Speak”</em> button, Speech Recognition is enabled throughout session</li>
+  <li>When user says <em>“Shuffle”</em>, Speech Recognition detects keyword and reloads data</li>
+  <li>Speech Recognition is enabled unless user clicks <em>“Speak”</em> button again</li>
 </ul>
 
   </article>

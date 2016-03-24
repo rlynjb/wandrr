@@ -29,7 +29,7 @@ My next goal is to extend my app by using Speech Recognition. A typical user sce
 
 -----
 
-### Webviews, Browsers, and Hybrid App
+### WebViews, Browsers, and Hybrid App
 
 While learning how to install and use PhoneGap plugins, I've come across terms which I think are essential to understanding how native device sensors works in Hybrid Apps and how we can levarage HTML5 technology.
 
@@ -58,17 +58,16 @@ It took me awhile to have Speech Recognition plugin worked on my app and device.
   - Also, important to note that some plugins require additional steps.
   - A good updated book I've come across is **Packt Publishing - PhoneGap 4 Mobile Application Development Cookbook**.
 2. Added a plugin I've found on [https://build.phonegap.com/plugins](https://build.phonegap.com/plugins)
-  - [My blog post - Beginning Mobile App Development Journey: Manage Projects Plugins](/Beginning-mobile-app-development-journey/#manage-projects-plugins)
+  - [Beginning Mobile App Development Journey: Manage Projects Plugins](/Beginning-mobile-app-development-journey/#manage-projects-plugins)
 3. Added a sample Speech Recognition code from [W3C Community Group Final Report on HTML5 Speech Recognition API](https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html) unto my `app.js` and `index.html` file.
 4. Build my app via PhoneGap Build by running `phonegap remote build <platform>`
-  - [My blog post - Beginning Mobile App Development Journey: Building Our Project](/Beginning-mobile-app-development-journey/#building-our-project)
+  - [Beginning Mobile App Development Journey: Building Our Project](/Beginning-mobile-app-development-journey/#building-our-project)
 5. Once built, installed my app by scanning QR Code on my [https://build.phonegap.com/apps](https://build.phonegap.com/apps) dashboard page.
 6. Once installed, debugged my app by using [PhoneGap Build's Remote Debugging Tools](http://docs.build.phonegap.com/en_US/debugging_remote_debugging_tools.md.html)
   - This is an awesome tool! hehe
 
-> Steps 4 through 6 was an iterative trial and error process.
-
-Debugging JavaScript objects inside of PhoneGap's Debug Console doesn't seem to display contents inside of that object. A workaround I've come across was to use my Chrome console to check `SpeechRecognition` object since HTML5 and the plugin uses the same API. A good article that delved inside HTML5 Speech Recognition object is [HTML5 Speech Recognition API](http://shapeshed.com/html5-speech-recognition-api/).
+> Steps 4 through 6 was an iterative trial and error process.<br>
+> Debugging JavaScript objects inside of PhoneGap's Debug Console doesn't seem to display contents inside of that object. A workaround I've come across was to use my Chrome console to check `SpeechRecognition` object since HTML5 and the plugin uses the same API. A good article that delved inside HTML5 Speech Recognition object is [HTML5 Speech Recognition API](http://shapeshed.com/html5-speech-recognition-api/).
 
 -----
 
@@ -79,3 +78,10 @@ After going through the process and successfully ran Speech Recognition on my ph
 - [Introduction to the Web Speech API](https://developers.google.com/web/updates/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API)
 - [Introduction to the Speech Synthesis API](https://developers.google.com/web/updates/2014/01/Web-apps-that-talk-Introduction-to-the-Speech-Synthesis-API)
 - [TeamTreeHouse - Accepting Speech Input in HTML5 Forms](http://blog.teamtreehouse.com/accepting-speech-input-html5-forms)
+
+My goals for this functionality are:
+
+- On initial app load, Speech Recognition is disabled
+- When user clicks on _"Speak"_ button, Speech Recognition is enabled throughout session
+- When user says _"Shuffle"_, Speech Recognition detects keyword and reloads data
+- Speech Recognition is enabled unless user clicks _"Speak"_ button again
