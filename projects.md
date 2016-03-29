@@ -4,7 +4,7 @@ title: Projects
 permalink: /projects/
 ---
 
-### Freelance projects
+### Freelance Projects
 
 #### **Crankuptheamps.com**: [Visit](http://crankuptheamps.com/) - This is a website created with Jekyllrb
 
@@ -18,7 +18,7 @@ permalink: /projects/
 
 -----
 
-### Personal projects
+### Pet Projects
 
 #### **BitC**: [Visit](https://github.com/rlynjb/bitc) - A really darn simple CSS Grid System
 
