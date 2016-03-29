@@ -6,9 +6,101 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 29 Mar 2016 13:14:21 -0700</pubDate>
-    <lastBuildDate>Tue, 29 Mar 2016 13:14:21 -0700</lastBuildDate>
+    <pubDate>Tue, 29 Mar 2016 16:03:15 -0700</pubDate>
+    <lastBuildDate>Tue, 29 Mar 2016 16:03:15 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Doing drupal minor updates</title>
+        <description>&lt;p&gt;h1. Updating Drupal sites&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Update procedure (minor version change) - https://www.drupal.org/node/1223018&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Use Drush to Export/Import a Drupal MySQL Database Dump File - http://tylerfrankenstein.com/code/use-drush-export-import-drupal-mysql-database-dump-file&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;http://drushcommands.com/drush-6x/
+link is redirected to drush 6, I believe we are using drush 6 on our 108 server - rlyn&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;To check updates on website GUI, go to:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;
+http://www.website-name.com/admin/reports/updates
+
+Reports &amp;gt; Available Updates
+&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;h2. Prepping and initial steps before updating/upgrading drupal sites&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Backup database by Drush&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;
+drush sql-dump &amp;gt; name_of_site-date.sql
+&lt;/pre&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Backup core files by compressing public_html directory&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;
+tar -czf site_name_date.tar.gz /path_to_site/public_html/
+&lt;/pre&gt;
+&lt;p&gt;here is also a link to reduce load of backup scripts with nice and ionice
+http://www.faqforge.com/linux/reduce-load-of-backup-scripts-with-nice-and-ionice/
+sample command would be:&lt;/p&gt;
+&lt;pre&gt;
+ionice -c2 -n7 nice -n19 tar -czf site_name_date.tar.gz /path_to_site/public_html/
+&lt;/pre&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Show a report of available minor updates to Drupal core and contrib projects.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;
+drush pm-updatestatus
+&lt;/pre&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Backup .htaccess and /sites/default/settings.php by making a copy and dumping outside of public_html directory&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;
+cp .htaccess ../
+cp sites/default/settings.php ../
+&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;h2. Implementing Minor Updates on Drupal sites&lt;/p&gt;
+
+&lt;p&gt;we will only update Modules (plugins) that require Security Updates. Updating Modules with Update available message may conflict with other module or drupal core version.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;cd to public_html and run drush up drupal to update drupal core&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;run drush pm-updatestatus again to check for other module updates&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;h4. After running Drupal core update, if 500 error occur whole drupal update, add this to htaccess:&lt;/p&gt;
+&lt;pre&gt;
+# Follow symbolic links in this directory.
+Options +SymLinksIfOwnerMatch
+&lt;/pre&gt;
+</description>
+        <pubDate>Tue, 29 Mar 2016 09:02:49 -0700</pubDate>
+        <link>http://www.wandrr.io/Doing-drupal-minor-updates</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Doing-drupal-minor-updates</guid>
+        
+        <category>drupal</category>
+        
+        
+      </item>
     
       <item>
         <title>Fiddling with PhoneGap Plugins and HTML5 Speech Recognition</title>
@@ -756,77 +848,6 @@ We’ll only work with attributes when there is no properties set, example is cu
         <pubDate>Wed, 03 Feb 2016 04:41:57 -0800</pubDate>
         <link>http://www.wandrr.io/JS-Interview-Question-Whats-the-difference-between-an-attribute-and-a-property</link>
         <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Whats-the-difference-between-an-attribute-and-a-property</guid>
-        
-        <category>javascript interview questions</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Describe event bubbling</title>
-        <description>&lt;p&gt;Event bubbling is when handlers on a nested DOM are triggered starting from the child element up to its parent element.&lt;/p&gt;
-
-&lt;p&gt;This means, eventhough we clicked on a child element, its parent element which contains a handler, will be triggered as well. That’s why it’s called &lt;strong&gt;Event bubbling&lt;/strong&gt;, it is triggered from innermost child element that has been clicked up through topmost parent element.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;this-and-eventtarget&quot;&gt;this and event.target&lt;/h3&gt;
-
-&lt;p&gt;When the innermost child element has been triggered, the event is called &lt;em&gt;‘the target’&lt;/em&gt;, &lt;em&gt;‘the originating element’&lt;/em&gt;, or &lt;code&gt;event.target&lt;/code&gt;. Internet Explorer uses &lt;code&gt;event.srcElement&lt;/code&gt; while all W3C-compliant browsers use &lt;code&gt;event.target&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Cross-browser code usually looks like this:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;srcElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;When handlers on its topmost parent elements are triggered, the event is called &lt;code&gt;this&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;So when a Event Bubble occurs, &lt;code&gt;this&lt;/code&gt; object changes its value going from innermost triggered child element to its topmost parent element, while &lt;code&gt;event.target&lt;/code&gt; contains the same value as it holds &lt;em&gt;‘the originating element’&lt;/em&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;stop-the-event-bubbling&quot;&gt;stop the event bubbling&lt;/h3&gt;
-
-&lt;p&gt;An event bubble will occur as long as its topmost element contains a handler, even in &lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt; element.
-We can stop the event bubbling in a certain handler by invoking the following method:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// For W3C-compliant browsers&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stopPropagation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// For IE&amp;lt;9&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cancelBubble&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Cross-browser code:&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onclick&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// cross-browser event;&lt;/span&gt;
-
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stopPropagation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// W3C standard variant&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stopPropagation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// IE variant&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cancelBubble&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Here is a one-line variant:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stopPropagation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stopPropagation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cancelBubble&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;em&gt;* Multiple handlers, initiated in the same element, will get executed.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;There is a reverse version of Event Bubbling called ‘Capturing’, but I will not go further into it. You can click on the link below for more info.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://javascript.info/tutorial/bubbling-and-capturing&quot;&gt;Bubbling and capturing&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 02 Feb 2016 04:08:15 -0800</pubDate>
-        <link>http://www.wandrr.io/JS-Interview-Question-Describe-event-bubbling</link>
-        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Describe-event-bubbling</guid>
         
         <category>javascript interview questions</category>
         
