@@ -70,7 +70,7 @@
   <header class="post-header">
     <h1 class="post-title">Fiddling with PhoneGap Plugins and HTML5 Speech Recognition</h1>
     <p class="post-meta">
-      Mar 23, 2016
+      Mar 29, 2016
       
        • app development
     </p>
@@ -133,7 +133,7 @@
 <ol>
   <li>Understanding what happens to PhoneGap project config files when a PhoneGap plugin has been added.
     <ul>
-      <li>This is crucial, there are various <code>config.xml</code> files located in platform and plugins directories.</li>
+      <li>This is crucial, there are various <code>config.xml</code> files located in <code>/platform</code> and <code>/plugins</code> directories.</li>
       <li>When <code>phonegap plugin add &lt;source&gt;</code> is ran, PhoneGap automatically adds references to these <code>config.xml</code> files except for the <code>config.xml</code> file located on project’s root directory.</li>
       <li>In my case, I needed to add <code>&lt;plugin name="com.aserputko.speech.speechrecognition" spec="0.1.0" source="pgb" /&gt;</code> to my <code>config.xml</code> file located in my root directory.</li>
       <li>Also, important to note that some plugins require additional steps.</li>

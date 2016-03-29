@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Fiddling with PhoneGap Plugins and HTML5 Speech Recognition"
-date: 2016-03-23 12:50:29
+date: 2016-03-29 09:42:14
 tags:
 - app development
 ---
@@ -52,7 +52,7 @@ It took me awhile to have Speech Recognition plugin worked on my app and device.
 **Process of getting Speech Recognition to work on actual device**
 
 1. Understanding what happens to PhoneGap project config files when a PhoneGap plugin has been added.
-  - This is crucial, there are various `config.xml` files located in platform and plugins directories.
+  - This is crucial, there are various `config.xml` files located in `/platform` and `/plugins` directories.
   - When `phonegap plugin add <source>` is ran, PhoneGap automatically adds references to these `config.xml` files except for the `config.xml` file located on project's root directory.
   - In my case, I needed to add `<plugin name="com.aserputko.speech.speechrecognition" spec="0.1.0" source="pgb" />` to my `config.xml` file located in my root directory.
   - Also, important to note that some plugins require additional steps.
