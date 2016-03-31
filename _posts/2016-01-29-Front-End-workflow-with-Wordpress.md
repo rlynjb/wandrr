@@ -37,8 +37,10 @@ Another one would be **planning it out**. At this phase, I will have to satisfy 
     - Wordpress has its way of doing alot of DB queries. Consider minimizing DB queries.
   - Use minimal plugins as possible. If there is a way to use default Wordpress features, take advantage of it.
   - When deploying, make sure to set Wordpress securities
-    - Wordpress Hardening documentation
+    - [Wordpress Hardening documentation](http://codex.wordpress.org/Hardening_WordPress)
+    - [Disable Plugin and Theme Update and Installation](https://codex.wordpress.org/Editing_wp-config.php#Disable_Plugin_and_Theme_Update_and_Installation)
     - Wordpress Editing wp-config.php documentation
+    - and there are more catering to different security scenarios
 - _Also, consider other developers_
   - Make sure I use a documented theme so other developers can jump on the project as well.
 
