@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Doing drupal minor updates"
+title: "Doing Drupal Minor updates"
 date: 2016-03-29 16:02:49
 tags:
 - drupal
 ---
 
-h1. Updating Drupal sites
+### Updating Drupal sites
 
 - Update procedure (minor version change) - https://www.drupal.org/node/1223018
 - Use Drush to Export/Import a Drupal MySQL Database Dump File - http://tylerfrankenstein.com/code/use-drush-export-import-drupal-mysql-database-dump-file
@@ -24,7 +24,7 @@ Reports > Available Updates
 -----
 
 
-h2. Prepping and initial steps before updating/upgrading drupal sites
+### Prepping and initial steps before updating/upgrading drupal sites
 
 1. Backup database by Drush
 <pre>
@@ -50,12 +50,11 @@ drush pm-updatestatus
 4. Backup .htaccess and /sites/default/settings.php by making a copy and dumping outside of public_html directory
 <pre>
 cp .htaccess ../
-cp sites/default/settings.php ../
 </pre>
 
 -----
 
-h2. Implementing Minor Updates on Drupal sites
+### Implementing Minor Updates on Drupal sites
 
 we will only update Modules (plugins) that require Security Updates. Updating Modules with Update available message may conflict with other module or drupal core version.
 
