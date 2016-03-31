@@ -1,18 +1,18 @@
 ---
 layout: post
-title: "Notes on Prototyping"
-date: 2015-01-01 01:01:01
+title: "Notes on Prototyping with Wordpress"
+date: 2016-03-30 11:00:51
 tags:
 - wordpress
 ---
 
-This is a continuation of my [Front-End workflow with Wordpress](/Front-End-workflow-with-Wordpress) post.
-
-This blog post contains notes and personal opinion with the tools used for prototyping. This is the actual part of getting dirty with the code and framework.
+This is a continuation of my [Front-End workflow with Wordpress](/Front-End-workflow-with-Wordpress) blog post, containing notes and personal opinion on tools/frameworks used for prototyping, getting more indepth with top 2 of my chosen Wordpress Foundation Themes.
 
 -----
 
-### Advantages of using a CSS Preprocessors
+### Why use a CSS Preprocessors
+
+Reason why I included this segment, working with different developers, each has their own preference and opinion towards modern development tools. Not all agree with Node.js and modern front-end development tools. As a Front-End Developer though, I've experience the learning curve and benefits of using such tools. Below are articles regarding CSS Processor - SASS.
 
 Here is an interesting article about the [Power of SASS and its advantages for Front-End Engineers](http://1stwebdesigner.com/power-sass-why-use-css-preprocessors/)
 
