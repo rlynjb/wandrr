@@ -6,9 +6,87 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 31 Mar 2016 11:20:54 -0700</pubDate>
-    <lastBuildDate>Thu, 31 Mar 2016 11:20:54 -0700</lastBuildDate>
+    <pubDate>Fri, 01 Apr 2016 12:28:35 -0700</pubDate>
+    <lastBuildDate>Fri, 01 Apr 2016 12:28:35 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Simple instructions for Drupal Minor Updates</title>
+        <description>&lt;p&gt;This blog post tackles implementing &lt;strong&gt;Minor Updates&lt;/strong&gt; on Drupal websites. Its a short, simple, and pretty straight-forward instructions.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;references-and-tools&quot;&gt;References and Tools&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.drupal.org/node/1223018&quot;&gt;Update procedure (minor version change)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://tylerfrankenstein.com/code/use-drush-export-import-drupal-mysql-database-dump-file&quot;&gt;Use Drush to Export/Import a Drupal MySQL Database Dump File&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://drushcommands.com&quot;&gt;Drush Commands&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;two-ways-to-check-for-drupal-update-status&quot;&gt;Two ways to check for Drupal Update Status&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;via Website GUI
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;http://www.website-name.com/admin/reports/updates&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;Reports &amp;gt; Available Updates&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;via CLI
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;drush pm-updatestatus&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;preparation-before-updating-a-drupal-website&quot;&gt;Preparation before Updating a Drupal website&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Backup database via Drush
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;drush sql-dump &amp;gt; name_of_site-date.sql&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Backup core files by compressing directory containing drupal core files
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;tar -czf site_name_date.tar.gz /path_to_site_directory/&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Show a report of available minor updates to Drupal core and contrib projects.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;drush pm-updatestatus&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Backup &lt;code&gt;.htaccess&lt;/code&gt; by making a copy and dumping outside of drupal website directory
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;cp .htaccess ../&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;implementing-minor-updates-on-drupal-sites&quot;&gt;Implementing Minor Updates on Drupal sites&lt;/h3&gt;
+
+&lt;p&gt;Only &lt;em&gt;Security Updates&lt;/em&gt; of core and modules will be performed. Updating Modules with &lt;code&gt;Update available&lt;/code&gt; message may conflict with other module or drupal core version.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;cd to drupal website directory and run &lt;code&gt;drush up drupal&lt;/code&gt; to update drupal core&lt;/li&gt;
+  &lt;li&gt;run &lt;code&gt;drush pm-updatestatus&lt;/code&gt; again to check for other module updates&lt;/li&gt;
+  &lt;li&gt;run &lt;code&gt;drush up &amp;lt;name of module&amp;gt;&lt;/code&gt; to update a module&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Fri, 01 Apr 2016 05:26:55 -0700</pubDate>
+        <link>http://www.wandrr.io/Simple-Instructions-for-Drupal-Minor-Updates</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Simple-Instructions-for-Drupal-Minor-Updates</guid>
+        
+        <category>drupal</category>
+        
+        
+      </item>
     
       <item>
         <title>Developing a Simple Pebble Time app</title>
@@ -82,97 +160,6 @@
         <guid isPermaLink="true">http://www.wandrr.io/Notes-on-prototyping-with-Wordpress</guid>
         
         <category>wordpress</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Doing Drupal Minor updates</title>
-        <description>&lt;h3 id=&quot;updating-drupal-sites&quot;&gt;Updating Drupal sites&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Update procedure (minor version change) - https://www.drupal.org/node/1223018&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Use Drush to Export/Import a Drupal MySQL Database Dump File - http://tylerfrankenstein.com/code/use-drush-export-import-drupal-mysql-database-dump-file&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;http://drushcommands.com/drush-6x/
-link is redirected to drush 6, I believe we are using drush 6 on our 108 server - rlyn&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;To check updates on website GUI, go to:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;
-http://www.website-name.com/admin/reports/updates
-
-Reports &amp;gt; Available Updates
-&lt;/pre&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;prepping-and-initial-steps-before-updatingupgrading-drupal-sites&quot;&gt;Prepping and initial steps before updating/upgrading drupal sites&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Backup database by Drush&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre&gt;
-drush sql-dump &amp;gt; name_of_site-date.sql
-&lt;/pre&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Backup core files by compressing public_html directory&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre&gt;
-tar -czf site_name_date.tar.gz /path_to_site/public_html/
-&lt;/pre&gt;
-&lt;p&gt;here is also a link to reduce load of backup scripts with nice and ionice
-http://www.faqforge.com/linux/reduce-load-of-backup-scripts-with-nice-and-ionice/
-sample command would be:&lt;/p&gt;
-&lt;pre&gt;
-ionice -c2 -n7 nice -n19 tar -czf site_name_date.tar.gz /path_to_site/public_html/
-&lt;/pre&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Show a report of available minor updates to Drupal core and contrib projects.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre&gt;
-drush pm-updatestatus
-&lt;/pre&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Backup .htaccess and /sites/default/settings.php by making a copy and dumping outside of public_html directory&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre&gt;
-cp .htaccess ../
-&lt;/pre&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;implementing-minor-updates-on-drupal-sites&quot;&gt;Implementing Minor Updates on Drupal sites&lt;/h3&gt;
-
-&lt;p&gt;we will only update Modules (plugins) that require Security Updates. Updating Modules with Update available message may conflict with other module or drupal core version.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;cd to public_html and run drush up drupal to update drupal core&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;run drush pm-updatestatus again to check for other module updates&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;h4. After running Drupal core update, if 500 error occur whole drupal update, add this to htaccess:&lt;/p&gt;
-&lt;pre&gt;
-# Follow symbolic links in this directory.
-Options +SymLinksIfOwnerMatch
-&lt;/pre&gt;
-</description>
-        <pubDate>Tue, 29 Mar 2016 09:02:49 -0700</pubDate>
-        <link>http://www.wandrr.io/Doing-drupal-minor-updates</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Doing-drupal-minor-updates</guid>
-        
-        <category>drupal</category>
         
         
       </item>

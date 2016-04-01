@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Doing Drupal Minor updates</title>
-  <meta name="description" content="Updating Drupal sites">
+  <title>Simple instructions for Drupal Minor Updates</title>
+  <meta name="description" content="This blog post tackles implementing Minor Updates on Drupal websites. Its a short, simple, and pretty straight-forward instructions.">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.wandrr.io/Doing-drupal-minor-updates">
+  <link rel="canonical" href="http://www.wandrr.io/Simple-Instructions-for-Drupal-Minor-Updates">
   <link rel="alternate" type="application/rss+xml" title="wandrr" href="http://www.wandrr.io/feed.xml" />
 </head>
 
@@ -68,94 +68,81 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Doing Drupal Minor updates</h1>
+    <h1 class="post-title">Simple instructions for Drupal Minor Updates</h1>
     <p class="post-meta">
-      Mar 29, 2016
+      Apr 1, 2016
       
        • drupal
     </p>
   </header>
 
   <article class="post-content">
-    <h3 id="updating-drupal-sites">Updating Drupal sites</h3>
-
-<ul>
-  <li>Update procedure (minor version change) - https://www.drupal.org/node/1223018</li>
-  <li>
-    <p>Use Drush to Export/Import a Drupal MySQL Database Dump File - http://tylerfrankenstein.com/code/use-drush-export-import-drupal-mysql-database-dump-file</p>
-  </li>
-  <li>
-    <p>http://drushcommands.com/drush-6x/
-link is redirected to drush 6, I believe we are using drush 6 on our 108 server - rlyn</p>
-  </li>
-  <li>To check updates on website GUI, go to:</li>
-</ul>
-<pre>
-http://www.website-name.com/admin/reports/updates
-
-Reports &gt; Available Updates
-</pre>
+    <p>This blog post tackles implementing <strong>Minor Updates</strong> on Drupal websites. Its a short, simple, and pretty straight-forward instructions.</p>
 
 <hr />
 
-<h3 id="prepping-and-initial-steps-before-updatingupgrading-drupal-sites">Prepping and initial steps before updating/upgrading drupal sites</h3>
+<h3 id="references-and-tools">References and Tools</h3>
+
+<ul>
+  <li><a href="https://www.drupal.org/node/1223018">Update procedure (minor version change)</a></li>
+  <li><a href="http://tylerfrankenstein.com/code/use-drush-export-import-drupal-mysql-database-dump-file">Use Drush to Export/Import a Drupal MySQL Database Dump File</a></li>
+  <li><a href="http://drushcommands.com">Drush Commands</a></li>
+</ul>
+
+<h3 id="two-ways-to-check-for-drupal-update-status">Two ways to check for Drupal Update Status</h3>
+
+<ul>
+  <li>via Website GUI
+    <ul>
+      <li><code>http://www.website-name.com/admin/reports/updates</code></li>
+      <li><code>Reports &gt; Available Updates</code></li>
+    </ul>
+  </li>
+  <li>via CLI
+    <ul>
+      <li><code>drush pm-updatestatus</code></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="preparation-before-updating-a-drupal-website">Preparation before Updating a Drupal website</h3>
 
 <ol>
-  <li>Backup database by Drush</li>
+  <li>Backup database via Drush
+    <ul>
+      <li><code>drush sql-dump &gt; name_of_site-date.sql</code></li>
+    </ul>
+  </li>
+  <li>Backup core files by compressing directory containing drupal core files
+    <ul>
+      <li><code>tar -czf site_name_date.tar.gz /path_to_site_directory/</code></li>
+    </ul>
+  </li>
+  <li>Show a report of available minor updates to Drupal core and contrib projects.
+    <ul>
+      <li><code>drush pm-updatestatus</code></li>
+    </ul>
+  </li>
+  <li>Backup <code>.htaccess</code> by making a copy and dumping outside of drupal website directory
+    <ul>
+      <li><code>cp .htaccess ../</code></li>
+    </ul>
+  </li>
 </ol>
-<pre>
-drush sql-dump &gt; name_of_site-date.sql
-</pre>
-
-<ol>
-  <li>Backup core files by compressing public_html directory</li>
-</ol>
-<pre>
-tar -czf site_name_date.tar.gz /path_to_site/public_html/
-</pre>
-<p>here is also a link to reduce load of backup scripts with nice and ionice
-http://www.faqforge.com/linux/reduce-load-of-backup-scripts-with-nice-and-ionice/
-sample command would be:</p>
-<pre>
-ionice -c2 -n7 nice -n19 tar -czf site_name_date.tar.gz /path_to_site/public_html/
-</pre>
-
-<ol>
-  <li>Show a report of available minor updates to Drupal core and contrib projects.</li>
-</ol>
-<pre>
-drush pm-updatestatus
-</pre>
-
-<ol>
-  <li>Backup .htaccess and /sites/default/settings.php by making a copy and dumping outside of public_html directory</li>
-</ol>
-<pre>
-cp .htaccess ../
-</pre>
 
 <hr />
 
 <h3 id="implementing-minor-updates-on-drupal-sites">Implementing Minor Updates on Drupal sites</h3>
 
-<p>we will only update Modules (plugins) that require Security Updates. Updating Modules with Update available message may conflict with other module or drupal core version.</p>
+<p>Only <em>Security Updates</em> of core and modules will be performed. Updating Modules with <code>Update available</code> message may conflict with other module or drupal core version.</p>
 
 <ol>
-  <li>
-    <p>cd to public_html and run drush up drupal to update drupal core</p>
-  </li>
-  <li>
-    <p>run drush pm-updatestatus again to check for other module updates</p>
-  </li>
+  <li>cd to drupal website directory and run <code>drush up drupal</code> to update drupal core</li>
+  <li>run <code>drush pm-updatestatus</code> again to check for other module updates</li>
+  <li>run <code>drush up &lt;name of module&gt;</code> to update a module</li>
 </ol>
-
-<hr />
-
-<p>h4. After running Drupal core update, if 500 error occur whole drupal update, add this to htaccess:</p>
-<pre>
-# Follow symbolic links in this directory.
-Options +SymLinksIfOwnerMatch
-</pre>
 
   </article>
 
