@@ -11,12 +11,17 @@ Hi, I'm RLyn. I am a self-taught, goal-oriented Front-End Developer with an enth
 
 I reside in Las Vegas, NV and stack I am currently using for work are: Wordpress and HTML CSS JavaScript, though I do not limit myself with mentioned technologies. In the meantime, I am learning indepth concepts of JavaScripts and solving coding problems/algorithms. My dream stack would be any, as long as I can extensively code using JavaScript and learn more about it.
 
-[Code Samples]() - [Blog](/) - [Projects](/projects) - [Github](http://github.com/rlynjb) - [Codepen](http://codepen.io/rlynjb)
+- [Basic Algorithm Scripting](https://gist.github.com/rlynjb/4daa009d9b65421608f9)
+- [Intermediate Algorithm Scripting](https://gist.github.com/rlynjb/fe49919bd0de0f5a2606)
+- [Blog](/)
+- [Projects](/projects)
+- [Github](http://github.com/rlynjb)
+- [Codepen](http://codepen.io/rlynjb)
+- [Resume](https://docs.google.com/document/d/1VN9dtP5_oyVELBfDxY7qXaFLu4iSs4yOEK8vqjDoFG8/edit?usp=sharing)
 
 -----
 
 ## My Experiences
-
 
 ### Brydan Solutions
 
