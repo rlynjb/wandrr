@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 07 Apr 2016 16:02:36 -0700</pubDate>
-    <lastBuildDate>Thu, 07 Apr 2016 16:02:36 -0700</lastBuildDate>
+    <pubDate>Thu, 07 Apr 2016 16:05:26 -0700</pubDate>
+    <lastBuildDate>Thu, 07 Apr 2016 16:05:26 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -72,6 +72,16 @@ I really like the example on Movement of Data which behaves like a parallax info
   &lt;li&gt;Horizontal Parallax Scrolling&lt;/li&gt;
   &lt;li&gt;Graphic Animation&lt;/li&gt;
   &lt;li&gt;Motion-Sensitive Animation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;tools&quot;&gt;Tools&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;JS Parallax Plugins&lt;/li&gt;
+  &lt;li&gt;Free Code Snippets&lt;/li&gt;
+  &lt;li&gt;Parallax Scrolling Design Inspiration&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Thu, 07 Apr 2016 08:52:13 -0700</pubDate>

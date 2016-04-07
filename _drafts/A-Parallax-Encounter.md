@@ -63,3 +63,11 @@ But really my problem with this layout is that it’s too confusing. There is a 
 - Horizontal Parallax Scrolling
 - Graphic Animation
 - Motion-Sensitive Animation
+
+-----
+
+### Tools
+
+- JS Parallax Plugins
+- Free Code Snippets
+- Parallax Scrolling Design Inspiration
