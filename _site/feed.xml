@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 11 Apr 2016 14:08:10 -0700</pubDate>
-    <lastBuildDate>Mon, 11 Apr 2016 14:08:10 -0700</lastBuildDate>
+    <pubDate>Mon, 11 Apr 2016 16:52:08 -0700</pubDate>
+    <lastBuildDate>Mon, 11 Apr 2016 16:52:08 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -20,7 +20,13 @@
 
 &lt;p&gt;Before approaching a project, I usually read a couple of articles first or another approach would be, I start building a project and if I’d get stuck, I then start researching more about it. Since I’ve had experience with website layouts, for this project, the latter approach is what I used.&lt;/p&gt;
 
-&lt;p&gt;I then started doing research on Parallax Scrolling and found this article: &lt;a href=&quot;http://www.vandelaydesign.com/parallax-scrolling-best-practices-examples-and-tutorials/&quot;&gt;The Ultimate Guide to Parallax Scrolling: Best Practices and Tutorials&lt;/a&gt; and an indepth info, &lt;a href=&quot;http://andyshora.com/parallax.html&quot;&gt;Parallax Tutorial using CSS and jQuery&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I then started doing research on Parallax Scrolling and found this article:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vandelaydesign.com/parallax-scrolling-best-practices-examples-and-tutorials/&quot;&gt;The Ultimate Guide to Parallax Scrolling: Best Practices and Tutorials&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://andyshora.com/parallax.html&quot;&gt;Parallax Tutorial using CSS and jQuery&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.cheesetoast.co.uk/simple-lightweight-parallax-scrolling-background-effect/&quot;&gt;Simple Lightweight Parallax Scrolling Background&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;From the article above, I will only note applicable concepts that fits to my Parallax website project.&lt;/p&gt;
 
