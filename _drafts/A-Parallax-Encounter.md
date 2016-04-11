@@ -14,7 +14,7 @@ My initial thoughts when I looked at examples of websites with Parallax Scrollin
 
 Before approaching a project, I usually read a couple of articles first or another approach would be, I start building a project and if I'd get stuck, I then start researching more about it. Since I've had experience with website layouts, for this project, the latter approach is what I used.
 
-I then started doing research on Parallax Scrolling and found this article: [The Ultimate Guide to Parallax Scrolling: Best Practices and Tutorials](http://www.vandelaydesign.com/parallax-scrolling-best-practices-examples-and-tutorials/)
+I then started doing research on Parallax Scrolling and found this article: [The Ultimate Guide to Parallax Scrolling: Best Practices and Tutorials](http://www.vandelaydesign.com/parallax-scrolling-best-practices-examples-and-tutorials/) and an indepth info, [Parallax Tutorial using CSS and jQuery](http://andyshora.com/parallax.html)
 
 From the article above, I will only note applicable concepts that fits to my Parallax website project.
 
