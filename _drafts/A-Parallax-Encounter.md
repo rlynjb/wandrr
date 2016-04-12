@@ -17,9 +17,7 @@ Before approaching a project, I usually read a couple of articles first or anoth
 I then started doing research on Parallax Scrolling and found this article:
 
 - [The Ultimate Guide to Parallax Scrolling: Best Practices and Tutorials](http://www.vandelaydesign.com/parallax-scrolling-best-practices-examples-and-tutorials/)
-- [Parallax Tutorial using CSS and jQuery](http://andyshora.com/parallax.html)
-- [Simple Lightweight Parallax Scrolling Background](http://www.cheesetoast.co.uk/simple-lightweight-parallax-scrolling-background-effect/)
-- [Parallax Background](http://inner.geek.nz/javascript/parallax/)
+
 
 From the article above, I will only note applicable concepts that fits to my Parallax website project.
 
@@ -76,3 +74,11 @@ But really my problem with this layout is that it’s too confusing. There is a 
 - JS Parallax Plugins
 - Free Code Snippets
 - Parallax Scrolling Design Inspiration
+
+-----
+
+### Implementing Parallax Scrolling
+
+- [Parallax Tutorial using CSS and jQuery](http://andyshora.com/parallax.html)
+- [Simple Lightweight Parallax Scrolling Background](http://www.cheesetoast.co.uk/simple-lightweight-parallax-scrolling-background-effect/)
+- [Parallax Background](http://inner.geek.nz/javascript/parallax/)

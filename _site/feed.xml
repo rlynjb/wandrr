@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 12 Apr 2016 13:04:15 -0700</pubDate>
-    <lastBuildDate>Tue, 12 Apr 2016 13:04:15 -0700</lastBuildDate>
+    <pubDate>Tue, 12 Apr 2016 13:05:16 -0700</pubDate>
+    <lastBuildDate>Tue, 12 Apr 2016 13:05:16 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -24,9 +24,6 @@
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.vandelaydesign.com/parallax-scrolling-best-practices-examples-and-tutorials/&quot;&gt;The Ultimate Guide to Parallax Scrolling: Best Practices and Tutorials&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://andyshora.com/parallax.html&quot;&gt;Parallax Tutorial using CSS and jQuery&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.cheesetoast.co.uk/simple-lightweight-parallax-scrolling-background-effect/&quot;&gt;Simple Lightweight Parallax Scrolling Background&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://inner.geek.nz/javascript/parallax/&quot;&gt;Parallax Background&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;From the article above, I will only note applicable concepts that fits to my Parallax website project.&lt;/p&gt;
@@ -89,6 +86,16 @@ I really like the example on Movement of Data which behaves like a parallax info
   &lt;li&gt;JS Parallax Plugins&lt;/li&gt;
   &lt;li&gt;Free Code Snippets&lt;/li&gt;
   &lt;li&gt;Parallax Scrolling Design Inspiration&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;implementing-parallax-scrolling&quot;&gt;Implementing Parallax Scrolling&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://andyshora.com/parallax.html&quot;&gt;Parallax Tutorial using CSS and jQuery&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.cheesetoast.co.uk/simple-lightweight-parallax-scrolling-background-effect/&quot;&gt;Simple Lightweight Parallax Scrolling Background&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://inner.geek.nz/javascript/parallax/&quot;&gt;Parallax Background&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Thu, 07 Apr 2016 08:52:13 -0700</pubDate>
