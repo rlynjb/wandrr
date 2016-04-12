@@ -19,6 +19,7 @@ I then started doing research on Parallax Scrolling and found this article:
 - [The Ultimate Guide to Parallax Scrolling: Best Practices and Tutorials](http://www.vandelaydesign.com/parallax-scrolling-best-practices-examples-and-tutorials/)
 - [Parallax Tutorial using CSS and jQuery](http://andyshora.com/parallax.html)
 - [Simple Lightweight Parallax Scrolling Background](http://www.cheesetoast.co.uk/simple-lightweight-parallax-scrolling-background-effect/)
+- [Parallax Background](http://inner.geek.nz/javascript/parallax/)
 
 From the article above, I will only note applicable concepts that fits to my Parallax website project.
 
