@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 12 Apr 2016 13:05:16 -0700</pubDate>
-    <lastBuildDate>Tue, 12 Apr 2016 13:05:16 -0700</lastBuildDate>
+    <pubDate>Wed, 20 Apr 2016 12:21:58 -0700</pubDate>
+    <lastBuildDate>Wed, 20 Apr 2016 12:21:58 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -92,11 +92,7 @@ I really like the example on Movement of Data which behaves like a parallax info
 
 &lt;h3 id=&quot;implementing-parallax-scrolling&quot;&gt;Implementing Parallax Scrolling&lt;/h3&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://andyshora.com/parallax.html&quot;&gt;Parallax Tutorial using CSS and jQuery&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.cheesetoast.co.uk/simple-lightweight-parallax-scrolling-background-effect/&quot;&gt;Simple Lightweight Parallax Scrolling Background&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://inner.geek.nz/javascript/parallax/&quot;&gt;Parallax Background&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;The solution I came up with was to use &lt;a href=&quot;http://prinzhorn.github.io/skrollr/&quot;&gt;skrollr&lt;/a&gt;. This JS Parallax plugin seem to have alot of Stars on github.com&lt;/p&gt;
 </description>
         <pubDate>Thu, 07 Apr 2016 08:52:13 -0700</pubDate>
         <link>http://www.wandrr.io/A-Parallax-Encounter</link>

@@ -79,6 +79,4 @@ But really my problem with this layout is that it’s too confusing. There is a 
 
 ### Implementing Parallax Scrolling
 
-- [Parallax Tutorial using CSS and jQuery](http://andyshora.com/parallax.html)
-- [Simple Lightweight Parallax Scrolling Background](http://www.cheesetoast.co.uk/simple-lightweight-parallax-scrolling-background-effect/)
-- [Parallax Background](http://inner.geek.nz/javascript/parallax/)
+The solution I came up with was to use [skrollr](http://prinzhorn.github.io/skrollr/). This JS Parallax plugin seem to have alot of Stars on github.com
