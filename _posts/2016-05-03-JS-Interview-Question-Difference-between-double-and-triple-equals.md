@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "What is the difference between == and ===?"
-date: 2016-02-23 15:15:38
+date: 2016-05-03 14:00:07
 tags:
 - javascript interview questions
 ---
@@ -13,6 +13,20 @@ JavaScript has two sets of **_Equality operators_** archived under [Comparison o
 
 We use these operators when comparing 2 operands. They differ on what type of operands are being compared to against.
 
+For example, equality `==` or inequality `!=` signs compares 2 values without type conversion. 
+<br>
+While strict equality `===` or strict inequality `!==` signs compares 2 values with type conversion.
+
+{% highlight javascript %}
+'1' == 1 // true < all it matters is the value
+'1' === 1 // false < they are not the same type
+
+1 == true // true
+'1' == true // true
+
+1 === true // false
+'1' === true // false
+{% endhighlight %}
 
 -----
 

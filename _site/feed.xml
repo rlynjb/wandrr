@@ -6,9 +6,64 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 03 May 2016 11:14:58 -0700</pubDate>
-    <lastBuildDate>Tue, 03 May 2016 11:14:58 -0700</lastBuildDate>
+    <pubDate>Tue, 03 May 2016 14:06:10 -0700</pubDate>
+    <lastBuildDate>Tue, 03 May 2016 14:06:10 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>What is the difference between == and ===?</title>
+        <description>&lt;p&gt;JavaScript has two sets of &lt;strong&gt;&lt;em&gt;Equality operators&lt;/em&gt;&lt;/strong&gt; archived under &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators&quot;&gt;Comparison operators&lt;/a&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;equality &lt;code&gt;==&lt;/code&gt; &amp;amp; inequality &lt;code&gt;!=&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;strict equality &lt;code&gt;===&lt;/code&gt; &amp;amp; strict inequality &lt;code&gt;!==&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We use these operators when comparing 2 operands. They differ on what type of operands are being compared to against.&lt;/p&gt;
+
+&lt;p&gt;For example, equality &lt;code&gt;==&lt;/code&gt; or inequality &lt;code&gt;!=&lt;/code&gt; signs compares 2 values without type conversion. 
+&lt;br /&gt;
+While strict equality &lt;code&gt;===&lt;/code&gt; or strict inequality &lt;code&gt;!==&lt;/code&gt; signs compares 2 values with type conversion.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;1&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true &amp;lt; all it matters is the value&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;&amp;#39;1&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false &amp;lt; they are not the same type&lt;/span&gt;
+
+&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;&amp;#39;1&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
+
+&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;&amp;#39;1&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/359494/does-it-matter-which-equals-operator-vs-i-use-in-javascript-comparisons&quot;&gt;Does it matter which equals operator (== vs ===) I use in JavaScript comparisons?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators&quot;&gt;Comparison operators&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 03 May 2016 07:00:07 -0700</pubDate>
+        <link>http://www.wandrr.io/JS-Interview-Question-Difference-between-double-and-triple-equals</link>
+        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Difference-between-double-and-triple-equals</guid>
+        
+        <category>javascript interview questions</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Exploring AMP Project by Google</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://www.ampproject.org/&quot;&gt;Accelerated Mobile Pages Project&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 02 May 2016 05:27:51 -0700</pubDate>
+        <link>http://www.wandrr.io/Exploring-AMP-Project-by-Google</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Exploring-AMP-Project-by-Google</guid>
+        
+        <category>app development</category>
+        
+        
+      </item>
     
       <item>
         <title>A Parallax Encounter</title>
@@ -787,58 +842,6 @@ Third argument &lt;code&gt;HelloWorld&lt;/code&gt; is our application name. This
         <guid isPermaLink="true">http://www.wandrr.io/Beginning-mobile-app-development-journey</guid>
         
         <category>app development</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>What is the difference between == and ===?</title>
-        <description>&lt;p&gt;JavaScript has two sets of &lt;strong&gt;&lt;em&gt;Equality operators&lt;/em&gt;&lt;/strong&gt; archived under &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators&quot;&gt;Comparison operators&lt;/a&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;equality &lt;code&gt;==&lt;/code&gt; &amp;amp; inequality &lt;code&gt;!=&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;strict equality &lt;code&gt;===&lt;/code&gt; &amp;amp; strict inequality &lt;code&gt;!==&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;We use these operators when comparing 2 operands. They differ on what type of operands are being compared to against.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/359494/does-it-matter-which-equals-operator-vs-i-use-in-javascript-comparisons&quot;&gt;Does it matter which equals operator (== vs ===) I use in JavaScript comparisons?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators&quot;&gt;Comparison operators&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 23 Feb 2016 07:15:38 -0800</pubDate>
-        <link>http://www.wandrr.io/Difference-between-double-and-triple-equals</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Difference-between-double-and-triple-equals</guid>
-        
-        <category>javascript interview questions</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Difference between document load event and document ready event?</title>
-        <description>&lt;p&gt;&lt;code&gt;window.onload&lt;/code&gt; event fires only when contents (images, css, scripts, other 3rd party sources), including the DOM has finished loading.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;$(document).ready()&lt;/code&gt; event fires when the HTML DOM has finished loading. It also fires earlier than &lt;code&gt;window.onload&lt;/code&gt;. It will not wait for contents to load.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/3698200/window-onload-vs-document-ready&quot;&gt;window.onload vs $(document).ready()&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 23 Feb 2016 07:08:26 -0800</pubDate>
-        <link>http://www.wandrr.io/JS-Interview-Question-Difference-between-document-load-event-and-document-ready-event</link>
-        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Difference-between-document-load-event-and-document-ready-event</guid>
-        
-        <category>javascript interview questions</category>
         
         
       </item>
