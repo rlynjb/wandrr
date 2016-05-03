@@ -396,7 +396,8 @@ ul li.list-group-item {
         .portfolio-wrapper li a .portfolio-desc b {
           text-transform: uppercase; }
         .portfolio-wrapper li a .portfolio-desc p {
-          margin: 0; }
+          margin: 0;
+          font-size: 0.8em; }
 
 /**
  * Syntax highlighting styles
