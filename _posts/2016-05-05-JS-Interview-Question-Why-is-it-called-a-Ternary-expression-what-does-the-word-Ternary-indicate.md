@@ -34,6 +34,8 @@ var isFoo = fooTrue ? "yes" : "no";
 getFoo(fooTrue ? "yes" : "no");
 {% endhighlight %}
 
+-----
+
 ##### **References:**
 
 - [Wiki - Ternary operation](https://en.wikipedia.org/wiki/Ternary_operation)
