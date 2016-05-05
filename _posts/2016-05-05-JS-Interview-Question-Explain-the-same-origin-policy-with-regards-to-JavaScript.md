@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Explain the same-origin policy with regards to JavaScript"
-date: 2016-05-03 14:14:59
+date: 2016-05-05 10:11:44
 tags:
 - javascript interview questions
 ---
@@ -22,6 +22,13 @@ URL | Outcome | Reason
 `http://store.company.com:81/dir/etc.html` | Failure | Different port
 `http://news.company.com/dir/other.html` | Failure | Different host
 
+There is also a work around for subdomains. The last example above `http://news.company.com/dir/other.html` can be a _Success_ by setting `document.domain` to our parent domain `company.com`.
+
+{% highlight javascript %}
+document.domain = "company.com";
+{% endhighlight %}
+
+For details on changing origin, refer to [MDN - Same-origin policy: Changing origin](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy#Changing_origin).
 
 -----
 

@@ -10,7 +10,7 @@
   <meta name="description" content="Same-origin policy restricts scripts from other websites to be executed on your website. It is an important security measure as it isolates known malicious a...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.wandrr.io/Explain-the-same-origin-policy-with-regards-to-JavaScript">
+  <link rel="canonical" href="http://www.wandrr.io/JS-Interview-Question-Explain-the-same-origin-policy-with-regards-to-JavaScript">
   <link rel="alternate" type="application/rss+xml" title="wandrr" href="http://www.wandrr.io/feed.xml" />
 </head>
 
@@ -69,7 +69,7 @@
   <header class="post-header">
     <h1 class="post-title">Explain the same-origin policy with regards to JavaScript</h1>
     <p class="post-meta">
-      May 3, 2016
+      May 5, 2016
       
        • javascript interview questions
     </p>
@@ -120,6 +120,12 @@ Compare <code>http://store.company.com/dir/page.html</code> to the table below.<
     </tr>
   </tbody>
 </table>
+
+<p>There is also a work around for subdomains. The last example above <code>http://news.company.com/dir/other.html</code> can be a <em>Success</em> by setting <code>document.domain</code> to our parent domain <code>company.com</code>.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nb">document</span><span class="p">.</span><span class="nx">domain</span> <span class="o">=</span> <span class="s2">&quot;company.com&quot;</span><span class="p">;</span></code></pre></div>
+
+<p>For details on changing origin, refer to <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy#Changing_origin">MDN - Same-origin policy: Changing origin</a>.</p>
 
 <hr />
 
