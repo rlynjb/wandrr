@@ -30,6 +30,8 @@ I reside in Las Vegas, NV and stack I am currently using for work are: Wordpress
 
 Maintain and built websites. Responsible for Front-end architecture and stack.
 I am responsible for building these websites, but I do not, alone, fully take credit. I worked with other developers building and maintaining these projects.
+<br>
+Built websites for clients. Gives feedback and implement solutions to solve a UI or business use case problem.
 
 **Projects I've worked on..**
 
@@ -47,6 +49,8 @@ I am responsible for building these websites, but I do not, alone, fully take cr
 
 Developed R&D skills and coding skills working in a 3 member development team. Contributed code and features in main web application. Helped optimized CSS in application.
 Responsible for converting main web application to responsive website.
+<br>
+Contribute ideas to company by researching and implementing latest web technology and give feedback in regards to UI improvement.
 
 -----
 
@@ -58,3 +62,5 @@ Responsible for converting main web application to responsive website.
 
 Responsible for HTML/CSS, coding email templates, landing pages, prototypes, converting design comps to template using Drupal. Experienced working in a Development team with Agile.
 Responsible for converting main web application to responsive website.
+<br>
+Translate UI design comps to functional prototypes and production usage using HTML/CSS/jQuery and Drupal templating.
