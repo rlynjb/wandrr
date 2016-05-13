@@ -6,13 +6,15 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 06 May 2016 10:57:40 -0700</pubDate>
-    <lastBuildDate>Fri, 06 May 2016 10:57:40 -0700</lastBuildDate>
+    <pubDate>Thu, 12 May 2016 17:24:15 -0700</pubDate>
+    <lastBuildDate>Thu, 12 May 2016 17:24:15 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
         <title>What is &quot;use strict&quot;;? what are the advantages and disadvantages to using it?</title>
-        <description>&lt;hr /&gt;
+        <description>&lt;p&gt;&lt;code&gt;&quot;use strict;&quot;&lt;/code&gt; is implemented at the beginning of a file or at the beginning of &lt;em&gt;inside a function&lt;/em&gt; before anything else.&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
 

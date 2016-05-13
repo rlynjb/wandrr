@@ -6,6 +6,7 @@ tags:
 - javascript interview questions
 ---
 
+`"use strict;"` is implemented at the beginning of a file or at the beginning of _inside a function_ before anything else.
 
 -----
 
