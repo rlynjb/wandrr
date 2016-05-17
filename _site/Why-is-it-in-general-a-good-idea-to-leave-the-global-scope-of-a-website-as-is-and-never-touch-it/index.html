@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?</title>
-  <meta name="description" content="References:">
+  <meta name="description" content="There are various reasons why Global Variables are bad. This can include performance, name collision, or bad code readability/organization.">
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="http://www.wandrr.io/Why-is-it-in-general-a-good-idea-to-leave-the-global-scope-of-a-website-as-is-and-never-touch-it">
@@ -76,10 +76,18 @@
   </header>
 
   <article class="post-content">
-    <h5 id="references"><strong>References:</strong></h5>
+    <p>There are various reasons why Global Variables are bad. This can include performance, name collision, or bad code readability/organization.</p>
 
 <ul>
-  <li><a href="https://developer.pebble.com/">Pebble Developers</a></li>
+  <li>Code is easier to understand when parts of an app is limited to its own scope. Its easy to change a Global Variables’ value or forget what it is intended for.</li>
+</ul>
+
+<hr />
+
+<h5 id="references"><strong>References:</strong></h5>
+
+<ul>
+  <li><a href="http://c2.com/cgi/wiki?GlobalVariablesAreBad">Global Variables Are Bad</a></li>
 </ul>
 
   </article>
