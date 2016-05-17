@@ -78,8 +78,12 @@
   <article class="post-content">
     <p>There are various reasons why Global Variables are bad. This can include performance, name collision, or bad code readability/organization.</p>
 
+<p>Pointers below are from <a href="http://c2.com/cgi/wiki?GlobalVariablesAreBad">Global Variables Are Bad</a> that were paraphrased in layman’s term.</p>
+
 <ul>
-  <li>Code is easier to understand when parts of an app is limited to its own scope. Its easy to change a Global Variables’ value or forget what it is intended for.</li>
+  <li><strong>Non-locality</strong> - Code is easier to understand when parts of an app is limited to its own scope. Its easy to forget what a variable is intended for, but setting local variables in its own scope can help alleviate bad code readability/organization.</li>
+  <li><strong>No Access Control or Constraint Checking</strong> - Any part of an app can easily get or set a global variable and this can cause an app to easily break.</li>
+  <li><strong>Namespace pollution</strong> - When setting a variable globally, they will be available in any parts of your code, thus, causing variable name collision and polluting the global namespace with unnecessary variables for certain parts of an app when executed.</li>
 </ul>
 
 <hr />
