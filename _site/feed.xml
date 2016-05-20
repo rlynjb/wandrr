@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 17 May 2016 10:02:56 -0700</pubDate>
-    <lastBuildDate>Tue, 17 May 2016 10:02:56 -0700</lastBuildDate>
+    <pubDate>Fri, 20 May 2016 14:31:37 -0700</pubDate>
+    <lastBuildDate>Fri, 20 May 2016 14:31:37 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -216,19 +216,6 @@ While strict equality &lt;code&gt;===&lt;/code&gt; or strict inequality &lt;code
         <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Difference-between-double-and-triple-equals</guid>
         
         <category>javascript interview questions</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Exploring AMP Project by Google</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://www.ampproject.org/&quot;&gt;Accelerated Mobile Pages Project&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Mon, 02 May 2016 05:27:51 -0700</pubDate>
-        <link>http://www.wandrr.io/Exploring-AMP-Project-by-Google</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Exploring-AMP-Project-by-Google</guid>
-        
-        <category>app development</category>
         
         
       </item>
@@ -482,6 +469,125 @@ I really like the example on Movement of Data which behaves like a parallax info
         <guid isPermaLink="true">http://www.wandrr.io/Notes-on-prototyping-with-Wordpress</guid>
         
         <category>wordpress</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Fiddling with PhoneGap Plugins and HTML5 Speech Recognition</title>
+        <description>&lt;p&gt;Hello! Again this is a continuation of my previous blog posts. I am attempting to develop a simple app while blogging my experience and issues I’ve come across. Below are my previous blog post in order.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/Beginning-mobile-app-development-journey&quot;&gt;Beginning Mobile App Developmet Journey&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/Beginning-Small-Web-App-Development-with-AngularJS&quot;&gt;Beginning Small Web App Development with AngularJS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Just a recap, from my recent blog post &lt;a href=&quot;/Beginning-Small-Web-App-Development-with-AngularJS&quot;&gt;Beginning Small Web App Development with AngularJS&lt;/a&gt;, I was able to:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Setup Zurb Foundation for Apps by creating a directory &lt;code&gt;www-dev&lt;/code&gt; inside of my phonegap project instance.&lt;/li&gt;
+  &lt;li&gt;Use Zurb Foundation for Apps project directory for development.&lt;/li&gt;
+  &lt;li&gt;Modify &lt;code&gt;gulpfile.js&lt;/code&gt; to dump &lt;code&gt;build&lt;/code&gt; files on &lt;code&gt;www&lt;/code&gt; directory.&lt;/li&gt;
+  &lt;li&gt;Renamed original &lt;code&gt;www&lt;/code&gt; directory to &lt;code&gt;www-default&lt;/code&gt; for a copy of original app files.&lt;/li&gt;
+  &lt;li&gt;Designed a simple mobile layout and navigation using Zurb Foundation for Apps.&lt;/li&gt;
+  &lt;li&gt;Learn and leverage Zurb Foundation for Apps AngularJS integration.&lt;/li&gt;
+  &lt;li&gt;Use AJAX to request data stored in a &lt;code&gt;.json&lt;/code&gt; file locally.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;My next goal is to extend my app by using Speech Recognition. A typical user scenario would be:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;App has option to use Voice Recognition or Simple Reload Button&lt;/li&gt;
+  &lt;li&gt;If User chose Voice Recogntion, app will enable phone’s voice command sensor&lt;/li&gt;
+  &lt;li&gt;When User says &lt;em&gt;‘shuffle’&lt;/em&gt;, app will reload new data&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;webviews-browsers-and-hybrid-app&quot;&gt;WebViews, Browsers, and Hybrid App&lt;/h3&gt;
+
+&lt;p&gt;While learning how to install and use PhoneGap plugins, I’ve come across terms which I think are essential to understanding how native device sensors works in Hybrid Apps and how we can levarage HTML5 technology.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://developer.telerik.com/featured/what-is-a-hybrid-mobile-app/&quot;&gt;What is a Hybrid Mobile App&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://developer.telerik.com/featured/what-is-a-webview/&quot;&gt;What is a WebView&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;discovering-html5-speech-recognition-and-speech-synthesis&quot;&gt;Discovering HTML5 Speech Recognition and Speech Synthesis&lt;/h3&gt;
+
+&lt;p&gt;Cordova provides a documentation for registered plugins &lt;a href=&quot;http://cordova.apache.org/plugins/&quot;&gt;Cordova Official Documentation Plugins&lt;/a&gt;, but since I’m using PhoneGap Build to build my app, its best to refer to its phonegap plugin page and find the plugin you wish to to use. I’ve also found the plugin’s original Github repo and a Youtube video demonstrating Speech Recognition:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/macdonst/SpeechRecognitionPlugin&quot;&gt;Github.com: macdonst - Speech Recognition Plugin&lt;/a&gt;&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/oXiel-iZOos&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Video pretty much explains how speech recognition works and discusses various speech recognition APIs available and its brief history. He also showcased sample code and its use cases. His examples are based of off &lt;a href=&quot;https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html&quot;&gt;W3C Community Group Final Report on HTML5 Speech Recognition API&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It took me awhile to have Speech Recognition plugin worked on my app and device. It was a trial and error process, from installing a PhoneGap plugin, configuring the plugin, testing and debugging on actual device via PhoneGap Build.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Process of getting Speech Recognition to work on actual device&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Understanding what happens to PhoneGap project config files when a PhoneGap plugin has been added.
+    &lt;ul&gt;
+      &lt;li&gt;This is crucial, there are various &lt;code&gt;config.xml&lt;/code&gt; files located in &lt;code&gt;/platform&lt;/code&gt; and &lt;code&gt;/plugins&lt;/code&gt; directories.&lt;/li&gt;
+      &lt;li&gt;When &lt;code&gt;phonegap plugin add &amp;lt;source&amp;gt;&lt;/code&gt; is ran, PhoneGap automatically adds references to these &lt;code&gt;config.xml&lt;/code&gt; files except for the &lt;code&gt;config.xml&lt;/code&gt; file located on project’s root directory.&lt;/li&gt;
+      &lt;li&gt;In my case, I needed to add &lt;code&gt;&amp;lt;plugin name=&quot;com.aserputko.speech.speechrecognition&quot; spec=&quot;0.1.0&quot; source=&quot;pgb&quot; /&amp;gt;&lt;/code&gt; to my &lt;code&gt;config.xml&lt;/code&gt; file located in my root directory.&lt;/li&gt;
+      &lt;li&gt;Also, important to note that some plugins require additional steps.&lt;/li&gt;
+      &lt;li&gt;A good updated book I’ve come across is &lt;strong&gt;Packt Publishing - PhoneGap 4 Mobile Application Development Cookbook&lt;/strong&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Added a plugin I’ve found on &lt;a href=&quot;https://build.phonegap.com/plugins&quot;&gt;https://build.phonegap.com/plugins&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;/Beginning-mobile-app-development-journey/#manage-projects-plugins&quot;&gt;Beginning Mobile App Development Journey: Manage Projects Plugins&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Added a sample Speech Recognition code from &lt;a href=&quot;https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html&quot;&gt;W3C Community Group Final Report on HTML5 Speech Recognition API&lt;/a&gt; unto my &lt;code&gt;app.js&lt;/code&gt; and &lt;code&gt;index.html&lt;/code&gt; file.&lt;/li&gt;
+  &lt;li&gt;Build my app via PhoneGap Build by running &lt;code&gt;phonegap remote build &amp;lt;platform&amp;gt;&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;/Beginning-mobile-app-development-journey/#building-our-project&quot;&gt;Beginning Mobile App Development Journey: Building Our Project&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Once built, installed my app by scanning QR Code on my &lt;a href=&quot;https://build.phonegap.com/apps&quot;&gt;https://build.phonegap.com/apps&lt;/a&gt; dashboard page.&lt;/li&gt;
+  &lt;li&gt;Once installed, debugged my app by using &lt;a href=&quot;http://docs.build.phonegap.com/en_US/debugging_remote_debugging_tools.md.html&quot;&gt;PhoneGap Build’s Remote Debugging Tools&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;This is an awesome tool! hehe&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Steps 4 through 6 was an iterative trial and error process.&lt;br /&gt;
+Debugging JavaScript objects inside of PhoneGap’s Debug Console doesn’t seem to display contents inside of that object. A workaround I’ve come across was to use my Chrome console to check &lt;code&gt;SpeechRecognition&lt;/code&gt; object since HTML5 and the plugin uses the same API. A good article that delved inside HTML5 Speech Recognition object is &lt;a href=&quot;http://shapeshed.com/html5-speech-recognition-api/&quot;&gt;HTML5 Speech Recognition API&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;writing-speech-recognition-code-to-fit-my-apps-functionality-needs&quot;&gt;Writing Speech Recognition code to fit my App’s functionality needs&lt;/h3&gt;
+
+&lt;p&gt;After going through the process and successfully ran Speech Recognition on my phone, below are articles I find useful for exploring HTML5 Web Speech and Speech Synthesis API further.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API&quot;&gt;Introduction to the Web Speech API&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2014/01/Web-apps-that-talk-Introduction-to-the-Speech-Synthesis-API&quot;&gt;Introduction to the Speech Synthesis API&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.teamtreehouse.com/accepting-speech-input-html5-forms&quot;&gt;TeamTreeHouse - Accepting Speech Input in HTML5 Forms&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;My goals for this functionality are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;On initial app load, Speech Recognition is disabled&lt;/li&gt;
+  &lt;li&gt;When user clicks on &lt;em&gt;“Speak”&lt;/em&gt; button, Speech Recognition is enabled throughout session&lt;/li&gt;
+  &lt;li&gt;When user says &lt;em&gt;“Shuffle”&lt;/em&gt;, Speech Recognition detects keyword and reloads data&lt;/li&gt;
+  &lt;li&gt;Speech Recognition is enabled unless user clicks &lt;em&gt;“Speak”&lt;/em&gt; button again&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 29 Mar 2016 02:42:14 -0700</pubDate>
+        <link>http://www.wandrr.io/Fiddling-with-phonegap-plugins-and-html5-speech-recognition</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Fiddling-with-phonegap-plugins-and-html5-speech-recognition</guid>
+        
+        <category>app development</category>
         
         
       </item>
