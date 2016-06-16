@@ -29,4 +29,9 @@ tags:
 
 note: all yaml files are contructed by name spacing. Grav picks it up in a hierarchy order.
 
+-----
 
+### method for custom templating in Grav
+
+1. ff procedure on https://learn.getgrav.org/themes to setup foundation of a website. ex. coding overall layout, header, footer, navigation.
+2. convert static contents on template to **Grav Content - Modular Pages** https://learn.getgrav.org/content
