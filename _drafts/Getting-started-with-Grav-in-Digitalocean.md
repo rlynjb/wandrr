@@ -34,4 +34,8 @@ note: all yaml files are contructed by name spacing. Grav picks it up in a hiera
 ### method for custom templating in Grav
 
 1. ff procedure on https://learn.getgrav.org/themes to setup foundation of a website. ex. coding overall layout, header, footer, navigation.
+  - this is converting psd/design comps to interactive Grav theme
 2. convert static contents on template to **Grav Content - Modular Pages** https://learn.getgrav.org/content
+  - this is basically chopping the templates further and separating html markups from contents, taking advantage of Grav Content
+3. taking it further, we will install **Grav Admin** plugin https://learn.getgrav.org/admin-panel/introduction
+4. after getting around admin, we will table **forms**
