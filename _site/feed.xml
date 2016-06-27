@@ -6,63 +6,124 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 26 Jun 2016 19:16:26 -0700</pubDate>
-    <lastBuildDate>Sun, 26 Jun 2016 19:16:26 -0700</lastBuildDate>
-    <generator>Jekyll v2.5.3</generator>
+    <pubDate>Mon, 27 Jun 2016 12:02:04 -0700</pubDate>
+    <lastBuildDate>Mon, 27 Jun 2016 12:02:04 -0700</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
     
       <item>
         <title>Getting started with Grav on MAMP</title>
-        <description>&lt;h3 id=&quot;install-brew&quot;&gt;install brew&lt;/h3&gt;
+        <description>&lt;h3 id=&quot;install-brew&quot;&gt;1. Install Brew&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://brew.sh/&quot;&gt;http://brew.sh/&lt;/a&gt;&lt;br /&gt;
-This is to install &lt;strong&gt;git&lt;/strong&gt; and other development goodies&lt;/p&gt;
+&lt;p&gt;This is to install &lt;strong&gt;git&lt;/strong&gt; and &lt;strong&gt;other development goodies&lt;/strong&gt; if you are a fan of commandline.&lt;/p&gt;
 
-&lt;h3 id=&quot;install-mamp&quot;&gt;install MAMP&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://brew.sh/&quot;&gt;http://brew.sh/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://commandlinepoweruser.com/&quot;&gt;http://commandlinepoweruser.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://www.mamp.info/en/&quot;&gt;https://www.mamp.info/en/&lt;/a&gt;&lt;br /&gt;
-You can use any webserver but I’ve used MAMP because it was the quickest way I can install a webserver eventhough we are not using mysql database.&lt;/p&gt;
+&lt;hr /&gt;
 
-&lt;h3 id=&quot;install-grav&quot;&gt;install grav&lt;/h3&gt;
+&lt;h3 id=&quot;install-mamp&quot;&gt;2. Install MAMP&lt;/h3&gt;
+
+&lt;p&gt;You can use any webserver but I’ve used &lt;strong&gt;MAMP&lt;/strong&gt; because it was the quickest way I can install a webserver and setup a &lt;strong&gt;local Apache&lt;/strong&gt; eventhough we are not using MySql database.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.mamp.info/en/&quot;&gt;https://www.mamp.info/en/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;install-grav&quot;&gt;3. Install Grav&lt;/h3&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;download the Grav core files from &lt;a href=&quot;https://getgrav.org/downloads&quot;&gt;https://getgrav.org/downloads&lt;/a&gt; and dump into &lt;code&gt;htdocs&lt;/code&gt; directory.
+  &lt;li&gt;Download &lt;strong&gt;Grav core + admin plugins&lt;/strong&gt; files from &lt;a href=&quot;https://getgrav.org/downloads&quot;&gt;https://getgrav.org/downloads&lt;/a&gt; and place into &lt;code class=&quot;highlighter-rouge&quot;&gt;htdocs&lt;/code&gt; directory.
     &lt;ul&gt;
-      &lt;li&gt;You can choose either just Grav core or Grav core + admin plugins&lt;/li&gt;
+      &lt;li&gt;You can choose either &lt;strong&gt;Grav core&lt;/strong&gt; or &lt;strong&gt;Grav core + admin plugins&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;If &lt;strong&gt;Grav core&lt;/strong&gt; only, you have the option to install &lt;strong&gt;Grav admin&lt;/strong&gt; later by running &lt;code class=&quot;highlighter-rouge&quot;&gt;bin/gpm install admin&lt;/code&gt; on the root directory of your &lt;strong&gt;Grav core&lt;/strong&gt; files.&lt;br /&gt;
+ More info: &lt;a href=&quot;https://learn.getgrav.org/admin-panel/introduction&quot;&gt;https://learn.getgrav.org/admin-panel/introduction&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;Unzip the &lt;code&gt;grav-admin-v*.*.**.zip&lt;/code&gt; file on the &lt;code&gt;htdocs&lt;/code&gt; directory.&lt;/li&gt;
-  &lt;li&gt;You can rename the grav directory to whatever project name you wish or move the grav core files to a github repo directory.
+  &lt;li&gt;Unzip the &lt;code class=&quot;highlighter-rouge&quot;&gt;grav-admin-v*.*.**.zip&lt;/code&gt; file on the &lt;code class=&quot;highlighter-rouge&quot;&gt;htdocs&lt;/code&gt; directory.&lt;/li&gt;
+  &lt;li&gt;You can rename the &lt;strong&gt;Grav&lt;/strong&gt; directory to whatever project name you want.
     &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;tip:&lt;/strong&gt; make sure to move &lt;code&gt;.htaccess&lt;/code&gt; file as well to avoid &lt;strong&gt;404 Not Found&lt;/strong&gt; error when visiting subpages. for more info, check &lt;a href=&quot;https://learn.getgrav.org/troubleshooting&quot;&gt;https://learn.getgrav.org/troubleshooting&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;You can also move the &lt;strong&gt;Grav core files&lt;/strong&gt; to an empty &lt;strong&gt;Github Repo directory&lt;/strong&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Tip:&lt;/strong&gt; Make sure to move &lt;code class=&quot;highlighter-rouge&quot;&gt;.htaccess&lt;/code&gt; file as well to avoid &lt;strong&gt;404 Not Found&lt;/strong&gt; error when visiting subpages.&lt;/li&gt;
+      &lt;li&gt;For more info, check &lt;a href=&quot;https://learn.getgrav.org/troubleshooting&quot;&gt;https://learn.getgrav.org/troubleshooting&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://getgrav.org/&quot;&gt;https://getgrav.org/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;method-for-setting-up-a-pre-made-html5-template-to-grav-theme&quot;&gt;4. Method for setting up a pre-made HTML5 template to Grav theme&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Unzip the &lt;strong&gt;HTML5 theme&lt;/strong&gt; zip file unto the &lt;code class=&quot;highlighter-rouge&quot;&gt;user/themes/&lt;/code&gt; directory.&lt;/li&gt;
+  &lt;li&gt;Register your theme by following &lt;strong&gt;Step 1 - Base Theme Setup&lt;/strong&gt; on &lt;a href=&quot;https://learn.getgrav.org/themes/theme-tutorial&quot;&gt;https://learn.getgrav.org/themes/theme-tutorial&lt;/a&gt;.
+    &lt;ul&gt;
+      &lt;li&gt;For &lt;strong&gt;Step 1 - Base Theme Setup&lt;/strong&gt; - #2&lt;br /&gt;
+ &lt;em&gt;Tip:&lt;/em&gt; You can use the same HTML5 theme directory name or you can clean up directory name by renaming and practicing proper naming convention.&lt;br /&gt;
+ &lt;em&gt;Ex:&lt;/em&gt; Avoid whitespace, avoid special characters except &lt;code class=&quot;highlighter-rouge&quot;&gt;_&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;-&lt;/code&gt; following &lt;em&gt;camel case or snake case&lt;/em&gt; naming convention.&lt;/li&gt;
+      &lt;li&gt;For &lt;strong&gt;Step 1 - Base Theme Setup&lt;/strong&gt; - #3&lt;br /&gt;
+ &lt;em&gt;Tip:&lt;/em&gt; I chose to follow &lt;strong&gt;Grav’s Theme directory structure&lt;/strong&gt; rather than to use the &lt;strong&gt;HTML5 theme&lt;/strong&gt; default directory structure to avoid nested directory level, plus, Grav runs a &lt;em&gt;gpm&lt;/em&gt; engine which goes through each directories and yaml files to read data.&lt;/li&gt;
+      &lt;li&gt;For &lt;strong&gt;Step 1 - Base Theme Setup&lt;/strong&gt; - #4&lt;br /&gt;
+ &lt;em&gt;Tip:&lt;/em&gt; I believe this basically tells Grav that we are extending a Grav Theme class and our custom theme gets registered unto Grav core files.&lt;/li&gt;
+      &lt;li&gt;For &lt;strong&gt;Step 1 - Base Theme Setup&lt;/strong&gt; - #5&lt;br /&gt;
+ &lt;em&gt;Tip:&lt;/em&gt; This file just enables our theme, but later on, there are more theme configuration that uses this file.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;method-for-converting-an-existing-html5-template-to-grav-theme&quot;&gt;method for converting an existing HTML5 template to Grav theme&lt;/h3&gt;
+&lt;h3 id=&quot;method-for-loading-assets-and-partial-out-the-main-indexhtml-file&quot;&gt;5. Method for loading assets and partial out the main index.html file&lt;/h3&gt;
+
+&lt;p&gt;Now that we have setup our theme directory structures and registered our theme to Grav core files. We will continue on by:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Load assets (css, js, images) in Head and Body tags.&lt;/li&gt;
+  &lt;li&gt;Introduction to using Twig templating engine.&lt;/li&gt;
+  &lt;li&gt;Organize our code in &lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt; file by using Grav’s &lt;code class=&quot;highlighter-rouge&quot;&gt;/templates/partials&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;unzip the html5 zip file unto the &lt;code&gt;user/themes/&lt;/code&gt; directory&lt;/li&gt;
-  &lt;li&gt;register your theme by ff step 1 on link &lt;a href=&quot;https://learn.getgrav.org/themes/theme-tutorial&quot;&gt;https://learn.getgrav.org/themes/theme-tutorial&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Now we will add &lt;strong&gt;Base Template&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;Now, we load our assets by moving HTML5 theme assets to Grav theme’s asset directory structure. Ex: &lt;code class=&quot;highlighter-rouge&quot;&gt;/css&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;/fonts&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;/images&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;/js&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;/templates&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;This step is a replacement for &lt;strong&gt;Step 2 - Add Bootstrap&lt;/strong&gt;&lt;br /&gt;
+ We are not using Boostrap, instead we are using the HTML5’s assets.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Next is to just follow the remaining steps, &lt;strong&gt;Step 3 - Base Template&lt;/strong&gt; to &lt;strong&gt;Step 8 - Testing&lt;/strong&gt;.
+    &lt;ul&gt;
+      &lt;li&gt;This step pretty much explains:&lt;br /&gt;
+ &lt;strong&gt;Loading assets.&lt;/strong&gt; When to use &lt;code class=&quot;highlighter-rouge&quot;&gt;theme_url&lt;/code&gt; twig variable and &lt;code class=&quot;highlighter-rouge&quot;&gt;do assets.add(&#39;&#39;)&lt;/code&gt; twig function and how it relates with &lt;strong&gt;Grav’s Asset Manager&lt;/strong&gt;.&lt;br /&gt;
+ &lt;strong&gt;Introduction to basic Twig syntax.&lt;/strong&gt;&lt;br /&gt; Also, exploring some of Grav’s global twig variables.
+ &lt;strong&gt;Partial out&lt;/strong&gt; the theme’s header section, footer section, and main content section to maintain a cleaner &lt;code class=&quot;highlighter-rouge&quot;&gt;base.html.twig&lt;/code&gt; file.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;method-for-custom-templating-in-grav&quot;&gt;method for custom templating in Grav&lt;/h3&gt;
+&lt;h3 id=&quot;breaking-our-home-page-template-file-further-by-using-modular-pages&quot;&gt;6. Breaking our home page template file further by using Modular Pages&lt;/h3&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;ff procedure on https://learn.getgrav.org/themes to setup foundation of a website. ex. coding overall layout, header, footer, navigation.
-    &lt;ul&gt;
-      &lt;li&gt;this is converting psd/design comps to interactive Grav theme&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
   &lt;li&gt;convert static contents on template to &lt;strong&gt;Grav Content - Modular Pages&lt;/strong&gt; https://learn.getgrav.org/content
     &lt;ul&gt;
       &lt;li&gt;this is basically chopping the templates further and separating html markups from contents, taking advantage of Grav Content&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;creating-custom-fields-to-let-users-update-data-in-theme-by-using-blueprint-pages&quot;&gt;7. Creating custom fields to let users update data in theme by using Blueprint Pages&lt;/h3&gt;
+
+&lt;ol&gt;
   &lt;li&gt;taking it further, we will install &lt;strong&gt;Grav Admin&lt;/strong&gt; plugin https://learn.getgrav.org/admin-panel/introduction&lt;/li&gt;
   &lt;li&gt;after getting around admin, we will table &lt;strong&gt;forms&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -102,9 +163,9 @@ You can use any webserver but I’ve used MAMP because it was the quickest way I
 &lt;h3 id=&quot;tips-on-using-configuration-files-yaml&quot;&gt;tips on using configuration files, yaml:&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;do not change configs in &lt;code&gt;/system/config/system.yaml&lt;/code&gt; and &lt;code&gt;/system/config/site.yaml&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;do not change configs in &lt;code&gt;/user/plugins/&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;rather override them in &lt;code&gt;user/config/system.yaml&lt;/code&gt;, &lt;code&gt;user/config/site.yaml&lt;/code&gt;, &lt;code&gt;user/config/plugins/myplugin.yaml&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;do not change configs in &lt;code class=&quot;highlighter-rouge&quot;&gt;/system/config/system.yaml&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;/system/config/site.yaml&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;do not change configs in &lt;code class=&quot;highlighter-rouge&quot;&gt;/user/plugins/&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;rather override them in &lt;code class=&quot;highlighter-rouge&quot;&gt;user/config/system.yaml&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;user/config/site.yaml&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;user/config/plugins/myplugin.yaml&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;note: all yaml files are contructed by name spacing. Grav picks it up in a hierarchy order.&lt;/p&gt;
@@ -187,7 +248,7 @@ You can use any webserver but I’ve used MAMP because it was the quickest way I
     
       <item>
         <title>What is &quot;use strict&quot;;? what are the advantages and disadvantages to using it?</title>
-        <description>&lt;p&gt;&lt;code&gt;&quot;use strict;&quot;&lt;/code&gt; is applied to an entire script file or to individual functions by implementing at the beginning of a file or at the beginning of &lt;em&gt;inside a function&lt;/em&gt; before anything else.&lt;/p&gt;
+        <description>&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;use strict;&quot;&lt;/code&gt; is applied to an entire script file or to individual functions by implementing at the beginning of a file or at the beginning of &lt;em&gt;inside a function&lt;/em&gt; before anything else.&lt;/p&gt;
 
 &lt;p&gt;Main purpose of using &lt;strong&gt;strict mode&lt;/strong&gt; is to be able to evaluate your JavaScript code and throw more errors in an effort to make your code more robust, readable, accurate and fixes compatibility issues that may arise for future JavaScript releases.&lt;/p&gt;
 
@@ -212,27 +273,27 @@ You can use any webserver but I’ve used MAMP because it was the quickest way I
     
       <item>
         <title>Why is it called a Ternary expression, what does the word &quot;Ternary&quot; indicate?</title>
-        <description>&lt;p&gt;Ternary &lt;code&gt;?:&lt;/code&gt; is an operator that takes 3 arguments and defines a conditional expression. It is a one-lined shorthand for an &lt;strong&gt;if-then statement&lt;/strong&gt; and is also called Ternary operator or Conditional operator.&lt;/p&gt;
+        <description>&lt;p&gt;Ternary &lt;code class=&quot;highlighter-rouge&quot;&gt;?:&lt;/code&gt; is an operator that takes 3 arguments and defines a conditional expression. It is a one-lined shorthand for an &lt;strong&gt;if-then statement&lt;/strong&gt; and is also called Ternary operator or Conditional operator.&lt;/p&gt;
 
 &lt;p&gt;An example would be:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fooTrue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fooTrue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;fuzz&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Above code can be shortened with &lt;code&gt;?:&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Above code can be shortened with &lt;code class=&quot;highlighter-rouge&quot;&gt;?:&lt;/code&gt;.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;fooTrue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fuzz&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;fooTrue&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fuzz&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;In JavaScript, conditional operators can be evaluated to an &lt;strong&gt;Expression&lt;/strong&gt;, not just statement.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// assigned to a variable&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;isFoo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fooTrue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;yes&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;no&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// assigned to a variable&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;isFoo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fooTrue&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;yes&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;no&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;// passed as an argument in a function&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;getFoo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fooTrue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;yes&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;no&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;nx&quot;&gt;getFoo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fooTrue&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;yes&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;no&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;hr /&gt;
 
@@ -261,7 +322,7 @@ You can use any webserver but I’ve used MAMP because it was the quickest way I
 
 &lt;p&gt;An example via &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy&quot;&gt;MDN - Same-origin policy&lt;/a&gt;:
 &lt;br /&gt;
-Compare &lt;code&gt;http://store.company.com/dir/page.html&lt;/code&gt; to the table below.&lt;/p&gt;
+Compare &lt;code class=&quot;highlighter-rouge&quot;&gt;http://store.company.com/dir/page.html&lt;/code&gt; to the table below.&lt;/p&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -273,36 +334,36 @@ Compare &lt;code&gt;http://store.company.com/dir/page.html&lt;/code&gt; to the t
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code&gt;http://store.company.com/dir2/other.html&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;http://store.company.com/dir2/other.html&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;Success&lt;/td&gt;
       &lt;td&gt;-&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code&gt;http://store.company.com/dir/inner/another.html&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;http://store.company.com/dir/inner/another.html&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;Success&lt;/td&gt;
       &lt;td&gt;-&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code&gt;https://store.company.com/secure.html&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;https://store.company.com/secure.html&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;Failure&lt;/td&gt;
       &lt;td&gt;Different protocol&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code&gt;http://store.company.com:81/dir/etc.html&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;http://store.company.com:81/dir/etc.html&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;Failure&lt;/td&gt;
       &lt;td&gt;Different port&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code&gt;http://news.company.com/dir/other.html&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;http://news.company.com/dir/other.html&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;Failure&lt;/td&gt;
       &lt;td&gt;Different host&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;There is also a work around for subdomains. The last example above &lt;code&gt;http://news.company.com/dir/other.html&lt;/code&gt; can be a &lt;em&gt;Success&lt;/em&gt; by setting &lt;code&gt;document.domain&lt;/code&gt; to our parent domain &lt;code&gt;company.com&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;There is also a work around for subdomains. The last example above &lt;code class=&quot;highlighter-rouge&quot;&gt;http://news.company.com/dir/other.html&lt;/code&gt; can be a &lt;em&gt;Success&lt;/em&gt; by setting &lt;code class=&quot;highlighter-rouge&quot;&gt;document.domain&lt;/code&gt; to our parent domain &lt;code class=&quot;highlighter-rouge&quot;&gt;company.com&lt;/code&gt;.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;domain&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;company.com&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;domain&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;company.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;For details on changing origin, refer to &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy#Changing_origin&quot;&gt;MDN - Same-origin policy: Changing origin&lt;/a&gt;.&lt;/p&gt;
 
@@ -329,24 +390,24 @@ Compare &lt;code&gt;http://store.company.com/dir/page.html&lt;/code&gt; to the t
         <description>&lt;p&gt;JavaScript has two sets of &lt;strong&gt;&lt;em&gt;Equality operators&lt;/em&gt;&lt;/strong&gt; archived under &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators&quot;&gt;Comparison operators&lt;/a&gt;:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;equality &lt;code&gt;==&lt;/code&gt; &amp;amp; inequality &lt;code&gt;!=&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;strict equality &lt;code&gt;===&lt;/code&gt; &amp;amp; strict inequality &lt;code&gt;!==&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;equality &lt;code class=&quot;highlighter-rouge&quot;&gt;==&lt;/code&gt; &amp;amp; inequality &lt;code class=&quot;highlighter-rouge&quot;&gt;!=&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;strict equality &lt;code class=&quot;highlighter-rouge&quot;&gt;===&lt;/code&gt; &amp;amp; strict inequality &lt;code class=&quot;highlighter-rouge&quot;&gt;!==&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;We use these operators when comparing 2 operands. They differ on what type of operands are being compared to against.&lt;/p&gt;
 
-&lt;p&gt;For example, equality &lt;code&gt;==&lt;/code&gt; or inequality &lt;code&gt;!=&lt;/code&gt; signs compares 2 values without type conversion. 
+&lt;p&gt;For example, equality &lt;code class=&quot;highlighter-rouge&quot;&gt;==&lt;/code&gt; or inequality &lt;code class=&quot;highlighter-rouge&quot;&gt;!=&lt;/code&gt; signs compares 2 values without type conversion. 
 &lt;br /&gt;
-While strict equality &lt;code&gt;===&lt;/code&gt; or strict inequality &lt;code&gt;!==&lt;/code&gt; signs compares 2 values with type conversion.&lt;/p&gt;
+While strict equality &lt;code class=&quot;highlighter-rouge&quot;&gt;===&lt;/code&gt; or strict inequality &lt;code class=&quot;highlighter-rouge&quot;&gt;!==&lt;/code&gt; signs compares 2 values with type conversion.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;1&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true &amp;lt; all it matters is the value&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;&amp;#39;1&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false &amp;lt; they are not the same type&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;s1&quot;&gt;&#39;1&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true &amp;lt; all it matters is the value&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;&#39;1&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false &amp;lt; they are not the same type&lt;/span&gt;
 
 &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;&amp;#39;1&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;&#39;1&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
 
 &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;&amp;#39;1&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;s1&quot;&gt;&#39;1&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;hr /&gt;
 
@@ -478,13 +539,13 @@ I really like the example on Movement of Data which behaves like a parallax info
 &lt;ul&gt;
   &lt;li&gt;via Website GUI
     &lt;ul&gt;
-      &lt;li&gt;&lt;code&gt;http://www.website-name.com/admin/reports/updates&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code&gt;Reports &amp;gt; Available Updates&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;http://www.website-name.com/admin/reports/updates&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Reports &amp;gt; Available Updates&lt;/code&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;via CLI
     &lt;ul&gt;
-      &lt;li&gt;&lt;code&gt;drush pm-updatestatus&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;drush pm-updatestatus&lt;/code&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -496,22 +557,22 @@ I really like the example on Movement of Data which behaves like a parallax info
 &lt;ol&gt;
   &lt;li&gt;Backup database via Drush
     &lt;ul&gt;
-      &lt;li&gt;&lt;code&gt;drush sql-dump &amp;gt; name_of_site-date.sql&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;drush sql-dump &amp;gt; name_of_site-date.sql&lt;/code&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;Backup core files by compressing directory containing drupal core files
     &lt;ul&gt;
-      &lt;li&gt;&lt;code&gt;tar -czf site_name_date.tar.gz /path_to_site_directory/&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;tar -czf site_name_date.tar.gz /path_to_site_directory/&lt;/code&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;Show a report of available minor updates to Drupal core and contrib projects.
     &lt;ul&gt;
-      &lt;li&gt;&lt;code&gt;drush pm-updatestatus&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;drush pm-updatestatus&lt;/code&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;Backup &lt;code&gt;.htaccess&lt;/code&gt; by making a copy and dumping outside of drupal website directory
+  &lt;li&gt;Backup &lt;code class=&quot;highlighter-rouge&quot;&gt;.htaccess&lt;/code&gt; by making a copy and dumping outside of drupal website directory
     &lt;ul&gt;
-      &lt;li&gt;&lt;code&gt;cp .htaccess ../&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cp .htaccess ../&lt;/code&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
@@ -520,12 +581,12 @@ I really like the example on Movement of Data which behaves like a parallax info
 
 &lt;h3 id=&quot;implementing-minor-updates-on-drupal-sites&quot;&gt;Implementing Minor Updates on Drupal sites&lt;/h3&gt;
 
-&lt;p&gt;Only &lt;em&gt;Security Updates&lt;/em&gt; of core and modules will be performed. Updating Modules with &lt;code&gt;Update available&lt;/code&gt; message may conflict with other module or drupal core version.&lt;/p&gt;
+&lt;p&gt;Only &lt;em&gt;Security Updates&lt;/em&gt; of core and modules will be performed. Updating Modules with &lt;code class=&quot;highlighter-rouge&quot;&gt;Update available&lt;/code&gt; message may conflict with other module or drupal core version.&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;cd to drupal website directory and run &lt;code&gt;drush up drupal&lt;/code&gt; to update drupal core&lt;/li&gt;
-  &lt;li&gt;run &lt;code&gt;drush pm-updatestatus&lt;/code&gt; again to check for other module updates&lt;/li&gt;
-  &lt;li&gt;run &lt;code&gt;drush up &amp;lt;name of module&amp;gt;&lt;/code&gt; to update a module&lt;/li&gt;
+  &lt;li&gt;cd to drupal website directory and run &lt;code class=&quot;highlighter-rouge&quot;&gt;drush up drupal&lt;/code&gt; to update drupal core&lt;/li&gt;
+  &lt;li&gt;run &lt;code class=&quot;highlighter-rouge&quot;&gt;drush pm-updatestatus&lt;/code&gt; again to check for other module updates&lt;/li&gt;
+  &lt;li&gt;run &lt;code class=&quot;highlighter-rouge&quot;&gt;drush up &amp;lt;name of module&amp;gt;&lt;/code&gt; to update a module&lt;/li&gt;
 &lt;/ol&gt;
 </description>
         <pubDate>Fri, 01 Apr 2016 05:26:55 -0700</pubDate>
