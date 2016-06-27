@@ -76,12 +76,29 @@ Now that we have setup our theme directory structures and registered our theme t
 
 ### 6. Breaking our home page template file further by using Modular Pages
 
-1. convert static contents on template to **Grav Content - Modular Pages** https://learn.getgrav.org/content
-  - this is basically chopping the templates further and separating html markups from contents, taking advantage of Grav Content
+Most HTML5 themes comes with a home page designed similar to one-page website designs. For this step, we are going to breakdown this one-page website design into sections and use **Grav's Modular Pages** templating to separate and organize these sections.
+
+1. Open `base.html.twig` template and analyze what HTML tag is used to contain contents of each sections.
+  - _Tip:_ Usual tags used as containers are `<section></section>` and `<div id=""></div>`
+2. After determining the HTML tag container, convert these sections into **Grav's Modular Pages**.
+  - Learn more about Modular Pages on the ff. link and ff. instructions: [https://learn.getgrav.org/content/modular](https://learn.getgrav.org/content/modular)
+  - It is also a good idea to scheme through **Grav's Content** documentation page [https://learn.getgrav.org/content](https://learn.getgrav.org/content) to get a glimpse of the parts of a page.
 
 -----
 
 ### 7. Creating custom fields to let users update data in theme by using Blueprint Pages
 
-1. taking it further, we will install **Grav Admin** plugin https://learn.getgrav.org/admin-panel/introduction
-2. after getting around admin, we will table **forms**
+Now that we've broken our template further by each sections using **Modular Pages**. What if we wanted users to update contents or bits pieces of data in each section using **Grav's Administration Panel**?
+
+In this step, we will use Grav's Forms called Blueprints [https://learn.getgrav.org/forms/blueprints](https://learn.getgrav.org/forms/blueprints) to convert **static data** into editable ones using Grav's `Admin dashboard > Pages`.
+
+For an overview and how to setup a **Themes and Plugins Blueprints** or **Pages Blueprints**, go to this link [https://learn.getgrav.org/forms/blueprints](https://learn.getgrav.org/forms/blueprints).
+
+My experience with setting up Blueprints for **Theme** configuration page and for each **Modular Pages** was quite challenging. Grav's documentation doesn't seem to provide detailed information on **how to define a field and which directory its information is stored**.
+
+Although for **Theme Blueprint** it was pretty straight forward.
+
+1. Create a `blueprints.yaml` file in the root directory of theme.
+2. Use this as an example for 
+
+After a couple of trials and errors.

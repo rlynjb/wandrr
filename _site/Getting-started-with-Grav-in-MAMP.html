@@ -175,10 +175,18 @@
 
 <h3 id="breaking-our-home-page-template-file-further-by-using-modular-pages">6. Breaking our home page template file further by using Modular Pages</h3>
 
+<p>Most HTML5 themes comes with a home page designed similar to one-page website designs. For this step, we are going to breakdown this one-page website design into sections and use <strong>Grav’s Modular Pages</strong> templating to separate and organize these sections.</p>
+
 <ol>
-  <li>convert static contents on template to <strong>Grav Content - Modular Pages</strong> https://learn.getgrav.org/content
+  <li>Open <code class="highlighter-rouge">base.html.twig</code> template and analyze what HTML tag is used to contain contents of each sections.
     <ul>
-      <li>this is basically chopping the templates further and separating html markups from contents, taking advantage of Grav Content</li>
+      <li><em>Tip:</em> Usual tags used as containers are <code class="highlighter-rouge">&lt;section&gt;&lt;/section&gt;</code> and <code class="highlighter-rouge">&lt;div id=""&gt;&lt;/div&gt;</code></li>
+    </ul>
+  </li>
+  <li>After determining the HTML tag container, convert these sections into <strong>Grav’s Modular Pages</strong>.
+    <ul>
+      <li>Learn more about Modular Pages on the ff. link and ff. instructions: <a href="https://learn.getgrav.org/content/modular">https://learn.getgrav.org/content/modular</a></li>
+      <li>It is also a good idea to scheme through <strong>Grav’s Content</strong> documentation page <a href="https://learn.getgrav.org/content">https://learn.getgrav.org/content</a> to get a glimpse of the parts of a page.</li>
     </ul>
   </li>
 </ol>
@@ -187,10 +195,22 @@
 
 <h3 id="creating-custom-fields-to-let-users-update-data-in-theme-by-using-blueprint-pages">7. Creating custom fields to let users update data in theme by using Blueprint Pages</h3>
 
+<p>Now that we’ve broken our template further by each sections using <strong>Modular Pages</strong>. What if we wanted users to update contents or bits pieces of data in each section using <strong>Grav’s Administration Panel</strong>?</p>
+
+<p>In this step, we will use Grav’s Forms called Blueprints <a href="https://learn.getgrav.org/forms/blueprints">https://learn.getgrav.org/forms/blueprints</a> to convert <strong>static data</strong> into editable ones using Grav’s <code class="highlighter-rouge">Admin dashboard &gt; Pages</code>.</p>
+
+<p>For an overview and how to setup a <strong>Themes and Plugins Blueprints</strong> or <strong>Pages Blueprints</strong>, go to this link <a href="https://learn.getgrav.org/forms/blueprints">https://learn.getgrav.org/forms/blueprints</a>.</p>
+
+<p>My experience with setting up Blueprints for <strong>Theme</strong> configuration page and for each <strong>Modular Pages</strong> was quite challenging. Grav’s documentation doesn’t seem to provide detailed information on <strong>how to define a field and which directory its information is stored</strong>.</p>
+
+<p>Although for <strong>Theme Blueprint</strong> it was pretty straight forward.</p>
+
 <ol>
-  <li>taking it further, we will install <strong>Grav Admin</strong> plugin https://learn.getgrav.org/admin-panel/introduction</li>
-  <li>after getting around admin, we will table <strong>forms</strong></li>
+  <li>Create a <code class="highlighter-rouge">blueprints.yaml</code> file in the root directory of theme.</li>
+  <li>Use this as an example for</li>
 </ol>
+
+<p>After a couple of trials and errors.</p>
 
   </article>
 

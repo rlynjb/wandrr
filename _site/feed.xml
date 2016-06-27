@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 27 Jun 2016 12:02:04 -0700</pubDate>
-    <lastBuildDate>Mon, 27 Jun 2016 12:02:04 -0700</lastBuildDate>
+    <pubDate>Mon, 27 Jun 2016 14:17:37 -0700</pubDate>
+    <lastBuildDate>Mon, 27 Jun 2016 14:17:37 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -111,10 +111,18 @@
 
 &lt;h3 id=&quot;breaking-our-home-page-template-file-further-by-using-modular-pages&quot;&gt;6. Breaking our home page template file further by using Modular Pages&lt;/h3&gt;
 
+&lt;p&gt;Most HTML5 themes comes with a home page designed similar to one-page website designs. For this step, we are going to breakdown this one-page website design into sections and use &lt;strong&gt;Grav’s Modular Pages&lt;/strong&gt; templating to separate and organize these sections.&lt;/p&gt;
+
 &lt;ol&gt;
-  &lt;li&gt;convert static contents on template to &lt;strong&gt;Grav Content - Modular Pages&lt;/strong&gt; https://learn.getgrav.org/content
+  &lt;li&gt;Open &lt;code class=&quot;highlighter-rouge&quot;&gt;base.html.twig&lt;/code&gt; template and analyze what HTML tag is used to contain contents of each sections.
     &lt;ul&gt;
-      &lt;li&gt;this is basically chopping the templates further and separating html markups from contents, taking advantage of Grav Content&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;Tip:&lt;/em&gt; Usual tags used as containers are &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;section&amp;gt;&amp;lt;/section&amp;gt;&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div id=&quot;&quot;&amp;gt;&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;After determining the HTML tag container, convert these sections into &lt;strong&gt;Grav’s Modular Pages&lt;/strong&gt;.
+    &lt;ul&gt;
+      &lt;li&gt;Learn more about Modular Pages on the ff. link and ff. instructions: &lt;a href=&quot;https://learn.getgrav.org/content/modular&quot;&gt;https://learn.getgrav.org/content/modular&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;It is also a good idea to scheme through &lt;strong&gt;Grav’s Content&lt;/strong&gt; documentation page &lt;a href=&quot;https://learn.getgrav.org/content&quot;&gt;https://learn.getgrav.org/content&lt;/a&gt; to get a glimpse of the parts of a page.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
@@ -123,10 +131,22 @@
 
 &lt;h3 id=&quot;creating-custom-fields-to-let-users-update-data-in-theme-by-using-blueprint-pages&quot;&gt;7. Creating custom fields to let users update data in theme by using Blueprint Pages&lt;/h3&gt;
 
+&lt;p&gt;Now that we’ve broken our template further by each sections using &lt;strong&gt;Modular Pages&lt;/strong&gt;. What if we wanted users to update contents or bits pieces of data in each section using &lt;strong&gt;Grav’s Administration Panel&lt;/strong&gt;?&lt;/p&gt;
+
+&lt;p&gt;In this step, we will use Grav’s Forms called Blueprints &lt;a href=&quot;https://learn.getgrav.org/forms/blueprints&quot;&gt;https://learn.getgrav.org/forms/blueprints&lt;/a&gt; to convert &lt;strong&gt;static data&lt;/strong&gt; into editable ones using Grav’s &lt;code class=&quot;highlighter-rouge&quot;&gt;Admin dashboard &amp;gt; Pages&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;For an overview and how to setup a &lt;strong&gt;Themes and Plugins Blueprints&lt;/strong&gt; or &lt;strong&gt;Pages Blueprints&lt;/strong&gt;, go to this link &lt;a href=&quot;https://learn.getgrav.org/forms/blueprints&quot;&gt;https://learn.getgrav.org/forms/blueprints&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;My experience with setting up Blueprints for &lt;strong&gt;Theme&lt;/strong&gt; configuration page and for each &lt;strong&gt;Modular Pages&lt;/strong&gt; was quite challenging. Grav’s documentation doesn’t seem to provide detailed information on &lt;strong&gt;how to define a field and which directory its information is stored&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Although for &lt;strong&gt;Theme Blueprint&lt;/strong&gt; it was pretty straight forward.&lt;/p&gt;
+
 &lt;ol&gt;
-  &lt;li&gt;taking it further, we will install &lt;strong&gt;Grav Admin&lt;/strong&gt; plugin https://learn.getgrav.org/admin-panel/introduction&lt;/li&gt;
-  &lt;li&gt;after getting around admin, we will table &lt;strong&gt;forms&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Create a &lt;code class=&quot;highlighter-rouge&quot;&gt;blueprints.yaml&lt;/code&gt; file in the root directory of theme.&lt;/li&gt;
+  &lt;li&gt;Use this as an example for&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;p&gt;After a couple of trials and errors.&lt;/p&gt;
 </description>
         <pubDate>Mon, 20 Jun 2016 13:37:35 -0700</pubDate>
         <link>http://www.wandrr.io/Getting-started-with-Grav-in-MAMP</link>
