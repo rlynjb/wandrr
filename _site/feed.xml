@@ -6,9 +6,75 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 16 Jun 2016 16:43:27 -0700</pubDate>
-    <lastBuildDate>Thu, 16 Jun 2016 16:43:27 -0700</lastBuildDate>
+    <pubDate>Sun, 26 Jun 2016 19:16:26 -0700</pubDate>
+    <lastBuildDate>Sun, 26 Jun 2016 19:16:26 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Getting started with Grav on MAMP</title>
+        <description>&lt;h3 id=&quot;install-brew&quot;&gt;install brew&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://brew.sh/&quot;&gt;http://brew.sh/&lt;/a&gt;&lt;br /&gt;
+This is to install &lt;strong&gt;git&lt;/strong&gt; and other development goodies&lt;/p&gt;
+
+&lt;h3 id=&quot;install-mamp&quot;&gt;install MAMP&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.mamp.info/en/&quot;&gt;https://www.mamp.info/en/&lt;/a&gt;&lt;br /&gt;
+You can use any webserver but I’ve used MAMP because it was the quickest way I can install a webserver eventhough we are not using mysql database.&lt;/p&gt;
+
+&lt;h3 id=&quot;install-grav&quot;&gt;install grav&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;download the Grav core files from &lt;a href=&quot;https://getgrav.org/downloads&quot;&gt;https://getgrav.org/downloads&lt;/a&gt; and dump into &lt;code&gt;htdocs&lt;/code&gt; directory.
+    &lt;ul&gt;
+      &lt;li&gt;You can choose either just Grav core or Grav core + admin plugins&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Unzip the &lt;code&gt;grav-admin-v*.*.**.zip&lt;/code&gt; file on the &lt;code&gt;htdocs&lt;/code&gt; directory.&lt;/li&gt;
+  &lt;li&gt;You can rename the grav directory to whatever project name you wish or move the grav core files to a github repo directory.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;tip:&lt;/strong&gt; make sure to move &lt;code&gt;.htaccess&lt;/code&gt; file as well to avoid &lt;strong&gt;404 Not Found&lt;/strong&gt; error when visiting subpages. for more info, check &lt;a href=&quot;https://learn.getgrav.org/troubleshooting&quot;&gt;https://learn.getgrav.org/troubleshooting&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;method-for-converting-an-existing-html5-template-to-grav-theme&quot;&gt;method for converting an existing HTML5 template to Grav theme&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;unzip the html5 zip file unto the &lt;code&gt;user/themes/&lt;/code&gt; directory&lt;/li&gt;
+  &lt;li&gt;register your theme by ff step 1 on link &lt;a href=&quot;https://learn.getgrav.org/themes/theme-tutorial&quot;&gt;https://learn.getgrav.org/themes/theme-tutorial&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Now we will add &lt;strong&gt;Base Template&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;method-for-custom-templating-in-grav&quot;&gt;method for custom templating in Grav&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;ff procedure on https://learn.getgrav.org/themes to setup foundation of a website. ex. coding overall layout, header, footer, navigation.
+    &lt;ul&gt;
+      &lt;li&gt;this is converting psd/design comps to interactive Grav theme&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;convert static contents on template to &lt;strong&gt;Grav Content - Modular Pages&lt;/strong&gt; https://learn.getgrav.org/content
+    &lt;ul&gt;
+      &lt;li&gt;this is basically chopping the templates further and separating html markups from contents, taking advantage of Grav Content&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;taking it further, we will install &lt;strong&gt;Grav Admin&lt;/strong&gt; plugin https://learn.getgrav.org/admin-panel/introduction&lt;/li&gt;
+  &lt;li&gt;after getting around admin, we will table &lt;strong&gt;forms&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Mon, 20 Jun 2016 13:37:35 -0700</pubDate>
+        <link>http://www.wandrr.io/Getting-started-with-Grav-in-MAMP</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Getting-started-with-Grav-in-MAMP</guid>
+        
+        <category>static site</category>
+        
+        
+      </item>
     
       <item>
         <title>Getting started with Grav on DigitalOcean</title>
@@ -467,25 +533,6 @@ I really like the example on Movement of Data which behaves like a parallax info
         <guid isPermaLink="true">http://www.wandrr.io/Simple-Instructions-for-Drupal-Minor-Updates</guid>
         
         <category>drupal</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Developing a Simple Pebble Time app</title>
-        <description>&lt;hr /&gt;
-
-&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developer.pebble.com/&quot;&gt;Pebble Developers&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 31 Mar 2016 04:19:44 -0700</pubDate>
-        <link>http://www.wandrr.io/Developing-a-simple-Pebble-Time-app</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Developing-a-simple-Pebble-Time-app</guid>
-        
-        <category>pebble time</category>
         
         
       </item>

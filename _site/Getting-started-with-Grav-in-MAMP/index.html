@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Explain how JSONP works (and how it's not really AJAX)</title>
-  <meta name="description" content="Explain how JSONP works (and how it’s not really AJAX).">
+  <title>Getting started with Grav on MAMP</title>
+  <meta name="description" content="install brew">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.wandrr.io/JS-Interview-Question-Explain-how-JSONP-works">
+  <link rel="canonical" href="http://www.wandrr.io/Getting-started-with-Grav-in-MAMP">
   <link rel="alternate" type="application/rss+xml" title="wandrr" href="http://www.wandrr.io/feed.xml" />
 </head>
 
@@ -67,64 +67,69 @@
       <div class="wrapper post">
 
   <header class="post-header">
-    <h1 class="post-title">Explain how JSONP works (and how it's not really AJAX)</h1>
+    <h1 class="post-title">Getting started with Grav on MAMP</h1>
     <p class="post-meta">
-      Jan 26, 2016
+      Jun 20, 2016
       
-       • javascript interview questions
+       • static site
     </p>
   </header>
 
   <article class="post-content">
-    <h3 id="explain-how-jsonp-works-and-how-its-not-really-ajax">Explain how JSONP works (and how it’s not really AJAX).</h3>
+    <h3 id="install-brew">install brew</h3>
 
-<p>JSONP (acronym for JavaScript Object Notation with Padding) is a common method to retrieve data from another domain and bypass CORS (Cross Origin Resource Sharing) rules.</p>
+<p><a href="http://brew.sh/">http://brew.sh/</a><br />
+This is to install <strong>git</strong> and other development goodies</p>
 
-<p><strong>An overview of JSONP base on personal experience</strong><br />
-I have used JSONP as a work around to get data by wrapping the response data in JSON format with a function callback set in query string as parameter and setting the callback as an object property of ajax object.</p>
+<h3 id="install-mamp">install MAMP</h3>
 
-<p>** <em>Note, I was using jQuery library when implementing AJAX with JSONP</em></p>
+<p><a href="https://www.mamp.info/en/">https://www.mamp.info/en/</a><br />
+You can use any webserver but I’ve used MAMP because it was the quickest way I can install a webserver eventhough we are not using mysql database.</p>
 
-<p>I’ve also heard of CORS as a set of rules regarding retrieving and transferring data or assets from 3rd parties or different domains from a client. This strictly applies to XMLHttpRequest for security reasons. Making HTTP Requests with XMLHTTPRequest object will only let us make request to our own domain and restricts us from different domain, thus, JSONP was created as a way to bypass this rule.</p>
+<h3 id="install-grav">install grav</h3>
 
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">More about CORS: HTTP access control (CORS)</a></p>
-
-<hr />
-
-<p><strong>How does JSONP work?</strong><br /></p>
-
-<p>After reading further, implementation of JSONP differ from JavaScript libraries to the actual native JavaScript.
-In native JavaScript, JSONP requests aren’t dispatched with XMLHttpRequest object, rather, a <code>script</code> tag is added to the DOM, targeting its <code>src</code> attribute with the url. Reason is <code>script</code> tag does not have limitation to which domains it can retrieve its scripts from.
-Also, since JavaScript has a global scope, we can reference a function to handle incoming JSON data from a 3rd party api url and link that to our application.
-While, in JavaScript libraries such as jQuery, it automatically generate callback and clean up any inserted <code>script</code> tags unto the DOM.</p>
-
-<p>In order for JSON data to be wrapped in a function, the 3rd party API service needs to support JSONP feature. Usually, they will specify on their documentation how to implement JSONP. <a href="http://forismatic.com/en/api/">Here is an example: http://forismatic.com/en/api/</a></p>
-
-<p>If you copy &amp; paste the url below, this will return a simple quote formatted in JSON</p>
-
-<blockquote>
-  <p>http://api.forismatic.com/api/1.0/?method=getQuote&amp;lang=en&amp;format=json</p>
-</blockquote>
-
-<p>While this url will return the same result except JSON data will be wrapped with a function since we explicitly specify format as jsonp and gave it a callback function</p>
-
-<blockquote>
-  <p>http://api.forismatic.com/api/1.0/?method=getQuote&amp;lang=en&amp;format=jsonp&amp;jsonp=processQuote</p>
-</blockquote>
-
-<p>When this loads unto our application from <code>script</code> tag, the given callback name (function name) will get registered unto the global scope and will be available for us to use throughout our application.</p>
+<ol>
+  <li>download the Grav core files from <a href="https://getgrav.org/downloads">https://getgrav.org/downloads</a> and dump into <code>htdocs</code> directory.
+    <ul>
+      <li>You can choose either just Grav core or Grav core + admin plugins</li>
+    </ul>
+  </li>
+  <li>Unzip the <code>grav-admin-v*.*.**.zip</code> file on the <code>htdocs</code> directory.</li>
+  <li>You can rename the grav directory to whatever project name you wish or move the grav core files to a github repo directory.
+    <ul>
+      <li><strong>tip:</strong> make sure to move <code>.htaccess</code> file as well to avoid <strong>404 Not Found</strong> error when visiting subpages. for more info, check <a href="https://learn.getgrav.org/troubleshooting">https://learn.getgrav.org/troubleshooting</a></li>
+    </ul>
+  </li>
+</ol>
 
 <hr />
 
-<p>JSONP limits us with just retrieving <code>GET</code> data. It does not let us create, update, or delete <code>CRUD</code> data. That’s why its just a work around but it does have its advantages. For example, retrieving simple data from a weather api, etc. If you want to take advantage of these other HTTP methods, then its best to build your own simple API Server.</p>
+<h3 id="method-for-converting-an-existing-html5-template-to-grav-theme">method for converting an existing HTML5 template to Grav theme</h3>
+
+<ol>
+  <li>unzip the html5 zip file unto the <code>user/themes/</code> directory</li>
+  <li>register your theme by ff step 1 on link <a href="https://learn.getgrav.org/themes/theme-tutorial">https://learn.getgrav.org/themes/theme-tutorial</a>.</li>
+  <li>Now we will add <strong>Base Template</strong>.</li>
+</ol>
 
 <hr />
 
-<h4 id="references"><strong>References:</strong></h4>
+<h3 id="method-for-custom-templating-in-grav">method for custom templating in Grav</h3>
 
-<ul>
-  <li><a href="https://johnnywey.wordpress.com/2012/05/20/jsonp-how-does-it-work/">JSONP How does it work</a></li>
-</ul>
+<ol>
+  <li>ff procedure on https://learn.getgrav.org/themes to setup foundation of a website. ex. coding overall layout, header, footer, navigation.
+    <ul>
+      <li>this is converting psd/design comps to interactive Grav theme</li>
+    </ul>
+  </li>
+  <li>convert static contents on template to <strong>Grav Content - Modular Pages</strong> https://learn.getgrav.org/content
+    <ul>
+      <li>this is basically chopping the templates further and separating html markups from contents, taking advantage of Grav Content</li>
+    </ul>
+  </li>
+  <li>taking it further, we will install <strong>Grav Admin</strong> plugin https://learn.getgrav.org/admin-panel/introduction</li>
+  <li>after getting around admin, we will table <strong>forms</strong></li>
+</ol>
 
   </article>
 
