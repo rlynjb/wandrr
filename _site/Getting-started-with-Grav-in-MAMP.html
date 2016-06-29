@@ -180,7 +180,7 @@
 <ol>
   <li>Open <code class="highlighter-rouge">base.html.twig</code> template and analyze what HTML tag is used to contain contents of each sections.
     <ul>
-      <li><em>Tip:</em> Usual tags used as containers are <code class="highlighter-rouge">&lt;section&gt;&lt;/section&gt;</code> and <code class="highlighter-rouge">&lt;div id=""&gt;&lt;/div&gt;</code></li>
+      <li><em>Tip:</em> Usual container tags are <code class="highlighter-rouge">&lt;section&gt;&lt;/section&gt;</code> and <code class="highlighter-rouge">&lt;div id=""&gt;&lt;/div&gt;</code></li>
     </ul>
   </li>
   <li>After determining the HTML tag container, convert these sections into <strong>Grav’s Modular Pages</strong>.
@@ -207,10 +207,31 @@
 
 <ol>
   <li>Create a <code class="highlighter-rouge">blueprints.yaml</code> file in the root directory of theme.</li>
-  <li>Use this as an example for</li>
+  <li>Follow the <strong>Components of a Blueprint</strong> in <a href="https://learn.getgrav.org/forms/blueprints">https://learn.getgrav.org/forms/blueprints</a>
+    <ul>
+      <li><strong>Tip:</strong> a YAML file will be generated for Theme configuration page in <code class="highlighter-rouge">user/config</code> directory.</li>
+    </ul>
+  </li>
 </ol>
 
-<p>After a couple of trials and errors.</p>
+<p>It was trial and error for <strong>Modular Page Blueprints</strong> because its documentation seem to lack information on <strong>how to define a field and which directory its information is stored</strong>.</p>
+
+<p>An overview method I find when working with Modular Page Blueprints are:</p>
+
+<ol>
+  <li>Create a <code class="highlighter-rouge">blueprints</code> directory under root template directory <code class="highlighter-rouge">yourtheme &gt; blueprints</code>.
+    <ul>
+      <li>Since we are creating a blueprint for modular pages, we are going to store our blueprints under modular directory.</li>
+      <li>So with this, create a modular directory under <code class="highlighter-rouge">yourtheme &gt; blueprints &gt; modular</code></li>
+    </ul>
+  </li>
+  <li>Create a <code class="highlighter-rouge">some-modular-template-name.yaml</code> file that pertains to a modular template.
+    <ul>
+      <li><strong>Tip:</strong> Make sure your <code class="highlighter-rouge">.yaml</code> file name matches to a Modular template name you want to create Admin custom fields with.</li>
+    </ul>
+  </li>
+  <li>When defining</li>
+</ol>
 
   </article>
 

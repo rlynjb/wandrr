@@ -79,7 +79,7 @@ Now that we have setup our theme directory structures and registered our theme t
 Most HTML5 themes comes with a home page designed similar to one-page website designs. For this step, we are going to breakdown this one-page website design into sections and use **Grav's Modular Pages** templating to separate and organize these sections.
 
 1. Open `base.html.twig` template and analyze what HTML tag is used to contain contents of each sections.
-  - _Tip:_ Usual tags used as containers are `<section></section>` and `<div id=""></div>`
+  - _Tip:_ Usual container tags are `<section></section>` and `<div id=""></div>`
 2. After determining the HTML tag container, convert these sections into **Grav's Modular Pages**.
   - Learn more about Modular Pages on the ff. link and ff. instructions: [https://learn.getgrav.org/content/modular](https://learn.getgrav.org/content/modular)
   - It is also a good idea to scheme through **Grav's Content** documentation page [https://learn.getgrav.org/content](https://learn.getgrav.org/content) to get a glimpse of the parts of a page.
@@ -99,6 +99,17 @@ My experience with setting up Blueprints for **Theme** configuration page and fo
 Although for **Theme Blueprint** it was pretty straight forward.
 
 1. Create a `blueprints.yaml` file in the root directory of theme.
-2. Use this as an example for 
+2. Follow the **Components of a Blueprint** in [https://learn.getgrav.org/forms/blueprints](https://learn.getgrav.org/forms/blueprints)
+  - **Tip:** a YAML file will be generated for Theme configuration page in `user/config` directory.
 
-After a couple of trials and errors.
+
+It was trial and error for **Modular Page Blueprints** because its documentation seem to lack information on **how to define a field and which directory its information is stored**.
+
+An overview method I find when working with Modular Page Blueprints are:
+
+1. Create a `blueprints` directory under root template directory `yourtheme > blueprints`.
+   - Since we are creating a blueprint for modular pages, we are going to store our blueprints under modular directory.
+   - So with this, create a modular directory under `yourtheme > blueprints > modular`
+2. Create a `some-modular-template-name.yaml` file that pertains to a modular template.
+  - **Tip:** Make sure your `.yaml` file name matches to a Modular template name you want to create Admin custom fields with.
+3. When defining
