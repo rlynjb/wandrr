@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 29 Jun 2016 09:06:49 -0700</pubDate>
-    <lastBuildDate>Wed, 29 Jun 2016 09:06:49 -0700</lastBuildDate>
+    <pubDate>Wed, 29 Jun 2016 16:02:34 -0700</pubDate>
+    <lastBuildDate>Wed, 29 Jun 2016 16:02:34 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -157,17 +157,21 @@
 &lt;ol&gt;
   &lt;li&gt;Create a &lt;code class=&quot;highlighter-rouge&quot;&gt;blueprints&lt;/code&gt; directory under root template directory &lt;code class=&quot;highlighter-rouge&quot;&gt;yourtheme &amp;gt; blueprints&lt;/code&gt;.
     &lt;ul&gt;
-      &lt;li&gt;Since we are creating a blueprint for modular pages, we are going to store our blueprints under modular directory.&lt;/li&gt;
+      &lt;li&gt;Since we are creating a blueprint for modular pages, we are going to store our blueprints (&lt;code class=&quot;highlighter-rouge&quot;&gt;*.yaml&lt;/code&gt; files) under modular directory.&lt;/li&gt;
       &lt;li&gt;So with this, create a modular directory under &lt;code class=&quot;highlighter-rouge&quot;&gt;yourtheme &amp;gt; blueprints &amp;gt; modular&lt;/code&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;Create a &lt;code class=&quot;highlighter-rouge&quot;&gt;some-modular-template-name.yaml&lt;/code&gt; file that pertains to a modular template.
     &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;Tip:&lt;/strong&gt; Make sure your &lt;code class=&quot;highlighter-rouge&quot;&gt;.yaml&lt;/code&gt; file name matches to a Modular template name you want to create Admin custom fields with.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Tip:&lt;/strong&gt; Make sure your &lt;code class=&quot;highlighter-rouge&quot;&gt;.yaml&lt;/code&gt; file name matches a Modular template name you want to create Admin custom fields for.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;When defining&lt;/li&gt;
+  &lt;li&gt;When defining &lt;code class=&quot;highlighter-rouge&quot;&gt;*.yaml&lt;/code&gt; file form, a good example would be the default &lt;strong&gt;Grav antimatter theme&lt;/strong&gt;, &lt;a href=&quot;https://github.com/getgrav/grav-theme-antimatter/blob/develop/blueprints/modular/showcase.yaml&quot;&gt;https://github.com/getgrav/grav-theme-antimatter/blob/develop/blueprints/modular/showcase.yaml&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Also, an additional note to keep in mind when working with Page Blueprints&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Grav reads data in &lt;code class=&quot;highlighter-rouge&quot;&gt;*.yaml&lt;/code&gt; files in sequence of how directories and files are structured, So when defining a field, it needs to be under a parent &lt;code class=&quot;highlighter-rouge&quot;&gt;header.&lt;/code&gt; because blueprint pages store its data in pages headers. Also when uploading media files, Grav stores these media files under its page direcotory.&lt;/p&gt;
 </description>
         <pubDate>Mon, 20 Jun 2016 13:37:35 -0700</pubDate>
         <link>http://www.wandrr.io/Getting-started-with-Grav-in-MAMP</link>

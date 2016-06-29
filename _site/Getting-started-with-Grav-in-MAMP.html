@@ -221,17 +221,21 @@
 <ol>
   <li>Create a <code class="highlighter-rouge">blueprints</code> directory under root template directory <code class="highlighter-rouge">yourtheme &gt; blueprints</code>.
     <ul>
-      <li>Since we are creating a blueprint for modular pages, we are going to store our blueprints under modular directory.</li>
+      <li>Since we are creating a blueprint for modular pages, we are going to store our blueprints (<code class="highlighter-rouge">*.yaml</code> files) under modular directory.</li>
       <li>So with this, create a modular directory under <code class="highlighter-rouge">yourtheme &gt; blueprints &gt; modular</code></li>
     </ul>
   </li>
   <li>Create a <code class="highlighter-rouge">some-modular-template-name.yaml</code> file that pertains to a modular template.
     <ul>
-      <li><strong>Tip:</strong> Make sure your <code class="highlighter-rouge">.yaml</code> file name matches to a Modular template name you want to create Admin custom fields with.</li>
+      <li><strong>Tip:</strong> Make sure your <code class="highlighter-rouge">.yaml</code> file name matches a Modular template name you want to create Admin custom fields for.</li>
     </ul>
   </li>
-  <li>When defining</li>
+  <li>When defining <code class="highlighter-rouge">*.yaml</code> file form, a good example would be the default <strong>Grav antimatter theme</strong>, <a href="https://github.com/getgrav/grav-theme-antimatter/blob/develop/blueprints/modular/showcase.yaml">https://github.com/getgrav/grav-theme-antimatter/blob/develop/blueprints/modular/showcase.yaml</a></li>
 </ol>
+
+<p><strong>Also, an additional note to keep in mind when working with Page Blueprints</strong></p>
+
+<p>Grav reads data in <code class="highlighter-rouge">*.yaml</code> files in sequence of how directories and files are structured, So when defining a field, it needs to be under a parent <code class="highlighter-rouge">header.</code> because blueprint pages store its data in pages headers. Also when uploading media files, Grav stores these media files under its page direcotory.</p>
 
   </article>
 

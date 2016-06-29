@@ -108,8 +108,12 @@ It was trial and error for **Modular Page Blueprints** because its documentation
 An overview method I find when working with Modular Page Blueprints are:
 
 1. Create a `blueprints` directory under root template directory `yourtheme > blueprints`.
-   - Since we are creating a blueprint for modular pages, we are going to store our blueprints under modular directory.
+   - Since we are creating a blueprint for modular pages, we are going to store our blueprints (`*.yaml` files) under modular directory.
    - So with this, create a modular directory under `yourtheme > blueprints > modular`
 2. Create a `some-modular-template-name.yaml` file that pertains to a modular template.
-  - **Tip:** Make sure your `.yaml` file name matches to a Modular template name you want to create Admin custom fields with.
-3. When defining
+  - **Tip:** Make sure your `.yaml` file name matches a Modular template name you want to create Admin custom fields for.
+3. When defining `*.yaml` file form, a good example would be the default **Grav antimatter theme**, [https://github.com/getgrav/grav-theme-antimatter/blob/develop/blueprints/modular/showcase.yaml](https://github.com/getgrav/grav-theme-antimatter/blob/develop/blueprints/modular/showcase.yaml)
+
+**Also, an additional note to keep in mind when working with Page Blueprints**
+
+Grav reads data in `*.yaml` files in sequence of how directories and files are structured, So when defining a field, it needs to be under a parent `header.` because blueprint pages store its data in pages headers. Also when uploading media files, Grav stores these media files under its page direcotory.
