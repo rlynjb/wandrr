@@ -6,13 +6,65 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 29 Jun 2016 16:02:34 -0700</pubDate>
-    <lastBuildDate>Wed, 29 Jun 2016 16:02:34 -0700</lastBuildDate>
+    <pubDate>Tue, 12 Jul 2016 08:55:48 -0700</pubDate>
+    <lastBuildDate>Tue, 12 Jul 2016 08:55:48 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
-        <title>Getting started with Grav on MAMP</title>
-        <description>&lt;h3 id=&quot;install-brew&quot;&gt;1. Install Brew&lt;/h3&gt;
+        <title>Getting started and Theming with Grav</title>
+        <description>&lt;h1 id=&quot;getting-started-on-digital-ocean&quot;&gt;Getting Started on Digital Ocean&lt;/h1&gt;
+
+&lt;h3 id=&quot;create-a-droplet&quot;&gt;create a droplet&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://learn.getgrav.org/hosting/vps/digitalocean&quot;&gt;https://learn.getgrav.org/hosting/vps/digitalocean&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;debugging-nginx-with-php5-fpm&quot;&gt;debugging nginx with php5-fpm&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;http://serverfault.com/questions/562062/nginx-with-php-fpm-got-502-bad-gateway-on-ubuntu-server-12-04&lt;/li&gt;
+  &lt;li&gt;http://stackoverflow.com/questions/1706111/where-can-i-find-the-error-logs-of-nginx-using-fastcgi-and-django&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;fixing-php-502-gateway-page&quot;&gt;fixing php 502 gateway page&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;https://github.com/owncloud/core/issues/14187&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;tips-on-using-configuration-files-yaml&quot;&gt;tips on using configuration files, yaml:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;do not change configs in &lt;code class=&quot;highlighter-rouge&quot;&gt;/system/config/system.yaml&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;/system/config/site.yaml&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;do not change configs in &lt;code class=&quot;highlighter-rouge&quot;&gt;/user/plugins/&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;rather override them in &lt;code class=&quot;highlighter-rouge&quot;&gt;user/config/system.yaml&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;user/config/site.yaml&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;user/config/plugins/myplugin.yaml&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;note: all yaml files are contructed by name spacing. Grav picks it up in a hierarchy order.&lt;/p&gt;
+
+&lt;h3 id=&quot;method-for-custom-templating-in-grav&quot;&gt;method for custom templating in Grav&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;ff procedure on https://learn.getgrav.org/themes to setup foundation of a website. ex. coding overall layout, header, footer, navigation.
+    &lt;ul&gt;
+      &lt;li&gt;this is converting psd/design comps to interactive Grav theme&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;convert static contents on template to &lt;strong&gt;Grav Content - Modular Pages&lt;/strong&gt; https://learn.getgrav.org/content
+    &lt;ul&gt;
+      &lt;li&gt;this is basically chopping the templates further and separating html markups from contents, taking advantage of Grav Content&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;taking it further, we will install &lt;strong&gt;Grav Admin&lt;/strong&gt; plugin https://learn.getgrav.org/admin-panel/introduction&lt;/li&gt;
+  &lt;li&gt;after getting around admin, we will table &lt;strong&gt;forms&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;getting-started-on-mamp&quot;&gt;Getting Started on MAMP&lt;/h1&gt;
+
+&lt;h3 id=&quot;install-brew&quot;&gt;1. Install Brew&lt;/h3&gt;
 
 &lt;p&gt;This is to install &lt;strong&gt;git&lt;/strong&gt; and &lt;strong&gt;other development goodies&lt;/strong&gt; if you are a fan of commandline.&lt;/p&gt;
 
@@ -174,69 +226,8 @@
 &lt;p&gt;Grav reads data in &lt;code class=&quot;highlighter-rouge&quot;&gt;*.yaml&lt;/code&gt; files in sequence of how directories and files are structured, So when defining a field, it needs to be under a parent &lt;code class=&quot;highlighter-rouge&quot;&gt;header.&lt;/code&gt; because blueprint pages store its data in pages headers. Also when uploading media files, Grav stores these media files under its page direcotory.&lt;/p&gt;
 </description>
         <pubDate>Mon, 20 Jun 2016 13:37:35 -0700</pubDate>
-        <link>http://www.wandrr.io/Getting-started-with-Grav-in-MAMP</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Getting-started-with-Grav-in-MAMP</guid>
-        
-        <category>static site</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Getting started with Grav on DigitalOcean</title>
-        <description>&lt;h3 id=&quot;create-a-droplet&quot;&gt;create a droplet&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://learn.getgrav.org/hosting/vps/digitalocean&quot;&gt;https://learn.getgrav.org/hosting/vps/digitalocean&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;debugging-nginx-with-php5-fpm&quot;&gt;debugging nginx with php5-fpm&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;http://serverfault.com/questions/562062/nginx-with-php-fpm-got-502-bad-gateway-on-ubuntu-server-12-04&lt;/li&gt;
-  &lt;li&gt;http://stackoverflow.com/questions/1706111/where-can-i-find-the-error-logs-of-nginx-using-fastcgi-and-django&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;fixing-php-502-gateway-page&quot;&gt;fixing php 502 gateway page&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;https://github.com/owncloud/core/issues/14187&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;tips-on-using-configuration-files-yaml&quot;&gt;tips on using configuration files, yaml:&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;do not change configs in &lt;code class=&quot;highlighter-rouge&quot;&gt;/system/config/system.yaml&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;/system/config/site.yaml&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;do not change configs in &lt;code class=&quot;highlighter-rouge&quot;&gt;/user/plugins/&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;rather override them in &lt;code class=&quot;highlighter-rouge&quot;&gt;user/config/system.yaml&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;user/config/site.yaml&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;user/config/plugins/myplugin.yaml&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;note: all yaml files are contructed by name spacing. Grav picks it up in a hierarchy order.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;method-for-custom-templating-in-grav&quot;&gt;method for custom templating in Grav&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;ff procedure on https://learn.getgrav.org/themes to setup foundation of a website. ex. coding overall layout, header, footer, navigation.
-    &lt;ul&gt;
-      &lt;li&gt;this is converting psd/design comps to interactive Grav theme&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;convert static contents on template to &lt;strong&gt;Grav Content - Modular Pages&lt;/strong&gt; https://learn.getgrav.org/content
-    &lt;ul&gt;
-      &lt;li&gt;this is basically chopping the templates further and separating html markups from contents, taking advantage of Grav Content&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;taking it further, we will install &lt;strong&gt;Grav Admin&lt;/strong&gt; plugin https://learn.getgrav.org/admin-panel/introduction&lt;/li&gt;
-  &lt;li&gt;after getting around admin, we will table &lt;strong&gt;forms&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Fri, 27 May 2016 07:37:01 -0700</pubDate>
-        <link>http://www.wandrr.io/Getting-started-with-Grav-in-Digitalocean</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Getting-started-with-Grav-in-Digitalocean</guid>
+        <link>http://www.wandrr.io/Getting-started-and-theming-with-Grav</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Getting-started-and-theming-with-Grav</guid>
         
         <category>static site</category>
         
@@ -639,6 +630,25 @@ I really like the example on Movement of Data which behaves like a parallax info
         <guid isPermaLink="true">http://www.wandrr.io/Simple-Instructions-for-Drupal-Minor-Updates</guid>
         
         <category>drupal</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Developing a Simple Pebble Time app</title>
+        <description>&lt;hr /&gt;
+
+&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.pebble.com/&quot;&gt;Pebble Developers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 31 Mar 2016 04:19:44 -0700</pubDate>
+        <link>http://www.wandrr.io/Developing-a-simple-Pebble-Time-app</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Developing-a-simple-Pebble-Time-app</guid>
+        
+        <category>pebble time</category>
         
         
       </item>

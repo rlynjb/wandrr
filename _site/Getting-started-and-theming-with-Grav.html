@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Getting started with Grav on MAMP</title>
-  <meta name="description" content="1. Install Brew">
+  <title>Getting started and Theming with Grav</title>
+  <meta name="description" content="Getting Started on Digital Ocean">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.wandrr.io/Getting-started-with-Grav-in-MAMP">
+  <link rel="canonical" href="http://www.wandrr.io/Getting-started-and-theming-with-Grav">
   <link rel="alternate" type="application/rss+xml" title="wandrr" href="http://www.wandrr.io/feed.xml" />
 </head>
 
@@ -67,7 +67,7 @@
       <div class="wrapper post">
 
   <header class="post-header">
-    <h1 class="post-title">Getting started with Grav on MAMP</h1>
+    <h1 class="post-title">Getting started and Theming with Grav</h1>
     <p class="post-meta">
       Jun 20, 2016
       
@@ -76,7 +76,59 @@
   </header>
 
   <article class="post-content">
-    <h3 id="install-brew">1. Install Brew</h3>
+    <h1 id="getting-started-on-digital-ocean">Getting Started on Digital Ocean</h1>
+
+<h3 id="create-a-droplet">create a droplet</h3>
+
+<ul>
+  <li><a href="https://learn.getgrav.org/hosting/vps/digitalocean">https://learn.getgrav.org/hosting/vps/digitalocean</a></li>
+</ul>
+
+<h3 id="debugging-nginx-with-php5-fpm">debugging nginx with php5-fpm</h3>
+
+<ul>
+  <li>http://serverfault.com/questions/562062/nginx-with-php-fpm-got-502-bad-gateway-on-ubuntu-server-12-04</li>
+  <li>http://stackoverflow.com/questions/1706111/where-can-i-find-the-error-logs-of-nginx-using-fastcgi-and-django</li>
+</ul>
+
+<h3 id="fixing-php-502-gateway-page">fixing php 502 gateway page</h3>
+
+<ul>
+  <li>https://github.com/owncloud/core/issues/14187</li>
+</ul>
+
+<h3 id="tips-on-using-configuration-files-yaml">tips on using configuration files, yaml:</h3>
+
+<ul>
+  <li>do not change configs in <code class="highlighter-rouge">/system/config/system.yaml</code> and <code class="highlighter-rouge">/system/config/site.yaml</code></li>
+  <li>do not change configs in <code class="highlighter-rouge">/user/plugins/</code></li>
+  <li>rather override them in <code class="highlighter-rouge">user/config/system.yaml</code>, <code class="highlighter-rouge">user/config/site.yaml</code>, <code class="highlighter-rouge">user/config/plugins/myplugin.yaml</code></li>
+</ul>
+
+<p>note: all yaml files are contructed by name spacing. Grav picks it up in a hierarchy order.</p>
+
+<h3 id="method-for-custom-templating-in-grav">method for custom templating in Grav</h3>
+
+<ol>
+  <li>ff procedure on https://learn.getgrav.org/themes to setup foundation of a website. ex. coding overall layout, header, footer, navigation.
+    <ul>
+      <li>this is converting psd/design comps to interactive Grav theme</li>
+    </ul>
+  </li>
+  <li>convert static contents on template to <strong>Grav Content - Modular Pages</strong> https://learn.getgrav.org/content
+    <ul>
+      <li>this is basically chopping the templates further and separating html markups from contents, taking advantage of Grav Content</li>
+    </ul>
+  </li>
+  <li>taking it further, we will install <strong>Grav Admin</strong> plugin https://learn.getgrav.org/admin-panel/introduction</li>
+  <li>after getting around admin, we will table <strong>forms</strong></li>
+</ol>
+
+<hr />
+
+<h1 id="getting-started-on-mamp">Getting Started on MAMP</h1>
+
+<h3 id="install-brew">1. Install Brew</h3>
 
 <p>This is to install <strong>git</strong> and <strong>other development goodies</strong> if you are a fan of commandline.</p>
 
