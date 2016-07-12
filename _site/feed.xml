@@ -6,13 +6,126 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 12 Jul 2016 08:55:48 -0700</pubDate>
-    <lastBuildDate>Tue, 12 Jul 2016 08:55:48 -0700</lastBuildDate>
+    <pubDate>Tue, 12 Jul 2016 15:01:48 -0700</pubDate>
+    <lastBuildDate>Tue, 12 Jul 2016 15:01:48 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
+        <title>Front-End Workflow with Grav theme</title>
+        <description>&lt;h3 id=&quot;before-starting&quot;&gt;Before starting:&lt;/h3&gt;
+
+&lt;p&gt;Install the following &lt;strong&gt;globally&lt;/strong&gt;. I’ve placed my &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; file on my &lt;code class=&quot;highlighter-rouge&quot;&gt;htdocs&lt;/code&gt; root directory.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;node&lt;/li&gt;
+  &lt;li&gt;npm
+    &lt;ul&gt;
+      &lt;li&gt;start a &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; file by running &lt;code class=&quot;highlighter-rouge&quot;&gt;npm init&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;install &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install bower --save-dev&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;install &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install gulp --save-dev&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;every-website-project-will-have&quot;&gt;Every website project will have:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Grav + Admin core install&lt;/li&gt;
+  &lt;li&gt;Basic Grav Theme setup
+    &lt;ul&gt;
+      &lt;li&gt;Follow the tutorial to get started: &lt;a href=&quot;https://learn.getgrav.org/themes/theme-tutorial&quot;&gt;Get Grav - Theme Tutorial&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;setup &lt;code class=&quot;highlighter-rouge&quot;&gt;bower.json&lt;/code&gt; file to install required 3rd-party assets
+        &lt;ul&gt;
+          &lt;li&gt;foundation-sites
+            &lt;ul&gt;
+              &lt;li&gt;we will not be using &lt;code class=&quot;highlighter-rouge&quot;&gt;dist&lt;/code&gt; ditribution files&lt;/li&gt;
+              &lt;li&gt;we’ll only take necessary files by using &lt;strong&gt;gulp&lt;/strong&gt; to build our &lt;code class=&quot;highlighter-rouge&quot;&gt;css&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;js&lt;/code&gt; files&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;skrollr&lt;/li&gt;
+          &lt;li&gt;font-awesome&lt;/li&gt;
+          &lt;li&gt;go to &lt;a href=&quot;http://bower.io&quot;&gt;bower.io&lt;/a&gt; to search for more packages&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;setup &lt;code class=&quot;highlighter-rouge&quot;&gt;gulpfile.js&lt;/code&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Why use &lt;strong&gt;Gulp.js&lt;/strong&gt;?
+            &lt;ul&gt;
+              &lt;li&gt;&lt;strong&gt;Sass&lt;/strong&gt; seem to not support building multiple &lt;code class=&quot;highlighter-rouge&quot;&gt;scss&lt;/code&gt; files. It require either Compass, Grunt, or libsass (same Build system concept as Gulp.js)&lt;/li&gt;
+              &lt;li&gt;&lt;strong&gt;Grav’s Asset Manager&lt;/strong&gt; lacks support for sass and its still quite buggy&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;gulpfilejs-setup&quot;&gt;gulpfile.js setup&lt;/h3&gt;
+
+&lt;p&gt;After installing &lt;strong&gt;foundation-sites&lt;/strong&gt; via bower. we will need to setup our &lt;code class=&quot;highlighter-rouge&quot;&gt;gulpfile.js&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;p&gt;Follow the youtube video tutorial to get started:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/De6H0eFrfvY&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;importing-foundation-components-and-overriding-settings-file&quot;&gt;importing foundation components and overriding settings file&lt;/h3&gt;
+
+&lt;p&gt;While setting it up, I’ve come across an issue. The following link helped me solved the issue.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/34537431/foundation-6-does-not-generate-any-styles&quot;&gt;stackoverflow - Foundation 6 does not generate any styles&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Another issue i came across was overriding Foundation’s settings file. It took me awhile until I figured out why its not overriding the default settings file. Solution is on my github repo&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/rlynjb/gravtheme-frontendflow&quot;&gt;GravTheme - Front End Flow theme&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 12 Jul 2016 05:48:43 -0700</pubDate>
+        <link>http://www.wandrr.io/Front-End-Workflow-with-Grav-theme</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Front-End-Workflow-with-Grav-theme</guid>
+        
+        <category>static site</category>
+        
+        
+      </item>
+    
+      <item>
         <title>Getting started and Theming with Grav</title>
-        <description>&lt;h1 id=&quot;getting-started-on-digital-ocean&quot;&gt;Getting Started on Digital Ocean&lt;/h1&gt;
+        <description>&lt;p&gt;&lt;strong&gt;Contents&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#getting-started-on-digital-ocean&quot;&gt;Getting Started on Digital Ocean&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;create a droplet&lt;/li&gt;
+      &lt;li&gt;debugging nginx with php5-fpm&lt;/li&gt;
+      &lt;li&gt;fixing php 502 gateway page&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#getting-started-on-mamp&quot;&gt;Getting Started on MAMP&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Install Brew&lt;/li&gt;
+      &lt;li&gt;Install MAMP&lt;/li&gt;
+      &lt;li&gt;Install Grav&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#theming-in-grav&quot;&gt;Theming in Grav&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Method for setting up a pre-made HTML5 template to Grav theme&lt;/li&gt;
+      &lt;li&gt;Method for loadings assets and partial out the main index.html file&lt;/li&gt;
+      &lt;li&gt;Breaking our home page template file further by using Modular Pages&lt;/li&gt;
+      &lt;li&gt;Creating custom fields to let users update data in theme by using Blueprint Pages&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;getting-started-on-digital-ocean&quot;&gt;Getting Started on Digital Ocean&lt;/h1&gt;
 
 &lt;h3 id=&quot;create-a-droplet&quot;&gt;create a droplet&lt;/h3&gt;
 
@@ -42,23 +155,6 @@
 &lt;/ul&gt;
 
 &lt;p&gt;note: all yaml files are contructed by name spacing. Grav picks it up in a hierarchy order.&lt;/p&gt;
-
-&lt;h3 id=&quot;method-for-custom-templating-in-grav&quot;&gt;method for custom templating in Grav&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;ff procedure on https://learn.getgrav.org/themes to setup foundation of a website. ex. coding overall layout, header, footer, navigation.
-    &lt;ul&gt;
-      &lt;li&gt;this is converting psd/design comps to interactive Grav theme&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;convert static contents on template to &lt;strong&gt;Grav Content - Modular Pages&lt;/strong&gt; https://learn.getgrav.org/content
-    &lt;ul&gt;
-      &lt;li&gt;this is basically chopping the templates further and separating html markups from contents, taking advantage of Grav Content&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;taking it further, we will install &lt;strong&gt;Grav Admin&lt;/strong&gt; plugin https://learn.getgrav.org/admin-panel/introduction&lt;/li&gt;
-  &lt;li&gt;after getting around admin, we will table &lt;strong&gt;forms&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
 
 &lt;hr /&gt;
 
@@ -110,6 +206,8 @@
 &lt;/ul&gt;
 
 &lt;hr /&gt;
+
+&lt;h1 id=&quot;theming-in-grav&quot;&gt;Theming in Grav&lt;/h1&gt;
 
 &lt;h3 id=&quot;method-for-setting-up-a-pre-made-html5-template-to-grav-theme&quot;&gt;4. Method for setting up a pre-made HTML5 template to Grav theme&lt;/h3&gt;
 
@@ -630,25 +728,6 @@ I really like the example on Movement of Data which behaves like a parallax info
         <guid isPermaLink="true">http://www.wandrr.io/Simple-Instructions-for-Drupal-Minor-Updates</guid>
         
         <category>drupal</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Developing a Simple Pebble Time app</title>
-        <description>&lt;hr /&gt;
-
-&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developer.pebble.com/&quot;&gt;Pebble Developers&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 31 Mar 2016 04:19:44 -0700</pubDate>
-        <link>http://www.wandrr.io/Developing-a-simple-Pebble-Time-app</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Developing-a-simple-Pebble-Time-app</guid>
-        
-        <category>pebble time</category>
         
         
       </item>

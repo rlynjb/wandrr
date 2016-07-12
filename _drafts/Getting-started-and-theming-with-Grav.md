@@ -6,6 +6,24 @@ tags:
 - static site
 ---
 
+**Contents**
+
+- [Getting Started on Digital Ocean](#getting-started-on-digital-ocean)
+  * create a droplet
+  * debugging nginx with php5-fpm
+  * fixing php 502 gateway page 
+- [Getting Started on MAMP](#getting-started-on-mamp)
+  * Install Brew
+  * Install MAMP
+  * Install Grav
+- [Theming in Grav](#theming-in-grav)
+  * Method for setting up a pre-made HTML5 template to Grav theme
+  * Method for loadings assets and partial out the main index.html file
+  * Breaking our home page template file further by using Modular Pages
+  * Creating custom fields to let users update data in theme by using Blueprint Pages
+
+-----
+
 # Getting Started on Digital Ocean
 
 ### create a droplet
@@ -28,15 +46,6 @@ tags:
 - rather override them in `user/config/system.yaml`, `user/config/site.yaml`, `user/config/plugins/myplugin.yaml`
 
 note: all yaml files are contructed by name spacing. Grav picks it up in a hierarchy order.
-
-### method for custom templating in Grav
-
-1. ff procedure on https://learn.getgrav.org/themes to setup foundation of a website. ex. coding overall layout, header, footer, navigation.
-  - this is converting psd/design comps to interactive Grav theme
-2. convert static contents on template to **Grav Content - Modular Pages** https://learn.getgrav.org/content
-  - this is basically chopping the templates further and separating html markups from contents, taking advantage of Grav Content
-3. taking it further, we will install **Grav Admin** plugin https://learn.getgrav.org/admin-panel/introduction
-4. after getting around admin, we will table **forms**
 
 -----
 
@@ -74,6 +83,8 @@ You can use any webserver but I've used **MAMP** because it was the quickest way
 - [https://getgrav.org/](https://getgrav.org/)
 
 -----
+
+# Theming in Grav
 
 ### 4. Method for setting up a pre-made HTML5 template to Grav theme
 
