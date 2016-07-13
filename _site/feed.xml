@@ -6,9 +6,155 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 13 Jul 2016 10:52:58 -0700</pubDate>
-    <lastBuildDate>Wed, 13 Jul 2016 10:52:58 -0700</lastBuildDate>
+    <pubDate>Wed, 13 Jul 2016 12:10:36 -0700</pubDate>
+    <lastBuildDate>Wed, 13 Jul 2016 12:10:36 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Front-End Workflow with Grav theme</title>
+        <description>&lt;p&gt;This blog post explains on how I have setup a custom basic Grav theme with modern front-end workflow.&lt;/p&gt;
+
+&lt;p&gt;This idea have come into mind when I was assigned a project that requires the use of a CSS framework and other plugins for animations/transitions. Since I will be building websites with the same requirements, why not create a &lt;strong&gt;Grav Starter Theme with Front-End Workflow&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;I will be updating this theme with tested CSS animations/transitions plugins that I think will play well with Grav and meets client’s business requirements.&lt;/p&gt;
+
+&lt;p&gt;For documentation and updates, refer to its github repo: &lt;a href=&quot;https://github.com/rlynjb/gravtheme-frontendflow&quot;&gt;Grav Theme - Front-End Flow&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Contents&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#before-starting&quot;&gt;Before starting&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#every-website-project-will-have&quot;&gt;Every website project will have&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#developing-starter-kit-theme&quot;&gt;Developing starter kit theme&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#gulpfilejs-setup&quot;&gt;gulpfile.js setup&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#importing-foundation-components-and-overriding-settings-file&quot;&gt;importing foundation components and overriding settings file&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;before-starting&quot;&gt;Before starting:&lt;/h3&gt;
+
+&lt;p&gt;Install the following globally as it is required to run Bower and Gulp in your local dev.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Node&lt;/li&gt;
+  &lt;li&gt;NPM or NVM if you deal with multiple node versions&lt;/li&gt;
+  &lt;li&gt;After installing Grav
+    &lt;ul&gt;
+      &lt;li&gt;refer to ff. link for Getting Started with Grav: &lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git clone&lt;/code&gt; this repo inside of &lt;code class=&quot;highlighter-rouge&quot;&gt;/user/themes/&lt;/code&gt; directory&lt;/li&gt;
+  &lt;li&gt;inside of &lt;code class=&quot;highlighter-rouge&quot;&gt;/user/themes/gravtheme-frontendflow/&lt;/code&gt; directory, run:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm install -g&lt;/code&gt;
+        &lt;ul&gt;
+          &lt;li&gt;required to run Bower and Gulp&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bower install&lt;/code&gt;
+        &lt;ul&gt;
+          &lt;li&gt;installs 3rd-party plugins used on this theme&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gulp &amp;amp;&amp;amp; gulp watch&lt;/code&gt;
+        &lt;ul&gt;
+          &lt;li&gt;builds our sass files. We’ve carefully chose each Foundation components to avoid CSS bloats and overriding of styles.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;every-website-project-will-have&quot;&gt;Every website project will have:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Grav + Admin core&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;To get fresh install: &lt;a href=&quot;https://getgrav.org/&quot;&gt;Get Grav&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Basic Grav Theme setup&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Follow tutorial to get started: &lt;a href=&quot;https://learn.getgrav.org/themes/theme-tutorial&quot;&gt;Get Grav - Theme Tutorial&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; file
+    &lt;ul&gt;
+      &lt;li&gt;installs &lt;strong&gt;Bower&lt;/strong&gt;, &lt;strong&gt;Gulp.js&lt;/strong&gt;, and other gulp dependencies for build system and front-end workflow aid&lt;/li&gt;
+      &lt;li&gt;go to &lt;a href=&quot;https://www.npmjs.com/&quot;&gt;npmjs.com&lt;/a&gt; to search for more packages&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bower.json&lt;/code&gt; file
+    &lt;ul&gt;
+      &lt;li&gt;installs required 3rd-party assets&lt;/li&gt;
+      &lt;li&gt;go to &lt;a href=&quot;http://bower.io&quot;&gt;bower.io&lt;/a&gt; to search for more packages&lt;/li&gt;
+      &lt;li&gt;or install packages via &lt;strong&gt;Github repos&lt;/strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;https://bower.io/docs/api/&quot;&gt;bower.io - api&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/19348076/installing-a-dependency-with-bower-from-url-and-specify-version&quot;&gt;Installing a dependency with Bower from URL and specify version&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;setup &lt;code class=&quot;highlighter-rouge&quot;&gt;gulpfile.js&lt;/code&gt; file
+    &lt;ul&gt;
+      &lt;li&gt;Why use &lt;strong&gt;Gulp.js&lt;/strong&gt;?
+        &lt;ul&gt;
+          &lt;li&gt;&lt;strong&gt;Sass&lt;/strong&gt; seem to not support building multiple &lt;code class=&quot;highlighter-rouge&quot;&gt;scss&lt;/code&gt; files. It require either Compass, Grunt, or libsass (same Build system concept as Gulp.js)&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;Grav’s Asset Manager&lt;/strong&gt; lacks support for sass and its still quite buggy&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Check this project’s github repo for &lt;strong&gt;package.json&lt;/strong&gt;, &lt;strong&gt;bower.json&lt;/strong&gt;, and &lt;strong&gt;gulp.js&lt;/strong&gt; updates.&lt;br /&gt;
+&lt;a href=&quot;https://github.com/rlynjb/gravtheme-frontendflow&quot;&gt;Grav Theme - Front-End Flow&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;developing-starter-kit-theme&quot;&gt;Developing starter kit theme&lt;/h3&gt;
+
+&lt;p&gt;During developing &lt;strong&gt;Grav Theme - Front-End Flow&lt;/strong&gt; starter kit theme, I have come across issues that I think worth noting.&lt;/p&gt;
+
+&lt;h3 id=&quot;gulpfilejs-setup&quot;&gt;gulpfile.js setup&lt;/h3&gt;
+
+&lt;p&gt;After installing &lt;strong&gt;foundation-sites&lt;/strong&gt; via bower. we will need to setup our &lt;code class=&quot;highlighter-rouge&quot;&gt;gulpfile.js&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;p&gt;Follow the youtube video tutorial to get started:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/De6H0eFrfvY&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;importing-foundation-components-and-overriding-settings-file&quot;&gt;importing foundation components and overriding settings file&lt;/h3&gt;
+
+&lt;p&gt;While setting it up, I’ve come across an issue. The following link helped me solved the issue.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/34537431/foundation-6-does-not-generate-any-styles&quot;&gt;stackoverflow - Foundation 6 does not generate any styles&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Another issue i came across was overriding Foundation’s settings file. It took me awhile until I figured out why its not overriding the default settings file. Solution is on my github repo&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/rlynjb/gravtheme-frontendflow&quot;&gt;GravTheme - Front End Flow theme&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 13 Jul 2016 05:09:47 -0700</pubDate>
+        <link>http://www.wandrr.io/Front-End-Workflow-with-Grav-theme</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Front-End-Workflow-with-Grav-theme</guid>
+        
+        <category>static site</category>
+        
+        
+      </item>
     
       <item>
         <title>Getting started and basic theming with Grav</title>
@@ -245,90 +391,6 @@
         <pubDate>Wed, 13 Jul 2016 03:52:08 -0700</pubDate>
         <link>http://www.wandrr.io/Getting-started-and-basic-theming-with-Grav</link>
         <guid isPermaLink="true">http://www.wandrr.io/Getting-started-and-basic-theming-with-Grav</guid>
-        
-        <category>static site</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Front-End Workflow with Grav theme</title>
-        <description>&lt;h3 id=&quot;before-starting&quot;&gt;Before starting:&lt;/h3&gt;
-
-&lt;p&gt;Install the following &lt;strong&gt;globally&lt;/strong&gt;. I’ve placed my &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; file on my &lt;code class=&quot;highlighter-rouge&quot;&gt;htdocs&lt;/code&gt; root directory.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;node&lt;/li&gt;
-  &lt;li&gt;npm
-    &lt;ul&gt;
-      &lt;li&gt;start a &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; file by running &lt;code class=&quot;highlighter-rouge&quot;&gt;npm init&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;install &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install bower --save-dev&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;install &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install gulp --save-dev&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;every-website-project-will-have&quot;&gt;Every website project will have:&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Grav + Admin core install&lt;/li&gt;
-  &lt;li&gt;Basic Grav Theme setup
-    &lt;ul&gt;
-      &lt;li&gt;Follow the tutorial to get started: &lt;a href=&quot;https://learn.getgrav.org/themes/theme-tutorial&quot;&gt;Get Grav - Theme Tutorial&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;setup &lt;code class=&quot;highlighter-rouge&quot;&gt;bower.json&lt;/code&gt; file to install required 3rd-party assets
-        &lt;ul&gt;
-          &lt;li&gt;foundation-sites
-            &lt;ul&gt;
-              &lt;li&gt;we will not be using &lt;code class=&quot;highlighter-rouge&quot;&gt;dist&lt;/code&gt; ditribution files&lt;/li&gt;
-              &lt;li&gt;we’ll only take necessary files by using &lt;strong&gt;gulp&lt;/strong&gt; to build our &lt;code class=&quot;highlighter-rouge&quot;&gt;css&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;js&lt;/code&gt; files&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;skrollr&lt;/li&gt;
-          &lt;li&gt;font-awesome&lt;/li&gt;
-          &lt;li&gt;go to &lt;a href=&quot;http://bower.io&quot;&gt;bower.io&lt;/a&gt; to search for more packages&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;setup &lt;code class=&quot;highlighter-rouge&quot;&gt;gulpfile.js&lt;/code&gt;
-        &lt;ul&gt;
-          &lt;li&gt;Why use &lt;strong&gt;Gulp.js&lt;/strong&gt;?
-            &lt;ul&gt;
-              &lt;li&gt;&lt;strong&gt;Sass&lt;/strong&gt; seem to not support building multiple &lt;code class=&quot;highlighter-rouge&quot;&gt;scss&lt;/code&gt; files. It require either Compass, Grunt, or libsass (same Build system concept as Gulp.js)&lt;/li&gt;
-              &lt;li&gt;&lt;strong&gt;Grav’s Asset Manager&lt;/strong&gt; lacks support for sass and its still quite buggy&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;gulpfilejs-setup&quot;&gt;gulpfile.js setup&lt;/h3&gt;
-
-&lt;p&gt;After installing &lt;strong&gt;foundation-sites&lt;/strong&gt; via bower. we will need to setup our &lt;code class=&quot;highlighter-rouge&quot;&gt;gulpfile.js&lt;/code&gt; file.&lt;/p&gt;
-
-&lt;p&gt;Follow the youtube video tutorial to get started:&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/De6H0eFrfvY&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;importing-foundation-components-and-overriding-settings-file&quot;&gt;importing foundation components and overriding settings file&lt;/h3&gt;
-
-&lt;p&gt;While setting it up, I’ve come across an issue. The following link helped me solved the issue.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/34537431/foundation-6-does-not-generate-any-styles&quot;&gt;stackoverflow - Foundation 6 does not generate any styles&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Another issue i came across was overriding Foundation’s settings file. It took me awhile until I figured out why its not overriding the default settings file. Solution is on my github repo&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/rlynjb/gravtheme-frontendflow&quot;&gt;GravTheme - Front End Flow theme&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Tue, 12 Jul 2016 05:48:43 -0700</pubDate>
-        <link>http://www.wandrr.io/Front-End-Workflow-with-Grav-theme</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Front-End-Workflow-with-Grav-theme</guid>
         
         <category>static site</category>
         

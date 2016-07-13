@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Front-End Workflow with Grav theme</title>
-  <meta name="description" content="Before starting:">
+  <meta name="description" content="This blog post explains on how I have setup a custom basic Grav theme with modern front-end workflow.">
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="http://www.wandrr.io/Front-End-Workflow-with-Grav-theme">
@@ -69,26 +69,70 @@
   <header class="post-header">
     <h1 class="post-title">Front-End Workflow with Grav theme</h1>
     <p class="post-meta">
-      Jul 12, 2016
+      Jul 13, 2016
       
        • static site
     </p>
   </header>
 
   <article class="post-content">
-    <h3 id="before-starting">Before starting:</h3>
+    <p>This blog post explains on how I have setup a custom basic Grav theme with modern front-end workflow.</p>
 
-<p>Install the following <strong>globally</strong>. I’ve placed my <code class="highlighter-rouge">package.json</code> file on my <code class="highlighter-rouge">htdocs</code> root directory.</p>
+<p>This idea have come into mind when I was assigned a project that requires the use of a CSS framework and other plugins for animations/transitions. Since I will be building websites with the same requirements, why not create a <strong>Grav Starter Theme with Front-End Workflow</strong>.</p>
+
+<p>I will be updating this theme with tested CSS animations/transitions plugins that I think will play well with Grav and meets client’s business requirements.</p>
+
+<p>For documentation and updates, refer to its github repo: <a href="https://github.com/rlynjb/gravtheme-frontendflow">Grav Theme - Front-End Flow</a></p>
+
+<hr />
+
+<p><strong>Contents</strong></p>
 
 <ul>
-  <li>node</li>
-  <li>npm
+  <li><a href="#before-starting">Before starting</a></li>
+  <li><a href="#every-website-project-will-have">Every website project will have</a></li>
+  <li><a href="#developing-starter-kit-theme">Developing starter kit theme</a>
     <ul>
-      <li>start a <code class="highlighter-rouge">package.json</code> file by running <code class="highlighter-rouge">npm init</code></li>
+      <li><a href="#gulpfilejs-setup">gulpfile.js setup</a></li>
+      <li><a href="#importing-foundation-components-and-overriding-settings-file">importing foundation components and overriding settings file</a></li>
     </ul>
   </li>
-  <li>install <code class="highlighter-rouge">npm install bower --save-dev</code></li>
-  <li>install <code class="highlighter-rouge">npm install gulp --save-dev</code></li>
+</ul>
+
+<hr />
+
+<h3 id="before-starting">Before starting:</h3>
+
+<p>Install the following globally as it is required to run Bower and Gulp in your local dev.</p>
+
+<ul>
+  <li>Node</li>
+  <li>NPM or NVM if you deal with multiple node versions</li>
+  <li>After installing Grav
+    <ul>
+      <li>refer to ff. link for Getting Started with Grav: <a href=""></a></li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">git clone</code> this repo inside of <code class="highlighter-rouge">/user/themes/</code> directory</li>
+  <li>inside of <code class="highlighter-rouge">/user/themes/gravtheme-frontendflow/</code> directory, run:
+    <ul>
+      <li><code class="highlighter-rouge">npm install -g</code>
+        <ul>
+          <li>required to run Bower and Gulp</li>
+        </ul>
+      </li>
+      <li><code class="highlighter-rouge">bower install</code>
+        <ul>
+          <li>installs 3rd-party plugins used on this theme</li>
+        </ul>
+      </li>
+      <li><code class="highlighter-rouge">gulp &amp;&amp; gulp watch</code>
+        <ul>
+          <li>builds our sass files. We’ve carefully chose each Foundation components to avoid CSS bloats and overriding of styles.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ul>
 
 <hr />
@@ -96,38 +140,56 @@
 <h3 id="every-website-project-will-have">Every website project will have:</h3>
 
 <ul>
-  <li>Grav + Admin core install</li>
-  <li>Basic Grav Theme setup
+  <li><strong>Grav + Admin core</strong>
     <ul>
-      <li>Follow the tutorial to get started: <a href="https://learn.getgrav.org/themes/theme-tutorial">Get Grav - Theme Tutorial</a></li>
-      <li>setup <code class="highlighter-rouge">bower.json</code> file to install required 3rd-party assets
+      <li>To get fresh install: <a href="https://getgrav.org/">Get Grav</a></li>
+    </ul>
+  </li>
+  <li><strong>Basic Grav Theme setup</strong>
+    <ul>
+      <li>Follow tutorial to get started: <a href="https://learn.getgrav.org/themes/theme-tutorial">Get Grav - Theme Tutorial</a></li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">package.json</code> file
+    <ul>
+      <li>installs <strong>Bower</strong>, <strong>Gulp.js</strong>, and other gulp dependencies for build system and front-end workflow aid</li>
+      <li>go to <a href="https://www.npmjs.com/">npmjs.com</a> to search for more packages</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">bower.json</code> file
+    <ul>
+      <li>installs required 3rd-party assets</li>
+      <li>go to <a href="http://bower.io">bower.io</a> to search for more packages</li>
+      <li>or install packages via <strong>Github repos</strong>
         <ul>
-          <li>foundation-sites
-            <ul>
-              <li>we will not be using <code class="highlighter-rouge">dist</code> ditribution files</li>
-              <li>we’ll only take necessary files by using <strong>gulp</strong> to build our <code class="highlighter-rouge">css</code> and <code class="highlighter-rouge">js</code> files</li>
-            </ul>
-          </li>
-          <li>skrollr</li>
-          <li>font-awesome</li>
-          <li>go to <a href="http://bower.io">bower.io</a> to search for more packages</li>
+          <li><a href="https://bower.io/docs/api/">bower.io - api</a></li>
+          <li><a href="http://stackoverflow.com/questions/19348076/installing-a-dependency-with-bower-from-url-and-specify-version">Installing a dependency with Bower from URL and specify version</a></li>
         </ul>
       </li>
-      <li>setup <code class="highlighter-rouge">gulpfile.js</code>
+    </ul>
+  </li>
+  <li>setup <code class="highlighter-rouge">gulpfile.js</code> file
+    <ul>
+      <li>Why use <strong>Gulp.js</strong>?
         <ul>
-          <li>Why use <strong>Gulp.js</strong>?
-            <ul>
-              <li><strong>Sass</strong> seem to not support building multiple <code class="highlighter-rouge">scss</code> files. It require either Compass, Grunt, or libsass (same Build system concept as Gulp.js)</li>
-              <li><strong>Grav’s Asset Manager</strong> lacks support for sass and its still quite buggy</li>
-            </ul>
-          </li>
+          <li><strong>Sass</strong> seem to not support building multiple <code class="highlighter-rouge">scss</code> files. It require either Compass, Grunt, or libsass (same Build system concept as Gulp.js)</li>
+          <li><strong>Grav’s Asset Manager</strong> lacks support for sass and its still quite buggy</li>
         </ul>
       </li>
     </ul>
   </li>
 </ul>
 
+<blockquote>
+  <p>Check this project’s github repo for <strong>package.json</strong>, <strong>bower.json</strong>, and <strong>gulp.js</strong> updates.<br />
+<a href="https://github.com/rlynjb/gravtheme-frontendflow">Grav Theme - Front-End Flow</a></p>
+</blockquote>
+
 <hr />
+
+<h3 id="developing-starter-kit-theme">Developing starter kit theme</h3>
+
+<p>During developing <strong>Grav Theme - Front-End Flow</strong> starter kit theme, I have come across issues that I think worth noting.</p>
 
 <h3 id="gulpfilejs-setup">gulpfile.js setup</h3>
 
