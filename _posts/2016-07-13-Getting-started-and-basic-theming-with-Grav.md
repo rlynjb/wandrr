@@ -1,10 +1,16 @@
 ---
 layout: post
-title: "Getting started and Theming with Grav"
-date: 2016-06-20 20:37:35
+title: "Getting started and basic theming with Grav"
+date: 2016-07-13 10:52:08
 tags:
 - static site
 ---
+
+Hi all! I've created this blog post as my notes for learning and exploring Grav. If you haven't heard, Grav is a full flat-file CMS, this means, it does not use any database. All data are saved as YAML files. It follows a certian naming convention and uses its directory page hierarchy structure to generate routes.
+
+Again, consider this blog post as notes rather than re-explaining informations that exists on Grav documentation or other blog sites.
+
+-----
 
 **Contents**
 
@@ -12,6 +18,7 @@ tags:
   * create a droplet
   * debugging nginx with php5-fpm
   * fixing php 502 gateway page 
+  * tips on using configuration files yaml
 - [Getting Started on MAMP](#getting-started-on-mamp)
   * Install Brew
   * Install MAMP
@@ -32,12 +39,12 @@ tags:
 
 ### debugging nginx with php5-fpm
 
-- http://serverfault.com/questions/562062/nginx-with-php-fpm-got-502-bad-gateway-on-ubuntu-server-12-04
-- http://stackoverflow.com/questions/1706111/where-can-i-find-the-error-logs-of-nginx-using-fastcgi-and-django
+- [resource 1](http://serverfault.com/questions/562062/nginx-with-php-fpm-got-502-bad-gateway-on-ubuntu-server-12-04)
+- [resource 2](http://stackoverflow.com/questions/1706111/where-can-i-find-the-error-logs-of-nginx-using-fastcgi-and-django)
 
 ### fixing php 502 gateway page
 
-- https://github.com/owncloud/core/issues/14187
+- [resource](https://github.com/owncloud/core/issues/14187)
 
 ### tips on using configuration files, yaml:
 
@@ -58,15 +65,11 @@ This is to install **git** and **other development goodies** if you are a fan of
 - [http://brew.sh/](http://brew.sh/)
 - [http://commandlinepoweruser.com/](http://commandlinepoweruser.com/)
 
------
-
 ### 2. Install MAMP
 
 You can use any webserver but I've used **MAMP** because it was the quickest way I can install a webserver and setup a **local Apache** eventhough we are not using MySql database.
 
 - [https://www.mamp.info/en/](https://www.mamp.info/en/)
-
------
 
 ### 3. Install Grav
 
@@ -86,7 +89,7 @@ You can use any webserver but I've used **MAMP** because it was the quickest way
 
 # Theming in Grav
 
-### 4. Method for setting up a pre-made HTML5 template to Grav theme
+### Method for setting up a pre-made HTML5 template to Grav theme
 
 1. Unzip the **HTML5 theme** zip file unto the `user/themes/` directory.
 2. Register your theme by following **Step 1 - Base Theme Setup** on [https://learn.getgrav.org/themes/theme-tutorial](https://learn.getgrav.org/themes/theme-tutorial). 
@@ -102,7 +105,7 @@ You can use any webserver but I've used **MAMP** because it was the quickest way
 
 -----
 
-### 5. Method for loading assets and partial out the main index.html file
+### Method for loading assets and partial out the main index.html file
 
 Now that we have setup our theme directory structures and registered our theme to Grav core files. We will continue on by:
 
@@ -121,7 +124,7 @@ Now that we have setup our theme directory structures and registered our theme t
 
 -----
 
-### 6. Breaking our home page template file further by using Modular Pages
+### Breaking our home page template file further by using Modular Pages
 
 Most HTML5 themes comes with a home page designed similar to one-page website designs. For this step, we are going to breakdown this one-page website design into sections and use **Grav's Modular Pages** templating to separate and organize these sections.
 
@@ -133,7 +136,7 @@ Most HTML5 themes comes with a home page designed similar to one-page website de
 
 -----
 
-### 7. Creating custom fields to let users update data in theme by using Blueprint Pages
+### Creating custom fields to let users update data in theme by using Blueprint Pages
 
 Now that we've broken our template further by each sections using **Modular Pages**. What if we wanted users to update contents or bits pieces of data in each section using **Grav's Administration Panel**?
 
