@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Useful techniques for configuring and managing server</title>
-  <meta name="description" content="Below is a gist of what this post contains.">
+  <title>Collected useful Linux Commands</title>
+  <meta name="description" content="Useful commands for navigating directories">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.wandrr.io/Useful-techniques-for-configuring-managing-server">
+  <link rel="canonical" href="http://www.wandrr.io/Collected-useful-linux-commands">
   <link rel="alternate" type="application/rss+xml" title="wandrr" href="http://www.wandrr.io/feed.xml" />
 </head>
 
@@ -67,7 +67,7 @@
       <div class="wrapper post">
 
   <header class="post-header">
-    <h1 class="post-title">Useful techniques for configuring and managing server</h1>
+    <h1 class="post-title">Collected useful Linux Commands</h1>
     <p class="post-meta">
       Dec 31, 2014
       
@@ -76,7 +76,131 @@
   </header>
 
   <article class="post-content">
-    <p>Below is a gist of what this post contains.</p>
+    <h1 id="useful-commands-for-navigating-directories">Useful commands for navigating directories</h1>
+
+<p>Below is a gist of what this post contains.</p>
+
+<ul>
+  <li>Setting file permissions</li>
+  <li>Chaging user accounts</li>
+  <li>Commands for searching</li>
+  <li>Commands for sorting files</li>
+  <li>Opening files</li>
+  <li>SSH and SCP</li>
+  <li>Tar compress and extract</li>
+</ul>
+
+<hr />
+
+<h3 id="setting-file-permissions">Setting File Permissions</h3>
+
+<ul>
+  <li><a href="https://help.ubuntu.com/community/FilePermissions">Ubuntu: FilePermission</a></li>
+</ul>
+
+<hr />
+
+<h3 id="changing-user-accounts">Changing user accounts</h3>
+
+<ul>
+  <li><a href="https://help.ubuntu.com/community/RootSudo">sudo su commands</a></li>
+</ul>
+
+<hr />
+
+<h3 id="commands-for-searching">Commands for searching</h3>
+
+<p>These are just a list of commands I find usefule when searching for text or files thoughout Linux system.</p>
+
+<ul>
+  <li><a href="https://help.ubuntu.com/community/find">find</a></li>
+  <li><a href="">locate</a></li>
+  <li><a href="https://help.ubuntu.com/community/grep">grep</a></li>
+</ul>
+
+<p><strong>Sample uses</strong></p>
+
+<ul>
+  <li>Searching for a file throughout the system</li>
+  <li>Searching for a keyword though a directory</li>
+</ul>
+
+<h4 id="references"><strong>References:</strong></h4>
+
+<ul>
+  <li><a href="https://www.digitalocean.com/community/tutorials/how-to-use-find-and-locate-to-search-for-files-on-a-linux-vps">How To Use Find and Locate to Search for Files on a Linux VPS</a></li>
+</ul>
+
+<hr />
+
+<h3 id="commands-for-sorting-files">Commands for sorting files</h3>
+
+<ul>
+  <li><a href="">ls</a></li>
+  <li><a href="">ll</a></li>
+</ul>
+
+<p><strong>Sample uses</strong></p>
+
+<ul>
+  <li>Sort files in date <code class="highlighter-rouge">ll -tr</code> to check which files has been modified recently</li>
+  <li>Check for any suspicious injected files</li>
+</ul>
+
+<hr />
+
+<h3 id="security-file-permissions">Security File Permissions</h3>
+
+<ul>
+  <li><a href="https://help.ubuntu.com/community/FilePermissions">Understanding and Using File Permissions</a></li>
+</ul>
+
+<hr />
+
+<h3 id="opening-files">Opening files</h3>
+
+<ul>
+  <li><a href="">vim</a></li>
+  <li><a href="">nano</a></li>
+  <li><a href="">cat</a></li>
+  <li><a href="">head</a></li>
+  <li><a href="http://www.computerhope.com/unix/utail.htm">tail</a></li>
+</ul>
+
+<p><strong>VIM - remembering important features</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">:set tabstop=2</code></li>
+  <li><code class="highlighter-rouge">:set nu</code></li>
+</ul>
+
+<hr />
+
+<h3 id="ssh-and-scp">SSH and SCP</h3>
+
+<p>scp with port</p>
+
+<p><code class="highlighter-rouge">scp -P 21 root@myhost /home/direc/file.tar username@secondhost:/home/dir</code></p>
+
+<p>Where -P stands for port number</p>
+
+<hr />
+
+<h3 id="tar-compress-and-extract">Tar compress and extract</h3>
+
+<p>compress</p>
+
+<p><code class="highlighter-rouge">tar -czf folder.tar.gz folder</code></p>
+
+<p>extract</p>
+
+<p><code class="highlighter-rouge">tar -xzf folder.tar.gz</code></p>
+
+<hr />
+
+<h1 id="useful-techniques-for-configuring-and-managing-server">Useful techniques for configuring and managing server</h1>
+
+<p>Below is a gist of what this post contains.</p>
 
 <ul>
   <li>Some Server stuff techniques</li>

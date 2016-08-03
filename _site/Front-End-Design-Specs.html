@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Useful commands for navigating directories</title>
-  <meta name="description" content="Below is a gist of what this post contains.">
+  <title>Front-End Design Specs</title>
+  <meta name="description" content="determing a workflow is hard but its even harder when we go through a laborious iterative process with designers.">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.wandrr.io/Useful-commands-for-navigating-directories">
+  <link rel="canonical" href="http://www.wandrr.io/Front-End-Design-Specs">
   <link rel="alternate" type="application/rss+xml" title="wandrr" href="http://www.wandrr.io/feed.xml" />
 </head>
 
@@ -67,132 +67,131 @@
       <div class="wrapper post">
 
   <header class="post-header">
-    <h1 class="post-title">Useful commands for navigating directories</h1>
+    <h1 class="post-title">Front-End Design Specs</h1>
     <p class="post-meta">
-      Dec 31, 2014
+      Jul 28, 2016
       
-       • linux
+       • workflow
     </p>
   </header>
 
   <article class="post-content">
-    <p>Below is a gist of what this post contains.</p>
+    <p>determing a workflow is hard but its even harder when we go through a laborious iterative process with designers.</p>
+
+<p>since i have been using Zurb foundation, zurb foundation comes with a settings file that defines global variables for general design settings. This gave me the idea that responsive web design follows a certain pattern, same as Development.</p>
+
+<p>process to determing on refining the design and developer workflow are:</p>
 
 <ul>
-  <li>Setting file permissions</li>
-  <li>Chaging user accounts</li>
-  <li>Commands for searching</li>
-  <li>Commands for sorting files</li>
-  <li>Opening files</li>
-  <li>SSH and SCP</li>
-  <li>Tar compress and extract</li>
+  <li>list down general design css properties
+    <ul>
+      <li>layout
+        <ul>
+          <li>max-width</li>
+          <li>number of columns grid</li>
+          <li>gutter width
+            <ul>
+              <li>small breakpoint</li>
+              <li>medium breakpoint</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>typography - header
+        <ul>
+          <li>header font</li>
+          <li>header font sizes
+            <ul>
+              <li>small breakpoint</li>
+              <li>medium breakpoint</li>
+            </ul>
+          </li>
+          <li>header color</li>
+          <li>header alignment, leading, kerning</li>
+          <li>header opacity, filter</li>
+          <li>header font weight</li>
+        </ul>
+      </li>
+      <li>typography - body
+        <ul>
+          <li>body font size
+            <ul>
+              <li>small breakpoint</li>
+              <li>medium breakpoint</li>
+            </ul>
+          </li>
+          <li>body font color</li>
+          <li>body font family</li>
+          <li>body line height, leading, kerning</li>
+          <li>body font weight</li>
+        </ul>
+      </li>
+      <li>spacing measurement
+        <ul>
+          <li>width and height
+            <ul>
+              <li>small breakpoint</li>
+              <li>medium breakpopint</li>
+              <li>large breakpoint</li>
+            </ul>
+          </li>
+          <li>spacing bet object and canvas</li>
+          <li>spacing bet multiple objects</li>
+          <li>spacing bet text and objects</li>
+        </ul>
+      </li>
+      <li>objects
+        <ul>
+          <li>fill color</li>
+          <li>stroke, color, size, style</li>
+          <li>opacity/filter</li>
+          <li>corner radius</li>
+        </ul>
+      </li>
+      <li>color palette
+        <ul>
+          <li>primary, secondary, tertiary, quaternary</li>
+          <li>monotone
+            <ul>
+              <li>gray - light, medium, dark</li>
+              <li>black</li>
+              <li>white</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ul>
+
+<p>after analyzing above data and visually looking at a design comp, these properties are already set on the provided design comp but not documented.</p>
+
+<p>this is where PNG Express comes in, photoshop plugin tool.</p>
+
+<p>after testing on a design comp and implementing it on theme development, it is indeed an ease for us developers.</p>
+
+<p>so overview process would be:</p>
+
+<ul>
+  <li>designer designs ui comp</li>
+  <li>after design is complete, designer sets Design Specs with PNG Express</li>
+  <li>pass the UI comp with design specs to front end developer</li>
+  <li>
+    <p>front end developer implements these measurements on css styles sheets</p>
+  </li>
+  <li>it does not need to be exact pixels, this is a good way to atleast get an estimate.</li>
+</ul>
+
+<p>with this in set, this also gives Front end developers to compile a Style Guide and or components that can be resuable.</p>
 
 <hr />
 
-<h3 id="setting-file-permissions">Setting File Permissions</h3>
+<h5 id="references"><strong>References:</strong></h5>
 
 <ul>
-  <li><a href="https://help.ubuntu.com/community/FilePermissions">Ubuntu: FilePermission</a></li>
+  <li><a href="https://www.smashingmagazine.com/2014/10/front-end-development-ode-to-specifications/">A Front-End Developer’s Ode To Specifications</a></li>
+  <li><a href="http://www.pngexpress.com/">PNG Express</a></li>
 </ul>
-
-<hr />
-
-<h3 id="changing-user-accounts">Changing user accounts</h3>
-
-<ul>
-  <li><a href="https://help.ubuntu.com/community/RootSudo">sudo su commands</a></li>
-</ul>
-
-<hr />
-
-<h3 id="commands-for-searching">Commands for searching</h3>
-
-<p>These are just a list of commands I find usefule when searching for text or files thoughout Linux system.</p>
-
-<ul>
-  <li><a href="https://help.ubuntu.com/community/find">find</a></li>
-  <li><a href="">locate</a></li>
-  <li><a href="https://help.ubuntu.com/community/grep">grep</a></li>
-</ul>
-
-<p><strong>Sample uses</strong></p>
-
-<ul>
-  <li>Searching for a file throughout the system</li>
-  <li>Searching for a keyword though a directory</li>
-</ul>
-
-<h4 id="references"><strong>References:</strong></h4>
-
-<ul>
-  <li><a href="https://www.digitalocean.com/community/tutorials/how-to-use-find-and-locate-to-search-for-files-on-a-linux-vps">How To Use Find and Locate to Search for Files on a Linux VPS</a></li>
-</ul>
-
-<hr />
-
-<h3 id="commands-for-sorting-files">Commands for sorting files</h3>
-
-<ul>
-  <li><a href="">ls</a></li>
-  <li><a href="">ll</a></li>
-</ul>
-
-<p><strong>Sample uses</strong></p>
-
-<ul>
-  <li>Sort files in date <code class="highlighter-rouge">ll -tr</code> to check which files has been modified recently</li>
-  <li>Check for any suspicious injected files</li>
-</ul>
-
-<hr />
-
-<h3 id="security-file-permissions">Security File Permissions</h3>
-
-<ul>
-  <li><a href="https://help.ubuntu.com/community/FilePermissions">Understanding and Using File Permissions</a></li>
-</ul>
-
-<hr />
-
-<h3 id="opening-files">Opening files</h3>
-
-<ul>
-  <li><a href="">vim</a></li>
-  <li><a href="">nano</a></li>
-  <li><a href="">cat</a></li>
-  <li><a href="">head</a></li>
-  <li><a href="http://www.computerhope.com/unix/utail.htm">tail</a></li>
-</ul>
-
-<p><strong>VIM - remembering important features</strong></p>
-
-<ul>
-  <li><code class="highlighter-rouge">:set tabstop=2</code></li>
-  <li><code class="highlighter-rouge">:set nu</code></li>
-</ul>
-
-<hr />
-
-<h3 id="ssh-and-scp">SSH and SCP</h3>
-
-<p>scp with port</p>
-
-<p><code class="highlighter-rouge">scp -P 21 root@myhost /home/direc/file.tar username@secondhost:/home/dir</code></p>
-
-<p>Where -P stands for port number</p>
-
-<hr />
-
-<h3 id="tar-compress-and-extract">Tar compress and extract</h3>
-
-<p>compress</p>
-
-<p><code class="highlighter-rouge">tar -czf folder.tar.gz folder</code></p>
-
-<p>extract</p>
-
-<p><code class="highlighter-rouge">tar -xzf folder.tar.gz</code></p>
 
   </article>
 

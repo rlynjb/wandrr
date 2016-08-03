@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Notes on Prototyping with Wordpress</title>
-  <meta name="description" content="This is a continuation of my Front-End workflow with Wordpress blog post, containing notes and personal opinion on tools/frameworks used for prototyping, get...">
+  <title>Breaking down Cross-Browser Testing</title>
+  <meta name="description" content="Below is my note on an article on smashing magazine. Article is mostly theory but I tried to take in the important info.">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.wandrr.io/Notes-on-prototyping-with-Wordpress">
+  <link rel="canonical" href="http://www.wandrr.io/Breaking-down-cross-browser-testing">
   <link rel="alternate" type="application/rss+xml" title="wandrr" href="http://www.wandrr.io/feed.xml" />
 </head>
 
@@ -67,66 +67,120 @@
       <div class="wrapper post">
 
   <header class="post-header">
-    <h1 class="post-title">Notes on Prototyping with Wordpress</h1>
+    <h1 class="post-title">Breaking down Cross-Browser Testing</h1>
     <p class="post-meta">
-      Mar 30, 2016
+      Aug 3, 2016
       
-       • wordpress
+       • testing
     </p>
   </header>
 
   <article class="post-content">
-    <p>This is a continuation of my <a href="/Front-End-workflow-with-Wordpress">Front-End workflow with Wordpress</a> blog post, containing notes and personal opinion on tools/frameworks used for prototyping, getting more indepth with top 2 of my chosen Wordpress Foundation Themes.</p>
+    <p>Below is my note on an article on smashing magazine. Article is mostly theory but I tried to take in the important info.</p>
+
+<h1 id="two-main-objectives">Two Main Objectives</h1>
+
+<ol>
+  <li>Discovering bugs
+    <ul>
+      <li>Entails trying to break your app to find bugs to fix.</li>
+    </ul>
+  </li>
+  <li>Sanity-checking
+    <ul>
+      <li>Involves verifying that majority of your audience receives the expected experience.</li>
+    </ul>
+  </li>
+</ol>
 
 <hr />
 
-<h3 id="why-use-a-css-preprocessors">Why use a CSS Preprocessors</h3>
+<h1 id="know-your-statistics">Know your Statistics</h1>
 
-<p>Reason why I included this segment, working with different developers, each has their own preference and opinion towards modern development tools. Not all agree with Node.js and modern front-end development tools. As a Front-End Developer though, I’ve experience the learning curve and benefits of using such tools. Below are articles regarding CSS Processor - SASS.</p>
+<ul>
+  <li>Audience statistics</li>
+  <li>Browser usage statistics</li>
+</ul>
 
-<p>Here is an interesting article about the <a href="http://1stwebdesigner.com/power-sass-why-use-css-preprocessors/">Power of SASS and its advantages for Front-End Engineers</a></p>
+<h3 id="simplify-your-browser-usage-statistics">Simplify your browser usage statistics</h3>
 
-<p>Here are listed <a href="http://blog.blakesimpson.co.uk/read/37-less-sass-the-advantages-of-css-preprocessing-explained">features of CSS Preprocessors</a></p>
+<p><strong>Desktop Browsers</strong></p>
 
-<p><a href="https://developer.chrome.com/devtools/docs/css-preprocessors">Debugging CSS Preprocessor on Chrome Dev Tool</a></p>
+<ul>
+  <li>we don’t care about:
+    <ul>
+      <li>versions except IE</li>
+      <li>OS</li>
+    </ul>
+  </li>
+  <li>same argument applies with Portable Browsers</li>
+  <li>new wave of browsers called: In-App browsers - browsers in social media platforms</li>
+</ul>
+
+<p><strong>Portable Browsers</strong></p>
+
+<ul>
+  <li>whats important:
+    <ul>
+      <li>version of the native Android browser used</li>
+      <li>version of iOS a device is running
+        <ul>
+          <li>very relevant as Safari versions are intrinsically linked to iOS</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
 <hr />
 
-<h3 id="choosing-a-wp-theme-with-foundation-to-work-with">Choosing a WP theme with Foundation to work with</h3>
+<h1 id="three-phase-attack">Three-Phase Attack</h1>
 
-<p>So remember my previous blogpost ‘Front-End Workflow with Wordpress’ and mentioned using ‘FoundationPress’. After playing around with the theme further, I decided to go with ‘JointsWP’.</p>
-
-<p>with foundationpress, setting it up was easy and creating templates, but when I got to the header menu template. I was trying to understand what was going on with FoundationPress. It got really confusing on how the menu was set up and the theme itself doens’t have much documentation.</p>
-
-<p>So i looked further and played around with JointsWP.</p>
-
-<p>My first impression was understanding with how they layout their menu was easy. and right off the install, they are using Foundation’s Off-canvas menu. Though I am still wondering why most theme would breakdown its menu html markups to pieces of template.</p>
-
-<p>JointsWP also provides documentation for its theme. So besides Zurb Foundation documentation, there is also JointsWP documentation.</p>
-
-<p>although, FoundationPress provides documentation but it seems like its still underdevelope.</p>
-
-<p>As with other themes, JointsWP did just that but not as confusing as FoundationPress.</p>
+<ol>
+  <li><strong>Reconnaissance: Find Browser-Agnostic Bugs</strong>
+    <ul>
+      <li>Try resizing to view responsiveness. Was there a funky breakpoint anywhere?</li>
+      <li>Zoom in and out. Have the background-positions of your image sprite been knocked askew?</li>
+      <li>See how the application behaves with Javascript turned off. Do you still get the core content?</li>
+      <li>See how the application looks with CSS turned off. Do the semantics of the markup still make sense?</li>
+      <li>Try turning both Javascript and CSS off. Are you getting an acceptable experience?</li>
+      <li>Try interacting with the application using only your keyboard. Is it possible to navigate and see all the content?</li>
+      <li>Try throttling your connection and see how quickly the application loads. How heavy is the page load?</li>
+    </ul>
+  </li>
+  <li><strong>Raid: Test in High-Risk Browsers First</strong>
+    <ul>
+      <li>Statistical Analysis of Bug Distribution</li>
+      <li>High-Risk are IE browsers</li>
+      <li>Medium-Rish are Safari, Opera</li>
+      <li>Low-Rish are Chrome, Firefox</li>
+      <li>Fixing bugs in bad browsers makes your code more resilient in good browsers</li>
+      <li>Identifying problematic browsers</li>
+      <li><a href="http://caniuse.com">CanIUse</a></li>
+      <li>VirtualBox</li>
+      <li>Check on actual device or browser</li>
+      <li>Tools to rectify major compatibility issues:</li>
+      <li><a href="http://modernizr.com">Modernizr</a></li>
+    </ul>
+  </li>
+  <li><strong>Clearance: sanity checking</strong>
+    <ul>
+      <li>By this stage, we should be 80:20</li>
+      <li>Figuratively, we’ve fixed 80% of the bugs after testing 20% of the browsers</li>
+      <li>Now, we verify the experience of 80% of audience through testing a different 20% of browsers</li>
+      <li>Prioritize the browsers</li>
+      <li>Use a 3rd-party service that checks on multiple browsers and device</li>
+    </ul>
+  </li>
+</ol>
 
 <hr />
 
-<h3 id="starting-workflow">Starting workflow…</h3>
+<h5 id="references"><strong>References:</strong></h5>
 
-<p>Create main pages on wordpress dashboard.</p>
-
-<p>work with header first.. set initial logo and menu items</p>
-
-<p>set up Orbitz (carousel), go to zurb foundation documentation for instructions to implement carousel or any other js component.</p>
-
-<hr />
-
-<h3 id="converting-pieces-of-data-to-wp-custom-fields">Converting pieces of data to WP Custom Fields</h3>
-
-<p>For this task, I will be using this plugin called <a href="http://www.advancedcustomfields.com/">AdvanceCustomFields</a></p>
-
-<p>It is easier to implement custom fields to posts, custom post type, pages and customize how form will be displayed on wp admin dashboard.</p>
-
-<p>It is also developer friendly, providing proper documentation and API.</p>
+<ul>
+  <li><a href="https://www.smashingmagazine.com/2016/02/high-impact-minimal-effort-cross-browser-testing/">High Impact, Minimal-Effort Cross-Browser Testing</a></li>
+</ul>
 
   </article>
 

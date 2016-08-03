@@ -6,9 +6,294 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 13 Jul 2016 12:10:36 -0700</pubDate>
-    <lastBuildDate>Wed, 13 Jul 2016 12:10:36 -0700</lastBuildDate>
+    <pubDate>Wed, 03 Aug 2016 13:56:04 -0700</pubDate>
+    <lastBuildDate>Wed, 03 Aug 2016 13:56:04 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Breaking down Cross-Browser Testing</title>
+        <description>&lt;p&gt;Below is my note on an article on smashing magazine. Article is mostly theory but I tried to take in the important info.&lt;/p&gt;
+
+&lt;h1 id=&quot;two-main-objectives&quot;&gt;Two Main Objectives&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Discovering bugs
+    &lt;ul&gt;
+      &lt;li&gt;Entails trying to break your app to find bugs to fix.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Sanity-checking
+    &lt;ul&gt;
+      &lt;li&gt;Involves verifying that majority of your audience receives the expected experience.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;know-your-statistics&quot;&gt;Know your Statistics&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Audience statistics&lt;/li&gt;
+  &lt;li&gt;Browser usage statistics&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;simplify-your-browser-usage-statistics&quot;&gt;Simplify your browser usage statistics&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Desktop Browsers&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;we don’t care about:
+    &lt;ul&gt;
+      &lt;li&gt;versions except IE&lt;/li&gt;
+      &lt;li&gt;OS&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;same argument applies with Portable Browsers&lt;/li&gt;
+  &lt;li&gt;new wave of browsers called: In-App browsers - browsers in social media platforms&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Portable Browsers&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;whats important:
+    &lt;ul&gt;
+      &lt;li&gt;version of the native Android browser used&lt;/li&gt;
+      &lt;li&gt;version of iOS a device is running
+        &lt;ul&gt;
+          &lt;li&gt;very relevant as Safari versions are intrinsically linked to iOS&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;three-phase-attack&quot;&gt;Three-Phase Attack&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Reconnaissance: Find Browser-Agnostic Bugs&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Try resizing to view responsiveness. Was there a funky breakpoint anywhere?&lt;/li&gt;
+      &lt;li&gt;Zoom in and out. Have the background-positions of your image sprite been knocked askew?&lt;/li&gt;
+      &lt;li&gt;See how the application behaves with Javascript turned off. Do you still get the core content?&lt;/li&gt;
+      &lt;li&gt;See how the application looks with CSS turned off. Do the semantics of the markup still make sense?&lt;/li&gt;
+      &lt;li&gt;Try turning both Javascript and CSS off. Are you getting an acceptable experience?&lt;/li&gt;
+      &lt;li&gt;Try interacting with the application using only your keyboard. Is it possible to navigate and see all the content?&lt;/li&gt;
+      &lt;li&gt;Try throttling your connection and see how quickly the application loads. How heavy is the page load?&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Raid: Test in High-Risk Browsers First&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Statistical Analysis of Bug Distribution&lt;/li&gt;
+      &lt;li&gt;High-Risk are IE browsers&lt;/li&gt;
+      &lt;li&gt;Medium-Rish are Safari, Opera&lt;/li&gt;
+      &lt;li&gt;Low-Rish are Chrome, Firefox&lt;/li&gt;
+      &lt;li&gt;Fixing bugs in bad browsers makes your code more resilient in good browsers&lt;/li&gt;
+      &lt;li&gt;Identifying problematic browsers&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://caniuse.com&quot;&gt;CanIUse&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;VirtualBox&lt;/li&gt;
+      &lt;li&gt;Check on actual device or browser&lt;/li&gt;
+      &lt;li&gt;Tools to rectify major compatibility issues:&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://modernizr.com&quot;&gt;Modernizr&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Clearance: sanity checking&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;By this stage, we should be 80:20&lt;/li&gt;
+      &lt;li&gt;Figuratively, we’ve fixed 80% of the bugs after testing 20% of the browsers&lt;/li&gt;
+      &lt;li&gt;Now, we verify the experience of 80% of audience through testing a different 20% of browsers&lt;/li&gt;
+      &lt;li&gt;Prioritize the browsers&lt;/li&gt;
+      &lt;li&gt;Use a 3rd-party service that checks on multiple browsers and device&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2016/02/high-impact-minimal-effort-cross-browser-testing/&quot;&gt;High Impact, Minimal-Effort Cross-Browser Testing&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 03 Aug 2016 05:57:02 -0700</pubDate>
+        <link>http://www.wandrr.io/Breaking-down-cross-browser-testing</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Breaking-down-cross-browser-testing</guid>
+        
+        <category>testing</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Learning React</title>
+        <description>&lt;p&gt;implementing react.js on gulp
+- do a gulp task of react.js build&lt;/p&gt;
+
+&lt;p&gt;*JSX makes us write HTML syntax in Javascript files&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;this does not run in browsers thats why we need a transpiler&lt;/li&gt;
+  &lt;li&gt;since i am usin gulp, we are going to search for a gulp plugin that transpiles JSX files to plain js files&lt;/li&gt;
+  &lt;li&gt;JSX to JS using babel&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;configuring gulp plugin babel was a bit tricky due to NPM dependency issues.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;learning react is quite overwhelming. I think with any new front-end is overwhelming due to the amount of dependencies or tools options that are available. Front-end development has indeed bloom.&lt;/p&gt;
+
+&lt;p&gt;before digging further into random articles that suggests to use this or that tool. I’ve decided to learn plain React.js. Stripping other unknown tools and focusing on the foundation, then once comfortable with plain React.js, move on to another tool and implement. Learning indeed can also be a step-by-step process.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jamesknelson.com/learn-raw-react-no-jsx-flux-es6-webpack/&quot;&gt;Learn Raw React — no JSX, no Flux, no ES6, no Webpack&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.risingstack.com/the-react-way-getting-started-tutorial/&quot;&gt;The React.js Way: Getting Started Tutorial&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://buildwithreact.com/&quot;&gt;Build with React&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 28 Jul 2016 03:58:40 -0700</pubDate>
+        <link>http://www.wandrr.io/Learning-React</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Learning-React</guid>
+        
+        <category>javascript</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Front-End Design Specs</title>
+        <description>&lt;p&gt;determing a workflow is hard but its even harder when we go through a laborious iterative process with designers.&lt;/p&gt;
+
+&lt;p&gt;since i have been using Zurb foundation, zurb foundation comes with a settings file that defines global variables for general design settings. This gave me the idea that responsive web design follows a certain pattern, same as Development.&lt;/p&gt;
+
+&lt;p&gt;process to determing on refining the design and developer workflow are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;list down general design css properties
+    &lt;ul&gt;
+      &lt;li&gt;layout
+        &lt;ul&gt;
+          &lt;li&gt;max-width&lt;/li&gt;
+          &lt;li&gt;number of columns grid&lt;/li&gt;
+          &lt;li&gt;gutter width
+            &lt;ul&gt;
+              &lt;li&gt;small breakpoint&lt;/li&gt;
+              &lt;li&gt;medium breakpoint&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;typography - header
+        &lt;ul&gt;
+          &lt;li&gt;header font&lt;/li&gt;
+          &lt;li&gt;header font sizes
+            &lt;ul&gt;
+              &lt;li&gt;small breakpoint&lt;/li&gt;
+              &lt;li&gt;medium breakpoint&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;header color&lt;/li&gt;
+          &lt;li&gt;header alignment, leading, kerning&lt;/li&gt;
+          &lt;li&gt;header opacity, filter&lt;/li&gt;
+          &lt;li&gt;header font weight&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;typography - body
+        &lt;ul&gt;
+          &lt;li&gt;body font size
+            &lt;ul&gt;
+              &lt;li&gt;small breakpoint&lt;/li&gt;
+              &lt;li&gt;medium breakpoint&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;body font color&lt;/li&gt;
+          &lt;li&gt;body font family&lt;/li&gt;
+          &lt;li&gt;body line height, leading, kerning&lt;/li&gt;
+          &lt;li&gt;body font weight&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;spacing measurement
+        &lt;ul&gt;
+          &lt;li&gt;width and height
+            &lt;ul&gt;
+              &lt;li&gt;small breakpoint&lt;/li&gt;
+              &lt;li&gt;medium breakpopint&lt;/li&gt;
+              &lt;li&gt;large breakpoint&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;spacing bet object and canvas&lt;/li&gt;
+          &lt;li&gt;spacing bet multiple objects&lt;/li&gt;
+          &lt;li&gt;spacing bet text and objects&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;objects
+        &lt;ul&gt;
+          &lt;li&gt;fill color&lt;/li&gt;
+          &lt;li&gt;stroke, color, size, style&lt;/li&gt;
+          &lt;li&gt;opacity/filter&lt;/li&gt;
+          &lt;li&gt;corner radius&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;color palette
+        &lt;ul&gt;
+          &lt;li&gt;primary, secondary, tertiary, quaternary&lt;/li&gt;
+          &lt;li&gt;monotone
+            &lt;ul&gt;
+              &lt;li&gt;gray - light, medium, dark&lt;/li&gt;
+              &lt;li&gt;black&lt;/li&gt;
+              &lt;li&gt;white&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;after analyzing above data and visually looking at a design comp, these properties are already set on the provided design comp but not documented.&lt;/p&gt;
+
+&lt;p&gt;this is where PNG Express comes in, photoshop plugin tool.&lt;/p&gt;
+
+&lt;p&gt;after testing on a design comp and implementing it on theme development, it is indeed an ease for us developers.&lt;/p&gt;
+
+&lt;p&gt;so overview process would be:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;designer designs ui comp&lt;/li&gt;
+  &lt;li&gt;after design is complete, designer sets Design Specs with PNG Express&lt;/li&gt;
+  &lt;li&gt;pass the UI comp with design specs to front end developer&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;front end developer implements these measurements on css styles sheets&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;it does not need to be exact pixels, this is a good way to atleast get an estimate.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;with this in set, this also gives Front end developers to compile a Style Guide and or components that can be resuable.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2014/10/front-end-development-ode-to-specifications/&quot;&gt;A Front-End Developer’s Ode To Specifications&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.pngexpress.com/&quot;&gt;PNG Express&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 28 Jul 2016 03:58:40 -0700</pubDate>
+        <link>http://www.wandrr.io/Front-End-Design-Specs</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Front-End-Design-Specs</guid>
+        
+        <category>workflow</category>
+        
+        
+      </item>
     
       <item>
         <title>Front-End Workflow with Grav theme</title>
@@ -398,25 +683,6 @@
       </item>
     
       <item>
-        <title>A Trick to Custom Post Type subpages</title>
-        <description>&lt;p&gt;create a custom post type
- now to create a template for this..&lt;/p&gt;
-
-&lt;p&gt;create a page and a subpage&lt;/p&gt;
-
-&lt;p&gt;follow wordpress templating hierarchy
- make sure to refresh settings &amp;gt; permalinks&lt;/p&gt;
-</description>
-        <pubDate>Thu, 26 May 2016 04:45:17 -0700</pubDate>
-        <link>http://www.wandrr.io/A-Trick-to-custom-post-type-subpages</link>
-        <guid isPermaLink="true">http://www.wandrr.io/A-Trick-to-custom-post-type-subpages</guid>
-        
-        <category>wordpress</category>
-        
-        
-      </item>
-    
-      <item>
         <title>Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?</title>
         <description>&lt;p&gt;There are various reasons why Global Variables are bad. This can include performance, name collision, or bad code readability/organization.&lt;/p&gt;
 
@@ -622,177 +888,6 @@ While strict equality &lt;code class=&quot;highlighter-rouge&quot;&gt;===&lt;/co
         <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Difference-between-double-and-triple-equals</guid>
         
         <category>javascript interview questions</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>A Parallax Encounter</title>
-        <description>&lt;p&gt;I’ve always wanted to create a one-page website with an awesome Parallax Scrolling. Most of my recent blog posts are about JavaScript, App Development, CMS and rarely touched the topic of graphics and parallax. So for this post, I’ll be blogging my thought-process on exploring Parallax Scrolling.&lt;/p&gt;
-
-&lt;p&gt;My initial thoughts when I looked at examples of websites with Parallax Scrolling is &lt;em&gt;‘its not just CSS and JS coding, its also about Graphics as well’&lt;/em&gt; and honestly, that first step is what hinders me from building Parallax Scrolling website, not unless I have a Graphic Designer to provide me assets and instructions.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Before approaching a project, I usually read a couple of articles first or another approach would be, I start building a project and if I’d get stuck, I then start researching more about it. Since I’ve had experience with website layouts, for this project, the latter approach is what I used.&lt;/p&gt;
-
-&lt;p&gt;I then started doing research on Parallax Scrolling and found this article:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.vandelaydesign.com/parallax-scrolling-best-practices-examples-and-tutorials/&quot;&gt;The Ultimate Guide to Parallax Scrolling: Best Practices and Tutorials&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;From the article above, I will only note applicable concepts that fits to my Parallax website project.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;best-practices&quot;&gt;Best Practices&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;fallback&lt;/strong&gt;: I would suggest developing a fallback method which can work in all browsers even without animation effects. At the very least make sure visitors can still browse the static website.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;simplify&lt;/strong&gt;: Parallax scrolling can go from cute and fun to overly-complicated with just a few additions. Make the parallax animation(s) work for your content and not the other way around.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;good-examples-of-parallax-design&quot;&gt;Good Examples of Parallax Design&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Generally speaking a great parallax layout should tell a story.&lt;/strong&gt;&lt;br /&gt;
-I really like the example on Movement of Data which behaves like a parallax infographic. The site animates both up/down and left/right as you scroll through the content. It’s all very informative and the graphics help to tell the story rather than distract from it. While the effects are not extraordinary they do provide an efficacious storytelling method.&lt;/p&gt;
-
-&lt;p&gt;Another great parallax design can be found on BAKE Agency. The homepage animates in a circular fashion rotating through different sections of content. It’s not an exact parallax effect but it does incorporate the illusion of depth as the user moves through a line of sight. The reason I’d mark this as a great example is because it’s usable yet still creative and unique with a stylish implementation.&lt;/p&gt;
-
-&lt;p&gt;The goal of a parallax website design is to impress visitors while still maintaining all the customary statues of unofficial UX design law. Great parallax websites convey their message in an easily-consumed format while contributing to the digital art form. Motion is a big part of the design process so it’s important to think about how the page should animate, and if possible have a reason for that choice.&lt;/p&gt;
-
-&lt;p&gt;The greatest parallax websites make me feel like I’m interacting with the work of a professional designer. Look through the many examples I’ve provided in this guide and find the sites that make you feel comfortable. These websites can offer the best prototypical solutions for whatever parallax effect you’re trying to create.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;bad-examples-of-parallax-design&quot;&gt;Bad Examples of Parallax Design&lt;/h3&gt;
-
-&lt;p&gt;My first frustrating example is on Make Your Money Matter which is an informational page about Credit Unions. Let me state that I love their message and graphic design. The page itself is actually very well crafted. However in regards to user experience the page is quite limiting and uncomfortable. You can only scroll with the mousewheel or by clicking &amp;amp; dragging the browser’s scrollbar.&lt;/p&gt;
-
-&lt;p&gt;This means the arrow keys don’t work and the page up/down keys also don’t work. To make things more confusing there aren’t any clickable links to slide around the different page sections. The only way to navigate is by tediously scrolling with the scrollbar and perniciously feeding that arthritis. The whole experience feels imprisoning and while the design is fantastic it simply cannot subdue such an annoying UX problem.&lt;/p&gt;
-
-&lt;p&gt;A polish website for the children network presents a side-scrolling parallax design with one glaring problem: the whole page is made up of images. Naturally you’ll ask “even the text?”. Yes the text itself, which could have been easily typed into HTML, was instead created with images. I was so terrified at this realization that evening I had to sleep with a nightlight.&lt;/p&gt;
-
-&lt;p&gt;The website animation is actually quite nice and even though I’m not able to read anything because Google can’t translate images, I have a feeling this site would be in my great examples list if it weren’t so textually-impaired. When creating parallax designs stay away from Flash animation and be sure to use images only for images. Actually that advice carries over into every type of website, parallax or not. You’ll spare your visitors quite a few sleepless nights questioning their own design ethics and sanity.&lt;/p&gt;
-
-&lt;p&gt;To finish up this section let’s go over just one more sample of difficult UX design. The website for South Australian Roadtrips has a quaint parallax slider with a few different pieces of content. While the text isn’t created using images you’ll still have a difficult time selecting or interacting with the text because it appears as part of the slideshow. This means you can’t easily copy/paste locations to search for them in Google.&lt;/p&gt;
-
-&lt;p&gt;But really my problem with this layout is that it’s too confusing. There is a top navigation with some buttons that animate between slides but they don’t feel smooth. The animation is slow and it seems like the content would be presented better without animated effects. I’m sure not everyone will agree with me but it brings us back to the concept of simplicity. Make the parallax animation(s) work for your content and not the other way around.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;techniques-for-parallax-design&quot;&gt;Techniques for Parallax Design&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Nice Single Page Parallax Design&lt;/li&gt;
-  &lt;li&gt;Background Parallax Sliding&lt;/li&gt;
-  &lt;li&gt;Horizontal Parallax Scrolling&lt;/li&gt;
-  &lt;li&gt;Graphic Animation&lt;/li&gt;
-  &lt;li&gt;Motion-Sensitive Animation&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;tools&quot;&gt;Tools&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;JS Parallax Plugins&lt;/li&gt;
-  &lt;li&gt;Free Code Snippets&lt;/li&gt;
-  &lt;li&gt;Parallax Scrolling Design Inspiration&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;implementing-parallax-scrolling&quot;&gt;Implementing Parallax Scrolling&lt;/h3&gt;
-
-&lt;p&gt;The solution I came up with was to use &lt;a href=&quot;http://prinzhorn.github.io/skrollr/&quot;&gt;skrollr&lt;/a&gt;. This JS Parallax plugin seem to have alot of Stars on github.com&lt;/p&gt;
-</description>
-        <pubDate>Thu, 07 Apr 2016 08:52:13 -0700</pubDate>
-        <link>http://www.wandrr.io/A-Parallax-Encounter</link>
-        <guid isPermaLink="true">http://www.wandrr.io/A-Parallax-Encounter</guid>
-        
-        <category>parallax scrolling</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Simple instructions for Drupal Minor Updates</title>
-        <description>&lt;p&gt;This blog post tackles implementing &lt;strong&gt;Minor Updates&lt;/strong&gt; on Drupal websites. Its a short, simple, and pretty straight-forward instructions.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;references-and-tools&quot;&gt;References and Tools&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.drupal.org/node/1223018&quot;&gt;Update procedure (minor version change)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://tylerfrankenstein.com/code/use-drush-export-import-drupal-mysql-database-dump-file&quot;&gt;Use Drush to Export/Import a Drupal MySQL Database Dump File&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://drushcommands.com&quot;&gt;Drush Commands&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;two-ways-to-check-for-drupal-update-status&quot;&gt;Two ways to check for Drupal Update Status&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;via Website GUI
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;http://www.website-name.com/admin/reports/updates&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Reports &amp;gt; Available Updates&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;via CLI
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;drush pm-updatestatus&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;preparation-before-updating-a-drupal-website&quot;&gt;Preparation before Updating a Drupal website&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Backup database via Drush
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;drush sql-dump &amp;gt; name_of_site-date.sql&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Backup core files by compressing directory containing drupal core files
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;tar -czf site_name_date.tar.gz /path_to_site_directory/&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Show a report of available minor updates to Drupal core and contrib projects.
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;drush pm-updatestatus&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Backup &lt;code class=&quot;highlighter-rouge&quot;&gt;.htaccess&lt;/code&gt; by making a copy and dumping outside of drupal website directory
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cp .htaccess ../&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;implementing-minor-updates-on-drupal-sites&quot;&gt;Implementing Minor Updates on Drupal sites&lt;/h3&gt;
-
-&lt;p&gt;Only &lt;em&gt;Security Updates&lt;/em&gt; of core and modules will be performed. Updating Modules with &lt;code class=&quot;highlighter-rouge&quot;&gt;Update available&lt;/code&gt; message may conflict with other module or drupal core version.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;cd to drupal website directory and run &lt;code class=&quot;highlighter-rouge&quot;&gt;drush up drupal&lt;/code&gt; to update drupal core&lt;/li&gt;
-  &lt;li&gt;run &lt;code class=&quot;highlighter-rouge&quot;&gt;drush pm-updatestatus&lt;/code&gt; again to check for other module updates&lt;/li&gt;
-  &lt;li&gt;run &lt;code class=&quot;highlighter-rouge&quot;&gt;drush up &amp;lt;name of module&amp;gt;&lt;/code&gt; to update a module&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Fri, 01 Apr 2016 05:26:55 -0700</pubDate>
-        <link>http://www.wandrr.io/Simple-Instructions-for-Drupal-Minor-Updates</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Simple-Instructions-for-Drupal-Minor-Updates</guid>
-        
-        <category>drupal</category>
         
         
       </item>
