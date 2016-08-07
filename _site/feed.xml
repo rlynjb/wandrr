@@ -6,9 +6,39 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 03 Aug 2016 13:56:04 -0700</pubDate>
-    <lastBuildDate>Wed, 03 Aug 2016 13:56:04 -0700</lastBuildDate>
+    <pubDate>Fri, 05 Aug 2016 15:38:03 -0700</pubDate>
+    <lastBuildDate>Fri, 05 Aug 2016 15:38:03 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Getting Started With Magento Theming</title>
+        <description>&lt;p&gt;setup Mac OSX requirements server:&lt;/p&gt;
+
+&lt;p&gt;max osx comes with a pre-installed Apache2, PHP, and Mysql. ALL pre-installed can be located at &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/bin&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;These pre-installs can be overwritten when we install via Brew. and all brew installs go to &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/bin&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;We can tell mac osx to use a different path so we can use packages installed by brew&lt;/p&gt;
+
+&lt;p&gt;sample scenario would be:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;use brew to install php7 and mysql5.7&lt;/li&gt;
+  &lt;li&gt;run &lt;code class=&quot;highlighter-rouge&quot;&gt;which php&lt;/code&gt; to see which path it uses&lt;/li&gt;
+  &lt;li&gt;it should display &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/bin/php&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;set PATH to use directory where brew packages are installed&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://apple.stackexchange.com/questions/145437/where-can-i-find-the-installed-package-path-via-brew&quot;&gt;Where can I find the installed package path via brew&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;c&amp;amp;p this &lt;code class=&quot;highlighter-rouge&quot;&gt;export PATH=$PATH:/usr/local/bin&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;/Users/name/.zshrc&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;run &lt;code class=&quot;highlighter-rouge&quot;&gt;which php&lt;/code&gt; again&lt;/li&gt;
+  &lt;li&gt;it should display &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local...&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 05 Aug 2016 15:38:03 -0700</pubDate>
+        <link>http://www.wandrr.io/Getting-started-with-Magento-Theming</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Getting-started-with-Magento-Theming</guid>
+        
+        
+      </item>
     
       <item>
         <title>Breaking down Cross-Browser Testing</title>
@@ -844,48 +874,6 @@ Compare &lt;code class=&quot;highlighter-rouge&quot;&gt;http://store.company.com
         <pubDate>Thu, 05 May 2016 03:11:44 -0700</pubDate>
         <link>http://www.wandrr.io/JS-Interview-Question-Explain-the-same-origin-policy-with-regards-to-JavaScript</link>
         <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Explain-the-same-origin-policy-with-regards-to-JavaScript</guid>
-        
-        <category>javascript interview questions</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>What is the difference between == and ===?</title>
-        <description>&lt;p&gt;JavaScript has two sets of &lt;strong&gt;&lt;em&gt;Equality operators&lt;/em&gt;&lt;/strong&gt; archived under &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators&quot;&gt;Comparison operators&lt;/a&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;equality &lt;code class=&quot;highlighter-rouge&quot;&gt;==&lt;/code&gt; &amp;amp; inequality &lt;code class=&quot;highlighter-rouge&quot;&gt;!=&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;strict equality &lt;code class=&quot;highlighter-rouge&quot;&gt;===&lt;/code&gt; &amp;amp; strict inequality &lt;code class=&quot;highlighter-rouge&quot;&gt;!==&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;We use these operators when comparing 2 operands. They differ on what type of operands are being compared to against.&lt;/p&gt;
-
-&lt;p&gt;For example, equality &lt;code class=&quot;highlighter-rouge&quot;&gt;==&lt;/code&gt; or inequality &lt;code class=&quot;highlighter-rouge&quot;&gt;!=&lt;/code&gt; signs compares 2 values without type conversion. 
-&lt;br /&gt;
-While strict equality &lt;code class=&quot;highlighter-rouge&quot;&gt;===&lt;/code&gt; or strict inequality &lt;code class=&quot;highlighter-rouge&quot;&gt;!==&lt;/code&gt; signs compares 2 values with type conversion.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;s1&quot;&gt;&#39;1&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true &amp;lt; all it matters is the value&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;&#39;1&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false &amp;lt; they are not the same type&lt;/span&gt;
-
-&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;&#39;1&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
-
-&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;&#39;1&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;hr /&gt;
-
-&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/359494/does-it-matter-which-equals-operator-vs-i-use-in-javascript-comparisons&quot;&gt;Does it matter which equals operator (== vs ===) I use in JavaScript comparisons?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators&quot;&gt;Comparison operators&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 03 May 2016 07:00:07 -0700</pubDate>
-        <link>http://www.wandrr.io/JS-Interview-Question-Difference-between-double-and-triple-equals</link>
-        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Difference-between-double-and-triple-equals</guid>
         
         <category>javascript interview questions</category>
         

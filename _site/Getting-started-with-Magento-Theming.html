@@ -1,0 +1,20 @@
+<p>setup Mac OSX requirements server:</p>
+
+<p>max osx comes with a pre-installed Apache2, PHP, and Mysql. ALL pre-installed can be located at <code class="highlighter-rouge">/usr/bin</code>.</p>
+
+<p>These pre-installs can be overwritten when we install via Brew. and all brew installs go to <code class="highlighter-rouge">/usr/local/bin</code>.</p>
+
+<p>We can tell mac osx to use a different path so we can use packages installed by brew</p>
+
+<p>sample scenario would be:</p>
+
+<ul>
+  <li>use brew to install php7 and mysql5.7</li>
+  <li>run <code class="highlighter-rouge">which php</code> to see which path it uses</li>
+  <li>it should display <code class="highlighter-rouge">/usr/bin/php</code></li>
+  <li>set PATH to use directory where brew packages are installed</li>
+  <li><a href="http://apple.stackexchange.com/questions/145437/where-can-i-find-the-installed-package-path-via-brew">Where can I find the installed package path via brew</a></li>
+  <li>c&amp;p this <code class="highlighter-rouge">export PATH=$PATH:/usr/local/bin</code> to <code class="highlighter-rouge">/Users/name/.zshrc</code></li>
+  <li>run <code class="highlighter-rouge">which php</code> again</li>
+  <li>it should display <code class="highlighter-rouge">/usr/local...</code></li>
+</ul>
