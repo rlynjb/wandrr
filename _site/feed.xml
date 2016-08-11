@@ -6,36 +6,264 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 05 Aug 2016 15:38:03 -0700</pubDate>
-    <lastBuildDate>Fri, 05 Aug 2016 15:38:03 -0700</lastBuildDate>
+    <pubDate>Thu, 11 Aug 2016 14:29:33 -0700</pubDate>
+    <lastBuildDate>Thu, 11 Aug 2016 14:29:33 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
-        <title>Getting Started With Magento Theming</title>
-        <description>&lt;p&gt;setup Mac OSX requirements server:&lt;/p&gt;
+        <title>Getting Started with Magento Theming</title>
+        <description>&lt;p&gt;Installing manually was tedious so I’ve decided to use install Magento 2 via Docker and Docker Compose.&lt;/p&gt;
 
-&lt;p&gt;max osx comes with a pre-installed Apache2, PHP, and Mysql. ALL pre-installed can be located at &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/bin&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;To get a glimpse of how Docker and Docker Compose works, I’ved jotted down notes here: &lt;a href=&quot;Notes-on-creating-a-convenient-local-development-workflow-with-Docker&quot;&gt;Notes on creating a convenient Local Development Workflow with Docker&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;These pre-installs can be overwritten when we install via Brew. and all brew installs go to &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/bin&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Here is a sample &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file that installs Magento 2 &lt;a href=&quot;https://github.com/mageinferno/magento2-docker-compose&quot;&gt;maginferno - magento2-docker-compose&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;We can tell mac osx to use a different path so we can use packages installed by brew&lt;/p&gt;
+&lt;p&gt;Grab a copy of Magento 2 files as well &lt;a href=&quot;https://github.com/magento/magento2.git&quot;&gt;Github - Magento&lt;/a&gt; and place it on your &lt;strong&gt;host&lt;/strong&gt; and mount the necessary directories and files unto your &lt;strong&gt;docker container&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;sample scenario would be:&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;issues-i-came-across&quot;&gt;Issues I came across:&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;use brew to install php7 and mysql5.7&lt;/li&gt;
-  &lt;li&gt;run &lt;code class=&quot;highlighter-rouge&quot;&gt;which php&lt;/code&gt; to see which path it uses&lt;/li&gt;
-  &lt;li&gt;it should display &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/bin/php&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;set PATH to use directory where brew packages are installed&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://apple.stackexchange.com/questions/145437/where-can-i-find-the-installed-package-path-via-brew&quot;&gt;Where can I find the installed package path via brew&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;c&amp;amp;p this &lt;code class=&quot;highlighter-rouge&quot;&gt;export PATH=$PATH:/usr/local/bin&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;/Users/name/.zshrc&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;run &lt;code class=&quot;highlighter-rouge&quot;&gt;which php&lt;/code&gt; again&lt;/li&gt;
-  &lt;li&gt;it should display &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local...&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/magento/magento2/issues/2309&quot;&gt;Admin Page 404 After Install Magento2 RC #2309&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;During the installation you entered unique admin URI (it generates automatically for you) eg. /admin_cr8w74 To get info about your URI use CLI command:&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/var/www/html/magento2$ php bin/magento info:adminuri&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Admin username and password can be found in &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file&lt;/li&gt;
+  &lt;li&gt;resolving issue w/ Admin page
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://community.magento.com/t5/Technical-Issues/There-has-been-an-error-processing-your-request/td-p/4905&quot;&gt;There has been an error processing your request&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;see comment with &lt;code class=&quot;highlighter-rouge&quot;&gt;In local.xml file you need to update all database credential&lt;/code&gt;
+        &lt;ul&gt;
+          &lt;li&gt;this will display errors on &lt;code class=&quot;highlighter-rouge&quot;&gt;/admin_&amp;lt;unique hash&amp;gt;&lt;/code&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;install sample data:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;php bin/magento sampledata:deploy&lt;/code&gt;, then &lt;code class=&quot;highlighter-rouge&quot;&gt;php bin/magento setup:upgrade&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;if error occurs: clear cache, &lt;a href=&quot;http://stackoverflow.com/questions/38668833/magento-2-cmd-fatal-error-uncaught-error-class-cli-not-found&quot;&gt;Fatal error: Uncaught Error: Class ‘Cli’ not found&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;retrieving your http://repo.magento.com credentials
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://devdocs.magento.com/guides/v2.0/install-gde/prereq/connect-auth.html&quot;&gt;Get your authenticationn keys&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;useful-commands-and-info&quot;&gt;Useful commands and info&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;clear cache via cli:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;php bin/magento cache:clean&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;php bin/magento cache:flush&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;ref: &lt;a href=&quot;https://www.mageplaza.com/kb/how-flush-enable-disable-cache.html&quot;&gt;How to Flush, Enable, Disable Cache Command Line in Magento 2&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;change to &lt;strong&gt;Developer Mode&lt;/strong&gt; or other modes
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rm -rf &amp;lt;your Magento install dir&amp;gt;/var/di/* &amp;lt;your Magento install dir&amp;gt;/var/generation/*&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;magento deploy:mode:set developer&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;ref: &lt;a href=&quot;http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html&quot;&gt;Overview of setting Magento modes&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;collections-of-tutorials&quot;&gt;Collections of Tutorials&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.sessiondigital.com/magento/magento-2-tutorials/&quot;&gt;Magento 2 tutorials from sessiondigital.com&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html&quot;&gt;Magento 2 - Frontend Developer Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/themes/theme-create.html&quot;&gt;Getting Started - Hands on with Theme from scratch&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;This is to start building your theme from scratch, registering your theme and its directories&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/themes/theme-structure.html&quot;&gt;Magento theme structure&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;An indepth view of directory structure of a theme and what is required and optional&lt;/li&gt;
+      &lt;li&gt;Discusses about CSS and JS assets, Static files is directly accessible from HTML link and script syntax while Dynamic files usage of CSS preprocessors&lt;/li&gt;
+      &lt;li&gt;But my concern is more on &lt;strong&gt;Magento2 Layout &amp;amp; Templating&lt;/strong&gt; since I will be implementing my &lt;a href=&quot;https://github.com/rlynjb/frontendflow&quot;&gt;Front-End Flow&lt;/a&gt; project&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.sessiondigital.com/blog/magento-2-tutorial-how-to-use-the-new-front-end-templating-system/&quot;&gt;Indepth Magento 2 Templating system&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://magento.stackexchange.com/questions/118278/creating-a-custom-homepage-template-in-magento2&quot;&gt;Intro to Layouts&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://excellencemagentoblog.com/blog/2016/04/11/magento2-theme-layouts-templates/&quot;&gt;Magento2 Theme - Layouts &amp;amp; Templates - Part1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://excellencemagentoblog.com/blog/2016/04/11/magento2-theme-layouts-templates-part2/&quot;&gt;Magento2 Theme - Layouts &amp;amp; Templates - Part2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;starting-with-magento2-layouts-and-templating&quot;&gt;Starting with Magento2 Layouts and Templating&lt;/h3&gt;
+
+&lt;p&gt;There is a steep learning curve with Magento2 Layout and Templating engine. Like any CMS, what builds a website display are mainly Layouts and Templates. Magento2 built their layout/templating engine with a strong emphasis of layout and content separation. So for the sake of learning and to simplify things, lets breakdown a Magento2 theme and start with Layout and Templates.&lt;/p&gt;
+
+&lt;h3 id=&quot;files-and-directory-structure-inside-magentotheme-module&quot;&gt;Files and Directory structure inside Magento_Theme module&lt;/h3&gt;
+&lt;p&gt;Files and Directory that we are concern are (this applies to other modules as well):&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;\theme_dir
+  |-- \Magento_Theme
+      |-- \layout
+          |-- \override
+              |-- \base
+                  |-- default.xml
+                  |-- default_header_blocks.xml
+      |-- \page_layout
+          |-- custom_home.xml
+      |-- \templates
+          |-- header.phtml
+          |-- main-content.phtml
+          |-- footer.phtml
+      |-- layouts.xml
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I’m overriding &lt;strong&gt;Magento_Theme&lt;/strong&gt;’s &lt;code class=&quot;highlighter-rouge&quot;&gt;\layout&lt;/code&gt; files and extending into &lt;strong&gt;Magento_Theme&lt;/strong&gt;’s &lt;code class=&quot;highlighter-rouge&quot;&gt;\page_layout &amp;gt; custom_home_layout.xml&lt;/code&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;referenceContainer name=&quot;page.wrapper&quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;There’s a difference bet. Override and Extend&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Start it off by:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ref: &lt;a href=&quot;http://excellencemagentoblog.com/blog/2016/04/11/magento2-theme-layouts-templates/&quot;&gt;Magento2 Theme - Layouts &amp;amp; Templates - Part1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Declare your layouts first on &lt;code class=&quot;highlighter-rouge&quot;&gt;layouts.xml&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Create your page layout file inside &lt;code class=&quot;highlighter-rouge&quot;&gt;\page_layout&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Then define your &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;container&amp;gt;&lt;/code&gt; along with name attr to hook it with Page Configuration files inside &lt;code class=&quot;highlighter-rouge&quot;&gt;\layout&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Recall:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;page-layout-files&quot;&gt;Page Layout files&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;An &lt;code class=&quot;highlighter-rouge&quot;&gt;*.xml&lt;/code&gt; file where we define a page wireframe/structure.
+    &lt;ul&gt;
+      &lt;li&gt;Ex. Grid system&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Only uses Magento2’s &lt;strong&gt;containers&lt;/strong&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;referenceContainer name=&quot;&quot; /&amp;gt;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Should be declared on &lt;code class=&quot;highlighter-rouge&quot;&gt;layouts.xml&lt;/code&gt; file for it to register.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;page-configuration-files&quot;&gt;Page Configuration files&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Uses a declared &lt;strong&gt;Page Layout&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Defines detailed structure, contents, meta info, etc (menu, nav, search box, widgets, links, contents, images) inside of header, main content, footer, columns.
+    &lt;ul&gt;
+      &lt;li&gt;Ex. Components&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;generic-page-layouts&quot;&gt;Generic Page Layouts&lt;/h4&gt;
+&lt;p&gt;There is also another type of page layout that is not quite use often. For more info: &lt;a href=&quot;http://devdocs.magento.com/guides/v2.1/frontend-dev-guide/layouts/layout-types.html#layout-types-gen&quot;&gt;Magento2 Dev Doc - Generic layout&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;magento-2-templating&quot;&gt;Magento 2 Templating&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;It seems like templating is just a matter of copy and pasting pieces of code that Magento 2 Modules provide.&lt;/li&gt;
+  &lt;li&gt;Use &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;block /&amp;gt;&lt;/code&gt; to define a component inside a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;container /&amp;gt;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Define a component class like so, &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;block class=&quot;&quot; /&amp;gt;&lt;/code&gt; and extend by defining a template to tweak template/customize HTML structure &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;block class=&quot;&quot; template=&quot;&quot; /&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Fri, 05 Aug 2016 15:38:03 -0700</pubDate>
+        <pubDate>Thu, 11 Aug 2016 05:42:09 -0700</pubDate>
         <link>http://www.wandrr.io/Getting-started-with-Magento-Theming</link>
         <guid isPermaLink="true">http://www.wandrr.io/Getting-started-with-Magento-Theming</guid>
+        
+        <category>cms</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Notes on creating a convenient Local Development Workflow with Docker</title>
+        <description>&lt;p&gt;While working on a project that requires a new install of PHP and MySql, I came into a halt. It took me a day to re-configure my local development environment.&lt;/p&gt;
+
+&lt;p&gt;I then came across Docker. With this research and learning a new technology. My goal is to establish an efficient local development workflow with Docker as I did with creating &lt;a href=&quot;https://github.com/rlynjb/frontendflow&quot;&gt;Front-End Workflow Theme&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This article &lt;a href=&quot;https://www.airpair.com/docker/posts/efficiant-development-workfow-using-git-submodules-and-docker-compose&quot;&gt;Efficient development workflow using Git submodules and Docker Compose&lt;/a&gt; gave me a brief overview of what Docker and Git is capable of when architecturing your preferred local development, though, I did have to do further reading on my own to grasp Docker Engine, Docker Compose, and Git submodule (I will not be tackling this topic as I’m focus on Dockerfile and Docker Compose).&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;so-far-what-i-know-about-docker-in-regards-of-hands-on-experience-is&quot;&gt;So far, what I know about Docker in regards of hands-on experience is&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;we edit or create our source code in a directory from our local machine.
+    &lt;ul&gt;
+      &lt;li&gt;to run the app
+        &lt;ul&gt;
+          &lt;li&gt;we use Docker to start images we define in &lt;strong&gt;Dockerfile&lt;/strong&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Docker automatically creates a &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;http://0.0.0.0&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Docker uses Port for each contained apps or websites&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;collections-of-tutorials&quot;&gt;Collections of tutorials&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;install &lt;strong&gt;Docker&lt;/strong&gt; via its official site &lt;a href=&quot;https://docs.docker.com/docker-for-mac/&quot;&gt;Getting Started with Docker for Mac&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;useful-commands-and-info&quot;&gt;Useful commands and info&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Look into &lt;strong&gt;Dockerfile&lt;/strong&gt; file references&lt;/li&gt;
+  &lt;li&gt;Look into &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file references and commandline references&lt;/li&gt;
+  &lt;li&gt;To access a container via terminal:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://askubuntu.com/questions/505506/how-to-get-bash-or-ssh-into-a-running-container-in-background-mode&quot;&gt;How to get bash or ssh into a running container in background mode?&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo docker exec -i -t 665b4a1e17b6 /bin/bash #by ID&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo docker exec -i -t loving_heisenberg /bin/bash #by Name&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;to start a containter &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose up&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose up -d&lt;/code&gt; to detach from status&lt;/li&gt;
+  &lt;li&gt;to see processes: &lt;code class=&quot;highlighter-rouge&quot;&gt;docker ps&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;run a command inside container from host
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;h2 id=&quot;docker-exec-containerid-command&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker exec &amp;lt;container_id&amp;gt; &amp;lt;command&amp;gt;&lt;/code&gt;&lt;/h2&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;for-app-sample-workflow&quot;&gt;For App sample workflow&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.docker.com/compose/gettingstarted&quot;&gt;Practice Workflow with Docker compose&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;for-cms-sample-workflow&quot;&gt;For CMS sample workflow&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://visible.vc/engineering/docker-environment-for-wordpress/&quot;&gt;Practice Workflow with CMS using Docker compose&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Tip:&lt;/strong&gt; you have to be familiar with CMS directory&lt;/li&gt;
+  &lt;li&gt;We mount local directories from our machine to its Docker container/server with the use of &lt;strong&gt;volume&lt;/strong&gt; in its &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Tip:&lt;/strong&gt; we can have a copy of CMS install locally on out directory and mount it on Docker container/server&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 08 Aug 2016 06:31:20 -0700</pubDate>
+        <link>http://www.wandrr.io/Notes-on-creating-a-convenient-local-development-workflow-with-Docker</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Notes-on-creating-a-convenient-local-development-workflow-with-Docker</guid>
+        
+        <category>workflow</category>
         
         
       </item>
@@ -803,77 +1031,6 @@
         <pubDate>Thu, 05 May 2016 09:22:31 -0700</pubDate>
         <link>http://www.wandrr.io/JS-Interview-Question-Why-is-it-called-a-Ternary-expression-what-does-the-word-Ternary-indicate</link>
         <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Why-is-it-called-a-Ternary-expression-what-does-the-word-Ternary-indicate</guid>
-        
-        <category>javascript interview questions</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Explain the same-origin policy with regards to JavaScript</title>
-        <description>&lt;p&gt;Same-origin policy restricts scripts from other websites to be executed on your website. It is an important security measure as it isolates known malicious attacks such as Cross Site Scripting.&lt;/p&gt;
-
-&lt;p&gt;In two pages with url, an &lt;strong&gt;origin&lt;/strong&gt; is defined if its &lt;strong&gt;protocol&lt;/strong&gt;, &lt;strong&gt;host&lt;/strong&gt;, and &lt;strong&gt;port&lt;/strong&gt; are the same for both pages.&lt;/p&gt;
-
-&lt;p&gt;An example via &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy&quot;&gt;MDN - Same-origin policy&lt;/a&gt;:
-&lt;br /&gt;
-Compare &lt;code class=&quot;highlighter-rouge&quot;&gt;http://store.company.com/dir/page.html&lt;/code&gt; to the table below.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;URL&lt;/th&gt;
-      &lt;th&gt;Outcome&lt;/th&gt;
-      &lt;th&gt;Reason&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;http://store.company.com/dir2/other.html&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Success&lt;/td&gt;
-      &lt;td&gt;-&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;http://store.company.com/dir/inner/another.html&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Success&lt;/td&gt;
-      &lt;td&gt;-&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;https://store.company.com/secure.html&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Failure&lt;/td&gt;
-      &lt;td&gt;Different protocol&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;http://store.company.com:81/dir/etc.html&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Failure&lt;/td&gt;
-      &lt;td&gt;Different port&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;http://news.company.com/dir/other.html&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Failure&lt;/td&gt;
-      &lt;td&gt;Different host&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;There is also a work around for subdomains. The last example above &lt;code class=&quot;highlighter-rouge&quot;&gt;http://news.company.com/dir/other.html&lt;/code&gt; can be a &lt;em&gt;Success&lt;/em&gt; by setting &lt;code class=&quot;highlighter-rouge&quot;&gt;document.domain&lt;/code&gt; to our parent domain &lt;code class=&quot;highlighter-rouge&quot;&gt;company.com&lt;/code&gt;.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;domain&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;company.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;For details on changing origin, refer to &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy#Changing_origin&quot;&gt;MDN - Same-origin policy: Changing origin&lt;/a&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy&quot;&gt;MDN - Same-origin policy&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/11474336/same-origin-policy-in-layman-terms&quot;&gt;Same-origin Policy in layman terms&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 05 May 2016 03:11:44 -0700</pubDate>
-        <link>http://www.wandrr.io/JS-Interview-Question-Explain-the-same-origin-policy-with-regards-to-JavaScript</link>
-        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Explain-the-same-origin-policy-with-regards-to-JavaScript</guid>
         
         <category>javascript interview questions</category>
         
