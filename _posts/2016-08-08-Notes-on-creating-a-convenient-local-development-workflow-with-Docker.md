@@ -42,6 +42,7 @@ This article [Efficient development workflow using Git submodules and Docker Com
 - to see processes: `docker ps`
 - run a command inside container from host
   * `docker exec <container_id> <command>`
+
 -----
 
 ### For App sample workflow
