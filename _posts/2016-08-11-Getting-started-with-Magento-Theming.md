@@ -118,3 +118,10 @@ There is also another type of page layout that is not quite use often. For more 
 - It seems like templating is just a matter of copy and pasting pieces of code that Magento 2 Modules provide.
 - Use `<block />` to define a component inside a `<container />`
 - Define a component class like so, `<block class="" />` and extend by defining a template to tweak template/customize HTML structure `<block class="" template="" />`
+
+-----
+
+### Further Templating Issues
+
+- [How to load a phtml file only for homepage? (Magento 2)](http://magento.stackexchange.com/questions/108296/how-to-load-a-phtml-file-only-for-homepage-magento-2)
+
