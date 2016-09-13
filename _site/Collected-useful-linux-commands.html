@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Collected useful Linux Commands</title>
-  <meta name="description" content="Useful commands for navigating directories">
+  <meta name="description" content="Changing user accounts">
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="http://www.wandrr.io/Collected-useful-linux-commands">
@@ -76,31 +76,7 @@
   </header>
 
   <article class="post-content">
-    <h1 id="useful-commands-for-navigating-directories">Useful commands for navigating directories</h1>
-
-<p>Below is a gist of what this post contains.</p>
-
-<ul>
-  <li>Setting file permissions</li>
-  <li>Chaging user accounts</li>
-  <li>Commands for searching</li>
-  <li>Commands for sorting files</li>
-  <li>Opening files</li>
-  <li>SSH and SCP</li>
-  <li>Tar compress and extract</li>
-</ul>
-
-<hr />
-
-<h3 id="setting-file-permissions">Setting File Permissions</h3>
-
-<ul>
-  <li><a href="https://help.ubuntu.com/community/FilePermissions">Ubuntu: FilePermission</a></li>
-</ul>
-
-<hr />
-
-<h3 id="changing-user-accounts">Changing user accounts</h3>
+    <h3 id="changing-user-accounts">Changing user accounts</h3>
 
 <ul>
   <li><a href="https://help.ubuntu.com/community/RootSudo">sudo su commands</a></li>
@@ -118,19 +94,6 @@
   <li><a href="https://help.ubuntu.com/community/grep">grep</a></li>
 </ul>
 
-<p><strong>Sample uses</strong></p>
-
-<ul>
-  <li>Searching for a file throughout the system</li>
-  <li>Searching for a keyword though a directory</li>
-</ul>
-
-<h4 id="references"><strong>References:</strong></h4>
-
-<ul>
-  <li><a href="https://www.digitalocean.com/community/tutorials/how-to-use-find-and-locate-to-search-for-files-on-a-linux-vps">How To Use Find and Locate to Search for Files on a Linux VPS</a></li>
-</ul>
-
 <hr />
 
 <h3 id="commands-for-sorting-files">Commands for sorting files</h3>
@@ -138,40 +101,8 @@
 <ul>
   <li><a href="">ls</a></li>
   <li><a href="">ll</a></li>
-</ul>
-
-<p><strong>Sample uses</strong></p>
-
-<ul>
   <li>Sort files in date <code class="highlighter-rouge">ll -tr</code> to check which files has been modified recently</li>
   <li>Check for any suspicious injected files</li>
-</ul>
-
-<hr />
-
-<h3 id="security-file-permissions">Security File Permissions</h3>
-
-<ul>
-  <li><a href="https://help.ubuntu.com/community/FilePermissions">Understanding and Using File Permissions</a></li>
-</ul>
-
-<hr />
-
-<h3 id="opening-files">Opening files</h3>
-
-<ul>
-  <li><a href="">vim</a></li>
-  <li><a href="">nano</a></li>
-  <li><a href="">cat</a></li>
-  <li><a href="">head</a></li>
-  <li><a href="http://www.computerhope.com/unix/utail.htm">tail</a></li>
-</ul>
-
-<p><strong>VIM - remembering important features</strong></p>
-
-<ul>
-  <li><code class="highlighter-rouge">:set tabstop=2</code></li>
-  <li><code class="highlighter-rouge">:set nu</code></li>
 </ul>
 
 <hr />
@@ -188,17 +119,14 @@
 
 <h3 id="tar-compress-and-extract">Tar compress and extract</h3>
 
-<p>compress</p>
-
-<p><code class="highlighter-rouge">tar -czf folder.tar.gz folder</code></p>
-
-<p>extract</p>
-
-<p><code class="highlighter-rouge">tar -xzf folder.tar.gz</code></p>
+<ul>
+  <li>compress: <code class="highlighter-rouge">tar -czf folder.tar.gz folder</code></li>
+  <li>extract: <code class="highlighter-rouge">tar -xzf folder.tar.gz</code></li>
+</ul>
 
 <hr />
 
-<h1 id="useful-techniques-for-configuring-and-managing-server">Useful techniques for configuring and managing server</h1>
+<h3 id="useful-techniques-for-configuring-and-managing-server">Useful techniques for configuring and managing server</h3>
 
 <p>Below is a gist of what this post contains.</p>
 
@@ -210,9 +138,7 @@
 
 <hr />
 
-<h3 id="some-server-stuff-techniques">Some Server stuff techniques</h3>
-
-<h4 id="php-and-apache2"><strong>PHP and Apache2</strong></h4>
+<h3 id="php-and-apache2">PHP and Apache2</h3>
 
 <p>To check a website’s php info: <br />
 You can use either cli command <code class="highlighter-rouge">php</code> or create a file with phpinfo().<br />
@@ -231,15 +157,15 @@ Latter solution will check specific site php info.</p>
   <li>When updating a <code class="highlighter-rouge">php.ini</code> file and you want to see what a specific website is using. Because there can be multiple <code class="highlighter-rouge">php.ini</code> file somewhere.</li>
 </ul>
 
-<h4 id="npm-and-nodejs"><strong>NPM and Nodejs</strong></h4>
+<hr />
+
+<h3 id="npm-and-nodejs">NPM and Nodejs</h3>
 
 <p>Use NVM when managing different nodejs and npm versions on a server. Saves time!</p>
 
 <hr />
 
 <h3 id="benefits-of-checking-varlog">Benefits of checking /var/log/</h3>
-
-<p><strong>Sample uses</strong></p>
 
 <ul>
   <li>Monitor a certain IP address activity hitting your server or certain file</li>
