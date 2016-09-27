@@ -6,42 +6,9 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 14 Sep 2016 16:09:04 -0700</pubDate>
-    <lastBuildDate>Wed, 14 Sep 2016 16:09:04 -0700</lastBuildDate>
+    <pubDate>Tue, 27 Sep 2016 10:32:24 -0700</pubDate>
+    <lastBuildDate>Tue, 27 Sep 2016 10:32:24 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
-    
-      <item>
-        <title>Learning Keystonejs</title>
-        <description>&lt;p&gt;created a docker compose setup for Nodejs + MongoDB with Keystonejs install.&lt;/p&gt;
-
-&lt;p&gt;my experience with starting with keystone.js was somewhat a love and hate thing.&lt;/p&gt;
-
-&lt;p&gt;coming from a front-end development, i dont know much about database concepts.&lt;/p&gt;
-
-&lt;p&gt;keystone.js is a good framework to dabble and start a journey with fullstack development.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;it is also use for large-scale websites.&lt;/li&gt;
-  &lt;li&gt;it is flexible enough to create custom fields and post type.&lt;/li&gt;
-  &lt;li&gt;it is still on going development with some aspect of defining fields.&lt;/li&gt;
-  &lt;li&gt;it is well supported by the community and rarely read negative feedbacks&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;useful reading references for beginners:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://leanpub.com/keystonejs/read&quot;&gt;Practical Keystone.js&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://keystonejs.com/docs/&quot;&gt;Keystone.js Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sat, 20 Aug 2016 04:12:26 -0700</pubDate>
-        <link>http://www.wandrr.io/Learning-Keystonejs</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Learning-Keystonejs</guid>
-        
-        <category>javascript</category>
-        
-        
-      </item>
     
       <item>
         <title>Getting Started with Magento Theming</title>
@@ -304,291 +271,6 @@
         <pubDate>Mon, 08 Aug 2016 06:31:20 -0700</pubDate>
         <link>http://www.wandrr.io/Notes-on-creating-a-convenient-local-development-workflow-with-Docker</link>
         <guid isPermaLink="true">http://www.wandrr.io/Notes-on-creating-a-convenient-local-development-workflow-with-Docker</guid>
-        
-        <category>workflow</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Breaking down Cross-Browser Testing</title>
-        <description>&lt;p&gt;Below is my note on an article on smashing magazine. Article is mostly theory but I tried to take in the important info.&lt;/p&gt;
-
-&lt;h1 id=&quot;two-main-objectives&quot;&gt;Two Main Objectives&lt;/h1&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Discovering bugs
-    &lt;ul&gt;
-      &lt;li&gt;Entails trying to break your app to find bugs to fix.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Sanity-checking
-    &lt;ul&gt;
-      &lt;li&gt;Involves verifying that majority of your audience receives the expected experience.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;know-your-statistics&quot;&gt;Know your Statistics&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Audience statistics&lt;/li&gt;
-  &lt;li&gt;Browser usage statistics&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;simplify-your-browser-usage-statistics&quot;&gt;Simplify your browser usage statistics&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Desktop Browsers&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;we don’t care about:
-    &lt;ul&gt;
-      &lt;li&gt;versions except IE&lt;/li&gt;
-      &lt;li&gt;OS&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;same argument applies with Portable Browsers&lt;/li&gt;
-  &lt;li&gt;new wave of browsers called: In-App browsers - browsers in social media platforms&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Portable Browsers&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;whats important:
-    &lt;ul&gt;
-      &lt;li&gt;version of the native Android browser used&lt;/li&gt;
-      &lt;li&gt;version of iOS a device is running
-        &lt;ul&gt;
-          &lt;li&gt;very relevant as Safari versions are intrinsically linked to iOS&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;three-phase-attack&quot;&gt;Three-Phase Attack&lt;/h1&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Reconnaissance: Find Browser-Agnostic Bugs&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Try resizing to view responsiveness. Was there a funky breakpoint anywhere?&lt;/li&gt;
-      &lt;li&gt;Zoom in and out. Have the background-positions of your image sprite been knocked askew?&lt;/li&gt;
-      &lt;li&gt;See how the application behaves with Javascript turned off. Do you still get the core content?&lt;/li&gt;
-      &lt;li&gt;See how the application looks with CSS turned off. Do the semantics of the markup still make sense?&lt;/li&gt;
-      &lt;li&gt;Try turning both Javascript and CSS off. Are you getting an acceptable experience?&lt;/li&gt;
-      &lt;li&gt;Try interacting with the application using only your keyboard. Is it possible to navigate and see all the content?&lt;/li&gt;
-      &lt;li&gt;Try throttling your connection and see how quickly the application loads. How heavy is the page load?&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Raid: Test in High-Risk Browsers First&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Statistical Analysis of Bug Distribution&lt;/li&gt;
-      &lt;li&gt;High-Risk are IE browsers&lt;/li&gt;
-      &lt;li&gt;Medium-Rish are Safari, Opera&lt;/li&gt;
-      &lt;li&gt;Low-Rish are Chrome, Firefox&lt;/li&gt;
-      &lt;li&gt;Fixing bugs in bad browsers makes your code more resilient in good browsers&lt;/li&gt;
-      &lt;li&gt;Identifying problematic browsers&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;http://caniuse.com&quot;&gt;CanIUse&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;VirtualBox&lt;/li&gt;
-      &lt;li&gt;Check on actual device or browser&lt;/li&gt;
-      &lt;li&gt;Tools to rectify major compatibility issues:&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;http://modernizr.com&quot;&gt;Modernizr&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Clearance: sanity checking&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;By this stage, we should be 80:20&lt;/li&gt;
-      &lt;li&gt;Figuratively, we’ve fixed 80% of the bugs after testing 20% of the browsers&lt;/li&gt;
-      &lt;li&gt;Now, we verify the experience of 80% of audience through testing a different 20% of browsers&lt;/li&gt;
-      &lt;li&gt;Prioritize the browsers&lt;/li&gt;
-      &lt;li&gt;Use a 3rd-party service that checks on multiple browsers and device&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2016/02/high-impact-minimal-effort-cross-browser-testing/&quot;&gt;High Impact, Minimal-Effort Cross-Browser Testing&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 03 Aug 2016 05:57:02 -0700</pubDate>
-        <link>http://www.wandrr.io/Breaking-down-cross-browser-testing</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Breaking-down-cross-browser-testing</guid>
-        
-        <category>testing</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Learning React</title>
-        <description>&lt;p&gt;implementing react.js on gulp
-- do a gulp task of react.js build&lt;/p&gt;
-
-&lt;p&gt;*JSX makes us write HTML syntax in Javascript files&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;this does not run in browsers thats why we need a transpiler&lt;/li&gt;
-  &lt;li&gt;since i am usin gulp, we are going to search for a gulp plugin that transpiles JSX files to plain js files&lt;/li&gt;
-  &lt;li&gt;JSX to JS using babel&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;configuring gulp plugin babel was a bit tricky due to NPM dependency issues.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;learning react is quite overwhelming. I think with any new front-end is overwhelming due to the amount of dependencies or tools options that are available. Front-end development has indeed bloom.&lt;/p&gt;
-
-&lt;p&gt;before digging further into random articles that suggests to use this or that tool. I’ve decided to learn plain React.js. Stripping other unknown tools and focusing on the foundation, then once comfortable with plain React.js, move on to another tool and implement. Learning indeed can also be a step-by-step process.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://jamesknelson.com/learn-raw-react-no-jsx-flux-es6-webpack/&quot;&gt;Learn Raw React — no JSX, no Flux, no ES6, no Webpack&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.risingstack.com/the-react-way-getting-started-tutorial/&quot;&gt;The React.js Way: Getting Started Tutorial&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://buildwithreact.com/&quot;&gt;Build with React&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 28 Jul 2016 03:58:40 -0700</pubDate>
-        <link>http://www.wandrr.io/Learning-React</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Learning-React</guid>
-        
-        <category>javascript</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Front-End Design Specs</title>
-        <description>&lt;p&gt;determing a workflow is hard but its even harder when we go through a laborious iterative process with designers.&lt;/p&gt;
-
-&lt;p&gt;since i have been using Zurb foundation, zurb foundation comes with a settings file that defines global variables for general design settings. This gave me the idea that responsive web design follows a certain pattern, same as Development.&lt;/p&gt;
-
-&lt;p&gt;process to determing on refining the design and developer workflow are:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;list down general design css properties
-    &lt;ul&gt;
-      &lt;li&gt;layout
-        &lt;ul&gt;
-          &lt;li&gt;max-width&lt;/li&gt;
-          &lt;li&gt;number of columns grid&lt;/li&gt;
-          &lt;li&gt;gutter width
-            &lt;ul&gt;
-              &lt;li&gt;small breakpoint&lt;/li&gt;
-              &lt;li&gt;medium breakpoint&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;typography - header
-        &lt;ul&gt;
-          &lt;li&gt;header font&lt;/li&gt;
-          &lt;li&gt;header font sizes
-            &lt;ul&gt;
-              &lt;li&gt;small breakpoint&lt;/li&gt;
-              &lt;li&gt;medium breakpoint&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;header color&lt;/li&gt;
-          &lt;li&gt;header alignment, leading, kerning&lt;/li&gt;
-          &lt;li&gt;header opacity, filter&lt;/li&gt;
-          &lt;li&gt;header font weight&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;typography - body
-        &lt;ul&gt;
-          &lt;li&gt;body font size
-            &lt;ul&gt;
-              &lt;li&gt;small breakpoint&lt;/li&gt;
-              &lt;li&gt;medium breakpoint&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;body font color&lt;/li&gt;
-          &lt;li&gt;body font family&lt;/li&gt;
-          &lt;li&gt;body line height, leading, kerning&lt;/li&gt;
-          &lt;li&gt;body font weight&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;spacing measurement
-        &lt;ul&gt;
-          &lt;li&gt;width and height
-            &lt;ul&gt;
-              &lt;li&gt;small breakpoint&lt;/li&gt;
-              &lt;li&gt;medium breakpopint&lt;/li&gt;
-              &lt;li&gt;large breakpoint&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;spacing bet object and canvas&lt;/li&gt;
-          &lt;li&gt;spacing bet multiple objects&lt;/li&gt;
-          &lt;li&gt;spacing bet text and objects&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;objects
-        &lt;ul&gt;
-          &lt;li&gt;fill color&lt;/li&gt;
-          &lt;li&gt;stroke, color, size, style&lt;/li&gt;
-          &lt;li&gt;opacity/filter&lt;/li&gt;
-          &lt;li&gt;corner radius&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;color palette
-        &lt;ul&gt;
-          &lt;li&gt;primary, secondary, tertiary, quaternary&lt;/li&gt;
-          &lt;li&gt;monotone
-            &lt;ul&gt;
-              &lt;li&gt;gray - light, medium, dark&lt;/li&gt;
-              &lt;li&gt;black&lt;/li&gt;
-              &lt;li&gt;white&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;after analyzing above data and visually looking at a design comp, these properties are already set on the provided design comp but not documented.&lt;/p&gt;
-
-&lt;p&gt;this is where PNG Express comes in, photoshop plugin tool.&lt;/p&gt;
-
-&lt;p&gt;after testing on a design comp and implementing it on theme development, it is indeed an ease for us developers.&lt;/p&gt;
-
-&lt;p&gt;so overview process would be:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;designer designs ui comp&lt;/li&gt;
-  &lt;li&gt;after design is complete, designer sets Design Specs with PNG Express&lt;/li&gt;
-  &lt;li&gt;pass the UI comp with design specs to front end developer&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;front end developer implements these measurements on css styles sheets&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;it does not need to be exact pixels, this is a good way to atleast get an estimate.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;with this in set, this also gives Front end developers to compile a Style Guide and or components that can be resuable.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2014/10/front-end-development-ode-to-specifications/&quot;&gt;A Front-End Developer’s Ode To Specifications&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.pngexpress.com/&quot;&gt;PNG Express&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 28 Jul 2016 03:58:40 -0700</pubDate>
-        <link>http://www.wandrr.io/Front-End-Design-Specs</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Front-End-Design-Specs</guid>
         
         <category>workflow</category>
         
@@ -983,35 +665,6 @@
       </item>
     
       <item>
-        <title>Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?</title>
-        <description>&lt;p&gt;There are various reasons why Global Variables are bad. This can include performance, name collision, or bad code readability/organization.&lt;/p&gt;
-
-&lt;p&gt;Pointers below are from &lt;a href=&quot;http://c2.com/cgi/wiki?GlobalVariablesAreBad&quot;&gt;Global Variables Are Bad&lt;/a&gt; that were paraphrased in layman’s term.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Non-locality&lt;/strong&gt; - Code is easier to understand when parts of an app is limited to its own scope. Its easy to forget what a variable is intended for, but setting local variables in its own scope can help alleviate bad code readability/organization.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;No Access Control or Constraint Checking&lt;/strong&gt; - Any part of an app can easily get or set a global variable and this can cause an app to easily break.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Namespace pollution&lt;/strong&gt; - When setting a variable globally, they will be available in any parts of your code, thus, causing variable name collision and polluting the global namespace with unnecessary variables for certain parts of an app when executed.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://c2.com/cgi/wiki?GlobalVariablesAreBad&quot;&gt;Global Variables Are Bad&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Mon, 16 May 2016 04:03:37 -0700</pubDate>
-        <link>http://www.wandrr.io/Why-is-it-in-general-a-good-idea-to-leave-the-global-scope-of-a-website-as-is-and-never-touch-it</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Why-is-it-in-general-a-good-idea-to-leave-the-global-scope-of-a-website-as-is-and-never-touch-it</guid>
-        
-        <category>javascript interview questions</category>
-        
-        
-      </item>
-    
-      <item>
         <title>What is &quot;use strict&quot;;? what are the advantages and disadvantages to using it?</title>
         <description>&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;use strict;&quot;&lt;/code&gt; is applied to an entire script file or to individual functions by implementing at the beginning of a file or at the beginning of &lt;em&gt;inside a function&lt;/em&gt; before anything else.&lt;/p&gt;
 
@@ -1032,6 +685,359 @@
         <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-What-is-use-strict-what-are-the-advantages-and-disadvantages-to-using-it</guid>
         
         <category>javascript interview questions</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Why is it called a Ternary expression, what does the word &quot;Ternary&quot; indicate?</title>
+        <description>&lt;p&gt;Ternary &lt;code class=&quot;highlighter-rouge&quot;&gt;?:&lt;/code&gt; is an operator that takes 3 arguments and defines a conditional expression. It is a one-lined shorthand for an &lt;strong&gt;if-then statement&lt;/strong&gt; and is also called Ternary operator or Conditional operator.&lt;/p&gt;
+
+&lt;p&gt;An example would be:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fooTrue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;fuzz&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Above code can be shortened with &lt;code class=&quot;highlighter-rouge&quot;&gt;?:&lt;/code&gt;.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;fooTrue&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fuzz&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;In JavaScript, conditional operators can be evaluated to an &lt;strong&gt;Expression&lt;/strong&gt;, not just statement.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// assigned to a variable&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;isFoo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fooTrue&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;yes&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;no&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// passed as an argument in a function&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;getFoo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fooTrue&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;yes&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;no&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Ternary_operation&quot;&gt;Wiki - Ternary operation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Conditional_(ternary)_operator&quot;&gt;MDN - Expressions and Operators: Conditional (ternary) operator&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/6259982/how-to-use-the-ternary-operator-in-javascript&quot;&gt;How to use the ?: (ternary) operator in JavaScript&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 05 May 2016 09:22:31 -0700</pubDate>
+        <link>http://www.wandrr.io/JS-Interview-Question-Why-is-it-called-a-Ternary-expression-what-does-the-word-Ternary-indicate</link>
+        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Why-is-it-called-a-Ternary-expression-what-does-the-word-Ternary-indicate</guid>
+        
+        <category>javascript interview questions</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Explain the same-origin policy with regards to JavaScript</title>
+        <description>&lt;p&gt;Same-origin policy restricts scripts from other websites to be executed on your website. It is an important security measure as it isolates known malicious attacks such as Cross Site Scripting.&lt;/p&gt;
+
+&lt;p&gt;In two pages with url, an &lt;strong&gt;origin&lt;/strong&gt; is defined if its &lt;strong&gt;protocol&lt;/strong&gt;, &lt;strong&gt;host&lt;/strong&gt;, and &lt;strong&gt;port&lt;/strong&gt; are the same for both pages.&lt;/p&gt;
+
+&lt;p&gt;An example via &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy&quot;&gt;MDN - Same-origin policy&lt;/a&gt;:
+&lt;br /&gt;
+Compare &lt;code class=&quot;highlighter-rouge&quot;&gt;http://store.company.com/dir/page.html&lt;/code&gt; to the table below.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;URL&lt;/th&gt;
+      &lt;th&gt;Outcome&lt;/th&gt;
+      &lt;th&gt;Reason&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;http://store.company.com/dir2/other.html&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Success&lt;/td&gt;
+      &lt;td&gt;-&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;http://store.company.com/dir/inner/another.html&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Success&lt;/td&gt;
+      &lt;td&gt;-&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;https://store.company.com/secure.html&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Failure&lt;/td&gt;
+      &lt;td&gt;Different protocol&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;http://store.company.com:81/dir/etc.html&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Failure&lt;/td&gt;
+      &lt;td&gt;Different port&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;http://news.company.com/dir/other.html&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Failure&lt;/td&gt;
+      &lt;td&gt;Different host&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;There is also a work around for subdomains. The last example above &lt;code class=&quot;highlighter-rouge&quot;&gt;http://news.company.com/dir/other.html&lt;/code&gt; can be a &lt;em&gt;Success&lt;/em&gt; by setting &lt;code class=&quot;highlighter-rouge&quot;&gt;document.domain&lt;/code&gt; to our parent domain &lt;code class=&quot;highlighter-rouge&quot;&gt;company.com&lt;/code&gt;.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;domain&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;company.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;For details on changing origin, refer to &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy#Changing_origin&quot;&gt;MDN - Same-origin policy: Changing origin&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy&quot;&gt;MDN - Same-origin policy&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/11474336/same-origin-policy-in-layman-terms&quot;&gt;Same-origin Policy in layman terms&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 05 May 2016 03:11:44 -0700</pubDate>
+        <link>http://www.wandrr.io/JS-Interview-Question-Explain-the-same-origin-policy-with-regards-to-JavaScript</link>
+        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Explain-the-same-origin-policy-with-regards-to-JavaScript</guid>
+        
+        <category>javascript interview questions</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>What is the difference between == and ===?</title>
+        <description>&lt;p&gt;JavaScript has two sets of &lt;strong&gt;&lt;em&gt;Equality operators&lt;/em&gt;&lt;/strong&gt; archived under &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators&quot;&gt;Comparison operators&lt;/a&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;equality &lt;code class=&quot;highlighter-rouge&quot;&gt;==&lt;/code&gt; &amp;amp; inequality &lt;code class=&quot;highlighter-rouge&quot;&gt;!=&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;strict equality &lt;code class=&quot;highlighter-rouge&quot;&gt;===&lt;/code&gt; &amp;amp; strict inequality &lt;code class=&quot;highlighter-rouge&quot;&gt;!==&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We use these operators when comparing 2 operands. They differ on what type of operands are being compared to against.&lt;/p&gt;
+
+&lt;p&gt;For example, equality &lt;code class=&quot;highlighter-rouge&quot;&gt;==&lt;/code&gt; or inequality &lt;code class=&quot;highlighter-rouge&quot;&gt;!=&lt;/code&gt; signs compares 2 values without type conversion. 
+&lt;br /&gt;
+While strict equality &lt;code class=&quot;highlighter-rouge&quot;&gt;===&lt;/code&gt; or strict inequality &lt;code class=&quot;highlighter-rouge&quot;&gt;!==&lt;/code&gt; signs compares 2 values with type conversion.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;s1&quot;&gt;&#39;1&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true &amp;lt; all it matters is the value&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;&#39;1&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false &amp;lt; they are not the same type&lt;/span&gt;
+
+&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;&#39;1&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
+
+&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;&#39;1&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/359494/does-it-matter-which-equals-operator-vs-i-use-in-javascript-comparisons&quot;&gt;Does it matter which equals operator (== vs ===) I use in JavaScript comparisons?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators&quot;&gt;Comparison operators&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 03 May 2016 07:00:07 -0700</pubDate>
+        <link>http://www.wandrr.io/JS-Interview-Question-Difference-between-double-and-triple-equals</link>
+        <guid isPermaLink="true">http://www.wandrr.io/JS-Interview-Question-Difference-between-double-and-triple-equals</guid>
+        
+        <category>javascript interview questions</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Simple instructions for Drupal Minor Updates</title>
+        <description>&lt;p&gt;This blog post tackles implementing &lt;strong&gt;Minor Updates&lt;/strong&gt; on Drupal websites. Its a short, simple, and pretty straight-forward instructions.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;references-and-tools&quot;&gt;References and Tools&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.drupal.org/node/1223018&quot;&gt;Update procedure (minor version change)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://tylerfrankenstein.com/code/use-drush-export-import-drupal-mysql-database-dump-file&quot;&gt;Use Drush to Export/Import a Drupal MySQL Database Dump File&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://drushcommands.com&quot;&gt;Drush Commands&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;two-ways-to-check-for-drupal-update-status&quot;&gt;Two ways to check for Drupal Update Status&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;via Website GUI
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;http://www.website-name.com/admin/reports/updates&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Reports &amp;gt; Available Updates&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;via CLI
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;drush pm-updatestatus&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;preparation-before-updating-a-drupal-website&quot;&gt;Preparation before Updating a Drupal website&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Backup database via Drush
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;drush sql-dump &amp;gt; name_of_site-date.sql&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Backup core files by compressing directory containing drupal core files
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;tar -czf site_name_date.tar.gz /path_to_site_directory/&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Show a report of available minor updates to Drupal core and contrib projects.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;drush pm-updatestatus&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Backup &lt;code class=&quot;highlighter-rouge&quot;&gt;.htaccess&lt;/code&gt; by making a copy and dumping outside of drupal website directory
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cp .htaccess ../&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;implementing-minor-updates-on-drupal-sites&quot;&gt;Implementing Minor Updates on Drupal sites&lt;/h3&gt;
+
+&lt;p&gt;Only &lt;em&gt;Security Updates&lt;/em&gt; of core and modules will be performed. Updating Modules with &lt;code class=&quot;highlighter-rouge&quot;&gt;Update available&lt;/code&gt; message may conflict with other module or drupal core version.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;cd to drupal website directory and run &lt;code class=&quot;highlighter-rouge&quot;&gt;drush up drupal&lt;/code&gt; to update drupal core&lt;/li&gt;
+  &lt;li&gt;run &lt;code class=&quot;highlighter-rouge&quot;&gt;drush pm-updatestatus&lt;/code&gt; again to check for other module updates&lt;/li&gt;
+  &lt;li&gt;run &lt;code class=&quot;highlighter-rouge&quot;&gt;drush up &amp;lt;name of module&amp;gt;&lt;/code&gt; to update a module&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Fri, 01 Apr 2016 05:26:55 -0700</pubDate>
+        <link>http://www.wandrr.io/Simple-Instructions-for-Drupal-Minor-Updates</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Simple-Instructions-for-Drupal-Minor-Updates</guid>
+        
+        <category>drupal</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Fiddling with PhoneGap Plugins and HTML5 Speech Recognition</title>
+        <description>&lt;p&gt;Hello! Again this is a continuation of my previous blog posts. I am attempting to develop a simple app while blogging my experience and issues I’ve come across. Below are my previous blog post in order.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/Beginning-mobile-app-development-journey&quot;&gt;Beginning Mobile App Developmet Journey&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/Beginning-Small-Web-App-Development-with-AngularJS&quot;&gt;Beginning Small Web App Development with AngularJS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Just a recap, from my recent blog post &lt;a href=&quot;/Beginning-Small-Web-App-Development-with-AngularJS&quot;&gt;Beginning Small Web App Development with AngularJS&lt;/a&gt;, I was able to:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Setup Zurb Foundation for Apps by creating a directory &lt;code class=&quot;highlighter-rouge&quot;&gt;www-dev&lt;/code&gt; inside of my phonegap project instance.&lt;/li&gt;
+  &lt;li&gt;Use Zurb Foundation for Apps project directory for development.&lt;/li&gt;
+  &lt;li&gt;Modify &lt;code class=&quot;highlighter-rouge&quot;&gt;gulpfile.js&lt;/code&gt; to dump &lt;code class=&quot;highlighter-rouge&quot;&gt;build&lt;/code&gt; files on &lt;code class=&quot;highlighter-rouge&quot;&gt;www&lt;/code&gt; directory.&lt;/li&gt;
+  &lt;li&gt;Renamed original &lt;code class=&quot;highlighter-rouge&quot;&gt;www&lt;/code&gt; directory to &lt;code class=&quot;highlighter-rouge&quot;&gt;www-default&lt;/code&gt; for a copy of original app files.&lt;/li&gt;
+  &lt;li&gt;Designed a simple mobile layout and navigation using Zurb Foundation for Apps.&lt;/li&gt;
+  &lt;li&gt;Learn and leverage Zurb Foundation for Apps AngularJS integration.&lt;/li&gt;
+  &lt;li&gt;Use AJAX to request data stored in a &lt;code class=&quot;highlighter-rouge&quot;&gt;.json&lt;/code&gt; file locally.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;My next goal is to extend my app by using Speech Recognition. A typical user scenario would be:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;App has option to use Voice Recognition or Simple Reload Button&lt;/li&gt;
+  &lt;li&gt;If User chose Voice Recogntion, app will enable phone’s voice command sensor&lt;/li&gt;
+  &lt;li&gt;When User says &lt;em&gt;‘shuffle’&lt;/em&gt;, app will reload new data&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;webviews-browsers-and-hybrid-app&quot;&gt;WebViews, Browsers, and Hybrid App&lt;/h3&gt;
+
+&lt;p&gt;While learning how to install and use PhoneGap plugins, I’ve come across terms which I think are essential to understanding how native device sensors works in Hybrid Apps and how we can levarage HTML5 technology.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://developer.telerik.com/featured/what-is-a-hybrid-mobile-app/&quot;&gt;What is a Hybrid Mobile App&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://developer.telerik.com/featured/what-is-a-webview/&quot;&gt;What is a WebView&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;discovering-html5-speech-recognition-and-speech-synthesis&quot;&gt;Discovering HTML5 Speech Recognition and Speech Synthesis&lt;/h3&gt;
+
+&lt;p&gt;Cordova provides a documentation for registered plugins &lt;a href=&quot;http://cordova.apache.org/plugins/&quot;&gt;Cordova Official Documentation Plugins&lt;/a&gt;, but since I’m using PhoneGap Build to build my app, its best to refer to its phonegap plugin page and find the plugin you wish to to use. I’ve also found the plugin’s original Github repo and a Youtube video demonstrating Speech Recognition:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/macdonst/SpeechRecognitionPlugin&quot;&gt;Github.com: macdonst - Speech Recognition Plugin&lt;/a&gt;&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/oXiel-iZOos&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Video pretty much explains how speech recognition works and discusses various speech recognition APIs available and its brief history. He also showcased sample code and its use cases. His examples are based of off &lt;a href=&quot;https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html&quot;&gt;W3C Community Group Final Report on HTML5 Speech Recognition API&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It took me awhile to have Speech Recognition plugin worked on my app and device. It was a trial and error process, from installing a PhoneGap plugin, configuring the plugin, testing and debugging on actual device via PhoneGap Build.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Process of getting Speech Recognition to work on actual device&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Understanding what happens to PhoneGap project config files when a PhoneGap plugin has been added.
+    &lt;ul&gt;
+      &lt;li&gt;This is crucial, there are various &lt;code class=&quot;highlighter-rouge&quot;&gt;config.xml&lt;/code&gt; files located in &lt;code class=&quot;highlighter-rouge&quot;&gt;/platform&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;/plugins&lt;/code&gt; directories.&lt;/li&gt;
+      &lt;li&gt;When &lt;code class=&quot;highlighter-rouge&quot;&gt;phonegap plugin add &amp;lt;source&amp;gt;&lt;/code&gt; is ran, PhoneGap automatically adds references to these &lt;code class=&quot;highlighter-rouge&quot;&gt;config.xml&lt;/code&gt; files except for the &lt;code class=&quot;highlighter-rouge&quot;&gt;config.xml&lt;/code&gt; file located on project’s root directory.&lt;/li&gt;
+      &lt;li&gt;In my case, I needed to add &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;plugin name=&quot;com.aserputko.speech.speechrecognition&quot; spec=&quot;0.1.0&quot; source=&quot;pgb&quot; /&amp;gt;&lt;/code&gt; to my &lt;code class=&quot;highlighter-rouge&quot;&gt;config.xml&lt;/code&gt; file located in my root directory.&lt;/li&gt;
+      &lt;li&gt;Also, important to note that some plugins require additional steps.&lt;/li&gt;
+      &lt;li&gt;A good updated book I’ve come across is &lt;strong&gt;Packt Publishing - PhoneGap 4 Mobile Application Development Cookbook&lt;/strong&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Added a plugin I’ve found on &lt;a href=&quot;https://build.phonegap.com/plugins&quot;&gt;https://build.phonegap.com/plugins&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;/Beginning-mobile-app-development-journey/#manage-projects-plugins&quot;&gt;Beginning Mobile App Development Journey: Manage Projects Plugins&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Added a sample Speech Recognition code from &lt;a href=&quot;https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html&quot;&gt;W3C Community Group Final Report on HTML5 Speech Recognition API&lt;/a&gt; unto my &lt;code class=&quot;highlighter-rouge&quot;&gt;app.js&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt; file.&lt;/li&gt;
+  &lt;li&gt;Build my app via PhoneGap Build by running &lt;code class=&quot;highlighter-rouge&quot;&gt;phonegap remote build &amp;lt;platform&amp;gt;&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;/Beginning-mobile-app-development-journey/#building-our-project&quot;&gt;Beginning Mobile App Development Journey: Building Our Project&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Once built, installed my app by scanning QR Code on my &lt;a href=&quot;https://build.phonegap.com/apps&quot;&gt;https://build.phonegap.com/apps&lt;/a&gt; dashboard page.&lt;/li&gt;
+  &lt;li&gt;Once installed, debugged my app by using &lt;a href=&quot;http://docs.build.phonegap.com/en_US/debugging_remote_debugging_tools.md.html&quot;&gt;PhoneGap Build’s Remote Debugging Tools&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;This is an awesome tool! hehe&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Steps 4 through 6 was an iterative trial and error process.&lt;br /&gt;
+Debugging JavaScript objects inside of PhoneGap’s Debug Console doesn’t seem to display contents inside of that object. A workaround I’ve come across was to use my Chrome console to check &lt;code class=&quot;highlighter-rouge&quot;&gt;SpeechRecognition&lt;/code&gt; object since HTML5 and the plugin uses the same API. A good article that delved inside HTML5 Speech Recognition object is &lt;a href=&quot;http://shapeshed.com/html5-speech-recognition-api/&quot;&gt;HTML5 Speech Recognition API&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;writing-speech-recognition-code-to-fit-my-apps-functionality-needs&quot;&gt;Writing Speech Recognition code to fit my App’s functionality needs&lt;/h3&gt;
+
+&lt;p&gt;After going through the process and successfully ran Speech Recognition on my phone, below are articles I find useful for exploring HTML5 Web Speech and Speech Synthesis API further.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API&quot;&gt;Introduction to the Web Speech API&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2014/01/Web-apps-that-talk-Introduction-to-the-Speech-Synthesis-API&quot;&gt;Introduction to the Speech Synthesis API&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.teamtreehouse.com/accepting-speech-input-html5-forms&quot;&gt;TeamTreeHouse - Accepting Speech Input in HTML5 Forms&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;My goals for this functionality are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;On initial app load, Speech Recognition is disabled&lt;/li&gt;
+  &lt;li&gt;When user clicks on &lt;em&gt;“Speak”&lt;/em&gt; button, Speech Recognition is enabled throughout session&lt;/li&gt;
+  &lt;li&gt;When user says &lt;em&gt;“Shuffle”&lt;/em&gt;, Speech Recognition detects keyword and reloads data&lt;/li&gt;
+  &lt;li&gt;Speech Recognition is enabled unless user clicks &lt;em&gt;“Speak”&lt;/em&gt; button again&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 29 Mar 2016 02:42:14 -0700</pubDate>
+        <link>http://www.wandrr.io/Fiddling-with-phonegap-plugins-and-html5-speech-recognition</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Fiddling-with-phonegap-plugins-and-html5-speech-recognition</guid>
+        
+        <category>app development</category>
         
         
       </item>
