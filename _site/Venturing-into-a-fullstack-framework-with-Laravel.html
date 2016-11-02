@@ -104,7 +104,7 @@
     <tr>
       <td>Templating, Routing</td>
       <td style="text-align: center">Swig, Jade, handlebars. Yes</td>
-      <td style="text-align: center">Twig. Yes</td>
+      <td style="text-align: center">Blade. Yes</td>
     </tr>
     <tr>
       <td>RESTful</td>
@@ -202,6 +202,16 @@
 </ul>
 
 <p>There were no problem with transferring our Application code, it was more of setting its environment.</p>
+
+<p><br /></p>
+
+<h3 id="understanding-laravels-front-end-workflow">Understanding Laravels’ Front-End Workflow</h3>
+
+<p>Laravel comes with a default install of Bootstrap, Vue, SASS, Webpack, and uses Gulp.js to compile its assets, although, Laravel developed its own compiling tool which is built on top of Gulp.js called <strong>Laravel Elixir</strong>. It is an NPM module and is defined in <code class="highlighter-rouge">package.json</code>. Laravel also uses NPM to install the default Front-end packages.</p>
+
+<p>Upon readings its <a href="https://laravel.com/docs/5.3/elixir">documentation on Laravel Elixir</a>, it seems like this tool makes it easy for developers to use Gulp.js. Though, the only drawback I forsee using Laravel Elixir is we can’t further customize our build process and we will depend on Laravel Elixir’s features.</p>
+
+<p>Since I have a background with Front-End Development and I’ve growned accustomed to some front-end packages, I will be using my own <a href="https://github.com/rlynjb/frontendflow">Front-End Workflow starterkit theme</a>, instead re-installing NPM and Bower packages and redefining paths and build process in my Gulp.js file.</p>
 
   </article>
 

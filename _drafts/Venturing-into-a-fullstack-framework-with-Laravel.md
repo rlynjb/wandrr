@@ -16,7 +16,7 @@ I've also took the time to do reseach and write a comparison chart. Below is my 
 |                         | http://keystonejs.com       | https://laravel.com/docs/4.2/introduction |
 | ----------------------- | :-------------------------: | :---------------: |
 | Language                | Node.js                     | PHP               |
-| Templating, Routing     | Swig, Jade, handlebars. Yes | Twig. Yes         |
+| Templating, Routing     | Swig, Jade, handlebars. Yes | Blade. Yes         |
 | RESTful                 | Yes                         | Yes               |
 | CRUD, Database          | Yes, MongoDB                | Yes, MySQL        |
 | ACL                     | Yes                         | Yes               |
@@ -57,3 +57,13 @@ Tranferring your Laravel local code to an Ubuntu stage server was a bit of a cha
 - Copy `.env.example` file as `.env` file and run `php artisan key:generate`
 
 There were no problem with transferring our Application code, it was more of setting its environment.
+
+<br>
+
+### Understanding Laravels' Front-End Workflow
+
+Laravel comes with a default install of Bootstrap, Vue, SASS, Webpack, and uses Gulp.js to compile its assets, although, Laravel developed its own compiling tool which is built on top of Gulp.js called **Laravel Elixir**. It is an NPM module and is defined in `package.json`. Laravel also uses NPM to install the default Front-end packages.
+
+Upon readings its [documentation on Laravel Elixir](https://laravel.com/docs/5.3/elixir), it seems like this tool makes it easy for developers to use Gulp.js. Though, the only drawback I forsee using Laravel Elixir is we can't further customize our build process and we will depend on Laravel Elixir's features.
+
+Since I have a background with Front-End Development and I've growned accustomed to some front-end packages, I will be using my own [Front-End Workflow starterkit theme](https://github.com/rlynjb/frontendflow), instead re-installing NPM and Bower packages and redefining paths and build process in my Gulp.js file.
