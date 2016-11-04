@@ -69,9 +69,9 @@
   <header class="post-header">
     <h1 class="post-title">Venturing into a Fullstack Framework with Laravel</h1>
     <p class="post-meta">
-      Nov 2, 2016
+      Nov 4, 2016
       
-       • php
+       • php, fullstack
     </p>
   </header>
 
@@ -169,9 +169,9 @@
   </tbody>
 </table>
 
-<p><br /></p>
+<hr />
 
-<h3 id="learning-resources">Learning Resources</h3>
+<h1 id="learning-resources">Learning Resources</h1>
 
 <p>Since I’m discovering Laravel and the whole PHP realm, I’ve discovered a site called <a href="https://tutsplus.com/">envatotuts+</a> which carries Laravel tutorials from beginner to advance level.</p>
 
@@ -181,9 +181,9 @@
   <li>and more, there are various tutorials that covers what we can do with Laravel</li>
 </ul>
 
-<p><br /></p>
+<hr />
 
-<h3 id="getting-started-with-laravel">Getting started with Laravel</h3>
+<h1 id="getting-started-with-laravel">Getting started with Laravel</h1>
 
 <p>I first created a github repo and followed the instructions for <a href="https://laravel.com/docs/5.3/installation">installing Laravel</a> via Laravel Installer on my Mac.</p>
 
@@ -203,15 +203,67 @@
 
 <p>There were no problem with transferring our Application code, it was more of setting its environment.</p>
 
-<p><br /></p>
+<hr />
 
-<h3 id="understanding-laravels-front-end-workflow">Understanding Laravels’ Front-End Workflow</h3>
+<h1 id="understanding-laravels-front-end-workflow">Understanding Laravels’ Front-End Workflow</h1>
 
 <p>Laravel comes with a default install of Bootstrap, Vue, SASS, Webpack, and uses Gulp.js to compile its assets, although, Laravel developed its own compiling tool which is built on top of Gulp.js called <strong>Laravel Elixir</strong>. It is an NPM module and is defined in <code class="highlighter-rouge">package.json</code>. Laravel also uses NPM to install the default Front-end packages.</p>
 
 <p>Upon readings its <a href="https://laravel.com/docs/5.3/elixir">documentation on Laravel Elixir</a>, it seems like this tool makes it easy for developers to use Gulp.js. Though, the only drawback I forsee using Laravel Elixir is we can’t further customize our build process and we will depend on Laravel Elixir’s features.</p>
 
 <p>Since I have a background with Front-End Development and I’ve growned accustomed to some front-end packages, I will be using my own <a href="https://github.com/rlynjb/frontendflow">Front-End Workflow starterkit theme</a>, instead re-installing NPM and Bower packages and redefining paths and build process in my Gulp.js file.</p>
+
+<hr />
+
+<h1 id="coding-templates-to-populating-static-data-from-json-file">Coding templates to populating static data from JSON file</h1>
+
+<p>Below is a link to an a quick and simple overview of an MVC Application structure:</p>
+
+<p><a href="https://selftaughtcoders.com/from-idea-to-launch/lesson-17/laravel-5-mvc-application-in-10-minutes/">Creating a Basic Laravel 5 MVC Application in 10 Minutes</a></p>
+
+<ol>
+  <li>My method usually starts off with defining a route and creating a template file for that particular route.</li>
+  <li>Next is store sample data inside of JSON file and load file in a Controller
+    <ul>
+      <li><a href="http://vegibit.com/creating-static-and-dynamic-web-pages-in-laravel/">Creating Static And Dynamic Web Pages In Laravel</a></li>
+      <li><a href="http://vegibit.com/json-in-laravel/">http://vegibit.com/json-in-laravel/</a></li>
+    </ul>
+  </li>
+</ol>
+
+<blockquote>
+  <p>My rule is, if a website contains less than 15 or 20 items, keep it data static
+But, if items grow to 20 or more AND will contain a CRUD method, then proceed with Database.</p>
+</blockquote>
+
+<hr />
+
+<h1 id="from-static-data-to-implementing-a-database">From Static data to implementing a Database</h1>
+
+<p>Coming from a front-end web development and a bit of MVC background, Database concepts was new to me. Although I did dabbled a bit into sql queries, its still different from having the knowledge of Database tools available we can use in a Fullstack framework.</p>
+
+<p>With Laravel, there are tools available that helps us manage our database. Features that came with Laravel are listed below with a bit of methodology when implementing a Database.</p>
+
+<ol>
+  <li>
+    <p>When we run <code class="highlighter-rouge">php artisan make:model User --migration</code> to create a Database, Laravel assumes you configured your database settings on <code class="highlighter-rouge">config/database.php</code> file. The generated Model and Migration script files are not aware of its configuration settings.</p>
+  </li>
+  <li>To create a Database, run <code class="highlighter-rouge">php artisan make:model User --migration</code> command. This will generate a <strong>Eloquent ORM Model</strong> and a <strong>Migration</strong> script.
+    <ul>
+      <li><strong>Eloquent ORM</strong> - Model allows us to easily query and insert data in our tables.</li>
+      <li><strong>Migration</strong> - Creates a Table; Builds our Database Schema; Preserves Database Schema, revision control</li>
+    </ul>
+  </li>
+  <li>Seeding
+    <ul>
+      <li>is a way to create data fast. It populates data into a Database Table.</li>
+      <li><a href="https://sheepy85.wordpress.com/2014/09/19/database-seed-migration-in-laravel-5-0/">https://sheepy85.wordpress.com/2014/09/19/database-seed-migration-in-laravel-5-0/</a></li>
+      <li><a href="http://www.fullstack4u.com/laravel/laravel-5-load-seed-data-from-json/">http://www.fullstack4u.com/laravel/laravel-5-load-seed-data-from-json/</a></li>
+    </ul>
+  </li>
+</ol>
+
+<p><a href="https://www.youtube.com/watch?v=y0y3-m05Emc">Understanding Database with Laravel</a></p>
 
   </article>
 

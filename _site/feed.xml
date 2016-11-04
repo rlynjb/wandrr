@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 02 Nov 2016 13:46:31 -0700</pubDate>
-    <lastBuildDate>Wed, 02 Nov 2016 13:46:31 -0700</lastBuildDate>
+    <pubDate>Fri, 04 Nov 2016 10:40:00 -0700</pubDate>
+    <lastBuildDate>Fri, 04 Nov 2016 10:40:00 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -105,9 +105,9 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;hr /&gt;
 
-&lt;h3 id=&quot;learning-resources&quot;&gt;Learning Resources&lt;/h3&gt;
+&lt;h1 id=&quot;learning-resources&quot;&gt;Learning Resources&lt;/h1&gt;
 
 &lt;p&gt;Since I’m discovering Laravel and the whole PHP realm, I’ve discovered a site called &lt;a href=&quot;https://tutsplus.com/&quot;&gt;envatotuts+&lt;/a&gt; which carries Laravel tutorials from beginner to advance level.&lt;/p&gt;
 
@@ -117,9 +117,9 @@
   &lt;li&gt;and more, there are various tutorials that covers what we can do with Laravel&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;hr /&gt;
 
-&lt;h3 id=&quot;getting-started-with-laravel&quot;&gt;Getting started with Laravel&lt;/h3&gt;
+&lt;h1 id=&quot;getting-started-with-laravel&quot;&gt;Getting started with Laravel&lt;/h1&gt;
 
 &lt;p&gt;I first created a github repo and followed the instructions for &lt;a href=&quot;https://laravel.com/docs/5.3/installation&quot;&gt;installing Laravel&lt;/a&gt; via Laravel Installer on my Mac.&lt;/p&gt;
 
@@ -139,21 +139,75 @@
 
 &lt;p&gt;There were no problem with transferring our Application code, it was more of setting its environment.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;hr /&gt;
 
-&lt;h3 id=&quot;understanding-laravels-front-end-workflow&quot;&gt;Understanding Laravels’ Front-End Workflow&lt;/h3&gt;
+&lt;h1 id=&quot;understanding-laravels-front-end-workflow&quot;&gt;Understanding Laravels’ Front-End Workflow&lt;/h1&gt;
 
 &lt;p&gt;Laravel comes with a default install of Bootstrap, Vue, SASS, Webpack, and uses Gulp.js to compile its assets, although, Laravel developed its own compiling tool which is built on top of Gulp.js called &lt;strong&gt;Laravel Elixir&lt;/strong&gt;. It is an NPM module and is defined in &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt;. Laravel also uses NPM to install the default Front-end packages.&lt;/p&gt;
 
 &lt;p&gt;Upon readings its &lt;a href=&quot;https://laravel.com/docs/5.3/elixir&quot;&gt;documentation on Laravel Elixir&lt;/a&gt;, it seems like this tool makes it easy for developers to use Gulp.js. Though, the only drawback I forsee using Laravel Elixir is we can’t further customize our build process and we will depend on Laravel Elixir’s features.&lt;/p&gt;
 
 &lt;p&gt;Since I have a background with Front-End Development and I’ve growned accustomed to some front-end packages, I will be using my own &lt;a href=&quot;https://github.com/rlynjb/frontendflow&quot;&gt;Front-End Workflow starterkit theme&lt;/a&gt;, instead re-installing NPM and Bower packages and redefining paths and build process in my Gulp.js file.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;coding-templates-to-populating-static-data-from-json-file&quot;&gt;Coding templates to populating static data from JSON file&lt;/h1&gt;
+
+&lt;p&gt;Below is a link to an a quick and simple overview of an MVC Application structure:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://selftaughtcoders.com/from-idea-to-launch/lesson-17/laravel-5-mvc-application-in-10-minutes/&quot;&gt;Creating a Basic Laravel 5 MVC Application in 10 Minutes&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;My method usually starts off with defining a route and creating a template file for that particular route.&lt;/li&gt;
+  &lt;li&gt;Next is store sample data inside of JSON file and load file in a Controller
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://vegibit.com/creating-static-and-dynamic-web-pages-in-laravel/&quot;&gt;Creating Static And Dynamic Web Pages In Laravel&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://vegibit.com/json-in-laravel/&quot;&gt;http://vegibit.com/json-in-laravel/&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;My rule is, if a website contains less than 15 or 20 items, keep it data static
+But, if items grow to 20 or more AND will contain a CRUD method, then proceed with Database.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;from-static-data-to-implementing-a-database&quot;&gt;From Static data to implementing a Database&lt;/h1&gt;
+
+&lt;p&gt;Coming from a front-end web development and a bit of MVC background, Database concepts was new to me. Although I did dabbled a bit into sql queries, its still different from having the knowledge of Database tools available we can use in a Fullstack framework.&lt;/p&gt;
+
+&lt;p&gt;With Laravel, there are tools available that helps us manage our database. Features that came with Laravel are listed below with a bit of methodology when implementing a Database.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;When we run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan make:model User --migration&lt;/code&gt; to create a Database, Laravel assumes you configured your database settings on &lt;code class=&quot;highlighter-rouge&quot;&gt;config/database.php&lt;/code&gt; file. The generated Model and Migration script files are not aware of its configuration settings.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;To create a Database, run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan make:model User --migration&lt;/code&gt; command. This will generate a &lt;strong&gt;Eloquent ORM Model&lt;/strong&gt; and a &lt;strong&gt;Migration&lt;/strong&gt; script.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Eloquent ORM&lt;/strong&gt; - Model allows us to easily query and insert data in our tables.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Migration&lt;/strong&gt; - Creates a Table; Builds our Database Schema; Preserves Database Schema, revision control&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Seeding
+    &lt;ul&gt;
+      &lt;li&gt;is a way to create data fast. It populates data into a Database Table.&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://sheepy85.wordpress.com/2014/09/19/database-seed-migration-in-laravel-5-0/&quot;&gt;https://sheepy85.wordpress.com/2014/09/19/database-seed-migration-in-laravel-5-0/&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://www.fullstack4u.com/laravel/laravel-5-load-seed-data-from-json/&quot;&gt;http://www.fullstack4u.com/laravel/laravel-5-load-seed-data-from-json/&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=y0y3-m05Emc&quot;&gt;Understanding Database with Laravel&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Wed, 02 Nov 2016 02:46:43 -0700</pubDate>
+        <pubDate>Fri, 04 Nov 2016 03:39:29 -0700</pubDate>
         <link>http://www.wandrr.io/Venturing-into-a-fullstack-framework-with-Laravel</link>
         <guid isPermaLink="true">http://www.wandrr.io/Venturing-into-a-fullstack-framework-with-Laravel</guid>
         
         <category>php</category>
+        
+        <category>fullstack</category>
         
         
       </item>
