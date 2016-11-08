@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 04 Nov 2016 10:40:00 -0700</pubDate>
-    <lastBuildDate>Fri, 04 Nov 2016 10:40:00 -0700</lastBuildDate>
+    <pubDate>Mon, 07 Nov 2016 12:44:24 -0800</pubDate>
+    <lastBuildDate>Mon, 07 Nov 2016 12:44:24 -0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -200,6 +200,79 @@ But, if items grow to 20 or more AND will contain a CRUD method, then proceed wi
 &lt;/ol&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=y0y3-m05Emc&quot;&gt;Understanding Database with Laravel&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;simple-contact-form-sending-emails&quot;&gt;Simple Contact form, Sending emails&lt;/h1&gt;
+
+&lt;p&gt;There are tons fo tutorials on the web about creating a conact form with Laravel but it doesn’t seem to explain the basics. The link below though,&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://code.tutsplus.com/courses/get-started-with-laravel-5/lessons/sending-emails&quot;&gt;Sending Emails&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;seem to explain the simplest and plainest method of how we can implement a Contact form in Laravel using Route &lt;code class=&quot;highlighter-rouge&quot;&gt;Route::get...&lt;/code&gt; and Mail Facade &lt;code class=&quot;highlighter-rouge&quot;&gt;Mail::send...&lt;/code&gt;.
+From this tutorial, we can further build our Contact form to use Controller for code separation and gather User input from Views. We will be able to store Contact form data in database.&lt;/p&gt;
+
+&lt;p&gt;There are 2 ways to compose an email.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Raw text&lt;/li&gt;
+  &lt;li&gt;From a View&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;raw-text&quot;&gt;Raw Text&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create a Route where we can send emails from.&lt;/li&gt;
+  &lt;li&gt;Define a Mail Facade and inside, define an instance of Illuminate Message to build mail properties.&lt;/li&gt;
+  &lt;li&gt;Sign up for Mailtrap.io and configure &lt;code class=&quot;highlighter-rouge&quot;&gt;.env&lt;/code&gt; file&lt;/li&gt;
+  &lt;li&gt;Now, when we visit &lt;code class=&quot;highlighter-rouge&quot;&gt;/contact&lt;/code&gt;, it should send test email defined inside of Mail facade.&lt;/li&gt;
+  &lt;li&gt;Mail should be sent in Raw format located under Raw tab.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Route::get(&#39;/contact&#39;, function() {
+  // define a Mail facade
+  Mail::raw(&#39;kirby this is a test&#39;, function($message) {
+    /*
+      inside we will have an instance of
+      Illuminate\Mail\Message
+
+      inside of this closure, we can set other prooerties of email
+    */
+    $message-&amp;gt;subject(&#39;testing&#39;)
+            -&amp;gt;to(&#39;bill@mail.com&#39;)
+            -&amp;gt;from(&#39;non@mail.com&#39;);
+  });
+
+  return &#39;email has been sent&#39;;
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;from-views-template&quot;&gt;From Views template&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Define a Route again.&lt;/li&gt;
+  &lt;li&gt;Instead of Mail Facade Raw &lt;code class=&quot;highlighter-rouge&quot;&gt;Mail::raw...&lt;/code&gt;, we will use Mail Facade Send &lt;code class=&quot;highlighter-rouge&quot;&gt;Mail:send...&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Once URL is visited, it will send email to Mailtrap.io for test.&lt;/li&gt;
+  &lt;li&gt;Mail should be sent in HTML format under HTML tab.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// this will get data from view or user input
+Route::get(&#39;/contact/view&#39;, function() {
+
+  //  param1 = path to view template
+  //  param2 = array of data
+  //  param3 = closure to setup message that we will be sending
+  Mail::send(&#39;conact-view&#39;, [&#39;name&#39;=&amp;gt;&#39;Bob&#39;], function($message) {
+    $message-&amp;gt;subject(&#39;testing&#39;)
+            -&amp;gt;to(&#39;bill@mail.com&#39;)
+            -&amp;gt;from(&#39;non@mail.com&#39;);
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 </description>
         <pubDate>Fri, 04 Nov 2016 03:39:29 -0700</pubDate>
         <link>http://www.wandrr.io/Venturing-into-a-fullstack-framework-with-Laravel</link>

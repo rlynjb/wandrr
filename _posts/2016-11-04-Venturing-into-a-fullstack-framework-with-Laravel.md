@@ -118,3 +118,72 @@ With Laravel, there are tools available that helps us manage our database. Featu
 
 
 [Understanding Database with Laravel](https://www.youtube.com/watch?v=y0y3-m05Emc)
+
+
+-----
+
+
+# Simple Contact form, Sending emails
+
+There are tons fo tutorials on the web about creating a conact form with Laravel but it doesn't seem to explain the basics. The link below though,
+
+[Sending Emails](https://code.tutsplus.com/courses/get-started-with-laravel-5/lessons/sending-emails)
+
+seem to explain the simplest and plainest method of how we can implement a Contact form in Laravel using Route `Route::get...` and Mail Facade `Mail::send...`.
+From this tutorial, we can further build our Contact form to use Controller for code separation and gather User input from Views. We will be able to store Contact form data in database.
+
+There are 2 ways to compose an email.
+
+- Raw text
+- From a View
+
+<br>
+
+### Raw Text
+
+1. Create a Route where we can send emails from.
+2. Define a Mail Facade and inside, define an instance of Illuminate Message to build mail properties.
+3. Sign up for Mailtrap.io and configure `.env` file
+4. Now, when we visit `/contact`, it should send test email defined inside of Mail facade.
+5. Mail should be sent in Raw format located under Raw tab.
+
+```
+Route::get('/contact', function() {
+  // define a Mail facade
+  Mail::raw('kirby this is a test', function($message) {
+    /*
+      inside we will have an instance of
+      Illuminate\Mail\Message
+
+      inside of this closure, we can set other prooerties of email
+    */
+    $message->subject('testing')
+            ->to('bill@mail.com')
+            ->from('non@mail.com');
+  });
+
+  return 'email has been sent';
+});
+```
+
+### From Views template
+
+1. Define a Route again.
+2. Instead of Mail Facade Raw `Mail::raw...`, we will use Mail Facade Send `Mail:send...`
+3. Once URL is visited, it will send email to Mailtrap.io for test.
+4. Mail should be sent in HTML format under HTML tab.
+
+```
+// this will get data from view or user input
+Route::get('/contact/view', function() {
+
+  //  param1 = path to view template
+  //  param2 = array of data
+  //  param3 = closure to setup message that we will be sending
+  Mail::send('conact-view', ['name'=>'Bob'], function($message) {
+    $message->subject('testing')
+            ->to('bill@mail.com')
+            ->from('non@mail.com');
+  });
+});
+```
