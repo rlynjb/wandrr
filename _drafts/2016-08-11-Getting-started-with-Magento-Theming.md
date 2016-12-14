@@ -125,3 +125,10 @@ There is also another type of page layout that is not quite use often. For more 
 
 - [How to load a phtml file only for homepage? (Magento 2)](http://magento.stackexchange.com/questions/108296/how-to-load-a-phtml-file-only-for-homepage-magento-2)
 
+-----
+
+up and running with magento 2 child theme
+
+understadning templating
+
+- [Frontend Developer Guide](http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html)
