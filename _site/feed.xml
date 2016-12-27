@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 09 Dec 2016 10:50:43 -0800</pubDate>
-    <lastBuildDate>Fri, 09 Dec 2016 10:50:43 -0800</lastBuildDate>
+    <pubDate>Tue, 27 Dec 2016 09:33:27 -0800</pubDate>
+    <lastBuildDate>Tue, 27 Dec 2016 09:33:27 -0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -490,6 +490,15 @@ Route::get(&#39;/contact/view&#39;, function() {
   &lt;li&gt;&lt;a href=&quot;http://magento.stackexchange.com/questions/108296/how-to-load-a-phtml-file-only-for-homepage-magento-2&quot;&gt;How to load a phtml file only for homepage? (Magento 2)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;hr /&gt;
+
+&lt;p&gt;up and running with magento 2 child theme&lt;/p&gt;
+
+&lt;p&gt;understadning templating&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html&quot;&gt;Frontend Developer Guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         <pubDate>Thu, 11 Aug 2016 05:42:09 -0700</pubDate>
         <link>http://www.wandrr.io/Getting-started-with-Magento-Theming</link>
