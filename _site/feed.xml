@@ -6,9 +6,195 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 27 Dec 2016 09:33:27 -0800</pubDate>
-    <lastBuildDate>Tue, 27 Dec 2016 09:33:27 -0800</lastBuildDate>
+    <pubDate>Tue, 27 Dec 2016 11:15:53 -0800</pubDate>
+    <lastBuildDate>Tue, 27 Dec 2016 11:15:53 -0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Getting Started with Magento Theming</title>
+        <description>&lt;h3 id=&quot;before-starting-to-build-a-theme-in-magento2&quot;&gt;Before starting to build a theme in Magento2&lt;/h3&gt;
+
+&lt;p&gt;So before starting to build a theme, we need to know Magento 2’s architecture and status.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Magento 2 is extremely modularize (reminds me of Drupal)&lt;/li&gt;
+  &lt;li&gt;it is based off of Zend Framework&lt;/li&gt;
+  &lt;li&gt;Alot of Major and Minor updates/changes in each version&lt;/li&gt;
+  &lt;li&gt;and foremost, it is Not practical to theme from scratch (trust me, I tried, unless you are a certified Magento 2 developer or someone willing to put in alot of time)&lt;/li&gt;
+  &lt;li&gt;it comes with its own Front-End workflow (I think it uses Grunt, Less)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Although, from all the learning curves listed above, Magento 2 is:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;a really secure Ecommerce system&lt;/li&gt;
+  &lt;li&gt;It has everything you need to immediately setup an online store&lt;/li&gt;
+  &lt;li&gt;theming maybe tough, alot of overriding of templates (but we will try to keep CSS and JS minimal and will use our own &lt;a href=&quot;https://github.com/rlynjb/frontendflow&quot;&gt;Front-end workflow&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;setting-up-a-child-theme&quot;&gt;&lt;strong&gt;Setting up a Child Theme&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;Once Magento 2 is installed&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Create a directory in &lt;code class=&quot;highlighter-rouge&quot;&gt;/app/design/frontend/&amp;lt;company name&amp;gt;/&amp;lt;theme name&amp;gt;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Copy Magento 2 blank theme &lt;code class=&quot;highlighter-rouge&quot;&gt;/vendor/magento/theme-frontend-blank/&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;/app/design/frontend/&amp;lt;company name&amp;gt;/&amp;lt;theme name&amp;gt;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Rename all theme titles and names in &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;registration.php&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;theme.xml&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;in &lt;code class=&quot;highlighter-rouge&quot;&gt;theme.xml&lt;/code&gt; add &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;parent&amp;gt;Magento/blank&amp;lt;/parent&amp;gt;&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Login to admin to change theme and clear-cache
+    &lt;ul&gt;
+      &lt;li&gt;locate admin URL in &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/config.php&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;create-a-template-for-a-page&quot;&gt;&lt;strong&gt;Create a template for a page&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Define a new page layout in &lt;code class=&quot;highlighter-rouge&quot;&gt;layouts.xml&lt;/code&gt; by copy &amp;amp; pasting a column tag&lt;/li&gt;
+  &lt;li&gt;Copy &lt;code class=&quot;highlighter-rouge&quot;&gt;1column.xml&lt;/code&gt; and rename to the name of page, ex. &lt;code class=&quot;highlighter-rouge&quot;&gt;homepage.xml&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Go to admin and set a page to use new page layout defined&lt;/li&gt;
+  &lt;li&gt;Clear cache in admin configuration page or cli &lt;code class=&quot;highlighter-rouge&quot;&gt;php bin/magento cache:flush&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Create a template &lt;code class=&quot;highlighter-rouge&quot;&gt;*.phtml&lt;/code&gt; inside of &lt;code class=&quot;highlighter-rouge&quot;&gt;/templates&lt;/code&gt; directory and use &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;block&amp;gt;&lt;/code&gt; tag inside of &lt;code class=&quot;highlighter-rouge&quot;&gt;homepage.xml&lt;/code&gt; file to point to the template file&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;override-magento-2-core-templates&quot;&gt;&lt;strong&gt;Override Magento 2 core templates&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Follow Magento 2 front end developer guide&lt;/li&gt;
+  &lt;li&gt;Copy &amp;amp; paste codebase from Magento 2 github repo&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tips:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Analyze layout first&lt;/li&gt;
+  &lt;li&gt;Look at default modules under &lt;code class=&quot;highlighter-rouge&quot;&gt;app/code/Magento&lt;/code&gt; files and reference in &lt;code class=&quot;highlighter-rouge&quot;&gt;Magento_Theme&lt;/code&gt; base templates&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;loading-front-end-flow-assets&quot;&gt;&lt;strong&gt;Loading Front-End flow assets&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;After loading Front-End flow assets files, we will comment out unnecessary Blank theme styles. This is a matter of inspecting unnecessary styles and commenting it out from its default &lt;code class=&quot;highlighter-rouge&quot;&gt;.less&lt;/code&gt; files&lt;/p&gt;
+
+&lt;p&gt;Comment out Magento 2’s &lt;code class=&quot;highlighter-rouge&quot;&gt;imports&lt;/code&gt; in its root &lt;code class=&quot;highlighter-rouge&quot;&gt;/web/css/*.less&lt;/code&gt; file&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;web/css/styles-m.less&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;web/css/_styles.less&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;web/css/source/_sources.less&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Initially, we will keep Magento 2 Blank theme’s Grid system and remove its theme styles. Go back and forth to files above to remove styles.&lt;/p&gt;
+
+&lt;h4 id=&quot;recompile-default-blank-theme-styles-and-new-front-end-flow-styles&quot;&gt;&lt;strong&gt;Recompile default Blank theme styles and new Front-End flow styles&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Delete static files
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rm -rf pub/static/frontend/&amp;lt;company name&amp;gt;/&amp;lt;theme name&amp;gt;/*&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rm -rf var/cache/*&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rm -rf var/page_cache/*&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rm -rf var/view_preprocessed/*&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Redeploy static files
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;php bin/magento setup:static-content:deploy&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;php bin/magento cache:clean&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;php bin/magento cache:flush&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo chown -R 777 /var&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;credential-requirements&quot;&gt;&lt;strong&gt;Credential Requirements&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;As stated in its document, Secure keys do not use the normal Magento2 Marketplace username and password, rather&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Once logged in, generate public and private keys
+    &lt;ul&gt;
+      &lt;li&gt;username is Public key&lt;/li&gt;
+      &lt;li&gt;password is Private key&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Need to sign up a Magento Marketplace account to take advantage of their features or add-ons that can be install via composer&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;the-docker-way&quot;&gt;The Docker way&lt;/h3&gt;
+
+&lt;p&gt;Installing manually was tedious so I’ve decided to use install Magento 2 via Docker and Docker Compose.&lt;/p&gt;
+
+&lt;p&gt;To get a glimpse of how Docker and Docker Compose works, I’ved jotted down notes here: &lt;a href=&quot;Notes-on-creating-a-convenient-local-development-workflow-with-Docker&quot;&gt;Notes on creating a convenient Local Development Workflow with Docker&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Here is a sample &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file that installs Magento 2 &lt;a href=&quot;https://github.com/mageinferno/magento2-docker-compose&quot;&gt;maginferno - magento2-docker-compose&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Grab a copy of Magento 2 files as well &lt;a href=&quot;https://github.com/magento/magento2.git&quot;&gt;Github - Magento&lt;/a&gt; and place it on your &lt;strong&gt;host&lt;/strong&gt; and mount the necessary directories and files unto your &lt;strong&gt;docker container&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+</description>
+        <pubDate>Tue, 27 Dec 2016 03:14:55 -0800</pubDate>
+        <link>http://www.wandrr.io/Getting-started-with-Magento-Theming</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Getting-started-with-Magento-Theming</guid>
+        
+        <category>cms</category>
+        
+        <category>ecommerce</category>
+        
+        <category>magento2</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Learning ecommerce with Woocommerce and Wordpress</title>
+        <description>&lt;p&gt;Lately, I’ve been delving into ecommerce sites. So I thought, it would be important to research more on different Ecommerce platforms. I’ve been told as well that it is important to learn how ecommerce system works and what platforms to use in terms of security, how the system is built, and support from the community. A platform I started learning is Magento 2, but tools I would prefer are listed below.&lt;/p&gt;
+
+&lt;p&gt;Tools I used to build an Ecommerce site:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Wordpress&lt;/li&gt;
+  &lt;li&gt;Divi&lt;/li&gt;
+  &lt;li&gt;Woocommerce&lt;/li&gt;
+  &lt;li&gt;Standard paypal&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Coming from a Front-End Development background and with amount of code I’ve written this past years, it was kinda tough for me to grasp concepts on how Magento 2 system works. But this post isn’t about Magento 2 but rather digging further into the whole Ecommerce realm.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 27 Dec 2016 01:43:54 -0800</pubDate>
+        <link>http://www.wandrr.io/Learning-ecommerce-with-Woocommerce-and-Wordpress</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Learning-ecommerce-with-Woocommerce-and-Wordpress</guid>
+        
+        <category>javascript</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Understanding ES6 Modules with GulpJS and Babel</title>
+        <description>&lt;h4 id=&quot;references&quot;&gt;References:&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://exploringjs.com/es6/ch_modules.html&quot;&gt;ExploringJS.com - ES6 Modules&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.barbarianmeetscoding.com/blog/2016/02/21/start-using-es6-es2015-in-your-project-with-babel-and-gulp/&quot;&gt;Start using ES6/ES2015 in your project with Babel and Gulp&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 27 Dec 2016 01:36:57 -0800</pubDate>
+        <link>http://www.wandrr.io/Understanding-ES6-Modules-with-Gulpjs</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Understanding-ES6-Modules-with-Gulpjs</guid>
+        
+        <category>javascript</category>
+        
+        
+      </item>
     
       <item>
         <title>Venturing into a Fullstack Framework with Laravel</title>
@@ -314,197 +500,6 @@ Route::get(&#39;/contact/view&#39;, function() {
         <guid isPermaLink="true">http://www.wandrr.io/Learning-Keystonejs</guid>
         
         <category>javascript</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Getting Started with Magento Theming</title>
-        <description>&lt;p&gt;Installing manually was tedious so I’ve decided to use install Magento 2 via Docker and Docker Compose.&lt;/p&gt;
-
-&lt;p&gt;To get a glimpse of how Docker and Docker Compose works, I’ved jotted down notes here: &lt;a href=&quot;Notes-on-creating-a-convenient-local-development-workflow-with-Docker&quot;&gt;Notes on creating a convenient Local Development Workflow with Docker&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Here is a sample &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file that installs Magento 2 &lt;a href=&quot;https://github.com/mageinferno/magento2-docker-compose&quot;&gt;maginferno - magento2-docker-compose&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Grab a copy of Magento 2 files as well &lt;a href=&quot;https://github.com/magento/magento2.git&quot;&gt;Github - Magento&lt;/a&gt; and place it on your &lt;strong&gt;host&lt;/strong&gt; and mount the necessary directories and files unto your &lt;strong&gt;docker container&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;issues-i-came-across&quot;&gt;Issues I came across:&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/magento/magento2/issues/2309&quot;&gt;Admin Page 404 After Install Magento2 RC #2309&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;During the installation you entered unique admin URI (it generates automatically for you) eg. /admin_cr8w74 To get info about your URI use CLI command:&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/var/www/html/magento2$ php bin/magento info:adminuri&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Admin username and password can be found in &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file&lt;/li&gt;
-  &lt;li&gt;resolving issue w/ Admin page
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://community.magento.com/t5/Technical-Issues/There-has-been-an-error-processing-your-request/td-p/4905&quot;&gt;There has been an error processing your request&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;see comment with &lt;code class=&quot;highlighter-rouge&quot;&gt;In local.xml file you need to update all database credential&lt;/code&gt;
-        &lt;ul&gt;
-          &lt;li&gt;this will display errors on &lt;code class=&quot;highlighter-rouge&quot;&gt;/admin_&amp;lt;unique hash&amp;gt;&lt;/code&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;install sample data:
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;php bin/magento sampledata:deploy&lt;/code&gt;, then &lt;code class=&quot;highlighter-rouge&quot;&gt;php bin/magento setup:upgrade&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;if error occurs: clear cache, &lt;a href=&quot;http://stackoverflow.com/questions/38668833/magento-2-cmd-fatal-error-uncaught-error-class-cli-not-found&quot;&gt;Fatal error: Uncaught Error: Class ‘Cli’ not found&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;retrieving your http://repo.magento.com credentials
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;http://devdocs.magento.com/guides/v2.0/install-gde/prereq/connect-auth.html&quot;&gt;Get your authenticationn keys&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;useful-commands-and-info&quot;&gt;Useful commands and info&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;clear cache via cli:
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;php bin/magento cache:clean&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;php bin/magento cache:flush&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;ref: &lt;a href=&quot;https://www.mageplaza.com/kb/how-flush-enable-disable-cache.html&quot;&gt;How to Flush, Enable, Disable Cache Command Line in Magento 2&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;change to &lt;strong&gt;Developer Mode&lt;/strong&gt; or other modes
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rm -rf &amp;lt;your Magento install dir&amp;gt;/var/di/* &amp;lt;your Magento install dir&amp;gt;/var/generation/*&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;magento deploy:mode:set developer&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;ref: &lt;a href=&quot;http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html&quot;&gt;Overview of setting Magento modes&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;collections-of-tutorials&quot;&gt;Collections of Tutorials&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.sessiondigital.com/magento/magento-2-tutorials/&quot;&gt;Magento 2 tutorials from sessiondigital.com&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html&quot;&gt;Magento 2 - Frontend Developer Guide&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/themes/theme-create.html&quot;&gt;Getting Started - Hands on with Theme from scratch&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;This is to start building your theme from scratch, registering your theme and its directories&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/themes/theme-structure.html&quot;&gt;Magento theme structure&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;An indepth view of directory structure of a theme and what is required and optional&lt;/li&gt;
-      &lt;li&gt;Discusses about CSS and JS assets, Static files is directly accessible from HTML link and script syntax while Dynamic files usage of CSS preprocessors&lt;/li&gt;
-      &lt;li&gt;But my concern is more on &lt;strong&gt;Magento2 Layout &amp;amp; Templating&lt;/strong&gt; since I will be implementing my &lt;a href=&quot;https://github.com/rlynjb/frontendflow&quot;&gt;Front-End Flow&lt;/a&gt; project&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.sessiondigital.com/blog/magento-2-tutorial-how-to-use-the-new-front-end-templating-system/&quot;&gt;Indepth Magento 2 Templating system&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://magento.stackexchange.com/questions/118278/creating-a-custom-homepage-template-in-magento2&quot;&gt;Intro to Layouts&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://excellencemagentoblog.com/blog/2016/04/11/magento2-theme-layouts-templates/&quot;&gt;Magento2 Theme - Layouts &amp;amp; Templates - Part1&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://excellencemagentoblog.com/blog/2016/04/11/magento2-theme-layouts-templates-part2/&quot;&gt;Magento2 Theme - Layouts &amp;amp; Templates - Part2&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;starting-with-magento2-layouts-and-templating&quot;&gt;Starting with Magento2 Layouts and Templating&lt;/h3&gt;
-
-&lt;p&gt;There is a steep learning curve with Magento2 Layout and Templating engine. Like any CMS, what builds a website display are mainly Layouts and Templates. Magento2 built their layout/templating engine with a strong emphasis of layout and content separation. So for the sake of learning and to simplify things, lets breakdown a Magento2 theme and start with Layout and Templates.&lt;/p&gt;
-
-&lt;h3 id=&quot;files-and-directory-structure-inside-magentotheme-module&quot;&gt;Files and Directory structure inside Magento_Theme module&lt;/h3&gt;
-&lt;p&gt;Files and Directory that we are concern are (this applies to other modules as well):&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;\theme_dir
-  |-- \Magento_Theme
-      |-- \layout
-          |-- \override
-              |-- \base
-                  |-- default.xml
-                  |-- default_header_blocks.xml
-      |-- \page_layout
-          |-- custom_home.xml
-      |-- \templates
-          |-- header.phtml
-          |-- main-content.phtml
-          |-- footer.phtml
-      |-- layouts.xml
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;I’m overriding &lt;strong&gt;Magento_Theme&lt;/strong&gt;’s &lt;code class=&quot;highlighter-rouge&quot;&gt;\layout&lt;/code&gt; files and extending into &lt;strong&gt;Magento_Theme&lt;/strong&gt;’s &lt;code class=&quot;highlighter-rouge&quot;&gt;\page_layout &amp;gt; custom_home_layout.xml&lt;/code&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;referenceContainer name=&quot;page.wrapper&quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;There’s a difference bet. Override and Extend&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;Start it off by:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;ref: &lt;a href=&quot;http://excellencemagentoblog.com/blog/2016/04/11/magento2-theme-layouts-templates/&quot;&gt;Magento2 Theme - Layouts &amp;amp; Templates - Part1&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Declare your layouts first on &lt;code class=&quot;highlighter-rouge&quot;&gt;layouts.xml&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Create your page layout file inside &lt;code class=&quot;highlighter-rouge&quot;&gt;\page_layout&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Then define your &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;container&amp;gt;&lt;/code&gt; along with name attr to hook it with Page Configuration files inside &lt;code class=&quot;highlighter-rouge&quot;&gt;\layout&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Recall:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;page-layout-files&quot;&gt;Page Layout files&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;An &lt;code class=&quot;highlighter-rouge&quot;&gt;*.xml&lt;/code&gt; file where we define a page wireframe/structure.
-    &lt;ul&gt;
-      &lt;li&gt;Ex. Grid system&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Only uses Magento2’s &lt;strong&gt;containers&lt;/strong&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;referenceContainer name=&quot;&quot; /&amp;gt;&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Should be declared on &lt;code class=&quot;highlighter-rouge&quot;&gt;layouts.xml&lt;/code&gt; file for it to register.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;page-configuration-files&quot;&gt;Page Configuration files&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Uses a declared &lt;strong&gt;Page Layout&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;Defines detailed structure, contents, meta info, etc (menu, nav, search box, widgets, links, contents, images) inside of header, main content, footer, columns.
-    &lt;ul&gt;
-      &lt;li&gt;Ex. Components&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;generic-page-layouts&quot;&gt;Generic Page Layouts&lt;/h4&gt;
-&lt;p&gt;There is also another type of page layout that is not quite use often. For more info: &lt;a href=&quot;http://devdocs.magento.com/guides/v2.1/frontend-dev-guide/layouts/layout-types.html#layout-types-gen&quot;&gt;Magento2 Dev Doc - Generic layout&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;magento-2-templating&quot;&gt;Magento 2 Templating&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;It seems like templating is just a matter of copy and pasting pieces of code that Magento 2 Modules provide.&lt;/li&gt;
-  &lt;li&gt;Use &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;block /&amp;gt;&lt;/code&gt; to define a component inside a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;container /&amp;gt;&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Define a component class like so, &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;block class=&quot;&quot; /&amp;gt;&lt;/code&gt; and extend by defining a template to tweak template/customize HTML structure &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;block class=&quot;&quot; template=&quot;&quot; /&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;further-templating-issues&quot;&gt;Further Templating Issues&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://magento.stackexchange.com/questions/108296/how-to-load-a-phtml-file-only-for-homepage-magento-2&quot;&gt;How to load a phtml file only for homepage? (Magento 2)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;up and running with magento 2 child theme&lt;/p&gt;
-
-&lt;p&gt;understadning templating&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html&quot;&gt;Frontend Developer Guide&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 11 Aug 2016 05:42:09 -0700</pubDate>
-        <link>http://www.wandrr.io/Getting-started-with-Magento-Theming</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Getting-started-with-Magento-Theming</guid>
-        
-        <category>cms</category>
         
         
       </item>
@@ -1021,276 +1016,6 @@ Route::get(&#39;/contact/view&#39;, function() {
         <guid isPermaLink="true">http://www.wandrr.io/Front-End-Workflow-with-Grav-theme</guid>
         
         <category>static site</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Getting started and basic theming with Grav</title>
-        <description>&lt;p&gt;Hi all! I’ve created this blog post as my notes for learning and exploring Grav. If you haven’t heard, Grav is a full flat-file CMS, this means, it does not use any database. All data are saved as YAML files. It follows a certian naming convention and uses its directory page hierarchy structure to generate routes.&lt;/p&gt;
-
-&lt;p&gt;Again, consider this blog post as notes rather than re-explaining informations that exists on Grav documentation or other blog sites.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Contents&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#getting-started-on-digital-ocean&quot;&gt;Getting Started on Digital Ocean&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;create a droplet&lt;/li&gt;
-      &lt;li&gt;debugging nginx with php5-fpm&lt;/li&gt;
-      &lt;li&gt;fixing php 502 gateway page&lt;/li&gt;
-      &lt;li&gt;tips on using configuration files yaml&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#getting-started-on-mamp&quot;&gt;Getting Started on MAMP&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Install Brew&lt;/li&gt;
-      &lt;li&gt;Install MAMP&lt;/li&gt;
-      &lt;li&gt;Install Grav&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#theming-in-grav&quot;&gt;Theming in Grav&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Method for setting up a pre-made HTML5 template to Grav theme&lt;/li&gt;
-      &lt;li&gt;Method for loadings assets and partial out the main index.html file&lt;/li&gt;
-      &lt;li&gt;Breaking our home page template file further by using Modular Pages&lt;/li&gt;
-      &lt;li&gt;Creating custom fields to let users update data in theme by using Blueprint Pages&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;getting-started-on-digital-ocean&quot;&gt;Getting Started on Digital Ocean&lt;/h1&gt;
-
-&lt;h3 id=&quot;create-a-droplet&quot;&gt;create a droplet&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://learn.getgrav.org/hosting/vps/digitalocean&quot;&gt;https://learn.getgrav.org/hosting/vps/digitalocean&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;debugging-nginx-with-php5-fpm&quot;&gt;debugging nginx with php5-fpm&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://serverfault.com/questions/562062/nginx-with-php-fpm-got-502-bad-gateway-on-ubuntu-server-12-04&quot;&gt;resource 1&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/1706111/where-can-i-find-the-error-logs-of-nginx-using-fastcgi-and-django&quot;&gt;resource 2&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;fixing-php-502-gateway-page&quot;&gt;fixing php 502 gateway page&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/owncloud/core/issues/14187&quot;&gt;resource&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;tips-on-using-configuration-files-yaml&quot;&gt;tips on using configuration files, yaml:&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;do not change configs in &lt;code class=&quot;highlighter-rouge&quot;&gt;/system/config/system.yaml&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;/system/config/site.yaml&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;do not change configs in &lt;code class=&quot;highlighter-rouge&quot;&gt;/user/plugins/&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;rather override them in &lt;code class=&quot;highlighter-rouge&quot;&gt;user/config/system.yaml&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;user/config/site.yaml&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;user/config/plugins/myplugin.yaml&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;note: all yaml files are contructed by name spacing. Grav picks it up in a hierarchy order.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;getting-started-on-mamp&quot;&gt;Getting Started on MAMP&lt;/h1&gt;
-
-&lt;h3 id=&quot;install-brew&quot;&gt;1. Install Brew&lt;/h3&gt;
-
-&lt;p&gt;This is to install &lt;strong&gt;git&lt;/strong&gt; and &lt;strong&gt;other development goodies&lt;/strong&gt; if you are a fan of commandline.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://brew.sh/&quot;&gt;http://brew.sh/&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://commandlinepoweruser.com/&quot;&gt;http://commandlinepoweruser.com/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;install-mamp&quot;&gt;2. Install MAMP&lt;/h3&gt;
-
-&lt;p&gt;You can use any webserver but I’ve used &lt;strong&gt;MAMP&lt;/strong&gt; because it was the quickest way I can install a webserver and setup a &lt;strong&gt;local Apache&lt;/strong&gt; eventhough we are not using MySql database.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.mamp.info/en/&quot;&gt;https://www.mamp.info/en/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;install-grav&quot;&gt;3. Install Grav&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Download &lt;strong&gt;Grav core + admin plugins&lt;/strong&gt; files from &lt;a href=&quot;https://getgrav.org/downloads&quot;&gt;https://getgrav.org/downloads&lt;/a&gt; and place into &lt;code class=&quot;highlighter-rouge&quot;&gt;htdocs&lt;/code&gt; directory.
-    &lt;ul&gt;
-      &lt;li&gt;You can choose either &lt;strong&gt;Grav core&lt;/strong&gt; or &lt;strong&gt;Grav core + admin plugins&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;If &lt;strong&gt;Grav core&lt;/strong&gt; only, you have the option to install &lt;strong&gt;Grav admin&lt;/strong&gt; later by running &lt;code class=&quot;highlighter-rouge&quot;&gt;bin/gpm install admin&lt;/code&gt; on the root directory of your &lt;strong&gt;Grav core&lt;/strong&gt; files.&lt;br /&gt;
- More info: &lt;a href=&quot;https://learn.getgrav.org/admin-panel/introduction&quot;&gt;https://learn.getgrav.org/admin-panel/introduction&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Unzip the &lt;code class=&quot;highlighter-rouge&quot;&gt;grav-admin-v*.*.**.zip&lt;/code&gt; file on the &lt;code class=&quot;highlighter-rouge&quot;&gt;htdocs&lt;/code&gt; directory.&lt;/li&gt;
-  &lt;li&gt;You can rename the &lt;strong&gt;Grav&lt;/strong&gt; directory to whatever project name you want.
-    &lt;ul&gt;
-      &lt;li&gt;You can also move the &lt;strong&gt;Grav core files&lt;/strong&gt; to an empty &lt;strong&gt;Github Repo directory&lt;/strong&gt;.&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;Tip:&lt;/strong&gt; Make sure to move &lt;code class=&quot;highlighter-rouge&quot;&gt;.htaccess&lt;/code&gt; file as well to avoid &lt;strong&gt;404 Not Found&lt;/strong&gt; error when visiting subpages.&lt;/li&gt;
-      &lt;li&gt;For more info, check &lt;a href=&quot;https://learn.getgrav.org/troubleshooting&quot;&gt;https://learn.getgrav.org/troubleshooting&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://getgrav.org/&quot;&gt;https://getgrav.org/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;theming-in-grav&quot;&gt;Theming in Grav&lt;/h1&gt;
-
-&lt;h3 id=&quot;method-for-setting-up-a-pre-made-html5-template-to-grav-theme&quot;&gt;Method for setting up a pre-made HTML5 template to Grav theme&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Unzip the &lt;strong&gt;HTML5 theme&lt;/strong&gt; zip file unto the &lt;code class=&quot;highlighter-rouge&quot;&gt;user/themes/&lt;/code&gt; directory.&lt;/li&gt;
-  &lt;li&gt;Register your theme by following &lt;strong&gt;Step 1 - Base Theme Setup&lt;/strong&gt; on &lt;a href=&quot;https://learn.getgrav.org/themes/theme-tutorial&quot;&gt;https://learn.getgrav.org/themes/theme-tutorial&lt;/a&gt;.
-    &lt;ul&gt;
-      &lt;li&gt;For &lt;strong&gt;Step 1 - Base Theme Setup&lt;/strong&gt; - #2&lt;br /&gt;
- &lt;em&gt;Tip:&lt;/em&gt; You can use the same HTML5 theme directory name or you can clean up directory name by renaming and practicing proper naming convention.&lt;br /&gt;
- &lt;em&gt;Ex:&lt;/em&gt; Avoid whitespace, avoid special characters except &lt;code class=&quot;highlighter-rouge&quot;&gt;_&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;-&lt;/code&gt; following &lt;em&gt;camel case or snake case&lt;/em&gt; naming convention.&lt;/li&gt;
-      &lt;li&gt;For &lt;strong&gt;Step 1 - Base Theme Setup&lt;/strong&gt; - #3&lt;br /&gt;
- &lt;em&gt;Tip:&lt;/em&gt; I chose to follow &lt;strong&gt;Grav’s Theme directory structure&lt;/strong&gt; rather than to use the &lt;strong&gt;HTML5 theme&lt;/strong&gt; default directory structure to avoid nested directory level, plus, Grav runs a &lt;em&gt;gpm&lt;/em&gt; engine which goes through each directories and yaml files to read data.&lt;/li&gt;
-      &lt;li&gt;For &lt;strong&gt;Step 1 - Base Theme Setup&lt;/strong&gt; - #4&lt;br /&gt;
- &lt;em&gt;Tip:&lt;/em&gt; I believe this basically tells Grav that we are extending a Grav Theme class and our custom theme gets registered unto Grav core files.&lt;/li&gt;
-      &lt;li&gt;For &lt;strong&gt;Step 1 - Base Theme Setup&lt;/strong&gt; - #5&lt;br /&gt;
- &lt;em&gt;Tip:&lt;/em&gt; This file just enables our theme, but later on, there are more theme configuration that uses this file.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;method-for-loading-assets-and-partial-out-the-main-indexhtml-file&quot;&gt;Method for loading assets and partial out the main index.html file&lt;/h3&gt;
-
-&lt;p&gt;Now that we have setup our theme directory structures and registered our theme to Grav core files. We will continue on by:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Load assets (css, js, images) in Head and Body tags.&lt;/li&gt;
-  &lt;li&gt;Introduction to using Twig templating engine.&lt;/li&gt;
-  &lt;li&gt;Organize our code in &lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt; file by using Grav’s &lt;code class=&quot;highlighter-rouge&quot;&gt;/templates/partials&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Now, we load our assets by moving HTML5 theme assets to Grav theme’s asset directory structure. Ex: &lt;code class=&quot;highlighter-rouge&quot;&gt;/css&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;/fonts&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;/images&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;/js&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;/templates&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;This step is a replacement for &lt;strong&gt;Step 2 - Add Bootstrap&lt;/strong&gt;&lt;br /&gt;
- We are not using Boostrap, instead we are using the HTML5’s assets.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Next is to just follow the remaining steps, &lt;strong&gt;Step 3 - Base Template&lt;/strong&gt; to &lt;strong&gt;Step 8 - Testing&lt;/strong&gt;.
-    &lt;ul&gt;
-      &lt;li&gt;This step pretty much explains:&lt;br /&gt;
- &lt;strong&gt;Loading assets.&lt;/strong&gt; When to use &lt;code class=&quot;highlighter-rouge&quot;&gt;theme_url&lt;/code&gt; twig variable and &lt;code class=&quot;highlighter-rouge&quot;&gt;do assets.add(&#39;&#39;)&lt;/code&gt; twig function and how it relates with &lt;strong&gt;Grav’s Asset Manager&lt;/strong&gt;.&lt;br /&gt;
- &lt;strong&gt;Introduction to basic Twig syntax.&lt;/strong&gt;&lt;br /&gt; Also, exploring some of Grav’s global twig variables.
- &lt;strong&gt;Partial out&lt;/strong&gt; the theme’s header section, footer section, and main content section to maintain a cleaner &lt;code class=&quot;highlighter-rouge&quot;&gt;base.html.twig&lt;/code&gt; file.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;breaking-our-home-page-template-file-further-by-using-modular-pages&quot;&gt;Breaking our home page template file further by using Modular Pages&lt;/h3&gt;
-
-&lt;p&gt;Most HTML5 themes comes with a home page designed similar to one-page website designs. For this step, we are going to breakdown this one-page website design into sections and use &lt;strong&gt;Grav’s Modular Pages&lt;/strong&gt; templating to separate and organize these sections.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Open &lt;code class=&quot;highlighter-rouge&quot;&gt;base.html.twig&lt;/code&gt; template and analyze what HTML tag is used to contain contents of each sections.
-    &lt;ul&gt;
-      &lt;li&gt;&lt;em&gt;Tip:&lt;/em&gt; Usual container tags are &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;section&amp;gt;&amp;lt;/section&amp;gt;&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div id=&quot;&quot;&amp;gt;&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;After determining the HTML tag container, convert these sections into &lt;strong&gt;Grav’s Modular Pages&lt;/strong&gt;.
-    &lt;ul&gt;
-      &lt;li&gt;Learn more about Modular Pages on the ff. link and ff. instructions: &lt;a href=&quot;https://learn.getgrav.org/content/modular&quot;&gt;https://learn.getgrav.org/content/modular&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;It is also a good idea to scheme through &lt;strong&gt;Grav’s Content&lt;/strong&gt; documentation page &lt;a href=&quot;https://learn.getgrav.org/content&quot;&gt;https://learn.getgrav.org/content&lt;/a&gt; to get a glimpse of the parts of a page.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;creating-custom-fields-to-let-users-update-data-in-theme-by-using-blueprint-pages&quot;&gt;Creating custom fields to let users update data in theme by using Blueprint Pages&lt;/h3&gt;
-
-&lt;p&gt;Now that we’ve broken our template further by each sections using &lt;strong&gt;Modular Pages&lt;/strong&gt;. What if we wanted users to update contents or bits pieces of data in each section using &lt;strong&gt;Grav’s Administration Panel&lt;/strong&gt;?&lt;/p&gt;
-
-&lt;p&gt;In this step, we will use Grav’s Forms called Blueprints &lt;a href=&quot;https://learn.getgrav.org/forms/blueprints&quot;&gt;https://learn.getgrav.org/forms/blueprints&lt;/a&gt; to convert &lt;strong&gt;static data&lt;/strong&gt; into editable ones using Grav’s &lt;code class=&quot;highlighter-rouge&quot;&gt;Admin dashboard &amp;gt; Pages&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;For an overview and how to setup a &lt;strong&gt;Themes and Plugins Blueprints&lt;/strong&gt; or &lt;strong&gt;Pages Blueprints&lt;/strong&gt;, go to this link &lt;a href=&quot;https://learn.getgrav.org/forms/blueprints&quot;&gt;https://learn.getgrav.org/forms/blueprints&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;My experience with setting up Blueprints for &lt;strong&gt;Theme&lt;/strong&gt; configuration page and for each &lt;strong&gt;Modular Pages&lt;/strong&gt; was quite challenging. Grav’s documentation doesn’t seem to provide detailed information on &lt;strong&gt;how to define a field and which directory its information is stored&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Although for &lt;strong&gt;Theme Blueprint&lt;/strong&gt; it was pretty straight forward.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Create a &lt;code class=&quot;highlighter-rouge&quot;&gt;blueprints.yaml&lt;/code&gt; file in the root directory of theme.&lt;/li&gt;
-  &lt;li&gt;Follow the &lt;strong&gt;Components of a Blueprint&lt;/strong&gt; in &lt;a href=&quot;https://learn.getgrav.org/forms/blueprints&quot;&gt;https://learn.getgrav.org/forms/blueprints&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;Tip:&lt;/strong&gt; a YAML file will be generated for Theme configuration page in &lt;code class=&quot;highlighter-rouge&quot;&gt;user/config&lt;/code&gt; directory.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;It was trial and error for &lt;strong&gt;Modular Page Blueprints&lt;/strong&gt; because its documentation seem to lack information on &lt;strong&gt;how to define a field and which directory its information is stored&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;An overview method I find when working with Modular Page Blueprints are:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Create a &lt;code class=&quot;highlighter-rouge&quot;&gt;blueprints&lt;/code&gt; directory under root template directory &lt;code class=&quot;highlighter-rouge&quot;&gt;yourtheme &amp;gt; blueprints&lt;/code&gt;.
-    &lt;ul&gt;
-      &lt;li&gt;Since we are creating a blueprint for modular pages, we are going to store our blueprints (&lt;code class=&quot;highlighter-rouge&quot;&gt;*.yaml&lt;/code&gt; files) under modular directory.&lt;/li&gt;
-      &lt;li&gt;So with this, create a modular directory under &lt;code class=&quot;highlighter-rouge&quot;&gt;yourtheme &amp;gt; blueprints &amp;gt; modular&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Create a &lt;code class=&quot;highlighter-rouge&quot;&gt;some-modular-template-name.yaml&lt;/code&gt; file that pertains to a modular template.
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;Tip:&lt;/strong&gt; Make sure your &lt;code class=&quot;highlighter-rouge&quot;&gt;.yaml&lt;/code&gt; file name matches a Modular template name you want to create Admin custom fields for.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;When defining &lt;code class=&quot;highlighter-rouge&quot;&gt;*.yaml&lt;/code&gt; file form, a good example would be the default &lt;strong&gt;Grav antimatter theme&lt;/strong&gt;, &lt;a href=&quot;https://github.com/getgrav/grav-theme-antimatter/blob/develop/blueprints/modular/showcase.yaml&quot;&gt;https://github.com/getgrav/grav-theme-antimatter/blob/develop/blueprints/modular/showcase.yaml&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;Also, an additional note to keep in mind when working with Page Blueprints&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Grav reads data in &lt;code class=&quot;highlighter-rouge&quot;&gt;*.yaml&lt;/code&gt; files in sequence of how directories and files are structured, So when defining a field, it needs to be under a parent &lt;code class=&quot;highlighter-rouge&quot;&gt;header.&lt;/code&gt; because blueprint pages store its data in pages headers. Also when uploading media files, Grav stores these media files under its page direcotory.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 13 Jul 2016 03:52:08 -0700</pubDate>
-        <link>http://www.wandrr.io/Getting-started-and-basic-theming-with-Grav</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Getting-started-and-basic-theming-with-Grav</guid>
-        
-        <category>static site</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?</title>
-        <description>&lt;p&gt;There are various reasons why Global Variables are bad. This can include performance, name collision, or bad code readability/organization.&lt;/p&gt;
-
-&lt;p&gt;Pointers below are from &lt;a href=&quot;http://c2.com/cgi/wiki?GlobalVariablesAreBad&quot;&gt;Global Variables Are Bad&lt;/a&gt; that were paraphrased in layman’s term.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Non-locality&lt;/strong&gt; - Code is easier to understand when parts of an app is limited to its own scope. Its easy to forget what a variable is intended for, but setting local variables in its own scope can help alleviate bad code readability/organization.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;No Access Control or Constraint Checking&lt;/strong&gt; - Any part of an app can easily get or set a global variable and this can cause an app to easily break.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Namespace pollution&lt;/strong&gt; - When setting a variable globally, they will be available in any parts of your code, thus, causing variable name collision and polluting the global namespace with unnecessary variables for certain parts of an app when executed.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://c2.com/cgi/wiki?GlobalVariablesAreBad&quot;&gt;Global Variables Are Bad&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Mon, 16 May 2016 04:03:37 -0700</pubDate>
-        <link>http://www.wandrr.io/Why-is-it-in-general-a-good-idea-to-leave-the-global-scope-of-a-website-as-is-and-never-touch-it</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Why-is-it-in-general-a-good-idea-to-leave-the-global-scope-of-a-website-as-is-and-never-touch-it</guid>
-        
-        <category>javascript interview questions</category>
         
         
       </item>

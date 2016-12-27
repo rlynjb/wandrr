@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Getting Started with Magento Theming</title>
-  <meta name="description" content="Installing manually was tedious so I’ve decided to use install Magento 2 via Docker and Docker Compose.">
+  <meta name="description" content="Before starting to build a theme in Magento2">
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="http://www.wandrr.io/Getting-started-with-Magento-Theming">
@@ -69,14 +69,132 @@
   <header class="post-header">
     <h1 class="post-title">Getting Started with Magento Theming</h1>
     <p class="post-meta">
-      Aug 11, 2016
+      Dec 27, 2016
       
-       • cms
+       • cms, ecommerce, magento2
     </p>
   </header>
 
   <article class="post-content">
-    <p>Installing manually was tedious so I’ve decided to use install Magento 2 via Docker and Docker Compose.</p>
+    <h3 id="before-starting-to-build-a-theme-in-magento2">Before starting to build a theme in Magento2</h3>
+
+<p>So before starting to build a theme, we need to know Magento 2’s architecture and status.</p>
+
+<ul>
+  <li>Magento 2 is extremely modularize (reminds me of Drupal)</li>
+  <li>it is based off of Zend Framework</li>
+  <li>Alot of Major and Minor updates/changes in each version</li>
+  <li>and foremost, it is Not practical to theme from scratch (trust me, I tried, unless you are a certified Magento 2 developer or someone willing to put in alot of time)</li>
+  <li>it comes with its own Front-End workflow (I think it uses Grunt, Less)</li>
+</ul>
+
+<p>Although, from all the learning curves listed above, Magento 2 is:</p>
+
+<ul>
+  <li>a really secure Ecommerce system</li>
+  <li>It has everything you need to immediately setup an online store</li>
+  <li>theming maybe tough, alot of overriding of templates (but we will try to keep CSS and JS minimal and will use our own <a href="https://github.com/rlynjb/frontendflow">Front-end workflow</a>)</li>
+</ul>
+
+<hr />
+
+<h4 id="setting-up-a-child-theme"><strong>Setting up a Child Theme</strong></h4>
+
+<p>Once Magento 2 is installed</p>
+
+<ul>
+  <li>Create a directory in <code class="highlighter-rouge">/app/design/frontend/&lt;company name&gt;/&lt;theme name&gt;</code></li>
+  <li>Copy Magento 2 blank theme <code class="highlighter-rouge">/vendor/magento/theme-frontend-blank/</code> to <code class="highlighter-rouge">/app/design/frontend/&lt;company name&gt;/&lt;theme name&gt;</code></li>
+  <li>Rename all theme titles and names in <code class="highlighter-rouge">composer.json</code>, <code class="highlighter-rouge">registration.php</code>, <code class="highlighter-rouge">theme.xml</code>
+    <ul>
+      <li>in <code class="highlighter-rouge">theme.xml</code> add <code class="highlighter-rouge">&lt;parent&gt;Magento/blank&lt;/parent&gt;</code></li>
+    </ul>
+  </li>
+  <li>Login to admin to change theme and clear-cache
+    <ul>
+      <li>locate admin URL in <code class="highlighter-rouge">/etc/config.php</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="create-a-template-for-a-page"><strong>Create a template for a page</strong></h4>
+
+<ul>
+  <li>Define a new page layout in <code class="highlighter-rouge">layouts.xml</code> by copy &amp; pasting a column tag</li>
+  <li>Copy <code class="highlighter-rouge">1column.xml</code> and rename to the name of page, ex. <code class="highlighter-rouge">homepage.xml</code></li>
+  <li>Go to admin and set a page to use new page layout defined</li>
+  <li>Clear cache in admin configuration page or cli <code class="highlighter-rouge">php bin/magento cache:flush</code></li>
+  <li>Create a template <code class="highlighter-rouge">*.phtml</code> inside of <code class="highlighter-rouge">/templates</code> directory and use <code class="highlighter-rouge">&lt;block&gt;</code> tag inside of <code class="highlighter-rouge">homepage.xml</code> file to point to the template file</li>
+</ul>
+
+<h4 id="override-magento-2-core-templates"><strong>Override Magento 2 core templates</strong></h4>
+
+<ul>
+  <li>Follow Magento 2 front end developer guide</li>
+  <li>Copy &amp; paste codebase from Magento 2 github repo</li>
+</ul>
+
+<p>Tips:</p>
+
+<ul>
+  <li>Analyze layout first</li>
+  <li>Look at default modules under <code class="highlighter-rouge">app/code/Magento</code> files and reference in <code class="highlighter-rouge">Magento_Theme</code> base templates</li>
+</ul>
+
+<h4 id="loading-front-end-flow-assets"><strong>Loading Front-End flow assets</strong></h4>
+
+<p>After loading Front-End flow assets files, we will comment out unnecessary Blank theme styles. This is a matter of inspecting unnecessary styles and commenting it out from its default <code class="highlighter-rouge">.less</code> files</p>
+
+<p>Comment out Magento 2’s <code class="highlighter-rouge">imports</code> in its root <code class="highlighter-rouge">/web/css/*.less</code> file</p>
+
+<ul>
+  <li><code class="highlighter-rouge">web/css/styles-m.less</code></li>
+  <li><code class="highlighter-rouge">web/css/_styles.less</code></li>
+  <li><code class="highlighter-rouge">web/css/source/_sources.less</code></li>
+</ul>
+
+<p>Initially, we will keep Magento 2 Blank theme’s Grid system and remove its theme styles. Go back and forth to files above to remove styles.</p>
+
+<h4 id="recompile-default-blank-theme-styles-and-new-front-end-flow-styles"><strong>Recompile default Blank theme styles and new Front-End flow styles</strong></h4>
+
+<ol>
+  <li>Delete static files
+    <ul>
+      <li><code class="highlighter-rouge">rm -rf pub/static/frontend/&lt;company name&gt;/&lt;theme name&gt;/*</code></li>
+      <li><code class="highlighter-rouge">rm -rf var/cache/*</code></li>
+      <li><code class="highlighter-rouge">rm -rf var/page_cache/*</code></li>
+      <li><code class="highlighter-rouge">rm -rf var/view_preprocessed/*</code></li>
+    </ul>
+  </li>
+  <li>Redeploy static files
+    <ul>
+      <li><code class="highlighter-rouge">php bin/magento setup:static-content:deploy</code></li>
+      <li><code class="highlighter-rouge">php bin/magento cache:clean</code></li>
+      <li><code class="highlighter-rouge">php bin/magento cache:flush</code></li>
+      <li><code class="highlighter-rouge">sudo chown -R 777 /var</code></li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="credential-requirements"><strong>Credential Requirements</strong></h4>
+
+<p>As stated in its document, Secure keys do not use the normal Magento2 Marketplace username and password, rather</p>
+
+<ul>
+  <li>Once logged in, generate public and private keys
+    <ul>
+      <li>username is Public key</li>
+      <li>password is Private key</li>
+    </ul>
+  </li>
+  <li>Need to sign up a Magento Marketplace account to take advantage of their features or add-ons that can be install via composer</li>
+</ul>
+
+<hr />
+
+<h3 id="the-docker-way">The Docker way</h3>
+
+<p>Installing manually was tedious so I’ve decided to use install Magento 2 via Docker and Docker Compose.</p>
 
 <p>To get a glimpse of how Docker and Docker Compose works, I’ved jotted down notes here: <a href="Notes-on-creating-a-convenient-local-development-workflow-with-Docker">Notes on creating a convenient Local Development Workflow with Docker</a></p>
 
@@ -86,175 +204,6 @@
 
 <hr />
 
-<h3 id="issues-i-came-across">Issues I came across:</h3>
-
-<ul>
-  <li><a href="https://github.com/magento/magento2/issues/2309">Admin Page 404 After Install Magento2 RC #2309</a>
-    <ul>
-      <li>During the installation you entered unique admin URI (it generates automatically for you) eg. /admin_cr8w74 To get info about your URI use CLI command:</li>
-      <li><code class="highlighter-rouge">/var/www/html/magento2$ php bin/magento info:adminuri</code></li>
-    </ul>
-  </li>
-  <li>Admin username and password can be found in <code class="highlighter-rouge">docker-compose.yml</code> file</li>
-  <li>resolving issue w/ Admin page
-    <ul>
-      <li><a href="https://community.magento.com/t5/Technical-Issues/There-has-been-an-error-processing-your-request/td-p/4905">There has been an error processing your request</a></li>
-      <li>see comment with <code class="highlighter-rouge">In local.xml file you need to update all database credential</code>
-        <ul>
-          <li>this will display errors on <code class="highlighter-rouge">/admin_&lt;unique hash&gt;</code></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>install sample data:
-    <ul>
-      <li><code class="highlighter-rouge">php bin/magento sampledata:deploy</code>, then <code class="highlighter-rouge">php bin/magento setup:upgrade</code></li>
-      <li>if error occurs: clear cache, <a href="http://stackoverflow.com/questions/38668833/magento-2-cmd-fatal-error-uncaught-error-class-cli-not-found">Fatal error: Uncaught Error: Class ‘Cli’ not found</a></li>
-    </ul>
-  </li>
-  <li>retrieving your http://repo.magento.com credentials
-    <ul>
-      <li><a href="http://devdocs.magento.com/guides/v2.0/install-gde/prereq/connect-auth.html">Get your authenticationn keys</a></li>
-    </ul>
-  </li>
-</ul>
-
-<hr />
-
-<h3 id="useful-commands-and-info">Useful commands and info</h3>
-
-<ul>
-  <li>clear cache via cli:
-    <ul>
-      <li><code class="highlighter-rouge">php bin/magento cache:clean</code> and <code class="highlighter-rouge">php bin/magento cache:flush</code></li>
-      <li>ref: <a href="https://www.mageplaza.com/kb/how-flush-enable-disable-cache.html">How to Flush, Enable, Disable Cache Command Line in Magento 2</a></li>
-    </ul>
-  </li>
-  <li>change to <strong>Developer Mode</strong> or other modes
-    <ul>
-      <li><code class="highlighter-rouge">rm -rf &lt;your Magento install dir&gt;/var/di/* &lt;your Magento install dir&gt;/var/generation/*</code></li>
-      <li><code class="highlighter-rouge">magento deploy:mode:set developer</code></li>
-      <li>ref: <a href="http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Overview of setting Magento modes</a></li>
-    </ul>
-  </li>
-</ul>
-
-<hr />
-
-<h3 id="collections-of-tutorials">Collections of Tutorials</h3>
-
-<ul>
-  <li><a href="http://www.sessiondigital.com/magento/magento-2-tutorials/">Magento 2 tutorials from sessiondigital.com</a></li>
-  <li><a href="http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Magento 2 - Frontend Developer Guide</a></li>
-  <li><a href="http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/themes/theme-create.html">Getting Started - Hands on with Theme from scratch</a>
-    <ul>
-      <li>This is to start building your theme from scratch, registering your theme and its directories</li>
-    </ul>
-  </li>
-  <li><a href="http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a>
-    <ul>
-      <li>An indepth view of directory structure of a theme and what is required and optional</li>
-      <li>Discusses about CSS and JS assets, Static files is directly accessible from HTML link and script syntax while Dynamic files usage of CSS preprocessors</li>
-      <li>But my concern is more on <strong>Magento2 Layout &amp; Templating</strong> since I will be implementing my <a href="https://github.com/rlynjb/frontendflow">Front-End Flow</a> project</li>
-    </ul>
-  </li>
-  <li><a href="http://www.sessiondigital.com/blog/magento-2-tutorial-how-to-use-the-new-front-end-templating-system/">Indepth Magento 2 Templating system</a></li>
-  <li><a href="http://magento.stackexchange.com/questions/118278/creating-a-custom-homepage-template-in-magento2">Intro to Layouts</a></li>
-  <li><a href="http://excellencemagentoblog.com/blog/2016/04/11/magento2-theme-layouts-templates/">Magento2 Theme - Layouts &amp; Templates - Part1</a></li>
-  <li><a href="http://excellencemagentoblog.com/blog/2016/04/11/magento2-theme-layouts-templates-part2/">Magento2 Theme - Layouts &amp; Templates - Part2</a></li>
-</ul>
-
-<hr />
-
-<h3 id="starting-with-magento2-layouts-and-templating">Starting with Magento2 Layouts and Templating</h3>
-
-<p>There is a steep learning curve with Magento2 Layout and Templating engine. Like any CMS, what builds a website display are mainly Layouts and Templates. Magento2 built their layout/templating engine with a strong emphasis of layout and content separation. So for the sake of learning and to simplify things, lets breakdown a Magento2 theme and start with Layout and Templates.</p>
-
-<h3 id="files-and-directory-structure-inside-magentotheme-module">Files and Directory structure inside Magento_Theme module</h3>
-<p>Files and Directory that we are concern are (this applies to other modules as well):</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>\theme_dir
-  |-- \Magento_Theme
-      |-- \layout
-          |-- \override
-              |-- \base
-                  |-- default.xml
-                  |-- default_header_blocks.xml
-      |-- \page_layout
-          |-- custom_home.xml
-      |-- \templates
-          |-- header.phtml
-          |-- main-content.phtml
-          |-- footer.phtml
-      |-- layouts.xml
-</code></pre>
-</div>
-
-<p>I’m overriding <strong>Magento_Theme</strong>’s <code class="highlighter-rouge">\layout</code> files and extending into <strong>Magento_Theme</strong>’s <code class="highlighter-rouge">\page_layout &gt; custom_home_layout.xml</code> - <code class="highlighter-rouge">&lt;referenceContainer name="page.wrapper"&gt;</code></p>
-
-<blockquote>
-  <p>There’s a difference bet. Override and Extend</p>
-</blockquote>
-
-<p><strong>Start it off by:</strong></p>
-
-<ul>
-  <li>ref: <a href="http://excellencemagentoblog.com/blog/2016/04/11/magento2-theme-layouts-templates/">Magento2 Theme - Layouts &amp; Templates - Part1</a></li>
-  <li>Declare your layouts first on <code class="highlighter-rouge">layouts.xml</code></li>
-  <li>Create your page layout file inside <code class="highlighter-rouge">\page_layout</code></li>
-  <li>Then define your <code class="highlighter-rouge">&lt;container&gt;</code> along with name attr to hook it with Page Configuration files inside <code class="highlighter-rouge">\layout</code></li>
-</ul>
-
-<p><strong>Recall:</strong></p>
-
-<h4 id="page-layout-files">Page Layout files</h4>
-<ul>
-  <li>An <code class="highlighter-rouge">*.xml</code> file where we define a page wireframe/structure.
-    <ul>
-      <li>Ex. Grid system</li>
-    </ul>
-  </li>
-  <li>Only uses Magento2’s <strong>containers</strong> or <code class="highlighter-rouge">&lt;referenceContainer name="" /&gt;</code></li>
-  <li>Should be declared on <code class="highlighter-rouge">layouts.xml</code> file for it to register.</li>
-</ul>
-
-<h4 id="page-configuration-files">Page Configuration files</h4>
-<ul>
-  <li>Uses a declared <strong>Page Layout</strong></li>
-  <li>Defines detailed structure, contents, meta info, etc (menu, nav, search box, widgets, links, contents, images) inside of header, main content, footer, columns.
-    <ul>
-      <li>Ex. Components</li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="generic-page-layouts">Generic Page Layouts</h4>
-<p>There is also another type of page layout that is not quite use often. For more info: <a href="http://devdocs.magento.com/guides/v2.1/frontend-dev-guide/layouts/layout-types.html#layout-types-gen">Magento2 Dev Doc - Generic layout</a></p>
-
-<h3 id="magento-2-templating">Magento 2 Templating</h3>
-<ul>
-  <li>It seems like templating is just a matter of copy and pasting pieces of code that Magento 2 Modules provide.</li>
-  <li>Use <code class="highlighter-rouge">&lt;block /&gt;</code> to define a component inside a <code class="highlighter-rouge">&lt;container /&gt;</code></li>
-  <li>Define a component class like so, <code class="highlighter-rouge">&lt;block class="" /&gt;</code> and extend by defining a template to tweak template/customize HTML structure <code class="highlighter-rouge">&lt;block class="" template="" /&gt;</code></li>
-</ul>
-
-<hr />
-
-<h3 id="further-templating-issues">Further Templating Issues</h3>
-
-<ul>
-  <li><a href="http://magento.stackexchange.com/questions/108296/how-to-load-a-phtml-file-only-for-homepage-magento-2">How to load a phtml file only for homepage? (Magento 2)</a></li>
-</ul>
-
-<hr />
-
-<p>up and running with magento 2 child theme</p>
-
-<p>understadning templating</p>
-
-<ul>
-  <li><a href="http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
-</ul>
 
   </article>
 
