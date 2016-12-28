@@ -6,9 +6,82 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 27 Dec 2016 11:15:53 -0800</pubDate>
-    <lastBuildDate>Tue, 27 Dec 2016 11:15:53 -0800</lastBuildDate>
+    <pubDate>Wed, 28 Dec 2016 11:11:19 -0800</pubDate>
+    <lastBuildDate>Wed, 28 Dec 2016 11:11:19 -0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Using ES6 Modules in client-side</title>
+        <description>&lt;p&gt;I came into a halt where I need to split my JavaScript code. Prototyping an application, code can be done in one file but as it grows and add-on features are requested, lines of code will eventually increase. I’ve heard a few names of javascript module loaders, both for client and server. But what I really wanted to take advantage of is JavaScript’s new module feature, ‘ES6 Module’ &lt;code class=&quot;highlighter-rouge&quot;&gt;import&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;export&lt;/code&gt; (commonly used in Nodejs, server-side).&lt;/p&gt;
+
+&lt;p&gt;Projects I’ve been handling are focused on Front-End, so I need a module compiler for client-side. Most browsers still does not support ES6 Module feature, that’s why there are Client side JS module loaders available such as Browserify, Webpack, Rollup &lt;a href=&quot;http://stackoverflow.com/questions/19059580/client-on-node-uncaught-referenceerror-require-is-not-defined&quot;&gt;ref&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I am still learning JavaScript modules but for simplicity, I’m going to use Browserify, Babel, and Gulp.&lt;/p&gt;
+
+&lt;p&gt;Below is a step-by-step scenario of how these tools are connected and how it transforms our ES6 code.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;We write code using ES6 capabilities inclduing (but not limited to) ES6 module loading.&lt;/li&gt;
+  &lt;li&gt;Babelify translates this code to ES5-compatibility code with &lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt; statements included.&lt;/li&gt;
+  &lt;li&gt;ES5 code with &lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt; statements is transformed to the version that is fully understandable by browsers by Browserify&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://egorsmirnov.me/2015/05/25/browserify-babelify-and-es6.html&quot;&gt;ref&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Additional method….&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Gulp.js then compiles all dependencies and scripts and outputs the final (minified and compressed) javascript file.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A sample &lt;strong&gt;Gulp.js&lt;/strong&gt; task should look like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var gulp = require(&#39;gulp&#39;);
+var browserify = require(&#39;browserify&#39;);
+var babelify = require(&#39;babelify&#39;);
+var source = require(&#39;vinyl-source-stream&#39;);
+
+gulp.task(&#39;build&#39;, function () {
+  return browserify({entries: &#39;./app.jsx&#39;, extensions: [&#39;.jsx&#39;], debug: true})
+  .transform(babelify)
+  .bundle()
+  .pipe(source(&#39;bundle.js&#39;))
+  .pipe(gulp.dest(&#39;dist&#39;));
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Side note&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I’m looking forward on taking advantage of what Babel plugins has to offer to replace Browserify and Babelify.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://babeljs.io/&quot;&gt;Babeljs.io&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://exploringjs.com/es6/ch_modules.html&quot;&gt;Exploringjs.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/19059580/client-on-node-uncaught-referenceerror-require-is-not-defined&quot;&gt;Client on node: Uncaught ReferenceError: require is not defined&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://egorsmirnov.me/2015/05/25/browserify-babelify-and-es6.html&quot;&gt;Browserify, Babelify and ES6&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://babeljs.io/&quot;&gt;Babeljs.io&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://exploringjs.com/es6/ch_modules.html&quot;&gt;Exploringjs.com&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/32793404/es6-export-overwriting-function&quot;&gt;ES6 Export Overwriting Function&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 28 Dec 2016 03:08:39 -0800</pubDate>
+        <link>http://www.wandrr.io/Using-ES6-Modules-in-clientside</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Using-ES6-Modules-in-clientside</guid>
+        
+        <category>javascript</category>
+        
+        
+      </item>
     
       <item>
         <title>Getting Started with Magento Theming</title>
@@ -155,6 +228,24 @@
       </item>
     
       <item>
+        <title>Simple Backend task with PHP and MySQL</title>
+        <description>&lt;p&gt;front end form:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.w3schools.com/php/php_mysql_insert.asp&quot;&gt;php mysql insert&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://datatables.net/&quot;&gt;datatables display&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 27 Dec 2016 03:12:26 -0800</pubDate>
+        <link>http://www.wandrr.io/Simple-backend-tasks-with-PHP-Mysql</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Simple-backend-tasks-with-PHP-Mysql</guid>
+        
+        <category>php mysql</category>
+        
+        
+      </item>
+    
+      <item>
         <title>Learning ecommerce with Woocommerce and Wordpress</title>
         <description>&lt;p&gt;Lately, I’ve been delving into ecommerce sites. So I thought, it would be important to research more on different Ecommerce platforms. I’ve been told as well that it is important to learn how ecommerce system works and what platforms to use in terms of security, how the system is built, and support from the community. A platform I started learning is Magento 2, but tools I would prefer are listed below.&lt;/p&gt;
 
@@ -172,24 +263,6 @@
         <pubDate>Tue, 27 Dec 2016 01:43:54 -0800</pubDate>
         <link>http://www.wandrr.io/Learning-ecommerce-with-Woocommerce-and-Wordpress</link>
         <guid isPermaLink="true">http://www.wandrr.io/Learning-ecommerce-with-Woocommerce-and-Wordpress</guid>
-        
-        <category>javascript</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Understanding ES6 Modules with GulpJS and Babel</title>
-        <description>&lt;h4 id=&quot;references&quot;&gt;References:&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://exploringjs.com/es6/ch_modules.html&quot;&gt;ExploringJS.com - ES6 Modules&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.barbarianmeetscoding.com/blog/2016/02/21/start-using-es6-es2015-in-your-project-with-babel-and-gulp/&quot;&gt;Start using ES6/ES2015 in your project with Babel and Gulp&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 27 Dec 2016 01:36:57 -0800</pubDate>
-        <link>http://www.wandrr.io/Understanding-ES6-Modules-with-Gulpjs</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Understanding-ES6-Modules-with-Gulpjs</guid>
         
         <category>javascript</category>
         
@@ -870,152 +943,6 @@ Route::get(&#39;/contact/view&#39;, function() {
         <guid isPermaLink="true">http://www.wandrr.io/Front-End-Design-Specs</guid>
         
         <category>workflow</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Front-End Workflow with Grav theme</title>
-        <description>&lt;p&gt;This blog post explains on how I have setup a custom basic Grav theme with modern front-end workflow.&lt;/p&gt;
-
-&lt;p&gt;This idea have come into mind when I was assigned a project that requires the use of a CSS framework and other plugins for animations/transitions. Since I will be building websites with the same requirements, why not create a &lt;strong&gt;Grav Starter Theme with Front-End Workflow&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;I will be updating this theme with tested CSS animations/transitions plugins that I think will play well with Grav and meets client’s business requirements.&lt;/p&gt;
-
-&lt;p&gt;For documentation and updates, refer to its github repo: &lt;a href=&quot;https://github.com/rlynjb/gravtheme-frontendflow&quot;&gt;Grav Theme - Front-End Flow&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Contents&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#before-starting&quot;&gt;Before starting&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#every-website-project-will-have&quot;&gt;Every website project will have&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#developing-starter-kit-theme&quot;&gt;Developing starter kit theme&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#gulpfilejs-setup&quot;&gt;gulpfile.js setup&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#importing-foundation-components-and-overriding-settings-file&quot;&gt;importing foundation components and overriding settings file&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;before-starting&quot;&gt;Before starting:&lt;/h3&gt;
-
-&lt;p&gt;Install the following globally as it is required to run Bower and Gulp in your local dev.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Node&lt;/li&gt;
-  &lt;li&gt;NPM or NVM if you deal with multiple node versions&lt;/li&gt;
-  &lt;li&gt;After installing Grav
-    &lt;ul&gt;
-      &lt;li&gt;refer to ff. link for Getting Started with Grav: &lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git clone&lt;/code&gt; this repo inside of &lt;code class=&quot;highlighter-rouge&quot;&gt;/user/themes/&lt;/code&gt; directory&lt;/li&gt;
-  &lt;li&gt;inside of &lt;code class=&quot;highlighter-rouge&quot;&gt;/user/themes/gravtheme-frontendflow/&lt;/code&gt; directory, run:
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm install -g&lt;/code&gt;
-        &lt;ul&gt;
-          &lt;li&gt;required to run Bower and Gulp&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bower install&lt;/code&gt;
-        &lt;ul&gt;
-          &lt;li&gt;installs 3rd-party plugins used on this theme&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gulp &amp;amp;&amp;amp; gulp watch&lt;/code&gt;
-        &lt;ul&gt;
-          &lt;li&gt;builds our sass files. We’ve carefully chose each Foundation components to avoid CSS bloats and overriding of styles.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;every-website-project-will-have&quot;&gt;Every website project will have:&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Grav + Admin core&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;To get fresh install: &lt;a href=&quot;https://getgrav.org/&quot;&gt;Get Grav&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Basic Grav Theme setup&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Follow tutorial to get started: &lt;a href=&quot;https://learn.getgrav.org/themes/theme-tutorial&quot;&gt;Get Grav - Theme Tutorial&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; file
-    &lt;ul&gt;
-      &lt;li&gt;installs &lt;strong&gt;Bower&lt;/strong&gt;, &lt;strong&gt;Gulp.js&lt;/strong&gt;, and other gulp dependencies for build system and front-end workflow aid&lt;/li&gt;
-      &lt;li&gt;go to &lt;a href=&quot;https://www.npmjs.com/&quot;&gt;npmjs.com&lt;/a&gt; to search for more packages&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bower.json&lt;/code&gt; file
-    &lt;ul&gt;
-      &lt;li&gt;installs required 3rd-party assets&lt;/li&gt;
-      &lt;li&gt;go to &lt;a href=&quot;http://bower.io&quot;&gt;bower.io&lt;/a&gt; to search for more packages&lt;/li&gt;
-      &lt;li&gt;or install packages via &lt;strong&gt;Github repos&lt;/strong&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;https://bower.io/docs/api/&quot;&gt;bower.io - api&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/19348076/installing-a-dependency-with-bower-from-url-and-specify-version&quot;&gt;Installing a dependency with Bower from URL and specify version&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;setup &lt;code class=&quot;highlighter-rouge&quot;&gt;gulpfile.js&lt;/code&gt; file
-    &lt;ul&gt;
-      &lt;li&gt;Why use &lt;strong&gt;Gulp.js&lt;/strong&gt;?
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;Sass&lt;/strong&gt; seem to not support building multiple &lt;code class=&quot;highlighter-rouge&quot;&gt;scss&lt;/code&gt; files. It require either Compass, Grunt, or libsass (same Build system concept as Gulp.js)&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;Grav’s Asset Manager&lt;/strong&gt; lacks support for sass and its still quite buggy&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Check this project’s github repo for &lt;strong&gt;package.json&lt;/strong&gt;, &lt;strong&gt;bower.json&lt;/strong&gt;, and &lt;strong&gt;gulp.js&lt;/strong&gt; updates.&lt;br /&gt;
-&lt;a href=&quot;https://github.com/rlynjb/gravtheme-frontendflow&quot;&gt;Grav Theme - Front-End Flow&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;developing-starter-kit-theme&quot;&gt;Developing starter kit theme&lt;/h3&gt;
-
-&lt;p&gt;During developing &lt;strong&gt;Grav Theme - Front-End Flow&lt;/strong&gt; starter kit theme, I have come across issues that I think worth noting.&lt;/p&gt;
-
-&lt;h3 id=&quot;gulpfilejs-setup&quot;&gt;gulpfile.js setup&lt;/h3&gt;
-
-&lt;p&gt;After installing &lt;strong&gt;foundation-sites&lt;/strong&gt; via bower. we will need to setup our &lt;code class=&quot;highlighter-rouge&quot;&gt;gulpfile.js&lt;/code&gt; file.&lt;/p&gt;
-
-&lt;p&gt;Follow the youtube video tutorial to get started:&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/De6H0eFrfvY&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;importing-foundation-components-and-overriding-settings-file&quot;&gt;importing foundation components and overriding settings file&lt;/h3&gt;
-
-&lt;p&gt;While setting it up, I’ve come across an issue. The following link helped me solved the issue.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/34537431/foundation-6-does-not-generate-any-styles&quot;&gt;stackoverflow - Foundation 6 does not generate any styles&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Another issue i came across was overriding Foundation’s settings file. It took me awhile until I figured out why its not overriding the default settings file. Solution is on my github repo&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/rlynjb/gravtheme-frontendflow&quot;&gt;GravTheme - Front End Flow theme&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 13 Jul 2016 05:09:47 -0700</pubDate>
-        <link>http://www.wandrr.io/Front-End-Workflow-with-Grav-theme</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Front-End-Workflow-with-Grav-theme</guid>
-        
-        <category>static site</category>
         
         
       </item>
