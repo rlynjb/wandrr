@@ -16,6 +16,7 @@ Below is a step-by-step scenario of how these tools are connected and how it tra
 
 1. We write code using ES6 capabilities inclduing (but not limited to) ES6 module loading.
 2. Babelify translates this code to ES5-compatibility code with `require` statements included.
+  - Babelify is a Babel transformer for Browserify
 3. ES5 code with `require` statements is transformed to the version that is fully understandable by browsers by Browserify
 
 [ref](http://egorsmirnov.me/2015/05/25/browserify-babelify-and-es6.html)
