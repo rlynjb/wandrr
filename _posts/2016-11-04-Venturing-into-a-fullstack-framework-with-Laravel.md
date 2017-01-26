@@ -187,3 +187,21 @@ Route::get('/contact/view', function() {
   });
 });
 ```
+
+
+-----
+
+
+# Basic CRUD in Laravel
+
+Below are the resources I used in learning basic CRUD, form handling in Laravel, and AJAX form post.
+
+- [Forms and Data Validation](https://code.tutsplus.com/courses/get-started-with-laravel-5/lessons/handle-form-input)
+- [Laravel 5 can't use ajax post request](https://laracasts.com/discuss/channels/requests/laravel-5-cant-use-ajax-post-request)
+- [How to get All input of POST in Laravel 5](http://stackoverflow.com/questions/32718870/how-to-get-all-input-of-post-in-laravel-5)
+- [Database: Getting Started](https://laravel.com/docs/5.4/database)
+
+### Dealing with Global variables
+
+- [Global variable in laravel controller](http://stackoverflow.com/questions/32942379/global-variable-in-laravel-controller)
+- [Laravel 5 - global Blade view variable available in all templates](http://stackoverflow.com/questions/29715813/laravel-5-global-blade-view-variable-available-in-all-templates)
