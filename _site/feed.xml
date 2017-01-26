@@ -6,8 +6,8 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 28 Dec 2016 11:11:19 -0800</pubDate>
-    <lastBuildDate>Wed, 28 Dec 2016 11:11:19 -0800</lastBuildDate>
+    <pubDate>Wed, 28 Dec 2016 11:21:54 -0800</pubDate>
+    <lastBuildDate>Wed, 28 Dec 2016 11:21:54 -0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -22,7 +22,11 @@
 
 &lt;ol&gt;
   &lt;li&gt;We write code using ES6 capabilities inclduing (but not limited to) ES6 module loading.&lt;/li&gt;
-  &lt;li&gt;Babelify translates this code to ES5-compatibility code with &lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt; statements included.&lt;/li&gt;
+  &lt;li&gt;Babelify translates this code to ES5-compatibility code with &lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt; statements included.
+    &lt;ul&gt;
+      &lt;li&gt;Babelify is a Babel transformer for Browserify&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
   &lt;li&gt;ES5 code with &lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt; statements is transformed to the version that is fully understandable by browsers by Browserify&lt;/li&gt;
 &lt;/ol&gt;
 
