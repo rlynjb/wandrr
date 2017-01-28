@@ -205,3 +205,12 @@ Below are the resources I used in learning basic CRUD, form handling in Laravel,
 
 - [Global variable in laravel controller](http://stackoverflow.com/questions/32942379/global-variable-in-laravel-controller)
 - [Laravel 5 - global Blade view variable available in all templates](http://stackoverflow.com/questions/29715813/laravel-5-global-blade-view-variable-available-in-all-templates)
+
+
+-----
+
+
+# Taking it further by building a custom Admin Panel to overwrite JSON files
+
+- [Read-Write JSON file using PHP](http://www.kodecrash.com/javascript/read-write-json-file-using-php/)
+- [Creating a SCRUD System Using jQuery, JSON and DataTables](https://www.sitepoint.com/creating-a-scrud-system-using-jquery-json-and-datatables/)
