@@ -8,6 +8,8 @@ tags:
 - fullstack
 ---
 
+Date Published: Nov 11, 2016
+
 Indeed, I feel like its time to venture out of Front-End Web Development and look into a Fullstack Framework. One of my favorite framework is Keystone.js. It is a Node.js Database-driven framework. But learning a framework based off of PHP is mandatory, and so I came across Laravel. I'm not going to necessarily drift away from Keystone.js. As a Front-End Web Developer, I love Javascript and I don't think I am going to give the language up easily.
 
 My goal is to master atleast 1 or 2 Fullstack framework that is based off of 2 different language, Keystone.js and Laravel, but this blog post will focus on Laravel with a bit of comparison with Keystone.js and discusses about some of the features of what comprises a small-large scale web applications.
