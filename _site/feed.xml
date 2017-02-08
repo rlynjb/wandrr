@@ -4,10 +4,10 @@
     <title>wandrr</title>
     <description>This is a blog about travel and tech.
 </description>
-    <link>http://www.wandrr.io/</link>
-    <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 08 Feb 2017 14:31:27 -0800</pubDate>
-    <lastBuildDate>Wed, 08 Feb 2017 14:31:27 -0800</lastBuildDate>
+    <link>http://rlynjb.github.io/wandrr/</link>
+    <atom:link href="http://rlynjb.github.io/wandrr/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 08 Feb 2017 14:41:47 -0800</pubDate>
+    <lastBuildDate>Wed, 08 Feb 2017 14:41:47 -0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -395,8 +395,8 @@ Route::get(&#39;/contact/view&#39;, function() {
 &lt;/ol&gt;
 </description>
         <pubDate>Wed, 08 Feb 2017 02:58:47 -0800</pubDate>
-        <link>http://www.wandrr.io/Venturing-into-a-fullstack-framework-with-Laravel</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Venturing-into-a-fullstack-framework-with-Laravel</guid>
+        <link>http://rlynjb.github.io/wandrr/Venturing-into-a-fullstack-framework-with-Laravel</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Venturing-into-a-fullstack-framework-with-Laravel</guid>
         
         <category>php</category>
         
@@ -474,8 +474,8 @@ gulp.task(&#39;build&#39;, function () {
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 28 Dec 2016 03:08:39 -0800</pubDate>
-        <link>http://www.wandrr.io/Using-ES6-Modules-in-clientside</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Using-ES6-Modules-in-clientside</guid>
+        <link>http://rlynjb.github.io/wandrr/Using-ES6-Modules-in-clientside</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Using-ES6-Modules-in-clientside</guid>
         
         <category>javascript</category>
         
@@ -614,8 +614,8 @@ gulp.task(&#39;build&#39;, function () {
 
 </description>
         <pubDate>Tue, 27 Dec 2016 03:14:55 -0800</pubDate>
-        <link>http://www.wandrr.io/Getting-started-with-Magento-Theming</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Getting-started-with-Magento-Theming</guid>
+        <link>http://rlynjb.github.io/wandrr/Getting-started-with-Magento-Theming</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Getting-started-with-Magento-Theming</guid>
         
         <category>cms</category>
         
@@ -636,8 +636,8 @@ gulp.task(&#39;build&#39;, function () {
 &lt;/ul&gt;
 </description>
         <pubDate>Tue, 27 Dec 2016 03:12:26 -0800</pubDate>
-        <link>http://www.wandrr.io/Simple-backend-tasks-with-PHP-Mysql</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Simple-backend-tasks-with-PHP-Mysql</guid>
+        <link>http://rlynjb.github.io/wandrr/Simple-backend-tasks-with-PHP-Mysql</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Simple-backend-tasks-with-PHP-Mysql</guid>
         
         <category>php mysql</category>
         
@@ -660,8 +660,8 @@ gulp.task(&#39;build&#39;, function () {
 &lt;p&gt;Coming from a Front-End Development background and with amount of code I’ve written this past years, it was kinda tough for me to grasp concepts on how Magento 2 system works. But this post isn’t about Magento 2 but rather digging further into the whole Ecommerce realm.&lt;/p&gt;
 </description>
         <pubDate>Tue, 27 Dec 2016 01:43:54 -0800</pubDate>
-        <link>http://www.wandrr.io/Learning-ecommerce-with-Woocommerce-and-Wordpress</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Learning-ecommerce-with-Woocommerce-and-Wordpress</guid>
+        <link>http://rlynjb.github.io/wandrr/Learning-ecommerce-with-Woocommerce-and-Wordpress</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Learning-ecommerce-with-Woocommerce-and-Wordpress</guid>
         
         <category>javascript</category>
         
@@ -693,8 +693,8 @@ gulp.task(&#39;build&#39;, function () {
 &lt;/ul&gt;
 </description>
         <pubDate>Sat, 20 Aug 2016 04:12:26 -0700</pubDate>
-        <link>http://www.wandrr.io/Learning-Keystonejs</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Learning-Keystonejs</guid>
+        <link>http://rlynjb.github.io/wandrr/Learning-Keystonejs</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Learning-Keystonejs</guid>
         
         <category>javascript</category>
         
@@ -778,8 +778,8 @@ gulp.task(&#39;build&#39;, function () {
 &lt;/ul&gt;
 </description>
         <pubDate>Mon, 08 Aug 2016 06:31:20 -0700</pubDate>
-        <link>http://www.wandrr.io/Notes-on-creating-a-convenient-local-development-workflow-with-Docker</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Notes-on-creating-a-convenient-local-development-workflow-with-Docker</guid>
+        <link>http://rlynjb.github.io/wandrr/Notes-on-creating-a-convenient-local-development-workflow-with-Docker</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Notes-on-creating-a-convenient-local-development-workflow-with-Docker</guid>
         
         <category>workflow</category>
         
@@ -895,8 +895,8 @@ gulp.task(&#39;build&#39;, function () {
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 03 Aug 2016 05:57:02 -0700</pubDate>
-        <link>http://www.wandrr.io/Breaking-down-cross-browser-testing</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Breaking-down-cross-browser-testing</guid>
+        <link>http://rlynjb.github.io/wandrr/Breaking-down-cross-browser-testing</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Breaking-down-cross-browser-testing</guid>
         
         <category>testing</category>
         
@@ -935,8 +935,8 @@ gulp.task(&#39;build&#39;, function () {
 &lt;/ul&gt;
 </description>
         <pubDate>Thu, 28 Jul 2016 03:58:40 -0700</pubDate>
-        <link>http://www.wandrr.io/Learning-React</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Learning-React</guid>
+        <link>http://rlynjb.github.io/wandrr/Learning-React</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Learning-React</guid>
         
         <category>javascript</category>
         
@@ -1063,8 +1063,8 @@ gulp.task(&#39;build&#39;, function () {
 &lt;/ul&gt;
 </description>
         <pubDate>Thu, 28 Jul 2016 03:58:40 -0700</pubDate>
-        <link>http://www.wandrr.io/Front-End-Design-Specs</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Front-End-Design-Specs</guid>
+        <link>http://rlynjb.github.io/wandrr/Front-End-Design-Specs</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Front-End-Design-Specs</guid>
         
         <category>workflow</category>
         
