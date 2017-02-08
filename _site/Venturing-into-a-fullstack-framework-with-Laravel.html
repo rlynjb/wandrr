@@ -69,7 +69,7 @@
   <header class="post-header">
     <h1 class="post-title">Venturing into a Fullstack Framework with Laravel</h1>
     <p class="post-meta">
-      Nov 4, 2016
+      Feb 8, 2017
       
        • php, fullstack
     </p>
@@ -80,7 +80,31 @@
 
 <p>My goal is to master atleast 1 or 2 Fullstack framework that is based off of 2 different language, Keystone.js and Laravel, but this blog post will focus on Laravel with a bit of comparison with Keystone.js and discusses about some of the features of what comprises a small-large scale web applications.</p>
 
-<p>I’ve also took the time to do reseach and write a comparison chart. Below is my researched with a high-level view of what features I look for in a framework.</p>
+<p>Since I’m going back and forth with this blog post, writing my experience from choosing to mastering a framework, I’ve included a table of contents below.</p>
+
+<hr />
+
+<h3 id="table-of-contents">Table of Contents</h3>
+
+<ul>
+  <li><a href="#comparison-chart">Comparison chart: Keystone.JS and Laravel</a></li>
+  <li><a href="#learning-resources">Learning Resources</a></li>
+  <li><a href="#getting-started-with-laravel">Getting started with Laravel</a></li>
+  <li><a href="#understanding-laravels-front-end-workflow">Understanding Laravel’s Front-End Workflow</a></li>
+  <li><a href="#coding-templates-to-populating-static-data-from-json-file">Coding templates to populating static data from JSON file</a></li>
+  <li><a href="#from-static-data-to-implementing-a-database">From Static data to implementing a Database</a></li>
+  <li><a href="#simple-contact-form-sending-emails">Simple Contact form, Sending Emails</a></li>
+  <li><a href="#intro-to-create-in-crud">Intro to Create in CRUD</a></li>
+  <li><a href="#method-for-developing-a-project-from-scratch">Method for developing a project from scratch</a></li>
+  <li><a href="#defining-my-specs-for-a-custom-admin-panel">Defining my specs for a custom Admin Panel</a></li>
+  <li><a href="#building-a-cms-from-scratch">Building a CMS from scratch</a></li>
+</ul>
+
+<hr />
+
+<h1 id="comparison-chart">Comparison chart</h1>
+
+<p>I’ve also took the time to do research and write a comparison chart. Below is my researched with a high-level view of what features I look for in a framework.</p>
 
 <table>
   <thead>
@@ -340,7 +364,7 @@ Route::get('/contact/view', function() {
 
 <hr />
 
-<h1 id="basic-crud-in-laravel">Basic CRUD in Laravel</h1>
+<h1 id="intro-to-create-in-crud">Intro to Create in CRUD</h1>
 
 <p>Below are the resources I used in learning basic CRUD, form handling in Laravel, and AJAX form post.</p>
 
@@ -360,12 +384,77 @@ Route::get('/contact/view', function() {
 
 <hr />
 
-<h1 id="taking-it-further-by-building-a-custom-admin-panel-to-overwrite-json-files">Taking it further by building a custom Admin Panel to overwrite JSON files</h1>
+<h1 id="defining-my-specs-for-a-custom-admin-panel">Defining my specs for a custom Admin Panel</h1>
+
+<p>My admin panel specs are:</p>
+
+<ul>
+  <li>simple navigation (straightforward, simpler than wordpress)</li>
+  <li>able to do CRUD unto json files</li>
+  <li>contains just fields or forms (simple)</li>
+  <li>display contact form data from contact form fields</li>
+  <li>uses miminal text editor features with instructions
+    <ul>
+      <li>user will be using HTML tags</li>
+      <li>bold text</li>
+      <li>links</li>
+      <li>breakline/ new line</li>
+    </ul>
+  </li>
+  <li>image or assets uploader and manager
+    <ul>
+      <li>contains fields for seo input (img alt, title)</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h1 id="building-a-cms-from-scratch">Building a CMS from scratch</h1>
 
 <ul>
   <li><a href="http://www.kodecrash.com/javascript/read-write-json-file-using-php/">Read-Write JSON file using PHP</a></li>
   <li><a href="https://www.sitepoint.com/creating-a-scrud-system-using-jquery-json-and-datatables/">Creating a SCRUD System Using jQuery, JSON and DataTables</a></li>
 </ul>
+
+<hr />
+
+<h1 id="method-for-developing-a-project-from-scratch">Method for developing a project from scratch</h1>
+
+<h3 id="setting-up-a-project">Setting up a project</h3>
+
+<ol>
+  <li>Setup Laravel, server, github repo, and configure FEF theme.</li>
+</ol>
+
+<h3 id="coding-a-theme-with-fef-theme">Coding a theme with FEF Theme</h3>
+
+<p><a href="https://github.com/rlynjb/frontendflow">FEF Theme</a> is my baby project. It includes my front end workflow with css framework and javascript plugins I often used. It also includes a collection of solutions to common interaction and browser compatibility issues.</p>
+
+<ol>
+  <li>Code layout per page including UX.
+    <ul>
+      <li>place image placeholders and text.</li>
+      <li>determine responsiveness</li>
+      <li>determine user interaction of different components to be use</li>
+    </ul>
+  </li>
+  <li>Code overall style, brand, typography</li>
+  <li>Add in basic CSS3 transitions</li>
+</ol>
+
+<h3 id="structuring-content-with-json">Structuring Content with JSON</h3>
+
+<ol>
+  <li>Per page, define fields and determine if its content type, regular page, form, etc.</li>
+  <li>Code fields into json file</li>
+  <li>Convert json files to be editable
+    <ul>
+      <li>modify Routing and Controllers</li>
+      <li>modify Views to use data passed from json to Controllers</li>
+    </ul>
+  </li>
+</ol>
 
   </article>
 

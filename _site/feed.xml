@@ -6,9 +6,402 @@
 </description>
     <link>http://www.wandrr.io/</link>
     <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 27 Jan 2017 17:08:19 -0800</pubDate>
-    <lastBuildDate>Fri, 27 Jan 2017 17:08:19 -0800</lastBuildDate>
+    <pubDate>Wed, 08 Feb 2017 14:16:50 -0800</pubDate>
+    <lastBuildDate>Wed, 08 Feb 2017 14:16:50 -0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Venturing into a Fullstack Framework with Laravel</title>
+        <description>&lt;p&gt;Indeed, I feel like its time to venture out of Front-End Web Development and look into a Fullstack Framework. One of my favorite framework is Keystone.js. It is a Node.js Database-driven framework. But learning a framework based off of PHP is mandatory, and so I came across Laravel. I’m not going to necessarily drift away from Keystone.js. As a Front-End Web Developer, I love Javascript and I don’t think I am going to give the language up easily.&lt;/p&gt;
+
+&lt;p&gt;My goal is to master atleast 1 or 2 Fullstack framework that is based off of 2 different language, Keystone.js and Laravel, but this blog post will focus on Laravel with a bit of comparison with Keystone.js and discusses about some of the features of what comprises a small-large scale web applications.&lt;/p&gt;
+
+&lt;p&gt;Since I’m going back and forth with this blog post, writing my experience from choosing to mastering a framework, I’ve included a table of contents below.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#comparison-chart&quot;&gt;Comparison chart: Keystone.JS and Laravel&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#learning-resources&quot;&gt;Learning Resources&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#getting-started-with-laravel&quot;&gt;Getting started with Laravel&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#understanding-laravels-front-end-workflow&quot;&gt;Understanding Laravel’s Front-End Workflow&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#coding-templates-to-populating-static-data-from-json-file&quot;&gt;Coding templates to populating static data from JSON file&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#from-static-data-to-implementing-a-database&quot;&gt;From Static data to implementing a Database&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#simple-contact-form-sending-emails&quot;&gt;Simple Contact form, Sending Emails&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#intro-to-create-in-crud&quot;&gt;Intro to Create in CRUD&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#method-for-developing-a-project-from-scratch&quot;&gt;Method for developing a project from scratch&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#defining-my-specs-for-a-custom-admin-panel&quot;&gt;Defining my specs for a custom Admin Panel&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#building-a-cms-from-scratch&quot;&gt;Building a CMS from scratch&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;comparison-chart&quot;&gt;Comparison chart&lt;/h1&gt;
+
+&lt;p&gt;I’ve also took the time to do research and write a comparison chart. Below is my researched with a high-level view of what features I look for in a framework.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Keystone.js&lt;/strong&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Laravel&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;http://keystonejs.com&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;https://laravel.com/docs/4.2/introduction&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Language&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Node.js&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;PHP&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Templating, Routing&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Swig, Jade, handlebars. Yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Blade. Yes&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;RESTful&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CRUD, Database&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes, MongoDB&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes, MySQL&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ACL&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Authentication and Session Management&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CMS&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes, Automatically generated Admin UI&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;No&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Code Readability&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Simple and Clean&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Simple and Clean&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Programming Style&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;MVC&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;MVC&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Server Maintenance&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;NVM, easy switching of Nodejs versions in server, not too much dependencies&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Application Maintenance&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;NPM, manages versions of modules in application&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Security&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;no credentials or keys are stored in code, they are stored in a separate&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Documentation&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;apidoc.js&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Community Support&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Active github repo, future releases, books, tutorials, opensource community&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;learning-resources&quot;&gt;Learning Resources&lt;/h1&gt;
+
+&lt;p&gt;Since I’m discovering Laravel and the whole PHP realm, I’ve discovered a site called &lt;a href=&quot;https://tutsplus.com/&quot;&gt;envatotuts+&lt;/a&gt; which carries Laravel tutorials from beginner to advance level.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://code.tutsplus.com/courses/get-started-with-laravel-5&quot;&gt;Get Started with Laravel 5&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://code.tutsplus.com/courses/build-a-cms-with-laravel&quot;&gt;Build a CMS with Laravel&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;and more, there are various tutorials that covers what we can do with Laravel&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;getting-started-with-laravel&quot;&gt;Getting started with Laravel&lt;/h1&gt;
+
+&lt;p&gt;I first created a github repo and followed the instructions for &lt;a href=&quot;https://laravel.com/docs/5.3/installation&quot;&gt;installing Laravel&lt;/a&gt; via Laravel Installer on my Mac.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;On my local, I just ran &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan serve&lt;/code&gt; to start a development environment&lt;/li&gt;
+  &lt;li&gt;Also take into consideration of Configuration. We also need to check for Directory permissions and Application Key.&lt;/li&gt;
+  &lt;li&gt;All of these information are available at &lt;a href=&quot;https://laravel.com/docs/5.3/installation&quot;&gt;https://laravel.com/docs/5.3/installation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tranferring your Laravel local code to an Ubuntu stage server was a bit of a challenge.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;There were missing php dependencies, I had to collaborate with other developers to solve this issue.&lt;/li&gt;
+  &lt;li&gt;Set its Web Document Root to its &lt;code class=&quot;highlighter-rouge&quot;&gt;/public&lt;/code&gt; directory.&lt;/li&gt;
+  &lt;li&gt;Copy &lt;code class=&quot;highlighter-rouge&quot;&gt;.env.example&lt;/code&gt; file as &lt;code class=&quot;highlighter-rouge&quot;&gt;.env&lt;/code&gt; file and run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan key:generate&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There were no problem with transferring our Application code, it was more of setting its environment.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;understanding-laravels-front-end-workflow&quot;&gt;Understanding Laravels’ Front-End Workflow&lt;/h1&gt;
+
+&lt;p&gt;Laravel comes with a default install of Bootstrap, Vue, SASS, Webpack, and uses Gulp.js to compile its assets, although, Laravel developed its own compiling tool which is built on top of Gulp.js called &lt;strong&gt;Laravel Elixir&lt;/strong&gt;. It is an NPM module and is defined in &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt;. Laravel also uses NPM to install the default Front-end packages.&lt;/p&gt;
+
+&lt;p&gt;Upon readings its &lt;a href=&quot;https://laravel.com/docs/5.3/elixir&quot;&gt;documentation on Laravel Elixir&lt;/a&gt;, it seems like this tool makes it easy for developers to use Gulp.js. Though, the only drawback I forsee using Laravel Elixir is we can’t further customize our build process and we will depend on Laravel Elixir’s features.&lt;/p&gt;
+
+&lt;p&gt;Since I have a background with Front-End Development and I’ve growned accustomed to some front-end packages, I will be using my own &lt;a href=&quot;https://github.com/rlynjb/frontendflow&quot;&gt;Front-End Workflow starterkit theme&lt;/a&gt;, instead re-installing NPM and Bower packages and redefining paths and build process in my Gulp.js file.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;coding-templates-to-populating-static-data-from-json-file&quot;&gt;Coding templates to populating static data from JSON file&lt;/h1&gt;
+
+&lt;p&gt;Below is a link to an a quick and simple overview of an MVC Application structure:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://selftaughtcoders.com/from-idea-to-launch/lesson-17/laravel-5-mvc-application-in-10-minutes/&quot;&gt;Creating a Basic Laravel 5 MVC Application in 10 Minutes&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;My method usually starts off with defining a route and creating a template file for that particular route.&lt;/li&gt;
+  &lt;li&gt;Next is store sample data inside of JSON file and load file in a Controller
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://vegibit.com/creating-static-and-dynamic-web-pages-in-laravel/&quot;&gt;Creating Static And Dynamic Web Pages In Laravel&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://vegibit.com/json-in-laravel/&quot;&gt;http://vegibit.com/json-in-laravel/&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;My rule is, if a website contains less than 15 or 20 items, keep it data static
+But, if items grow to 20 or more AND will contain a CRUD method, then proceed with Database.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;from-static-data-to-implementing-a-database&quot;&gt;From Static data to implementing a Database&lt;/h1&gt;
+
+&lt;p&gt;Coming from a front-end web development and a bit of MVC background, Database concepts was new to me. Although I did dabbled a bit into sql queries, its still different from having the knowledge of Database tools available we can use in a Fullstack framework.&lt;/p&gt;
+
+&lt;p&gt;With Laravel, there are tools available that helps us manage our database. Features that came with Laravel are listed below with a bit of methodology when implementing a Database.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;When we run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan make:model User --migration&lt;/code&gt; to create a Database, Laravel assumes you configured your database settings on &lt;code class=&quot;highlighter-rouge&quot;&gt;config/database.php&lt;/code&gt; file. The generated Model and Migration script files are not aware of its configuration settings.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;To create a Database, run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan make:model User --migration&lt;/code&gt; command. This will generate a &lt;strong&gt;Eloquent ORM Model&lt;/strong&gt; and a &lt;strong&gt;Migration&lt;/strong&gt; script.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Eloquent ORM&lt;/strong&gt; - Model allows us to easily query and insert data in our tables.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Migration&lt;/strong&gt; - Creates a Table; Builds our Database Schema; Preserves Database Schema, revision control&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Seeding
+    &lt;ul&gt;
+      &lt;li&gt;is a way to create data fast. It populates data into a Database Table.&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://sheepy85.wordpress.com/2014/09/19/database-seed-migration-in-laravel-5-0/&quot;&gt;https://sheepy85.wordpress.com/2014/09/19/database-seed-migration-in-laravel-5-0/&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://www.fullstack4u.com/laravel/laravel-5-load-seed-data-from-json/&quot;&gt;http://www.fullstack4u.com/laravel/laravel-5-load-seed-data-from-json/&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=y0y3-m05Emc&quot;&gt;Understanding Database with Laravel&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;simple-contact-form-sending-emails&quot;&gt;Simple Contact form, Sending emails&lt;/h1&gt;
+
+&lt;p&gt;There are tons fo tutorials on the web about creating a conact form with Laravel but it doesn’t seem to explain the basics. The link below though,&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://code.tutsplus.com/courses/get-started-with-laravel-5/lessons/sending-emails&quot;&gt;Sending Emails&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;seem to explain the simplest and plainest method of how we can implement a Contact form in Laravel using Route &lt;code class=&quot;highlighter-rouge&quot;&gt;Route::get...&lt;/code&gt; and Mail Facade &lt;code class=&quot;highlighter-rouge&quot;&gt;Mail::send...&lt;/code&gt;.
+From this tutorial, we can further build our Contact form to use Controller for code separation and gather User input from Views. We will be able to store Contact form data in database.&lt;/p&gt;
+
+&lt;p&gt;There are 2 ways to compose an email.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Raw text&lt;/li&gt;
+  &lt;li&gt;From a View&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;raw-text&quot;&gt;Raw Text&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create a Route where we can send emails from.&lt;/li&gt;
+  &lt;li&gt;Define a Mail Facade and inside, define an instance of Illuminate Message to build mail properties.&lt;/li&gt;
+  &lt;li&gt;Sign up for Mailtrap.io and configure &lt;code class=&quot;highlighter-rouge&quot;&gt;.env&lt;/code&gt; file&lt;/li&gt;
+  &lt;li&gt;Now, when we visit &lt;code class=&quot;highlighter-rouge&quot;&gt;/contact&lt;/code&gt;, it should send test email defined inside of Mail facade.&lt;/li&gt;
+  &lt;li&gt;Mail should be sent in Raw format located under Raw tab.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Route::get(&#39;/contact&#39;, function() {
+  // define a Mail facade
+  Mail::raw(&#39;kirby this is a test&#39;, function($message) {
+    /*
+      inside we will have an instance of
+      Illuminate\Mail\Message
+
+      inside of this closure, we can set other prooerties of email
+    */
+    $message-&amp;gt;subject(&#39;testing&#39;)
+            -&amp;gt;to(&#39;bill@mail.com&#39;)
+            -&amp;gt;from(&#39;non@mail.com&#39;);
+  });
+
+  return &#39;email has been sent&#39;;
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;from-views-template&quot;&gt;From Views template&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Define a Route again.&lt;/li&gt;
+  &lt;li&gt;Instead of Mail Facade Raw &lt;code class=&quot;highlighter-rouge&quot;&gt;Mail::raw...&lt;/code&gt;, we will use Mail Facade Send &lt;code class=&quot;highlighter-rouge&quot;&gt;Mail:send...&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Once URL is visited, it will send email to Mailtrap.io for test.&lt;/li&gt;
+  &lt;li&gt;Mail should be sent in HTML format under HTML tab.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// this will get data from view or user input
+Route::get(&#39;/contact/view&#39;, function() {
+
+  //  param1 = path to view template
+  //  param2 = array of data
+  //  param3 = closure to setup message that we will be sending
+  Mail::send(&#39;conact-view&#39;, [&#39;name&#39;=&amp;gt;&#39;Bob&#39;], function($message) {
+    $message-&amp;gt;subject(&#39;testing&#39;)
+            -&amp;gt;to(&#39;bill@mail.com&#39;)
+            -&amp;gt;from(&#39;non@mail.com&#39;);
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;intro-to-create-in-crud&quot;&gt;Intro to Create in CRUD&lt;/h1&gt;
+
+&lt;p&gt;Below are the resources I used in learning basic CRUD, form handling in Laravel, and AJAX form post.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://code.tutsplus.com/courses/get-started-with-laravel-5/lessons/handle-form-input&quot;&gt;Forms and Data Validation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://laracasts.com/discuss/channels/requests/laravel-5-cant-use-ajax-post-request&quot;&gt;Laravel 5 can’t use ajax post request&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/32718870/how-to-get-all-input-of-post-in-laravel-5&quot;&gt;How to get All input of POST in Laravel 5&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://laravel.com/docs/5.4/database&quot;&gt;Database: Getting Started&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;dealing-with-global-variables&quot;&gt;Dealing with Global variables&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/32942379/global-variable-in-laravel-controller&quot;&gt;Global variable in laravel controller&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/29715813/laravel-5-global-blade-view-variable-available-in-all-templates&quot;&gt;Laravel 5 - global Blade view variable available in all templates&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;defining-my-specs-for-a-custom-admin-panel&quot;&gt;Defining my specs for a custom Admin Panel&lt;/h1&gt;
+
+&lt;p&gt;My admin panel specs are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;simple navigation (straightforward, simpler than wordpress)&lt;/li&gt;
+  &lt;li&gt;able to do CRUD unto json files&lt;/li&gt;
+  &lt;li&gt;contains just fields or forms (simple)&lt;/li&gt;
+  &lt;li&gt;display contact form data from contact form fields&lt;/li&gt;
+  &lt;li&gt;uses miminal text editor features with instructions
+    &lt;ul&gt;
+      &lt;li&gt;user will be using HTML tags&lt;/li&gt;
+      &lt;li&gt;bold text&lt;/li&gt;
+      &lt;li&gt;links&lt;/li&gt;
+      &lt;li&gt;breakline/ new line&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;image or assets uploader and manager
+    &lt;ul&gt;
+      &lt;li&gt;contains fields for seo input (img alt, title)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;building-a-cms-from-scratch&quot;&gt;Building a CMS from scratch&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.kodecrash.com/javascript/read-write-json-file-using-php/&quot;&gt;Read-Write JSON file using PHP&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.sitepoint.com/creating-a-scrud-system-using-jquery-json-and-datatables/&quot;&gt;Creating a SCRUD System Using jQuery, JSON and DataTables&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;method-for-developing-a-project-from-scratch&quot;&gt;Method for developing a project from scratch&lt;/h1&gt;
+
+&lt;h3 id=&quot;setting-up-a-project&quot;&gt;Setting up a project&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Setup Laravel, server, github repo, and configure FEF theme.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;coding-a-theme-with-fef-theme&quot;&gt;Coding a theme with FEF Theme&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/rlynjb/frontendflow&quot;&gt;FEF Theme&lt;/a&gt; is my baby project. It includes my front end workflow with css framework and javascript plugins I often used. It also includes a collection of solutions to common interaction and browser compatibility issues.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Code layout per page including UX.
+    &lt;ul&gt;
+      &lt;li&gt;place image placeholders and text.&lt;/li&gt;
+      &lt;li&gt;determine responsiveness&lt;/li&gt;
+      &lt;li&gt;determine user interaction of different components to be use&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Code overall style, brand, typography&lt;/li&gt;
+  &lt;li&gt;Add in basic CSS3 transitions&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;structuring-content-with-json&quot;&gt;Structuring Content with JSON&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Per page, define fields and determine if its content type, regular page, form, etc.&lt;/li&gt;
+  &lt;li&gt;Code fields into json file&lt;/li&gt;
+  &lt;li&gt;Convert json files to be editable
+    &lt;ul&gt;
+      &lt;li&gt;modify Routing and Controllers&lt;/li&gt;
+      &lt;li&gt;modify Views to use data passed from json to Controllers&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Wed, 08 Feb 2017 02:58:47 -0800</pubDate>
+        <link>http://www.wandrr.io/Venturing-into-a-fullstack-framework-with-Laravel</link>
+        <guid isPermaLink="true">http://www.wandrr.io/Venturing-into-a-fullstack-framework-with-Laravel</guid>
+        
+        <category>php</category>
+        
+        <category>fullstack</category>
+        
+        
+      </item>
     
       <item>
         <title>Using ES6 Modules in client-side</title>
@@ -269,310 +662,6 @@ gulp.task(&#39;build&#39;, function () {
         <guid isPermaLink="true">http://www.wandrr.io/Learning-ecommerce-with-Woocommerce-and-Wordpress</guid>
         
         <category>javascript</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Venturing into a Fullstack Framework with Laravel</title>
-        <description>&lt;p&gt;Indeed, I feel like its time to venture out of Front-End Web Development and look into a Fullstack Framework. One of my favorite framework is Keystone.js. It is a Node.js Database-driven framework. But learning a framework based off of PHP is mandatory, and so I came across Laravel. I’m not going to necessarily drift away from Keystone.js. As a Front-End Web Developer, I love Javascript and I don’t think I am going to give the language up easily.&lt;/p&gt;
-
-&lt;p&gt;My goal is to master atleast 1 or 2 Fullstack framework that is based off of 2 different language, Keystone.js and Laravel, but this blog post will focus on Laravel with a bit of comparison with Keystone.js and discusses about some of the features of what comprises a small-large scale web applications.&lt;/p&gt;
-
-&lt;p&gt;I’ve also took the time to do reseach and write a comparison chart. Below is my researched with a high-level view of what features I look for in a framework.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt; &lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Keystone.js&lt;/strong&gt;&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Laravel&lt;/strong&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt; &lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;http://keystonejs.com&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;https://laravel.com/docs/4.2/introduction&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Language&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Node.js&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;PHP&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Templating, Routing&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Swig, Jade, handlebars. Yes&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Blade. Yes&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;RESTful&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;CRUD, Database&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Yes, MongoDB&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Yes, MySQL&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;ACL&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Authentication and Session Management&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;CMS&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Yes, Automatically generated Admin UI&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;No&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Code Readability&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Simple and Clean&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Simple and Clean&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Programming Style&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;MVC&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;MVC&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Server Maintenance&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;NVM, easy switching of Nodejs versions in server, not too much dependencies&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Application Maintenance&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;NPM, manages versions of modules in application&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Security&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;no credentials or keys are stored in code, they are stored in a separate&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Documentation&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;apidoc.js&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Community Support&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Active github repo, future releases, books, tutorials, opensource community&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;learning-resources&quot;&gt;Learning Resources&lt;/h1&gt;
-
-&lt;p&gt;Since I’m discovering Laravel and the whole PHP realm, I’ve discovered a site called &lt;a href=&quot;https://tutsplus.com/&quot;&gt;envatotuts+&lt;/a&gt; which carries Laravel tutorials from beginner to advance level.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://code.tutsplus.com/courses/get-started-with-laravel-5&quot;&gt;Get Started with Laravel 5&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://code.tutsplus.com/courses/build-a-cms-with-laravel&quot;&gt;Build a CMS with Laravel&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;and more, there are various tutorials that covers what we can do with Laravel&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;getting-started-with-laravel&quot;&gt;Getting started with Laravel&lt;/h1&gt;
-
-&lt;p&gt;I first created a github repo and followed the instructions for &lt;a href=&quot;https://laravel.com/docs/5.3/installation&quot;&gt;installing Laravel&lt;/a&gt; via Laravel Installer on my Mac.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;On my local, I just ran &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan serve&lt;/code&gt; to start a development environment&lt;/li&gt;
-  &lt;li&gt;Also take into consideration of Configuration. We also need to check for Directory permissions and Application Key.&lt;/li&gt;
-  &lt;li&gt;All of these information are available at &lt;a href=&quot;https://laravel.com/docs/5.3/installation&quot;&gt;https://laravel.com/docs/5.3/installation&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Tranferring your Laravel local code to an Ubuntu stage server was a bit of a challenge.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;There were missing php dependencies, I had to collaborate with other developers to solve this issue.&lt;/li&gt;
-  &lt;li&gt;Set its Web Document Root to its &lt;code class=&quot;highlighter-rouge&quot;&gt;/public&lt;/code&gt; directory.&lt;/li&gt;
-  &lt;li&gt;Copy &lt;code class=&quot;highlighter-rouge&quot;&gt;.env.example&lt;/code&gt; file as &lt;code class=&quot;highlighter-rouge&quot;&gt;.env&lt;/code&gt; file and run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan key:generate&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;There were no problem with transferring our Application code, it was more of setting its environment.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;understanding-laravels-front-end-workflow&quot;&gt;Understanding Laravels’ Front-End Workflow&lt;/h1&gt;
-
-&lt;p&gt;Laravel comes with a default install of Bootstrap, Vue, SASS, Webpack, and uses Gulp.js to compile its assets, although, Laravel developed its own compiling tool which is built on top of Gulp.js called &lt;strong&gt;Laravel Elixir&lt;/strong&gt;. It is an NPM module and is defined in &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt;. Laravel also uses NPM to install the default Front-end packages.&lt;/p&gt;
-
-&lt;p&gt;Upon readings its &lt;a href=&quot;https://laravel.com/docs/5.3/elixir&quot;&gt;documentation on Laravel Elixir&lt;/a&gt;, it seems like this tool makes it easy for developers to use Gulp.js. Though, the only drawback I forsee using Laravel Elixir is we can’t further customize our build process and we will depend on Laravel Elixir’s features.&lt;/p&gt;
-
-&lt;p&gt;Since I have a background with Front-End Development and I’ve growned accustomed to some front-end packages, I will be using my own &lt;a href=&quot;https://github.com/rlynjb/frontendflow&quot;&gt;Front-End Workflow starterkit theme&lt;/a&gt;, instead re-installing NPM and Bower packages and redefining paths and build process in my Gulp.js file.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;coding-templates-to-populating-static-data-from-json-file&quot;&gt;Coding templates to populating static data from JSON file&lt;/h1&gt;
-
-&lt;p&gt;Below is a link to an a quick and simple overview of an MVC Application structure:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://selftaughtcoders.com/from-idea-to-launch/lesson-17/laravel-5-mvc-application-in-10-minutes/&quot;&gt;Creating a Basic Laravel 5 MVC Application in 10 Minutes&lt;/a&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;My method usually starts off with defining a route and creating a template file for that particular route.&lt;/li&gt;
-  &lt;li&gt;Next is store sample data inside of JSON file and load file in a Controller
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;http://vegibit.com/creating-static-and-dynamic-web-pages-in-laravel/&quot;&gt;Creating Static And Dynamic Web Pages In Laravel&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;http://vegibit.com/json-in-laravel/&quot;&gt;http://vegibit.com/json-in-laravel/&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;My rule is, if a website contains less than 15 or 20 items, keep it data static
-But, if items grow to 20 or more AND will contain a CRUD method, then proceed with Database.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;from-static-data-to-implementing-a-database&quot;&gt;From Static data to implementing a Database&lt;/h1&gt;
-
-&lt;p&gt;Coming from a front-end web development and a bit of MVC background, Database concepts was new to me. Although I did dabbled a bit into sql queries, its still different from having the knowledge of Database tools available we can use in a Fullstack framework.&lt;/p&gt;
-
-&lt;p&gt;With Laravel, there are tools available that helps us manage our database. Features that came with Laravel are listed below with a bit of methodology when implementing a Database.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;When we run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan make:model User --migration&lt;/code&gt; to create a Database, Laravel assumes you configured your database settings on &lt;code class=&quot;highlighter-rouge&quot;&gt;config/database.php&lt;/code&gt; file. The generated Model and Migration script files are not aware of its configuration settings.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;To create a Database, run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan make:model User --migration&lt;/code&gt; command. This will generate a &lt;strong&gt;Eloquent ORM Model&lt;/strong&gt; and a &lt;strong&gt;Migration&lt;/strong&gt; script.
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;Eloquent ORM&lt;/strong&gt; - Model allows us to easily query and insert data in our tables.&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;Migration&lt;/strong&gt; - Creates a Table; Builds our Database Schema; Preserves Database Schema, revision control&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Seeding
-    &lt;ul&gt;
-      &lt;li&gt;is a way to create data fast. It populates data into a Database Table.&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://sheepy85.wordpress.com/2014/09/19/database-seed-migration-in-laravel-5-0/&quot;&gt;https://sheepy85.wordpress.com/2014/09/19/database-seed-migration-in-laravel-5-0/&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;http://www.fullstack4u.com/laravel/laravel-5-load-seed-data-from-json/&quot;&gt;http://www.fullstack4u.com/laravel/laravel-5-load-seed-data-from-json/&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=y0y3-m05Emc&quot;&gt;Understanding Database with Laravel&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;simple-contact-form-sending-emails&quot;&gt;Simple Contact form, Sending emails&lt;/h1&gt;
-
-&lt;p&gt;There are tons fo tutorials on the web about creating a conact form with Laravel but it doesn’t seem to explain the basics. The link below though,&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://code.tutsplus.com/courses/get-started-with-laravel-5/lessons/sending-emails&quot;&gt;Sending Emails&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;seem to explain the simplest and plainest method of how we can implement a Contact form in Laravel using Route &lt;code class=&quot;highlighter-rouge&quot;&gt;Route::get...&lt;/code&gt; and Mail Facade &lt;code class=&quot;highlighter-rouge&quot;&gt;Mail::send...&lt;/code&gt;.
-From this tutorial, we can further build our Contact form to use Controller for code separation and gather User input from Views. We will be able to store Contact form data in database.&lt;/p&gt;
-
-&lt;p&gt;There are 2 ways to compose an email.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Raw text&lt;/li&gt;
-  &lt;li&gt;From a View&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;raw-text&quot;&gt;Raw Text&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Create a Route where we can send emails from.&lt;/li&gt;
-  &lt;li&gt;Define a Mail Facade and inside, define an instance of Illuminate Message to build mail properties.&lt;/li&gt;
-  &lt;li&gt;Sign up for Mailtrap.io and configure &lt;code class=&quot;highlighter-rouge&quot;&gt;.env&lt;/code&gt; file&lt;/li&gt;
-  &lt;li&gt;Now, when we visit &lt;code class=&quot;highlighter-rouge&quot;&gt;/contact&lt;/code&gt;, it should send test email defined inside of Mail facade.&lt;/li&gt;
-  &lt;li&gt;Mail should be sent in Raw format located under Raw tab.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Route::get(&#39;/contact&#39;, function() {
-  // define a Mail facade
-  Mail::raw(&#39;kirby this is a test&#39;, function($message) {
-    /*
-      inside we will have an instance of
-      Illuminate\Mail\Message
-
-      inside of this closure, we can set other prooerties of email
-    */
-    $message-&amp;gt;subject(&#39;testing&#39;)
-            -&amp;gt;to(&#39;bill@mail.com&#39;)
-            -&amp;gt;from(&#39;non@mail.com&#39;);
-  });
-
-  return &#39;email has been sent&#39;;
-});
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;from-views-template&quot;&gt;From Views template&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Define a Route again.&lt;/li&gt;
-  &lt;li&gt;Instead of Mail Facade Raw &lt;code class=&quot;highlighter-rouge&quot;&gt;Mail::raw...&lt;/code&gt;, we will use Mail Facade Send &lt;code class=&quot;highlighter-rouge&quot;&gt;Mail:send...&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Once URL is visited, it will send email to Mailtrap.io for test.&lt;/li&gt;
-  &lt;li&gt;Mail should be sent in HTML format under HTML tab.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// this will get data from view or user input
-Route::get(&#39;/contact/view&#39;, function() {
-
-  //  param1 = path to view template
-  //  param2 = array of data
-  //  param3 = closure to setup message that we will be sending
-  Mail::send(&#39;conact-view&#39;, [&#39;name&#39;=&amp;gt;&#39;Bob&#39;], function($message) {
-    $message-&amp;gt;subject(&#39;testing&#39;)
-            -&amp;gt;to(&#39;bill@mail.com&#39;)
-            -&amp;gt;from(&#39;non@mail.com&#39;);
-  });
-});
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;basic-crud-in-laravel&quot;&gt;Basic CRUD in Laravel&lt;/h1&gt;
-
-&lt;p&gt;Below are the resources I used in learning basic CRUD, form handling in Laravel, and AJAX form post.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://code.tutsplus.com/courses/get-started-with-laravel-5/lessons/handle-form-input&quot;&gt;Forms and Data Validation&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://laracasts.com/discuss/channels/requests/laravel-5-cant-use-ajax-post-request&quot;&gt;Laravel 5 can’t use ajax post request&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/32718870/how-to-get-all-input-of-post-in-laravel-5&quot;&gt;How to get All input of POST in Laravel 5&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://laravel.com/docs/5.4/database&quot;&gt;Database: Getting Started&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;dealing-with-global-variables&quot;&gt;Dealing with Global variables&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/32942379/global-variable-in-laravel-controller&quot;&gt;Global variable in laravel controller&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/29715813/laravel-5-global-blade-view-variable-available-in-all-templates&quot;&gt;Laravel 5 - global Blade view variable available in all templates&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;taking-it-further-by-building-a-custom-admin-panel-to-overwrite-json-files&quot;&gt;Taking it further by building a custom Admin Panel to overwrite JSON files&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.kodecrash.com/javascript/read-write-json-file-using-php/&quot;&gt;Read-Write JSON file using PHP&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.sitepoint.com/creating-a-scrud-system-using-jquery-json-and-datatables/&quot;&gt;Creating a SCRUD System Using jQuery, JSON and DataTables&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Fri, 04 Nov 2016 03:39:29 -0700</pubDate>
-        <link>http://www.wandrr.io/Venturing-into-a-fullstack-framework-with-Laravel</link>
-        <guid isPermaLink="true">http://www.wandrr.io/Venturing-into-a-fullstack-framework-with-Laravel</guid>
-        
-        <category>php</category>
-        
-        <category>fullstack</category>
         
         
       </item>

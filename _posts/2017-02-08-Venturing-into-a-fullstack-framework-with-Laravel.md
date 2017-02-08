@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Venturing into a Fullstack Framework with Laravel"
-date: 2016-11-04 10:39:29
+date: 2017-02-08 10:58:47
+created_date: 2016-11-04 10:39:29
 tags:
 - php
 - fullstack
@@ -11,7 +12,29 @@ Indeed, I feel like its time to venture out of Front-End Web Development and loo
 
 My goal is to master atleast 1 or 2 Fullstack framework that is based off of 2 different language, Keystone.js and Laravel, but this blog post will focus on Laravel with a bit of comparison with Keystone.js and discusses about some of the features of what comprises a small-large scale web applications.
 
-I've also took the time to do reseach and write a comparison chart. Below is my researched with a high-level view of what features I look for in a framework.
+Since I'm going back and forth with this blog post, writing my experience from choosing to mastering a framework, I've included a table of contents below.
+
+-----
+
+### Table of Contents
+
+- [Comparison chart: Keystone.JS and Laravel](#comparison-chart)
+- [Learning Resources](#learning-resources)
+- [Getting started with Laravel](#getting-started-with-laravel)
+- [Understanding Laravel's Front-End Workflow](#understanding-laravels-front-end-workflow)
+- [Coding templates to populating static data from JSON file](#coding-templates-to-populating-static-data-from-json-file)
+- [From Static data to implementing a Database](#from-static-data-to-implementing-a-database)
+- [Simple Contact form, Sending Emails](#simple-contact-form-sending-emails)
+- [Intro to Create in CRUD](#intro-to-create-in-crud)
+- [Method for developing a project from scratch](#method-for-developing-a-project-from-scratch)
+- [Defining my specs for a custom Admin Panel](#defining-my-specs-for-a-custom-admin-panel)
+- [Building a CMS from scratch](#building-a-cms-from-scratch)
+
+-----
+
+# Comparison chart
+
+I've also took the time to do research and write a comparison chart. Below is my researched with a high-level view of what features I look for in a framework.
 
 |                         | **Keystone.js**             | **Laravel**       |
 |                         | http://keystonejs.com       | https://laravel.com/docs/4.2/introduction |
@@ -42,7 +65,6 @@ Since I'm discovering Laravel and the whole PHP realm, I've discovered a site ca
 - [Get Started with Laravel 5](https://code.tutsplus.com/courses/get-started-with-laravel-5)
 - [Build a CMS with Laravel](https://code.tutsplus.com/courses/build-a-cms-with-laravel)
 - and more, there are various tutorials that covers what we can do with Laravel
-
 
 -----
 
@@ -192,7 +214,7 @@ Route::get('/contact/view', function() {
 -----
 
 
-# Basic CRUD in Laravel
+# Intro to Create in CRUD
 
 Below are the resources I used in learning basic CRUD, form handling in Laravel, and AJAX form post.
 
@@ -210,7 +232,56 @@ Below are the resources I used in learning basic CRUD, form handling in Laravel,
 -----
 
 
-# Taking it further by building a custom Admin Panel to overwrite JSON files
+# Defining my specs for a custom Admin Panel
+
+My admin panel specs are:
+
+- simple navigation (straightforward, simpler than wordpress)
+- able to do CRUD unto json files
+- contains just fields or forms (simple)
+- display contact form data from contact form fields
+- uses miminal text editor features with instructions
+  - user will be using HTML tags
+  - bold text
+  - links
+  - breakline/ new line
+- image or assets uploader and manager
+  - contains fields for seo input (img alt, title)
+
+
+-----
+
+# Building a CMS from scratch
 
 - [Read-Write JSON file using PHP](http://www.kodecrash.com/javascript/read-write-json-file-using-php/)
 - [Creating a SCRUD System Using jQuery, JSON and DataTables](https://www.sitepoint.com/creating-a-scrud-system-using-jquery-json-and-datatables/)
+
+
+-----
+
+# Method for developing a project from scratch
+
+### Setting up a project
+
+1. Setup Laravel, server, github repo, and configure FEF theme.
+
+
+### Coding a theme with FEF Theme
+
+[FEF Theme](https://github.com/rlynjb/frontendflow) is my baby project. It includes my front end workflow with css framework and javascript plugins I often used. It also includes a collection of solutions to common interaction and browser compatibility issues.
+
+1. Code layout per page including UX.
+  - place image placeholders and text.
+  - determine responsiveness
+  - determine user interaction of different components to be use
+2. Code overall style, brand, typography
+3. Add in basic CSS3 transitions
+
+
+### Structuring Content with JSON
+
+1. Per page, define fields and determine if its content type, regular page, form, etc.
+2. Code fields into json file
+3. Convert json files to be editable
+  - modify Routing and Controllers
+  - modify Views to use data passed from json to Controllers
