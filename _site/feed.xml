@@ -6,9 +6,47 @@
 </description>
     <link>http://rlynjb.github.io/wandrr/</link>
     <atom:link href="http://rlynjb.github.io/wandrr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 16 Feb 2017 09:49:42 -0800</pubDate>
-    <lastBuildDate>Thu, 16 Feb 2017 09:49:42 -0800</lastBuildDate>
+    <pubDate>Wed, 22 Feb 2017 09:02:24 -0800</pubDate>
+    <lastBuildDate>Wed, 22 Feb 2017 09:02:24 -0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>New stuff to learn</title>
+        <description>&lt;ul&gt;
+  &lt;li&gt;Admin (CRUD) with Laravel&lt;/li&gt;
+  &lt;li&gt;3d model product viewer&lt;/li&gt;
+  &lt;li&gt;SVG&lt;/li&gt;
+  &lt;li&gt;viewport scroll to snap then animation/transition starts&lt;/li&gt;
+  &lt;li&gt;testing, interaction of application and inputting sample information&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;https://code.tutsplus.com/courses/3d-in-the-browser-with-threejs/&lt;/li&gt;
+  &lt;li&gt;https://manu.ninja/webgl-3d-model-viewer-using-three-js&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 21 Feb 2017 09:18:45 -0800</pubDate>
+        <link>http://rlynjb.github.io/wandrr/New-set-of-web-things-to-learn</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/New-set-of-web-things-to-learn</guid>
+        
+        <category>3d</category>
+        
+        <category>webgl</category>
+        
+        <category>javascript</category>
+        
+        <category>crud</category>
+        
+        <category>laravel</category>
+        
+        <category>parallax</category>
+        
+        
+      </item>
     
       <item>
         <title>Venturing into a Fullstack Framework with Laravel</title>
@@ -939,134 +977,6 @@ gulp.task(&#39;build&#39;, function () {
         <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Learning-React</guid>
         
         <category>javascript</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Front-End Design Specs</title>
-        <description>&lt;p&gt;determing a workflow is hard but its even harder when we go through a laborious iterative process with designers.&lt;/p&gt;
-
-&lt;p&gt;since i have been using Zurb foundation, zurb foundation comes with a settings file that defines global variables for general design settings. This gave me the idea that responsive web design follows a certain pattern, same as Development.&lt;/p&gt;
-
-&lt;p&gt;process to determing on refining the design and developer workflow are:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;list down general design css properties
-    &lt;ul&gt;
-      &lt;li&gt;layout
-        &lt;ul&gt;
-          &lt;li&gt;max-width&lt;/li&gt;
-          &lt;li&gt;number of columns grid&lt;/li&gt;
-          &lt;li&gt;gutter width
-            &lt;ul&gt;
-              &lt;li&gt;small breakpoint&lt;/li&gt;
-              &lt;li&gt;medium breakpoint&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;typography - header
-        &lt;ul&gt;
-          &lt;li&gt;header font&lt;/li&gt;
-          &lt;li&gt;header font sizes
-            &lt;ul&gt;
-              &lt;li&gt;small breakpoint&lt;/li&gt;
-              &lt;li&gt;medium breakpoint&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;header color&lt;/li&gt;
-          &lt;li&gt;header alignment, leading, kerning&lt;/li&gt;
-          &lt;li&gt;header opacity, filter&lt;/li&gt;
-          &lt;li&gt;header font weight&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;typography - body
-        &lt;ul&gt;
-          &lt;li&gt;body font size
-            &lt;ul&gt;
-              &lt;li&gt;small breakpoint&lt;/li&gt;
-              &lt;li&gt;medium breakpoint&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;body font color&lt;/li&gt;
-          &lt;li&gt;body font family&lt;/li&gt;
-          &lt;li&gt;body line height, leading, kerning&lt;/li&gt;
-          &lt;li&gt;body font weight&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;spacing measurement
-        &lt;ul&gt;
-          &lt;li&gt;width and height
-            &lt;ul&gt;
-              &lt;li&gt;small breakpoint&lt;/li&gt;
-              &lt;li&gt;medium breakpopint&lt;/li&gt;
-              &lt;li&gt;large breakpoint&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;spacing bet object and canvas&lt;/li&gt;
-          &lt;li&gt;spacing bet multiple objects&lt;/li&gt;
-          &lt;li&gt;spacing bet text and objects&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;objects
-        &lt;ul&gt;
-          &lt;li&gt;fill color&lt;/li&gt;
-          &lt;li&gt;stroke, color, size, style&lt;/li&gt;
-          &lt;li&gt;opacity/filter&lt;/li&gt;
-          &lt;li&gt;corner radius&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;color palette
-        &lt;ul&gt;
-          &lt;li&gt;primary, secondary, tertiary, quaternary&lt;/li&gt;
-          &lt;li&gt;monotone
-            &lt;ul&gt;
-              &lt;li&gt;gray - light, medium, dark&lt;/li&gt;
-              &lt;li&gt;black&lt;/li&gt;
-              &lt;li&gt;white&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;after analyzing above data and visually looking at a design comp, these properties are already set on the provided design comp but not documented.&lt;/p&gt;
-
-&lt;p&gt;this is where PNG Express comes in, photoshop plugin tool.&lt;/p&gt;
-
-&lt;p&gt;after testing on a design comp and implementing it on theme development, it is indeed an ease for us developers.&lt;/p&gt;
-
-&lt;p&gt;so overview process would be:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;designer designs ui comp&lt;/li&gt;
-  &lt;li&gt;after design is complete, designer sets Design Specs with PNG Express&lt;/li&gt;
-  &lt;li&gt;pass the UI comp with design specs to front end developer&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;front end developer implements these measurements on css styles sheets&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;it does not need to be exact pixels, this is a good way to atleast get an estimate.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;with this in set, this also gives Front end developers to compile a Style Guide and or components that can be resuable.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2014/10/front-end-development-ode-to-specifications/&quot;&gt;A Front-End Developer’s Ode To Specifications&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.pngexpress.com/&quot;&gt;PNG Express&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 28 Jul 2016 03:58:40 -0700</pubDate>
-        <link>http://rlynjb.github.io/wandrr/Front-End-Design-Specs</link>
-        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Front-End-Design-Specs</guid>
-        
-        <category>workflow</category>
         
         
       </item>
