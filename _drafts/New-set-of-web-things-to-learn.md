@@ -16,6 +16,7 @@ tags:
 - SVG
 - viewport scroll to snap then animation/transition starts
 - testing, interaction of application and inputting sample information
+- converting and organizning JS code in frontend flow with React.js and webpack
 
 -----
 
