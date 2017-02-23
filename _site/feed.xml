@@ -6,33 +6,225 @@
 </description>
     <link>http://rlynjb.github.io/wandrr/</link>
     <atom:link href="http://rlynjb.github.io/wandrr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 22 Feb 2017 09:03:51 -0800</pubDate>
-    <lastBuildDate>Wed, 22 Feb 2017 09:03:51 -0800</lastBuildDate>
+    <pubDate>Wed, 22 Feb 2017 16:35:06 -0800</pubDate>
+    <lastBuildDate>Wed, 22 Feb 2017 16:35:06 -0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
         <title>New stuff to learn</title>
-        <description>&lt;ul&gt;
-  &lt;li&gt;Admin (CRUD) with Laravel&lt;/li&gt;
-  &lt;li&gt;3d model product viewer&lt;/li&gt;
-  &lt;li&gt;SVG&lt;/li&gt;
-  &lt;li&gt;viewport scroll to snap then animation/transition starts&lt;/li&gt;
-  &lt;li&gt;testing, interaction of application and inputting sample information&lt;/li&gt;
-  &lt;li&gt;converting and organizning JS code in frontend flow with React.js and webpack&lt;/li&gt;
+        <description>&lt;p&gt;Before delving into another new things to learn, I wanted to write a recap of what I’ve been doing lately. Can’t really include all details but atleast write a summary of my experience.
+You can read further if your interested. I blog to keep track of my learning progress about the web, I consider these as my personal note, but I don’t mind sharing.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;wordpress-and-static-sites&quot;&gt;Wordpress and Static Sites&lt;/h2&gt;
+
+&lt;p&gt;I’ve worked with alot of wordpress websites as sideline job and with designers and other developers. I noticed that everyone has their opinion about methods of how a work should get done. One important thing is, we should be able to deliver the product. It doesn’t matter how it is built, as long as it works, its good.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;When to code from scratch and when NOT to.&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;I am a fan of coding things from scratch. I take into consideration how a website/application is built. But coding from scratch is not worth it when its just for sideline.&lt;/li&gt;
+      &lt;li&gt;Things to note though are:
+        &lt;ul&gt;
+          &lt;li&gt;Plugins save my projects! lol&lt;/li&gt;
+          &lt;li&gt;Follow how Wordpress, plugins work rather than customizing a workflow from scrtach.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Learning Woocommerce with a Fancy Product Designer plugin&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Came across a project that requires online sales, so we decided to use Woocommerce.&lt;/li&gt;
+      &lt;li&gt;Components of a E-commerce website are:
+        &lt;ul&gt;
+          &lt;li&gt;Products have different variations&lt;/li&gt;
+          &lt;li&gt;Shipping&lt;/li&gt;
+          &lt;li&gt;Payment Gateway&lt;/li&gt;
+          &lt;li&gt;again, Plugins are my hero! rather than delving into APIs&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Static site generator&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Static sites are great alternative to wordpress if a website doesn’t require E-commerce. But it does require learning curve for non-techie users.&lt;/li&gt;
+      &lt;li&gt;Since static sites are new, it may not be prone to hackers like wordpress&lt;/li&gt;
+      &lt;li&gt;Example tools are:
+        &lt;ul&gt;
+          &lt;li&gt;Grav - a PHP site generator, has a really nice optional Admin dashboard.&lt;/li&gt;
+          &lt;li&gt;Jekyll - love it coz Github uses it, and you can easily publish your site for free. But doesn’t have a nice Admin Dashboard like Grav.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
 
-&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
+&lt;h2 id=&quot;front-end-tools-and-npm-community&quot;&gt;Front-End tools and NPM community&lt;/h2&gt;
+
+&lt;p&gt;So I just found out not all developers agree to the whole NPM community trend. IMO though, I love workflows and how easy it is to code with these tools. I love learning at the sametime, so I guess I fit into this type of development preference.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;https://code.tutsplus.com/courses/3d-in-the-browser-with-threejs/&lt;/li&gt;
-  &lt;li&gt;https://manu.ninja/webgl-3d-model-viewer-using-three-js&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Gulp.js and the whole NPM community.&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Gulp.js was the first built tool I learned. IMO, its an important tool so we can use other JavaScript/Front-End tools such as:
+        &lt;ul&gt;
+          &lt;li&gt;Template engines&lt;/li&gt;
+          &lt;li&gt;JS transpilers&lt;/li&gt;
+          &lt;li&gt;JS compilers&lt;/li&gt;
+          &lt;li&gt;CSS compilers&lt;/li&gt;
+          &lt;li&gt;workflow automation&lt;/li&gt;
+          &lt;li&gt;testing&lt;/li&gt;
+          &lt;li&gt;and more WOWs!&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Most tools above are available via NPM modules.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Alternative to Gulp.js, such as webpack, yarn, and bash scripts&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;It seems though built process are always evolving and we constantly have to change tools, thats why I am considering either consolidating my Gulp.js workflow to Webpack or author a simple built script.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;building-my-own-front-end-workflow-theme&quot;&gt;Building my own Front-End Workflow Theme&lt;/h2&gt;
+
+&lt;p&gt;I kinda figure I needed a codebase to collect solutions to common web problems that a CSS Framework was not able to accomodate. And also, to fit specifications of a project. So I decided to start a theme project called Front-End Flow (FEF) theme.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Delving deeper with Zurb Foundation&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Foundation is a great tool to start projects, I built my Gulp.js workflow to accomodate Zurb Foundation and other JavaScript framework/plugins.&lt;/li&gt;
+      &lt;li&gt;But it still lacks some solutions to common web problems.&lt;/li&gt;
+      &lt;li&gt;I may need to update FEF repo documentation though to specify these common web problems I’ve come across.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;SASS/CSS part is good but JavaScript part still needs re-coding and cleaning up&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;and converting my Gulp.js to Webpack or a bash script.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;javascript&quot;&gt;JavaScript&lt;/h2&gt;
+
+&lt;p&gt;These last 2 (JavaScript and FullStack/Ecommerce) are my favorite. This blog contains mostly about JavaScript concepts in theory, but this past year, I was able to put those theories in practice! I’m happy and glad I took the time to read and blog about JavaScript Interview Questions and took courses on FreeCodeCamp solving algorithms. I am 100% sure this is the route I want to go, JavaScript and becoming a Fullstack/Ecommerce developer!&lt;/p&gt;
+
+&lt;p&gt;Coding animations or a JavaScript SPA application, either concepts, I know I will take advantage of further practicing my coding skills and understanding of Fullstack concepts.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Demonstrated my JavaScript coding skills, creatively solving problems&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Authored code for a Personalization Platform&lt;/li&gt;
+      &lt;li&gt;Separated my JS code using ES6 import export feature&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Introduction to React.js&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;I wanted to organize my JavaScript code and modularize it.&lt;/li&gt;
+      &lt;li&gt;Coming up with code snippets to different problems is hard and I think it is worth keeping those code snippets for future use. Thats why I want to take advantage of Web Components and I heard React.js is fully developed for this usage.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;fullstackecommerce&quot;&gt;Fullstack/Ecommerce&lt;/h2&gt;
+
+&lt;p&gt;I was excited when I was able to build a simple contact form, submit it to MySQL database and display it on a Admin page. And also when I first started templating with Blade on Laravel.&lt;/p&gt;
+
+&lt;p&gt;Just using a MVC framework makes me think of possibilities I am able to build and how easy it is for me to be able to organize my code file structure and set naming conventions.&lt;/p&gt;
+
+&lt;p&gt;I’m starting to think I got this thing for Organization, cleanliness, and performance.
+Anyways, below is a recap of what I’ve accomplished and what I want to tackle next:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Basic form submission and query data with PHP and MySQL&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;This is the simple contact form and display of data.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Learned Laravel, from templating to submitting form with AJAX&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Learned how to setup Laravel&lt;/li&gt;
+      &lt;li&gt;Templating in Blade&lt;/li&gt;
+      &lt;li&gt;Storing and Querying data from JSON files rather than database. For performance purposes.&lt;/li&gt;
+      &lt;li&gt;Learned how to use AJAX in submitting form in Laravel and storing it in database.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Introduction to CRUD with Laravel&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;After having a glimpse and hands-on experience with Laravel, I was able to get an idea of how CRUD systems are structured in Laravel&lt;/li&gt;
+      &lt;li&gt;yup! I want to build an Admin Dashboard where users are able to edit data coming from a JSON file.&lt;/li&gt;
+      &lt;li&gt;kinda like building my own Jekyll or Grav but flexible enough to accomodate database&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Introduction to E-commerce system with plain PHP, Javascript&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;I was given a chance to author code for a Personalization platform. I was quite challenged with this project, solving problems creatively.&lt;/li&gt;
+      &lt;li&gt;I’ve also learned how a JavaScript application is structured with an E-commerce system
+        &lt;ul&gt;
+          &lt;li&gt;Adding to cart by storing values to PHP Session&lt;/li&gt;
+          &lt;li&gt;Using Session to keep data throughout Edit page, Add To Cart modal, Cart item page, Checkout page, and last, Order confirmation.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;So there it is, after blogging a recap of what I’ve learned, I should be able to distinguish my next set of concepts/topics to learn and skills to have under my belt.&lt;/p&gt;
+
+&lt;h3 id=&quot;moving-forward&quot;&gt;Moving forward:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Wordpress&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;start a sideline business, hopefully it works well&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Building FEF Theme&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;convert gulp.js to webpack or script&lt;/li&gt;
+      &lt;li&gt;organize JS files&lt;/li&gt;
+      &lt;li&gt;use web components&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;JavaScript&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;code more, blog more on JS Interview Questions&lt;/li&gt;
+      &lt;li&gt;look into testing, interaction of application and inputting sample information&lt;/li&gt;
+      &lt;li&gt;exciting new projects to learn:
+        &lt;ul&gt;
+          &lt;li&gt;3d model product viewer&lt;/li&gt;
+          &lt;li&gt;viewport scroll to snap then animation/transition starts&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;FullStack/E-commerce&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Continue building an Admin Dashboard&lt;/li&gt;
+      &lt;li&gt;the whole CRUD shibang!
+and a mixture of static JSON data and database&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;HTML5/CSS3&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;learn more about SVG&lt;/li&gt;
+      &lt;li&gt;implement simple CSS3 transitions&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Tue, 21 Feb 2017 09:18:45 -0800</pubDate>
-        <link>http://rlynjb.github.io/wandrr/New-set-of-web-things-to-learn</link>
-        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/New-set-of-web-things-to-learn</guid>
+        <pubDate>Wed, 22 Feb 2017 08:29:22 -0800</pubDate>
+        <link>http://rlynjb.github.io/wandrr/New-stuff-to-learn</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/New-stuff-to-learn</guid>
         
         <category>3d</category>
         
@@ -45,6 +237,10 @@
         <category>laravel</category>
         
         <category>parallax</category>
+        
+        <category>ecommerce</category>
+        
+        <category>wordpress</category>
         
         
       </item>
@@ -666,81 +862,6 @@ gulp.task(&#39;build&#39;, function () {
       </item>
     
       <item>
-        <title>Simple Backend task with PHP and MySQL</title>
-        <description>&lt;p&gt;front end form:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.w3schools.com/php/php_mysql_insert.asp&quot;&gt;php mysql insert&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://datatables.net/&quot;&gt;datatables display&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 27 Dec 2016 03:12:26 -0800</pubDate>
-        <link>http://rlynjb.github.io/wandrr/Simple-backend-tasks-with-PHP-Mysql</link>
-        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Simple-backend-tasks-with-PHP-Mysql</guid>
-        
-        <category>php mysql</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Learning ecommerce with Woocommerce and Wordpress</title>
-        <description>&lt;p&gt;Lately, I’ve been delving into ecommerce sites. So I thought, it would be important to research more on different Ecommerce platforms. I’ve been told as well that it is important to learn how ecommerce system works and what platforms to use in terms of security, how the system is built, and support from the community. A platform I started learning is Magento 2, but tools I would prefer are listed below.&lt;/p&gt;
-
-&lt;p&gt;Tools I used to build an Ecommerce site:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Wordpress&lt;/li&gt;
-  &lt;li&gt;Divi&lt;/li&gt;
-  &lt;li&gt;Woocommerce&lt;/li&gt;
-  &lt;li&gt;Standard paypal&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Coming from a Front-End Development background and with amount of code I’ve written this past years, it was kinda tough for me to grasp concepts on how Magento 2 system works. But this post isn’t about Magento 2 but rather digging further into the whole Ecommerce realm.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 27 Dec 2016 01:43:54 -0800</pubDate>
-        <link>http://rlynjb.github.io/wandrr/Learning-ecommerce-with-Woocommerce-and-Wordpress</link>
-        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Learning-ecommerce-with-Woocommerce-and-Wordpress</guid>
-        
-        <category>javascript</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Learning Keystonejs</title>
-        <description>&lt;p&gt;created a docker compose setup for Nodejs + MongoDB with Keystonejs install.&lt;/p&gt;
-
-&lt;p&gt;my experience with starting with keystone.js was somewhat a love and hate thing.&lt;/p&gt;
-
-&lt;p&gt;coming from a front-end development, i dont know much about database concepts.&lt;/p&gt;
-
-&lt;p&gt;keystone.js is a good framework to dabble and start a journey with fullstack development.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;it is also use for large-scale websites.&lt;/li&gt;
-  &lt;li&gt;it is flexible enough to create custom fields and post type.&lt;/li&gt;
-  &lt;li&gt;it is still on going development with some aspect of defining fields.&lt;/li&gt;
-  &lt;li&gt;it is well supported by the community and rarely read negative feedbacks&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;useful reading references for beginners:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://leanpub.com/keystonejs/read&quot;&gt;Practical Keystone.js&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://keystonejs.com/docs/&quot;&gt;Keystone.js Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sat, 20 Aug 2016 04:12:26 -0700</pubDate>
-        <link>http://rlynjb.github.io/wandrr/Learning-Keystonejs</link>
-        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Learning-Keystonejs</guid>
-        
-        <category>javascript</category>
-        
-        
-      </item>
-    
-      <item>
         <title>Notes on creating a convenient Local Development Workflow with Docker</title>
         <description>&lt;p&gt;While working on a project that requires a new install of PHP and MySql, I came into a halt. It took me a day to re-configure my local development environment.&lt;/p&gt;
 
@@ -978,6 +1099,521 @@ gulp.task(&#39;build&#39;, function () {
         <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Learning-React</guid>
         
         <category>javascript</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Front-End Design Specs</title>
+        <description>&lt;p&gt;determing a workflow is hard but its even harder when we go through a laborious iterative process with designers.&lt;/p&gt;
+
+&lt;p&gt;since i have been using Zurb foundation, zurb foundation comes with a settings file that defines global variables for general design settings. This gave me the idea that responsive web design follows a certain pattern, same as Development.&lt;/p&gt;
+
+&lt;p&gt;process to determing on refining the design and developer workflow are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;list down general design css properties
+    &lt;ul&gt;
+      &lt;li&gt;layout
+        &lt;ul&gt;
+          &lt;li&gt;max-width&lt;/li&gt;
+          &lt;li&gt;number of columns grid&lt;/li&gt;
+          &lt;li&gt;gutter width
+            &lt;ul&gt;
+              &lt;li&gt;small breakpoint&lt;/li&gt;
+              &lt;li&gt;medium breakpoint&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;typography - header
+        &lt;ul&gt;
+          &lt;li&gt;header font&lt;/li&gt;
+          &lt;li&gt;header font sizes
+            &lt;ul&gt;
+              &lt;li&gt;small breakpoint&lt;/li&gt;
+              &lt;li&gt;medium breakpoint&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;header color&lt;/li&gt;
+          &lt;li&gt;header alignment, leading, kerning&lt;/li&gt;
+          &lt;li&gt;header opacity, filter&lt;/li&gt;
+          &lt;li&gt;header font weight&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;typography - body
+        &lt;ul&gt;
+          &lt;li&gt;body font size
+            &lt;ul&gt;
+              &lt;li&gt;small breakpoint&lt;/li&gt;
+              &lt;li&gt;medium breakpoint&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;body font color&lt;/li&gt;
+          &lt;li&gt;body font family&lt;/li&gt;
+          &lt;li&gt;body line height, leading, kerning&lt;/li&gt;
+          &lt;li&gt;body font weight&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;spacing measurement
+        &lt;ul&gt;
+          &lt;li&gt;width and height
+            &lt;ul&gt;
+              &lt;li&gt;small breakpoint&lt;/li&gt;
+              &lt;li&gt;medium breakpopint&lt;/li&gt;
+              &lt;li&gt;large breakpoint&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;spacing bet object and canvas&lt;/li&gt;
+          &lt;li&gt;spacing bet multiple objects&lt;/li&gt;
+          &lt;li&gt;spacing bet text and objects&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;objects
+        &lt;ul&gt;
+          &lt;li&gt;fill color&lt;/li&gt;
+          &lt;li&gt;stroke, color, size, style&lt;/li&gt;
+          &lt;li&gt;opacity/filter&lt;/li&gt;
+          &lt;li&gt;corner radius&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;color palette
+        &lt;ul&gt;
+          &lt;li&gt;primary, secondary, tertiary, quaternary&lt;/li&gt;
+          &lt;li&gt;monotone
+            &lt;ul&gt;
+              &lt;li&gt;gray - light, medium, dark&lt;/li&gt;
+              &lt;li&gt;black&lt;/li&gt;
+              &lt;li&gt;white&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;after analyzing above data and visually looking at a design comp, these properties are already set on the provided design comp but not documented.&lt;/p&gt;
+
+&lt;p&gt;this is where PNG Express comes in, photoshop plugin tool.&lt;/p&gt;
+
+&lt;p&gt;after testing on a design comp and implementing it on theme development, it is indeed an ease for us developers.&lt;/p&gt;
+
+&lt;p&gt;so overview process would be:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;designer designs ui comp&lt;/li&gt;
+  &lt;li&gt;after design is complete, designer sets Design Specs with PNG Express&lt;/li&gt;
+  &lt;li&gt;pass the UI comp with design specs to front end developer&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;front end developer implements these measurements on css styles sheets&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;it does not need to be exact pixels, this is a good way to atleast get an estimate.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;with this in set, this also gives Front end developers to compile a Style Guide and or components that can be resuable.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2014/10/front-end-development-ode-to-specifications/&quot;&gt;A Front-End Developer’s Ode To Specifications&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.pngexpress.com/&quot;&gt;PNG Express&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 28 Jul 2016 03:58:40 -0700</pubDate>
+        <link>http://rlynjb.github.io/wandrr/Front-End-Design-Specs</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Front-End-Design-Specs</guid>
+        
+        <category>workflow</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Front-End Workflow with Grav theme</title>
+        <description>&lt;p&gt;This blog post explains on how I have setup a custom basic Grav theme with modern front-end workflow.&lt;/p&gt;
+
+&lt;p&gt;This idea have come into mind when I was assigned a project that requires the use of a CSS framework and other plugins for animations/transitions. Since I will be building websites with the same requirements, why not create a &lt;strong&gt;Grav Starter Theme with Front-End Workflow&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;I will be updating this theme with tested CSS animations/transitions plugins that I think will play well with Grav and meets client’s business requirements.&lt;/p&gt;
+
+&lt;p&gt;For documentation and updates, refer to its github repo: &lt;a href=&quot;https://github.com/rlynjb/gravtheme-frontendflow&quot;&gt;Grav Theme - Front-End Flow&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Contents&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#before-starting&quot;&gt;Before starting&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#every-website-project-will-have&quot;&gt;Every website project will have&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#developing-starter-kit-theme&quot;&gt;Developing starter kit theme&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#gulpfilejs-setup&quot;&gt;gulpfile.js setup&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#importing-foundation-components-and-overriding-settings-file&quot;&gt;importing foundation components and overriding settings file&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;before-starting&quot;&gt;Before starting:&lt;/h3&gt;
+
+&lt;p&gt;Install the following globally as it is required to run Bower and Gulp in your local dev.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Node&lt;/li&gt;
+  &lt;li&gt;NPM or NVM if you deal with multiple node versions&lt;/li&gt;
+  &lt;li&gt;After installing Grav
+    &lt;ul&gt;
+      &lt;li&gt;refer to ff. link for Getting Started with Grav: &lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git clone&lt;/code&gt; this repo inside of &lt;code class=&quot;highlighter-rouge&quot;&gt;/user/themes/&lt;/code&gt; directory&lt;/li&gt;
+  &lt;li&gt;inside of &lt;code class=&quot;highlighter-rouge&quot;&gt;/user/themes/gravtheme-frontendflow/&lt;/code&gt; directory, run:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm install -g&lt;/code&gt;
+        &lt;ul&gt;
+          &lt;li&gt;required to run Bower and Gulp&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bower install&lt;/code&gt;
+        &lt;ul&gt;
+          &lt;li&gt;installs 3rd-party plugins used on this theme&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gulp &amp;amp;&amp;amp; gulp watch&lt;/code&gt;
+        &lt;ul&gt;
+          &lt;li&gt;builds our sass files. We’ve carefully chose each Foundation components to avoid CSS bloats and overriding of styles.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;every-website-project-will-have&quot;&gt;Every website project will have:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Grav + Admin core&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;To get fresh install: &lt;a href=&quot;https://getgrav.org/&quot;&gt;Get Grav&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Basic Grav Theme setup&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Follow tutorial to get started: &lt;a href=&quot;https://learn.getgrav.org/themes/theme-tutorial&quot;&gt;Get Grav - Theme Tutorial&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; file
+    &lt;ul&gt;
+      &lt;li&gt;installs &lt;strong&gt;Bower&lt;/strong&gt;, &lt;strong&gt;Gulp.js&lt;/strong&gt;, and other gulp dependencies for build system and front-end workflow aid&lt;/li&gt;
+      &lt;li&gt;go to &lt;a href=&quot;https://www.npmjs.com/&quot;&gt;npmjs.com&lt;/a&gt; to search for more packages&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bower.json&lt;/code&gt; file
+    &lt;ul&gt;
+      &lt;li&gt;installs required 3rd-party assets&lt;/li&gt;
+      &lt;li&gt;go to &lt;a href=&quot;http://bower.io&quot;&gt;bower.io&lt;/a&gt; to search for more packages&lt;/li&gt;
+      &lt;li&gt;or install packages via &lt;strong&gt;Github repos&lt;/strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;https://bower.io/docs/api/&quot;&gt;bower.io - api&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/19348076/installing-a-dependency-with-bower-from-url-and-specify-version&quot;&gt;Installing a dependency with Bower from URL and specify version&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;setup &lt;code class=&quot;highlighter-rouge&quot;&gt;gulpfile.js&lt;/code&gt; file
+    &lt;ul&gt;
+      &lt;li&gt;Why use &lt;strong&gt;Gulp.js&lt;/strong&gt;?
+        &lt;ul&gt;
+          &lt;li&gt;&lt;strong&gt;Sass&lt;/strong&gt; seem to not support building multiple &lt;code class=&quot;highlighter-rouge&quot;&gt;scss&lt;/code&gt; files. It require either Compass, Grunt, or libsass (same Build system concept as Gulp.js)&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;Grav’s Asset Manager&lt;/strong&gt; lacks support for sass and its still quite buggy&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Check this project’s github repo for &lt;strong&gt;package.json&lt;/strong&gt;, &lt;strong&gt;bower.json&lt;/strong&gt;, and &lt;strong&gt;gulp.js&lt;/strong&gt; updates.&lt;br /&gt;
+&lt;a href=&quot;https://github.com/rlynjb/gravtheme-frontendflow&quot;&gt;Grav Theme - Front-End Flow&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;developing-starter-kit-theme&quot;&gt;Developing starter kit theme&lt;/h3&gt;
+
+&lt;p&gt;During developing &lt;strong&gt;Grav Theme - Front-End Flow&lt;/strong&gt; starter kit theme, I have come across issues that I think worth noting.&lt;/p&gt;
+
+&lt;h3 id=&quot;gulpfilejs-setup&quot;&gt;gulpfile.js setup&lt;/h3&gt;
+
+&lt;p&gt;After installing &lt;strong&gt;foundation-sites&lt;/strong&gt; via bower. we will need to setup our &lt;code class=&quot;highlighter-rouge&quot;&gt;gulpfile.js&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;p&gt;Follow the youtube video tutorial to get started:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/De6H0eFrfvY&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;importing-foundation-components-and-overriding-settings-file&quot;&gt;importing foundation components and overriding settings file&lt;/h3&gt;
+
+&lt;p&gt;While setting it up, I’ve come across an issue. The following link helped me solved the issue.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/34537431/foundation-6-does-not-generate-any-styles&quot;&gt;stackoverflow - Foundation 6 does not generate any styles&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Another issue i came across was overriding Foundation’s settings file. It took me awhile until I figured out why its not overriding the default settings file. Solution is on my github repo&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/rlynjb/gravtheme-frontendflow&quot;&gt;GravTheme - Front End Flow theme&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 13 Jul 2016 05:09:47 -0700</pubDate>
+        <link>http://rlynjb.github.io/wandrr/Front-End-Workflow-with-Grav-theme</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Front-End-Workflow-with-Grav-theme</guid>
+        
+        <category>static site</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Getting started and basic theming with Grav</title>
+        <description>&lt;p&gt;Hi all! I’ve created this blog post as my notes for learning and exploring Grav. If you haven’t heard, Grav is a full flat-file CMS, this means, it does not use any database. All data are saved as YAML files. It follows a certian naming convention and uses its directory page hierarchy structure to generate routes.&lt;/p&gt;
+
+&lt;p&gt;Again, consider this blog post as notes rather than re-explaining informations that exists on Grav documentation or other blog sites.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Contents&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#getting-started-on-digital-ocean&quot;&gt;Getting Started on Digital Ocean&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;create a droplet&lt;/li&gt;
+      &lt;li&gt;debugging nginx with php5-fpm&lt;/li&gt;
+      &lt;li&gt;fixing php 502 gateway page&lt;/li&gt;
+      &lt;li&gt;tips on using configuration files yaml&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#getting-started-on-mamp&quot;&gt;Getting Started on MAMP&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Install Brew&lt;/li&gt;
+      &lt;li&gt;Install MAMP&lt;/li&gt;
+      &lt;li&gt;Install Grav&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#theming-in-grav&quot;&gt;Theming in Grav&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Method for setting up a pre-made HTML5 template to Grav theme&lt;/li&gt;
+      &lt;li&gt;Method for loadings assets and partial out the main index.html file&lt;/li&gt;
+      &lt;li&gt;Breaking our home page template file further by using Modular Pages&lt;/li&gt;
+      &lt;li&gt;Creating custom fields to let users update data in theme by using Blueprint Pages&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;getting-started-on-digital-ocean&quot;&gt;Getting Started on Digital Ocean&lt;/h1&gt;
+
+&lt;h3 id=&quot;create-a-droplet&quot;&gt;create a droplet&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://learn.getgrav.org/hosting/vps/digitalocean&quot;&gt;https://learn.getgrav.org/hosting/vps/digitalocean&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;debugging-nginx-with-php5-fpm&quot;&gt;debugging nginx with php5-fpm&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://serverfault.com/questions/562062/nginx-with-php-fpm-got-502-bad-gateway-on-ubuntu-server-12-04&quot;&gt;resource 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/1706111/where-can-i-find-the-error-logs-of-nginx-using-fastcgi-and-django&quot;&gt;resource 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;fixing-php-502-gateway-page&quot;&gt;fixing php 502 gateway page&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/owncloud/core/issues/14187&quot;&gt;resource&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;tips-on-using-configuration-files-yaml&quot;&gt;tips on using configuration files, yaml:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;do not change configs in &lt;code class=&quot;highlighter-rouge&quot;&gt;/system/config/system.yaml&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;/system/config/site.yaml&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;do not change configs in &lt;code class=&quot;highlighter-rouge&quot;&gt;/user/plugins/&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;rather override them in &lt;code class=&quot;highlighter-rouge&quot;&gt;user/config/system.yaml&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;user/config/site.yaml&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;user/config/plugins/myplugin.yaml&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;note: all yaml files are contructed by name spacing. Grav picks it up in a hierarchy order.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;getting-started-on-mamp&quot;&gt;Getting Started on MAMP&lt;/h1&gt;
+
+&lt;h3 id=&quot;install-brew&quot;&gt;1. Install Brew&lt;/h3&gt;
+
+&lt;p&gt;This is to install &lt;strong&gt;git&lt;/strong&gt; and &lt;strong&gt;other development goodies&lt;/strong&gt; if you are a fan of commandline.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://brew.sh/&quot;&gt;http://brew.sh/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://commandlinepoweruser.com/&quot;&gt;http://commandlinepoweruser.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;install-mamp&quot;&gt;2. Install MAMP&lt;/h3&gt;
+
+&lt;p&gt;You can use any webserver but I’ve used &lt;strong&gt;MAMP&lt;/strong&gt; because it was the quickest way I can install a webserver and setup a &lt;strong&gt;local Apache&lt;/strong&gt; eventhough we are not using MySql database.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.mamp.info/en/&quot;&gt;https://www.mamp.info/en/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;install-grav&quot;&gt;3. Install Grav&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Download &lt;strong&gt;Grav core + admin plugins&lt;/strong&gt; files from &lt;a href=&quot;https://getgrav.org/downloads&quot;&gt;https://getgrav.org/downloads&lt;/a&gt; and place into &lt;code class=&quot;highlighter-rouge&quot;&gt;htdocs&lt;/code&gt; directory.
+    &lt;ul&gt;
+      &lt;li&gt;You can choose either &lt;strong&gt;Grav core&lt;/strong&gt; or &lt;strong&gt;Grav core + admin plugins&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;If &lt;strong&gt;Grav core&lt;/strong&gt; only, you have the option to install &lt;strong&gt;Grav admin&lt;/strong&gt; later by running &lt;code class=&quot;highlighter-rouge&quot;&gt;bin/gpm install admin&lt;/code&gt; on the root directory of your &lt;strong&gt;Grav core&lt;/strong&gt; files.&lt;br /&gt;
+ More info: &lt;a href=&quot;https://learn.getgrav.org/admin-panel/introduction&quot;&gt;https://learn.getgrav.org/admin-panel/introduction&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Unzip the &lt;code class=&quot;highlighter-rouge&quot;&gt;grav-admin-v*.*.**.zip&lt;/code&gt; file on the &lt;code class=&quot;highlighter-rouge&quot;&gt;htdocs&lt;/code&gt; directory.&lt;/li&gt;
+  &lt;li&gt;You can rename the &lt;strong&gt;Grav&lt;/strong&gt; directory to whatever project name you want.
+    &lt;ul&gt;
+      &lt;li&gt;You can also move the &lt;strong&gt;Grav core files&lt;/strong&gt; to an empty &lt;strong&gt;Github Repo directory&lt;/strong&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Tip:&lt;/strong&gt; Make sure to move &lt;code class=&quot;highlighter-rouge&quot;&gt;.htaccess&lt;/code&gt; file as well to avoid &lt;strong&gt;404 Not Found&lt;/strong&gt; error when visiting subpages.&lt;/li&gt;
+      &lt;li&gt;For more info, check &lt;a href=&quot;https://learn.getgrav.org/troubleshooting&quot;&gt;https://learn.getgrav.org/troubleshooting&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://getgrav.org/&quot;&gt;https://getgrav.org/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;theming-in-grav&quot;&gt;Theming in Grav&lt;/h1&gt;
+
+&lt;h3 id=&quot;method-for-setting-up-a-pre-made-html5-template-to-grav-theme&quot;&gt;Method for setting up a pre-made HTML5 template to Grav theme&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Unzip the &lt;strong&gt;HTML5 theme&lt;/strong&gt; zip file unto the &lt;code class=&quot;highlighter-rouge&quot;&gt;user/themes/&lt;/code&gt; directory.&lt;/li&gt;
+  &lt;li&gt;Register your theme by following &lt;strong&gt;Step 1 - Base Theme Setup&lt;/strong&gt; on &lt;a href=&quot;https://learn.getgrav.org/themes/theme-tutorial&quot;&gt;https://learn.getgrav.org/themes/theme-tutorial&lt;/a&gt;.
+    &lt;ul&gt;
+      &lt;li&gt;For &lt;strong&gt;Step 1 - Base Theme Setup&lt;/strong&gt; - #2&lt;br /&gt;
+ &lt;em&gt;Tip:&lt;/em&gt; You can use the same HTML5 theme directory name or you can clean up directory name by renaming and practicing proper naming convention.&lt;br /&gt;
+ &lt;em&gt;Ex:&lt;/em&gt; Avoid whitespace, avoid special characters except &lt;code class=&quot;highlighter-rouge&quot;&gt;_&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;-&lt;/code&gt; following &lt;em&gt;camel case or snake case&lt;/em&gt; naming convention.&lt;/li&gt;
+      &lt;li&gt;For &lt;strong&gt;Step 1 - Base Theme Setup&lt;/strong&gt; - #3&lt;br /&gt;
+ &lt;em&gt;Tip:&lt;/em&gt; I chose to follow &lt;strong&gt;Grav’s Theme directory structure&lt;/strong&gt; rather than to use the &lt;strong&gt;HTML5 theme&lt;/strong&gt; default directory structure to avoid nested directory level, plus, Grav runs a &lt;em&gt;gpm&lt;/em&gt; engine which goes through each directories and yaml files to read data.&lt;/li&gt;
+      &lt;li&gt;For &lt;strong&gt;Step 1 - Base Theme Setup&lt;/strong&gt; - #4&lt;br /&gt;
+ &lt;em&gt;Tip:&lt;/em&gt; I believe this basically tells Grav that we are extending a Grav Theme class and our custom theme gets registered unto Grav core files.&lt;/li&gt;
+      &lt;li&gt;For &lt;strong&gt;Step 1 - Base Theme Setup&lt;/strong&gt; - #5&lt;br /&gt;
+ &lt;em&gt;Tip:&lt;/em&gt; This file just enables our theme, but later on, there are more theme configuration that uses this file.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;method-for-loading-assets-and-partial-out-the-main-indexhtml-file&quot;&gt;Method for loading assets and partial out the main index.html file&lt;/h3&gt;
+
+&lt;p&gt;Now that we have setup our theme directory structures and registered our theme to Grav core files. We will continue on by:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Load assets (css, js, images) in Head and Body tags.&lt;/li&gt;
+  &lt;li&gt;Introduction to using Twig templating engine.&lt;/li&gt;
+  &lt;li&gt;Organize our code in &lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt; file by using Grav’s &lt;code class=&quot;highlighter-rouge&quot;&gt;/templates/partials&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Now, we load our assets by moving HTML5 theme assets to Grav theme’s asset directory structure. Ex: &lt;code class=&quot;highlighter-rouge&quot;&gt;/css&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;/fonts&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;/images&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;/js&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;/templates&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;This step is a replacement for &lt;strong&gt;Step 2 - Add Bootstrap&lt;/strong&gt;&lt;br /&gt;
+ We are not using Boostrap, instead we are using the HTML5’s assets.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Next is to just follow the remaining steps, &lt;strong&gt;Step 3 - Base Template&lt;/strong&gt; to &lt;strong&gt;Step 8 - Testing&lt;/strong&gt;.
+    &lt;ul&gt;
+      &lt;li&gt;This step pretty much explains:&lt;br /&gt;
+ &lt;strong&gt;Loading assets.&lt;/strong&gt; When to use &lt;code class=&quot;highlighter-rouge&quot;&gt;theme_url&lt;/code&gt; twig variable and &lt;code class=&quot;highlighter-rouge&quot;&gt;do assets.add(&#39;&#39;)&lt;/code&gt; twig function and how it relates with &lt;strong&gt;Grav’s Asset Manager&lt;/strong&gt;.&lt;br /&gt;
+ &lt;strong&gt;Introduction to basic Twig syntax.&lt;/strong&gt;&lt;br /&gt; Also, exploring some of Grav’s global twig variables.
+ &lt;strong&gt;Partial out&lt;/strong&gt; the theme’s header section, footer section, and main content section to maintain a cleaner &lt;code class=&quot;highlighter-rouge&quot;&gt;base.html.twig&lt;/code&gt; file.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;breaking-our-home-page-template-file-further-by-using-modular-pages&quot;&gt;Breaking our home page template file further by using Modular Pages&lt;/h3&gt;
+
+&lt;p&gt;Most HTML5 themes comes with a home page designed similar to one-page website designs. For this step, we are going to breakdown this one-page website design into sections and use &lt;strong&gt;Grav’s Modular Pages&lt;/strong&gt; templating to separate and organize these sections.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open &lt;code class=&quot;highlighter-rouge&quot;&gt;base.html.twig&lt;/code&gt; template and analyze what HTML tag is used to contain contents of each sections.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;Tip:&lt;/em&gt; Usual container tags are &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;section&amp;gt;&amp;lt;/section&amp;gt;&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div id=&quot;&quot;&amp;gt;&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;After determining the HTML tag container, convert these sections into &lt;strong&gt;Grav’s Modular Pages&lt;/strong&gt;.
+    &lt;ul&gt;
+      &lt;li&gt;Learn more about Modular Pages on the ff. link and ff. instructions: &lt;a href=&quot;https://learn.getgrav.org/content/modular&quot;&gt;https://learn.getgrav.org/content/modular&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;It is also a good idea to scheme through &lt;strong&gt;Grav’s Content&lt;/strong&gt; documentation page &lt;a href=&quot;https://learn.getgrav.org/content&quot;&gt;https://learn.getgrav.org/content&lt;/a&gt; to get a glimpse of the parts of a page.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;creating-custom-fields-to-let-users-update-data-in-theme-by-using-blueprint-pages&quot;&gt;Creating custom fields to let users update data in theme by using Blueprint Pages&lt;/h3&gt;
+
+&lt;p&gt;Now that we’ve broken our template further by each sections using &lt;strong&gt;Modular Pages&lt;/strong&gt;. What if we wanted users to update contents or bits pieces of data in each section using &lt;strong&gt;Grav’s Administration Panel&lt;/strong&gt;?&lt;/p&gt;
+
+&lt;p&gt;In this step, we will use Grav’s Forms called Blueprints &lt;a href=&quot;https://learn.getgrav.org/forms/blueprints&quot;&gt;https://learn.getgrav.org/forms/blueprints&lt;/a&gt; to convert &lt;strong&gt;static data&lt;/strong&gt; into editable ones using Grav’s &lt;code class=&quot;highlighter-rouge&quot;&gt;Admin dashboard &amp;gt; Pages&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;For an overview and how to setup a &lt;strong&gt;Themes and Plugins Blueprints&lt;/strong&gt; or &lt;strong&gt;Pages Blueprints&lt;/strong&gt;, go to this link &lt;a href=&quot;https://learn.getgrav.org/forms/blueprints&quot;&gt;https://learn.getgrav.org/forms/blueprints&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;My experience with setting up Blueprints for &lt;strong&gt;Theme&lt;/strong&gt; configuration page and for each &lt;strong&gt;Modular Pages&lt;/strong&gt; was quite challenging. Grav’s documentation doesn’t seem to provide detailed information on &lt;strong&gt;how to define a field and which directory its information is stored&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Although for &lt;strong&gt;Theme Blueprint&lt;/strong&gt; it was pretty straight forward.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create a &lt;code class=&quot;highlighter-rouge&quot;&gt;blueprints.yaml&lt;/code&gt; file in the root directory of theme.&lt;/li&gt;
+  &lt;li&gt;Follow the &lt;strong&gt;Components of a Blueprint&lt;/strong&gt; in &lt;a href=&quot;https://learn.getgrav.org/forms/blueprints&quot;&gt;https://learn.getgrav.org/forms/blueprints&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Tip:&lt;/strong&gt; a YAML file will be generated for Theme configuration page in &lt;code class=&quot;highlighter-rouge&quot;&gt;user/config&lt;/code&gt; directory.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;It was trial and error for &lt;strong&gt;Modular Page Blueprints&lt;/strong&gt; because its documentation seem to lack information on &lt;strong&gt;how to define a field and which directory its information is stored&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;An overview method I find when working with Modular Page Blueprints are:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create a &lt;code class=&quot;highlighter-rouge&quot;&gt;blueprints&lt;/code&gt; directory under root template directory &lt;code class=&quot;highlighter-rouge&quot;&gt;yourtheme &amp;gt; blueprints&lt;/code&gt;.
+    &lt;ul&gt;
+      &lt;li&gt;Since we are creating a blueprint for modular pages, we are going to store our blueprints (&lt;code class=&quot;highlighter-rouge&quot;&gt;*.yaml&lt;/code&gt; files) under modular directory.&lt;/li&gt;
+      &lt;li&gt;So with this, create a modular directory under &lt;code class=&quot;highlighter-rouge&quot;&gt;yourtheme &amp;gt; blueprints &amp;gt; modular&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Create a &lt;code class=&quot;highlighter-rouge&quot;&gt;some-modular-template-name.yaml&lt;/code&gt; file that pertains to a modular template.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Tip:&lt;/strong&gt; Make sure your &lt;code class=&quot;highlighter-rouge&quot;&gt;.yaml&lt;/code&gt; file name matches a Modular template name you want to create Admin custom fields for.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;When defining &lt;code class=&quot;highlighter-rouge&quot;&gt;*.yaml&lt;/code&gt; file form, a good example would be the default &lt;strong&gt;Grav antimatter theme&lt;/strong&gt;, &lt;a href=&quot;https://github.com/getgrav/grav-theme-antimatter/blob/develop/blueprints/modular/showcase.yaml&quot;&gt;https://github.com/getgrav/grav-theme-antimatter/blob/develop/blueprints/modular/showcase.yaml&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Also, an additional note to keep in mind when working with Page Blueprints&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Grav reads data in &lt;code class=&quot;highlighter-rouge&quot;&gt;*.yaml&lt;/code&gt; files in sequence of how directories and files are structured, So when defining a field, it needs to be under a parent &lt;code class=&quot;highlighter-rouge&quot;&gt;header.&lt;/code&gt; because blueprint pages store its data in pages headers. Also when uploading media files, Grav stores these media files under its page direcotory.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 13 Jul 2016 03:52:08 -0700</pubDate>
+        <link>http://rlynjb.github.io/wandrr/Getting-started-and-basic-theming-with-Grav</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Getting-started-and-basic-theming-with-Grav</guid>
+        
+        <category>static site</category>
         
         
       </item>
