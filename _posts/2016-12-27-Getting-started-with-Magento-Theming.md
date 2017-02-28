@@ -30,6 +30,8 @@ Although, from all the learning curves listed above, Magento 2 is:
 
 Once Magento 2 is installed
 
+- Enable Development Mode `sudo php bin/magento deploy:mode:set developer`
+  - ref: [How di u set developer mode in magento2](http://magento.stackexchange.com/questions/13125/how-do-i-set-developer-mode-in-magento-2)
 - Create a directory in `/app/design/frontend/<company name>/<theme name>`
 - Copy Magento 2 blank theme `/vendor/magento/theme-frontend-blank/` to `/app/design/frontend/<company name>/<theme name>`
 - Rename all theme titles and names in `composer.json`, `registration.php`, `theme.xml`

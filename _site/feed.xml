@@ -6,8 +6,8 @@
 </description>
     <link>http://rlynjb.github.io/wandrr/</link>
     <atom:link href="http://rlynjb.github.io/wandrr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 22 Feb 2017 16:35:06 -0800</pubDate>
-    <lastBuildDate>Wed, 22 Feb 2017 16:35:06 -0800</lastBuildDate>
+    <pubDate>Tue, 28 Feb 2017 13:30:09 -0800</pubDate>
+    <lastBuildDate>Tue, 28 Feb 2017 13:30:09 -0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -555,6 +555,64 @@ Route::get(&#39;/contact/view&#39;, function() {
   &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/29715813/laravel-5-global-blade-view-variable-available-in-all-templates&quot;&gt;Laravel 5 - global Blade view variable available in all templates&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h3 id=&quot;method-for-creating-a-contact-form-to-storing-to-db&quot;&gt;Method for creating a Contact Form to storing to DB&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Template Contact form
+    &lt;ul&gt;
+      &lt;li&gt;include validation (Zurb Foundation Abide or HTML5 validation)&lt;/li&gt;
+      &lt;li&gt;include &lt;code class=&quot;highlighter-rouge&quot;&gt;name=&quot;&quot;&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;maxlength=&quot;&quot;&lt;/code&gt; on input fields&lt;/li&gt;
+      &lt;li&gt;include `` before Submit input button&lt;/li&gt;
+      &lt;li&gt;provided by Laravel, a secure way to manage POST forms&lt;/li&gt;
+      &lt;li&gt;include a Thank You and Error messages&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Author JavaScript submit ajax code
+    &lt;ul&gt;
+      &lt;li&gt;include &lt;code class=&quot;highlighter-rouge&quot;&gt;e.preventDefault();&lt;/code&gt; to prevent page refresh&lt;/li&gt;
+      &lt;li&gt;on Ajax, serialize data coming in from form&lt;/li&gt;
+      &lt;li&gt;input url POST data in defined in routes&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Define Routes
+    &lt;ul&gt;
+      &lt;li&gt;since we are posting, use POST instead of GET&lt;/li&gt;
+      &lt;li&gt;ex: &lt;code class=&quot;highlighter-rouge&quot;&gt;Route::post(&#39;/contact/create&#39;, &#39;ContactController@create&#39;);&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;define url and Controller and its public function that will handle database form submission and other logic associated with create task.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Create Controller
+    &lt;ul&gt;
+      &lt;li&gt;on root directory, run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan make:controller ContactController&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;inside &lt;code class=&quot;highlighter-rouge&quot;&gt;ContactController.php&lt;/code&gt;, define facades&lt;/li&gt;
+      &lt;li&gt;ex: &lt;code class=&quot;highlighter-rouge&quot;&gt;use DB;&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;use Illuminate\Support\Facades\Mail;&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;inside its public function&lt;/li&gt;
+      &lt;li&gt;assign form input values to variables
+        &lt;ul&gt;
+          &lt;li&gt;these are the fields defined in form&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;write code to store on database, ref: &lt;a href=&quot;https://laravel.com/docs/5.4/database&quot;&gt;https://laravel.com/docs/5.4/database&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;write code to send data to email, ref: &lt;a href=&quot;https://laravel.com/docs/5.4/mail&quot;&gt;https://laravel.com/docs/5.4/mail&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Setup database
+    &lt;ul&gt;
+      &lt;li&gt;go to phpmyadmin and create a database, enter credentials, and create a table&lt;/li&gt;
+      &lt;li&gt;create columns and defined the ff.&lt;/li&gt;
+      &lt;li&gt;form fields&lt;/li&gt;
+      &lt;li&gt;include ID: int, auto_increment, primary&lt;/li&gt;
+      &lt;li&gt;include submitted_at: timestamp, current_timestamp&lt;/li&gt;
+      &lt;li&gt;on &lt;code class=&quot;highlighter-rouge&quot;&gt;.env&lt;/code&gt; file, configure database settings&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Setup Mailer
+    &lt;ul&gt;
+      &lt;li&gt;go to &lt;code class=&quot;highlighter-rouge&quot;&gt;.env&lt;/code&gt; file and input settings&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
 &lt;hr /&gt;
 
 &lt;h1 id=&quot;defining-my-specs-for-a-custom-admin-panel&quot;&gt;Defining my specs for a custom Admin Panel&lt;/h1&gt;
@@ -746,6 +804,11 @@ gulp.task(&#39;build&#39;, function () {
 &lt;p&gt;Once Magento 2 is installed&lt;/p&gt;
 
 &lt;ul&gt;
+  &lt;li&gt;Enable Development Mode &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo php bin/magento deploy:mode:set developer&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;ref: &lt;a href=&quot;http://magento.stackexchange.com/questions/13125/how-do-i-set-developer-mode-in-magento-2&quot;&gt;How di u set developer mode in magento2&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
   &lt;li&gt;Create a directory in &lt;code class=&quot;highlighter-rouge&quot;&gt;/app/design/frontend/&amp;lt;company name&amp;gt;/&amp;lt;theme name&amp;gt;&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;Copy Magento 2 blank theme &lt;code class=&quot;highlighter-rouge&quot;&gt;/vendor/magento/theme-frontend-blank/&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;/app/design/frontend/&amp;lt;company name&amp;gt;/&amp;lt;theme name&amp;gt;&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;Rename all theme titles and names in &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;registration.php&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;theme.xml&lt;/code&gt;

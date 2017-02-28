@@ -230,6 +230,40 @@ Below are the resources I used in learning basic CRUD, form handling in Laravel,
 - [Global variable in laravel controller](http://stackoverflow.com/questions/32942379/global-variable-in-laravel-controller)
 - [Laravel 5 - global Blade view variable available in all templates](http://stackoverflow.com/questions/29715813/laravel-5-global-blade-view-variable-available-in-all-templates)
 
+### Method for creating a Contact Form to storing to DB
+
+1. Template Contact form
+  - include validation (Zurb Foundation Abide or HTML5 validation)
+  - include `name=""`, `maxlength=""` on input fields
+  - include `{{ csrf_field() }}` before Submit input button
+    - provided by Laravel, a secure way to manage POST forms
+  - include a Thank You and Error messages
+2. Author JavaScript submit ajax code
+  - include `e.preventDefault();` to prevent page refresh
+  - on Ajax, serialize data coming in from form
+  - input url POST data in defined in routes
+3. Define Routes
+  - since we are posting, use POST instead of GET
+  - ex: `Route::post('/contact/create', 'ContactController@create');` 
+  - define url and Controller and its public function that will handle database form submission and other logic associated with create task.
+4. Create Controller
+  - on root directory, run `php artisan make:controller ContactController`
+  - inside `ContactController.php`, define facades
+    - ex: `use DB;`, `use Illuminate\Support\Facades\Mail;`
+  - inside its public function
+    - assign form input values to variables
+      - these are the fields defined in form
+    - write code to store on database, ref: [https://laravel.com/docs/5.4/database](https://laravel.com/docs/5.4/database)
+    - write code to send data to email, ref: [https://laravel.com/docs/5.4/mail](https://laravel.com/docs/5.4/mail)
+5. Setup database
+  - go to phpmyadmin and create a database, enter credentials, and create a table
+  - create columns and defined the ff.
+    - form fields
+    - include ID: int, auto_increment, primary
+    - include submitted_at: timestamp, current_timestamp
+  - on `.env` file, configure database settings
+6. Setup Mailer
+  - go to `.env` file and input settings
 
 -----
 

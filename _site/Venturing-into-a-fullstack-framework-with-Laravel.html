@@ -384,6 +384,64 @@ Route::get('/contact/view', function() {
   <li><a href="http://stackoverflow.com/questions/29715813/laravel-5-global-blade-view-variable-available-in-all-templates">Laravel 5 - global Blade view variable available in all templates</a></li>
 </ul>
 
+<h3 id="method-for-creating-a-contact-form-to-storing-to-db">Method for creating a Contact Form to storing to DB</h3>
+
+<ol>
+  <li>Template Contact form
+    <ul>
+      <li>include validation (Zurb Foundation Abide or HTML5 validation)</li>
+      <li>include <code class="highlighter-rouge">name=""</code>, <code class="highlighter-rouge">maxlength=""</code> on input fields</li>
+      <li>include `` before Submit input button</li>
+      <li>provided by Laravel, a secure way to manage POST forms</li>
+      <li>include a Thank You and Error messages</li>
+    </ul>
+  </li>
+  <li>Author JavaScript submit ajax code
+    <ul>
+      <li>include <code class="highlighter-rouge">e.preventDefault();</code> to prevent page refresh</li>
+      <li>on Ajax, serialize data coming in from form</li>
+      <li>input url POST data in defined in routes</li>
+    </ul>
+  </li>
+  <li>Define Routes
+    <ul>
+      <li>since we are posting, use POST instead of GET</li>
+      <li>ex: <code class="highlighter-rouge">Route::post('/contact/create', 'ContactController@create');</code></li>
+      <li>define url and Controller and its public function that will handle database form submission and other logic associated with create task.</li>
+    </ul>
+  </li>
+  <li>Create Controller
+    <ul>
+      <li>on root directory, run <code class="highlighter-rouge">php artisan make:controller ContactController</code></li>
+      <li>inside <code class="highlighter-rouge">ContactController.php</code>, define facades</li>
+      <li>ex: <code class="highlighter-rouge">use DB;</code>, <code class="highlighter-rouge">use Illuminate\Support\Facades\Mail;</code></li>
+      <li>inside its public function</li>
+      <li>assign form input values to variables
+        <ul>
+          <li>these are the fields defined in form</li>
+        </ul>
+      </li>
+      <li>write code to store on database, ref: <a href="https://laravel.com/docs/5.4/database">https://laravel.com/docs/5.4/database</a></li>
+      <li>write code to send data to email, ref: <a href="https://laravel.com/docs/5.4/mail">https://laravel.com/docs/5.4/mail</a></li>
+    </ul>
+  </li>
+  <li>Setup database
+    <ul>
+      <li>go to phpmyadmin and create a database, enter credentials, and create a table</li>
+      <li>create columns and defined the ff.</li>
+      <li>form fields</li>
+      <li>include ID: int, auto_increment, primary</li>
+      <li>include submitted_at: timestamp, current_timestamp</li>
+      <li>on <code class="highlighter-rouge">.env</code> file, configure database settings</li>
+    </ul>
+  </li>
+  <li>Setup Mailer
+    <ul>
+      <li>go to <code class="highlighter-rouge">.env</code> file and input settings</li>
+    </ul>
+  </li>
+</ol>
+
 <hr />
 
 <h1 id="defining-my-specs-for-a-custom-admin-panel">Defining my specs for a custom Admin Panel</h1>
