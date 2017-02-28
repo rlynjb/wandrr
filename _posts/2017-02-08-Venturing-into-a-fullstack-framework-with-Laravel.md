@@ -264,6 +264,7 @@ Below are the resources I used in learning basic CRUD, form handling in Laravel,
   - on `.env` file, configure database settings
 6. Setup Mailer
   - go to `.env` file and input settings
+  - we are using [From Views Template](#from-views-template) code
   - using Mail facade requires additional steps
     - create a Requests by running `php artisan make:requests SendContact`
     - inside SendContact.php, input the ff.
