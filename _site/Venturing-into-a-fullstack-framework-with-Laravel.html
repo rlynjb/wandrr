@@ -96,7 +96,12 @@
   <li><a href="#coding-templates-to-populating-static-data-from-json-file">Coding templates to populating static data from JSON file</a></li>
   <li><a href="#from-static-data-to-implementing-a-database">From Static data to implementing a Database</a></li>
   <li><a href="#simple-contact-form-sending-emails">Simple Contact form, Sending Emails</a></li>
-  <li><a href="#intro-to-create-in-crud">Intro to Create in CRUD</a></li>
+  <li><a href="#intro-to-create-in-crud">Intro to Create in CRUD</a>
+    <ul>
+      <li><a href="#method-for-creating-a-contact-form-to-storing-to-db">Method for creating a contact form to storing in db</a></li>
+      <li><a href="#method-for-converting-static-data-in-template-to-json-object-value">Method for converting static data in template to JSON object value</a></li>
+    </ul>
+  </li>
   <li><a href="#method-for-developing-a-project-from-scratch">Method for developing a project from scratch</a></li>
   <li><a href="#defining-my-specs-for-a-custom-admin-panel">Defining my specs for a custom Admin Panel</a></li>
   <li><a href="#building-a-cms-from-scratch">Building a CMS from scratch</a></li>
@@ -384,6 +389,8 @@ Route::get('/contact/view', function() {
   <li><a href="http://stackoverflow.com/questions/29715813/laravel-5-global-blade-view-variable-available-in-all-templates">Laravel 5 - global Blade view variable available in all templates</a></li>
 </ul>
 
+<hr />
+
 <h3 id="method-for-creating-a-contact-form-to-storing-to-db">Method for creating a Contact Form to storing to DB</h3>
 
 <ol>
@@ -449,6 +456,40 @@ Route::get('/contact/view', function() {
       </li>
       <li>create a template under <code class="highlighter-rouge">resources/views/emails/contact.blade.php</code></li>
       <li>to test, we can use our email address temporarily</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h3 id="method-for-converting-static-data-in-template-to-json-object-value">Method for converting static data in template to JSON object value</h3>
+
+<ol>
+  <li>After templating
+    <ul>
+      <li>structure your JSON data with a template file values</li>
+      <li>use <a href="http://jsoneditoronline.org">http://jsoneditoronline.org</a></li>
+      <li>store file in <code class="highlighter-rouge">database/data/nameoffile.json</code></li>
+    </ul>
+  </li>
+  <li>Create a Controller
+    <ul>
+      <li>run <code class="highlighter-rouge">php artisan make:controller HomeController</code></li>
+      <li>define public function to contain logic for displaying data from JSON file</li>
+      <li>write code to load JSON file and loop through JSON value</li>
+      <li>and define template at the bottom along with passing <code class="highlighter-rouge">$data</code> from looped json file</li>
+    </ul>
+  </li>
+  <li>Define Controller in Route
+    <ul>
+      <li>replace define function in route to point to controller and its public function</li>
+    </ul>
+  </li>
+  <li>In HomeController, define variables and assign value for JSON file</li>
+  <li>replace static data in templates to use variable from its controller</li>
+  <li>Handle Exceptions
+    <ul>
+      <li><a href="https://scotch.io/tutorials/creating-a-laravel-404-page-using-custom-exception-handlers">https://scotch.io/tutorials/creating-a-laravel-404-page-using-custom-exception-handlers</a></li>
     </ul>
   </li>
 </ol>

@@ -6,8 +6,8 @@
 </description>
     <link>http://rlynjb.github.io/wandrr/</link>
     <atom:link href="http://rlynjb.github.io/wandrr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 28 Feb 2017 15:40:21 -0800</pubDate>
-    <lastBuildDate>Tue, 28 Feb 2017 15:40:21 -0800</lastBuildDate>
+    <pubDate>Thu, 02 Mar 2017 16:47:25 -0800</pubDate>
+    <lastBuildDate>Thu, 02 Mar 2017 16:47:25 -0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -267,7 +267,12 @@ and a mixture of static JSON data and database&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#coding-templates-to-populating-static-data-from-json-file&quot;&gt;Coding templates to populating static data from JSON file&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#from-static-data-to-implementing-a-database&quot;&gt;From Static data to implementing a Database&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#simple-contact-form-sending-emails&quot;&gt;Simple Contact form, Sending Emails&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#intro-to-create-in-crud&quot;&gt;Intro to Create in CRUD&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#intro-to-create-in-crud&quot;&gt;Intro to Create in CRUD&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#method-for-creating-a-contact-form-to-storing-to-db&quot;&gt;Method for creating a contact form to storing in db&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#method-for-converting-static-data-in-template-to-json-object-value&quot;&gt;Method for converting static data in template to JSON object value&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#method-for-developing-a-project-from-scratch&quot;&gt;Method for developing a project from scratch&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#defining-my-specs-for-a-custom-admin-panel&quot;&gt;Defining my specs for a custom Admin Panel&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#building-a-cms-from-scratch&quot;&gt;Building a CMS from scratch&lt;/a&gt;&lt;/li&gt;
@@ -555,6 +560,8 @@ Route::get(&#39;/contact/view&#39;, function() {
   &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/29715813/laravel-5-global-blade-view-variable-available-in-all-templates&quot;&gt;Laravel 5 - global Blade view variable available in all templates&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;hr /&gt;
+
 &lt;h3 id=&quot;method-for-creating-a-contact-form-to-storing-to-db&quot;&gt;Method for creating a Contact Form to storing to DB&lt;/h3&gt;
 
 &lt;ol&gt;
@@ -620,6 +627,40 @@ Route::get(&#39;/contact/view&#39;, function() {
       &lt;/li&gt;
       &lt;li&gt;create a template under &lt;code class=&quot;highlighter-rouge&quot;&gt;resources/views/emails/contact.blade.php&lt;/code&gt;&lt;/li&gt;
       &lt;li&gt;to test, we can use our email address temporarily&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;method-for-converting-static-data-in-template-to-json-object-value&quot;&gt;Method for converting static data in template to JSON object value&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;After templating
+    &lt;ul&gt;
+      &lt;li&gt;structure your JSON data with a template file values&lt;/li&gt;
+      &lt;li&gt;use &lt;a href=&quot;http://jsoneditoronline.org&quot;&gt;http://jsoneditoronline.org&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;store file in &lt;code class=&quot;highlighter-rouge&quot;&gt;database/data/nameoffile.json&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Create a Controller
+    &lt;ul&gt;
+      &lt;li&gt;run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan make:controller HomeController&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;define public function to contain logic for displaying data from JSON file&lt;/li&gt;
+      &lt;li&gt;write code to load JSON file and loop through JSON value&lt;/li&gt;
+      &lt;li&gt;and define template at the bottom along with passing &lt;code class=&quot;highlighter-rouge&quot;&gt;$data&lt;/code&gt; from looped json file&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Define Controller in Route
+    &lt;ul&gt;
+      &lt;li&gt;replace define function in route to point to controller and its public function&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;In HomeController, define variables and assign value for JSON file&lt;/li&gt;
+  &lt;li&gt;replace static data in templates to use variable from its controller&lt;/li&gt;
+  &lt;li&gt;Handle Exceptions
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://scotch.io/tutorials/creating-a-laravel-404-page-using-custom-exception-handlers&quot;&gt;https://scotch.io/tutorials/creating-a-laravel-404-page-using-custom-exception-handlers&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;

@@ -28,6 +28,8 @@ Since I'm going back and forth with this blog post, writing my experience from c
 - [From Static data to implementing a Database](#from-static-data-to-implementing-a-database)
 - [Simple Contact form, Sending Emails](#simple-contact-form-sending-emails)
 - [Intro to Create in CRUD](#intro-to-create-in-crud)
+  - [Method for creating a contact form to storing in db](#method-for-creating-a-contact-form-to-storing-to-db)
+  - [Method for converting static data in template to JSON object value](#method-for-converting-static-data-in-template-to-json-object-value)
 - [Method for developing a project from scratch](#method-for-developing-a-project-from-scratch)
 - [Defining my specs for a custom Admin Panel](#defining-my-specs-for-a-custom-admin-panel)
 - [Building a CMS from scratch](#building-a-cms-from-scratch)
@@ -230,6 +232,8 @@ Below are the resources I used in learning basic CRUD, form handling in Laravel,
 - [Global variable in laravel controller](http://stackoverflow.com/questions/32942379/global-variable-in-laravel-controller)
 - [Laravel 5 - global Blade view variable available in all templates](http://stackoverflow.com/questions/29715813/laravel-5-global-blade-view-variable-available-in-all-templates)
 
+-----
+
 ### Method for creating a Contact Form to storing to DB
 
 1. Template Contact form
@@ -272,6 +276,27 @@ Below are the resources I used in learning basic CRUD, form handling in Laravel,
       - input fields on rules function
     - create a template under `resources/views/emails/contact.blade.php`
     - to test, we can use our email address temporarily
+
+
+-----
+
+### Method for converting static data in template to JSON object value
+
+1. After templating
+  - structure your JSON data with a template file values
+  - use [http://jsoneditoronline.org](http://jsoneditoronline.org)
+  - store file in `database/data/nameoffile.json`
+2. Create a Controller
+  - run `php artisan make:controller HomeController`
+  - define public function to contain logic for displaying data from JSON file
+  - write code to load JSON file and loop through JSON value
+  - and define template at the bottom along with passing `$data` from looped json file
+3. Define Controller in Route
+  - replace define function in route to point to controller and its public function
+4. In HomeController, define variables and assign value for JSON file
+5. replace static data in templates to use variable from its controller
+6. Handle Exceptions
+  - [https://scotch.io/tutorials/creating-a-laravel-404-page-using-custom-exception-handlers](https://scotch.io/tutorials/creating-a-laravel-404-page-using-custom-exception-handlers)
 
 -----
 
