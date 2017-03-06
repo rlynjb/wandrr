@@ -276,6 +276,19 @@ Below are the resources I used in learning basic CRUD, form handling in Laravel,
       - input fields on rules function
     - create a template under `resources/views/emails/contact.blade.php`
     - to test, we can use our email address temporarily
+7. Implement google recaptcha
+  - retrieve site and secret key
+  - load grecaptcha plugin and html tag
+  - author validation google recaptcha code on contact form submit event
+    - ref: [http://stackoverflow.com/questions/37294886/google-recaptcha-with-ajax-form](http://stackoverflow.com/questions/37294886/google-recaptcha-with-ajax-form)
+
+```
+if (grecaptcha.getResponse().length > 0) {
+  ajax call
+else {
+  $('.recaptcha-response').append('Check recaptcha before submmitting form');
+}
+```
 
 
 -----

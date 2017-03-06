@@ -458,7 +458,23 @@ Route::get('/contact/view', function() {
       <li>to test, we can use our email address temporarily</li>
     </ul>
   </li>
+  <li>Implement google recaptcha
+    <ul>
+      <li>retrieve site and secret key</li>
+      <li>load grecaptcha plugin and html tag</li>
+      <li>author validation google recaptcha code on contact form submit event</li>
+      <li>ref: <a href="http://stackoverflow.com/questions/37294886/google-recaptcha-with-ajax-form">http://stackoverflow.com/questions/37294886/google-recaptcha-with-ajax-form</a></li>
+    </ul>
+  </li>
 </ol>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>if (grecaptcha.getResponse().length &gt; 0) {
+  ajax call
+else {
+  $('.recaptcha-response').append('Check recaptcha before submmitting form');
+}
+</code></pre>
+</div>
 
 <hr />
 
