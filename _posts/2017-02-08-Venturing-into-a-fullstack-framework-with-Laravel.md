@@ -328,7 +328,8 @@ else {
   - this will generate the ff. files for authentication
   - warning: this will overwrite your `HomeController`, `home.blade.php`, `layouts > app.blade.php`, and `layouts > footer.blade.php`
   - its best to run this command at the beginning of project or backup your code on github
-4. Compare Auth generated `app.blade.php` file to your original `app.blade.php` file
+4. Compare Auth generated template files to your original login system files
+  - make the necessary changes (modify templates and mv to `/auth`)
   - there are if statements that Authentication may require
   - make sure they are synced in
     - display data for guest users
