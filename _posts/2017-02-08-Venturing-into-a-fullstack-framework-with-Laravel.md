@@ -24,15 +24,18 @@ Since I'm going back and forth with this blog post, writing my experience from c
 - [Learning Resources](#learning-resources)
 - [Getting started with Laravel](#getting-started-with-laravel)
 - [Understanding Laravel's Front-End Workflow](#understanding-laravels-front-end-workflow)
-- [Coding templates to populating static data from JSON file](#coding-templates-to-populating-static-data-from-json-file)
-- [From Static data to implementing a Database](#from-static-data-to-implementing-a-database)
-- [Simple Contact form, Sending Emails](#simple-contact-form-sending-emails)
 - [Intro to Create in CRUD](#intro-to-create-in-crud)
   - [Method for creating a contact form to storing in db](#method-for-creating-a-contact-form-to-storing-to-db)
+    - ref: [Simple Contact form, Sending Emails](#simple-contact-form-sending-emails)
   - [Method for converting static data in template to JSON object value](#method-for-converting-static-data-in-template-to-json-object-value)
-- [Method for developing a project from scratch](#method-for-developing-a-project-from-scratch)
-- [Defining my specs for a custom Admin Panel](#defining-my-specs-for-a-custom-admin-panel)
-- [Building a CMS from scratch](#building-a-cms-from-scratch)
+    - ref: [Coding templates to populating static data from JSON file](#coding-templates-to-populating-static-data-from-json-file)
+    - ref: [From Static data to implementing a Database](#from-static-data-to-implementing-a-database)
+  - [Method for enabling user registration, login, and authentication](#method-for-enabling-user-registration-login-and-authentication)
+  - [Intro to Middleware](#intro-to-middleware)
+  - [Method for creating your own Middleware](#method-for-creating-your-own-middleware)
+- CRUD Editor, plans, misc.
+  - [Defining my specs for a custom Admin Panel](#defining-my-specs-for-a-custom-admin-panel)
+  - [Building a CMS from scratch](#building-a-cms-from-scratch)
 
 -----
 
@@ -314,6 +317,94 @@ else {
 -----
 
 
+### Method for enabling User registration, login, and authentication
+
+1. Make sure you have configured and have access to Database
+2. Run `php artisan migrate`
+  - this takes the script inside and creates database table and its columns in DB
+  - idea: we can write our own database table migration script whenever we need to integrate a db into our forms
+3. Run `php artisan make:auth`
+  - controllers are automatically provided by Laravel
+  - this will generate the ff. files for authentication
+  - warning: this will overwrite your `HomeController`, `home.blade.php`, `layouts > app.blade.php`, and `layouts > footer.blade.php`
+  - its best to run this command at the beginning of project or backup your code on github
+4. Compare Auth generated `app.blade.php` file to your original `app.blade.php` file
+  - there are if statements that Authentication may require
+  - make sure they are synced in
+    - display data for guest users
+    - display data for logged in users
+5. Redirect guest users to your own homepage display instead of Authentication's default login page
+  - Remove `Route::auth()` from `routes.php` and manually declare endpoints
+    - ref: [http://robboyland.com/laravel-auth-how-to-disable-registration](http://robboyland.com/laravel-auth-how-to-disable-registration)
+    - ex. `Route::get('login', 'Auth\AuthController@showLoginForm');`
+    - to display Route list, run `php artisan route:list`
+  - Remove `$this->middleware('auth');` on `app > Http > Controllers > HomeController.php` file
+6. Next is to setup Middleware
+
+video ref: [https://www.youtube.com/watch?v=bqkt6eSsRZs](https://www.youtube.com/watch?v=bqkt6eSsRZs)
+
+
+-----
+
+### Intro to Middleware
+
+Middleware is a way of protecting routes or running code before and after a route is run.
+
+Defining Middleware in routes is ok, but since we are going to reuse this type of authentication, we need to transfer this code from route to a middleware or use a pre-existing Laravel Middleware.
+
+```
+Route::get('home', function () {
+  if ( Auth::guest() ) {
+    return Redirect::to('auth/login');
+  } else {
+    echo 'Welcome home ' . Auth::user()->email . '.';
+  }
+});
+```
+
+Middlewares can be seen at `app > Http > Middleware > Authenticate.php`
+
+To Check which Middleware class to use `app > Http > Middleware > Kernel.php`
+
+In `Route.php`, Middleware can be define as:
+
+```
+Route::get('home', ['middleware' => 'auth', function() {
+  echo 'Welcome home ' . Auth::user()->email . '.';
+}]);
+```
+
+video ref: [https://www.youtube.com/watch?v=bWhJJJwMvco](https://www.youtube.com/watch?v=bWhJJJwMvco)
+
+doc ref: [Laravel Doc Middleware](https://laravel.com/docs/5.4/middleware)
+
+-----
+
+### Method for creating your own Middleware
+
+We can create our own Middleware. ex would be Role Permissions
+
+1. Run `php artisan make:middleware Admin`
+  - this generates `app > Http > Middleware > Admin.php`
+2. Since we are going to use the same Authenticate Middleware
+  - Copy and Paste the ff. section of code from `app > Http > Middleware > Authenticate.php` at the beginning of Admin PHP class file.
+    - `The Guard implementation`
+    - `Create a new filter instance`
+  - Copy and paste `use Illuminate\Contracts\Auth\Guard;`
+  - Copy and paste code inside handle function
+3. Write code at the 2nd ifelse statement
+4. Route new Middleware in `app > Http > Kernal.php` by copy and pasting path below
+
+```
+protected $routeMiddleware = [
+  'auth' => \App\Http\Middleware\Authenticate::class,
+
+  'admin' => \App\Http\Middleware\Admin::class,
+];
+```
+
+-----
+
 # Defining my specs for a custom Admin Panel
 
 My admin panel specs are:
@@ -337,33 +428,3 @@ My admin panel specs are:
 
 - [Read-Write JSON file using PHP](http://www.kodecrash.com/javascript/read-write-json-file-using-php/)
 - [Creating a SCRUD System Using jQuery, JSON and DataTables](https://www.sitepoint.com/creating-a-scrud-system-using-jquery-json-and-datatables/)
-
-
------
-
-# Method for developing a project from scratch
-
-### Setting up a project
-
-1. Setup Laravel, server, github repo, and configure FEF theme.
-
-
-### Coding a theme with FEF Theme
-
-[FEF Theme](https://github.com/rlynjb/frontendflow) is my baby project. It includes my front end workflow with css framework and javascript plugins I often used. It also includes a collection of solutions to common interaction and browser compatibility issues.
-
-1. Code layout per page including UX.
-  - place image placeholders and text.
-  - determine responsiveness
-  - determine user interaction of different components to be use
-2. Code overall style, brand, typography
-3. Add in basic CSS3 transitions
-
-
-### Structuring Content with JSON
-
-1. Per page, define fields and determine if its content type, regular page, form, etc.
-2. Code fields into json file
-3. Convert json files to be editable
-  - modify Routing and Controllers
-  - modify Views to use data passed from json to Controllers

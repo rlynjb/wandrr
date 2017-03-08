@@ -93,18 +93,30 @@
   <li><a href="#learning-resources">Learning Resources</a></li>
   <li><a href="#getting-started-with-laravel">Getting started with Laravel</a></li>
   <li><a href="#understanding-laravels-front-end-workflow">Understanding Laravel’s Front-End Workflow</a></li>
-  <li><a href="#coding-templates-to-populating-static-data-from-json-file">Coding templates to populating static data from JSON file</a></li>
-  <li><a href="#from-static-data-to-implementing-a-database">From Static data to implementing a Database</a></li>
-  <li><a href="#simple-contact-form-sending-emails">Simple Contact form, Sending Emails</a></li>
   <li><a href="#intro-to-create-in-crud">Intro to Create in CRUD</a>
     <ul>
-      <li><a href="#method-for-creating-a-contact-form-to-storing-to-db">Method for creating a contact form to storing in db</a></li>
-      <li><a href="#method-for-converting-static-data-in-template-to-json-object-value">Method for converting static data in template to JSON object value</a></li>
+      <li><a href="#method-for-creating-a-contact-form-to-storing-to-db">Method for creating a contact form to storing in db</a>
+        <ul>
+          <li>ref: <a href="#simple-contact-form-sending-emails">Simple Contact form, Sending Emails</a></li>
+        </ul>
+      </li>
+      <li><a href="#method-for-converting-static-data-in-template-to-json-object-value">Method for converting static data in template to JSON object value</a>
+        <ul>
+          <li>ref: <a href="#coding-templates-to-populating-static-data-from-json-file">Coding templates to populating static data from JSON file</a></li>
+          <li>ref: <a href="#from-static-data-to-implementing-a-database">From Static data to implementing a Database</a></li>
+        </ul>
+      </li>
+      <li><a href="#method-for-enabling-user-registration-login-and-authentication">Method for enabling user registration, login, and authentication</a></li>
+      <li><a href="#intro-to-middleware">Intro to Middleware</a></li>
+      <li><a href="#method-for-creating-your-own-middleware">Method for creating your own Middleware</a></li>
     </ul>
   </li>
-  <li><a href="#method-for-developing-a-project-from-scratch">Method for developing a project from scratch</a></li>
-  <li><a href="#defining-my-specs-for-a-custom-admin-panel">Defining my specs for a custom Admin Panel</a></li>
-  <li><a href="#building-a-cms-from-scratch">Building a CMS from scratch</a></li>
+  <li>CRUD Editor, plans, misc.
+    <ul>
+      <li><a href="#defining-my-specs-for-a-custom-admin-panel">Defining my specs for a custom Admin Panel</a></li>
+      <li><a href="#building-a-cms-from-scratch">Building a CMS from scratch</a></li>
+    </ul>
+  </li>
 </ul>
 
 <hr />
@@ -512,6 +524,115 @@ else {
 
 <hr />
 
+<h3 id="method-for-enabling-user-registration-login-and-authentication">Method for enabling User registration, login, and authentication</h3>
+
+<ol>
+  <li>Make sure you have configured and have access to Database</li>
+  <li>Run <code class="highlighter-rouge">php artisan migrate</code>
+    <ul>
+      <li>this takes the script inside and creates database table and its columns in DB</li>
+      <li>idea: we can write our own database table migration script whenever we need to integrate a db into our forms</li>
+    </ul>
+  </li>
+  <li>Run <code class="highlighter-rouge">php artisan make:auth</code>
+    <ul>
+      <li>controllers are automatically provided by Laravel</li>
+      <li>this will generate the ff. files for authentication</li>
+      <li>warning: this will overwrite your <code class="highlighter-rouge">HomeController</code>, <code class="highlighter-rouge">home.blade.php</code>, <code class="highlighter-rouge">layouts &gt; app.blade.php</code>, and <code class="highlighter-rouge">layouts &gt; footer.blade.php</code></li>
+      <li>its best to run this command at the beginning of project or backup your code on github</li>
+    </ul>
+  </li>
+  <li>Compare Auth generated <code class="highlighter-rouge">app.blade.php</code> file to your original <code class="highlighter-rouge">app.blade.php</code> file
+    <ul>
+      <li>there are if statements that Authentication may require</li>
+      <li>make sure they are synced in</li>
+      <li>display data for guest users</li>
+      <li>display data for logged in users</li>
+    </ul>
+  </li>
+  <li>Redirect guest users to your own homepage display instead of Authentication’s default login page
+    <ul>
+      <li>Remove <code class="highlighter-rouge">Route::auth()</code> from <code class="highlighter-rouge">routes.php</code> and manually declare endpoints</li>
+      <li>ref: <a href="http://robboyland.com/laravel-auth-how-to-disable-registration">http://robboyland.com/laravel-auth-how-to-disable-registration</a></li>
+      <li>ex. <code class="highlighter-rouge">Route::get('login', 'Auth\AuthController@showLoginForm');</code></li>
+      <li>to display Route list, run <code class="highlighter-rouge">php artisan route:list</code></li>
+      <li>Remove <code class="highlighter-rouge">$this-&gt;middleware('auth');</code> on <code class="highlighter-rouge">app &gt; Http &gt; Controllers &gt; HomeController.php</code> file</li>
+    </ul>
+  </li>
+  <li>Next is to setup Middleware</li>
+</ol>
+
+<p>video ref: <a href="https://www.youtube.com/watch?v=bqkt6eSsRZs">https://www.youtube.com/watch?v=bqkt6eSsRZs</a></p>
+
+<hr />
+
+<h3 id="intro-to-middleware">Intro to Middleware</h3>
+
+<p>Middleware is a way of protecting routes or running code before and after a route is run.</p>
+
+<p>Defining Middleware in routes is ok, but since we are going to reuse this type of authentication, we need to transfer this code from route to a middleware or use a pre-existing Laravel Middleware.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Route::get('home', function () {
+  if ( Auth::guest() ) {
+    return Redirect::to('auth/login');
+  } else {
+    echo 'Welcome home ' . Auth::user()-&gt;email . '.';
+  }
+});
+</code></pre>
+</div>
+
+<p>Middlewares can be seen at <code class="highlighter-rouge">app &gt; Http &gt; Middleware &gt; Authenticate.php</code></p>
+
+<p>To Check which Middleware class to use <code class="highlighter-rouge">app &gt; Http &gt; Middleware &gt; Kernel.php</code></p>
+
+<p>In <code class="highlighter-rouge">Route.php</code>, Middleware can be define as:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Route::get('home', ['middleware' =&gt; 'auth', function() {
+  echo 'Welcome home ' . Auth::user()-&gt;email . '.';
+}]);
+</code></pre>
+</div>
+
+<p>video ref: <a href="https://www.youtube.com/watch?v=bWhJJJwMvco">https://www.youtube.com/watch?v=bWhJJJwMvco</a></p>
+
+<p>doc ref: <a href="https://laravel.com/docs/5.4/middleware">Laravel Doc Middleware</a></p>
+
+<hr />
+
+<h3 id="method-for-creating-your-own-middleware">Method for creating your own Middleware</h3>
+
+<p>We can create our own Middleware. ex would be Role Permissions</p>
+
+<ol>
+  <li>Run <code class="highlighter-rouge">php artisan make:middleware Admin</code>
+    <ul>
+      <li>this generates <code class="highlighter-rouge">app &gt; Http &gt; Middleware &gt; Admin.php</code></li>
+    </ul>
+  </li>
+  <li>Since we are going to use the same Authenticate Middleware
+    <ul>
+      <li>Copy and Paste the ff. section of code from <code class="highlighter-rouge">app &gt; Http &gt; Middleware &gt; Authenticate.php</code> at the beginning of Admin PHP class file.</li>
+      <li><code class="highlighter-rouge">The Guard implementation</code></li>
+      <li><code class="highlighter-rouge">Create a new filter instance</code></li>
+      <li>Copy and paste <code class="highlighter-rouge">use Illuminate\Contracts\Auth\Guard;</code></li>
+      <li>Copy and paste code inside handle function</li>
+    </ul>
+  </li>
+  <li>Write code at the 2nd ifelse statement</li>
+  <li>Route new Middleware in <code class="highlighter-rouge">app &gt; Http &gt; Kernal.php</code> by copy and pasting path below</li>
+</ol>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>protected $routeMiddleware = [
+  'auth' =&gt; \App\Http\Middleware\Authenticate::class,
+
+  'admin' =&gt; \App\Http\Middleware\Admin::class,
+];
+</code></pre>
+</div>
+
+<hr />
+
 <h1 id="defining-my-specs-for-a-custom-admin-panel">Defining my specs for a custom Admin Panel</h1>
 
 <p>My admin panel specs are:</p>
@@ -544,45 +665,6 @@ else {
   <li><a href="http://www.kodecrash.com/javascript/read-write-json-file-using-php/">Read-Write JSON file using PHP</a></li>
   <li><a href="https://www.sitepoint.com/creating-a-scrud-system-using-jquery-json-and-datatables/">Creating a SCRUD System Using jQuery, JSON and DataTables</a></li>
 </ul>
-
-<hr />
-
-<h1 id="method-for-developing-a-project-from-scratch">Method for developing a project from scratch</h1>
-
-<h3 id="setting-up-a-project">Setting up a project</h3>
-
-<ol>
-  <li>Setup Laravel, server, github repo, and configure FEF theme.</li>
-</ol>
-
-<h3 id="coding-a-theme-with-fef-theme">Coding a theme with FEF Theme</h3>
-
-<p><a href="https://github.com/rlynjb/frontendflow">FEF Theme</a> is my baby project. It includes my front end workflow with css framework and javascript plugins I often used. It also includes a collection of solutions to common interaction and browser compatibility issues.</p>
-
-<ol>
-  <li>Code layout per page including UX.
-    <ul>
-      <li>place image placeholders and text.</li>
-      <li>determine responsiveness</li>
-      <li>determine user interaction of different components to be use</li>
-    </ul>
-  </li>
-  <li>Code overall style, brand, typography</li>
-  <li>Add in basic CSS3 transitions</li>
-</ol>
-
-<h3 id="structuring-content-with-json">Structuring Content with JSON</h3>
-
-<ol>
-  <li>Per page, define fields and determine if its content type, regular page, form, etc.</li>
-  <li>Code fields into json file</li>
-  <li>Convert json files to be editable
-    <ul>
-      <li>modify Routing and Controllers</li>
-      <li>modify Views to use data passed from json to Controllers</li>
-    </ul>
-  </li>
-</ol>
 
   </article>
 

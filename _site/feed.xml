@@ -6,8 +6,8 @@
 </description>
     <link>http://rlynjb.github.io/wandrr/</link>
     <atom:link href="http://rlynjb.github.io/wandrr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 06 Mar 2017 14:23:52 -0800</pubDate>
-    <lastBuildDate>Mon, 06 Mar 2017 14:23:52 -0800</lastBuildDate>
+    <pubDate>Tue, 07 Mar 2017 17:41:40 -0800</pubDate>
+    <lastBuildDate>Tue, 07 Mar 2017 17:41:40 -0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -264,18 +264,30 @@ and a mixture of static JSON data and database&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#learning-resources&quot;&gt;Learning Resources&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#getting-started-with-laravel&quot;&gt;Getting started with Laravel&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#understanding-laravels-front-end-workflow&quot;&gt;Understanding Laravel’s Front-End Workflow&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#coding-templates-to-populating-static-data-from-json-file&quot;&gt;Coding templates to populating static data from JSON file&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#from-static-data-to-implementing-a-database&quot;&gt;From Static data to implementing a Database&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#simple-contact-form-sending-emails&quot;&gt;Simple Contact form, Sending Emails&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#intro-to-create-in-crud&quot;&gt;Intro to Create in CRUD&lt;/a&gt;
     &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#method-for-creating-a-contact-form-to-storing-to-db&quot;&gt;Method for creating a contact form to storing in db&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#method-for-converting-static-data-in-template-to-json-object-value&quot;&gt;Method for converting static data in template to JSON object value&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#method-for-creating-a-contact-form-to-storing-to-db&quot;&gt;Method for creating a contact form to storing in db&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;ref: &lt;a href=&quot;#simple-contact-form-sending-emails&quot;&gt;Simple Contact form, Sending Emails&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#method-for-converting-static-data-in-template-to-json-object-value&quot;&gt;Method for converting static data in template to JSON object value&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;ref: &lt;a href=&quot;#coding-templates-to-populating-static-data-from-json-file&quot;&gt;Coding templates to populating static data from JSON file&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;ref: &lt;a href=&quot;#from-static-data-to-implementing-a-database&quot;&gt;From Static data to implementing a Database&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#method-for-enabling-user-registration-login-and-authentication&quot;&gt;Method for enabling user registration, login, and authentication&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#intro-to-middleware&quot;&gt;Intro to Middleware&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#method-for-creating-your-own-middleware&quot;&gt;Method for creating your own Middleware&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#method-for-developing-a-project-from-scratch&quot;&gt;Method for developing a project from scratch&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#defining-my-specs-for-a-custom-admin-panel&quot;&gt;Defining my specs for a custom Admin Panel&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#building-a-cms-from-scratch&quot;&gt;Building a CMS from scratch&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;CRUD Editor, plans, misc.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#defining-my-specs-for-a-custom-admin-panel&quot;&gt;Defining my specs for a custom Admin Panel&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#building-a-cms-from-scratch&quot;&gt;Building a CMS from scratch&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
@@ -683,6 +695,115 @@ else {
 
 &lt;hr /&gt;
 
+&lt;h3 id=&quot;method-for-enabling-user-registration-login-and-authentication&quot;&gt;Method for enabling User registration, login, and authentication&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Make sure you have configured and have access to Database&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan migrate&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;this takes the script inside and creates database table and its columns in DB&lt;/li&gt;
+      &lt;li&gt;idea: we can write our own database table migration script whenever we need to integrate a db into our forms&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan make:auth&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;controllers are automatically provided by Laravel&lt;/li&gt;
+      &lt;li&gt;this will generate the ff. files for authentication&lt;/li&gt;
+      &lt;li&gt;warning: this will overwrite your &lt;code class=&quot;highlighter-rouge&quot;&gt;HomeController&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;home.blade.php&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;layouts &amp;gt; app.blade.php&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;layouts &amp;gt; footer.blade.php&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;its best to run this command at the beginning of project or backup your code on github&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Compare Auth generated &lt;code class=&quot;highlighter-rouge&quot;&gt;app.blade.php&lt;/code&gt; file to your original &lt;code class=&quot;highlighter-rouge&quot;&gt;app.blade.php&lt;/code&gt; file
+    &lt;ul&gt;
+      &lt;li&gt;there are if statements that Authentication may require&lt;/li&gt;
+      &lt;li&gt;make sure they are synced in&lt;/li&gt;
+      &lt;li&gt;display data for guest users&lt;/li&gt;
+      &lt;li&gt;display data for logged in users&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Redirect guest users to your own homepage display instead of Authentication’s default login page
+    &lt;ul&gt;
+      &lt;li&gt;Remove &lt;code class=&quot;highlighter-rouge&quot;&gt;Route::auth()&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;routes.php&lt;/code&gt; and manually declare endpoints&lt;/li&gt;
+      &lt;li&gt;ref: &lt;a href=&quot;http://robboyland.com/laravel-auth-how-to-disable-registration&quot;&gt;http://robboyland.com/laravel-auth-how-to-disable-registration&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;ex. &lt;code class=&quot;highlighter-rouge&quot;&gt;Route::get(&#39;login&#39;, &#39;Auth\AuthController@showLoginForm&#39;);&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;to display Route list, run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan route:list&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Remove &lt;code class=&quot;highlighter-rouge&quot;&gt;$this-&amp;gt;middleware(&#39;auth&#39;);&lt;/code&gt; on &lt;code class=&quot;highlighter-rouge&quot;&gt;app &amp;gt; Http &amp;gt; Controllers &amp;gt; HomeController.php&lt;/code&gt; file&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Next is to setup Middleware&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;video ref: &lt;a href=&quot;https://www.youtube.com/watch?v=bqkt6eSsRZs&quot;&gt;https://www.youtube.com/watch?v=bqkt6eSsRZs&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;intro-to-middleware&quot;&gt;Intro to Middleware&lt;/h3&gt;
+
+&lt;p&gt;Middleware is a way of protecting routes or running code before and after a route is run.&lt;/p&gt;
+
+&lt;p&gt;Defining Middleware in routes is ok, but since we are going to reuse this type of authentication, we need to transfer this code from route to a middleware or use a pre-existing Laravel Middleware.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Route::get(&#39;home&#39;, function () {
+  if ( Auth::guest() ) {
+    return Redirect::to(&#39;auth/login&#39;);
+  } else {
+    echo &#39;Welcome home &#39; . Auth::user()-&amp;gt;email . &#39;.&#39;;
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Middlewares can be seen at &lt;code class=&quot;highlighter-rouge&quot;&gt;app &amp;gt; Http &amp;gt; Middleware &amp;gt; Authenticate.php&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;To Check which Middleware class to use &lt;code class=&quot;highlighter-rouge&quot;&gt;app &amp;gt; Http &amp;gt; Middleware &amp;gt; Kernel.php&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In &lt;code class=&quot;highlighter-rouge&quot;&gt;Route.php&lt;/code&gt;, Middleware can be define as:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Route::get(&#39;home&#39;, [&#39;middleware&#39; =&amp;gt; &#39;auth&#39;, function() {
+  echo &#39;Welcome home &#39; . Auth::user()-&amp;gt;email . &#39;.&#39;;
+}]);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;video ref: &lt;a href=&quot;https://www.youtube.com/watch?v=bWhJJJwMvco&quot;&gt;https://www.youtube.com/watch?v=bWhJJJwMvco&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;doc ref: &lt;a href=&quot;https://laravel.com/docs/5.4/middleware&quot;&gt;Laravel Doc Middleware&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;method-for-creating-your-own-middleware&quot;&gt;Method for creating your own Middleware&lt;/h3&gt;
+
+&lt;p&gt;We can create our own Middleware. ex would be Role Permissions&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan make:middleware Admin&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;this generates &lt;code class=&quot;highlighter-rouge&quot;&gt;app &amp;gt; Http &amp;gt; Middleware &amp;gt; Admin.php&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Since we are going to use the same Authenticate Middleware
+    &lt;ul&gt;
+      &lt;li&gt;Copy and Paste the ff. section of code from &lt;code class=&quot;highlighter-rouge&quot;&gt;app &amp;gt; Http &amp;gt; Middleware &amp;gt; Authenticate.php&lt;/code&gt; at the beginning of Admin PHP class file.&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;The Guard implementation&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Create a new filter instance&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Copy and paste &lt;code class=&quot;highlighter-rouge&quot;&gt;use Illuminate\Contracts\Auth\Guard;&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Copy and paste code inside handle function&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Write code at the 2nd ifelse statement&lt;/li&gt;
+  &lt;li&gt;Route new Middleware in &lt;code class=&quot;highlighter-rouge&quot;&gt;app &amp;gt; Http &amp;gt; Kernal.php&lt;/code&gt; by copy and pasting path below&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;protected $routeMiddleware = [
+  &#39;auth&#39; =&amp;gt; \App\Http\Middleware\Authenticate::class,
+
+  &#39;admin&#39; =&amp;gt; \App\Http\Middleware\Admin::class,
+];
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
 &lt;h1 id=&quot;defining-my-specs-for-a-custom-admin-panel&quot;&gt;Defining my specs for a custom Admin Panel&lt;/h1&gt;
 
 &lt;p&gt;My admin panel specs are:&lt;/p&gt;
@@ -715,45 +836,6 @@ else {
   &lt;li&gt;&lt;a href=&quot;http://www.kodecrash.com/javascript/read-write-json-file-using-php/&quot;&gt;Read-Write JSON file using PHP&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.sitepoint.com/creating-a-scrud-system-using-jquery-json-and-datatables/&quot;&gt;Creating a SCRUD System Using jQuery, JSON and DataTables&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;method-for-developing-a-project-from-scratch&quot;&gt;Method for developing a project from scratch&lt;/h1&gt;
-
-&lt;h3 id=&quot;setting-up-a-project&quot;&gt;Setting up a project&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Setup Laravel, server, github repo, and configure FEF theme.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;coding-a-theme-with-fef-theme&quot;&gt;Coding a theme with FEF Theme&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/rlynjb/frontendflow&quot;&gt;FEF Theme&lt;/a&gt; is my baby project. It includes my front end workflow with css framework and javascript plugins I often used. It also includes a collection of solutions to common interaction and browser compatibility issues.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Code layout per page including UX.
-    &lt;ul&gt;
-      &lt;li&gt;place image placeholders and text.&lt;/li&gt;
-      &lt;li&gt;determine responsiveness&lt;/li&gt;
-      &lt;li&gt;determine user interaction of different components to be use&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Code overall style, brand, typography&lt;/li&gt;
-  &lt;li&gt;Add in basic CSS3 transitions&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;structuring-content-with-json&quot;&gt;Structuring Content with JSON&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Per page, define fields and determine if its content type, regular page, form, etc.&lt;/li&gt;
-  &lt;li&gt;Code fields into json file&lt;/li&gt;
-  &lt;li&gt;Convert json files to be editable
-    &lt;ul&gt;
-      &lt;li&gt;modify Routing and Controllers&lt;/li&gt;
-      &lt;li&gt;modify Views to use data passed from json to Controllers&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
 </description>
         <pubDate>Wed, 08 Feb 2017 02:58:47 -0800</pubDate>
         <link>http://rlynjb.github.io/wandrr/Venturing-into-a-fullstack-framework-with-Laravel</link>
