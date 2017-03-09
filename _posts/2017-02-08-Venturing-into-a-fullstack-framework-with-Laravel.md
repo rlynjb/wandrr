@@ -320,8 +320,12 @@ else {
 ### Method for enabling User registration, login, and authentication
 
 1. Make sure you have configured and have access to Database
-2. Run `php artisan migrate`
+2. Run `php artisan migrate` to setup database tables and its columns
   - this takes the script inside and creates database table and its columns in DB
+    - ref: [Laravel Database: Migration](https://laravel.com/docs/5.4/migrations)
+  - make sure you use PHP 7 on server-level rather than virtual (directory) level
+  - while running command, i came across an issue
+    - ref: [laravel 5.4 key too long issue](https://laravel-news.com/laravel-5-4-key-too-long-error)
   - idea: we can write our own database table migration script whenever we need to integrate a db into our forms
 3. Run `php artisan make:auth`
   - controllers are automatically provided by Laravel
@@ -335,12 +339,31 @@ else {
     - display data for guest users
     - display data for logged in users
 5. Redirect guest users to your own homepage display instead of Authentication's default login page
+  - if were using all endpoints (`login`, `logout`, `register`, `password email`, `password request`, `password reset`), no need to remove `Route::auth` from `routes.php` file.
   - Remove `Route::auth()` from `routes.php` and manually declare endpoints
     - ref: [http://robboyland.com/laravel-auth-how-to-disable-registration](http://robboyland.com/laravel-auth-how-to-disable-registration)
     - ex. `Route::get('login', 'Auth\AuthController@showLoginForm');`
     - to display Route list, run `php artisan route:list`
+  - Remove `Route::get('/home', 'HomeController@index');` from `routes.php` file
   - Remove `$this->middleware('auth');` on `app > Http > Controllers > HomeController.php` file
-6. Next is to setup Middleware
+6. after login success, set redirection page
+  - change path `protected $redirectTo = '/home'` in `app/Http/Controller/Auth`
+  - ref: [login registration redirect fix](http://www.easylaravelbook.com/blog/2015/03/11/changing-the-laravel-redirect-location-after-login/)
+  - same method goes with after Registration page
+7. Add custom fields to Registration Form
+  - ref: [Adding Custom Fields to a Laravel 5 Registration Form](http://www.easylaravelbook.com/blog/2015/09/25/adding-custom-fields-to-a-laravel-5-registration-form/)
+8. Transfer old registration controller code logic to the new Auth registration controller
+9. Protect private data or elements in templates from public view
+
+```
+@if ( Auth::guest() )
+  // html elements or data here
+@else
+  // html elements or data here
+@endif
+```
+
+**Next is to setup Middleware**
 
 video ref: [https://www.youtube.com/watch?v=bqkt6eSsRZs](https://www.youtube.com/watch?v=bqkt6eSsRZs)
 

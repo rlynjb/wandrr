@@ -528,9 +528,13 @@ else {
 
 <ol>
   <li>Make sure you have configured and have access to Database</li>
-  <li>Run <code class="highlighter-rouge">php artisan migrate</code>
+  <li>Run <code class="highlighter-rouge">php artisan migrate</code> to setup database tables and its columns
     <ul>
       <li>this takes the script inside and creates database table and its columns in DB</li>
+      <li>ref: <a href="https://laravel.com/docs/5.4/migrations">Laravel Database: Migration</a></li>
+      <li>make sure you use PHP 7 on server-level rather than virtual (directory) level</li>
+      <li>while running command, i came across an issue</li>
+      <li>ref: <a href="https://laravel-news.com/laravel-5-4-key-too-long-error">laravel 5.4 key too long issue</a></li>
       <li>idea: we can write our own database table migration script whenever we need to integrate a db into our forms</li>
     </ul>
   </li>
@@ -553,15 +557,40 @@ else {
   </li>
   <li>Redirect guest users to your own homepage display instead of Authentication’s default login page
     <ul>
+      <li>if were using all endpoints (<code class="highlighter-rouge">login</code>, <code class="highlighter-rouge">logout</code>, <code class="highlighter-rouge">register</code>, <code class="highlighter-rouge">password email</code>, <code class="highlighter-rouge">password request</code>, <code class="highlighter-rouge">password reset</code>), no need to remove <code class="highlighter-rouge">Route::auth</code> from <code class="highlighter-rouge">routes.php</code> file.</li>
       <li>Remove <code class="highlighter-rouge">Route::auth()</code> from <code class="highlighter-rouge">routes.php</code> and manually declare endpoints</li>
       <li>ref: <a href="http://robboyland.com/laravel-auth-how-to-disable-registration">http://robboyland.com/laravel-auth-how-to-disable-registration</a></li>
       <li>ex. <code class="highlighter-rouge">Route::get('login', 'Auth\AuthController@showLoginForm');</code></li>
       <li>to display Route list, run <code class="highlighter-rouge">php artisan route:list</code></li>
+      <li>Remove <code class="highlighter-rouge">Route::get('/home', 'HomeController@index');</code> from <code class="highlighter-rouge">routes.php</code> file</li>
       <li>Remove <code class="highlighter-rouge">$this-&gt;middleware('auth');</code> on <code class="highlighter-rouge">app &gt; Http &gt; Controllers &gt; HomeController.php</code> file</li>
     </ul>
   </li>
-  <li>Next is to setup Middleware</li>
+  <li>after login success, set redirection page
+    <ul>
+      <li>change path <code class="highlighter-rouge">protected $redirectTo = '/home'</code> in <code class="highlighter-rouge">app/Http/Controller/Auth</code></li>
+      <li>ref: <a href="http://www.easylaravelbook.com/blog/2015/03/11/changing-the-laravel-redirect-location-after-login/">login registration redirect fix</a></li>
+      <li>same method goes with after Registration page</li>
+    </ul>
+  </li>
+  <li>Add custom fields to Registration Form
+    <ul>
+      <li>ref: <a href="http://www.easylaravelbook.com/blog/2015/09/25/adding-custom-fields-to-a-laravel-5-registration-form/">Adding Custom Fields to a Laravel 5 Registration Form</a></li>
+    </ul>
+  </li>
+  <li>Transfer old registration controller code logic to the new Auth registration controller</li>
+  <li>Protect private data or elements in templates from public view</li>
 </ol>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>@if ( Auth::guest() )
+  // html elements or data here
+@else
+  // html elements or data here
+@endif
+</code></pre>
+</div>
+
+<p><strong>Next is to setup Middleware</strong></p>
 
 <p>video ref: <a href="https://www.youtube.com/watch?v=bqkt6eSsRZs">https://www.youtube.com/watch?v=bqkt6eSsRZs</a></p>
 

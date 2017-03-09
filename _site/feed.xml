@@ -6,8 +6,8 @@
 </description>
     <link>http://rlynjb.github.io/wandrr/</link>
     <atom:link href="http://rlynjb.github.io/wandrr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 08 Mar 2017 11:15:05 -0800</pubDate>
-    <lastBuildDate>Wed, 08 Mar 2017 11:15:05 -0800</lastBuildDate>
+    <pubDate>Thu, 09 Mar 2017 10:19:47 -0800</pubDate>
+    <lastBuildDate>Thu, 09 Mar 2017 10:19:47 -0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -699,9 +699,13 @@ else {
 
 &lt;ol&gt;
   &lt;li&gt;Make sure you have configured and have access to Database&lt;/li&gt;
-  &lt;li&gt;Run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan migrate&lt;/code&gt;
+  &lt;li&gt;Run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan migrate&lt;/code&gt; to setup database tables and its columns
     &lt;ul&gt;
       &lt;li&gt;this takes the script inside and creates database table and its columns in DB&lt;/li&gt;
+      &lt;li&gt;ref: &lt;a href=&quot;https://laravel.com/docs/5.4/migrations&quot;&gt;Laravel Database: Migration&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;make sure you use PHP 7 on server-level rather than virtual (directory) level&lt;/li&gt;
+      &lt;li&gt;while running command, i came across an issue&lt;/li&gt;
+      &lt;li&gt;ref: &lt;a href=&quot;https://laravel-news.com/laravel-5-4-key-too-long-error&quot;&gt;laravel 5.4 key too long issue&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;idea: we can write our own database table migration script whenever we need to integrate a db into our forms&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -724,15 +728,40 @@ else {
   &lt;/li&gt;
   &lt;li&gt;Redirect guest users to your own homepage display instead of Authentication’s default login page
     &lt;ul&gt;
+      &lt;li&gt;if were using all endpoints (&lt;code class=&quot;highlighter-rouge&quot;&gt;login&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;logout&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;register&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;password email&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;password request&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;password reset&lt;/code&gt;), no need to remove &lt;code class=&quot;highlighter-rouge&quot;&gt;Route::auth&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;routes.php&lt;/code&gt; file.&lt;/li&gt;
       &lt;li&gt;Remove &lt;code class=&quot;highlighter-rouge&quot;&gt;Route::auth()&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;routes.php&lt;/code&gt; and manually declare endpoints&lt;/li&gt;
       &lt;li&gt;ref: &lt;a href=&quot;http://robboyland.com/laravel-auth-how-to-disable-registration&quot;&gt;http://robboyland.com/laravel-auth-how-to-disable-registration&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;ex. &lt;code class=&quot;highlighter-rouge&quot;&gt;Route::get(&#39;login&#39;, &#39;Auth\AuthController@showLoginForm&#39;);&lt;/code&gt;&lt;/li&gt;
       &lt;li&gt;to display Route list, run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan route:list&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Remove &lt;code class=&quot;highlighter-rouge&quot;&gt;Route::get(&#39;/home&#39;, &#39;HomeController@index&#39;);&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;routes.php&lt;/code&gt; file&lt;/li&gt;
       &lt;li&gt;Remove &lt;code class=&quot;highlighter-rouge&quot;&gt;$this-&amp;gt;middleware(&#39;auth&#39;);&lt;/code&gt; on &lt;code class=&quot;highlighter-rouge&quot;&gt;app &amp;gt; Http &amp;gt; Controllers &amp;gt; HomeController.php&lt;/code&gt; file&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;Next is to setup Middleware&lt;/li&gt;
+  &lt;li&gt;after login success, set redirection page
+    &lt;ul&gt;
+      &lt;li&gt;change path &lt;code class=&quot;highlighter-rouge&quot;&gt;protected $redirectTo = &#39;/home&#39;&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;app/Http/Controller/Auth&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;ref: &lt;a href=&quot;http://www.easylaravelbook.com/blog/2015/03/11/changing-the-laravel-redirect-location-after-login/&quot;&gt;login registration redirect fix&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;same method goes with after Registration page&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Add custom fields to Registration Form
+    &lt;ul&gt;
+      &lt;li&gt;ref: &lt;a href=&quot;http://www.easylaravelbook.com/blog/2015/09/25/adding-custom-fields-to-a-laravel-5-registration-form/&quot;&gt;Adding Custom Fields to a Laravel 5 Registration Form&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Transfer old registration controller code logic to the new Auth registration controller&lt;/li&gt;
+  &lt;li&gt;Protect private data or elements in templates from public view&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@if ( Auth::guest() )
+  // html elements or data here
+@else
+  // html elements or data here
+@endif
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Next is to setup Middleware&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;video ref: &lt;a href=&quot;https://www.youtube.com/watch?v=bqkt6eSsRZs&quot;&gt;https://www.youtube.com/watch?v=bqkt6eSsRZs&lt;/a&gt;&lt;/p&gt;
 
