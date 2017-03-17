@@ -30,7 +30,12 @@ Since I'm going back and forth with this blog post, writing my experience from c
   - [Method for converting static data in template to JSON object value](#method-for-converting-static-data-in-template-to-json-object-value)
     - ref: [Coding templates to populating static data from JSON file](#coding-templates-to-populating-static-data-from-json-file)
     - ref: [From Static data to implementing a Database](#from-static-data-to-implementing-a-database)
+  - Method for building Complete CRUD
+- User Authentication and Roles
   - [Method for enabling user registration, login, and authentication](#method-for-enabling-user-registration-login-and-authentication)
+  - Setting up User Roles and coding its methods
+  - Using User Roles in Controllers and Templates
+  - Using User Roles in Middleware
   - [Intro to Middleware](#intro-to-middleware)
   - [Method for creating your own Middleware](#method-for-creating-your-own-middleware)
 - CRUD Editor, plans, misc.

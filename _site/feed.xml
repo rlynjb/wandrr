@@ -6,8 +6,8 @@
 </description>
     <link>http://rlynjb.github.io/wandrr/</link>
     <atom:link href="http://rlynjb.github.io/wandrr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 09 Mar 2017 10:19:47 -0800</pubDate>
-    <lastBuildDate>Thu, 09 Mar 2017 10:19:47 -0800</lastBuildDate>
+    <pubDate>Thu, 16 Mar 2017 17:46:29 -0700</pubDate>
+    <lastBuildDate>Thu, 16 Mar 2017 17:46:29 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -277,7 +277,15 @@ and a mixture of static JSON data and database&lt;/li&gt;
           &lt;li&gt;ref: &lt;a href=&quot;#from-static-data-to-implementing-a-database&quot;&gt;From Static data to implementing a Database&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
+      &lt;li&gt;Method for building Complete CRUD&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;User Authentication and Roles
+    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#method-for-enabling-user-registration-login-and-authentication&quot;&gt;Method for enabling user registration, login, and authentication&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;Setting up User Roles and coding its methods&lt;/li&gt;
+      &lt;li&gt;Using User Roles in Controllers and Templates&lt;/li&gt;
+      &lt;li&gt;Using User Roles in Middleware&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#intro-to-middleware&quot;&gt;Intro to Middleware&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#method-for-creating-your-own-middleware&quot;&gt;Method for creating your own Middleware&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
