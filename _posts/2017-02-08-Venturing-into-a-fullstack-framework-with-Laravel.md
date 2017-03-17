@@ -33,7 +33,7 @@ Since I'm going back and forth with this blog post, writing my experience from c
   - Method for building Complete CRUD
 - User Authentication and Roles
   - [Method for enabling user registration, login, and authentication](#method-for-enabling-user-registration-login-and-authentication)
-  - Setting up User Roles and coding its methods
+  - Setting up User Roles and Permissions
   - Using User Roles in Controllers and Templates
   - Using User Roles in Middleware
   - [Intro to Middleware](#intro-to-middleware)
