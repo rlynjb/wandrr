@@ -370,7 +370,8 @@ else {
 
 **Next is to setup Middleware**
 
-video ref: [https://www.youtube.com/watch?v=bqkt6eSsRZs](https://www.youtube.com/watch?v=bqkt6eSsRZs)
+- [How to send mail after Laravel 5 default registration?](http://stackoverflow.com/questions/29173028/how-to-send-mail-after-laravel-5-default-registration)
+- video ref: [https://www.youtube.com/watch?v=bqkt6eSsRZs](https://www.youtube.com/watch?v=bqkt6eSsRZs)
 
 
 -----
