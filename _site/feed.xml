@@ -6,8 +6,8 @@
 </description>
     <link>http://rlynjb.github.io/wandrr/</link>
     <atom:link href="http://rlynjb.github.io/wandrr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 20 Mar 2017 11:39:32 -0700</pubDate>
-    <lastBuildDate>Mon, 20 Mar 2017 11:39:32 -0700</lastBuildDate>
+    <pubDate>Tue, 21 Mar 2017 11:06:45 -0700</pubDate>
+    <lastBuildDate>Tue, 21 Mar 2017 11:06:45 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -185,7 +185,9 @@ Anyways, below is a recap of what I’ve accomplished and what I want to tackle 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;Wordpress&lt;/strong&gt;
     &lt;ul&gt;
-      &lt;li&gt;start a sideline business, hopefully it works well&lt;/li&gt;
+      &lt;li&gt;
+        &lt;s&gt;start a sideline business, hopefully it works well&lt;/s&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Building FEF Theme&lt;/strong&gt;
@@ -201,23 +203,32 @@ Anyways, below is a recap of what I’ve accomplished and what I want to tackle 
       &lt;li&gt;look into testing, interaction of application and inputting sample information&lt;/li&gt;
       &lt;li&gt;exciting new projects to learn:
         &lt;ul&gt;
-          &lt;li&gt;3d model product viewer&lt;/li&gt;
-          &lt;li&gt;viewport scroll to snap then animation/transition starts&lt;/li&gt;
+          &lt;li&gt;✓ 3d model product viewer
+            &lt;ul&gt;
+              &lt;li&gt;ref: &lt;a href=&quot;https://code.tutsplus.com/courses/3d-in-the-browser-with-threejs/&quot;&gt;3D in the Browser With Three.js&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;ref: &lt;a href=&quot;https://manu.ninja/webgl-3d-model-viewer-using-three-js&quot;&gt;WebGL 3D Model Viewer Using three.js&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;✓ viewport scroll to snap then animation/transition starts&lt;/li&gt;
+          &lt;li&gt;✓ build app ideas with React and Firebase&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;FullStack/E-commerce&lt;/strong&gt;
     &lt;ul&gt;
-      &lt;li&gt;Continue building an Admin Dashboard&lt;/li&gt;
-      &lt;li&gt;the whole CRUD shibang!
-and a mixture of static JSON data and database&lt;/li&gt;
+      &lt;li&gt;
+        &lt;s&gt;Continue building an Admin Dashboard&lt;/s&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;s&gt;the whole CRUD shibang! and a mixture of static JSON data and database&lt;/s&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;HTML5/CSS3&lt;/strong&gt;
     &lt;ul&gt;
-      &lt;li&gt;learn more about SVG&lt;/li&gt;
-      &lt;li&gt;implement simple CSS3 transitions&lt;/li&gt;
+      &lt;li&gt;✓ learn more about SVG&lt;/li&gt;
+      &lt;li&gt;✓ implement simple CSS3 transitions&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -283,9 +294,7 @@ and a mixture of static JSON data and database&lt;/li&gt;
   &lt;li&gt;User Authentication and Roles
     &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#method-for-enabling-user-registration-login-and-authentication&quot;&gt;Method for enabling user registration, login, and authentication&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;Setting up User Roles and Permissions&lt;/li&gt;
-      &lt;li&gt;Using User Roles in Controllers and Templates&lt;/li&gt;
-      &lt;li&gt;Using User Roles in Middleware&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#setting-up-user-roles-and-permissions&quot;&gt;Setting up User Roles and Permissions&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#intro-to-middleware&quot;&gt;Intro to Middleware&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#method-for-creating-your-own-middleware&quot;&gt;Method for creating your own Middleware&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
@@ -774,6 +783,76 @@ else {
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/29173028/how-to-send-mail-after-laravel-5-default-registration&quot;&gt;How to send mail after Laravel 5 default registration?&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;video ref: &lt;a href=&quot;https://www.youtube.com/watch?v=bqkt6eSsRZs&quot;&gt;https://www.youtube.com/watch?v=bqkt6eSsRZs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;setting-up-user-roles-and-permissions&quot;&gt;Setting up User Roles and Permissions&lt;/h3&gt;
+
+&lt;p&gt;ref: &lt;a href=&quot;https://www.youtube.com/watch?v=KMR2H6-K36E&quot;&gt;Laravel User roles part1&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Setup DB creds&lt;/li&gt;
+  &lt;li&gt;we need User table/model, already in Laravel once User Authentication is configured
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan make:auth&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;we need Roles table/model
+    &lt;ul&gt;
+      &lt;li&gt;because Users will have many or more assign to a user depending on what typ eof user he is&lt;/li&gt;
+      &lt;li&gt;ex. Super Admin = has all roles, Admin = has most roles, Editor, Author, Customer&lt;/li&gt;
+      &lt;li&gt;ref: &lt;a href=&quot;https://www.zivtech.com/blog/permissions-and-roles-happier-users-and-admins&quot;&gt;Permission and roles for happier users and admins&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;create Migration script&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan make:migration create_roles_table --create=roles&lt;/code&gt;
+        &lt;ul&gt;
+          &lt;li&gt;handles many to many relationship of user and roles&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;no need to add fields in default User migration script&lt;/li&gt;
+      &lt;li&gt;On Roles migration script, we need:
+        &lt;ul&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$table-&amp;gt;increments(&#39;id&#39;);&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$table-&amp;gt;string(&#39;name&#39;);&lt;/code&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;On User Roles pivot migration script, we need:
+        &lt;ul&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$table-&amp;gt;integer(&#39;user_id&#39;);&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$table-&amp;gt;integer(&#39;role_id&#39;);&lt;/code&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;create Models script&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan make:model Role&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;open User model and were gonna add a relation model using public function to create a new method called &lt;strong&gt;roles()&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;open Role model and add a relation method&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Add roles values inside Roles table in phpmyadmin&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ref: &lt;a href=&quot;https://www.youtube.com/watch?v=e1_f7q1D2v0&quot;&gt;Laravel User roles part2&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;On User, create a method that checks id a user is a employee or author.&lt;/li&gt;
+  &lt;li&gt;we are going to use roles method created previously
+    &lt;ul&gt;
+      &lt;li&gt;add the ff code, helpers and main methods&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;on &lt;code class=&quot;highlighter-rouge&quot;&gt;routes.php&lt;/code&gt; file, add a new route to create roles for users
+    &lt;ul&gt;
+      &lt;li&gt;this controller will save roles nad users in user_role pivot table&lt;/li&gt;
+      &lt;li&gt;use to debug roles and users as well&lt;/li&gt;
+      &lt;li&gt;next we will start using our user methods in middleware, route, templates, controllers&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
@@ -1337,6 +1416,18 @@ gulp.task(&#39;build&#39;, function () {
 &lt;p&gt;learning react is quite overwhelming. I think with any new front-end is overwhelming due to the amount of dependencies or tools options that are available. Front-end development has indeed bloom.&lt;/p&gt;
 
 &lt;p&gt;before digging further into random articles that suggests to use this or that tool. I’ve decided to learn plain React.js. Stripping other unknown tools and focusing on the foundation, then once comfortable with plain React.js, move on to another tool and implement. Learning indeed can also be a step-by-step process.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;continuation&quot;&gt;continuation…&lt;/h3&gt;
+
+&lt;p&gt;my stack to build apps:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://facebook.github.io/react/docs/thinking-in-react.html&quot;&gt;React&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Firebase&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://css-tricks.com/learning-react-router/&quot;&gt;React Router&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;hr /&gt;
 

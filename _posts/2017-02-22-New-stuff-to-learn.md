@@ -124,7 +124,7 @@ So there it is, after blogging a recap of what I've learned, I should be able to
 ### Moving forward:
 
 - **Wordpress**
-  - start a sideline business, hopefully it works well
+  - <s>start a sideline business, hopefully it works well</s>
 - **Building FEF Theme**
   - convert gulp.js to webpack or script
   - organize JS files
@@ -133,12 +133,14 @@ So there it is, after blogging a recap of what I've learned, I should be able to
   - code more, blog more on JS Interview Questions
   - look into testing, interaction of application and inputting sample information
   - exciting new projects to learn:
-    * 3d model product viewer
-    * viewport scroll to snap then animation/transition starts
+    * &#10003; 3d model product viewer
+      * ref: [3D in the Browser With Three.js](https://code.tutsplus.com/courses/3d-in-the-browser-with-threejs/)
+      * ref: [WebGL 3D Model Viewer Using three.js](https://manu.ninja/webgl-3d-model-viewer-using-three-js)
+    * &#10003; viewport scroll to snap then animation/transition starts
+    * &#10003; build app ideas with React and Firebase
 - **FullStack/E-commerce**
-  - Continue building an Admin Dashboard
-  - the whole CRUD shibang!
-  and a mixture of static JSON data and database
+  - <s>Continue building an Admin Dashboard</s>
+  - <s>the whole CRUD shibang! and a mixture of static JSON data and database</s>
 - **HTML5/CSS3**
-  - learn more about SVG
-  - implement simple CSS3 transitions
+  - &#10003; learn more about SVG
+  - &#10003; implement simple CSS3 transitions

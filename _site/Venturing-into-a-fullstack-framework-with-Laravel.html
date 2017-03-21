@@ -112,9 +112,7 @@
   <li>User Authentication and Roles
     <ul>
       <li><a href="#method-for-enabling-user-registration-login-and-authentication">Method for enabling user registration, login, and authentication</a></li>
-      <li>Setting up User Roles and Permissions</li>
-      <li>Using User Roles in Controllers and Templates</li>
-      <li>Using User Roles in Middleware</li>
+      <li><a href="#setting-up-user-roles-and-permissions">Setting up User Roles and Permissions</a></li>
       <li><a href="#intro-to-middleware">Intro to Middleware</a></li>
       <li><a href="#method-for-creating-your-own-middleware">Method for creating your own Middleware</a></li>
     </ul>
@@ -603,6 +601,76 @@ else {
 <ul>
   <li><a href="http://stackoverflow.com/questions/29173028/how-to-send-mail-after-laravel-5-default-registration">How to send mail after Laravel 5 default registration?</a></li>
   <li>video ref: <a href="https://www.youtube.com/watch?v=bqkt6eSsRZs">https://www.youtube.com/watch?v=bqkt6eSsRZs</a></li>
+</ul>
+
+<hr />
+
+<h3 id="setting-up-user-roles-and-permissions">Setting up User Roles and Permissions</h3>
+
+<p>ref: <a href="https://www.youtube.com/watch?v=KMR2H6-K36E">Laravel User roles part1</a></p>
+
+<ul>
+  <li>Setup DB creds</li>
+  <li>we need User table/model, already in Laravel once User Authentication is configured
+    <ul>
+      <li><code class="highlighter-rouge">php artisan make:auth</code></li>
+    </ul>
+  </li>
+  <li>we need Roles table/model
+    <ul>
+      <li>because Users will have many or more assign to a user depending on what typ eof user he is</li>
+      <li>ex. Super Admin = has all roles, Admin = has most roles, Editor, Author, Customer</li>
+      <li>ref: <a href="https://www.zivtech.com/blog/permissions-and-roles-happier-users-and-admins">Permission and roles for happier users and admins</a></li>
+    </ul>
+  </li>
+  <li><strong>create Migration script</strong>
+    <ul>
+      <li>run <code class="highlighter-rouge">php artisan make:migration create_roles_table --create=roles</code>
+        <ul>
+          <li>handles many to many relationship of user and roles</li>
+        </ul>
+      </li>
+      <li>no need to add fields in default User migration script</li>
+      <li>On Roles migration script, we need:
+        <ul>
+          <li><code class="highlighter-rouge">$table-&gt;increments('id');</code></li>
+          <li><code class="highlighter-rouge">$table-&gt;string('name');</code></li>
+        </ul>
+      </li>
+      <li>On User Roles pivot migration script, we need:
+        <ul>
+          <li><code class="highlighter-rouge">$table-&gt;integer('user_id');</code></li>
+          <li><code class="highlighter-rouge">$table-&gt;integer('role_id');</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>create Models script</strong>
+    <ul>
+      <li>run <code class="highlighter-rouge">php artisan make:model Role</code></li>
+      <li>open User model and were gonna add a relation model using public function to create a new method called <strong>roles()</strong></li>
+      <li>open Role model and add a relation method</li>
+    </ul>
+  </li>
+  <li>Add roles values inside Roles table in phpmyadmin</li>
+</ul>
+
+<p>ref: <a href="https://www.youtube.com/watch?v=e1_f7q1D2v0">Laravel User roles part2</a></p>
+
+<ul>
+  <li>On User, create a method that checks id a user is a employee or author.</li>
+  <li>we are going to use roles method created previously
+    <ul>
+      <li>add the ff code, helpers and main methods</li>
+    </ul>
+  </li>
+  <li>on <code class="highlighter-rouge">routes.php</code> file, add a new route to create roles for users
+    <ul>
+      <li>this controller will save roles nad users in user_role pivot table</li>
+      <li>use to debug roles and users as well</li>
+      <li>next we will start using our user methods in middleware, route, templates, controllers</li>
+    </ul>
+  </li>
 </ul>
 
 <hr />

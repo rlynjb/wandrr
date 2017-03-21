@@ -25,22 +25,20 @@ Since I'm going back and forth with this blog post, writing my experience from c
 - [Getting started with Laravel](#getting-started-with-laravel)
 - [Understanding Laravel's Front-End Workflow](#understanding-laravels-front-end-workflow)
 - [Intro to Create in CRUD](#intro-to-create-in-crud)
-  - [Method for creating a contact form to storing in db](#method-for-creating-a-contact-form-to-storing-to-db)
-    - ref: [Simple Contact form, Sending Emails](#simple-contact-form-sending-emails)
-  - [Method for converting static data in template to JSON object value](#method-for-converting-static-data-in-template-to-json-object-value)
-    - ref: [Coding templates to populating static data from JSON file](#coding-templates-to-populating-static-data-from-json-file)
-    - ref: [From Static data to implementing a Database](#from-static-data-to-implementing-a-database)
-  - Method for building Complete CRUD
+  * [Method for creating a contact form to storing in db](#method-for-creating-a-contact-form-to-storing-to-db)
+    * ref: [Simple Contact form, Sending Emails](#simple-contact-form-sending-emails)
+  * [Method for converting static data in template to JSON object value](#method-for-converting-static-data-in-template-to-json-object-value)
+    * ref: [Coding templates to populating static data from JSON file](#coding-templates-to-populating-static-data-from-json-file)
+    * ref: [From Static data to implementing a Database](#from-static-data-to-implementing-a-database)
+  * Method for building Complete CRUD
 - User Authentication and Roles
-  - [Method for enabling user registration, login, and authentication](#method-for-enabling-user-registration-login-and-authentication)
-  - Setting up User Roles and Permissions
-  - Using User Roles in Controllers and Templates
-  - Using User Roles in Middleware
-  - [Intro to Middleware](#intro-to-middleware)
-  - [Method for creating your own Middleware](#method-for-creating-your-own-middleware)
+  * [Method for enabling user registration, login, and authentication](#method-for-enabling-user-registration-login-and-authentication)
+  * [Setting up User Roles and Permissions](#setting-up-user-roles-and-permissions)
+  * [Intro to Middleware](#intro-to-middleware)
+  * [Method for creating your own Middleware](#method-for-creating-your-own-middleware)
 - CRUD Editor, plans, misc.
-  - [Defining my specs for a custom Admin Panel](#defining-my-specs-for-a-custom-admin-panel)
-  - [Building a CMS from scratch](#building-a-cms-from-scratch)
+  * [Defining my specs for a custom Admin Panel](#defining-my-specs-for-a-custom-admin-panel)
+  * [Building a CMS from scratch](#building-a-cms-from-scratch)
 
 -----
 
@@ -373,6 +371,45 @@ else {
 - [How to send mail after Laravel 5 default registration?](http://stackoverflow.com/questions/29173028/how-to-send-mail-after-laravel-5-default-registration)
 - video ref: [https://www.youtube.com/watch?v=bqkt6eSsRZs](https://www.youtube.com/watch?v=bqkt6eSsRZs)
 
+
+-----
+
+### Setting up User Roles and Permissions
+
+ref: [Laravel User roles part1](https://www.youtube.com/watch?v=KMR2H6-K36E)
+
+- Setup DB creds
+- we need User table/model, already in Laravel once User Authentication is configured
+  * `php artisan make:auth`
+- we need Roles table/model
+  * because Users will have many or more assign to a user depending on what typ eof user he is
+  * ex. Super Admin = has all roles, Admin = has most roles, Editor, Author, Customer
+  * ref: [Permission and roles for happier users and admins](https://www.zivtech.com/blog/permissions-and-roles-happier-users-and-admins)
+- **create Migration script**
+  * run `php artisan make:migration create_roles_table --create=roles`
+    * handles many to many relationship of user and roles
+  * no need to add fields in default User migration script
+  * On Roles migration script, we need:
+    * `$table->increments('id');`
+    * `$table->string('name');`
+  * On User Roles pivot migration script, we need:
+    * `$table->integer('user_id');`
+    * `$table->integer('role_id');`
+- **create Models script**
+  * run `php artisan make:model Role`
+  * open User model and were gonna add a relation model using public function to create a new method called **roles()**
+  * open Role model and add a relation method
+- Add roles values inside Roles table in phpmyadmin
+
+ref: [Laravel User roles part2](https://www.youtube.com/watch?v=e1_f7q1D2v0)
+
+- On User, create a method that checks id a user is a employee or author.
+- we are going to use roles method created previously
+  * add the ff code, helpers and main methods
+- on `routes.php` file, add a new route to create roles for users
+  * this controller will save roles nad users in user_role pivot table
+  * use to debug roles and users as well
+  * next we will start using our user methods in middleware, route, templates, controllers
 
 -----
 

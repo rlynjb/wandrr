@@ -24,6 +24,16 @@ learning react is quite overwhelming. I think with any new front-end is overwhel
 
 before digging further into random articles that suggests to use this or that tool. I've decided to learn plain React.js. Stripping other unknown tools and focusing on the foundation, then once comfortable with plain React.js, move on to another tool and implement. Learning indeed can also be a step-by-step process.
 
+-----
+
+### continuation...
+
+my stack to build apps:
+
+- [React](https://facebook.github.io/react/docs/thinking-in-react.html)
+- Firebase
+- [React Router](https://css-tricks.com/learning-react-router/)
+
 
 -----
 
