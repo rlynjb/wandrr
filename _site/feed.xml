@@ -6,8 +6,8 @@
 </description>
     <link>http://rlynjb.github.io/wandrr/</link>
     <atom:link href="http://rlynjb.github.io/wandrr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 21 Mar 2017 11:06:45 -0700</pubDate>
-    <lastBuildDate>Tue, 21 Mar 2017 11:06:45 -0700</lastBuildDate>
+    <pubDate>Tue, 21 Mar 2017 11:20:26 -0700</pubDate>
+    <lastBuildDate>Tue, 21 Mar 2017 11:20:26 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -788,6 +788,8 @@ else {
 &lt;hr /&gt;
 
 &lt;h3 id=&quot;setting-up-user-roles-and-permissions&quot;&gt;Setting up User Roles and Permissions&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://alexsears.com/article/adding-roles-to-laravel-users/&quot;&gt;Overview of code&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;ref: &lt;a href=&quot;https://www.youtube.com/watch?v=KMR2H6-K36E&quot;&gt;Laravel User roles part1&lt;/a&gt;&lt;/p&gt;
 

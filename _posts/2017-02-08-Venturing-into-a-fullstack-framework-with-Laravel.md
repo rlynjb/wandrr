@@ -376,6 +376,8 @@ else {
 
 ### Setting up User Roles and Permissions
 
+[Overview of code](http://alexsears.com/article/adding-roles-to-laravel-users/)
+
 ref: [Laravel User roles part1](https://www.youtube.com/watch?v=KMR2H6-K36E)
 
 - Setup DB creds
