@@ -6,8 +6,8 @@
 </description>
     <link>http://rlynjb.github.io/wandrr/</link>
     <atom:link href="http://rlynjb.github.io/wandrr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 21 Mar 2017 17:23:06 -0700</pubDate>
-    <lastBuildDate>Tue, 21 Mar 2017 17:23:06 -0700</lastBuildDate>
+    <pubDate>Wed, 29 Mar 2017 15:41:27 -0700</pubDate>
+    <lastBuildDate>Wed, 29 Mar 2017 15:41:27 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -662,6 +662,8 @@ Route::get(&#39;/contact/view&#39;, function() {
     &lt;ul&gt;
       &lt;li&gt;retrieve site and secret key&lt;/li&gt;
       &lt;li&gt;load grecaptcha plugin and html tag&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;script src=&#39;https://www.google.com/recaptcha/api.js&#39;&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div class=&quot;row&quot;&amp;gt;&amp;lt;div class=&quot;float-right g-recaptcha&quot; data-sitekey=&quot;6Le5PRcUAAAAAHPBCPt4JuVkhU4Ha31av4dE5lGH&quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;p class=&quot;recaptcha-response&quot;&amp;gt;&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/li&gt;
       &lt;li&gt;author validation google recaptcha code on contact form submit event&lt;/li&gt;
       &lt;li&gt;ref: &lt;a href=&quot;http://stackoverflow.com/questions/37294886/google-recaptcha-with-ajax-form&quot;&gt;http://stackoverflow.com/questions/37294886/google-recaptcha-with-ajax-form&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
@@ -670,7 +672,8 @@ Route::get(&#39;/contact/view&#39;, function() {
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if (grecaptcha.getResponse().length &amp;gt; 0) {
   ajax call
-else {
+} else {
+  $(&#39;.recaptcha-response&#39;).html(&#39;&#39;);
   $(&#39;.recaptcha-response&#39;).append(&#39;Check recaptcha before submmitting form&#39;);
 }
 &lt;/code&gt;&lt;/pre&gt;

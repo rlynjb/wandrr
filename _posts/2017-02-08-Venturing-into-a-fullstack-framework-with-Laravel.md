@@ -285,13 +285,16 @@ Below are the resources I used in learning basic CRUD, form handling in Laravel,
 7. Implement google recaptcha
   - retrieve site and secret key
   - load grecaptcha plugin and html tag
+    * `<script src='https://www.google.com/recaptcha/api.js'></script>`
+    * `<div class="row"><div class="float-right g-recaptcha" data-sitekey="6Le5PRcUAAAAAHPBCPt4JuVkhU4Ha31av4dE5lGH"></div><p class="recaptcha-response"></p></div>`
   - author validation google recaptcha code on contact form submit event
     - ref: [http://stackoverflow.com/questions/37294886/google-recaptcha-with-ajax-form](http://stackoverflow.com/questions/37294886/google-recaptcha-with-ajax-form)
 
 ```
 if (grecaptcha.getResponse().length > 0) {
   ajax call
-else {
+} else {
+  $('.recaptcha-response').html('');
   $('.recaptcha-response').append('Check recaptcha before submmitting form');
 }
 ```
