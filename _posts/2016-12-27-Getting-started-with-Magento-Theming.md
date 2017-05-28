@@ -82,9 +82,8 @@ Initially, we will keep Magento 2 Blank theme's Grid system and remove its theme
   - `rm -rf var/view_preprocessed/*`
 2. Redeploy static files
   - `php bin/magento setup:static-content:deploy`
-  - `php bin/magento cache:clean`
-  - `php bin/magento cache:flush`
-  - `sudo chown -R 777 /var`
+  - `php bin/magento cache:clean && php bin/magento cache:flush`
+  - `chown -R www-data:www-data /var /pub && chmod -R 777 /var /pub`
 
 
 #### **Credential Requirements**
