@@ -6,9 +6,402 @@
 </description>
     <link>http://rlynjb.github.io/wandrr/</link>
     <atom:link href="http://rlynjb.github.io/wandrr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 28 May 2017 13:23:01 -0700</pubDate>
-    <lastBuildDate>Sun, 28 May 2017 13:23:01 -0700</lastBuildDate>
+    <pubDate>Tue, 13 Jun 2017 13:03:25 -0700</pubDate>
+    <lastBuildDate>Tue, 13 Jun 2017 13:03:25 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>ReactJS Crash Course</title>
+        <description>&lt;p&gt;&lt;strong&gt;Recap&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#component-based-component-specification&quot;&gt;Component based&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#props&quot;&gt;props&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#states&quot;&gt;states&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#render&quot;&gt;render&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#statics&quot;&gt;statics&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#proptypes&quot;&gt;propTypes&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#displayname&quot;&gt;displayName&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#lifecycle-methods&quot;&gt;Lifecycle Methods&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#componentdidmount&quot;&gt;componentDidMount&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#componentwillmount&quot;&gt;componentWillMount&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#shouldcomponentupdate&quot;&gt;shouldComponentUpdate&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#componentwillreceiveprops&quot;&gt;componentWillReceiveProps&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#componentwillupdate&quot;&gt;componentWillUpdate&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#componentdidupdate&quot;&gt;componentDidUpdate&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#componentwillunmount&quot;&gt;componentWillUnmount&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#the-virtual-dom&quot;&gt;The Virtual DOM&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#synthetic-event-handlers&quot;&gt;Synthetic Event Handlers&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#code-sample-explained&quot;&gt;Code Sample Explained&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;component-based-component-specification&quot;&gt;Component based (Component Specification)&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;contains or has built-in set of methods and properties.&lt;/li&gt;
+  &lt;li&gt;purpose of these methods and properties are:
+    &lt;ul&gt;
+      &lt;li&gt;debugging (&lt;code class=&quot;highlighter-rouge&quot;&gt;displayName&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;propTypes&lt;/code&gt;)&lt;/li&gt;
+      &lt;li&gt;setting initial data (&lt;code class=&quot;highlighter-rouge&quot;&gt;getInitialState&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;getDefaultProps&lt;/code&gt;)&lt;/li&gt;
+      &lt;li&gt;component lifecycle (&lt;code class=&quot;highlighter-rouge&quot;&gt;componentDidMount&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;componentShouldUpdate&lt;/code&gt;, more..)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;the &lt;code class=&quot;highlighter-rouge&quot;&gt;render&lt;/code&gt; method (from React DOM) is the only required method in a component.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;props-and-states&quot;&gt;Props and States&lt;/h1&gt;
+
+&lt;h3 id=&quot;props&quot;&gt;props&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;data coming from outside of component.&lt;/li&gt;
+  &lt;li&gt;its better to rely on data outside of component for testability and immutability concerns.&lt;/li&gt;
+  &lt;li&gt;cannot be modified, should be treated as immutable.&lt;/li&gt;
+  &lt;li&gt;props data can be access using &lt;code class=&quot;highlighter-rouge&quot;&gt;this.props&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;getDefaultProps&lt;/code&gt; is used to set initial props and use them in later point in the components’ lifecycle.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;getDefaultProps() {
+  return {
+    greeting: &quot;&quot;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;states&quot;&gt;states&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;data is instantiated inside of component.&lt;/li&gt;
+  &lt;li&gt;variables that are available within the component.&lt;/li&gt;
+  &lt;li&gt;state data can be access using &lt;code class=&quot;highlighter-rouge&quot;&gt;this.state&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;its only used when you make changes to variables within the component.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;getInitialState: function() {
+  return {
+    random_number: ()
+  }
+},
+componentDidMount() {
+  setInterval( () =&amp;gt; {
+    this.setState({
+      random_number: Math.random()*100;
+    });
+  }, 1000);
+},
+render() {
+  return (
+    &amp;lt;div&amp;gt;{ this.state.random_number }&amp;lt;/div&amp;gt;
+  );
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;render&quot;&gt;render&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;only required method in a component&lt;/li&gt;
+  &lt;li&gt;return JSX structure&lt;/li&gt;
+  &lt;li&gt;it can also return &lt;code class=&quot;highlighter-rouge&quot;&gt;null&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt; to indicate we don’t need to use it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;statics&quot;&gt;statics&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;use to define static methods&lt;/li&gt;
+  &lt;li&gt;they don’t have access to &lt;code class=&quot;highlighter-rouge&quot;&gt;props&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;states&lt;/code&gt; within the component.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import React from &#39;react&#39;;
+
+const App = React.createClass({
+  statics: {
+    myMethod: (foo) =&amp;gt; {
+      return foo = &quot;bar&quot;;
+    }
+  },
+  render() {
+    return null;
+  }
+});
+
+console.log( App.myMethod(&#39;bar&#39;) ); // true
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;proptypes&quot;&gt;propTypes&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;validates your props passed unto your component&lt;/li&gt;
+  &lt;li&gt;shows up in your &lt;code class=&quot;highlighter-rouge&quot;&gt;console.log&lt;/code&gt; if the props passed&lt;/li&gt;
+  &lt;li&gt;optional help tool while you develop your app&lt;/li&gt;
+  &lt;li&gt;it can validate complex data&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;displayname&quot;&gt;displayName&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;set automatically if not set explicitly&lt;/li&gt;
+  &lt;li&gt;use for debugging purposes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;lifecycle-methods&quot;&gt;Lifecycle Methods&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;set of functions that are empty and you can override in your component.&lt;/li&gt;
+  &lt;li&gt;initially, all are empty except for &lt;code class=&quot;highlighter-rouge&quot;&gt;shouldComponentUpdate&lt;/code&gt; is set to true.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;componentdidmount&quot;&gt;componentDidMount&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Executed after the component is mounted&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;most common method&lt;/li&gt;
+  &lt;li&gt;functions run after the component has been rendered for the first time.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;PROS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;have access to current contents of props and states&lt;/li&gt;
+  &lt;li&gt;never run &lt;code class=&quot;highlighter-rouge&quot;&gt;setState&lt;/code&gt; as it triggers endless loops&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;CONS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;this will not run in server-side, use &lt;code class=&quot;highlighter-rouge&quot;&gt;componentWillMount&lt;/code&gt; instead&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;componentDidMount() {
+  // Executed after the component is mounted
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;componentwillmount&quot;&gt;componentWillMount&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;method will be executed before the component is rendered for the first time.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;PROS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;have access to component’s current state and props&lt;/li&gt;
+  &lt;li&gt;safe to run &lt;code class=&quot;highlighter-rouge&quot;&gt;setState&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;executed on both server-side and client-side&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;componentWillMount() {
+  // Executed before the component is mounted
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;shouldcomponentupdate&quot;&gt;shouldComponentUpdate&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;invoked whenever the component receives new props or state changes&lt;/li&gt;
+  &lt;li&gt;returns true by default&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;PROS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;useful if you create a component that updates only if certain condition is met or should never be updated at all&lt;/li&gt;
+  &lt;li&gt;speed increases when set to false&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;CONS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;can lead to bug when careless use&lt;/li&gt;
+  &lt;li&gt;can be hard to track down&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;componentwillreceiveprops&quot;&gt;componentWillReceiveProps&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;compare props before render method runs&lt;/li&gt;
+  &lt;li&gt;let you compare incoming props&lt;/li&gt;
+  &lt;li&gt;can be used as an opportunity to react to prop transition before the render method is called&lt;/li&gt;
+  &lt;li&gt;invoke this method &lt;code class=&quot;highlighter-rouge&quot;&gt;componentWillReceiveProps(object nextProps)&lt;/code&gt; to access incoming props&lt;/li&gt;
+  &lt;li&gt;this will not execute on initial render&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;CONS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;not good for &lt;code class=&quot;highlighter-rouge&quot;&gt;setState&lt;/code&gt; insteas use &lt;code class=&quot;highlighter-rouge&quot;&gt;componentWillUpdate&lt;/code&gt;`&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;componentWillReceiveProps(nextProps) {
+  // you can compare nextProps with this.props
+  // and optionally set a new state or execute functions
+  // based on the new props
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;componentwillupdate&quot;&gt;componentWillUpdate&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;execute before rendering once new props or states are received&lt;/li&gt;
+  &lt;li&gt;when the component receives new props or states&lt;/li&gt;
+  &lt;li&gt;this method is executed before the rendering but not the initial render&lt;/li&gt;
+  &lt;li&gt;invoke this method &lt;code class=&quot;highlighter-rouge&quot;&gt;componentWillUpdate(object nextProps, object nextState)&lt;/code&gt; to access incoming props and states&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;PROS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;use &lt;code class=&quot;highlighter-rouge&quot;&gt;componentWillReceiveProps&lt;/code&gt; instead&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;CONS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;can evaluate new state but &lt;code class=&quot;highlighter-rouge&quot;&gt;setState&lt;/code&gt; will trigger and endless loop&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;componentWillUpdate (nextProps) {
+  // you can compare nextProps with this.props
+  // or nextState with this.state
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;componentdidupdate&quot;&gt;componentDidUpdate&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;executed whenever the component receives new props or states&lt;/li&gt;
+  &lt;li&gt;and render method has been executed&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;componentDidUpdate() {
+  // Execute functions after the component has been updated
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;componentwillunmount&quot;&gt;componentWillUnmount&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;invoked before the component is unmounted from DOM&lt;/li&gt;
+  &lt;li&gt;useful if you need to clean up memory or invalidate timer&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;componentWillUnmount() {
+  // Execute functions before the component is unmounted
+  // from the DOM
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;the-virtual-dom&quot;&gt;The Virtual DOM&lt;/h1&gt;
+
+&lt;h3 id=&quot;the-dom&quot;&gt;The DOM&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;its very forgiving&lt;/li&gt;
+  &lt;li&gt;you can write invalid HTML and still get the result you want&lt;/li&gt;
+  &lt;li&gt;ReactJS, JSX is not forgiving&lt;/li&gt;
+  &lt;li&gt;JSX is strict and it requires a match with opening and closing tag&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;the-virtual-dom-1&quot;&gt;The Virtual DOM&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;a simpler implementation of the real DOM&lt;/li&gt;
+  &lt;li&gt;doesn’t work directly with the DOM&lt;/li&gt;
+  &lt;li&gt;it maintains a smaller and more simplified internal set of elements&lt;/li&gt;
+  &lt;li&gt;enables you to switch parts of your visible elements without affecting other elements&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;cannot make changes directly&lt;/strong&gt; like jQuery or &lt;code class=&quot;highlighter-rouge&quot;&gt;getElementById()&lt;/code&gt; native JavaScript&lt;/li&gt;
+  &lt;li&gt;instead, &lt;strong&gt;attach a reference&lt;/strong&gt; named &lt;code class=&quot;highlighter-rouge&quot;&gt;refs&lt;/code&gt; to the elements to target
+    &lt;ul&gt;
+      &lt;li&gt;can be done by &lt;code class=&quot;highlighter-rouge&quot;&gt;ref=&quot;myReference&quot;&lt;/code&gt; to your element&lt;/li&gt;
+      &lt;li&gt;w/ ex. above, reference is now available through &lt;code class=&quot;highlighter-rouge&quot;&gt;React.findDOMNode( this.refs.myReference )&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;synthetic-event-handlers&quot;&gt;Synthetic Event Handlers&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;event handlers in ReactJS are passed an instance of &lt;strong&gt;Synthetic Event&lt;/strong&gt; instead of the native event handlers&lt;/li&gt;
+  &lt;li&gt;has the same interface as native event handlers &lt;strong&gt;except&lt;/strong&gt; it’s cross-browser compatible&lt;/li&gt;
+  &lt;li&gt;events are triggered in a &lt;strong&gt;bubbling phase&lt;/strong&gt; ref &lt;a href=&quot;/JS-Interview-Question-Describe-event-bubbling&quot;&gt;Describe event bubbling&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;to capture an event immediately
+    &lt;ul&gt;
+      &lt;li&gt;ex: for &lt;code class=&quot;highlighter-rouge&quot;&gt;onClick&lt;/code&gt; use &lt;code class=&quot;highlighter-rouge&quot;&gt;onCickCapture&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;to stop propagation
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;event.stopPropagation()&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;event.preventDefault()&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ref: &lt;a href=&quot;https://facebook.github.io/react/docs/events.html&quot;&gt;for complete list of events&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;code-sample-explained&quot;&gt;Code Sample Explained&lt;/h1&gt;
+
+&lt;iframe height=&quot;800&quot; scrolling=&quot;no&quot; title=&quot;learning reactjs&quot; src=&quot;//codepen.io/rlynjb/embed/QgEdLN/?height=300&amp;amp;theme-id=20698&amp;amp;default-tab=js&amp;amp;embed-version=2&quot; frameborder=&quot;no&quot; allowtransparency=&quot;true&quot; allowfullscreen=&quot;true&quot; style=&quot;width: 100%;&quot;&gt;See the Pen &lt;a href=&quot;https://codepen.io/rlynjb/pen/QgEdLN/&quot;&gt;learning reactjs&lt;/a&gt; by rlynjb (&lt;a href=&quot;https://codepen.io/rlynjb&quot;&gt;@rlynjb&lt;/a&gt;) on &lt;a href=&quot;https://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
+&lt;/iframe&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;references&quot;&gt;References:&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.packtpub.com/web-development/reactjs-blueprints&quot;&gt;ReactJS Blueprints&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 09 Jun 2017 09:12:48 -0700</pubDate>
+        <link>http://rlynjb.github.io/wandrr/ReactJS-Crash-Course</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/ReactJS-Crash-Course</guid>
+        
+        <category>javascript</category>
+        
+        <category>js</category>
+        
+        <category>reactjs</category>
+        
+        
+      </item>
     
       <item>
         <title>Introduction to Webpack</title>
@@ -1341,7 +1734,7 @@ gulp.task(&#39;build&#39;, function () {
     &lt;ul&gt;
       &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;php bin/magento setup:static-content:deploy&lt;/code&gt;&lt;/li&gt;
       &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;php bin/magento cache:clean &amp;amp;&amp;amp; php bin/magento cache:flush&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;chown -R www-data:www-data /var /pub &amp;amp;&amp;amp; chmod -R 777 /var /pub&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;chown -R www-data:www-data var/ pub/ &amp;amp;&amp;amp; chmod -R 777 var/ pub/&lt;/code&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
@@ -1766,152 +2159,6 @@ gulp.task(&#39;build&#39;, function () {
         <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Front-End-Design-Specs</guid>
         
         <category>workflow</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Front-End Workflow with Grav theme</title>
-        <description>&lt;p&gt;This blog post explains on how I have setup a custom basic Grav theme with modern front-end workflow.&lt;/p&gt;
-
-&lt;p&gt;This idea have come into mind when I was assigned a project that requires the use of a CSS framework and other plugins for animations/transitions. Since I will be building websites with the same requirements, why not create a &lt;strong&gt;Grav Starter Theme with Front-End Workflow&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;I will be updating this theme with tested CSS animations/transitions plugins that I think will play well with Grav and meets client’s business requirements.&lt;/p&gt;
-
-&lt;p&gt;For documentation and updates, refer to its github repo: &lt;a href=&quot;https://github.com/rlynjb/gravtheme-frontendflow&quot;&gt;Grav Theme - Front-End Flow&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Contents&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#before-starting&quot;&gt;Before starting&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#every-website-project-will-have&quot;&gt;Every website project will have&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#developing-starter-kit-theme&quot;&gt;Developing starter kit theme&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#gulpfilejs-setup&quot;&gt;gulpfile.js setup&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#importing-foundation-components-and-overriding-settings-file&quot;&gt;importing foundation components and overriding settings file&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;before-starting&quot;&gt;Before starting:&lt;/h3&gt;
-
-&lt;p&gt;Install the following globally as it is required to run Bower and Gulp in your local dev.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Node&lt;/li&gt;
-  &lt;li&gt;NPM or NVM if you deal with multiple node versions&lt;/li&gt;
-  &lt;li&gt;After installing Grav
-    &lt;ul&gt;
-      &lt;li&gt;refer to ff. link for Getting Started with Grav: &lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git clone&lt;/code&gt; this repo inside of &lt;code class=&quot;highlighter-rouge&quot;&gt;/user/themes/&lt;/code&gt; directory&lt;/li&gt;
-  &lt;li&gt;inside of &lt;code class=&quot;highlighter-rouge&quot;&gt;/user/themes/gravtheme-frontendflow/&lt;/code&gt; directory, run:
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm install -g&lt;/code&gt;
-        &lt;ul&gt;
-          &lt;li&gt;required to run Bower and Gulp&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bower install&lt;/code&gt;
-        &lt;ul&gt;
-          &lt;li&gt;installs 3rd-party plugins used on this theme&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gulp &amp;amp;&amp;amp; gulp watch&lt;/code&gt;
-        &lt;ul&gt;
-          &lt;li&gt;builds our sass files. We’ve carefully chose each Foundation components to avoid CSS bloats and overriding of styles.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;every-website-project-will-have&quot;&gt;Every website project will have:&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Grav + Admin core&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;To get fresh install: &lt;a href=&quot;https://getgrav.org/&quot;&gt;Get Grav&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Basic Grav Theme setup&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Follow tutorial to get started: &lt;a href=&quot;https://learn.getgrav.org/themes/theme-tutorial&quot;&gt;Get Grav - Theme Tutorial&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; file
-    &lt;ul&gt;
-      &lt;li&gt;installs &lt;strong&gt;Bower&lt;/strong&gt;, &lt;strong&gt;Gulp.js&lt;/strong&gt;, and other gulp dependencies for build system and front-end workflow aid&lt;/li&gt;
-      &lt;li&gt;go to &lt;a href=&quot;https://www.npmjs.com/&quot;&gt;npmjs.com&lt;/a&gt; to search for more packages&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bower.json&lt;/code&gt; file
-    &lt;ul&gt;
-      &lt;li&gt;installs required 3rd-party assets&lt;/li&gt;
-      &lt;li&gt;go to &lt;a href=&quot;http://bower.io&quot;&gt;bower.io&lt;/a&gt; to search for more packages&lt;/li&gt;
-      &lt;li&gt;or install packages via &lt;strong&gt;Github repos&lt;/strong&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;https://bower.io/docs/api/&quot;&gt;bower.io - api&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/19348076/installing-a-dependency-with-bower-from-url-and-specify-version&quot;&gt;Installing a dependency with Bower from URL and specify version&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;setup &lt;code class=&quot;highlighter-rouge&quot;&gt;gulpfile.js&lt;/code&gt; file
-    &lt;ul&gt;
-      &lt;li&gt;Why use &lt;strong&gt;Gulp.js&lt;/strong&gt;?
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;Sass&lt;/strong&gt; seem to not support building multiple &lt;code class=&quot;highlighter-rouge&quot;&gt;scss&lt;/code&gt; files. It require either Compass, Grunt, or libsass (same Build system concept as Gulp.js)&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;Grav’s Asset Manager&lt;/strong&gt; lacks support for sass and its still quite buggy&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Check this project’s github repo for &lt;strong&gt;package.json&lt;/strong&gt;, &lt;strong&gt;bower.json&lt;/strong&gt;, and &lt;strong&gt;gulp.js&lt;/strong&gt; updates.&lt;br /&gt;
-&lt;a href=&quot;https://github.com/rlynjb/gravtheme-frontendflow&quot;&gt;Grav Theme - Front-End Flow&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;developing-starter-kit-theme&quot;&gt;Developing starter kit theme&lt;/h3&gt;
-
-&lt;p&gt;During developing &lt;strong&gt;Grav Theme - Front-End Flow&lt;/strong&gt; starter kit theme, I have come across issues that I think worth noting.&lt;/p&gt;
-
-&lt;h3 id=&quot;gulpfilejs-setup&quot;&gt;gulpfile.js setup&lt;/h3&gt;
-
-&lt;p&gt;After installing &lt;strong&gt;foundation-sites&lt;/strong&gt; via bower. we will need to setup our &lt;code class=&quot;highlighter-rouge&quot;&gt;gulpfile.js&lt;/code&gt; file.&lt;/p&gt;
-
-&lt;p&gt;Follow the youtube video tutorial to get started:&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/De6H0eFrfvY&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;importing-foundation-components-and-overriding-settings-file&quot;&gt;importing foundation components and overriding settings file&lt;/h3&gt;
-
-&lt;p&gt;While setting it up, I’ve come across an issue. The following link helped me solved the issue.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/34537431/foundation-6-does-not-generate-any-styles&quot;&gt;stackoverflow - Foundation 6 does not generate any styles&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Another issue i came across was overriding Foundation’s settings file. It took me awhile until I figured out why its not overriding the default settings file. Solution is on my github repo&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/rlynjb/gravtheme-frontendflow&quot;&gt;GravTheme - Front End Flow theme&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 13 Jul 2016 05:09:47 -0700</pubDate>
-        <link>http://rlynjb.github.io/wandrr/Front-End-Workflow-with-Grav-theme</link>
-        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Front-End-Workflow-with-Grav-theme</guid>
-        
-        <category>static site</category>
         
         
       </item>
