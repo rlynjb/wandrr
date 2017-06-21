@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "ReactJS Crash Course"
-date: 2017-06-09 16:12:48
+title: "ReactJS Cheatsheet"
+date: 2017-06-21 09:30:02
 tags:
 - javascript
 - js
 - reactjs
 ---
 
-**Recap**
+### Gist
 
 - [Component based](#component-based-component-specification)
   - [props](#props)
@@ -28,6 +28,7 @@ tags:
 - [The Virtual DOM](#the-virtual-dom)
 - [Synthetic Event Handlers](#synthetic-event-handlers)
 - [Code Sample Explained](#code-sample-explained)
+- [9 things every React.js beginner should know](https://camjackson.net/post/9-things-every-reactjs-beginner-should-know)
 
 -----
 
@@ -307,6 +308,10 @@ componentWillUnmount() {
 
 <iframe height='800' scrolling='no' title='learning reactjs' src='//codepen.io/rlynjb/embed/QgEdLN/?height=300&theme-id=20698&default-tab=js&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/rlynjb/pen/QgEdLN/'>learning reactjs</a> by rlynjb (<a href='https://codepen.io/rlynjb'>@rlynjb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
+
+This example is slightly contrived. It could be shortened quite a bit, and storing props as states is generally something you should avoid, unless you have a very good reason for doing so. In my experience, working with a local state is the single most bug-prone code you will encounter and the hardest code to write tests for.
+
+- per ReactJS Bluepriint book
 
 -----
 

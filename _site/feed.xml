@@ -6,13 +6,13 @@
 </description>
     <link>http://rlynjb.github.io/wandrr/</link>
     <atom:link href="http://rlynjb.github.io/wandrr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 13 Jun 2017 13:03:25 -0700</pubDate>
-    <lastBuildDate>Tue, 13 Jun 2017 13:03:25 -0700</lastBuildDate>
+    <pubDate>Wed, 21 Jun 2017 09:31:32 -0700</pubDate>
+    <lastBuildDate>Wed, 21 Jun 2017 09:31:32 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
-        <title>ReactJS Crash Course</title>
-        <description>&lt;p&gt;&lt;strong&gt;Recap&lt;/strong&gt;&lt;/p&gt;
+        <title>ReactJS Cheatsheet</title>
+        <description>&lt;h3 id=&quot;gist&quot;&gt;Gist&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;#component-based-component-specification&quot;&gt;Component based&lt;/a&gt;
@@ -39,6 +39,7 @@
   &lt;li&gt;&lt;a href=&quot;#the-virtual-dom&quot;&gt;The Virtual DOM&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#synthetic-event-handlers&quot;&gt;Synthetic Event Handlers&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#code-sample-explained&quot;&gt;Code Sample Explained&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://camjackson.net/post/9-things-every-reactjs-beginner-should-know&quot;&gt;9 things every React.js beginner should know&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
@@ -382,6 +383,12 @@ console.log( App.myMethod(&#39;bar&#39;) ); // true
 &lt;iframe height=&quot;800&quot; scrolling=&quot;no&quot; title=&quot;learning reactjs&quot; src=&quot;//codepen.io/rlynjb/embed/QgEdLN/?height=300&amp;amp;theme-id=20698&amp;amp;default-tab=js&amp;amp;embed-version=2&quot; frameborder=&quot;no&quot; allowtransparency=&quot;true&quot; allowfullscreen=&quot;true&quot; style=&quot;width: 100%;&quot;&gt;See the Pen &lt;a href=&quot;https://codepen.io/rlynjb/pen/QgEdLN/&quot;&gt;learning reactjs&lt;/a&gt; by rlynjb (&lt;a href=&quot;https://codepen.io/rlynjb&quot;&gt;@rlynjb&lt;/a&gt;) on &lt;a href=&quot;https://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
 &lt;/iframe&gt;
 
+&lt;p&gt;This example is slightly contrived. It could be shortened quite a bit, and storing props as states is generally something you should avoid, unless you have a very good reason for doing so. In my experience, working with a local state is the single most bug-prone code you will encounter and the hardest code to write tests for.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;per ReactJS Bluepriint book&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;hr /&gt;
 
 &lt;h4 id=&quot;references&quot;&gt;References:&lt;/h4&gt;
@@ -390,9 +397,9 @@ console.log( App.myMethod(&#39;bar&#39;) ); // true
   &lt;li&gt;&lt;a href=&quot;https://www.packtpub.com/web-development/reactjs-blueprints&quot;&gt;ReactJS Blueprints&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Fri, 09 Jun 2017 09:12:48 -0700</pubDate>
-        <link>http://rlynjb.github.io/wandrr/ReactJS-Crash-Course</link>
-        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/ReactJS-Crash-Course</guid>
+        <pubDate>Wed, 21 Jun 2017 02:30:02 -0700</pubDate>
+        <link>http://rlynjb.github.io/wandrr/ReactJS-Cheatsheet</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/ReactJS-Cheatsheet</guid>
         
         <category>javascript</category>
         
