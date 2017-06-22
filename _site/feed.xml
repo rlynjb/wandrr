@@ -6,9 +6,208 @@
 </description>
     <link>http://rlynjb.github.io/wandrr/</link>
     <atom:link href="http://rlynjb.github.io/wandrr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 21 Jun 2017 09:35:33 -0700</pubDate>
-    <lastBuildDate>Wed, 21 Jun 2017 09:35:33 -0700</lastBuildDate>
+    <pubDate>Thu, 22 Jun 2017 16:47:23 -0700</pubDate>
+    <lastBuildDate>Thu, 22 Jun 2017 16:47:23 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>React.Js Projects Workflow</title>
+        <description>&lt;h4 id=&quot;gist&quot;&gt;Gist&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#scaffold&quot;&gt;Scaffold&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#destructing-the-layout&quot;&gt;Destructuring the Layout&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;scaffold&quot;&gt;Scaffold&lt;/h1&gt;
+
+&lt;p&gt;There are two ways we can start a React.js project.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Setup and build the script using a Build Tool.
+    &lt;ul&gt;
+      &lt;li&gt;Ex: Gulp, Webpack, NPM script&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Use server-side to start a web server and build the script using Browserify, Babelify, and Express.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Since I am familiar with the build tools such as Gulp.js. Why not use something different, I’m going for #2 method in doing this project.&lt;/p&gt;
+
+&lt;h3 id=&quot;method&quot;&gt;Method&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create a repo and &lt;code class=&quot;highlighter-rouge&quot;&gt;git clone&lt;/code&gt; to your local server&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;highlighter-rouge&quot;&gt;npm init&lt;/code&gt; and go through the process&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm install --save&lt;/code&gt; the following npm modules listed on the link below:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/rlynjb/webshop/commit/91c354d610f836b6c954e9412e05671e4839b2a0#diff-b9cfc7f2cdf78a7f4b91a753d10865a2&quot;&gt;webshop - package.json&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Create the following directories: &lt;code class=&quot;highlighter-rouge&quot;&gt;mkdir public &amp;amp;&amp;amp; mkdir source&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Create server file &lt;code class=&quot;highlighter-rouge&quot;&gt;touch server.js&lt;/code&gt; to start webserver and code the script to transpile our React.js files
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/rlynjb/webshop/commit/91c354d610f836b6c954e9412e05671e4839b2a0#diff-78c12f5adc1848d13b1c6f07055d996e&quot;&gt;webshop - server.js&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Create your main file &lt;code class=&quot;highlighter-rouge&quot;&gt;touch source/app.jsx&lt;/code&gt; thats linked to our &lt;code class=&quot;highlighter-rouge&quot;&gt;server.js&lt;/code&gt; file
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/rlynjb/webshop/commit/91c354d610f836b6c954e9412e05671e4839b2a0#diff-bcb4667827379fd27bf22df4d9dfeabc&quot;&gt;webshop - source/app.jsx&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Last, &lt;code class=&quot;highlighter-rouge&quot;&gt;touch .gitignore&lt;/code&gt; and add &lt;code class=&quot;highlighter-rouge&quot;&gt;node_modules, node_modules/*&lt;/code&gt; to avoid pushing massive amount of file to our repo&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;destructing-the-layout&quot;&gt;Destructing the Layout&lt;/h1&gt;
+
+&lt;p&gt;This is when we compartmentalize the layout structure of our React.js app. For this section, we will be using the following npm modules:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install --save react-bootstrap
+npm install --save react-router-bootstrap
+npm install --save react-router-dom
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Create our &lt;code class=&quot;highlighter-rouge&quot;&gt;touch public/index.html&lt;/code&gt; file and load our chosen CSS framework, polyfills, and necessary meta tags.&lt;/p&gt;
+
+&lt;h3 id=&quot;method-1&quot;&gt;Method&lt;/h3&gt;
+
+&lt;p&gt;We will start by setting up the &lt;strong&gt;Route&lt;/strong&gt; and &lt;strong&gt;Layout of our app&lt;/strong&gt; which usually consist of Header, Menu, Main Contents, and Footer.&lt;/p&gt;
+
+&lt;h3 id=&quot;this-is-the-initial-setup-of-our-routing-system-on-sourceappjsx-file&quot;&gt;1. This is the initial setup of our &lt;strong&gt;Routing System&lt;/strong&gt;. On &lt;code class=&quot;highlighter-rouge&quot;&gt;source/app.jsx&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/*
+  We are declaring use strict just for a javascript module security and debugging repercussion
+*/
+&#39;use strict&#39;;
+
+/*
+  Next, we declare the methods from npm modules we need
+*/
+import React from &#39;react&#39;;
+/*
+  We will create this file next
+*/
+import Routes from &#39;./routes.jsx&#39;; 
+import render from &#39;react-dom&#39;;
+
+/*
+  We are rendering the Routes which will consist of our Layout and main contents as well and
+  attaching it to an HTML element with id of container
+*/
+render(
+  Routes,
+  document.getElementById(&#39;container&#39;)
+);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If you notice, we are compartmentalizing our code so it doesn’t get cluttered in the long run. I know, its confusing at first, but its good to have a clean code for readability.&lt;/p&gt;
+
+&lt;h3 id=&quot;next-create-touch-sourceroutesjsx-file&quot;&gt;2. Next, create &lt;code class=&quot;highlighter-rouge&quot;&gt;touch source/routes.jsx&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&#39;use strict&#39;;
+
+import React from &#39;react&#39;;
+import Layout from &#39;./layout.jsx&#39;; // the usual, we will create this file next
+import { BrowserRouter, Route, Link } from &#39;react-router-dom&#39;;
+
+const Routes = (
+  &amp;lt;BrowserRouter&amp;gt;
+    &amp;lt;Layout/&amp;gt;
+  &amp;lt;/BrowserRouter&amp;gt;
+);
+
+module.exports = Routes;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This file is where we actually define out Routing system by using &lt;code class=&quot;highlighter-rouge&quot;&gt;react-router-dom&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;reat-router&lt;/code&gt;. While coding, there where version conflicts I came across, &lt;a href=&quot;https://github.com/ReactTraining/react-router/issues/4752#issuecomment-286556728&quot;&gt;react-router issue&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;As of React v4, we are to use &lt;code class=&quot;highlighter-rouge&quot;&gt;react-router-dom&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;react-router&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf&quot;&gt;How to use react-router-dom module&lt;/a&gt; explains difference bet. &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;BrowserRouter&amp;gt;&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;HashRouter&amp;gt;&lt;/code&gt;, and which to use.&lt;/p&gt;
+
+&lt;h3 id=&quot;create-our-sourcelayoutjsx-file&quot;&gt;3. Create our &lt;code class=&quot;highlighter-rouge&quot;&gt;source/layout.jsx&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&#39;use strict&#39;;
+
+import React from &#39;react&#39;;
+// as discuss from prev step, there is a tutorial on how to use these methods
+import { Switch, Route } from &#39;react-router-dom&#39;;
+
+/*
+  These are 2 main components of our layout.
+  Names are pretty self-explanatory
+*/
+import Menu from &#39;./components/menu.jsx&#39;;
+import Footer from &#39;./components/footer.jsx&#39;;
+
+/*
+  These are static pages
+*/
+import Home from &#39;./pages/home.jsx&#39;;
+import Products from &#39;./pages/products.jsx&#39;;
+import Company from &#39;./pages/company.jsx&#39;;
+
+const Layout = React.createClass({
+  render() {
+    return (
+      &amp;lt;div&amp;gt;
+        &amp;lt;Menu /&amp;gt;
+
+        &amp;lt;main&amp;gt;
+          &amp;lt;Switch&amp;gt;
+            &amp;lt;Route exact path=&#39;/&#39; component={ Home } name=&#39;home&#39; /&amp;gt;
+            &amp;lt;Route path=&#39;/products&#39; component={ Products } name=&#39;products&#39; /&amp;gt;
+            &amp;lt;Route path=&#39;/company&#39; component={ Company } name=&#39;company&#39; /&amp;gt;
+          &amp;lt;/Switch&amp;gt;
+        &amp;lt;/main&amp;gt;
+
+        &amp;lt;Footer /&amp;gt;
+      &amp;lt;/div&amp;gt;
+    );
+  }
+});
+
+module.exports = Layout;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The code above is pretty simple. I think theres not much to explain to it. Its pretty much a component of overall layout of our app. Which uses &lt;strong&gt;Route&lt;/strong&gt; to &lt;strong&gt;Switch&lt;/strong&gt; from different static page depending on which link the user clicks.&lt;/p&gt;
+
+&lt;p&gt;The component also loads our Menu and Footer and these stays displayed throughout the app.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;I guess from this point, its safe to stop going further into creating those other components (Pages, Components). We can probably create those on our own.&lt;/p&gt;
+
+&lt;p&gt;The Method above is to explain in detail on how we are able to destructure a layout, create its own component and what latest version of Routing system to use and how to use it.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;references&quot;&gt;References:&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.packtpub.com/web-development/reactjs-blueprints&quot;&gt;ReactJS Blueprints&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 22 Jun 2017 07:12:02 -0700</pubDate>
+        <link>http://rlynjb.github.io/wandrr/Reactjs-Projects-Workflow</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Reactjs-Projects-Workflow</guid>
+        
+        <category>reactjs</category>
+        
+        <category>javascript</category>
+        
+        <category>js</category>
+        
+        
+      </item>
     
       <item>
         <title>ReactJS Cheatsheet</title>
@@ -2038,134 +2237,6 @@ gulp.task(&#39;build&#39;, function () {
         <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Learning-React</guid>
         
         <category>javascript</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Front-End Design Specs</title>
-        <description>&lt;p&gt;determing a workflow is hard but its even harder when we go through a laborious iterative process with designers.&lt;/p&gt;
-
-&lt;p&gt;since i have been using Zurb foundation, zurb foundation comes with a settings file that defines global variables for general design settings. This gave me the idea that responsive web design follows a certain pattern, same as Development.&lt;/p&gt;
-
-&lt;p&gt;process to determing on refining the design and developer workflow are:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;list down general design css properties
-    &lt;ul&gt;
-      &lt;li&gt;layout
-        &lt;ul&gt;
-          &lt;li&gt;max-width&lt;/li&gt;
-          &lt;li&gt;number of columns grid&lt;/li&gt;
-          &lt;li&gt;gutter width
-            &lt;ul&gt;
-              &lt;li&gt;small breakpoint&lt;/li&gt;
-              &lt;li&gt;medium breakpoint&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;typography - header
-        &lt;ul&gt;
-          &lt;li&gt;header font&lt;/li&gt;
-          &lt;li&gt;header font sizes
-            &lt;ul&gt;
-              &lt;li&gt;small breakpoint&lt;/li&gt;
-              &lt;li&gt;medium breakpoint&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;header color&lt;/li&gt;
-          &lt;li&gt;header alignment, leading, kerning&lt;/li&gt;
-          &lt;li&gt;header opacity, filter&lt;/li&gt;
-          &lt;li&gt;header font weight&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;typography - body
-        &lt;ul&gt;
-          &lt;li&gt;body font size
-            &lt;ul&gt;
-              &lt;li&gt;small breakpoint&lt;/li&gt;
-              &lt;li&gt;medium breakpoint&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;body font color&lt;/li&gt;
-          &lt;li&gt;body font family&lt;/li&gt;
-          &lt;li&gt;body line height, leading, kerning&lt;/li&gt;
-          &lt;li&gt;body font weight&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;spacing measurement
-        &lt;ul&gt;
-          &lt;li&gt;width and height
-            &lt;ul&gt;
-              &lt;li&gt;small breakpoint&lt;/li&gt;
-              &lt;li&gt;medium breakpopint&lt;/li&gt;
-              &lt;li&gt;large breakpoint&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;spacing bet object and canvas&lt;/li&gt;
-          &lt;li&gt;spacing bet multiple objects&lt;/li&gt;
-          &lt;li&gt;spacing bet text and objects&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;objects
-        &lt;ul&gt;
-          &lt;li&gt;fill color&lt;/li&gt;
-          &lt;li&gt;stroke, color, size, style&lt;/li&gt;
-          &lt;li&gt;opacity/filter&lt;/li&gt;
-          &lt;li&gt;corner radius&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;color palette
-        &lt;ul&gt;
-          &lt;li&gt;primary, secondary, tertiary, quaternary&lt;/li&gt;
-          &lt;li&gt;monotone
-            &lt;ul&gt;
-              &lt;li&gt;gray - light, medium, dark&lt;/li&gt;
-              &lt;li&gt;black&lt;/li&gt;
-              &lt;li&gt;white&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;after analyzing above data and visually looking at a design comp, these properties are already set on the provided design comp but not documented.&lt;/p&gt;
-
-&lt;p&gt;this is where PNG Express comes in, photoshop plugin tool.&lt;/p&gt;
-
-&lt;p&gt;after testing on a design comp and implementing it on theme development, it is indeed an ease for us developers.&lt;/p&gt;
-
-&lt;p&gt;so overview process would be:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;designer designs ui comp&lt;/li&gt;
-  &lt;li&gt;after design is complete, designer sets Design Specs with PNG Express&lt;/li&gt;
-  &lt;li&gt;pass the UI comp with design specs to front end developer&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;front end developer implements these measurements on css styles sheets&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;it does not need to be exact pixels, this is a good way to atleast get an estimate.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;with this in set, this also gives Front end developers to compile a Style Guide and or components that can be resuable.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2014/10/front-end-development-ode-to-specifications/&quot;&gt;A Front-End Developer’s Ode To Specifications&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.pngexpress.com/&quot;&gt;PNG Express&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 28 Jul 2016 03:58:40 -0700</pubDate>
-        <link>http://rlynjb.github.io/wandrr/Front-End-Design-Specs</link>
-        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Front-End-Design-Specs</guid>
-        
-        <category>workflow</category>
         
         
       </item>
