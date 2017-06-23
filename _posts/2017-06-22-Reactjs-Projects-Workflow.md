@@ -12,6 +12,7 @@ tags:
 
 - [Scaffold](#scaffold)
 - [Destructuring the Layout](#destructing-the-layout)
+- [Create a sample Database of products](#create-a-sample-database-of-products)
 
 -----
 
@@ -166,6 +167,26 @@ I guess from this point, its safe to stop going further into creating those othe
 
 The Method above is to explain in detail on how we are able to destructure a layout, create its own component and what latest version of Routing system to use and how to use it.
 
+-----
+
+# Create a sample Database of products
+
+Since we are using Express, we create a sample json object data, but I assume we can use any API endpoint products file.
+
+### Method
+
+- create a `products.json` data and store in `/public/`
+  - each item has the ff. fields
+    - SKU, price, savings, description, image, title
+  - items are categorized by:
+    - main offerings, sale offerings
+- implement code to fetch data on `server.js` file
+
+```
+app.get('*.json', function (req, res) {
+  res.sendFile(__dirname + "/public/" + req.path);
+});
+```
 
 -----
 

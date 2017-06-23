@@ -81,6 +81,7 @@
 <ul>
   <li><a href="#scaffold">Scaffold</a></li>
   <li><a href="#destructing-the-layout">Destructuring the Layout</a></li>
+  <li><a href="#create-a-sample-database-of-products">Create a sample Database of products</a></li>
 </ul>
 
 <hr />
@@ -251,6 +252,38 @@ module.exports = Layout;
 <p>I guess from this point, its safe to stop going further into creating those other components (Pages, Components). We can probably create those on our own.</p>
 
 <p>The Method above is to explain in detail on how we are able to destructure a layout, create its own component and what latest version of Routing system to use and how to use it.</p>
+
+<hr />
+
+<h1 id="create-a-sample-database-of-products">Create a sample Database of products</h1>
+
+<p>Since we are using Express, we create a sample json object data, but I assume we can use any API endpoint products file.</p>
+
+<h3 id="method-2">Method</h3>
+
+<ul>
+  <li>create a <code class="highlighter-rouge">products.json</code> data and store in <code class="highlighter-rouge">/public/</code>
+    <ul>
+      <li>each item has the ff. fields
+        <ul>
+          <li>SKU, price, savings, description, image, title</li>
+        </ul>
+      </li>
+      <li>items are categorized by:
+        <ul>
+          <li>main offerings, sale offerings</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>implement code to fetch data on <code class="highlighter-rouge">server.js</code> file</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>app.get('*.json', function (req, res) {
+  res.sendFile(__dirname + "/public/" + req.path);
+});
+</code></pre>
+</div>
 
 <hr />
 

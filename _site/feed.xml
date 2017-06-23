@@ -6,8 +6,8 @@
 </description>
     <link>http://rlynjb.github.io/wandrr/</link>
     <atom:link href="http://rlynjb.github.io/wandrr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 23 Jun 2017 09:22:55 -0700</pubDate>
-    <lastBuildDate>Fri, 23 Jun 2017 09:22:55 -0700</lastBuildDate>
+    <pubDate>Fri, 23 Jun 2017 10:32:43 -0700</pubDate>
+    <lastBuildDate>Fri, 23 Jun 2017 10:32:43 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -17,6 +17,7 @@
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;#scaffold&quot;&gt;Scaffold&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#destructing-the-layout&quot;&gt;Destructuring the Layout&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#create-a-sample-database-of-products&quot;&gt;Create a sample Database of products&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
@@ -187,6 +188,38 @@ module.exports = Layout;
 &lt;p&gt;I guess from this point, its safe to stop going further into creating those other components (Pages, Components). We can probably create those on our own.&lt;/p&gt;
 
 &lt;p&gt;The Method above is to explain in detail on how we are able to destructure a layout, create its own component and what latest version of Routing system to use and how to use it.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;create-a-sample-database-of-products&quot;&gt;Create a sample Database of products&lt;/h1&gt;
+
+&lt;p&gt;Since we are using Express, we create a sample json object data, but I assume we can use any API endpoint products file.&lt;/p&gt;
+
+&lt;h3 id=&quot;method-2&quot;&gt;Method&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;create a &lt;code class=&quot;highlighter-rouge&quot;&gt;products.json&lt;/code&gt; data and store in &lt;code class=&quot;highlighter-rouge&quot;&gt;/public/&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;each item has the ff. fields
+        &lt;ul&gt;
+          &lt;li&gt;SKU, price, savings, description, image, title&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;items are categorized by:
+        &lt;ul&gt;
+          &lt;li&gt;main offerings, sale offerings&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;implement code to fetch data on &lt;code class=&quot;highlighter-rouge&quot;&gt;server.js&lt;/code&gt; file&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;app.get(&#39;*.json&#39;, function (req, res) {
+  res.sendFile(__dirname + &quot;/public/&quot; + req.path);
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;hr /&gt;
 
