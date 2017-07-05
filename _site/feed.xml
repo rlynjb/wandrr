@@ -6,8 +6,8 @@
 </description>
     <link>http://rlynjb.github.io/wandrr/</link>
     <atom:link href="http://rlynjb.github.io/wandrr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 23 Jun 2017 10:32:43 -0700</pubDate>
-    <lastBuildDate>Fri, 23 Jun 2017 10:32:43 -0700</lastBuildDate>
+    <pubDate>Wed, 05 Jul 2017 10:48:49 -0700</pubDate>
+    <lastBuildDate>Wed, 05 Jul 2017 10:48:49 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -15,9 +15,33 @@
         <description>&lt;h4 id=&quot;gist&quot;&gt;Gist&lt;/h4&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#scaffold&quot;&gt;Scaffold&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#destructing-the-layout&quot;&gt;Destructuring the Layout&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#create-a-sample-database-of-products&quot;&gt;Create a sample Database of products&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#scaffold&quot;&gt;Scaffold&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Express, Browserify, Babelify, npm modules&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#destructing-the-layout&quot;&gt;Destructuring the Layout&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;React Router DOM, React Bootstrap, React Router Bootstrap&lt;/li&gt;
+      &lt;li&gt;Compartmentalize Layout into React Components&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#create-a-sample-database-of-products&quot;&gt;Create a sample Database of products&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Just a simple JSON data object served via Express&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#create-a-data-store-to-fetch-the-products&quot;&gt;Create a data Store to fetch the products&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;implement Flux via Reflux&lt;/li&gt;
+      &lt;li&gt;Learned the architecture of organizing code to use less States&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#building-the-products-listing-and-the-item-page&quot;&gt;Building the product’s listing and the item page&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Learning more about ReactJS in detail&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
@@ -220,6 +244,112 @@ module.exports = Layout;
 });
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;create-a-data-store-to-fetch-the-products&quot;&gt;Create a data Store to fetch the products&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Flux&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;is an application architecture.&lt;/li&gt;
+  &lt;li&gt;not a framework, but a pattern to transmit data.&lt;/li&gt;
+  &lt;li&gt;consists of 3 major parts: Dispatchers, Stores, Actions&lt;/li&gt;
+  &lt;li&gt;this pattern avoids multiple states which can lead to bugs and hard to track down&lt;/li&gt;
+  &lt;li&gt;there are different Flux implementation
+    &lt;ul&gt;
+      &lt;li&gt;ex. Reflux, Redux&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://docs.google.com/drawings/d/187gtqcie1Uq3IQ9gv0bcAM_P1UKP7SgscqCGWkhtcgE/pub?w=960&amp;amp;h=720&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Dispatcher&lt;/strong&gt; central hub. Receives actions and sends payloads to all of its registered callbacks.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Actions&lt;/strong&gt; these refer to helper methods that facilitates the passing of data to the dispatcher.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Stores&lt;/strong&gt; these are logic containers that have callbacks registered on the dispatcher, which emits state changes to all registered callbacks&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Views&lt;/strong&gt; refers to those React components that get a state from the stores and pass data to any of the descendants in their component tree.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For this pj, we are using &lt;strong&gt;Reflux&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;merges the concept of Dispatcher and Action, so its easier to understand.&lt;/p&gt;
+
+&lt;h3 id=&quot;method-3&quot;&gt;Method&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm install --save reflux&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install --save superagent&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;superagent is a HTTP request library&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mkdir source/stores &amp;amp;&amp;amp; mkdir source/actions&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;touch source/stores/products.js &amp;amp;&amp;amp; touch source/actions/products.js&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;these files are regular javascript files and not &lt;code class=&quot;highlighter-rouge&quot;&gt;.jsx&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;add Helper method code (Actions) in &lt;code class=&quot;highlighter-rouge&quot;&gt;source/actions/products.js&lt;/code&gt; file
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/rlynjb/webshop/blob/d9fb9aa1bca2ef9988359dc02a72e5969aa95815/source/actions/products.js&quot;&gt;github snippet - actions/products.js&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;add Store callback data in &lt;code class=&quot;highlighter-rouge&quot;&gt;source/stores/products.js&lt;/code&gt; file
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/rlynjb/webshop/blob/d9fb9aa1bca2ef9988359dc02a72e5969aa95815/source/stores/products.js&quot;&gt;github snippet - stores/products.js&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;now, we listen for updates from this Store to our &lt;code class=&quot;highlighter-rouge&quot;&gt;source/layout.jsx&lt;/code&gt; component.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/rlynjb/webshop/blob/d9fb9aa1bca2ef9988359dc02a72e5969aa95815/source/layout.jsx&quot;&gt;github snippet - layout.jsx&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;building-the-products-listing-and-the-item-page&quot;&gt;Building the product’s listing and the item page&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;this page will present the items in 1 fullsize featured column and a couple of mini columns at the bottom.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;method-4&quot;&gt;Method&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vim pages/products.jsx&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;link to code&lt;/li&gt;
+      &lt;li&gt;topics discussed:
+        &lt;ul&gt;
+          &lt;li&gt;propTypes
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;https://wecodetheweb.com/2015/06/02/why-react-proptypes-are-important/&quot;&gt;Why React PropTypes are important&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;https://facebook.github.io/react/docs/typechecking-with-proptypes.html&quot;&gt;Typechecking With PropTypes&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;getDefaultProps
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/33125985/this-props-inside-getdefaultprops-of-react&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;this.props&lt;/code&gt; inside &lt;code class=&quot;highlighter-rouge&quot;&gt;getDefaultProps()&lt;/code&gt; of React?&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/28701750/react-why-is-getdefaultprops-a-method-while-proptypes-is-a-plain-object&quot;&gt;React: why is getDefaultProps a method while propTypes is a plain object?&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;getInitialState
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;https://medium.com/react-tutorials/react-state-14a6d4f736f5&quot;&gt;React State&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Passing data from Route to component
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/43469071/react-react-router-dom-pass-props-to-component&quot;&gt;React react-router-dom pass props to component&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;hr /&gt;
 

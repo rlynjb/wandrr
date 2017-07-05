@@ -11,8 +11,17 @@ tags:
 #### Gist
 
 - [Scaffold](#scaffold)
+  - Express, Browserify, Babelify, npm modules
 - [Destructuring the Layout](#destructing-the-layout)
+  - React Router DOM, React Bootstrap, React Router Bootstrap
+  - Compartmentalize Layout into React Components
 - [Create a sample Database of products](#create-a-sample-database-of-products)
+  - Just a simple JSON data object served via Express
+- [Create a data Store to fetch the products](#create-a-data-store-to-fetch-the-products)
+  - implement Flux via Reflux
+  - Learned the architecture of organizing code to use less States
+- [Building the product's listing and the item page](#building-the-products-listing-and-the-item-page)
+  - Learning more about ReactJS in detail
 
 -----
 
@@ -187,6 +196,70 @@ app.get('*.json', function (req, res) {
   res.sendFile(__dirname + "/public/" + req.path);
 });
 ```
+
+-----
+
+# Create a data Store to fetch the products
+
+**Flux**
+
+- is an application architecture.
+- not a framework, but a pattern to transmit data.
+- consists of 3 major parts: Dispatchers, Stores, Actions
+- this pattern avoids multiple states which can lead to bugs and hard to track down
+- there are different Flux implementation
+  - ex. Reflux, Redux
+
+<img src="https://docs.google.com/drawings/d/187gtqcie1Uq3IQ9gv0bcAM_P1UKP7SgscqCGWkhtcgE/pub?w=960&amp;h=720">
+
+- **Dispatcher** central hub. Receives actions and sends payloads to all of its registered callbacks.
+- **Actions** these refer to helper methods that facilitates the passing of data to the dispatcher.
+- **Stores** these are logic containers that have callbacks registered on the dispatcher, which emits state changes to all registered callbacks
+- **Views** refers to those React components that get a state from the stores and pass data to any of the descendants in their component tree.
+
+For this pj, we are using **Reflux**
+
+merges the concept of Dispatcher and Action, so its easier to understand.
+
+
+### Method
+
+- `npm install --save reflux`, `npm install --save superagent`
+  - superagent is a HTTP request library
+- `mkdir source/stores && mkdir source/actions`
+- `touch source/stores/products.js && touch source/actions/products.js`
+  - these files are regular javascript files and not `.jsx`
+- add Helper method code (Actions) in `source/actions/products.js` file
+  - [github snippet - actions/products.js](https://github.com/rlynjb/webshop/blob/d9fb9aa1bca2ef9988359dc02a72e5969aa95815/source/actions/products.js)
+- add Store callback data in `source/stores/products.js` file
+  - [github snippet - stores/products.js](https://github.com/rlynjb/webshop/blob/d9fb9aa1bca2ef9988359dc02a72e5969aa95815/source/stores/products.js)
+- now, we listen for updates from this Store to our `source/layout.jsx` component.
+  - [github snippet - layout.jsx](https://github.com/rlynjb/webshop/blob/d9fb9aa1bca2ef9988359dc02a72e5969aa95815/source/layout.jsx)
+
+
+-----
+
+# Building the product's listing and the item page
+
+- this page will present the items in 1 fullsize featured column and a couple of mini columns at the bottom.
+
+### Method
+
+- `vim pages/products.jsx`
+  - link to code
+  - topics discussed:
+    - propTypes
+      - [Why React PropTypes are important](https://wecodetheweb.com/2015/06/02/why-react-proptypes-are-important/)
+      - [Typechecking With PropTypes](https://facebook.github.io/react/docs/typechecking-with-proptypes.html)
+    - getDefaultProps
+      - [`this.props` inside `getDefaultProps()` of React?](https://stackoverflow.com/questions/33125985/this-props-inside-getdefaultprops-of-react)
+      - [React: why is getDefaultProps a method while propTypes is a plain object?](https://stackoverflow.com/questions/28701750/react-why-is-getdefaultprops-a-method-while-proptypes-is-a-plain-object)
+    - getInitialState
+      - [React State](https://medium.com/react-tutorials/react-state-14a6d4f736f5)
+    - Passing data from Route to component
+      - [React react-router-dom pass props to component](https://stackoverflow.com/questions/43469071/react-react-router-dom-pass-props-to-component)
+
+
 
 -----
 

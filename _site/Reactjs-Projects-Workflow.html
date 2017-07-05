@@ -79,9 +79,33 @@
     <h4 id="gist">Gist</h4>
 
 <ul>
-  <li><a href="#scaffold">Scaffold</a></li>
-  <li><a href="#destructing-the-layout">Destructuring the Layout</a></li>
-  <li><a href="#create-a-sample-database-of-products">Create a sample Database of products</a></li>
+  <li><a href="#scaffold">Scaffold</a>
+    <ul>
+      <li>Express, Browserify, Babelify, npm modules</li>
+    </ul>
+  </li>
+  <li><a href="#destructing-the-layout">Destructuring the Layout</a>
+    <ul>
+      <li>React Router DOM, React Bootstrap, React Router Bootstrap</li>
+      <li>Compartmentalize Layout into React Components</li>
+    </ul>
+  </li>
+  <li><a href="#create-a-sample-database-of-products">Create a sample Database of products</a>
+    <ul>
+      <li>Just a simple JSON data object served via Express</li>
+    </ul>
+  </li>
+  <li><a href="#create-a-data-store-to-fetch-the-products">Create a data Store to fetch the products</a>
+    <ul>
+      <li>implement Flux via Reflux</li>
+      <li>Learned the architecture of organizing code to use less States</li>
+    </ul>
+  </li>
+  <li><a href="#building-the-products-listing-and-the-item-page">Building the product’s listing and the item page</a>
+    <ul>
+      <li>Learning more about ReactJS in detail</li>
+    </ul>
+  </li>
 </ul>
 
 <hr />
@@ -284,6 +308,112 @@ module.exports = Layout;
 });
 </code></pre>
 </div>
+
+<hr />
+
+<h1 id="create-a-data-store-to-fetch-the-products">Create a data Store to fetch the products</h1>
+
+<p><strong>Flux</strong></p>
+
+<ul>
+  <li>is an application architecture.</li>
+  <li>not a framework, but a pattern to transmit data.</li>
+  <li>consists of 3 major parts: Dispatchers, Stores, Actions</li>
+  <li>this pattern avoids multiple states which can lead to bugs and hard to track down</li>
+  <li>there are different Flux implementation
+    <ul>
+      <li>ex. Reflux, Redux</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://docs.google.com/drawings/d/187gtqcie1Uq3IQ9gv0bcAM_P1UKP7SgscqCGWkhtcgE/pub?w=960&amp;h=720" /></p>
+
+<ul>
+  <li><strong>Dispatcher</strong> central hub. Receives actions and sends payloads to all of its registered callbacks.</li>
+  <li><strong>Actions</strong> these refer to helper methods that facilitates the passing of data to the dispatcher.</li>
+  <li><strong>Stores</strong> these are logic containers that have callbacks registered on the dispatcher, which emits state changes to all registered callbacks</li>
+  <li><strong>Views</strong> refers to those React components that get a state from the stores and pass data to any of the descendants in their component tree.</li>
+</ul>
+
+<p>For this pj, we are using <strong>Reflux</strong></p>
+
+<p>merges the concept of Dispatcher and Action, so its easier to understand.</p>
+
+<h3 id="method-3">Method</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">npm install --save reflux</code>, <code class="highlighter-rouge">npm install --save superagent</code>
+    <ul>
+      <li>superagent is a HTTP request library</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">mkdir source/stores &amp;&amp; mkdir source/actions</code></li>
+  <li><code class="highlighter-rouge">touch source/stores/products.js &amp;&amp; touch source/actions/products.js</code>
+    <ul>
+      <li>these files are regular javascript files and not <code class="highlighter-rouge">.jsx</code></li>
+    </ul>
+  </li>
+  <li>add Helper method code (Actions) in <code class="highlighter-rouge">source/actions/products.js</code> file
+    <ul>
+      <li><a href="https://github.com/rlynjb/webshop/blob/d9fb9aa1bca2ef9988359dc02a72e5969aa95815/source/actions/products.js">github snippet - actions/products.js</a></li>
+    </ul>
+  </li>
+  <li>add Store callback data in <code class="highlighter-rouge">source/stores/products.js</code> file
+    <ul>
+      <li><a href="https://github.com/rlynjb/webshop/blob/d9fb9aa1bca2ef9988359dc02a72e5969aa95815/source/stores/products.js">github snippet - stores/products.js</a></li>
+    </ul>
+  </li>
+  <li>now, we listen for updates from this Store to our <code class="highlighter-rouge">source/layout.jsx</code> component.
+    <ul>
+      <li><a href="https://github.com/rlynjb/webshop/blob/d9fb9aa1bca2ef9988359dc02a72e5969aa95815/source/layout.jsx">github snippet - layout.jsx</a></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h1 id="building-the-products-listing-and-the-item-page">Building the product’s listing and the item page</h1>
+
+<ul>
+  <li>this page will present the items in 1 fullsize featured column and a couple of mini columns at the bottom.</li>
+</ul>
+
+<h3 id="method-4">Method</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">vim pages/products.jsx</code>
+    <ul>
+      <li>link to code</li>
+      <li>topics discussed:
+        <ul>
+          <li>propTypes
+            <ul>
+              <li><a href="https://wecodetheweb.com/2015/06/02/why-react-proptypes-are-important/">Why React PropTypes are important</a></li>
+              <li><a href="https://facebook.github.io/react/docs/typechecking-with-proptypes.html">Typechecking With PropTypes</a></li>
+            </ul>
+          </li>
+          <li>getDefaultProps
+            <ul>
+              <li><a href="https://stackoverflow.com/questions/33125985/this-props-inside-getdefaultprops-of-react"><code class="highlighter-rouge">this.props</code> inside <code class="highlighter-rouge">getDefaultProps()</code> of React?</a></li>
+              <li><a href="https://stackoverflow.com/questions/28701750/react-why-is-getdefaultprops-a-method-while-proptypes-is-a-plain-object">React: why is getDefaultProps a method while propTypes is a plain object?</a></li>
+            </ul>
+          </li>
+          <li>getInitialState
+            <ul>
+              <li><a href="https://medium.com/react-tutorials/react-state-14a6d4f736f5">React State</a></li>
+            </ul>
+          </li>
+          <li>Passing data from Route to component
+            <ul>
+              <li><a href="https://stackoverflow.com/questions/43469071/react-react-router-dom-pass-props-to-component">React react-router-dom pass props to component</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
 <hr />
 
