@@ -6,9 +6,45 @@
 </description>
     <link>http://rlynjb.github.io/wandrr/</link>
     <atom:link href="http://rlynjb.github.io/wandrr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 05 Jul 2017 10:48:49 -0700</pubDate>
-    <lastBuildDate>Wed, 05 Jul 2017 10:48:49 -0700</lastBuildDate>
+    <pubDate>Thu, 27 Jul 2017 17:13:00 -0700</pubDate>
+    <lastBuildDate>Thu, 27 Jul 2017 17:13:00 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>A Method to remove Bower and use NPM for all dependencies</title>
+        <description>&lt;p&gt;This is just simple method I came up with when removing Bower since its deprecated. Alternative is NPM or Yarn.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Make sure to have a clean local repo&lt;/li&gt;
+  &lt;li&gt;Copy and Paste packages from &lt;code class=&quot;highlighter-rouge&quot;&gt;bower.json&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Make sure to remove ^ carat symbol before a module version.
+    &lt;ul&gt;
+      &lt;li&gt;This is to maintain its original version everytime an &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install&lt;/code&gt; is ran&lt;/li&gt;
+      &lt;li&gt;With the ^ carat symbol before a module version means it will automatically update the module to the latest version&lt;/li&gt;
+      &lt;li&gt;Also, double check on npmjs.org of module is available and which version to use&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Next is &lt;code class=&quot;highlighter-rouge&quot;&gt;rm bower.json&lt;/code&gt; file&lt;/li&gt;
+  &lt;li&gt;Remove existing node_modules directory if there is, &lt;code class=&quot;highlighter-rouge&quot;&gt;rm -rf node_modules&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Then run &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo npm install&lt;/code&gt;, pretty self-explanatory here&lt;/li&gt;
+  &lt;li&gt;On &lt;code class=&quot;highlighter-rouge&quot;&gt;gulpfile.js&lt;/code&gt;, replace all instances of &lt;code class=&quot;highlighter-rouge&quot;&gt;bower_components&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;node_modules&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;highlighter-rouge&quot;&gt;gulp&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;gulp watch&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;if error occurs, fix it&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Test the site/app/project&lt;/li&gt;
+  &lt;li&gt;Obviously, fix errors lol&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Thu, 27 Jul 2017 09:54:20 -0700</pubDate>
+        <link>http://rlynjb.github.io/wandrr/Method-to-remove-bower-and-use-npm-for-all-dependencies</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Method-to-remove-bower-and-use-npm-for-all-dependencies</guid>
+        
+        <category>javascript</category>
+        
+        
+      </item>
     
       <item>
         <title>React.Js Projects Workflow</title>
@@ -2348,58 +2384,6 @@ gulp.task(&#39;build&#39;, function () {
         <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Breaking-down-cross-browser-testing</guid>
         
         <category>testing</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Learning React</title>
-        <description>&lt;p&gt;implementing react.js on gulp
-- do a gulp task of react.js build&lt;/p&gt;
-
-&lt;p&gt;*JSX makes us write HTML syntax in Javascript files&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;this does not run in browsers thats why we need a transpiler&lt;/li&gt;
-  &lt;li&gt;since i am usin gulp, we are going to search for a gulp plugin that transpiles JSX files to plain js files&lt;/li&gt;
-  &lt;li&gt;JSX to JS using babel&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;configuring gulp plugin babel was a bit tricky due to NPM dependency issues.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;learning react is quite overwhelming. I think with any new front-end is overwhelming due to the amount of dependencies or tools options that are available. Front-end development has indeed bloom.&lt;/p&gt;
-
-&lt;p&gt;before digging further into random articles that suggests to use this or that tool. I’ve decided to learn plain React.js. Stripping other unknown tools and focusing on the foundation, then once comfortable with plain React.js, move on to another tool and implement. Learning indeed can also be a step-by-step process.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;continuation&quot;&gt;continuation…&lt;/h3&gt;
-
-&lt;p&gt;my stack to build apps:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://facebook.github.io/react/docs/thinking-in-react.html&quot;&gt;React&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Firebase&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://css-tricks.com/learning-react-router/&quot;&gt;React Router&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://jamesknelson.com/learn-raw-react-no-jsx-flux-es6-webpack/&quot;&gt;Learn Raw React — no JSX, no Flux, no ES6, no Webpack&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.risingstack.com/the-react-way-getting-started-tutorial/&quot;&gt;The React.js Way: Getting Started Tutorial&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://buildwithreact.com/&quot;&gt;Build with React&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 28 Jul 2016 03:58:40 -0700</pubDate>
-        <link>http://rlynjb.github.io/wandrr/Learning-React</link>
-        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Learning-React</guid>
-        
-        <category>javascript</category>
         
         
       </item>
