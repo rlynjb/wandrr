@@ -65,6 +65,11 @@ figcaption {
  */
 ul, ol {
     margin-left: $spacing-unit;
+    margin-top: $spacing-unit;
+
+    ul {
+      margin-top: 0;
+    }
 }
 
 li {
@@ -93,12 +98,12 @@ a {
     text-decoration: none;
 
     &:visited {
-        color: darken($brand-color, 15%);
+        color: $brand-color;
     }
 
     &:hover {
-        color: $text-color;
-        text-decoration: underline;
+        color: $brand-color;
+        text-decoration: none;
     }
 }
 
@@ -198,7 +203,21 @@ pre {
         vertical-align: middle;
 
         path {
-            fill: $grey-color;
+            fill: $brand-color;
         }
     }
+}
+
+
+/*
+ custom overrides
+ */
+hr {
+  margin: 3em 13em;
+  border-style: dashed;
+  border-color: lightgray;
+}
+
+p {
+  margin: 2em 0;
 }

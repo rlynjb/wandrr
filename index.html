@@ -2,22 +2,331 @@
 layout: default
 ---
 
-<div class="home">
+<div class="wrapper intro">
+  <h2>Hi, I'm RLyn.</h2>
+  <p>
+    I am a self-taught, goal-oriented Front-End Developer with an enthusiasm for web technology and a long term goal of becoming an efficient programmer. I also love solving coding, UI/UX problems and I embrace challenges.
+  </p>
 
-  <h1 class="page-heading">Posts</h1>
+  <a href="#portfolio">portfolio</a> - <a href="#blog">blog</a> - <a target="_blank" href="https://docs.google.com/document/d/1VN9dtP5_oyVELBfDxY7qXaFLu4iSs4yOEK8vqjDoFG8/edit?usp=sharing">resume</a>
+  <br>
+  <br>
+  <br>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
+  <h3>My Tech Stack</h3>
+  <ul style="list-style: none;">
+    <li>HTML5, CSS3, JavaScript</li>
+    <li>Laravel (PHP, Blade)</li>
+    <li>Grav (Twig), JekyllRB</li>
+    <li>Wordpress, Magento2</li>
   </ul>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+  <br>
+  <br>
 
+  <h3>Code Samples</h3>
+  <!--
+  <a target="_blank" href="https://gist.github.com/rlynjb/4daa009d9b65421608f9">Basic Algorithm Scripting</a>
+  <br>
+  <a target="_blank" href="https://gist.github.com/rlynjb/fe49919bd0de0f5a2606">Intermediate Algorithm Scripting</a>
+  <br>
+  -->
+  <a target="_blank" href="http://github.com/rlynjb">Github</a> | <a target="_blank" href="http://codepen.io/rlynjb">Codepen</a>
+</div>
+
+
+<div id="portfolio" class="portfolio">
+  <h3>Work Projects</h3>
+  <ul class="portfolio-wrapper">
+    <li>
+      <a href="https://www.kobalttools.com/personalized-products/personalized-bottle-cap-opener">
+        <div class="portfolio-img">
+          <img src="{{ site.url }}/images/kobalttools.png" />
+        </div>
+        <div class="portfolio-desc">
+          <b>KobaltTools.com - Personalization Platform</b>
+          <p>Authored code w/ JavaScript, CSS3. Learned Ecommerce system and PHP Session, Cookies concepts.</p>
+        </div>
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.212performancegloves.com">
+        <div class="portfolio-img">
+          <img src="{{ site.url }}/images/212gloves.png" />
+        </div>
+        <div class="portfolio-desc">
+          <b>212 Performance Gloves</b>
+          <p>Built w/ Magento2, Custom theme</p>
+        </div>
+      </a>
+    </li>
+
+
+    <li>
+      <a href="https://www.rt-4000pro.com/">
+        <div class="portfolio-img">
+          <img src="{{ site.url }}/images/rt4000.png" />
+        </div>
+        <div class="portfolio-desc">
+          <b>RT-4000 PRO - Resets made easy and quick!</b>
+          <p>Built w/ Laravel, User Authentication, Middleware, CRUD w/ JSON, Forms w/ MySQL, RWD, FrontEnd Flow (theme starter kit I'm developing: https://github.com/rlynjb/frontendflow)</p>
+        </div>
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.boundarygear.com/">
+        <div class="portfolio-img">
+          <img src="{{ site.url }}/images/boundary.png" />
+        </div>
+        <div class="portfolio-desc">
+          <b>Boundary - Outdoor Gear</b>
+          <p>Built w/ Laravel, RWD, FrontEnd Flow (theme starter kit I'm developing: https://github.com/rlynjb/frontendflow)</p>
+        </div>
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.rakdistribution.net/">
+        <div class="portfolio-img">
+          <img src="{{ site.url }}/images/rak.png" />
+        </div>
+        <div class="portfolio-desc">
+          <b>Rakdistribution.net</b>
+          <p>Built w/ Laravel, RWD, FrontEnd Flow (theme starter kit I'm developing: https://github.com/rlynjb/frontendflow)</p>
+        </div>
+      </a>
+    </li>
+
+    <li>
+      <a href="http://jhanlonstorage.com/">
+        <div class="portfolio-img">
+          <img src="{{ site.url }}/images/jhanlon.png" />
+        </div>
+        <div class="portfolio-desc">
+          <b>JHanlonStorage.com</b>
+          <p>Built with Laravel w/ static json data and database integration, RWD, FrontEnd Flow (theme starter kit I'm developing: https://github.com/rlynjb/frontendflow)</p>
+        </div>
+      </a>
+    </li>
+
+    <li>
+      <a href="http://commandpost.steelmanpro.com/">
+        <div class="portfolio-img">
+          <img src="{{ site.url }}/images/commandpost.png" />
+        </div>
+        <div class="portfolio-desc">
+          <b>CommandPost.SteelmanPRO.com</b>
+          <p>Built with Laravel w/ static json data and database integration, RWD, FrontEnd Flow (theme starter kit I'm developing: https://github.com/rlynjb/frontendflow)</p>
+        </div>
+      </a>
+    </li>
+
+    <li>
+      <a href="http://protocolequipment.com/">
+        <div class="portfolio-img">
+          <img src="{{ site.url }}/images/protocol.png" />
+        </div>
+        <div class="portfolio-desc">
+          <b>ProtocolEquipment.com</b>
+          <p>Built with Grav, RWD, JavaScript, PHP/MySQL Forms, FrontEnd Flow (theme starter kit I'm developing: https://github.com/rlynjb/frontendflow)</p>
+        </div>
+      </a>
+    </li>
+
+    <li>
+      <a href="http://flaresquare.com/">
+        <div class="portfolio-img">
+          <img src="{{ site.url }}/images/flaresquare.png" />
+        </div>
+        <div class="portfolio-desc">
+          <b>FlareSquare.com</b>
+          <p>Built with Grav, RWD, FrontEnd Flow (theme starter kit I'm developing: https://github.com/rlynjb/frontendflow)</p>
+        </div>
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.kobalttools.com/">
+        <div class="portfolio-img">
+          <img src="{{ site.url }}/images/kobalttools.png" />
+        </div>
+        <div class="portfolio-desc">
+          <b>KobaltTools.com</b>
+          <p>Built with Grav, RWD</p>
+        </div>
+      </a>
+    </li>
+
+    <li>
+      <a href="http://pteglv.com/">
+        <div class="portfolio-img">
+          <img src="{{ site.url }}/images/pteglv.png" />
+        </div>
+        <div class="portfolio-desc">
+          <b>PTEGLV.com</b>
+          <p>Built with Wordpress, HTML/CSS, JavaScript, AJAX, RWD</p>
+        </div>
+      </a>
+    </li>
+
+    <li>
+      <a href="http://goldenent.com/">
+        <div class="portfolio-img">
+          <img src="{{ site.url }}/images/goldenent.png" />
+        </div>
+        <div class="portfolio-desc">
+          <b>Goldenent.com</b>
+          <p>Built with Wordpress, HTML/CSS, JavaScript, AJAX, RWD</p>
+        </div>
+      </a>
+    </li>
+
+    <li>
+      <a href="http://persopo.com/">
+        <div class="portfolio-img">
+          <img src="{{ site.url }}/images/persopo.png" />
+        </div>
+        <div class="portfolio-desc">
+          <b>Persopo.com</b>
+          <p>Built with Ember.js, Ruby on Rails, RWD</p>
+        </div>
+      </a>
+    </li>
+
+    <li>
+      <a href="http://galavantier.com">
+        <div class="portfolio-img">
+          <img src="{{ site.url }}/images/galavantier.png" />
+        </div>
+        <div class="portfolio-desc">
+          <b>Galavantier.com</b>
+          <p>Built with Drupal, AngularJS, HTML/CSS</p>
+        </div>
+      </a>
+    </li>
+  </ul>
+
+  <h3>Freelance Projects</h3>
+  <ul class="portfolio-wrapper">
+    <li>
+      <a href="http://crankuptheamps.com/">
+        <div class="portfolio-img">
+          <img src="{{ site.url }}/images/crankuptheamps.png" />
+        </div>
+        <div class="portfolio-desc">
+          <b>crankuptheamps.com</b>
+          <p>Built with JekyllRB, RWD</p>
+        </div>
+      </a>
+    </li>
+
+    <li>
+      <a href="http://ivsc.com/">
+        <div class="portfolio-img">
+          <img src="{{ site.url }}/images/ivsc.png" />
+        </div>
+        <div class="portfolio-desc">
+          <b>Integrity Vehicle Solutions</b>
+          <p>Built with Wordpress</p>
+        </div>
+      </a>
+    </li>
+
+    <li>
+      <a href="http://rideintegrity.com/">
+        <div class="portfolio-img">
+          <img src="{{ site.url }}/images/rideintegrity.png" />
+        </div>
+        <div class="portfolio-desc">
+          <b>Ride Integrity</b>
+          <p>Built with Wordpress</p>
+        </div>
+      </a>
+    </li>
+
+    <li>
+      <a href="http://ridegenie.com/">
+        <div class="portfolio-img">
+          <img src="{{ site.url }}/images/ridegenie.png" />
+        </div>
+        <div class="portfolio-desc">
+          <b>Ride Genie</b>
+          <p>Built with Wordpress</p>
+        </div>
+      </a>
+    </li>
+
+    <li>
+      <a href="http://deluca-associates.com/">
+        <div class="portfolio-img">
+          <img src="{{ site.url }}/images/deluca.png" />
+        </div>
+        <div class="portfolio-desc">
+          <b>Deluca & Associates</b>
+          <p>Built with Wordpress</p>
+        </div>
+      </a>
+    </li>
+  </ul>
+
+  <h3>Pet Projects</h3>
+  <ul class="portfolio-wrapper">
+    <li>
+      <a href="http://codepen.io/rlynjb/full/GpNeWE/">
+        <div class="portfolio-img">
+          <img src="{{ site.url }}/images/quoteme.png" />
+        </div>
+        <div class="portfolio-desc">
+          <b>QuoteMe</b>
+          <p>Built with JavaScript, AJAX</p>
+        </div>
+      </a>
+    </li>
+
+    <li>
+      <a href="http://codepen.io/rlynjb/full/EVbovR/">
+        <div class="portfolio-img">
+          <img src="{{ site.url }}/images/calc.png" />
+        </div>
+        <div class="portfolio-desc">
+          <b>Calculator</b>
+          <p>Built with JavaScript</p>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+<div id="blog" class="wrapper home">
+    <div class="tags-wrapper">
+      <h4>i blog about..</h4>
+      {% capture site_tags %}{% for tag in site.tags %}{{ tag[1].size }}#{{ tag | first | downcase }}#{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+      {% assign tag_hashes = site_tags | split:',' | sort %}
+      <ul class="list-group">
+        {% for hash in tag_hashes reversed %}
+          {% assign keyValue = hash | split: '#' %}
+          {% capture tag_word %}{{ keyValue[2] | strip_newlines }}{% endcapture %}
+          <li class="list-group-item">
+            <a href="/tags/#{{ tag_word }}">
+              {{ tag_word }}
+              <span class="badge pull-right">{{ site.tags[tag_word].size }}</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <ul class="post-list">
+      {% for post in site.posts %}
+        <li>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} | {{ post.tags | join: ', ' }}</span>
+          <h2>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h2>
+        </li>
+      {% endfor %}
+    </ul>
 </div>

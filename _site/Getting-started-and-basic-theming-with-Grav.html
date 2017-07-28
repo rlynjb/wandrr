@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Getting started and basic theming with Grav</title>
+  <meta name="description" content="Hi all! I’ve created this blog post as my notes for learning and exploring Grav. If you haven’t heard, Grav is a full flat-file CMS, this means, it does not ...">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://rlynjb.github.io/wandrr/Getting-started-and-basic-theming-with-Grav">
+  <link rel="alternate" type="application/rss+xml" title="wandrr" href="http://rlynjb.github.io/wandrr/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">
+      <h2>wandrr</h2>
+      <h4>notes & thoughts</h4>
+    </a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about-me/">About Me</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/projects/">Projects</a>
+          
+        
+          
+          <a class="page-link" href="/tags/">Tags</a>
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper post">
+
+  <header class="post-header">
+    <h1 class="post-title">Getting started and basic theming with Grav</h1>
+    <p class="post-meta">
+      Jul 13, 2016
+      
+       • static site
+    </p>
+  </header>
+
+  <article class="post-content">
+    <p>Hi all! I’ve created this blog post as my notes for learning and exploring Grav. If you haven’t heard, Grav is a full flat-file CMS, this means, it does not use any database. All data are saved as YAML files. It follows a certian naming convention and uses its directory page hierarchy structure to generate routes.</p>
+
+<p>Again, consider this blog post as notes rather than re-explaining informations that exists on Grav documentation or other blog sites.</p>
+
+<hr />
+
+<p><strong>Contents</strong></p>
+
+<ul>
+  <li><a href="#getting-started-on-digital-ocean">Getting Started on Digital Ocean</a>
+    <ul>
+      <li>create a droplet</li>
+      <li>debugging nginx with php5-fpm</li>
+      <li>fixing php 502 gateway page</li>
+      <li>tips on using configuration files yaml</li>
+    </ul>
+  </li>
+  <li><a href="#getting-started-on-mamp">Getting Started on MAMP</a>
+    <ul>
+      <li>Install Brew</li>
+      <li>Install MAMP</li>
+      <li>Install Grav</li>
+    </ul>
+  </li>
+  <li><a href="#theming-in-grav">Theming in Grav</a>
+    <ul>
+      <li>Method for setting up a pre-made HTML5 template to Grav theme</li>
+      <li>Method for loadings assets and partial out the main index.html file</li>
+      <li>Breaking our home page template file further by using Modular Pages</li>
+      <li>Creating custom fields to let users update data in theme by using Blueprint Pages</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h1 id="getting-started-on-digital-ocean">Getting Started on Digital Ocean</h1>
+
+<h3 id="create-a-droplet">create a droplet</h3>
+
+<ul>
+  <li><a href="https://learn.getgrav.org/hosting/vps/digitalocean">https://learn.getgrav.org/hosting/vps/digitalocean</a></li>
+</ul>
+
+<h3 id="debugging-nginx-with-php5-fpm">debugging nginx with php5-fpm</h3>
+
+<ul>
+  <li><a href="http://serverfault.com/questions/562062/nginx-with-php-fpm-got-502-bad-gateway-on-ubuntu-server-12-04">resource 1</a></li>
+  <li><a href="http://stackoverflow.com/questions/1706111/where-can-i-find-the-error-logs-of-nginx-using-fastcgi-and-django">resource 2</a></li>
+</ul>
+
+<h3 id="fixing-php-502-gateway-page">fixing php 502 gateway page</h3>
+
+<ul>
+  <li><a href="https://github.com/owncloud/core/issues/14187">resource</a></li>
+</ul>
+
+<h3 id="tips-on-using-configuration-files-yaml">tips on using configuration files, yaml:</h3>
+
+<ul>
+  <li>do not change configs in <code class="highlighter-rouge">/system/config/system.yaml</code> and <code class="highlighter-rouge">/system/config/site.yaml</code></li>
+  <li>do not change configs in <code class="highlighter-rouge">/user/plugins/</code></li>
+  <li>rather override them in <code class="highlighter-rouge">user/config/system.yaml</code>, <code class="highlighter-rouge">user/config/site.yaml</code>, <code class="highlighter-rouge">user/config/plugins/myplugin.yaml</code></li>
+</ul>
+
+<p>note: all yaml files are contructed by name spacing. Grav picks it up in a hierarchy order.</p>
+
+<hr />
+
+<h1 id="getting-started-on-mamp">Getting Started on MAMP</h1>
+
+<h3 id="install-brew">1. Install Brew</h3>
+
+<p>This is to install <strong>git</strong> and <strong>other development goodies</strong> if you are a fan of commandline.</p>
+
+<ul>
+  <li><a href="http://brew.sh/">http://brew.sh/</a></li>
+  <li><a href="http://commandlinepoweruser.com/">http://commandlinepoweruser.com/</a></li>
+</ul>
+
+<h3 id="install-mamp">2. Install MAMP</h3>
+
+<p>You can use any webserver but I’ve used <strong>MAMP</strong> because it was the quickest way I can install a webserver and setup a <strong>local Apache</strong> eventhough we are not using MySql database.</p>
+
+<ul>
+  <li><a href="https://www.mamp.info/en/">https://www.mamp.info/en/</a></li>
+</ul>
+
+<h3 id="install-grav">3. Install Grav</h3>
+
+<ol>
+  <li>Download <strong>Grav core + admin plugins</strong> files from <a href="https://getgrav.org/downloads">https://getgrav.org/downloads</a> and place into <code class="highlighter-rouge">htdocs</code> directory.
+    <ul>
+      <li>You can choose either <strong>Grav core</strong> or <strong>Grav core + admin plugins</strong></li>
+      <li>If <strong>Grav core</strong> only, you have the option to install <strong>Grav admin</strong> later by running <code class="highlighter-rouge">bin/gpm install admin</code> on the root directory of your <strong>Grav core</strong> files.<br />
+ More info: <a href="https://learn.getgrav.org/admin-panel/introduction">https://learn.getgrav.org/admin-panel/introduction</a></li>
+    </ul>
+  </li>
+  <li>Unzip the <code class="highlighter-rouge">grav-admin-v*.*.**.zip</code> file on the <code class="highlighter-rouge">htdocs</code> directory.</li>
+  <li>You can rename the <strong>Grav</strong> directory to whatever project name you want.
+    <ul>
+      <li>You can also move the <strong>Grav core files</strong> to an empty <strong>Github Repo directory</strong>.</li>
+      <li><strong>Tip:</strong> Make sure to move <code class="highlighter-rouge">.htaccess</code> file as well to avoid <strong>404 Not Found</strong> error when visiting subpages.</li>
+      <li>For more info, check <a href="https://learn.getgrav.org/troubleshooting">https://learn.getgrav.org/troubleshooting</a></li>
+    </ul>
+  </li>
+</ol>
+
+<ul>
+  <li><a href="https://getgrav.org/">https://getgrav.org/</a></li>
+</ul>
+
+<hr />
+
+<h1 id="theming-in-grav">Theming in Grav</h1>
+
+<h3 id="method-for-setting-up-a-pre-made-html5-template-to-grav-theme">Method for setting up a pre-made HTML5 template to Grav theme</h3>
+
+<ol>
+  <li>Unzip the <strong>HTML5 theme</strong> zip file unto the <code class="highlighter-rouge">user/themes/</code> directory.</li>
+  <li>Register your theme by following <strong>Step 1 - Base Theme Setup</strong> on <a href="https://learn.getgrav.org/themes/theme-tutorial">https://learn.getgrav.org/themes/theme-tutorial</a>.
+    <ul>
+      <li>For <strong>Step 1 - Base Theme Setup</strong> - #2<br />
+ <em>Tip:</em> You can use the same HTML5 theme directory name or you can clean up directory name by renaming and practicing proper naming convention.<br />
+ <em>Ex:</em> Avoid whitespace, avoid special characters except <code class="highlighter-rouge">_</code> and <code class="highlighter-rouge">-</code> following <em>camel case or snake case</em> naming convention.</li>
+      <li>For <strong>Step 1 - Base Theme Setup</strong> - #3<br />
+ <em>Tip:</em> I chose to follow <strong>Grav’s Theme directory structure</strong> rather than to use the <strong>HTML5 theme</strong> default directory structure to avoid nested directory level, plus, Grav runs a <em>gpm</em> engine which goes through each directories and yaml files to read data.</li>
+      <li>For <strong>Step 1 - Base Theme Setup</strong> - #4<br />
+ <em>Tip:</em> I believe this basically tells Grav that we are extending a Grav Theme class and our custom theme gets registered unto Grav core files.</li>
+      <li>For <strong>Step 1 - Base Theme Setup</strong> - #5<br />
+ <em>Tip:</em> This file just enables our theme, but later on, there are more theme configuration that uses this file.</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h3 id="method-for-loading-assets-and-partial-out-the-main-indexhtml-file">Method for loading assets and partial out the main index.html file</h3>
+
+<p>Now that we have setup our theme directory structures and registered our theme to Grav core files. We will continue on by:</p>
+
+<ul>
+  <li>Load assets (css, js, images) in Head and Body tags.</li>
+  <li>Introduction to using Twig templating engine.</li>
+  <li>Organize our code in <code class="highlighter-rouge">index.html</code> file by using Grav’s <code class="highlighter-rouge">/templates/partials</code>.</li>
+</ul>
+
+<ol>
+  <li>Now, we load our assets by moving HTML5 theme assets to Grav theme’s asset directory structure. Ex: <code class="highlighter-rouge">/css</code>, <code class="highlighter-rouge">/fonts</code>, <code class="highlighter-rouge">/images</code>, <code class="highlighter-rouge">/js</code>, <code class="highlighter-rouge">/templates</code>
+    <ul>
+      <li>This step is a replacement for <strong>Step 2 - Add Bootstrap</strong><br />
+ We are not using Boostrap, instead we are using the HTML5’s assets.</li>
+    </ul>
+  </li>
+  <li>Next is to just follow the remaining steps, <strong>Step 3 - Base Template</strong> to <strong>Step 8 - Testing</strong>.
+    <ul>
+      <li>This step pretty much explains:<br />
+ <strong>Loading assets.</strong> When to use <code class="highlighter-rouge">theme_url</code> twig variable and <code class="highlighter-rouge">do assets.add('')</code> twig function and how it relates with <strong>Grav’s Asset Manager</strong>.<br />
+ <strong>Introduction to basic Twig syntax.</strong><br /> Also, exploring some of Grav’s global twig variables.
+ <strong>Partial out</strong> the theme’s header section, footer section, and main content section to maintain a cleaner <code class="highlighter-rouge">base.html.twig</code> file.</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h3 id="breaking-our-home-page-template-file-further-by-using-modular-pages">Breaking our home page template file further by using Modular Pages</h3>
+
+<p>Most HTML5 themes comes with a home page designed similar to one-page website designs. For this step, we are going to breakdown this one-page website design into sections and use <strong>Grav’s Modular Pages</strong> templating to separate and organize these sections.</p>
+
+<ol>
+  <li>Open <code class="highlighter-rouge">base.html.twig</code> template and analyze what HTML tag is used to contain contents of each sections.
+    <ul>
+      <li><em>Tip:</em> Usual container tags are <code class="highlighter-rouge">&lt;section&gt;&lt;/section&gt;</code> and <code class="highlighter-rouge">&lt;div id=""&gt;&lt;/div&gt;</code></li>
+    </ul>
+  </li>
+  <li>After determining the HTML tag container, convert these sections into <strong>Grav’s Modular Pages</strong>.
+    <ul>
+      <li>Learn more about Modular Pages on the ff. link and ff. instructions: <a href="https://learn.getgrav.org/content/modular">https://learn.getgrav.org/content/modular</a></li>
+      <li>It is also a good idea to scheme through <strong>Grav’s Content</strong> documentation page <a href="https://learn.getgrav.org/content">https://learn.getgrav.org/content</a> to get a glimpse of the parts of a page.</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h3 id="creating-custom-fields-to-let-users-update-data-in-theme-by-using-blueprint-pages">Creating custom fields to let users update data in theme by using Blueprint Pages</h3>
+
+<p>Now that we’ve broken our template further by each sections using <strong>Modular Pages</strong>. What if we wanted users to update contents or bits pieces of data in each section using <strong>Grav’s Administration Panel</strong>?</p>
+
+<p>In this step, we will use Grav’s Forms called Blueprints <a href="https://learn.getgrav.org/forms/blueprints">https://learn.getgrav.org/forms/blueprints</a> to convert <strong>static data</strong> into editable ones using Grav’s <code class="highlighter-rouge">Admin dashboard &gt; Pages</code>.</p>
+
+<p>For an overview and how to setup a <strong>Themes and Plugins Blueprints</strong> or <strong>Pages Blueprints</strong>, go to this link <a href="https://learn.getgrav.org/forms/blueprints">https://learn.getgrav.org/forms/blueprints</a>.</p>
+
+<p>My experience with setting up Blueprints for <strong>Theme</strong> configuration page and for each <strong>Modular Pages</strong> was quite challenging. Grav’s documentation doesn’t seem to provide detailed information on <strong>how to define a field and which directory its information is stored</strong>.</p>
+
+<p>Although for <strong>Theme Blueprint</strong> it was pretty straight forward.</p>
+
+<ol>
+  <li>Create a <code class="highlighter-rouge">blueprints.yaml</code> file in the root directory of theme.</li>
+  <li>Follow the <strong>Components of a Blueprint</strong> in <a href="https://learn.getgrav.org/forms/blueprints">https://learn.getgrav.org/forms/blueprints</a>
+    <ul>
+      <li><strong>Tip:</strong> a YAML file will be generated for Theme configuration page in <code class="highlighter-rouge">user/config</code> directory.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>It was trial and error for <strong>Modular Page Blueprints</strong> because its documentation seem to lack information on <strong>how to define a field and which directory its information is stored</strong>.</p>
+
+<p>An overview method I find when working with Modular Page Blueprints are:</p>
+
+<ol>
+  <li>Create a <code class="highlighter-rouge">blueprints</code> directory under root template directory <code class="highlighter-rouge">yourtheme &gt; blueprints</code>.
+    <ul>
+      <li>Since we are creating a blueprint for modular pages, we are going to store our blueprints (<code class="highlighter-rouge">*.yaml</code> files) under modular directory.</li>
+      <li>So with this, create a modular directory under <code class="highlighter-rouge">yourtheme &gt; blueprints &gt; modular</code></li>
+    </ul>
+  </li>
+  <li>Create a <code class="highlighter-rouge">some-modular-template-name.yaml</code> file that pertains to a modular template.
+    <ul>
+      <li><strong>Tip:</strong> Make sure your <code class="highlighter-rouge">.yaml</code> file name matches a Modular template name you want to create Admin custom fields for.</li>
+    </ul>
+  </li>
+  <li>When defining <code class="highlighter-rouge">*.yaml</code> file form, a good example would be the default <strong>Grav antimatter theme</strong>, <a href="https://github.com/getgrav/grav-theme-antimatter/blob/develop/blueprints/modular/showcase.yaml">https://github.com/getgrav/grav-theme-antimatter/blob/develop/blueprints/modular/showcase.yaml</a></li>
+</ol>
+
+<p><strong>Also, an additional note to keep in mind when working with Page Blueprints</strong></p>
+
+<p>Grav reads data in <code class="highlighter-rouge">*.yaml</code> files in sequence of how directories and files are structured, So when defining a field, it needs to be under a parent <code class="highlighter-rouge">header.</code> because blueprint pages store its data in pages headers. Also when uploading media files, Grav stores these media files under its page direcotory.</p>
+
+  </article>
+
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">wandrr</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>wandrr</li>
+          <li><a href="mailto:rlynjb at gmail.com">rlynjb at gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/rlynjb">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">rlynjb</span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/rlynjb08">
+              <span class="icon  icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
+
+              <span class="username">rlynjb08</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">This is a blog about travel and tech.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-72875714-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+  </body>
+
+</html>

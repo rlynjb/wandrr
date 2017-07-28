@@ -4,37 +4,2387 @@
     <title>wandrr</title>
     <description>This is a blog about travel and tech.
 </description>
-    <link>http://www.wandrr.io/</link>
-    <atom:link href="http://www.wandrr.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 09 Dec 2016 10:52:04 -0800</pubDate>
-    <lastBuildDate>Fri, 09 Dec 2016 10:52:04 -0800</lastBuildDate>
+    <link>http://rlynjb.github.io/wandrr/</link>
+    <atom:link href="http://rlynjb.github.io/wandrr/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 27 Jul 2017 17:13:00 -0700</pubDate>
+    <lastBuildDate>Thu, 27 Jul 2017 17:13:00 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+        <title>A Method to remove Bower and use NPM for all dependencies</title>
+        <description>&lt;p&gt;This is just simple method I came up with when removing Bower since its deprecated. Alternative is NPM or Yarn.&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Make sure to have a clean local repo&lt;/li&gt;
+  &lt;li&gt;Copy and Paste packages from &lt;code class=&quot;highlighter-rouge&quot;&gt;bower.json&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Make sure to remove ^ carat symbol before a module version.
+    &lt;ul&gt;
+      &lt;li&gt;This is to maintain its original version everytime an &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install&lt;/code&gt; is ran&lt;/li&gt;
+      &lt;li&gt;With the ^ carat symbol before a module version means it will automatically update the module to the latest version&lt;/li&gt;
+      &lt;li&gt;Also, double check on npmjs.org of module is available and which version to use&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Next is &lt;code class=&quot;highlighter-rouge&quot;&gt;rm bower.json&lt;/code&gt; file&lt;/li&gt;
+  &lt;li&gt;Remove existing node_modules directory if there is, &lt;code class=&quot;highlighter-rouge&quot;&gt;rm -rf node_modules&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Then run &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo npm install&lt;/code&gt;, pretty self-explanatory here&lt;/li&gt;
+  &lt;li&gt;On &lt;code class=&quot;highlighter-rouge&quot;&gt;gulpfile.js&lt;/code&gt;, replace all instances of &lt;code class=&quot;highlighter-rouge&quot;&gt;bower_components&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;node_modules&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;highlighter-rouge&quot;&gt;gulp&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;gulp watch&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;if error occurs, fix it&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Test the site/app/project&lt;/li&gt;
+  &lt;li&gt;Obviously, fix errors lol&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Thu, 27 Jul 2017 09:54:20 -0700</pubDate>
+        <link>http://rlynjb.github.io/wandrr/Method-to-remove-bower-and-use-npm-for-all-dependencies</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Method-to-remove-bower-and-use-npm-for-all-dependencies</guid>
+        
+        <category>javascript</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>React.Js Projects Workflow</title>
+        <description>&lt;h4 id=&quot;gist&quot;&gt;Gist&lt;/h4&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#scaffold&quot;&gt;Scaffold&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Express, Browserify, Babelify, npm modules&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#destructing-the-layout&quot;&gt;Destructuring the Layout&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;React Router DOM, React Bootstrap, React Router Bootstrap&lt;/li&gt;
+      &lt;li&gt;Compartmentalize Layout into React Components&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#create-a-sample-database-of-products&quot;&gt;Create a sample Database of products&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Just a simple JSON data object served via Express&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#create-a-data-store-to-fetch-the-products&quot;&gt;Create a data Store to fetch the products&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;implement Flux via Reflux&lt;/li&gt;
+      &lt;li&gt;Learned the architecture of organizing code to use less States&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#building-the-products-listing-and-the-item-page&quot;&gt;Building the product’s listing and the item page&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Learning more about ReactJS in detail&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Tom&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id=&quot;scaffold&quot;&gt;Scaffold&lt;/h1&gt;
+
+&lt;p&gt;There are two ways we can start a React.js project.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Setup and build the script using a Build Tool.
+    &lt;ul&gt;
+      &lt;li&gt;Ex: Gulp, Webpack, NPM script&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Use server-side to start a web server and build the script using Browserify, Babelify, and Express.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Since I am familiar with the build tools such as Gulp.js. Why not use something different, I’m going for #2 method in doing this project.&lt;/p&gt;
+
+&lt;h3 id=&quot;method&quot;&gt;Method&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create a repo and &lt;code class=&quot;highlighter-rouge&quot;&gt;git clone&lt;/code&gt; to your local server&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;highlighter-rouge&quot;&gt;npm init&lt;/code&gt; and go through the process&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm install --save&lt;/code&gt; the following npm modules listed on the link below:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/rlynjb/webshop/commit/91c354d610f836b6c954e9412e05671e4839b2a0#diff-b9cfc7f2cdf78a7f4b91a753d10865a2&quot;&gt;webshop - package.json&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Create the following directories: &lt;code class=&quot;highlighter-rouge&quot;&gt;mkdir public &amp;amp;&amp;amp; mkdir source&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Create server file &lt;code class=&quot;highlighter-rouge&quot;&gt;touch server.js&lt;/code&gt; to start webserver and code the script to transpile our React.js files
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/rlynjb/webshop/commit/91c354d610f836b6c954e9412e05671e4839b2a0#diff-78c12f5adc1848d13b1c6f07055d996e&quot;&gt;webshop - server.js&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Create your main file &lt;code class=&quot;highlighter-rouge&quot;&gt;touch source/app.jsx&lt;/code&gt; thats linked to our &lt;code class=&quot;highlighter-rouge&quot;&gt;server.js&lt;/code&gt; file
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/rlynjb/webshop/commit/91c354d610f836b6c954e9412e05671e4839b2a0#diff-bcb4667827379fd27bf22df4d9dfeabc&quot;&gt;webshop - source/app.jsx&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Last, &lt;code class=&quot;highlighter-rouge&quot;&gt;touch .gitignore&lt;/code&gt; and add &lt;code class=&quot;highlighter-rouge&quot;&gt;node_modules, node_modules/*&lt;/code&gt; to avoid pushing massive amount of file to our repo&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;destructing-the-layout&quot;&gt;Destructing the Layout&lt;/h1&gt;
+
+&lt;p&gt;This is when we compartmentalize the layout structure of our React.js app. For this section, we will be using the following npm modules:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install --save react-bootstrap
+npm install --save react-router-bootstrap
+npm install --save react-router-dom
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Create our &lt;code class=&quot;highlighter-rouge&quot;&gt;touch public/index.html&lt;/code&gt; file and load our chosen CSS framework, polyfills, and necessary meta tags.&lt;/p&gt;
+
+&lt;h3 id=&quot;method-1&quot;&gt;Method&lt;/h3&gt;
+
+&lt;p&gt;We will start by setting up the &lt;strong&gt;Route&lt;/strong&gt; and &lt;strong&gt;Layout of our app&lt;/strong&gt; which usually consist of Header, Menu, Main Contents, and Footer.&lt;/p&gt;
+
+&lt;h3 id=&quot;this-is-the-initial-setup-of-our-routing-system-on-sourceappjsx-file&quot;&gt;1. This is the initial setup of our &lt;strong&gt;Routing System&lt;/strong&gt;. On &lt;code class=&quot;highlighter-rouge&quot;&gt;source/app.jsx&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/*
+  We are declaring use strict just for a javascript module security and debugging repercussion
+*/
+&#39;use strict&#39;;
+
+/*
+  Next, we declare the methods from npm modules we need
+*/
+import React from &#39;react&#39;;
+/*
+  We will create this file next
+*/
+import Routes from &#39;./routes.jsx&#39;; 
+import render from &#39;react-dom&#39;;
+
+/*
+  We are rendering the Routes which will consist of our Layout and main contents as well and
+  attaching it to an HTML element with id of container
+*/
+render(
+  Routes,
+  document.getElementById(&#39;container&#39;)
+);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If you notice, we are compartmentalizing our code so it doesn’t get cluttered in the long run. I know, its confusing at first, but its good to have a clean code for readability.&lt;/p&gt;
+
+&lt;h3 id=&quot;next-create-touch-sourceroutesjsx-file&quot;&gt;2. Next, create &lt;code class=&quot;highlighter-rouge&quot;&gt;touch source/routes.jsx&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&#39;use strict&#39;;
+
+import React from &#39;react&#39;;
+import Layout from &#39;./layout.jsx&#39;; // the usual, we will create this file next
+import { BrowserRouter, Route, Link } from &#39;react-router-dom&#39;;
+
+const Routes = (
+  &amp;lt;BrowserRouter&amp;gt;
+    &amp;lt;Layout/&amp;gt;
+  &amp;lt;/BrowserRouter&amp;gt;
+);
+
+module.exports = Routes;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This file is where we actually define out Routing system by using &lt;code class=&quot;highlighter-rouge&quot;&gt;react-router-dom&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;reat-router&lt;/code&gt;. While coding, there where version conflicts I came across, &lt;a href=&quot;https://github.com/ReactTraining/react-router/issues/4752#issuecomment-286556728&quot;&gt;react-router issue&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;As of React v4, we are to use &lt;code class=&quot;highlighter-rouge&quot;&gt;react-router-dom&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;react-router&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf&quot;&gt;How to use react-router-dom module&lt;/a&gt; explains difference bet. &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;BrowserRouter&amp;gt;&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;HashRouter&amp;gt;&lt;/code&gt;, and which to use.&lt;/p&gt;
+
+&lt;h3 id=&quot;create-our-sourcelayoutjsx-file&quot;&gt;3. Create our &lt;code class=&quot;highlighter-rouge&quot;&gt;source/layout.jsx&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&#39;use strict&#39;;
+
+import React from &#39;react&#39;;
+// as discuss from prev step, there is a tutorial on how to use these methods
+import { Switch, Route } from &#39;react-router-dom&#39;;
+
+/*
+  These are 2 main components of our layout.
+  Names are pretty self-explanatory
+*/
+import Menu from &#39;./components/menu.jsx&#39;;
+import Footer from &#39;./components/footer.jsx&#39;;
+
+/*
+  These are static pages
+*/
+import Home from &#39;./pages/home.jsx&#39;;
+import Products from &#39;./pages/products.jsx&#39;;
+import Company from &#39;./pages/company.jsx&#39;;
+
+const Layout = React.createClass({
+  render() {
+    return (
+      &amp;lt;div&amp;gt;
+        &amp;lt;Menu /&amp;gt;
+
+        &amp;lt;main&amp;gt;
+          &amp;lt;Switch&amp;gt;
+            &amp;lt;Route exact path=&#39;/&#39; component={ Home } name=&#39;home&#39; /&amp;gt;
+            &amp;lt;Route path=&#39;/products&#39; component={ Products } name=&#39;products&#39; /&amp;gt;
+            &amp;lt;Route path=&#39;/company&#39; component={ Company } name=&#39;company&#39; /&amp;gt;
+          &amp;lt;/Switch&amp;gt;
+        &amp;lt;/main&amp;gt;
+
+        &amp;lt;Footer /&amp;gt;
+      &amp;lt;/div&amp;gt;
+    );
+  }
+});
+
+module.exports = Layout;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The code above is pretty simple. I think theres not much to explain to it. Its pretty much a component of overall layout of our app. Which uses &lt;strong&gt;Route&lt;/strong&gt; to &lt;strong&gt;Switch&lt;/strong&gt; from different static page depending on which link the user clicks.&lt;/p&gt;
+
+&lt;p&gt;The component also loads our Menu and Footer and these stays displayed throughout the app.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;I guess from this point, its safe to stop going further into creating those other components (Pages, Components). We can probably create those on our own.&lt;/p&gt;
+
+&lt;p&gt;The Method above is to explain in detail on how we are able to destructure a layout, create its own component and what latest version of Routing system to use and how to use it.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;create-a-sample-database-of-products&quot;&gt;Create a sample Database of products&lt;/h1&gt;
+
+&lt;p&gt;Since we are using Express, we create a sample json object data, but I assume we can use any API endpoint products file.&lt;/p&gt;
+
+&lt;h3 id=&quot;method-2&quot;&gt;Method&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;create a &lt;code class=&quot;highlighter-rouge&quot;&gt;products.json&lt;/code&gt; data and store in &lt;code class=&quot;highlighter-rouge&quot;&gt;/public/&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;each item has the ff. fields
+        &lt;ul&gt;
+          &lt;li&gt;SKU, price, savings, description, image, title&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;items are categorized by:
+        &lt;ul&gt;
+          &lt;li&gt;main offerings, sale offerings&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;implement code to fetch data on &lt;code class=&quot;highlighter-rouge&quot;&gt;server.js&lt;/code&gt; file&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;app.get(&#39;*.json&#39;, function (req, res) {
+  res.sendFile(__dirname + &quot;/public/&quot; + req.path);
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;create-a-data-store-to-fetch-the-products&quot;&gt;Create a data Store to fetch the products&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Flux&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;is an application architecture.&lt;/li&gt;
+  &lt;li&gt;not a framework, but a pattern to transmit data.&lt;/li&gt;
+  &lt;li&gt;consists of 3 major parts: Dispatchers, Stores, Actions&lt;/li&gt;
+  &lt;li&gt;this pattern avoids multiple states which can lead to bugs and hard to track down&lt;/li&gt;
+  &lt;li&gt;there are different Flux implementation
+    &lt;ul&gt;
+      &lt;li&gt;ex. Reflux, Redux&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://docs.google.com/drawings/d/187gtqcie1Uq3IQ9gv0bcAM_P1UKP7SgscqCGWkhtcgE/pub?w=960&amp;amp;h=720&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Dispatcher&lt;/strong&gt; central hub. Receives actions and sends payloads to all of its registered callbacks.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Actions&lt;/strong&gt; these refer to helper methods that facilitates the passing of data to the dispatcher.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Stores&lt;/strong&gt; these are logic containers that have callbacks registered on the dispatcher, which emits state changes to all registered callbacks&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Views&lt;/strong&gt; refers to those React components that get a state from the stores and pass data to any of the descendants in their component tree.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For this pj, we are using &lt;strong&gt;Reflux&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;merges the concept of Dispatcher and Action, so its easier to understand.&lt;/p&gt;
+
+&lt;h3 id=&quot;method-3&quot;&gt;Method&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm install --save reflux&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install --save superagent&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;superagent is a HTTP request library&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mkdir source/stores &amp;amp;&amp;amp; mkdir source/actions&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;touch source/stores/products.js &amp;amp;&amp;amp; touch source/actions/products.js&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;these files are regular javascript files and not &lt;code class=&quot;highlighter-rouge&quot;&gt;.jsx&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;add Helper method code (Actions) in &lt;code class=&quot;highlighter-rouge&quot;&gt;source/actions/products.js&lt;/code&gt; file
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/rlynjb/webshop/blob/d9fb9aa1bca2ef9988359dc02a72e5969aa95815/source/actions/products.js&quot;&gt;github snippet - actions/products.js&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;add Store callback data in &lt;code class=&quot;highlighter-rouge&quot;&gt;source/stores/products.js&lt;/code&gt; file
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/rlynjb/webshop/blob/d9fb9aa1bca2ef9988359dc02a72e5969aa95815/source/stores/products.js&quot;&gt;github snippet - stores/products.js&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;now, we listen for updates from this Store to our &lt;code class=&quot;highlighter-rouge&quot;&gt;source/layout.jsx&lt;/code&gt; component.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/rlynjb/webshop/blob/d9fb9aa1bca2ef9988359dc02a72e5969aa95815/source/layout.jsx&quot;&gt;github snippet - layout.jsx&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;building-the-products-listing-and-the-item-page&quot;&gt;Building the product’s listing and the item page&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;this page will present the items in 1 fullsize featured column and a couple of mini columns at the bottom.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;method-4&quot;&gt;Method&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vim pages/products.jsx&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;link to code&lt;/li&gt;
+      &lt;li&gt;topics discussed:
+        &lt;ul&gt;
+          &lt;li&gt;propTypes
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;https://wecodetheweb.com/2015/06/02/why-react-proptypes-are-important/&quot;&gt;Why React PropTypes are important&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;https://facebook.github.io/react/docs/typechecking-with-proptypes.html&quot;&gt;Typechecking With PropTypes&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;getDefaultProps
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/33125985/this-props-inside-getdefaultprops-of-react&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;this.props&lt;/code&gt; inside &lt;code class=&quot;highlighter-rouge&quot;&gt;getDefaultProps()&lt;/code&gt; of React?&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/28701750/react-why-is-getdefaultprops-a-method-while-proptypes-is-a-plain-object&quot;&gt;React: why is getDefaultProps a method while propTypes is a plain object?&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;getInitialState
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;https://medium.com/react-tutorials/react-state-14a6d4f736f5&quot;&gt;React State&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Passing data from Route to component
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/43469071/react-react-router-dom-pass-props-to-component&quot;&gt;React react-router-dom pass props to component&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;references&quot;&gt;References:&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.packtpub.com/web-development/reactjs-blueprints&quot;&gt;ReactJS Blueprints&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 22 Jun 2017 07:12:02 -0700</pubDate>
+        <link>http://rlynjb.github.io/wandrr/Reactjs-Projects-Workflow</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Reactjs-Projects-Workflow</guid>
+        
+        <category>reactjs</category>
+        
+        <category>javascript</category>
+        
+        <category>js</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>ReactJS Cheatsheet</title>
+        <description>&lt;h3 id=&quot;gist&quot;&gt;Gist&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#component-based-component-specification&quot;&gt;Component based&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#props&quot;&gt;props&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#states&quot;&gt;states&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#render&quot;&gt;render&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#statics&quot;&gt;statics&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#proptypes&quot;&gt;propTypes&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#displayname&quot;&gt;displayName&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#lifecycle-methods&quot;&gt;Lifecycle Methods&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#componentdidmount&quot;&gt;componentDidMount&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#componentwillmount&quot;&gt;componentWillMount&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#shouldcomponentupdate&quot;&gt;shouldComponentUpdate&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#componentwillreceiveprops&quot;&gt;componentWillReceiveProps&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#componentwillupdate&quot;&gt;componentWillUpdate&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#componentdidupdate&quot;&gt;componentDidUpdate&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#componentwillunmount&quot;&gt;componentWillUnmount&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#the-virtual-dom&quot;&gt;The Virtual DOM&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#synthetic-event-handlers&quot;&gt;Synthetic Event Handlers&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#code-sample-explained&quot;&gt;Code Sample Explained&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://camjackson.net/post/9-things-every-reactjs-beginner-should-know&quot;&gt;9 things every React.js beginner should know&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;component-based-component-specification&quot;&gt;Component based (Component Specification)&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;contains or has built-in set of methods and properties.&lt;/li&gt;
+  &lt;li&gt;purpose of these methods and properties are:
+    &lt;ul&gt;
+      &lt;li&gt;debugging (&lt;code class=&quot;highlighter-rouge&quot;&gt;displayName&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;propTypes&lt;/code&gt;)&lt;/li&gt;
+      &lt;li&gt;setting initial data (&lt;code class=&quot;highlighter-rouge&quot;&gt;getInitialState&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;getDefaultProps&lt;/code&gt;)&lt;/li&gt;
+      &lt;li&gt;component lifecycle (&lt;code class=&quot;highlighter-rouge&quot;&gt;componentDidMount&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;componentShouldUpdate&lt;/code&gt;, more..)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;the &lt;code class=&quot;highlighter-rouge&quot;&gt;render&lt;/code&gt; method (from React DOM) is the only required method in a component.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;props-and-states&quot;&gt;Props and States&lt;/h1&gt;
+
+&lt;h3 id=&quot;props&quot;&gt;props&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;data coming from outside of component.&lt;/li&gt;
+  &lt;li&gt;its better to rely on data outside of component for testability and immutability concerns.&lt;/li&gt;
+  &lt;li&gt;cannot be modified, should be treated as immutable.&lt;/li&gt;
+  &lt;li&gt;props data can be access using &lt;code class=&quot;highlighter-rouge&quot;&gt;this.props&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;getDefaultProps&lt;/code&gt; is used to set initial props and use them in later point in the components’ lifecycle.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;getDefaultProps() {
+  return {
+    greeting: &quot;&quot;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;states&quot;&gt;states&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;data is instantiated inside of component.&lt;/li&gt;
+  &lt;li&gt;variables that are available within the component.&lt;/li&gt;
+  &lt;li&gt;state data can be access using &lt;code class=&quot;highlighter-rouge&quot;&gt;this.state&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;its only used when you make changes to variables within the component.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;getInitialState: function() {
+  return {
+    random_number: ()
+  }
+},
+componentDidMount() {
+  setInterval( () =&amp;gt; {
+    this.setState({
+      random_number: Math.random()*100;
+    });
+  }, 1000);
+},
+render() {
+  return (
+    &amp;lt;div&amp;gt;{ this.state.random_number }&amp;lt;/div&amp;gt;
+  );
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;render&quot;&gt;render&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;only required method in a component&lt;/li&gt;
+  &lt;li&gt;return JSX structure&lt;/li&gt;
+  &lt;li&gt;it can also return &lt;code class=&quot;highlighter-rouge&quot;&gt;null&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt; to indicate we don’t need to use it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;statics&quot;&gt;statics&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;use to define static methods&lt;/li&gt;
+  &lt;li&gt;they don’t have access to &lt;code class=&quot;highlighter-rouge&quot;&gt;props&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;states&lt;/code&gt; within the component.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import React from &#39;react&#39;;
+
+const App = React.createClass({
+  statics: {
+    myMethod: (foo) =&amp;gt; {
+      return foo = &quot;bar&quot;;
+    }
+  },
+  render() {
+    return null;
+  }
+});
+
+console.log( App.myMethod(&#39;bar&#39;) ); // true
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;proptypes&quot;&gt;propTypes&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;validates your props passed unto your component&lt;/li&gt;
+  &lt;li&gt;shows up in your &lt;code class=&quot;highlighter-rouge&quot;&gt;console.log&lt;/code&gt; if the props passed&lt;/li&gt;
+  &lt;li&gt;optional help tool while you develop your app&lt;/li&gt;
+  &lt;li&gt;it can validate complex data&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;displayname&quot;&gt;displayName&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;set automatically if not set explicitly&lt;/li&gt;
+  &lt;li&gt;use for debugging purposes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;lifecycle-methods&quot;&gt;Lifecycle Methods&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;set of functions that are empty and you can override in your component.&lt;/li&gt;
+  &lt;li&gt;initially, all are empty except for &lt;code class=&quot;highlighter-rouge&quot;&gt;shouldComponentUpdate&lt;/code&gt; is set to true.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;componentdidmount&quot;&gt;componentDidMount&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Executed after the component is mounted&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;most common method&lt;/li&gt;
+  &lt;li&gt;functions run after the component has been rendered for the first time.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;PROS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;have access to current contents of props and states&lt;/li&gt;
+  &lt;li&gt;never run &lt;code class=&quot;highlighter-rouge&quot;&gt;setState&lt;/code&gt; as it triggers endless loops&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;CONS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;this will not run in server-side, use &lt;code class=&quot;highlighter-rouge&quot;&gt;componentWillMount&lt;/code&gt; instead&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;componentDidMount() {
+  // Executed after the component is mounted
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;componentwillmount&quot;&gt;componentWillMount&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;method will be executed before the component is rendered for the first time.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;PROS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;have access to component’s current state and props&lt;/li&gt;
+  &lt;li&gt;safe to run &lt;code class=&quot;highlighter-rouge&quot;&gt;setState&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;executed on both server-side and client-side&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;componentWillMount() {
+  // Executed before the component is mounted
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;shouldcomponentupdate&quot;&gt;shouldComponentUpdate&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;invoked whenever the component receives new props or state changes&lt;/li&gt;
+  &lt;li&gt;returns true by default&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;PROS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;useful if you create a component that updates only if certain condition is met or should never be updated at all&lt;/li&gt;
+  &lt;li&gt;speed increases when set to false&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;CONS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;can lead to bug when careless use&lt;/li&gt;
+  &lt;li&gt;can be hard to track down&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;componentwillreceiveprops&quot;&gt;componentWillReceiveProps&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;compare props before render method runs&lt;/li&gt;
+  &lt;li&gt;let you compare incoming props&lt;/li&gt;
+  &lt;li&gt;can be used as an opportunity to react to prop transition before the render method is called&lt;/li&gt;
+  &lt;li&gt;invoke this method &lt;code class=&quot;highlighter-rouge&quot;&gt;componentWillReceiveProps(object nextProps)&lt;/code&gt; to access incoming props&lt;/li&gt;
+  &lt;li&gt;this will not execute on initial render&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;CONS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;not good for &lt;code class=&quot;highlighter-rouge&quot;&gt;setState&lt;/code&gt; insteas use &lt;code class=&quot;highlighter-rouge&quot;&gt;componentWillUpdate&lt;/code&gt;`&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;componentWillReceiveProps(nextProps) {
+  // you can compare nextProps with this.props
+  // and optionally set a new state or execute functions
+  // based on the new props
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;componentwillupdate&quot;&gt;componentWillUpdate&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;execute before rendering once new props or states are received&lt;/li&gt;
+  &lt;li&gt;when the component receives new props or states&lt;/li&gt;
+  &lt;li&gt;this method is executed before the rendering but not the initial render&lt;/li&gt;
+  &lt;li&gt;invoke this method &lt;code class=&quot;highlighter-rouge&quot;&gt;componentWillUpdate(object nextProps, object nextState)&lt;/code&gt; to access incoming props and states&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;PROS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;use &lt;code class=&quot;highlighter-rouge&quot;&gt;componentWillReceiveProps&lt;/code&gt; instead&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;CONS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;can evaluate new state but &lt;code class=&quot;highlighter-rouge&quot;&gt;setState&lt;/code&gt; will trigger and endless loop&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;componentWillUpdate (nextProps) {
+  // you can compare nextProps with this.props
+  // or nextState with this.state
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;componentdidupdate&quot;&gt;componentDidUpdate&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;executed whenever the component receives new props or states&lt;/li&gt;
+  &lt;li&gt;and render method has been executed&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;componentDidUpdate() {
+  // Execute functions after the component has been updated
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;componentwillunmount&quot;&gt;componentWillUnmount&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;invoked before the component is unmounted from DOM&lt;/li&gt;
+  &lt;li&gt;useful if you need to clean up memory or invalidate timer&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;componentWillUnmount() {
+  // Execute functions before the component is unmounted
+  // from the DOM
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;the-virtual-dom&quot;&gt;The Virtual DOM&lt;/h1&gt;
+
+&lt;h3 id=&quot;the-dom&quot;&gt;The DOM&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;its very forgiving&lt;/li&gt;
+  &lt;li&gt;you can write invalid HTML and still get the result you want&lt;/li&gt;
+  &lt;li&gt;ReactJS, JSX is not forgiving&lt;/li&gt;
+  &lt;li&gt;JSX is strict and it requires a match with opening and closing tag&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;the-virtual-dom-1&quot;&gt;The Virtual DOM&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;a simpler implementation of the real DOM&lt;/li&gt;
+  &lt;li&gt;doesn’t work directly with the DOM&lt;/li&gt;
+  &lt;li&gt;it maintains a smaller and more simplified internal set of elements&lt;/li&gt;
+  &lt;li&gt;enables you to switch parts of your visible elements without affecting other elements&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;cannot make changes directly&lt;/strong&gt; like jQuery or &lt;code class=&quot;highlighter-rouge&quot;&gt;getElementById()&lt;/code&gt; native JavaScript&lt;/li&gt;
+  &lt;li&gt;instead, &lt;strong&gt;attach a reference&lt;/strong&gt; named &lt;code class=&quot;highlighter-rouge&quot;&gt;refs&lt;/code&gt; to the elements to target
+    &lt;ul&gt;
+      &lt;li&gt;can be done by &lt;code class=&quot;highlighter-rouge&quot;&gt;ref=&quot;myReference&quot;&lt;/code&gt; to your element&lt;/li&gt;
+      &lt;li&gt;w/ ex. above, reference is now available through &lt;code class=&quot;highlighter-rouge&quot;&gt;React.findDOMNode( this.refs.myReference )&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;synthetic-event-handlers&quot;&gt;Synthetic Event Handlers&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;event handlers in ReactJS are passed an instance of &lt;strong&gt;Synthetic Event&lt;/strong&gt; instead of the native event handlers&lt;/li&gt;
+  &lt;li&gt;has the same interface as native event handlers &lt;strong&gt;except&lt;/strong&gt; it’s cross-browser compatible&lt;/li&gt;
+  &lt;li&gt;events are triggered in a &lt;strong&gt;bubbling phase&lt;/strong&gt; ref &lt;a href=&quot;/JS-Interview-Question-Describe-event-bubbling&quot;&gt;Describe event bubbling&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;to capture an event immediately
+    &lt;ul&gt;
+      &lt;li&gt;ex: for &lt;code class=&quot;highlighter-rouge&quot;&gt;onClick&lt;/code&gt; use &lt;code class=&quot;highlighter-rouge&quot;&gt;onCickCapture&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;to stop propagation
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;event.stopPropagation()&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;event.preventDefault()&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ref: &lt;a href=&quot;https://facebook.github.io/react/docs/events.html&quot;&gt;for complete list of events&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;code-sample-explained&quot;&gt;Code Sample Explained&lt;/h1&gt;
+
+&lt;iframe height=&quot;800&quot; scrolling=&quot;no&quot; title=&quot;learning reactjs&quot; src=&quot;//codepen.io/rlynjb/embed/QgEdLN/?height=300&amp;amp;theme-id=20698&amp;amp;default-tab=js&amp;amp;embed-version=2&quot; frameborder=&quot;no&quot; allowtransparency=&quot;true&quot; allowfullscreen=&quot;true&quot; style=&quot;width: 100%;&quot;&gt;See the Pen &lt;a href=&quot;https://codepen.io/rlynjb/pen/QgEdLN/&quot;&gt;learning reactjs&lt;/a&gt; by rlynjb (&lt;a href=&quot;https://codepen.io/rlynjb&quot;&gt;@rlynjb&lt;/a&gt;) on &lt;a href=&quot;https://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
+&lt;/iframe&gt;
+
+&lt;p&gt;This example is slightly contrived. It could be shortened quite a bit, and storing props as states is generally something you should avoid, unless you have a very good reason for doing so. In my experience, working with a local state is the single most bug-prone code you will encounter and the hardest code to write tests for.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;per ReactJS Bluepriint book&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;references&quot;&gt;References:&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.packtpub.com/web-development/reactjs-blueprints&quot;&gt;ReactJS Blueprints&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 21 Jun 2017 02:30:02 -0700</pubDate>
+        <link>http://rlynjb.github.io/wandrr/ReactJS-Cheatsheet</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/ReactJS-Cheatsheet</guid>
+        
+        <category>javascript</category>
+        
+        <category>js</category>
+        
+        <category>reactjs</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Introduction to Webpack</title>
+        <description>&lt;h1 id=&quot;practical-hands-on-of-webpack&quot;&gt;Practical hands-on of Webpack&lt;/h1&gt;
+
+&lt;p&gt;I am going to optimize my &lt;code class=&quot;highlighter-rouge&quot;&gt;gulp.js&lt;/code&gt; file from my Front End Flow theme using Webpack. Following this &lt;a href=&quot;https://hackernoon.com/a-map-to-modern-javascript-development-2017-16d9eb86309c&quot;&gt;article&lt;/a&gt;, it gave me more overview of the tools I missed these past months.&lt;/p&gt;
+
+&lt;p&gt;My current FEF theme uses:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Package Management
+    &lt;ul&gt;
+      &lt;li&gt;NPM&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Bundling
+    &lt;ul&gt;
+      &lt;li&gt;Gulp.js&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;JavaScript
+    &lt;ul&gt;
+      &lt;li&gt;ES6&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Transpiling
+    &lt;ul&gt;
+      &lt;li&gt;Babel and Browserify&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Linting
+    &lt;ul&gt;
+      &lt;li&gt;None&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Testing
+    &lt;ul&gt;
+      &lt;li&gt;None&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;UI Framework/State management
+    &lt;ul&gt;
+      &lt;li&gt;React (but not indepth)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;DOM Manipulation and animations
+    &lt;ul&gt;
+      &lt;li&gt;jQuery (trying to stay way from it)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Styling
+    &lt;ul&gt;
+      &lt;li&gt;SASS&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;CSS Framework
+    &lt;ul&gt;
+      &lt;li&gt;Zurb Foundation&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Assets
+    &lt;ul&gt;
+      &lt;li&gt;Google Fonts&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I know JavaScript tools are overwhelming but if we were to segregate each discipline like the list above, I think it can give us a better understanding so we can set up each tools base on their discipline.&lt;/p&gt;
+
+&lt;p&gt;I am going to minimize my FEF theme workflow with the following JS tools and add new features as well:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Package Management
+    &lt;ul&gt;
+      &lt;li&gt;NPM, will take advantage of script &lt;code class=&quot;highlighter-rouge&quot;&gt;npm run start&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;npm run webpack&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Bundling
+    &lt;ul&gt;
+      &lt;li&gt;Webpack&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;JavaScript
+    &lt;ul&gt;
+      &lt;li&gt;ES6&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Transpiling
+    &lt;ul&gt;
+      &lt;li&gt;Babel&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Linting
+    &lt;ul&gt;
+      &lt;li&gt;ESLint&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Testing
+    &lt;ul&gt;
+      &lt;li&gt;mocha (test runner), chai (assertion library) and chai-spies (for spies, fake objects that you can query for certain events that should or shouldn’t have happened)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;UI Framework/State management
+    &lt;ul&gt;
+      &lt;li&gt;React and Vue.js&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;DOM Manipulation and animations
+    &lt;ul&gt;
+      &lt;li&gt;Plain ES6 and jQuery (but will not be prioritized)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Styling
+    &lt;ul&gt;
+      &lt;li&gt;SASS&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;CSS Framework
+    &lt;ul&gt;
+      &lt;li&gt;Zurb Foundation (might need to check if supported with React or can play well with Vue.js)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Assets
+    &lt;ul&gt;
+      &lt;li&gt;Google Fonts&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;configuring-webpack-the-easy-way&quot;&gt;Configuring Webpack the easy way.&lt;/h2&gt;
+
+&lt;p&gt;There are reasons why Webpack has been popular lately and its been accepted over other module bundlers. &lt;a href=&quot;https://www.smashingmagazine.com/2017/02/a-detailed-introduction-to-webpack/&quot;&gt;ref: Why Webpack&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;First off, lets configure Webpack the easy way. Reason for me to include this method is what if I wanted to use NPM and Webpack immediately to compile JavaScript files with ES6 features without setting up a config file. So for this method, I am going to use NPM scripts to run webpack.&lt;/p&gt;
+
+&lt;p&gt;I assume you already have NPM installed and have created a &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; file by running &lt;code class=&quot;highlighter-rouge&quot;&gt;npm init&lt;/code&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Install Webpack via NPM locally &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install --save-dev webpack&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Install Lodash as our sample dependency &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install --save lodash&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Create &lt;code class=&quot;highlighter-rouge&quot;&gt;main.js&lt;/code&gt; file as our entry file. We will import lodash on this file.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var map = require(&#39;lodash/map&#39;);
+
+function square(n) {
+      return n*n;
+}
+
+console.log(map([1,2,3,4,5,6], square));
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Here, we are just using lodash to square off the numbers inside its map function. Notice the &lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt; function is NOT supported by browsers yet, that is why we need to use Webpack to bundle this script.&lt;/p&gt;
+
+&lt;p&gt;We will use &lt;em&gt;Webpack Command Line&lt;/em&gt; for this simple example.&lt;/p&gt;
+
+&lt;p&gt;Inside our &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; file, add the ff. code:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;scripts&quot;: {
+  &quot;build&quot;: &quot;webpack src/main.js dist/bundle.js&quot;,
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now when we run &lt;code class=&quot;highlighter-rouge&quot;&gt;npm run build&lt;/code&gt;, this will bundle &lt;code class=&quot;highlighter-rouge&quot;&gt;main.js&lt;/code&gt; file (along with the imported NPM modules) and out put it as &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle.js&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;references&quot;&gt;References:&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://hackernoon.com/a-map-to-modern-javascript-development-2017-16d9eb86309c&quot;&gt;A Map to Modern JavaScript Development 2017&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2017/02/a-detailed-introduction-to-webpack/&quot;&gt;Webpack: A Detailed Introduction&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 11 May 2017 02:25:55 -0700</pubDate>
+        <link>http://rlynjb.github.io/wandrr/Introduction-to-Webpack</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Introduction-to-Webpack</guid>
+        
+        <category>webpack</category>
+        
+        <category>javascript</category>
+        
+        <category>js</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>New stuff to learn</title>
+        <description>&lt;p&gt;Before delving into another new things to learn, I wanted to write a recap of what I’ve been doing lately. Can’t really include all details but atleast write a summary of my experience.
+You can read further if your interested. I blog to keep track of my learning progress about the web, I consider these as my personal note, but I don’t mind sharing.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;wordpress-and-static-sites&quot;&gt;Wordpress and Static Sites&lt;/h2&gt;
+
+&lt;p&gt;I’ve worked with alot of wordpress websites as sideline job and with designers and other developers. I noticed that everyone has their opinion about methods of how a work should get done. One important thing is, we should be able to deliver the product. It doesn’t matter how it is built, as long as it works, its good.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;When to code from scratch and when NOT to.&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;I am a fan of coding things from scratch. I take into consideration how a website/application is built. But coding from scratch is not worth it when its just for sideline.&lt;/li&gt;
+      &lt;li&gt;Things to note though are:
+        &lt;ul&gt;
+          &lt;li&gt;Plugins save my projects! lol&lt;/li&gt;
+          &lt;li&gt;Follow how Wordpress, plugins work rather than customizing a workflow from scrtach.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Learning Woocommerce with a Fancy Product Designer plugin&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Came across a project that requires online sales, so we decided to use Woocommerce.&lt;/li&gt;
+      &lt;li&gt;Components of a E-commerce website are:
+        &lt;ul&gt;
+          &lt;li&gt;Products have different variations&lt;/li&gt;
+          &lt;li&gt;Shipping&lt;/li&gt;
+          &lt;li&gt;Payment Gateway&lt;/li&gt;
+          &lt;li&gt;again, Plugins are my hero! rather than delving into APIs&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Static site generator&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Static sites are great alternative to wordpress if a website doesn’t require E-commerce. But it does require learning curve for non-techie users.&lt;/li&gt;
+      &lt;li&gt;Since static sites are new, it may not be prone to hackers like wordpress&lt;/li&gt;
+      &lt;li&gt;Example tools are:
+        &lt;ul&gt;
+          &lt;li&gt;Grav - a PHP site generator, has a really nice optional Admin dashboard.&lt;/li&gt;
+          &lt;li&gt;Jekyll - love it coz Github uses it, and you can easily publish your site for free. But doesn’t have a nice Admin Dashboard like Grav.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;front-end-tools-and-npm-community&quot;&gt;Front-End tools and NPM community&lt;/h2&gt;
+
+&lt;p&gt;So I just found out not all developers agree to the whole NPM community trend. IMO though, I love workflows and how easy it is to code with these tools. I love learning at the sametime, so I guess I fit into this type of development preference.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Gulp.js and the whole NPM community.&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Gulp.js was the first built tool I learned. IMO, its an important tool so we can use other JavaScript/Front-End tools such as:
+        &lt;ul&gt;
+          &lt;li&gt;Template engines&lt;/li&gt;
+          &lt;li&gt;JS transpilers&lt;/li&gt;
+          &lt;li&gt;JS compilers&lt;/li&gt;
+          &lt;li&gt;CSS compilers&lt;/li&gt;
+          &lt;li&gt;workflow automation&lt;/li&gt;
+          &lt;li&gt;testing&lt;/li&gt;
+          &lt;li&gt;and more WOWs!&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Most tools above are available via NPM modules.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Alternative to Gulp.js, such as webpack, yarn, and bash scripts&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;It seems though built process are always evolving and we constantly have to change tools, thats why I am considering either consolidating my Gulp.js workflow to Webpack or author a simple built script.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;building-my-own-front-end-workflow-theme&quot;&gt;Building my own Front-End Workflow Theme&lt;/h2&gt;
+
+&lt;p&gt;I kinda figure I needed a codebase to collect solutions to common web problems that a CSS Framework was not able to accomodate. And also, to fit specifications of a project. So I decided to start a theme project called Front-End Flow (FEF) theme.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Delving deeper with Zurb Foundation&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Foundation is a great tool to start projects, I built my Gulp.js workflow to accomodate Zurb Foundation and other JavaScript framework/plugins.&lt;/li&gt;
+      &lt;li&gt;But it still lacks some solutions to common web problems.&lt;/li&gt;
+      &lt;li&gt;I may need to update FEF repo documentation though to specify these common web problems I’ve come across.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;SASS/CSS part is good but JavaScript part still needs re-coding and cleaning up&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;and converting my Gulp.js to Webpack or a bash script.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;javascript&quot;&gt;JavaScript&lt;/h2&gt;
+
+&lt;p&gt;These last 2 (JavaScript and FullStack/Ecommerce) are my favorite. This blog contains mostly about JavaScript concepts in theory, but this past year, I was able to put those theories in practice! I’m happy and glad I took the time to read and blog about JavaScript Interview Questions and took courses on FreeCodeCamp solving algorithms. I am 100% sure this is the route I want to go, JavaScript and becoming a Fullstack/Ecommerce developer!&lt;/p&gt;
+
+&lt;p&gt;Coding animations or a JavaScript SPA application, either concepts, I know I will take advantage of further practicing my coding skills and understanding of Fullstack concepts.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Demonstrated my JavaScript coding skills, creatively solving problems&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Authored code for a Personalization Platform&lt;/li&gt;
+      &lt;li&gt;Separated my JS code using ES6 import export feature&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Introduction to React.js&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;I wanted to organize my JavaScript code and modularize it.&lt;/li&gt;
+      &lt;li&gt;Coming up with code snippets to different problems is hard and I think it is worth keeping those code snippets for future use. Thats why I want to take advantage of Web Components and I heard React.js is fully developed for this usage.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;fullstackecommerce&quot;&gt;Fullstack/Ecommerce&lt;/h2&gt;
+
+&lt;p&gt;I was excited when I was able to build a simple contact form, submit it to MySQL database and display it on a Admin page. And also when I first started templating with Blade on Laravel.&lt;/p&gt;
+
+&lt;p&gt;Just using a MVC framework makes me think of possibilities I am able to build and how easy it is for me to be able to organize my code file structure and set naming conventions.&lt;/p&gt;
+
+&lt;p&gt;I’m starting to think I got this thing for Organization, cleanliness, and performance.
+Anyways, below is a recap of what I’ve accomplished and what I want to tackle next:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Basic form submission and query data with PHP and MySQL&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;This is the simple contact form and display of data.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Learned Laravel, from templating to submitting form with AJAX&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Learned how to setup Laravel&lt;/li&gt;
+      &lt;li&gt;Templating in Blade&lt;/li&gt;
+      &lt;li&gt;Storing and Querying data from JSON files rather than database. For performance purposes.&lt;/li&gt;
+      &lt;li&gt;Learned how to use AJAX in submitting form in Laravel and storing it in database.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Introduction to CRUD with Laravel&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;After having a glimpse and hands-on experience with Laravel, I was able to get an idea of how CRUD systems are structured in Laravel&lt;/li&gt;
+      &lt;li&gt;yup! I want to build an Admin Dashboard where users are able to edit data coming from a JSON file.&lt;/li&gt;
+      &lt;li&gt;kinda like building my own Jekyll or Grav but flexible enough to accomodate database&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Introduction to E-commerce system with plain PHP, Javascript&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;I was given a chance to author code for a Personalization platform. I was quite challenged with this project, solving problems creatively.&lt;/li&gt;
+      &lt;li&gt;I’ve also learned how a JavaScript application is structured with an E-commerce system
+        &lt;ul&gt;
+          &lt;li&gt;Adding to cart by storing values to PHP Session&lt;/li&gt;
+          &lt;li&gt;Using Session to keep data throughout Edit page, Add To Cart modal, Cart item page, Checkout page, and last, Order confirmation.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;So there it is, after blogging a recap of what I’ve learned, I should be able to distinguish my next set of concepts/topics to learn and skills to have under my belt.&lt;/p&gt;
+
+&lt;h3 id=&quot;moving-forward&quot;&gt;Moving forward:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Wordpress&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;s&gt;start a sideline business, hopefully it works well&lt;/s&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Building FEF Theme&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;convert gulp.js to webpack or script&lt;/li&gt;
+      &lt;li&gt;organize JS files&lt;/li&gt;
+      &lt;li&gt;use web components&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;JavaScript&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;code more, blog more on JS Interview Questions&lt;/li&gt;
+      &lt;li&gt;look into testing, interaction of application and inputting sample information&lt;/li&gt;
+      &lt;li&gt;exciting new projects to learn:
+        &lt;ul&gt;
+          &lt;li&gt;✓ 3d model product viewer
+            &lt;ul&gt;
+              &lt;li&gt;ref: &lt;a href=&quot;https://code.tutsplus.com/courses/3d-in-the-browser-with-threejs/&quot;&gt;3D in the Browser With Three.js&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;ref: &lt;a href=&quot;https://manu.ninja/webgl-3d-model-viewer-using-three-js&quot;&gt;WebGL 3D Model Viewer Using three.js&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;✓ viewport scroll to snap then animation/transition starts&lt;/li&gt;
+          &lt;li&gt;✓ build app ideas with React and Firebase&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;FullStack/E-commerce&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;s&gt;Continue building an Admin Dashboard&lt;/s&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;s&gt;the whole CRUD shibang! and a mixture of static JSON data and database&lt;/s&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;HTML5/CSS3&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;✓ learn more about SVG&lt;/li&gt;
+      &lt;li&gt;✓ implement simple CSS3 transitions&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 22 Feb 2017 08:29:22 -0800</pubDate>
+        <link>http://rlynjb.github.io/wandrr/New-stuff-to-learn</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/New-stuff-to-learn</guid>
+        
+        <category>3d</category>
+        
+        <category>webgl</category>
+        
+        <category>javascript</category>
+        
+        <category>crud</category>
+        
+        <category>laravel</category>
+        
+        <category>parallax</category>
+        
+        <category>ecommerce</category>
+        
+        <category>wordpress</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Venturing into a Fullstack Framework with Laravel</title>
+        <description>&lt;p&gt;Date Published: Nov 11, 2016&lt;/p&gt;
+
+&lt;p&gt;Indeed, I feel like its time to venture out of Front-End Web Development and look into a Fullstack Framework. One of my favorite framework is Keystone.js. It is a Node.js Database-driven framework. But learning a framework based off of PHP is mandatory, and so I came across Laravel. I’m not going to necessarily drift away from Keystone.js. As a Front-End Web Developer, I love Javascript and I don’t think I am going to give the language up easily.&lt;/p&gt;
+
+&lt;p&gt;My goal is to master atleast 1 or 2 Fullstack framework that is based off of 2 different language, Keystone.js and Laravel, but this blog post will focus on Laravel with a bit of comparison with Keystone.js and discusses about some of the features of what comprises a small-large scale web applications.&lt;/p&gt;
+
+&lt;p&gt;Since I’m going back and forth with this blog post, writing my experience from choosing to mastering a framework, I’ve included a table of contents below.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#comparison-chart&quot;&gt;Comparison chart: Keystone.JS and Laravel&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#learning-resources&quot;&gt;Learning Resources&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#getting-started-with-laravel&quot;&gt;Getting started with Laravel&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#understanding-laravels-front-end-workflow&quot;&gt;Understanding Laravel’s Front-End Workflow&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#intro-to-create-in-crud&quot;&gt;Intro to Create in CRUD&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#method-for-creating-a-contact-form-to-storing-to-db&quot;&gt;Method for creating a contact form to storing in db&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;ref: &lt;a href=&quot;#simple-contact-form-sending-emails&quot;&gt;Simple Contact form, Sending Emails&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#method-for-converting-static-data-in-template-to-json-object-value&quot;&gt;Method for converting static data in template to JSON object value&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;ref: &lt;a href=&quot;#coding-templates-to-populating-static-data-from-json-file&quot;&gt;Coding templates to populating static data from JSON file&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;ref: &lt;a href=&quot;#from-static-data-to-implementing-a-database&quot;&gt;From Static data to implementing a Database&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Method for building Complete CRUD&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;User Authentication and Roles
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#method-for-enabling-user-registration-login-and-authentication&quot;&gt;Method for enabling user registration, login, and authentication&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#setting-up-user-roles-and-permissions&quot;&gt;Setting up User Roles and Permissions&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#intro-to-middleware&quot;&gt;Intro to Middleware&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#method-for-creating-your-own-middleware&quot;&gt;Method for creating your own Middleware&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;CRUD Editor, plans, misc.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#defining-my-specs-for-a-custom-admin-panel&quot;&gt;Defining my specs for a custom Admin Panel&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#building-a-cms-from-scratch&quot;&gt;Building a CMS from scratch&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;comparison-chart&quot;&gt;Comparison chart&lt;/h1&gt;
+
+&lt;p&gt;I’ve also took the time to do research and write a comparison chart. Below is my researched with a high-level view of what features I look for in a framework.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Keystone.js&lt;/strong&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Laravel&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;http://keystonejs.com&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;https://laravel.com/docs/4.2/introduction&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Language&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Node.js&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;PHP&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Templating, Routing&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Swig, Jade, handlebars. Yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Blade. Yes&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;RESTful&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CRUD, Database&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes, MongoDB&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes, MySQL&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ACL&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Authentication and Session Management&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CMS&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes, Automatically generated Admin UI&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;No&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Code Readability&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Simple and Clean&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Simple and Clean&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Programming Style&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;MVC&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;MVC&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Server Maintenance&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;NVM, easy switching of Nodejs versions in server, not too much dependencies&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Application Maintenance&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;NPM, manages versions of modules in application&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Security&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;no credentials or keys are stored in code, they are stored in a separate&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Documentation&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;apidoc.js&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Community Support&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Active github repo, future releases, books, tutorials, opensource community&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;learning-resources&quot;&gt;Learning Resources&lt;/h1&gt;
+
+&lt;p&gt;Since I’m discovering Laravel and the whole PHP realm, I’ve discovered a site called &lt;a href=&quot;https://tutsplus.com/&quot;&gt;envatotuts+&lt;/a&gt; which carries Laravel tutorials from beginner to advance level.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://code.tutsplus.com/courses/get-started-with-laravel-5&quot;&gt;Get Started with Laravel 5&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://code.tutsplus.com/courses/build-a-cms-with-laravel&quot;&gt;Build a CMS with Laravel&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;and more, there are various tutorials that covers what we can do with Laravel&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;getting-started-with-laravel&quot;&gt;Getting started with Laravel&lt;/h1&gt;
+
+&lt;p&gt;I first created a github repo and followed the instructions for &lt;a href=&quot;https://laravel.com/docs/5.3/installation&quot;&gt;installing Laravel&lt;/a&gt; via Laravel Installer on my Mac.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;On my local, I just ran &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan serve&lt;/code&gt; to start a development environment&lt;/li&gt;
+  &lt;li&gt;Also take into consideration of Configuration. We also need to check for Directory permissions and Application Key.&lt;/li&gt;
+  &lt;li&gt;All of these information are available at &lt;a href=&quot;https://laravel.com/docs/5.3/installation&quot;&gt;https://laravel.com/docs/5.3/installation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tranferring your Laravel local code to an Ubuntu stage server was a bit of a challenge.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;There were missing php dependencies, I had to collaborate with other developers to solve this issue.&lt;/li&gt;
+  &lt;li&gt;Set its Web Document Root to its &lt;code class=&quot;highlighter-rouge&quot;&gt;/public&lt;/code&gt; directory.&lt;/li&gt;
+  &lt;li&gt;Copy &lt;code class=&quot;highlighter-rouge&quot;&gt;.env.example&lt;/code&gt; file as &lt;code class=&quot;highlighter-rouge&quot;&gt;.env&lt;/code&gt; file and run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan key:generate&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There were no problem with transferring our Application code, it was more of setting its environment.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;understanding-laravels-front-end-workflow&quot;&gt;Understanding Laravels’ Front-End Workflow&lt;/h1&gt;
+
+&lt;p&gt;Laravel comes with a default install of Bootstrap, Vue, SASS, Webpack, and uses Gulp.js to compile its assets, although, Laravel developed its own compiling tool which is built on top of Gulp.js called &lt;strong&gt;Laravel Elixir&lt;/strong&gt;. It is an NPM module and is defined in &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt;. Laravel also uses NPM to install the default Front-end packages.&lt;/p&gt;
+
+&lt;p&gt;Upon readings its &lt;a href=&quot;https://laravel.com/docs/5.3/elixir&quot;&gt;documentation on Laravel Elixir&lt;/a&gt;, it seems like this tool makes it easy for developers to use Gulp.js. Though, the only drawback I forsee using Laravel Elixir is we can’t further customize our build process and we will depend on Laravel Elixir’s features.&lt;/p&gt;
+
+&lt;p&gt;Since I have a background with Front-End Development and I’ve growned accustomed to some front-end packages, I will be using my own &lt;a href=&quot;https://github.com/rlynjb/frontendflow&quot;&gt;Front-End Workflow starterkit theme&lt;/a&gt;, instead re-installing NPM and Bower packages and redefining paths and build process in my Gulp.js file.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;coding-templates-to-populating-static-data-from-json-file&quot;&gt;Coding templates to populating static data from JSON file&lt;/h1&gt;
+
+&lt;p&gt;Below is a link to an a quick and simple overview of an MVC Application structure:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://selftaughtcoders.com/from-idea-to-launch/lesson-17/laravel-5-mvc-application-in-10-minutes/&quot;&gt;Creating a Basic Laravel 5 MVC Application in 10 Minutes&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;My method usually starts off with defining a route and creating a template file for that particular route.&lt;/li&gt;
+  &lt;li&gt;Next is store sample data inside of JSON file and load file in a Controller
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://vegibit.com/creating-static-and-dynamic-web-pages-in-laravel/&quot;&gt;Creating Static And Dynamic Web Pages In Laravel&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://vegibit.com/json-in-laravel/&quot;&gt;http://vegibit.com/json-in-laravel/&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;My rule is, if a website contains less than 15 or 20 items, keep it data static
+But, if items grow to 20 or more AND will contain a CRUD method, then proceed with Database.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;from-static-data-to-implementing-a-database&quot;&gt;From Static data to implementing a Database&lt;/h1&gt;
+
+&lt;p&gt;Coming from a front-end web development and a bit of MVC background, Database concepts was new to me. Although I did dabbled a bit into sql queries, its still different from having the knowledge of Database tools available we can use in a Fullstack framework.&lt;/p&gt;
+
+&lt;p&gt;With Laravel, there are tools available that helps us manage our database. Features that came with Laravel are listed below with a bit of methodology when implementing a Database.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;When we run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan make:model User --migration&lt;/code&gt; to create a Database, Laravel assumes you configured your database settings on &lt;code class=&quot;highlighter-rouge&quot;&gt;config/database.php&lt;/code&gt; file. The generated Model and Migration script files are not aware of its configuration settings.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;To create a Database, run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan make:model User --migration&lt;/code&gt; command. This will generate a &lt;strong&gt;Eloquent ORM Model&lt;/strong&gt; and a &lt;strong&gt;Migration&lt;/strong&gt; script.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Eloquent ORM&lt;/strong&gt; - Model allows us to easily query and insert data in our tables.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Migration&lt;/strong&gt; - Creates a Table; Builds our Database Schema; Preserves Database Schema, revision control&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Seeding
+    &lt;ul&gt;
+      &lt;li&gt;is a way to create data fast. It populates data into a Database Table.&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://sheepy85.wordpress.com/2014/09/19/database-seed-migration-in-laravel-5-0/&quot;&gt;https://sheepy85.wordpress.com/2014/09/19/database-seed-migration-in-laravel-5-0/&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://www.fullstack4u.com/laravel/laravel-5-load-seed-data-from-json/&quot;&gt;http://www.fullstack4u.com/laravel/laravel-5-load-seed-data-from-json/&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=y0y3-m05Emc&quot;&gt;Understanding Database with Laravel&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;simple-contact-form-sending-emails&quot;&gt;Simple Contact form, Sending emails&lt;/h1&gt;
+
+&lt;p&gt;There are tons fo tutorials on the web about creating a conact form with Laravel but it doesn’t seem to explain the basics. The link below though,&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://code.tutsplus.com/courses/get-started-with-laravel-5/lessons/sending-emails&quot;&gt;Sending Emails&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;seem to explain the simplest and plainest method of how we can implement a Contact form in Laravel using Route &lt;code class=&quot;highlighter-rouge&quot;&gt;Route::get...&lt;/code&gt; and Mail Facade &lt;code class=&quot;highlighter-rouge&quot;&gt;Mail::send...&lt;/code&gt;.
+From this tutorial, we can further build our Contact form to use Controller for code separation and gather User input from Views. We will be able to store Contact form data in database.&lt;/p&gt;
+
+&lt;p&gt;There are 2 ways to compose an email.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Raw text&lt;/li&gt;
+  &lt;li&gt;From a View&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;raw-text&quot;&gt;Raw Text&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create a Route where we can send emails from.&lt;/li&gt;
+  &lt;li&gt;Define a Mail Facade and inside, define an instance of Illuminate Message to build mail properties.&lt;/li&gt;
+  &lt;li&gt;Sign up for Mailtrap.io and configure &lt;code class=&quot;highlighter-rouge&quot;&gt;.env&lt;/code&gt; file&lt;/li&gt;
+  &lt;li&gt;Now, when we visit &lt;code class=&quot;highlighter-rouge&quot;&gt;/contact&lt;/code&gt;, it should send test email defined inside of Mail facade.&lt;/li&gt;
+  &lt;li&gt;Mail should be sent in Raw format located under Raw tab.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Route::get(&#39;/contact&#39;, function() {
+  // define a Mail facade
+  Mail::raw(&#39;kirby this is a test&#39;, function($message) {
+    /*
+      inside we will have an instance of
+      Illuminate\Mail\Message
+
+      inside of this closure, we can set other prooerties of email
+    */
+    $message-&amp;gt;subject(&#39;testing&#39;)
+            -&amp;gt;to(&#39;bill@mail.com&#39;)
+            -&amp;gt;from(&#39;non@mail.com&#39;);
+  });
+
+  return &#39;email has been sent&#39;;
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;from-views-template&quot;&gt;From Views template&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Define a Route again.&lt;/li&gt;
+  &lt;li&gt;Instead of Mail Facade Raw &lt;code class=&quot;highlighter-rouge&quot;&gt;Mail::raw...&lt;/code&gt;, we will use Mail Facade Send &lt;code class=&quot;highlighter-rouge&quot;&gt;Mail:send...&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Once URL is visited, it will send email to Mailtrap.io for test.&lt;/li&gt;
+  &lt;li&gt;Mail should be sent in HTML format under HTML tab.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// this will get data from view or user input
+Route::get(&#39;/contact/view&#39;, function() {
+
+  //  param1 = path to view template
+  //  param2 = array of data
+  //  param3 = closure to setup message that we will be sending
+  Mail::send(&#39;conact-view&#39;, [&#39;name&#39;=&amp;gt;&#39;Bob&#39;], function($message) {
+    $message-&amp;gt;subject(&#39;testing&#39;)
+            -&amp;gt;to(&#39;bill@mail.com&#39;)
+            -&amp;gt;from(&#39;non@mail.com&#39;);
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;intro-to-create-in-crud&quot;&gt;Intro to Create in CRUD&lt;/h1&gt;
+
+&lt;p&gt;Below are the resources I used in learning basic CRUD, form handling in Laravel, and AJAX form post.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://code.tutsplus.com/courses/get-started-with-laravel-5/lessons/handle-form-input&quot;&gt;Forms and Data Validation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://laracasts.com/discuss/channels/requests/laravel-5-cant-use-ajax-post-request&quot;&gt;Laravel 5 can’t use ajax post request&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/32718870/how-to-get-all-input-of-post-in-laravel-5&quot;&gt;How to get All input of POST in Laravel 5&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://laravel.com/docs/5.4/database&quot;&gt;Database: Getting Started&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;dealing-with-global-variables&quot;&gt;Dealing with Global variables&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/32942379/global-variable-in-laravel-controller&quot;&gt;Global variable in laravel controller&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/29715813/laravel-5-global-blade-view-variable-available-in-all-templates&quot;&gt;Laravel 5 - global Blade view variable available in all templates&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;method-for-creating-a-contact-form-to-storing-to-db&quot;&gt;Method for creating a Contact Form to storing to DB&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Template Contact form
+    &lt;ul&gt;
+      &lt;li&gt;include validation (Zurb Foundation Abide or HTML5 validation)&lt;/li&gt;
+      &lt;li&gt;include &lt;code class=&quot;highlighter-rouge&quot;&gt;name=&quot;&quot;&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;maxlength=&quot;&quot;&lt;/code&gt; on input fields&lt;/li&gt;
+      &lt;li&gt;include `` before Submit input button&lt;/li&gt;
+      &lt;li&gt;provided by Laravel, a secure way to manage POST forms&lt;/li&gt;
+      &lt;li&gt;include a Thank You and Error messages&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Author JavaScript submit ajax code
+    &lt;ul&gt;
+      &lt;li&gt;include &lt;code class=&quot;highlighter-rouge&quot;&gt;e.preventDefault();&lt;/code&gt; to prevent page refresh&lt;/li&gt;
+      &lt;li&gt;on Ajax, serialize data coming in from form&lt;/li&gt;
+      &lt;li&gt;input url POST data in defined in routes&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Define Routes
+    &lt;ul&gt;
+      &lt;li&gt;since we are posting, use POST instead of GET&lt;/li&gt;
+      &lt;li&gt;ex: &lt;code class=&quot;highlighter-rouge&quot;&gt;Route::post(&#39;/contact/create&#39;, &#39;ContactController@create&#39;);&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;define url and Controller and its public function that will handle database form submission and other logic associated with create task.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Create Controller
+    &lt;ul&gt;
+      &lt;li&gt;on root directory, run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan make:controller ContactController&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;inside &lt;code class=&quot;highlighter-rouge&quot;&gt;ContactController.php&lt;/code&gt;, define facades&lt;/li&gt;
+      &lt;li&gt;ex: &lt;code class=&quot;highlighter-rouge&quot;&gt;use DB;&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;use Illuminate\Support\Facades\Mail;&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;inside its public function&lt;/li&gt;
+      &lt;li&gt;assign form input values to variables
+        &lt;ul&gt;
+          &lt;li&gt;these are the fields defined in form&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;write code to store on database, ref: &lt;a href=&quot;https://laravel.com/docs/5.4/database&quot;&gt;https://laravel.com/docs/5.4/database&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;write code to send data to email, ref: &lt;a href=&quot;https://laravel.com/docs/5.4/mail&quot;&gt;https://laravel.com/docs/5.4/mail&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Setup database
+    &lt;ul&gt;
+      &lt;li&gt;go to phpmyadmin and create a database, enter credentials, and create a table&lt;/li&gt;
+      &lt;li&gt;create columns and defined the ff.&lt;/li&gt;
+      &lt;li&gt;form fields&lt;/li&gt;
+      &lt;li&gt;include ID: int, auto_increment, primary&lt;/li&gt;
+      &lt;li&gt;include submitted_at: timestamp, current_timestamp&lt;/li&gt;
+      &lt;li&gt;on &lt;code class=&quot;highlighter-rouge&quot;&gt;.env&lt;/code&gt; file, configure database settings&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Setup Mailer
+    &lt;ul&gt;
+      &lt;li&gt;go to &lt;code class=&quot;highlighter-rouge&quot;&gt;.env&lt;/code&gt; file and input settings&lt;/li&gt;
+      &lt;li&gt;we are using &lt;a href=&quot;#from-views-template&quot;&gt;From Views Template&lt;/a&gt; code&lt;/li&gt;
+      &lt;li&gt;using Mail facade requires additional steps&lt;/li&gt;
+      &lt;li&gt;create a Requests by running &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan make:requests SendContact&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;inside SendContact.php, input the ff.
+        &lt;ul&gt;
+          &lt;li&gt;set authorize to true&lt;/li&gt;
+          &lt;li&gt;input fields on rules function&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;create a template under &lt;code class=&quot;highlighter-rouge&quot;&gt;resources/views/emails/contact.blade.php&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;to test, we can use our email address temporarily&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Implement google recaptcha
+    &lt;ul&gt;
+      &lt;li&gt;retrieve site and secret key&lt;/li&gt;
+      &lt;li&gt;load grecaptcha plugin and html tag&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;script src=&#39;https://www.google.com/recaptcha/api.js&#39;&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div class=&quot;row&quot;&amp;gt;&amp;lt;div class=&quot;float-right g-recaptcha&quot; data-sitekey=&quot;6Le5PRcUAAAAAHPBCPt4JuVkhU4Ha31av4dE5lGH&quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;p class=&quot;recaptcha-response&quot;&amp;gt;&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;author validation google recaptcha code on contact form submit event&lt;/li&gt;
+      &lt;li&gt;ref: &lt;a href=&quot;http://stackoverflow.com/questions/37294886/google-recaptcha-with-ajax-form&quot;&gt;http://stackoverflow.com/questions/37294886/google-recaptcha-with-ajax-form&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if (grecaptcha.getResponse().length &amp;gt; 0) {
+  ajax call
+} else {
+  $(&#39;.recaptcha-response&#39;).html(&#39;&#39;);
+  $(&#39;.recaptcha-response&#39;).append(&#39;Check recaptcha before submmitting form&#39;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;method-for-converting-static-data-in-template-to-json-object-value&quot;&gt;Method for converting static data in template to JSON object value&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;After templating
+    &lt;ul&gt;
+      &lt;li&gt;structure your JSON data with a template file values&lt;/li&gt;
+      &lt;li&gt;use &lt;a href=&quot;http://jsoneditoronline.org&quot;&gt;http://jsoneditoronline.org&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;store file in &lt;code class=&quot;highlighter-rouge&quot;&gt;database/data/nameoffile.json&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Create a Controller
+    &lt;ul&gt;
+      &lt;li&gt;run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan make:controller HomeController&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;define public function to contain logic for displaying data from JSON file&lt;/li&gt;
+      &lt;li&gt;write code to load JSON file and loop through JSON value&lt;/li&gt;
+      &lt;li&gt;and define template at the bottom along with passing &lt;code class=&quot;highlighter-rouge&quot;&gt;$data&lt;/code&gt; from looped json file&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Define Controller in Route
+    &lt;ul&gt;
+      &lt;li&gt;replace define function in route to point to controller and its public function&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;In HomeController, define variables and assign value for JSON file&lt;/li&gt;
+  &lt;li&gt;replace static data in templates to use variable from its controller&lt;/li&gt;
+  &lt;li&gt;Handle Exceptions
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://scotch.io/tutorials/creating-a-laravel-404-page-using-custom-exception-handlers&quot;&gt;https://scotch.io/tutorials/creating-a-laravel-404-page-using-custom-exception-handlers&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;method-for-enabling-user-registration-login-and-authentication&quot;&gt;Method for enabling User registration, login, and authentication&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Make sure you have configured and have access to Database&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan migrate&lt;/code&gt; to setup database tables and its columns
+    &lt;ul&gt;
+      &lt;li&gt;this takes the script inside and creates database table and its columns in DB&lt;/li&gt;
+      &lt;li&gt;ref: &lt;a href=&quot;https://laravel.com/docs/5.4/migrations&quot;&gt;Laravel Database: Migration&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;make sure you use PHP 7 on server-level rather than virtual (directory) level&lt;/li&gt;
+      &lt;li&gt;while running command, i came across an issue&lt;/li&gt;
+      &lt;li&gt;ref: &lt;a href=&quot;https://laravel-news.com/laravel-5-4-key-too-long-error&quot;&gt;laravel 5.4 key too long issue&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;idea: we can write our own database table migration script whenever we need to integrate a db into our forms&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan make:auth&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;controllers are automatically provided by Laravel&lt;/li&gt;
+      &lt;li&gt;this will generate the ff. files for authentication&lt;/li&gt;
+      &lt;li&gt;warning: this will overwrite your &lt;code class=&quot;highlighter-rouge&quot;&gt;HomeController&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;home.blade.php&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;layouts &amp;gt; app.blade.php&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;layouts &amp;gt; footer.blade.php&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;its best to run this command at the beginning of project or backup your code on github&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Compare Auth generated template files to your original login system files
+    &lt;ul&gt;
+      &lt;li&gt;make the necessary changes (modify templates and mv to &lt;code class=&quot;highlighter-rouge&quot;&gt;/auth&lt;/code&gt;)&lt;/li&gt;
+      &lt;li&gt;there are if statements that Authentication may require&lt;/li&gt;
+      &lt;li&gt;make sure they are synced in&lt;/li&gt;
+      &lt;li&gt;display data for guest users&lt;/li&gt;
+      &lt;li&gt;display data for logged in users&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Redirect guest users to your own homepage display instead of Authentication’s default login page
+    &lt;ul&gt;
+      &lt;li&gt;if were using all endpoints (&lt;code class=&quot;highlighter-rouge&quot;&gt;login&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;logout&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;register&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;password email&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;password request&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;password reset&lt;/code&gt;), no need to remove &lt;code class=&quot;highlighter-rouge&quot;&gt;Route::auth&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;routes.php&lt;/code&gt; file.&lt;/li&gt;
+      &lt;li&gt;Remove &lt;code class=&quot;highlighter-rouge&quot;&gt;Route::auth()&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;routes.php&lt;/code&gt; and manually declare endpoints&lt;/li&gt;
+      &lt;li&gt;ref: &lt;a href=&quot;http://robboyland.com/laravel-auth-how-to-disable-registration&quot;&gt;http://robboyland.com/laravel-auth-how-to-disable-registration&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;ex. &lt;code class=&quot;highlighter-rouge&quot;&gt;Route::get(&#39;login&#39;, &#39;Auth\AuthController@showLoginForm&#39;);&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;to display Route list, run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan route:list&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Remove &lt;code class=&quot;highlighter-rouge&quot;&gt;Route::get(&#39;/home&#39;, &#39;HomeController@index&#39;);&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;routes.php&lt;/code&gt; file&lt;/li&gt;
+      &lt;li&gt;Remove &lt;code class=&quot;highlighter-rouge&quot;&gt;$this-&amp;gt;middleware(&#39;auth&#39;);&lt;/code&gt; on &lt;code class=&quot;highlighter-rouge&quot;&gt;app &amp;gt; Http &amp;gt; Controllers &amp;gt; HomeController.php&lt;/code&gt; file&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;after login success, set redirection page
+    &lt;ul&gt;
+      &lt;li&gt;change path &lt;code class=&quot;highlighter-rouge&quot;&gt;protected $redirectTo = &#39;/home&#39;&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;app/Http/Controller/Auth&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;ref: &lt;a href=&quot;http://www.easylaravelbook.com/blog/2015/03/11/changing-the-laravel-redirect-location-after-login/&quot;&gt;login registration redirect fix&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;same method goes with after Registration page&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Add custom fields to Registration Form
+    &lt;ul&gt;
+      &lt;li&gt;ref: &lt;a href=&quot;http://www.easylaravelbook.com/blog/2015/09/25/adding-custom-fields-to-a-laravel-5-registration-form/&quot;&gt;Adding Custom Fields to a Laravel 5 Registration Form&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Transfer old registration controller code logic to the new Auth registration controller&lt;/li&gt;
+  &lt;li&gt;Protect private data or elements in templates from public view&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@if ( Auth::guest() )
+  // html elements or data here
+@else
+  // html elements or data here
+@endif
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Next is to setup Middleware&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/29173028/how-to-send-mail-after-laravel-5-default-registration&quot;&gt;How to send mail after Laravel 5 default registration?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;video ref: &lt;a href=&quot;https://www.youtube.com/watch?v=bqkt6eSsRZs&quot;&gt;https://www.youtube.com/watch?v=bqkt6eSsRZs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;setting-up-user-roles-and-permissions&quot;&gt;Setting up User Roles and Permissions&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://alexsears.com/article/adding-roles-to-laravel-users/&quot;&gt;Overview of code&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ref: &lt;a href=&quot;https://www.youtube.com/watch?v=KMR2H6-K36E&quot;&gt;Laravel User roles part1&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Setup DB creds&lt;/li&gt;
+  &lt;li&gt;we need User table/model, already in Laravel once User Authentication is configured
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan make:auth&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;we need Roles table/model
+    &lt;ul&gt;
+      &lt;li&gt;because Users will have many or more assign to a user depending on what typ eof user he is&lt;/li&gt;
+      &lt;li&gt;ex. Super Admin = has all roles, Admin = has most roles, Editor, Author, Customer&lt;/li&gt;
+      &lt;li&gt;ref: &lt;a href=&quot;https://www.zivtech.com/blog/permissions-and-roles-happier-users-and-admins&quot;&gt;Permission and roles for happier users and admins&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;create Migration script&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan make:migration create_roles_table --create=roles&lt;/code&gt;
+        &lt;ul&gt;
+          &lt;li&gt;handles many to many relationship of user and roles&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;no need to add fields in default User migration script&lt;/li&gt;
+      &lt;li&gt;On Roles migration script, we need:
+        &lt;ul&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$table-&amp;gt;increments(&#39;id&#39;);&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$table-&amp;gt;string(&#39;name&#39;);&lt;/code&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;On User Roles pivot migration script, we need:
+        &lt;ul&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$table-&amp;gt;integer(&#39;user_id&#39;);&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$table-&amp;gt;integer(&#39;role_id&#39;);&lt;/code&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;create Models script&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan make:model Role&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;open User model and were gonna add a relation model using public function to create a new method called &lt;strong&gt;roles()&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;open Role model and add a relation method&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Add roles values inside Roles table in phpmyadmin&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ref: &lt;a href=&quot;https://www.youtube.com/watch?v=e1_f7q1D2v0&quot;&gt;Laravel User roles part2&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;On User, create a method that checks id a user is a employee or author.&lt;/li&gt;
+  &lt;li&gt;we are going to use roles method created previously
+    &lt;ul&gt;
+      &lt;li&gt;add the ff code, helpers and main methods&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;on &lt;code class=&quot;highlighter-rouge&quot;&gt;routes.php&lt;/code&gt; file, add a new route to create roles for users
+    &lt;ul&gt;
+      &lt;li&gt;this controller will save roles nad users in user_role pivot table&lt;/li&gt;
+      &lt;li&gt;use to debug roles and users as well&lt;/li&gt;
+      &lt;li&gt;next we will start using our user methods in middleware, route, templates, controllers&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;intro-to-middleware&quot;&gt;Intro to Middleware&lt;/h3&gt;
+
+&lt;p&gt;Middleware is a way of protecting routes or running code before and after a route is run.&lt;/p&gt;
+
+&lt;p&gt;Defining Middleware in routes is ok, but since we are going to reuse this type of authentication, we need to transfer this code from route to a middleware or use a pre-existing Laravel Middleware.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Route::get(&#39;home&#39;, function () {
+  if ( Auth::guest() ) {
+    return Redirect::to(&#39;auth/login&#39;);
+  } else {
+    echo &#39;Welcome home &#39; . Auth::user()-&amp;gt;email . &#39;.&#39;;
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Middlewares can be seen at &lt;code class=&quot;highlighter-rouge&quot;&gt;app &amp;gt; Http &amp;gt; Middleware &amp;gt; Authenticate.php&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;To Check which Middleware class to use &lt;code class=&quot;highlighter-rouge&quot;&gt;app &amp;gt; Http &amp;gt; Middleware &amp;gt; Kernel.php&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In &lt;code class=&quot;highlighter-rouge&quot;&gt;Route.php&lt;/code&gt;, Middleware can be define as:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Route::get(&#39;home&#39;, [&#39;middleware&#39; =&amp;gt; &#39;auth&#39;, function() {
+  echo &#39;Welcome home &#39; . Auth::user()-&amp;gt;email . &#39;.&#39;;
+}]);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;video ref: &lt;a href=&quot;https://www.youtube.com/watch?v=bWhJJJwMvco&quot;&gt;https://www.youtube.com/watch?v=bWhJJJwMvco&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;doc ref: &lt;a href=&quot;https://laravel.com/docs/5.4/middleware&quot;&gt;Laravel Doc Middleware&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;method-for-creating-your-own-middleware&quot;&gt;Method for creating your own Middleware&lt;/h3&gt;
+
+&lt;p&gt;We can create our own Middleware. ex would be Role Permissions&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan make:middleware Admin&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;this generates &lt;code class=&quot;highlighter-rouge&quot;&gt;app &amp;gt; Http &amp;gt; Middleware &amp;gt; Admin.php&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Since we are going to use the same Authenticate Middleware
+    &lt;ul&gt;
+      &lt;li&gt;Copy and Paste the ff. section of code from &lt;code class=&quot;highlighter-rouge&quot;&gt;app &amp;gt; Http &amp;gt; Middleware &amp;gt; Authenticate.php&lt;/code&gt; at the beginning of Admin PHP class file.&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;The Guard implementation&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Create a new filter instance&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Copy and paste &lt;code class=&quot;highlighter-rouge&quot;&gt;use Illuminate\Contracts\Auth\Guard;&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Copy and paste code inside handle function&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Write code at the 2nd ifelse statement&lt;/li&gt;
+  &lt;li&gt;Route new Middleware in &lt;code class=&quot;highlighter-rouge&quot;&gt;app &amp;gt; Http &amp;gt; Kernal.php&lt;/code&gt; by copy and pasting path below&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;protected $routeMiddleware = [
+  &#39;auth&#39; =&amp;gt; \App\Http\Middleware\Authenticate::class,
+
+  &#39;admin&#39; =&amp;gt; \App\Http\Middleware\Admin::class,
+];
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;defining-my-specs-for-a-custom-admin-panel&quot;&gt;Defining my specs for a custom Admin Panel&lt;/h1&gt;
+
+&lt;p&gt;My admin panel specs are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;simple navigation (straightforward, simpler than wordpress)&lt;/li&gt;
+  &lt;li&gt;able to do CRUD unto json files&lt;/li&gt;
+  &lt;li&gt;contains just fields or forms (simple)&lt;/li&gt;
+  &lt;li&gt;display contact form data from contact form fields&lt;/li&gt;
+  &lt;li&gt;uses miminal text editor features with instructions
+    &lt;ul&gt;
+      &lt;li&gt;user will be using HTML tags&lt;/li&gt;
+      &lt;li&gt;bold text&lt;/li&gt;
+      &lt;li&gt;links&lt;/li&gt;
+      &lt;li&gt;breakline/ new line&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;image or assets uploader and manager
+    &lt;ul&gt;
+      &lt;li&gt;contains fields for seo input (img alt, title)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;building-a-cms-from-scratch&quot;&gt;Building a CMS from scratch&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.kodecrash.com/javascript/read-write-json-file-using-php/&quot;&gt;Read-Write JSON file using PHP&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.sitepoint.com/creating-a-scrud-system-using-jquery-json-and-datatables/&quot;&gt;Creating a SCRUD System Using jQuery, JSON and DataTables&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 08 Feb 2017 02:58:47 -0800</pubDate>
+        <link>http://rlynjb.github.io/wandrr/Venturing-into-a-fullstack-framework-with-Laravel</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Venturing-into-a-fullstack-framework-with-Laravel</guid>
+        
+        <category>php</category>
+        
+        <category>fullstack</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Using ES6 Modules in client-side</title>
+        <description>&lt;p&gt;I came into a halt where I need to split my JavaScript code. Prototyping an application, code can be done in one file but as it grows and add-on features are requested, lines of code will eventually increase. I’ve heard a few names of javascript module loaders, both for client and server. But what I really wanted to take advantage of is JavaScript’s new module feature, ‘ES6 Module’ &lt;code class=&quot;highlighter-rouge&quot;&gt;import&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;export&lt;/code&gt; (commonly used in Nodejs, server-side).&lt;/p&gt;
+
+&lt;p&gt;Projects I’ve been handling are focused on Front-End, so I need a module compiler for client-side. Most browsers still does not support ES6 Module feature, that’s why there are Client side JS module loaders available such as Browserify, Webpack, Rollup &lt;a href=&quot;http://stackoverflow.com/questions/19059580/client-on-node-uncaught-referenceerror-require-is-not-defined&quot;&gt;ref&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I am still learning JavaScript modules but for simplicity, I’m going to use Browserify, Babel, and Gulp.&lt;/p&gt;
+
+&lt;p&gt;Below is a step-by-step scenario of how these tools are connected and how it transforms our ES6 code.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;We write code using ES6 capabilities inclduing (but not limited to) ES6 module loading.&lt;/li&gt;
+  &lt;li&gt;Babelify translates this code to ES5-compatibility code with &lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt; statements included.
+    &lt;ul&gt;
+      &lt;li&gt;Babelify is a Babel transformer for Browserify&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ES5 code with &lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt; statements is transformed to the version that is fully understandable by browsers by Browserify&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://egorsmirnov.me/2015/05/25/browserify-babelify-and-es6.html&quot;&gt;ref&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Additional method….&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Gulp.js then compiles all dependencies and scripts and outputs the final (minified and compressed) javascript file.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A sample &lt;strong&gt;Gulp.js&lt;/strong&gt; task should look like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var gulp = require(&#39;gulp&#39;);
+var browserify = require(&#39;browserify&#39;);
+var babelify = require(&#39;babelify&#39;);
+var source = require(&#39;vinyl-source-stream&#39;);
+
+gulp.task(&#39;build&#39;, function () {
+  return browserify({entries: &#39;./app.jsx&#39;, extensions: [&#39;.jsx&#39;], debug: true})
+  .transform(babelify)
+  .bundle()
+  .pipe(source(&#39;bundle.js&#39;))
+  .pipe(gulp.dest(&#39;dist&#39;));
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Side note&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I’m looking forward on taking advantage of what Babel plugins has to offer to replace Browserify and Babelify.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://babeljs.io/&quot;&gt;Babeljs.io&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://exploringjs.com/es6/ch_modules.html&quot;&gt;Exploringjs.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/19059580/client-on-node-uncaught-referenceerror-require-is-not-defined&quot;&gt;Client on node: Uncaught ReferenceError: require is not defined&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://egorsmirnov.me/2015/05/25/browserify-babelify-and-es6.html&quot;&gt;Browserify, Babelify and ES6&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://babeljs.io/&quot;&gt;Babeljs.io&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://exploringjs.com/es6/ch_modules.html&quot;&gt;Exploringjs.com&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/32793404/es6-export-overwriting-function&quot;&gt;ES6 Export Overwriting Function&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 28 Dec 2016 03:08:39 -0800</pubDate>
+        <link>http://rlynjb.github.io/wandrr/Using-ES6-Modules-in-clientside</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Using-ES6-Modules-in-clientside</guid>
+        
+        <category>javascript</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Getting Started with Magento Theming</title>
+        <description>&lt;h3 id=&quot;before-starting-to-build-a-theme-in-magento2&quot;&gt;Before starting to build a theme in Magento2&lt;/h3&gt;
+
+&lt;p&gt;So before starting to build a theme, we need to know Magento 2’s architecture and status.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Magento 2 is extremely modularize (reminds me of Drupal)&lt;/li&gt;
+  &lt;li&gt;it is based off of Zend Framework&lt;/li&gt;
+  &lt;li&gt;Alot of Major and Minor updates/changes in each version&lt;/li&gt;
+  &lt;li&gt;and foremost, it is Not practical to theme from scratch (trust me, I tried, unless you are a certified Magento 2 developer or someone willing to put in alot of time)&lt;/li&gt;
+  &lt;li&gt;it comes with its own Front-End workflow (I think it uses Grunt, Less)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Although, from all the learning curves listed above, Magento 2 is:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;a really secure Ecommerce system&lt;/li&gt;
+  &lt;li&gt;It has everything you need to immediately setup an online store&lt;/li&gt;
+  &lt;li&gt;theming maybe tough, alot of overriding of templates (but we will try to keep CSS and JS minimal and will use our own &lt;a href=&quot;https://github.com/rlynjb/frontendflow&quot;&gt;Front-end workflow&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;setting-up-a-child-theme&quot;&gt;&lt;strong&gt;Setting up a Child Theme&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;Once Magento 2 is installed&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Enable Development Mode &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo php bin/magento deploy:mode:set developer&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;ref: &lt;a href=&quot;http://magento.stackexchange.com/questions/13125/how-do-i-set-developer-mode-in-magento-2&quot;&gt;How di u set developer mode in magento2&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Create a directory in &lt;code class=&quot;highlighter-rouge&quot;&gt;/app/design/frontend/&amp;lt;company name&amp;gt;/&amp;lt;theme name&amp;gt;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Copy Magento 2 blank theme &lt;code class=&quot;highlighter-rouge&quot;&gt;/vendor/magento/theme-frontend-blank/&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;/app/design/frontend/&amp;lt;company name&amp;gt;/&amp;lt;theme name&amp;gt;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Rename all theme titles and names in &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;registration.php&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;theme.xml&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;in &lt;code class=&quot;highlighter-rouge&quot;&gt;theme.xml&lt;/code&gt; add &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;parent&amp;gt;Magento/blank&amp;lt;/parent&amp;gt;&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Login to admin to change theme and clear-cache
+    &lt;ul&gt;
+      &lt;li&gt;locate admin URL in &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/config.php&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;create-a-template-for-a-page&quot;&gt;&lt;strong&gt;Create a template for a page&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Define a new page layout in &lt;code class=&quot;highlighter-rouge&quot;&gt;layouts.xml&lt;/code&gt; by copy &amp;amp; pasting a column tag&lt;/li&gt;
+  &lt;li&gt;Copy &lt;code class=&quot;highlighter-rouge&quot;&gt;1column.xml&lt;/code&gt; and rename to the name of page, ex. &lt;code class=&quot;highlighter-rouge&quot;&gt;homepage.xml&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Go to admin and set a page to use new page layout defined&lt;/li&gt;
+  &lt;li&gt;Clear cache in admin configuration page or cli &lt;code class=&quot;highlighter-rouge&quot;&gt;php bin/magento cache:flush&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Create a template &lt;code class=&quot;highlighter-rouge&quot;&gt;*.phtml&lt;/code&gt; inside of &lt;code class=&quot;highlighter-rouge&quot;&gt;/templates&lt;/code&gt; directory and use &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;block&amp;gt;&lt;/code&gt; tag inside of &lt;code class=&quot;highlighter-rouge&quot;&gt;homepage.xml&lt;/code&gt; file to point to the template file&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;override-magento-2-core-templates&quot;&gt;&lt;strong&gt;Override Magento 2 core templates&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Follow Magento 2 front end developer guide&lt;/li&gt;
+  &lt;li&gt;Copy &amp;amp; paste codebase from Magento 2 github repo&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tips:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Analyze layout first&lt;/li&gt;
+  &lt;li&gt;Look at default modules under &lt;code class=&quot;highlighter-rouge&quot;&gt;app/code/Magento&lt;/code&gt; files and reference in &lt;code class=&quot;highlighter-rouge&quot;&gt;Magento_Theme&lt;/code&gt; base templates&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;loading-front-end-flow-assets&quot;&gt;&lt;strong&gt;Loading Front-End flow assets&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;After loading Front-End flow assets files, we will comment out unnecessary Blank theme styles. This is a matter of inspecting unnecessary styles and commenting it out from its default &lt;code class=&quot;highlighter-rouge&quot;&gt;.less&lt;/code&gt; files&lt;/p&gt;
+
+&lt;p&gt;Comment out Magento 2’s &lt;code class=&quot;highlighter-rouge&quot;&gt;imports&lt;/code&gt; in its root &lt;code class=&quot;highlighter-rouge&quot;&gt;/web/css/*.less&lt;/code&gt; file&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;web/css/styles-m.less&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;web/css/_styles.less&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;web/css/source/_sources.less&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Initially, we will keep Magento 2 Blank theme’s Grid system and remove its theme styles. Go back and forth to files above to remove styles.&lt;/p&gt;
+
+&lt;h4 id=&quot;recompile-default-blank-theme-styles-and-new-front-end-flow-styles&quot;&gt;&lt;strong&gt;Recompile default Blank theme styles and new Front-End flow styles&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Delete static files
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rm -rf pub/static/frontend/&amp;lt;company name&amp;gt;/&amp;lt;theme name&amp;gt;/*&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rm -rf var/cache/*&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rm -rf var/page_cache/*&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rm -rf var/view_preprocessed/*&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Redeploy static files
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;php bin/magento setup:static-content:deploy&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;php bin/magento cache:clean &amp;amp;&amp;amp; php bin/magento cache:flush&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;chown -R www-data:www-data var/ pub/ &amp;amp;&amp;amp; chmod -R 777 var/ pub/&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;credential-requirements&quot;&gt;&lt;strong&gt;Credential Requirements&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;As stated in its document, Secure keys do not use the normal Magento2 Marketplace username and password, rather&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Once logged in, generate public and private keys
+    &lt;ul&gt;
+      &lt;li&gt;username is Public key&lt;/li&gt;
+      &lt;li&gt;password is Private key&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Need to sign up a Magento Marketplace account to take advantage of their features or add-ons that can be install via composer&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;the-docker-way&quot;&gt;The Docker way&lt;/h3&gt;
+
+&lt;p&gt;Installing manually was tedious so I’ve decided to use install Magento 2 via Docker and Docker Compose.&lt;/p&gt;
+
+&lt;p&gt;To get a glimpse of how Docker and Docker Compose works, I’ved jotted down notes here: &lt;a href=&quot;Notes-on-creating-a-convenient-local-development-workflow-with-Docker&quot;&gt;Notes on creating a convenient Local Development Workflow with Docker&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Here is a sample &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file that installs Magento 2 &lt;a href=&quot;https://github.com/mageinferno/magento2-docker-compose&quot;&gt;maginferno - magento2-docker-compose&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Grab a copy of Magento 2 files as well &lt;a href=&quot;https://github.com/magento/magento2.git&quot;&gt;Github - Magento&lt;/a&gt; and place it on your &lt;strong&gt;host&lt;/strong&gt; and mount the necessary directories and files unto your &lt;strong&gt;docker container&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
 
 </description>
-        <pubDate>Mon, 04 Jan 2016 02:47:13 -0800</pubDate>
-        <link>http://www.wandrr.io/welcome-to-jekyll</link>
-        <guid isPermaLink="true">http://www.wandrr.io/welcome-to-jekyll</guid>
+        <pubDate>Tue, 27 Dec 2016 03:14:55 -0800</pubDate>
+        <link>http://rlynjb.github.io/wandrr/Getting-started-with-Magento-Theming</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Getting-started-with-Magento-Theming</guid>
+        
+        <category>cms</category>
+        
+        <category>ecommerce</category>
+        
+        <category>magento2</category>
         
         
-        <category>jekyll</category>
+      </item>
+    
+      <item>
+        <title>Notes on creating a convenient Local Development Workflow with Docker</title>
+        <description>&lt;p&gt;While working on a project that requires a new install of PHP and MySql, I came into a halt. It took me a day to re-configure my local development environment.&lt;/p&gt;
+
+&lt;p&gt;I then came across Docker. With this research and learning a new technology. My goal is to establish an efficient local development workflow with Docker as I did with creating &lt;a href=&quot;https://github.com/rlynjb/frontendflow&quot;&gt;Front-End Workflow Theme&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This article &lt;a href=&quot;https://www.airpair.com/docker/posts/efficiant-development-workfow-using-git-submodules-and-docker-compose&quot;&gt;Efficient development workflow using Git submodules and Docker Compose&lt;/a&gt; gave me a brief overview of what Docker and Git is capable of when architecturing your preferred local development, though, I did have to do further reading on my own to grasp Docker Engine, Docker Compose, and Git submodule (I will not be tackling this topic as I’m focus on Dockerfile and Docker Compose).&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;so-far-what-i-know-about-docker-in-regards-of-hands-on-experience-is&quot;&gt;So far, what I know about Docker in regards of hands-on experience is&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;we edit or create our source code in a directory from our local machine.
+    &lt;ul&gt;
+      &lt;li&gt;to run the app
+        &lt;ul&gt;
+          &lt;li&gt;we use Docker to start images we define in &lt;strong&gt;Dockerfile&lt;/strong&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Docker automatically creates a &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;http://0.0.0.0&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Docker uses Port for each contained apps or websites&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;collections-of-tutorials&quot;&gt;Collections of tutorials&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;install &lt;strong&gt;Docker&lt;/strong&gt; via its official site &lt;a href=&quot;https://docs.docker.com/docker-for-mac/&quot;&gt;Getting Started with Docker for Mac&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;useful-commands-and-info&quot;&gt;Useful commands and info&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Look into &lt;strong&gt;Dockerfile&lt;/strong&gt; file references&lt;/li&gt;
+  &lt;li&gt;Look into &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file references and commandline references&lt;/li&gt;
+  &lt;li&gt;To access a container via terminal:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://askubuntu.com/questions/505506/how-to-get-bash-or-ssh-into-a-running-container-in-background-mode&quot;&gt;How to get bash or ssh into a running container in background mode?&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo docker exec -i -t 665b4a1e17b6 /bin/bash #by ID&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo docker exec -i -t loving_heisenberg /bin/bash #by Name&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;to start a containter &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose up&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose up -d&lt;/code&gt; to detach from status&lt;/li&gt;
+  &lt;li&gt;to see processes: &lt;code class=&quot;highlighter-rouge&quot;&gt;docker ps&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;run a command inside container from host
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker exec &amp;lt;container_id&amp;gt; &amp;lt;command&amp;gt;&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;for-app-sample-workflow&quot;&gt;For App sample workflow&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.docker.com/compose/gettingstarted&quot;&gt;Practice Workflow with Docker compose&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;for-cms-sample-workflow&quot;&gt;For CMS sample workflow&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://visible.vc/engineering/docker-environment-for-wordpress/&quot;&gt;Practice Workflow with CMS using Docker compose&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Tip:&lt;/strong&gt; you have to be familiar with CMS directory&lt;/li&gt;
+  &lt;li&gt;We mount local directories from our machine to its Docker container/server with the use of &lt;strong&gt;volume&lt;/strong&gt; in its &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Tip:&lt;/strong&gt; we can have a copy of CMS install locally on out directory and mount it on Docker container/server&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 08 Aug 2016 06:31:20 -0700</pubDate>
+        <link>http://rlynjb.github.io/wandrr/Notes-on-creating-a-convenient-local-development-workflow-with-Docker</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Notes-on-creating-a-convenient-local-development-workflow-with-Docker</guid>
         
-        <category>update</category>
+        <category>workflow</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Breaking down Cross-Browser Testing</title>
+        <description>&lt;p&gt;Below is my note on an article on smashing magazine. Article is mostly theory but I tried to take in the important info.&lt;/p&gt;
+
+&lt;h1 id=&quot;two-main-objectives&quot;&gt;Two Main Objectives&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Discovering bugs
+    &lt;ul&gt;
+      &lt;li&gt;Entails trying to break your app to find bugs to fix.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Sanity-checking
+    &lt;ul&gt;
+      &lt;li&gt;Involves verifying that majority of your audience receives the expected experience.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;know-your-statistics&quot;&gt;Know your Statistics&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Audience statistics&lt;/li&gt;
+  &lt;li&gt;Browser usage statistics&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;simplify-your-browser-usage-statistics&quot;&gt;Simplify your browser usage statistics&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Desktop Browsers&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;we don’t care about:
+    &lt;ul&gt;
+      &lt;li&gt;versions except IE&lt;/li&gt;
+      &lt;li&gt;OS&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;same argument applies with Portable Browsers&lt;/li&gt;
+  &lt;li&gt;new wave of browsers called: In-App browsers - browsers in social media platforms&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Portable Browsers&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;whats important:
+    &lt;ul&gt;
+      &lt;li&gt;version of the native Android browser used&lt;/li&gt;
+      &lt;li&gt;version of iOS a device is running
+        &lt;ul&gt;
+          &lt;li&gt;very relevant as Safari versions are intrinsically linked to iOS&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;three-phase-attack&quot;&gt;Three-Phase Attack&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Reconnaissance: Find Browser-Agnostic Bugs&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Try resizing to view responsiveness. Was there a funky breakpoint anywhere?&lt;/li&gt;
+      &lt;li&gt;Zoom in and out. Have the background-positions of your image sprite been knocked askew?&lt;/li&gt;
+      &lt;li&gt;See how the application behaves with Javascript turned off. Do you still get the core content?&lt;/li&gt;
+      &lt;li&gt;See how the application looks with CSS turned off. Do the semantics of the markup still make sense?&lt;/li&gt;
+      &lt;li&gt;Try turning both Javascript and CSS off. Are you getting an acceptable experience?&lt;/li&gt;
+      &lt;li&gt;Try interacting with the application using only your keyboard. Is it possible to navigate and see all the content?&lt;/li&gt;
+      &lt;li&gt;Try throttling your connection and see how quickly the application loads. How heavy is the page load?&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Raid: Test in High-Risk Browsers First&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Statistical Analysis of Bug Distribution&lt;/li&gt;
+      &lt;li&gt;High-Risk are IE browsers&lt;/li&gt;
+      &lt;li&gt;Medium-Rish are Safari, Opera&lt;/li&gt;
+      &lt;li&gt;Low-Rish are Chrome, Firefox&lt;/li&gt;
+      &lt;li&gt;Fixing bugs in bad browsers makes your code more resilient in good browsers&lt;/li&gt;
+      &lt;li&gt;Identifying problematic browsers&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://caniuse.com&quot;&gt;CanIUse&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;VirtualBox&lt;/li&gt;
+      &lt;li&gt;Check on actual device or browser&lt;/li&gt;
+      &lt;li&gt;Tools to rectify major compatibility issues:&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://modernizr.com&quot;&gt;Modernizr&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Clearance: sanity checking&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;By this stage, we should be 80:20&lt;/li&gt;
+      &lt;li&gt;Figuratively, we’ve fixed 80% of the bugs after testing 20% of the browsers&lt;/li&gt;
+      &lt;li&gt;Now, we verify the experience of 80% of audience through testing a different 20% of browsers&lt;/li&gt;
+      &lt;li&gt;Prioritize the browsers&lt;/li&gt;
+      &lt;li&gt;Use a 3rd-party service that checks on multiple browsers and device&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2016/02/high-impact-minimal-effort-cross-browser-testing/&quot;&gt;High Impact, Minimal-Effort Cross-Browser Testing&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 03 Aug 2016 05:57:02 -0700</pubDate>
+        <link>http://rlynjb.github.io/wandrr/Breaking-down-cross-browser-testing</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Breaking-down-cross-browser-testing</guid>
+        
+        <category>testing</category>
+        
         
       </item>
     
