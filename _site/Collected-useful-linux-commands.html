@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Keeping Font Icons Minimal</title>
-  <meta name="description" content="Today at work, I’ve found another new tool that takes fontelloing to the next level. lol.. I was assigned to change Font Awesome fonts to http://fontello.com...">
+  <title>Collected useful Linux Commands</title>
+  <meta name="description" content="Changing user accounts">
 
   <link rel="stylesheet" href="http://45.55.9.152:4000/css/main.css">
-  <link rel="canonical" href="http://45.55.9.152:4000/Keeping-Font-Icons-Minimal">
+  <link rel="canonical" href="http://45.55.9.152:4000/Collected-useful-linux-commands">
   <link rel="alternate" type="application/rss+xml" title="wandrr" href="http://45.55.9.152:4000/feed.xml" />
 </head>
 
@@ -67,22 +67,125 @@
       <div class="wrapper post">
 
   <header class="post-header">
-    <h1 class="post-title">Keeping Font Icons Minimal</h1>
+    <h1 class="post-title">Collected useful Linux Commands</h1>
     <p class="post-meta">
-      Jan 4, 2015
+      Jan 1, 2015
       
-       • icons
+       • linux
     </p>
   </header>
 
   <article class="post-content">
-    <p>Today at work, I’ve found another new tool that takes fontelloing to the next level. lol.. I was assigned to change Font Awesome fonts to http://fontello.com fonts on the entire site. So, I individually searched for the font icons used on the site on Fontello.com. Unfortunately, some icons from Font Awesome aren’t updated on Fontello so I took advantage of the Custom Fo nt sections that Fontello have.</p>
+    <h3 id="changing-user-accounts">Changing user accounts</h3>
 
-<p>I’ve googled free font icons svg and came across http://flaticon.com.</p>
+<ul>
+  <li><a href="https://help.ubuntu.com/community/RootSudo">sudo su commands</a></li>
+</ul>
 
-<p>http://flaticon.com works pretty much the same as http://fontello.com except, it doesn’t have a config file where we load the fonts we previously chose.</p>
+<hr />
 
-<p>This is where I got the idea of using FlatIcon as a source for unavailable fonts at Fontello and instead, use Fontello as a tool to manage my font icons!</p>
+<h3 id="commands-for-searching">Commands for searching</h3>
+
+<p>These are just a list of commands I find usefule when searching for text or files thoughout Linux system.</p>
+
+<ul>
+  <li><a href="https://help.ubuntu.com/community/find">find</a></li>
+  <li><a href="">locate</a></li>
+  <li><a href="https://help.ubuntu.com/community/grep">grep</a></li>
+</ul>
+
+<hr />
+
+<h3 id="commands-for-sorting-files">Commands for sorting files</h3>
+
+<ul>
+  <li><a href="">ls</a></li>
+  <li><a href="">ll</a></li>
+  <li>Sort files in date <code class="highlighter-rouge">ll -tr</code> to check which files has been modified recently</li>
+  <li>Check for any suspicious injected files</li>
+</ul>
+
+<hr />
+
+<h3 id="ssh-and-scp">SSH and SCP</h3>
+
+<p>scp with port</p>
+
+<p><code class="highlighter-rouge">scp -P 21 root@myhost /home/direc/file.tar username@secondhost:/home/dir</code></p>
+
+<p>Where -P stands for port number</p>
+
+<hr />
+
+<h3 id="tar-compress-and-extract">Tar compress and extract</h3>
+
+<ul>
+  <li>compress: <code class="highlighter-rouge">tar -czf folder.tar.gz folder</code></li>
+  <li>extract: <code class="highlighter-rouge">tar -xzf folder.tar.gz</code></li>
+</ul>
+
+<hr />
+
+<h3 id="useful-techniques-for-configuring-and-managing-server">Useful techniques for configuring and managing server</h3>
+
+<p>Below is a gist of what this post contains.</p>
+
+<ul>
+  <li>Some Server stuff techniques</li>
+  <li>Benefits of checking /var/log/</li>
+  <li>Checking for CPU or Port processes</li>
+</ul>
+
+<hr />
+
+<h3 id="php-and-apache2">PHP and Apache2</h3>
+
+<p>To check a website’s php info: <br />
+You can use either cli command <code class="highlighter-rouge">php</code> or create a file with phpinfo().<br />
+Former solution will check for system wide php info.<br />
+Latter solution will check specific site php info.</p>
+
+<ul>
+  <li>create a <code class="highlighter-rouge">foo.php</code> file</li>
+  <li>add ff code `<?php phpinfo(); ?></li>
+  <li>visit url ‘your-domain.com/foo.php’ and this will display all php configs on a specific website</li>
+</ul>
+
+<p><strong>Sample uses</strong></p>
+
+<ul>
+  <li>When updating a <code class="highlighter-rouge">php.ini</code> file and you want to see what a specific website is using. Because there can be multiple <code class="highlighter-rouge">php.ini</code> file somewhere.</li>
+</ul>
+
+<hr />
+
+<h3 id="npm-and-nodejs">NPM and Nodejs</h3>
+
+<p>Use NVM when managing different nodejs and npm versions on a server. Saves time!</p>
+
+<hr />
+
+<h3 id="benefits-of-checking-varlog">Benefits of checking /var/log/</h3>
+
+<ul>
+  <li>Monitor a certain IP address activity hitting your server or certain file</li>
+  <li>Monitor suspicious IP address activity</li>
+</ul>
+
+<hr />
+
+<h3 id="checking-for-cpu-or-port-processes">Checking for CPU or Port processes</h3>
+
+<p>Use <code class="highlighter-rouge">htop</code> or <code class="highlighter-rouge">top</code> commands</p>
+
+<ul>
+  <li><a href="">htop</a></li>
+  <li><a href="">top</a></li>
+</ul>
+
+<p>Check for an open port by <code class="highlighter-rouge">ps aux | grep jekyll</code></p>
+
+<p>Kill a process or port by <code class="highlighter-rouge">kill -9 PID#</code></p>
 
   </article>
 

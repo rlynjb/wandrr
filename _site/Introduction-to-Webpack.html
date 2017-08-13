@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Breaking down Cross-Browser Testing</title>
-  <meta name="description" content="Below is my note on an article on smashing magazine. Article is mostly theory but I tried to take in the important info.">
+  <title>Introduction to Webpack</title>
+  <meta name="description" content="Practical hands-on of Webpack">
 
   <link rel="stylesheet" href="http://45.55.9.152:4000/css/main.css">
-  <link rel="canonical" href="http://45.55.9.152:4000/Breaking-down-cross-browser-testing">
+  <link rel="canonical" href="http://45.55.9.152:4000/Introduction-to-Webpack">
   <link rel="alternate" type="application/rss+xml" title="wandrr" href="http://45.55.9.152:4000/feed.xml" />
 </head>
 
@@ -67,123 +67,188 @@
       <div class="wrapper post">
 
   <header class="post-header">
-    <h1 class="post-title">Breaking down Cross-Browser Testing</h1>
+    <h1 class="post-title">Introduction to Webpack</h1>
     <p class="post-meta">
-      Aug 3, 2016
+      May 11, 2017
       
-       • testing
+       • webpack, javascript, js
     </p>
   </header>
 
   <article class="post-content">
-    <p>Below is my note on an article on smashing magazine. Article is mostly theory but I tried to take in the important info.</p>
+    <h1 id="practical-hands-on-of-webpack">Practical hands-on of Webpack</h1>
 
-<h1 id="two-main-objectives">Two Main Objectives</h1>
+<p>I am going to optimize my <code class="highlighter-rouge">gulp.js</code> file from my Front End Flow theme using Webpack. Following this <a href="https://hackernoon.com/a-map-to-modern-javascript-development-2017-16d9eb86309c">article</a>, it gave me more overview of the tools I missed these past months.</p>
+
+<p>My current FEF theme uses:</p>
+
+<ul>
+  <li>Package Management
+    <ul>
+      <li>NPM</li>
+    </ul>
+  </li>
+  <li>Bundling
+    <ul>
+      <li>Gulp.js</li>
+    </ul>
+  </li>
+  <li>JavaScript
+    <ul>
+      <li>ES6</li>
+    </ul>
+  </li>
+  <li>Transpiling
+    <ul>
+      <li>Babel and Browserify</li>
+    </ul>
+  </li>
+  <li>Linting
+    <ul>
+      <li>None</li>
+    </ul>
+  </li>
+  <li>Testing
+    <ul>
+      <li>None</li>
+    </ul>
+  </li>
+  <li>UI Framework/State management
+    <ul>
+      <li>React (but not indepth)</li>
+    </ul>
+  </li>
+  <li>DOM Manipulation and animations
+    <ul>
+      <li>jQuery (trying to stay way from it)</li>
+    </ul>
+  </li>
+  <li>Styling
+    <ul>
+      <li>SASS</li>
+    </ul>
+  </li>
+  <li>CSS Framework
+    <ul>
+      <li>Zurb Foundation</li>
+    </ul>
+  </li>
+  <li>Assets
+    <ul>
+      <li>Google Fonts</li>
+    </ul>
+  </li>
+</ul>
+
+<p>I know JavaScript tools are overwhelming but if we were to segregate each discipline like the list above, I think it can give us a better understanding so we can set up each tools base on their discipline.</p>
+
+<p>I am going to minimize my FEF theme workflow with the following JS tools and add new features as well:</p>
+
+<ul>
+  <li>Package Management
+    <ul>
+      <li>NPM, will take advantage of script <code class="highlighter-rouge">npm run start</code> or <code class="highlighter-rouge">npm run webpack</code></li>
+    </ul>
+  </li>
+  <li>Bundling
+    <ul>
+      <li>Webpack</li>
+    </ul>
+  </li>
+  <li>JavaScript
+    <ul>
+      <li>ES6</li>
+    </ul>
+  </li>
+  <li>Transpiling
+    <ul>
+      <li>Babel</li>
+    </ul>
+  </li>
+  <li>Linting
+    <ul>
+      <li>ESLint</li>
+    </ul>
+  </li>
+  <li>Testing
+    <ul>
+      <li>mocha (test runner), chai (assertion library) and chai-spies (for spies, fake objects that you can query for certain events that should or shouldn’t have happened)</li>
+    </ul>
+  </li>
+  <li>UI Framework/State management
+    <ul>
+      <li>React and Vue.js</li>
+    </ul>
+  </li>
+  <li>DOM Manipulation and animations
+    <ul>
+      <li>Plain ES6 and jQuery (but will not be prioritized)</li>
+    </ul>
+  </li>
+  <li>Styling
+    <ul>
+      <li>SASS</li>
+    </ul>
+  </li>
+  <li>CSS Framework
+    <ul>
+      <li>Zurb Foundation (might need to check if supported with React or can play well with Vue.js)</li>
+    </ul>
+  </li>
+  <li>Assets
+    <ul>
+      <li>Google Fonts</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="configuring-webpack-the-easy-way">Configuring Webpack the easy way.</h2>
+
+<p>There are reasons why Webpack has been popular lately and its been accepted over other module bundlers. <a href="https://www.smashingmagazine.com/2017/02/a-detailed-introduction-to-webpack/">ref: Why Webpack</a></p>
+
+<p>First off, lets configure Webpack the easy way. Reason for me to include this method is what if I wanted to use NPM and Webpack immediately to compile JavaScript files with ES6 features without setting up a config file. So for this method, I am going to use NPM scripts to run webpack.</p>
+
+<p>I assume you already have NPM installed and have created a <code class="highlighter-rouge">package.json</code> file by running <code class="highlighter-rouge">npm init</code></p>
 
 <ol>
-  <li>Discovering bugs
-    <ul>
-      <li>Entails trying to break your app to find bugs to fix.</li>
-    </ul>
-  </li>
-  <li>Sanity-checking
-    <ul>
-      <li>Involves verifying that majority of your audience receives the expected experience.</li>
-    </ul>
-  </li>
+  <li>Install Webpack via NPM locally <code class="highlighter-rouge">npm install --save-dev webpack</code></li>
+  <li>Install Lodash as our sample dependency <code class="highlighter-rouge">npm install --save lodash</code></li>
+  <li>Create <code class="highlighter-rouge">main.js</code> file as our entry file. We will import lodash on this file.</li>
 </ol>
 
-<hr />
+<div class="highlighter-rouge"><pre class="highlight"><code>var map = require('lodash/map');
 
-<h1 id="know-your-statistics">Know your Statistics</h1>
+function square(n) {
+      return n*n;
+}
 
-<ul>
-  <li>Audience statistics</li>
-  <li>Browser usage statistics</li>
-</ul>
+console.log(map([1,2,3,4,5,6], square));
+</code></pre>
+</div>
 
-<h3 id="simplify-your-browser-usage-statistics">Simplify your browser usage statistics</h3>
+<p>Here, we are just using lodash to square off the numbers inside its map function. Notice the <code class="highlighter-rouge">require</code> function is NOT supported by browsers yet, that is why we need to use Webpack to bundle this script.</p>
 
-<p><strong>Desktop Browsers</strong></p>
+<p>We will use <em>Webpack Command Line</em> for this simple example.</p>
 
-<ul>
-  <li>we don’t care about:
-    <ul>
-      <li>versions except IE</li>
-      <li>OS</li>
-    </ul>
-  </li>
-  <li>same argument applies with Portable Browsers</li>
-  <li>new wave of browsers called: In-App browsers - browsers in social media platforms</li>
-</ul>
+<p>Inside our <code class="highlighter-rouge">package.json</code> file, add the ff. code:</p>
 
-<p><strong>Portable Browsers</strong></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>"scripts": {
+  "build": "webpack src/main.js dist/bundle.js",
+}
+</code></pre>
+</div>
 
-<ul>
-  <li>whats important:
-    <ul>
-      <li>version of the native Android browser used</li>
-      <li>version of iOS a device is running
-        <ul>
-          <li>very relevant as Safari versions are intrinsically linked to iOS</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
+<p>Now when we run <code class="highlighter-rouge">npm run build</code>, this will bundle <code class="highlighter-rouge">main.js</code> file (along with the imported NPM modules) and out put it as <code class="highlighter-rouge">bundle.js</code> file.</p>
 
 <hr />
 
-<h1 id="three-phase-attack">Three-Phase Attack</h1>
-
-<ol>
-  <li><strong>Reconnaissance: Find Browser-Agnostic Bugs</strong>
-    <ul>
-      <li>Try resizing to view responsiveness. Was there a funky breakpoint anywhere?</li>
-      <li>Zoom in and out. Have the background-positions of your image sprite been knocked askew?</li>
-      <li>See how the application behaves with Javascript turned off. Do you still get the core content?</li>
-      <li>See how the application looks with CSS turned off. Do the semantics of the markup still make sense?</li>
-      <li>Try turning both Javascript and CSS off. Are you getting an acceptable experience?</li>
-      <li>Try interacting with the application using only your keyboard. Is it possible to navigate and see all the content?</li>
-      <li>Try throttling your connection and see how quickly the application loads. How heavy is the page load?</li>
-    </ul>
-  </li>
-  <li><strong>Raid: Test in High-Risk Browsers First</strong>
-    <ul>
-      <li>Statistical Analysis of Bug Distribution</li>
-    </ul>
-    <ul>
-      <li>High-Risk are IE browsers</li>
-      <li>Medium-Rish are Safari, Opera</li>
-      <li>Low-Rish are Chrome, Firefox
-      * Fixing bugs in bad browsers makes your code more resilient in good browsers
-      * Identifying problematic browsers</li>
-      <li><a href="http://caniuse.com">CanIUse</a></li>
-      <li>VirtualBox
-      * Check on actual device or browser
-      * Tools to rectify major compatibility issues:</li>
-      <li><a href="http://modernizr.com">Modernizr</a></li>
-    </ul>
-  </li>
-  <li><strong>Clearance: sanity checking</strong>
-    <ul>
-      <li>By this stage, we should be 80:20</li>
-    </ul>
-    <ul>
-      <li>Figuratively, we’ve fixed 80% of the bugs after testing 20% of the browsers</li>
-      <li>Now, we verify the experience of 80% of audience through testing a different 20% of browsers
-      * Prioritize the browsers
-      * Use a 3rd-party service that checks on multiple browsers and device</li>
-    </ul>
-  </li>
-</ol>
-
-<hr />
-
-<h5 id="references"><strong>References:</strong></h5>
+<h4 id="references">References:</h4>
 
 <ul>
-  <li><a href="https://www.smashingmagazine.com/2016/02/high-impact-minimal-effort-cross-browser-testing/">High Impact, Minimal-Effort Cross-Browser Testing</a></li>
+  <li><a href="https://hackernoon.com/a-map-to-modern-javascript-development-2017-16d9eb86309c">A Map to Modern JavaScript Development 2017</a></li>
+  <li><a href="https://www.smashingmagazine.com/2017/02/a-detailed-introduction-to-webpack/">Webpack: A Detailed Introduction</a></li>
 </ul>
 
   </article>

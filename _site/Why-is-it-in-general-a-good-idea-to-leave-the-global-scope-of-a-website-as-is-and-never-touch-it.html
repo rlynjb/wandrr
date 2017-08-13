@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Keeping Font Icons Minimal</title>
-  <meta name="description" content="Today at work, I’ve found another new tool that takes fontelloing to the next level. lol.. I was assigned to change Font Awesome fonts to http://fontello.com...">
+  <title>Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?</title>
+  <meta name="description" content="There are various reasons why Global Variables are bad. This can include performance, name collision, or bad code readability/organization.">
 
   <link rel="stylesheet" href="http://45.55.9.152:4000/css/main.css">
-  <link rel="canonical" href="http://45.55.9.152:4000/Keeping-Font-Icons-Minimal">
+  <link rel="canonical" href="http://45.55.9.152:4000/Why-is-it-in-general-a-good-idea-to-leave-the-global-scope-of-a-website-as-is-and-never-touch-it">
   <link rel="alternate" type="application/rss+xml" title="wandrr" href="http://45.55.9.152:4000/feed.xml" />
 </head>
 
@@ -67,22 +67,32 @@
       <div class="wrapper post">
 
   <header class="post-header">
-    <h1 class="post-title">Keeping Font Icons Minimal</h1>
+    <h1 class="post-title">Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?</h1>
     <p class="post-meta">
-      Jan 4, 2015
+      May 16, 2016
       
-       • icons
+       • javascript interview questions
     </p>
   </header>
 
   <article class="post-content">
-    <p>Today at work, I’ve found another new tool that takes fontelloing to the next level. lol.. I was assigned to change Font Awesome fonts to http://fontello.com fonts on the entire site. So, I individually searched for the font icons used on the site on Fontello.com. Unfortunately, some icons from Font Awesome aren’t updated on Fontello so I took advantage of the Custom Fo nt sections that Fontello have.</p>
+    <p>There are various reasons why Global Variables are bad. This can include performance, name collision, or bad code readability/organization.</p>
 
-<p>I’ve googled free font icons svg and came across http://flaticon.com.</p>
+<p>Pointers below are from <a href="http://c2.com/cgi/wiki?GlobalVariablesAreBad">Global Variables Are Bad</a> that were paraphrased in layman’s term.</p>
 
-<p>http://flaticon.com works pretty much the same as http://fontello.com except, it doesn’t have a config file where we load the fonts we previously chose.</p>
+<ul>
+  <li><strong>Non-locality</strong> - Code is easier to understand when parts of an app is limited to its own scope. Its easy to forget what a variable is intended for, but setting local variables in its own scope can help alleviate bad code readability/organization.</li>
+  <li><strong>No Access Control or Constraint Checking</strong> - Any part of an app can easily get or set a global variable and this can cause an app to easily break.</li>
+  <li><strong>Namespace pollution</strong> - When setting a variable globally, they will be available in any parts of your code, thus, causing variable name collision and polluting the global namespace with unnecessary variables for certain parts of an app when executed.</li>
+</ul>
 
-<p>This is where I got the idea of using FlatIcon as a source for unavailable fonts at Fontello and instead, use Fontello as a tool to manage my font icons!</p>
+<hr />
+
+<h5 id="references"><strong>References:</strong></h5>
+
+<ul>
+  <li><a href="http://c2.com/cgi/wiki?GlobalVariablesAreBad">Global Variables Are Bad</a></li>
+</ul>
 
   </article>
 

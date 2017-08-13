@@ -9,9 +9,9 @@
   <title>Venturing into a Fullstack Framework with Laravel</title>
   <meta name="description" content="Date Published: Nov 11, 2016">
 
-  <link rel="stylesheet" href="http://rlynjb.github.io/wandrr/css/main.css">
-  <link rel="canonical" href="http://rlynjb.github.io/wandrr/Venturing-into-a-fullstack-framework-with-Laravel">
-  <link rel="alternate" type="application/rss+xml" title="wandrr" href="http://rlynjb.github.io/wandrr/feed.xml" />
+  <link rel="stylesheet" href="http://45.55.9.152:4000/css/main.css">
+  <link rel="canonical" href="http://45.55.9.152:4000/Venturing-into-a-fullstack-framework-with-Laravel">
+  <link rel="alternate" type="application/rss+xml" title="wandrr" href="http://45.55.9.152:4000/feed.xml" />
 </head>
 
 
@@ -38,7 +38,7 @@
       <div class="trigger">
         
           
-          <a class="page-link" href="http://rlynjb.github.io/wandrr/about-me/">About Me</a>
+          <a class="page-link" href="http://45.55.9.152:4000/about-me/">About Me</a>
           
         
           
@@ -48,11 +48,11 @@
           
         
           
-          <a class="page-link" href="http://rlynjb.github.io/wandrr/projects/">Projects</a>
+          <a class="page-link" href="http://45.55.9.152:4000/projects/">Projects</a>
           
         
           
-          <a class="page-link" href="http://rlynjb.github.io/wandrr/tags/">Tags</a>
+          <a class="page-link" href="http://45.55.9.152:4000/tags/">Tags</a>
           
         
       </div>
@@ -417,8 +417,10 @@ Route::get('/contact/view', function() {
       <li>include validation (Zurb Foundation Abide or HTML5 validation)</li>
       <li>include <code class="highlighter-rouge">name=""</code>, <code class="highlighter-rouge">maxlength=""</code> on input fields</li>
       <li>include `` before Submit input button</li>
-      <li>provided by Laravel, a secure way to manage POST forms</li>
-      <li>include a Thank You and Error messages</li>
+    </ul>
+    <ul>
+      <li>provided by Laravel, a secure way to manage POST forms
+      - include a Thank You and Error messages</li>
     </ul>
   </li>
   <li>Author JavaScript submit ajax code
@@ -439,8 +441,10 @@ Route::get('/contact/view', function() {
     <ul>
       <li>on root directory, run <code class="highlighter-rouge">php artisan make:controller ContactController</code></li>
       <li>inside <code class="highlighter-rouge">ContactController.php</code>, define facades</li>
-      <li>ex: <code class="highlighter-rouge">use DB;</code>, <code class="highlighter-rouge">use Illuminate\Support\Facades\Mail;</code></li>
-      <li>inside its public function</li>
+    </ul>
+    <ul>
+      <li>ex: <code class="highlighter-rouge">use DB;</code>, <code class="highlighter-rouge">use Illuminate\Support\Facades\Mail;</code>
+      - inside its public function</li>
       <li>assign form input values to variables
         <ul>
           <li>these are the fields defined in form</li>
@@ -454,10 +458,12 @@ Route::get('/contact/view', function() {
     <ul>
       <li>go to phpmyadmin and create a database, enter credentials, and create a table</li>
       <li>create columns and defined the ff.</li>
+    </ul>
+    <ul>
       <li>form fields</li>
       <li>include ID: int, auto_increment, primary</li>
-      <li>include submitted_at: timestamp, current_timestamp</li>
-      <li>on <code class="highlighter-rouge">.env</code> file, configure database settings</li>
+      <li>include submitted_at: timestamp, current_timestamp
+      - on <code class="highlighter-rouge">.env</code> file, configure database settings</li>
     </ul>
   </li>
   <li>Setup Mailer
@@ -465,6 +471,8 @@ Route::get('/contact/view', function() {
       <li>go to <code class="highlighter-rouge">.env</code> file and input settings</li>
       <li>we are using <a href="#from-views-template">From Views Template</a> code</li>
       <li>using Mail facade requires additional steps</li>
+    </ul>
+    <ul>
       <li>create a Requests by running <code class="highlighter-rouge">php artisan make:requests SendContact</code></li>
       <li>inside SendContact.php, input the ff.
         <ul>
@@ -480,9 +488,11 @@ Route::get('/contact/view', function() {
     <ul>
       <li>retrieve site and secret key</li>
       <li>load grecaptcha plugin and html tag</li>
+    </ul>
+    <ul>
       <li><code class="highlighter-rouge">&lt;script src='https://www.google.com/recaptcha/api.js'&gt;&lt;/script&gt;</code></li>
-      <li><code class="highlighter-rouge">&lt;div class="row"&gt;&lt;div class="float-right g-recaptcha" data-sitekey="6Le5PRcUAAAAAHPBCPt4JuVkhU4Ha31av4dE5lGH"&gt;&lt;/div&gt;&lt;p class="recaptcha-response"&gt;&lt;/p&gt;&lt;/div&gt;</code></li>
-      <li>author validation google recaptcha code on contact form submit event</li>
+      <li><code class="highlighter-rouge">&lt;div class="row"&gt;&lt;div class="float-right g-recaptcha" data-sitekey="6Le5PRcUAAAAAHPBCPt4JuVkhU4Ha31av4dE5lGH"&gt;&lt;/div&gt;&lt;p class="recaptcha-response"&gt;&lt;/p&gt;&lt;/div&gt;</code>
+      - author validation google recaptcha code on contact form submit event</li>
       <li>ref: <a href="http://stackoverflow.com/questions/37294886/google-recaptcha-with-ajax-form">http://stackoverflow.com/questions/37294886/google-recaptcha-with-ajax-form</a></li>
     </ul>
   </li>
@@ -540,11 +550,13 @@ Route::get('/contact/view', function() {
   <li>Run <code class="highlighter-rouge">php artisan migrate</code> to setup database tables and its columns
     <ul>
       <li>this takes the script inside and creates database table and its columns in DB</li>
-      <li>ref: <a href="https://laravel.com/docs/5.4/migrations">Laravel Database: Migration</a></li>
-      <li>make sure you use PHP 7 on server-level rather than virtual (directory) level</li>
-      <li>while running command, i came across an issue</li>
-      <li>ref: <a href="https://laravel-news.com/laravel-5-4-key-too-long-error">laravel 5.4 key too long issue</a></li>
-      <li>idea: we can write our own database table migration script whenever we need to integrate a db into our forms</li>
+    </ul>
+    <ul>
+      <li>ref: <a href="https://laravel.com/docs/5.4/migrations">Laravel Database: Migration</a>
+      - make sure you use PHP 7 on server-level rather than virtual (directory) level
+      - while running command, i came across an issue</li>
+      <li>ref: <a href="https://laravel-news.com/laravel-5-4-key-too-long-error">laravel 5.4 key too long issue</a>
+      - idea: we can write our own database table migration script whenever we need to integrate a db into our forms</li>
     </ul>
   </li>
   <li>Run <code class="highlighter-rouge">php artisan make:auth</code>
@@ -560,6 +572,8 @@ Route::get('/contact/view', function() {
       <li>make the necessary changes (modify templates and mv to <code class="highlighter-rouge">/auth</code>)</li>
       <li>there are if statements that Authentication may require</li>
       <li>make sure they are synced in</li>
+    </ul>
+    <ul>
       <li>display data for guest users</li>
       <li>display data for logged in users</li>
     </ul>
@@ -568,11 +582,13 @@ Route::get('/contact/view', function() {
     <ul>
       <li>if were using all endpoints (<code class="highlighter-rouge">login</code>, <code class="highlighter-rouge">logout</code>, <code class="highlighter-rouge">register</code>, <code class="highlighter-rouge">password email</code>, <code class="highlighter-rouge">password request</code>, <code class="highlighter-rouge">password reset</code>), no need to remove <code class="highlighter-rouge">Route::auth</code> from <code class="highlighter-rouge">routes.php</code> file.</li>
       <li>Remove <code class="highlighter-rouge">Route::auth()</code> from <code class="highlighter-rouge">routes.php</code> and manually declare endpoints</li>
+    </ul>
+    <ul>
       <li>ref: <a href="http://robboyland.com/laravel-auth-how-to-disable-registration">http://robboyland.com/laravel-auth-how-to-disable-registration</a></li>
       <li>ex. <code class="highlighter-rouge">Route::get('login', 'Auth\AuthController@showLoginForm');</code></li>
-      <li>to display Route list, run <code class="highlighter-rouge">php artisan route:list</code></li>
-      <li>Remove <code class="highlighter-rouge">Route::get('/home', 'HomeController@index');</code> from <code class="highlighter-rouge">routes.php</code> file</li>
-      <li>Remove <code class="highlighter-rouge">$this-&gt;middleware('auth');</code> on <code class="highlighter-rouge">app &gt; Http &gt; Controllers &gt; HomeController.php</code> file</li>
+      <li>to display Route list, run <code class="highlighter-rouge">php artisan route:list</code>
+      - Remove <code class="highlighter-rouge">Route::get('/home', 'HomeController@index');</code> from <code class="highlighter-rouge">routes.php</code> file
+      - Remove <code class="highlighter-rouge">$this-&gt;middleware('auth');</code> on <code class="highlighter-rouge">app &gt; Http &gt; Controllers &gt; HomeController.php</code> file</li>
     </ul>
   </li>
   <li>after login success, set redirection page
@@ -727,10 +743,12 @@ Route::get('/contact/view', function() {
   <li>Since we are going to use the same Authenticate Middleware
     <ul>
       <li>Copy and Paste the ff. section of code from <code class="highlighter-rouge">app &gt; Http &gt; Middleware &gt; Authenticate.php</code> at the beginning of Admin PHP class file.</li>
+    </ul>
+    <ul>
       <li><code class="highlighter-rouge">The Guard implementation</code></li>
-      <li><code class="highlighter-rouge">Create a new filter instance</code></li>
-      <li>Copy and paste <code class="highlighter-rouge">use Illuminate\Contracts\Auth\Guard;</code></li>
-      <li>Copy and paste code inside handle function</li>
+      <li><code class="highlighter-rouge">Create a new filter instance</code>
+      - Copy and paste <code class="highlighter-rouge">use Illuminate\Contracts\Auth\Guard;</code>
+      - Copy and paste code inside handle function</li>
     </ul>
   </li>
   <li>Write code at the 2nd ifelse statement</li>

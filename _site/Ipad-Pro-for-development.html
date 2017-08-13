@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Keeping Font Icons Minimal</title>
-  <meta name="description" content="Today at work, I’ve found another new tool that takes fontelloing to the next level. lol.. I was assigned to change Font Awesome fonts to http://fontello.com...">
+  <title>Ipad Pro for Development</title>
+  <meta name="description" content="Inpired by this article I swapped my MacBook for an iPad + Linode. I decided to take the bandwagon of developers using iPad for development. Since I speciali...">
 
   <link rel="stylesheet" href="http://45.55.9.152:4000/css/main.css">
-  <link rel="canonical" href="http://45.55.9.152:4000/Keeping-Font-Icons-Minimal">
+  <link rel="canonical" href="http://45.55.9.152:4000/Ipad-Pro-for-development">
   <link rel="alternate" type="application/rss+xml" title="wandrr" href="http://45.55.9.152:4000/feed.xml" />
 </head>
 
@@ -67,22 +67,101 @@
       <div class="wrapper post">
 
   <header class="post-header">
-    <h1 class="post-title">Keeping Font Icons Minimal</h1>
+    <h1 class="post-title">Ipad Pro for Development</h1>
     <p class="post-meta">
-      Jan 4, 2015
+      Aug 13, 2017
       
-       • icons
+       • web development, app development, code editor, front end development
     </p>
   </header>
 
   <article class="post-content">
-    <p>Today at work, I’ve found another new tool that takes fontelloing to the next level. lol.. I was assigned to change Font Awesome fonts to http://fontello.com fonts on the entire site. So, I individually searched for the font icons used on the site on Fontello.com. Unfortunately, some icons from Font Awesome aren’t updated on Fontello so I took advantage of the Custom Fo nt sections that Fontello have.</p>
+    <p>Inpired by this article <a href="http://yieldthought.com/post/12239282034/swapped-my-macbook-for-an-ipad">I swapped my MacBook for an iPad + Linode</a>. I decided to take the bandwagon of developers using iPad for development. Since I specialized in Front-End Development. I just needed to add additional tools to my workflow.</p>
 
-<p>I’ve googled free font icons svg and came across http://flaticon.com.</p>
+<h3 id="why-use-ipad">Why use Ipad?</h3>
 
-<p>http://flaticon.com works pretty much the same as http://fontello.com except, it doesn’t have a config file where we load the fonts we previously chose.</p>
+<p>Everybody has its reasons for using Ipad for development. My personal preference are:</p>
 
-<p>This is where I got the idea of using FlatIcon as a source for unavailable fonts at Fontello and instead, use Fontello as a tool to manage my font icons!</p>
+<ul>
+  <li>its portable
+    <ul>
+      <li>I can easily toss an ipad without having to worry about internal hardware breaking</li>
+    </ul>
+  </li>
+  <li>I always bring my backpack of laptop with me
+    <ul>
+      <li>due to vegas heat, I hate leaving my laptop in my car, with iPad, its easier to carry it around, not much weight</li>
+    </ul>
+  </li>
+  <li>sometimes, i love going to coffee shops or eating out somewhere
+    <ul>
+      <li>its nice to have convenient access to the internet and my code</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="devices">Devices:</h3>
+
+<ul>
+  <li>iPad Pro 10.5</li>
+  <li>Bluetooth keyboard
+    <ul>
+      <li><a href="https://support.apple.com/en-us/HT205237">Helpful Keyboard Shortcuts</a></li>
+    </ul>
+  </li>
+  <li>Sprint unlimited data plan</li>
+</ul>
+
+<h3 id="apps">Apps:</h3>
+
+<ul>
+  <li>MIHTool for debugging websites/web apps</li>
+  <li>Reflection for SSH access to remote servers</li>
+  <li>Digital Ocean - remote servers</li>
+  <li>Vim - code editor</li>
+</ul>
+
+<hr />
+
+<p><strong>Reflection</strong> and <strong>Vim</strong> are pretty self-explanatory tools. I’ve always use the CommandLine and Vim as my main tools. Advantages of learning Vim is that you can SSH any remote server and use that as your development environment. I’m glad I took the time to learn Vim and get myself use to the CommandLine. I love simplicity. Having these two tools, I didn’t need to have multiple softwares open to develop. And Oh Yea, I forgot to add <strong>Tmux</strong>.</p>
+
+<p>Another tool to avoid opening multiple terminal windows is to use <strong>Tmux</strong>. It’s a terminal multiplexer, this means you can use a single Terminal window and open multiple panes and windows inside a single terminal window.</p>
+
+<p>So there we have it, my 3 main tools: Reflection, Vim, and Tmux.</p>
+
+<hr />
+
+<p>As for my remote server setup <strong>Digital Ocean droplets</strong>. I’m using a LAMP server.</p>
+
+<p>Its pretty easy to create a server image using Digital Oceans and alike services. Just create an account and follow the remaining instructions. Usually these remote server services offer a variety of preinstalled applications on their server.</p>
+
+<p>As for what I need to setup my dev environment.</p>
+
+<ul>
+  <li>I will need to be able to handle multiple projects using a single IP address</li>
+  <li>Hence, I will access my projects using ports or subdirectory url</li>
+  <li>Since my dev stack are: HTML5, CSS3, JavaScript, Node, PHP. I decided to use LAMP stack.</li>
+</ul>
+
+<hr />
+
+<h3 id="method-for-setting-up-my-remote-server">Method for setting up my remote server</h3>
+
+<ol>
+  <li>Log in to your Digital Ocean account</li>
+  <li>Create a server image with LAMP on 16.04 ubuntu version</li>
+  <li>Once Droplet is complete. Open you <strong>Reflection</strong> app</li>
+  <li>Access your remote server by using SSH. <code class="highlighter-rouge">ssh root@given_ip_address</code></li>
+  <li>Change your unix password to your new preferred password</li>
+  <li>After accessing your remote and server and changing your new password. Open Chrome browser or MIHTool browser and point to the given IP Address</li>
+  <li>Install Nodejs by running <code class="highlighter-rouge">sudo apt-get install nodejs</code>. This should include <strong>NPM</strong> as well</li>
+  <li>Now, go to your public directory where an <code class="highlighter-rouge">index.html</code> is being served. <code class="highlighter-rouge">cd /var/www/html/</code></li>
+  <li>On this directory <code class="highlighter-rouge">/var/www/html/</code> you can <code class="highlighter-rouge">git clone</code> your projects and serve each on a part of subdirectory url</li>
+</ol>
+
+<hr />
+
+<p>So this is how I am able to develop using an iPad Pro. Next review will be on <strong>MIHTool</strong> app. This is <strong>Chrome Development tool</strong> browser alternative for iPad.</p>
 
   </article>
 

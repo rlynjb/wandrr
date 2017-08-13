@@ -4,11 +4,115 @@
     <title>wandrr</title>
     <description>This is a blog about travel and tech.
 </description>
-    <link>http://rlynjb.github.io/wandrr/</link>
-    <atom:link href="http://rlynjb.github.io/wandrr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 27 Jul 2017 17:52:22 -0700</pubDate>
-    <lastBuildDate>Thu, 27 Jul 2017 17:52:22 -0700</lastBuildDate>
-    <generator>Jekyll v3.1.6</generator>
+    <link>http://45.55.9.152:4000/</link>
+    <atom:link href="http://45.55.9.152:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 13 Aug 2017 20:20:13 +0000</pubDate>
+    <lastBuildDate>Sun, 13 Aug 2017 20:20:13 +0000</lastBuildDate>
+    <generator>Jekyll v3.5.1</generator>
+    
+      <item>
+        <title>Ipad Pro for Development</title>
+        <description>&lt;p&gt;Inpired by this article &lt;a href=&quot;http://yieldthought.com/post/12239282034/swapped-my-macbook-for-an-ipad&quot;&gt;I swapped my MacBook for an iPad + Linode&lt;/a&gt;. I decided to take the bandwagon of developers using iPad for development. Since I specialized in Front-End Development. I just needed to add additional tools to my workflow.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-use-ipad&quot;&gt;Why use Ipad?&lt;/h3&gt;
+
+&lt;p&gt;Everybody has its reasons for using Ipad for development. My personal preference are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;its portable
+    &lt;ul&gt;
+      &lt;li&gt;I can easily toss an ipad without having to worry about internal hardware breaking&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;I always bring my backpack of laptop with me
+    &lt;ul&gt;
+      &lt;li&gt;due to vegas heat, I hate leaving my laptop in my car, with iPad, its easier to carry it around, not much weight&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;sometimes, i love going to coffee shops or eating out somewhere
+    &lt;ul&gt;
+      &lt;li&gt;its nice to have convenient access to the internet and my code&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;devices&quot;&gt;Devices:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;iPad Pro 10.5&lt;/li&gt;
+  &lt;li&gt;Bluetooth keyboard
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://support.apple.com/en-us/HT205237&quot;&gt;Helpful Keyboard Shortcuts&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Sprint unlimited data plan&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;apps&quot;&gt;Apps:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;MIHTool for debugging websites/web apps&lt;/li&gt;
+  &lt;li&gt;Reflection for SSH access to remote servers&lt;/li&gt;
+  &lt;li&gt;Digital Ocean - remote servers&lt;/li&gt;
+  &lt;li&gt;Vim - code editor&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Reflection&lt;/strong&gt; and &lt;strong&gt;Vim&lt;/strong&gt; are pretty self-explanatory tools. I’ve always use the CommandLine and Vim as my main tools. Advantages of learning Vim is that you can SSH any remote server and use that as your development environment. I’m glad I took the time to learn Vim and get myself use to the CommandLine. I love simplicity. Having these two tools, I didn’t need to have multiple softwares open to develop. And Oh Yea, I forgot to add &lt;strong&gt;Tmux&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Another tool to avoid opening multiple terminal windows is to use &lt;strong&gt;Tmux&lt;/strong&gt;. It’s a terminal multiplexer, this means you can use a single Terminal window and open multiple panes and windows inside a single terminal window.&lt;/p&gt;
+
+&lt;p&gt;So there we have it, my 3 main tools: Reflection, Vim, and Tmux.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;As for my remote server setup &lt;strong&gt;Digital Ocean droplets&lt;/strong&gt;. I’m using a LAMP server.&lt;/p&gt;
+
+&lt;p&gt;Its pretty easy to create a server image using Digital Oceans and alike services. Just create an account and follow the remaining instructions. Usually these remote server services offer a variety of preinstalled applications on their server.&lt;/p&gt;
+
+&lt;p&gt;As for what I need to setup my dev environment.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;I will need to be able to handle multiple projects using a single IP address&lt;/li&gt;
+  &lt;li&gt;Hence, I will access my projects using ports or subdirectory url&lt;/li&gt;
+  &lt;li&gt;Since my dev stack are: HTML5, CSS3, JavaScript, Node, PHP. I decided to use LAMP stack.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;method-for-setting-up-my-remote-server&quot;&gt;Method for setting up my remote server&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Log in to your Digital Ocean account&lt;/li&gt;
+  &lt;li&gt;Create a server image with LAMP on 16.04 ubuntu version&lt;/li&gt;
+  &lt;li&gt;Once Droplet is complete. Open you &lt;strong&gt;Reflection&lt;/strong&gt; app&lt;/li&gt;
+  &lt;li&gt;Access your remote server by using SSH. &lt;code class=&quot;highlighter-rouge&quot;&gt;ssh root@given_ip_address&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Change your unix password to your new preferred password&lt;/li&gt;
+  &lt;li&gt;After accessing your remote and server and changing your new password. Open Chrome browser or MIHTool browser and point to the given IP Address&lt;/li&gt;
+  &lt;li&gt;Install Nodejs by running &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install nodejs&lt;/code&gt;. This should include &lt;strong&gt;NPM&lt;/strong&gt; as well&lt;/li&gt;
+  &lt;li&gt;Now, go to your public directory where an &lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt; is being served. &lt;code class=&quot;highlighter-rouge&quot;&gt;cd /var/www/html/&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;On this directory &lt;code class=&quot;highlighter-rouge&quot;&gt;/var/www/html/&lt;/code&gt; you can &lt;code class=&quot;highlighter-rouge&quot;&gt;git clone&lt;/code&gt; your projects and serve each on a part of subdirectory url&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;So this is how I am able to develop using an iPad Pro. Next review will be on &lt;strong&gt;MIHTool&lt;/strong&gt; app. This is &lt;strong&gt;Chrome Development tool&lt;/strong&gt; browser alternative for iPad.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 13 Aug 2017 20:18:14 +0000</pubDate>
+        <link>http://45.55.9.152:4000/Ipad-Pro-for-development</link>
+        <guid isPermaLink="true">http://45.55.9.152:4000/Ipad-Pro-for-development</guid>
+        
+        <category>web development</category>
+        
+        <category>app development</category>
+        
+        <category>code editor</category>
+        
+        <category>front end development</category>
+        
+        
+      </item>
     
       <item>
         <title>A Method to remove Bower and use NPM for all dependencies</title>
@@ -37,11 +141,963 @@
   &lt;li&gt;Obviously, fix errors lol&lt;/li&gt;
 &lt;/ol&gt;
 </description>
-        <pubDate>Thu, 27 Jul 2017 09:54:20 -0700</pubDate>
-        <link>http://rlynjb.github.io/wandrr/Method-to-remove-bower-and-use-npm-for-all-dependencies</link>
-        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Method-to-remove-bower-and-use-npm-for-all-dependencies</guid>
+        <pubDate>Thu, 27 Jul 2017 16:54:20 +0000</pubDate>
+        <link>http://45.55.9.152:4000/Method-to-remove-bower-and-use-npm-for-all-dependencies</link>
+        <guid isPermaLink="true">http://45.55.9.152:4000/Method-to-remove-bower-and-use-npm-for-all-dependencies</guid>
         
         <category>javascript</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>React.Js Projects Workflow</title>
+        <description>&lt;h4 id=&quot;gist&quot;&gt;Gist&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#scaffold&quot;&gt;Scaffold&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Express, Browserify, Babelify, npm modules&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#destructing-the-layout&quot;&gt;Destructuring the Layout&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;React Router DOM, React Bootstrap, React Router Bootstrap&lt;/li&gt;
+      &lt;li&gt;Compartmentalize Layout into React Components&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#create-a-sample-database-of-products&quot;&gt;Create a sample Database of products&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Just a simple JSON data object served via Express&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#create-a-data-store-to-fetch-the-products&quot;&gt;Create a data Store to fetch the products&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;implement Flux via Reflux&lt;/li&gt;
+      &lt;li&gt;Learned the architecture of organizing code to use less States&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#building-the-products-listing-and-the-item-page&quot;&gt;Building the product’s listing and the item page&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Learning more about ReactJS in detail&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;scaffold&quot;&gt;Scaffold&lt;/h1&gt;
+
+&lt;p&gt;There are two ways we can start a React.js project.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Setup and build the script using a Build Tool.
+    &lt;ul&gt;
+      &lt;li&gt;Ex: Gulp, Webpack, NPM script&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Use server-side to start a web server and build the script using Browserify, Babelify, and Express.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Since I am familiar with the build tools such as Gulp.js. Why not use something different, I’m going for #2 method in doing this project.&lt;/p&gt;
+
+&lt;h3 id=&quot;method&quot;&gt;Method&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create a repo and &lt;code class=&quot;highlighter-rouge&quot;&gt;git clone&lt;/code&gt; to your local server&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;highlighter-rouge&quot;&gt;npm init&lt;/code&gt; and go through the process&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm install --save&lt;/code&gt; the following npm modules listed on the link below:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/rlynjb/webshop/commit/91c354d610f836b6c954e9412e05671e4839b2a0#diff-b9cfc7f2cdf78a7f4b91a753d10865a2&quot;&gt;webshop - package.json&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Create the following directories: &lt;code class=&quot;highlighter-rouge&quot;&gt;mkdir public &amp;amp;&amp;amp; mkdir source&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Create server file &lt;code class=&quot;highlighter-rouge&quot;&gt;touch server.js&lt;/code&gt; to start webserver and code the script to transpile our React.js files
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/rlynjb/webshop/commit/91c354d610f836b6c954e9412e05671e4839b2a0#diff-78c12f5adc1848d13b1c6f07055d996e&quot;&gt;webshop - server.js&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Create your main file &lt;code class=&quot;highlighter-rouge&quot;&gt;touch source/app.jsx&lt;/code&gt; thats linked to our &lt;code class=&quot;highlighter-rouge&quot;&gt;server.js&lt;/code&gt; file
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/rlynjb/webshop/commit/91c354d610f836b6c954e9412e05671e4839b2a0#diff-bcb4667827379fd27bf22df4d9dfeabc&quot;&gt;webshop - source/app.jsx&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Last, &lt;code class=&quot;highlighter-rouge&quot;&gt;touch .gitignore&lt;/code&gt; and add &lt;code class=&quot;highlighter-rouge&quot;&gt;node_modules, node_modules/*&lt;/code&gt; to avoid pushing massive amount of file to our repo&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;destructing-the-layout&quot;&gt;Destructing the Layout&lt;/h1&gt;
+
+&lt;p&gt;This is when we compartmentalize the layout structure of our React.js app. For this section, we will be using the following npm modules:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install --save react-bootstrap
+npm install --save react-router-bootstrap
+npm install --save react-router-dom
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Create our &lt;code class=&quot;highlighter-rouge&quot;&gt;touch public/index.html&lt;/code&gt; file and load our chosen CSS framework, polyfills, and necessary meta tags.&lt;/p&gt;
+
+&lt;h3 id=&quot;method-1&quot;&gt;Method&lt;/h3&gt;
+
+&lt;p&gt;We will start by setting up the &lt;strong&gt;Route&lt;/strong&gt; and &lt;strong&gt;Layout of our app&lt;/strong&gt; which usually consist of Header, Menu, Main Contents, and Footer.&lt;/p&gt;
+
+&lt;h3 id=&quot;1-this-is-the-initial-setup-of-our-routing-system-on-sourceappjsx-file&quot;&gt;1. This is the initial setup of our &lt;strong&gt;Routing System&lt;/strong&gt;. On &lt;code class=&quot;highlighter-rouge&quot;&gt;source/app.jsx&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/*
+  We are declaring use strict just for a javascript module security and debugging repercussion
+*/
+'use strict';
+
+/*
+  Next, we declare the methods from npm modules we need
+*/
+import React from 'react';
+/*
+  We will create this file next
+*/
+import Routes from './routes.jsx'; 
+import render from 'react-dom';
+
+/*
+  We are rendering the Routes which will consist of our Layout and main contents as well and
+  attaching it to an HTML element with id of container
+*/
+render(
+  Routes,
+  document.getElementById('container')
+);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If you notice, we are compartmentalizing our code so it doesn’t get cluttered in the long run. I know, its confusing at first, but its good to have a clean code for readability.&lt;/p&gt;
+
+&lt;h3 id=&quot;2-next-create-touch-sourceroutesjsx-file&quot;&gt;2. Next, create &lt;code class=&quot;highlighter-rouge&quot;&gt;touch source/routes.jsx&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;'use strict';
+
+import React from 'react';
+import Layout from './layout.jsx'; // the usual, we will create this file next
+import { BrowserRouter, Route, Link } from 'react-router-dom';
+
+const Routes = (
+  &amp;lt;BrowserRouter&amp;gt;
+    &amp;lt;Layout/&amp;gt;
+  &amp;lt;/BrowserRouter&amp;gt;
+);
+
+module.exports = Routes;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This file is where we actually define out Routing system by using &lt;code class=&quot;highlighter-rouge&quot;&gt;react-router-dom&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;reat-router&lt;/code&gt;. While coding, there where version conflicts I came across, &lt;a href=&quot;https://github.com/ReactTraining/react-router/issues/4752#issuecomment-286556728&quot;&gt;react-router issue&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;As of React v4, we are to use &lt;code class=&quot;highlighter-rouge&quot;&gt;react-router-dom&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;react-router&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf&quot;&gt;How to use react-router-dom module&lt;/a&gt; explains difference bet. &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;BrowserRouter&amp;gt;&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;HashRouter&amp;gt;&lt;/code&gt;, and which to use.&lt;/p&gt;
+
+&lt;h3 id=&quot;3-create-our-sourcelayoutjsx-file&quot;&gt;3. Create our &lt;code class=&quot;highlighter-rouge&quot;&gt;source/layout.jsx&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;'use strict';
+
+import React from 'react';
+// as discuss from prev step, there is a tutorial on how to use these methods
+import { Switch, Route } from 'react-router-dom';
+
+/*
+  These are 2 main components of our layout.
+  Names are pretty self-explanatory
+*/
+import Menu from './components/menu.jsx';
+import Footer from './components/footer.jsx';
+
+/*
+  These are static pages
+*/
+import Home from './pages/home.jsx';
+import Products from './pages/products.jsx';
+import Company from './pages/company.jsx';
+
+const Layout = React.createClass({
+  render() {
+    return (
+      &amp;lt;div&amp;gt;
+        &amp;lt;Menu /&amp;gt;
+
+        &amp;lt;main&amp;gt;
+          &amp;lt;Switch&amp;gt;
+            &amp;lt;Route exact path='/' component={ Home } name='home' /&amp;gt;
+            &amp;lt;Route path='/products' component={ Products } name='products' /&amp;gt;
+            &amp;lt;Route path='/company' component={ Company } name='company' /&amp;gt;
+          &amp;lt;/Switch&amp;gt;
+        &amp;lt;/main&amp;gt;
+
+        &amp;lt;Footer /&amp;gt;
+      &amp;lt;/div&amp;gt;
+    );
+  }
+});
+
+module.exports = Layout;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The code above is pretty simple. I think theres not much to explain to it. Its pretty much a component of overall layout of our app. Which uses &lt;strong&gt;Route&lt;/strong&gt; to &lt;strong&gt;Switch&lt;/strong&gt; from different static page depending on which link the user clicks.&lt;/p&gt;
+
+&lt;p&gt;The component also loads our Menu and Footer and these stays displayed throughout the app.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;I guess from this point, its safe to stop going further into creating those other components (Pages, Components). We can probably create those on our own.&lt;/p&gt;
+
+&lt;p&gt;The Method above is to explain in detail on how we are able to destructure a layout, create its own component and what latest version of Routing system to use and how to use it.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;create-a-sample-database-of-products&quot;&gt;Create a sample Database of products&lt;/h1&gt;
+
+&lt;p&gt;Since we are using Express, we create a sample json object data, but I assume we can use any API endpoint products file.&lt;/p&gt;
+
+&lt;h3 id=&quot;method-2&quot;&gt;Method&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;create a &lt;code class=&quot;highlighter-rouge&quot;&gt;products.json&lt;/code&gt; data and store in &lt;code class=&quot;highlighter-rouge&quot;&gt;/public/&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;each item has the ff. fields
+        &lt;ul&gt;
+          &lt;li&gt;SKU, price, savings, description, image, title&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;items are categorized by:
+        &lt;ul&gt;
+          &lt;li&gt;main offerings, sale offerings&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;implement code to fetch data on &lt;code class=&quot;highlighter-rouge&quot;&gt;server.js&lt;/code&gt; file&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;app.get('*.json', function (req, res) {
+  res.sendFile(__dirname + &quot;/public/&quot; + req.path);
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;create-a-data-store-to-fetch-the-products&quot;&gt;Create a data Store to fetch the products&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Flux&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;is an application architecture.&lt;/li&gt;
+  &lt;li&gt;not a framework, but a pattern to transmit data.&lt;/li&gt;
+  &lt;li&gt;consists of 3 major parts: Dispatchers, Stores, Actions&lt;/li&gt;
+  &lt;li&gt;this pattern avoids multiple states which can lead to bugs and hard to track down&lt;/li&gt;
+  &lt;li&gt;there are different Flux implementation
+    &lt;ul&gt;
+      &lt;li&gt;ex. Reflux, Redux&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://docs.google.com/drawings/d/187gtqcie1Uq3IQ9gv0bcAM_P1UKP7SgscqCGWkhtcgE/pub?w=960&amp;amp;h=720&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Dispatcher&lt;/strong&gt; central hub. Receives actions and sends payloads to all of its registered callbacks.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Actions&lt;/strong&gt; these refer to helper methods that facilitates the passing of data to the dispatcher.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Stores&lt;/strong&gt; these are logic containers that have callbacks registered on the dispatcher, which emits state changes to all registered callbacks&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Views&lt;/strong&gt; refers to those React components that get a state from the stores and pass data to any of the descendants in their component tree.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For this pj, we are using &lt;strong&gt;Reflux&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;merges the concept of Dispatcher and Action, so its easier to understand.&lt;/p&gt;
+
+&lt;h3 id=&quot;method-3&quot;&gt;Method&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm install --save reflux&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install --save superagent&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;superagent is a HTTP request library&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mkdir source/stores &amp;amp;&amp;amp; mkdir source/actions&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;touch source/stores/products.js &amp;amp;&amp;amp; touch source/actions/products.js&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;these files are regular javascript files and not &lt;code class=&quot;highlighter-rouge&quot;&gt;.jsx&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;add Helper method code (Actions) in &lt;code class=&quot;highlighter-rouge&quot;&gt;source/actions/products.js&lt;/code&gt; file
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/rlynjb/webshop/blob/d9fb9aa1bca2ef9988359dc02a72e5969aa95815/source/actions/products.js&quot;&gt;github snippet - actions/products.js&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;add Store callback data in &lt;code class=&quot;highlighter-rouge&quot;&gt;source/stores/products.js&lt;/code&gt; file
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/rlynjb/webshop/blob/d9fb9aa1bca2ef9988359dc02a72e5969aa95815/source/stores/products.js&quot;&gt;github snippet - stores/products.js&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;now, we listen for updates from this Store to our &lt;code class=&quot;highlighter-rouge&quot;&gt;source/layout.jsx&lt;/code&gt; component.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/rlynjb/webshop/blob/d9fb9aa1bca2ef9988359dc02a72e5969aa95815/source/layout.jsx&quot;&gt;github snippet - layout.jsx&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;building-the-products-listing-and-the-item-page&quot;&gt;Building the product’s listing and the item page&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;this page will present the items in 1 fullsize featured column and a couple of mini columns at the bottom.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;method-4&quot;&gt;Method&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vim pages/products.jsx&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;link to code&lt;/li&gt;
+      &lt;li&gt;topics discussed:
+        &lt;ul&gt;
+          &lt;li&gt;propTypes
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;https://wecodetheweb.com/2015/06/02/why-react-proptypes-are-important/&quot;&gt;Why React PropTypes are important&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;https://facebook.github.io/react/docs/typechecking-with-proptypes.html&quot;&gt;Typechecking With PropTypes&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;getDefaultProps
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/33125985/this-props-inside-getdefaultprops-of-react&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;this.props&lt;/code&gt; inside &lt;code class=&quot;highlighter-rouge&quot;&gt;getDefaultProps()&lt;/code&gt; of React?&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/28701750/react-why-is-getdefaultprops-a-method-while-proptypes-is-a-plain-object&quot;&gt;React: why is getDefaultProps a method while propTypes is a plain object?&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;getInitialState
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;https://medium.com/react-tutorials/react-state-14a6d4f736f5&quot;&gt;React State&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Passing data from Route to component
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/43469071/react-react-router-dom-pass-props-to-component&quot;&gt;React react-router-dom pass props to component&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;references&quot;&gt;References:&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.packtpub.com/web-development/reactjs-blueprints&quot;&gt;ReactJS Blueprints&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 22 Jun 2017 14:12:02 +0000</pubDate>
+        <link>http://45.55.9.152:4000/Reactjs-Projects-Workflow</link>
+        <guid isPermaLink="true">http://45.55.9.152:4000/Reactjs-Projects-Workflow</guid>
+        
+        <category>reactjs</category>
+        
+        <category>javascript</category>
+        
+        <category>js</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>ReactJS Cheatsheet</title>
+        <description>&lt;h3 id=&quot;gist&quot;&gt;Gist&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#component-based-component-specification&quot;&gt;Component based&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#props&quot;&gt;props&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#states&quot;&gt;states&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#render&quot;&gt;render&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#statics&quot;&gt;statics&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#proptypes&quot;&gt;propTypes&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#displayname&quot;&gt;displayName&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#lifecycle-methods&quot;&gt;Lifecycle Methods&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#componentdidmount&quot;&gt;componentDidMount&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#componentwillmount&quot;&gt;componentWillMount&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#shouldcomponentupdate&quot;&gt;shouldComponentUpdate&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#componentwillreceiveprops&quot;&gt;componentWillReceiveProps&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#componentwillupdate&quot;&gt;componentWillUpdate&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#componentdidupdate&quot;&gt;componentDidUpdate&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#componentwillunmount&quot;&gt;componentWillUnmount&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#the-virtual-dom&quot;&gt;The Virtual DOM&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#synthetic-event-handlers&quot;&gt;Synthetic Event Handlers&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#code-sample-explained&quot;&gt;Code Sample Explained&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://camjackson.net/post/9-things-every-reactjs-beginner-should-know&quot;&gt;9 things every React.js beginner should know&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;component-based-component-specification&quot;&gt;Component based (Component Specification)&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;contains or has built-in set of methods and properties.&lt;/li&gt;
+  &lt;li&gt;purpose of these methods and properties are:
+    &lt;ul&gt;
+      &lt;li&gt;debugging (&lt;code class=&quot;highlighter-rouge&quot;&gt;displayName&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;propTypes&lt;/code&gt;)&lt;/li&gt;
+      &lt;li&gt;setting initial data (&lt;code class=&quot;highlighter-rouge&quot;&gt;getInitialState&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;getDefaultProps&lt;/code&gt;)&lt;/li&gt;
+      &lt;li&gt;component lifecycle (&lt;code class=&quot;highlighter-rouge&quot;&gt;componentDidMount&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;componentShouldUpdate&lt;/code&gt;, more..)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;the &lt;code class=&quot;highlighter-rouge&quot;&gt;render&lt;/code&gt; method (from React DOM) is the only required method in a component.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;props-and-states&quot;&gt;Props and States&lt;/h1&gt;
+
+&lt;h3 id=&quot;props&quot;&gt;props&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;data coming from outside of component.&lt;/li&gt;
+  &lt;li&gt;its better to rely on data outside of component for testability and immutability concerns.&lt;/li&gt;
+  &lt;li&gt;cannot be modified, should be treated as immutable.&lt;/li&gt;
+  &lt;li&gt;props data can be access using &lt;code class=&quot;highlighter-rouge&quot;&gt;this.props&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;getDefaultProps&lt;/code&gt; is used to set initial props and use them in later point in the components’ lifecycle.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;getDefaultProps() {
+  return {
+    greeting: &quot;&quot;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;states&quot;&gt;states&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;data is instantiated inside of component.&lt;/li&gt;
+  &lt;li&gt;variables that are available within the component.&lt;/li&gt;
+  &lt;li&gt;state data can be access using &lt;code class=&quot;highlighter-rouge&quot;&gt;this.state&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;its only used when you make changes to variables within the component.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;getInitialState: function() {
+  return {
+    random_number: ()
+  }
+},
+componentDidMount() {
+  setInterval( () =&amp;gt; {
+    this.setState({
+      random_number: Math.random()*100;
+    });
+  }, 1000);
+},
+render() {
+  return (
+    &amp;lt;div&amp;gt;{ this.state.random_number }&amp;lt;/div&amp;gt;
+  );
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;render&quot;&gt;render&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;only required method in a component&lt;/li&gt;
+  &lt;li&gt;return JSX structure&lt;/li&gt;
+  &lt;li&gt;it can also return &lt;code class=&quot;highlighter-rouge&quot;&gt;null&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt; to indicate we don’t need to use it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;statics&quot;&gt;statics&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;use to define static methods&lt;/li&gt;
+  &lt;li&gt;they don’t have access to &lt;code class=&quot;highlighter-rouge&quot;&gt;props&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;states&lt;/code&gt; within the component.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import React from 'react';
+
+const App = React.createClass({
+  statics: {
+    myMethod: (foo) =&amp;gt; {
+      return foo = &quot;bar&quot;;
+    }
+  },
+  render() {
+    return null;
+  }
+});
+
+console.log( App.myMethod('bar') ); // true
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;proptypes&quot;&gt;propTypes&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;validates your props passed unto your component&lt;/li&gt;
+  &lt;li&gt;shows up in your &lt;code class=&quot;highlighter-rouge&quot;&gt;console.log&lt;/code&gt; if the props passed&lt;/li&gt;
+  &lt;li&gt;optional help tool while you develop your app&lt;/li&gt;
+  &lt;li&gt;it can validate complex data&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;displayname&quot;&gt;displayName&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;set automatically if not set explicitly&lt;/li&gt;
+  &lt;li&gt;use for debugging purposes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;lifecycle-methods&quot;&gt;Lifecycle Methods&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;set of functions that are empty and you can override in your component.&lt;/li&gt;
+  &lt;li&gt;initially, all are empty except for &lt;code class=&quot;highlighter-rouge&quot;&gt;shouldComponentUpdate&lt;/code&gt; is set to true.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;componentdidmount&quot;&gt;componentDidMount&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Executed after the component is mounted&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;most common method&lt;/li&gt;
+  &lt;li&gt;functions run after the component has been rendered for the first time.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;PROS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;have access to current contents of props and states&lt;/li&gt;
+  &lt;li&gt;never run &lt;code class=&quot;highlighter-rouge&quot;&gt;setState&lt;/code&gt; as it triggers endless loops&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;CONS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;this will not run in server-side, use &lt;code class=&quot;highlighter-rouge&quot;&gt;componentWillMount&lt;/code&gt; instead&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;componentDidMount() {
+  // Executed after the component is mounted
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;componentwillmount&quot;&gt;componentWillMount&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;method will be executed before the component is rendered for the first time.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;PROS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;have access to component’s current state and props&lt;/li&gt;
+  &lt;li&gt;safe to run &lt;code class=&quot;highlighter-rouge&quot;&gt;setState&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;executed on both server-side and client-side&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;componentWillMount() {
+  // Executed before the component is mounted
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;shouldcomponentupdate&quot;&gt;shouldComponentUpdate&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;invoked whenever the component receives new props or state changes&lt;/li&gt;
+  &lt;li&gt;returns true by default&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;PROS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;useful if you create a component that updates only if certain condition is met or should never be updated at all&lt;/li&gt;
+  &lt;li&gt;speed increases when set to false&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;CONS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;can lead to bug when careless use&lt;/li&gt;
+  &lt;li&gt;can be hard to track down&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;componentwillreceiveprops&quot;&gt;componentWillReceiveProps&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;compare props before render method runs&lt;/li&gt;
+  &lt;li&gt;let you compare incoming props&lt;/li&gt;
+  &lt;li&gt;can be used as an opportunity to react to prop transition before the render method is called&lt;/li&gt;
+  &lt;li&gt;invoke this method &lt;code class=&quot;highlighter-rouge&quot;&gt;componentWillReceiveProps(object nextProps)&lt;/code&gt; to access incoming props&lt;/li&gt;
+  &lt;li&gt;this will not execute on initial render&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;CONS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;not good for &lt;code class=&quot;highlighter-rouge&quot;&gt;setState&lt;/code&gt; insteas use &lt;code class=&quot;highlighter-rouge&quot;&gt;componentWillUpdate&lt;/code&gt;`&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;componentWillReceiveProps(nextProps) {
+  // you can compare nextProps with this.props
+  // and optionally set a new state or execute functions
+  // based on the new props
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;componentwillupdate&quot;&gt;componentWillUpdate&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;execute before rendering once new props or states are received&lt;/li&gt;
+  &lt;li&gt;when the component receives new props or states&lt;/li&gt;
+  &lt;li&gt;this method is executed before the rendering but not the initial render&lt;/li&gt;
+  &lt;li&gt;invoke this method &lt;code class=&quot;highlighter-rouge&quot;&gt;componentWillUpdate(object nextProps, object nextState)&lt;/code&gt; to access incoming props and states&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;PROS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;use &lt;code class=&quot;highlighter-rouge&quot;&gt;componentWillReceiveProps&lt;/code&gt; instead&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;CONS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;can evaluate new state but &lt;code class=&quot;highlighter-rouge&quot;&gt;setState&lt;/code&gt; will trigger and endless loop&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;componentWillUpdate (nextProps) {
+  // you can compare nextProps with this.props
+  // or nextState with this.state
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;componentdidupdate&quot;&gt;componentDidUpdate&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;executed whenever the component receives new props or states&lt;/li&gt;
+  &lt;li&gt;and render method has been executed&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;componentDidUpdate() {
+  // Execute functions after the component has been updated
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;componentwillunmount&quot;&gt;componentWillUnmount&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;invoked before the component is unmounted from DOM&lt;/li&gt;
+  &lt;li&gt;useful if you need to clean up memory or invalidate timer&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;componentWillUnmount() {
+  // Execute functions before the component is unmounted
+  // from the DOM
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;the-virtual-dom&quot;&gt;The Virtual DOM&lt;/h1&gt;
+
+&lt;h3 id=&quot;the-dom&quot;&gt;The DOM&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;its very forgiving&lt;/li&gt;
+  &lt;li&gt;you can write invalid HTML and still get the result you want&lt;/li&gt;
+  &lt;li&gt;ReactJS, JSX is not forgiving&lt;/li&gt;
+  &lt;li&gt;JSX is strict and it requires a match with opening and closing tag&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;the-virtual-dom-1&quot;&gt;The Virtual DOM&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;a simpler implementation of the real DOM&lt;/li&gt;
+  &lt;li&gt;doesn’t work directly with the DOM&lt;/li&gt;
+  &lt;li&gt;it maintains a smaller and more simplified internal set of elements&lt;/li&gt;
+  &lt;li&gt;enables you to switch parts of your visible elements without affecting other elements&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;cannot make changes directly&lt;/strong&gt; like jQuery or &lt;code class=&quot;highlighter-rouge&quot;&gt;getElementById()&lt;/code&gt; native JavaScript&lt;/li&gt;
+  &lt;li&gt;instead, &lt;strong&gt;attach a reference&lt;/strong&gt; named &lt;code class=&quot;highlighter-rouge&quot;&gt;refs&lt;/code&gt; to the elements to target
+    &lt;ul&gt;
+      &lt;li&gt;can be done by &lt;code class=&quot;highlighter-rouge&quot;&gt;ref=&quot;myReference&quot;&lt;/code&gt; to your element&lt;/li&gt;
+      &lt;li&gt;w/ ex. above, reference is now available through &lt;code class=&quot;highlighter-rouge&quot;&gt;React.findDOMNode( this.refs.myReference )&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;synthetic-event-handlers&quot;&gt;Synthetic Event Handlers&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;event handlers in ReactJS are passed an instance of &lt;strong&gt;Synthetic Event&lt;/strong&gt; instead of the native event handlers&lt;/li&gt;
+  &lt;li&gt;has the same interface as native event handlers &lt;strong&gt;except&lt;/strong&gt; it’s cross-browser compatible&lt;/li&gt;
+  &lt;li&gt;events are triggered in a &lt;strong&gt;bubbling phase&lt;/strong&gt; ref &lt;a href=&quot;/JS-Interview-Question-Describe-event-bubbling&quot;&gt;Describe event bubbling&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;to capture an event immediately
+    &lt;ul&gt;
+      &lt;li&gt;ex: for &lt;code class=&quot;highlighter-rouge&quot;&gt;onClick&lt;/code&gt; use &lt;code class=&quot;highlighter-rouge&quot;&gt;onCickCapture&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;to stop propagation
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;event.stopPropagation()&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;event.preventDefault()&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ref: &lt;a href=&quot;https://facebook.github.io/react/docs/events.html&quot;&gt;for complete list of events&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;code-sample-explained&quot;&gt;Code Sample Explained&lt;/h1&gt;
+
+&lt;iframe height=&quot;800&quot; scrolling=&quot;no&quot; title=&quot;learning reactjs&quot; src=&quot;//codepen.io/rlynjb/embed/QgEdLN/?height=300&amp;amp;theme-id=20698&amp;amp;default-tab=js&amp;amp;embed-version=2&quot; frameborder=&quot;no&quot; allowtransparency=&quot;true&quot; allowfullscreen=&quot;true&quot; style=&quot;width: 100%;&quot;&gt;See the Pen &lt;a href=&quot;https://codepen.io/rlynjb/pen/QgEdLN/&quot;&gt;learning reactjs&lt;/a&gt; by rlynjb (&lt;a href=&quot;https://codepen.io/rlynjb&quot;&gt;@rlynjb&lt;/a&gt;) on &lt;a href=&quot;https://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
+&lt;/iframe&gt;
+
+&lt;p&gt;This example is slightly contrived. It could be shortened quite a bit, and storing props as states is generally something you should avoid, unless you have a very good reason for doing so. In my experience, working with a local state is the single most bug-prone code you will encounter and the hardest code to write tests for.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;per ReactJS Bluepriint book&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;references&quot;&gt;References:&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.packtpub.com/web-development/reactjs-blueprints&quot;&gt;ReactJS Blueprints&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 21 Jun 2017 09:30:02 +0000</pubDate>
+        <link>http://45.55.9.152:4000/ReactJS-Cheatsheet</link>
+        <guid isPermaLink="true">http://45.55.9.152:4000/ReactJS-Cheatsheet</guid>
+        
+        <category>javascript</category>
+        
+        <category>js</category>
+        
+        <category>reactjs</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Introduction to Webpack</title>
+        <description>&lt;h1 id=&quot;practical-hands-on-of-webpack&quot;&gt;Practical hands-on of Webpack&lt;/h1&gt;
+
+&lt;p&gt;I am going to optimize my &lt;code class=&quot;highlighter-rouge&quot;&gt;gulp.js&lt;/code&gt; file from my Front End Flow theme using Webpack. Following this &lt;a href=&quot;https://hackernoon.com/a-map-to-modern-javascript-development-2017-16d9eb86309c&quot;&gt;article&lt;/a&gt;, it gave me more overview of the tools I missed these past months.&lt;/p&gt;
+
+&lt;p&gt;My current FEF theme uses:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Package Management
+    &lt;ul&gt;
+      &lt;li&gt;NPM&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Bundling
+    &lt;ul&gt;
+      &lt;li&gt;Gulp.js&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;JavaScript
+    &lt;ul&gt;
+      &lt;li&gt;ES6&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Transpiling
+    &lt;ul&gt;
+      &lt;li&gt;Babel and Browserify&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Linting
+    &lt;ul&gt;
+      &lt;li&gt;None&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Testing
+    &lt;ul&gt;
+      &lt;li&gt;None&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;UI Framework/State management
+    &lt;ul&gt;
+      &lt;li&gt;React (but not indepth)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;DOM Manipulation and animations
+    &lt;ul&gt;
+      &lt;li&gt;jQuery (trying to stay way from it)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Styling
+    &lt;ul&gt;
+      &lt;li&gt;SASS&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;CSS Framework
+    &lt;ul&gt;
+      &lt;li&gt;Zurb Foundation&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Assets
+    &lt;ul&gt;
+      &lt;li&gt;Google Fonts&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I know JavaScript tools are overwhelming but if we were to segregate each discipline like the list above, I think it can give us a better understanding so we can set up each tools base on their discipline.&lt;/p&gt;
+
+&lt;p&gt;I am going to minimize my FEF theme workflow with the following JS tools and add new features as well:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Package Management
+    &lt;ul&gt;
+      &lt;li&gt;NPM, will take advantage of script &lt;code class=&quot;highlighter-rouge&quot;&gt;npm run start&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;npm run webpack&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Bundling
+    &lt;ul&gt;
+      &lt;li&gt;Webpack&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;JavaScript
+    &lt;ul&gt;
+      &lt;li&gt;ES6&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Transpiling
+    &lt;ul&gt;
+      &lt;li&gt;Babel&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Linting
+    &lt;ul&gt;
+      &lt;li&gt;ESLint&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Testing
+    &lt;ul&gt;
+      &lt;li&gt;mocha (test runner), chai (assertion library) and chai-spies (for spies, fake objects that you can query for certain events that should or shouldn’t have happened)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;UI Framework/State management
+    &lt;ul&gt;
+      &lt;li&gt;React and Vue.js&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;DOM Manipulation and animations
+    &lt;ul&gt;
+      &lt;li&gt;Plain ES6 and jQuery (but will not be prioritized)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Styling
+    &lt;ul&gt;
+      &lt;li&gt;SASS&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;CSS Framework
+    &lt;ul&gt;
+      &lt;li&gt;Zurb Foundation (might need to check if supported with React or can play well with Vue.js)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Assets
+    &lt;ul&gt;
+      &lt;li&gt;Google Fonts&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;configuring-webpack-the-easy-way&quot;&gt;Configuring Webpack the easy way.&lt;/h2&gt;
+
+&lt;p&gt;There are reasons why Webpack has been popular lately and its been accepted over other module bundlers. &lt;a href=&quot;https://www.smashingmagazine.com/2017/02/a-detailed-introduction-to-webpack/&quot;&gt;ref: Why Webpack&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;First off, lets configure Webpack the easy way. Reason for me to include this method is what if I wanted to use NPM and Webpack immediately to compile JavaScript files with ES6 features without setting up a config file. So for this method, I am going to use NPM scripts to run webpack.&lt;/p&gt;
+
+&lt;p&gt;I assume you already have NPM installed and have created a &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; file by running &lt;code class=&quot;highlighter-rouge&quot;&gt;npm init&lt;/code&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Install Webpack via NPM locally &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install --save-dev webpack&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Install Lodash as our sample dependency &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install --save lodash&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Create &lt;code class=&quot;highlighter-rouge&quot;&gt;main.js&lt;/code&gt; file as our entry file. We will import lodash on this file.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var map = require('lodash/map');
+
+function square(n) {
+      return n*n;
+}
+
+console.log(map([1,2,3,4,5,6], square));
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Here, we are just using lodash to square off the numbers inside its map function. Notice the &lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt; function is NOT supported by browsers yet, that is why we need to use Webpack to bundle this script.&lt;/p&gt;
+
+&lt;p&gt;We will use &lt;em&gt;Webpack Command Line&lt;/em&gt; for this simple example.&lt;/p&gt;
+
+&lt;p&gt;Inside our &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; file, add the ff. code:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;scripts&quot;: {
+  &quot;build&quot;: &quot;webpack src/main.js dist/bundle.js&quot;,
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now when we run &lt;code class=&quot;highlighter-rouge&quot;&gt;npm run build&lt;/code&gt;, this will bundle &lt;code class=&quot;highlighter-rouge&quot;&gt;main.js&lt;/code&gt; file (along with the imported NPM modules) and out put it as &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle.js&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;references&quot;&gt;References:&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://hackernoon.com/a-map-to-modern-javascript-development-2017-16d9eb86309c&quot;&gt;A Map to Modern JavaScript Development 2017&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2017/02/a-detailed-introduction-to-webpack/&quot;&gt;Webpack: A Detailed Introduction&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 11 May 2017 09:25:55 +0000</pubDate>
+        <link>http://45.55.9.152:4000/Introduction-to-Webpack</link>
+        <guid isPermaLink="true">http://45.55.9.152:4000/Introduction-to-Webpack</guid>
+        
+        <category>webpack</category>
+        
+        <category>javascript</category>
+        
+        <category>js</category>
         
         
       </item>
@@ -269,9 +1325,9 @@ Anyways, below is a recap of what I’ve accomplished and what I want to tackle 
   &lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Wed, 22 Feb 2017 08:29:22 -0800</pubDate>
-        <link>http://rlynjb.github.io/wandrr/New-stuff-to-learn</link>
-        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/New-stuff-to-learn</guid>
+        <pubDate>Wed, 22 Feb 2017 16:29:22 +0000</pubDate>
+        <link>http://45.55.9.152:4000/New-stuff-to-learn</link>
+        <guid isPermaLink="true">http://45.55.9.152:4000/New-stuff-to-learn</guid>
         
         <category>3d</category>
         
@@ -562,21 +1618,21 @@ From this tutorial, we can further build our Contact form to use Controller for 
   &lt;li&gt;Mail should be sent in Raw format located under Raw tab.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Route::get(&#39;/contact&#39;, function() {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Route::get('/contact', function() {
   // define a Mail facade
-  Mail::raw(&#39;kirby this is a test&#39;, function($message) {
+  Mail::raw('kirby this is a test', function($message) {
     /*
       inside we will have an instance of
       Illuminate\Mail\Message
 
       inside of this closure, we can set other prooerties of email
     */
-    $message-&amp;gt;subject(&#39;testing&#39;)
-            -&amp;gt;to(&#39;bill@mail.com&#39;)
-            -&amp;gt;from(&#39;non@mail.com&#39;);
+    $message-&amp;gt;subject('testing')
+            -&amp;gt;to('bill@mail.com')
+            -&amp;gt;from('non@mail.com');
   });
 
-  return &#39;email has been sent&#39;;
+  return 'email has been sent';
 });
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -591,15 +1647,15 @@ From this tutorial, we can further build our Contact form to use Controller for 
 &lt;/ol&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// this will get data from view or user input
-Route::get(&#39;/contact/view&#39;, function() {
+Route::get('/contact/view', function() {
 
   //  param1 = path to view template
   //  param2 = array of data
   //  param3 = closure to setup message that we will be sending
-  Mail::send(&#39;conact-view&#39;, [&#39;name&#39;=&amp;gt;&#39;Bob&#39;], function($message) {
-    $message-&amp;gt;subject(&#39;testing&#39;)
-            -&amp;gt;to(&#39;bill@mail.com&#39;)
-            -&amp;gt;from(&#39;non@mail.com&#39;);
+  Mail::send('conact-view', ['name'=&amp;gt;'Bob'], function($message) {
+    $message-&amp;gt;subject('testing')
+            -&amp;gt;to('bill@mail.com')
+            -&amp;gt;from('non@mail.com');
   });
 });
 &lt;/code&gt;&lt;/pre&gt;
@@ -635,8 +1691,10 @@ Route::get(&#39;/contact/view&#39;, function() {
       &lt;li&gt;include validation (Zurb Foundation Abide or HTML5 validation)&lt;/li&gt;
       &lt;li&gt;include &lt;code class=&quot;highlighter-rouge&quot;&gt;name=&quot;&quot;&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;maxlength=&quot;&quot;&lt;/code&gt; on input fields&lt;/li&gt;
       &lt;li&gt;include `` before Submit input button&lt;/li&gt;
-      &lt;li&gt;provided by Laravel, a secure way to manage POST forms&lt;/li&gt;
-      &lt;li&gt;include a Thank You and Error messages&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul&gt;
+      &lt;li&gt;provided by Laravel, a secure way to manage POST forms
+      - include a Thank You and Error messages&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;Author JavaScript submit ajax code
@@ -649,7 +1707,7 @@ Route::get(&#39;/contact/view&#39;, function() {
   &lt;li&gt;Define Routes
     &lt;ul&gt;
       &lt;li&gt;since we are posting, use POST instead of GET&lt;/li&gt;
-      &lt;li&gt;ex: &lt;code class=&quot;highlighter-rouge&quot;&gt;Route::post(&#39;/contact/create&#39;, &#39;ContactController@create&#39;);&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;ex: &lt;code class=&quot;highlighter-rouge&quot;&gt;Route::post('/contact/create', 'ContactController@create');&lt;/code&gt;&lt;/li&gt;
       &lt;li&gt;define url and Controller and its public function that will handle database form submission and other logic associated with create task.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -657,8 +1715,10 @@ Route::get(&#39;/contact/view&#39;, function() {
     &lt;ul&gt;
       &lt;li&gt;on root directory, run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan make:controller ContactController&lt;/code&gt;&lt;/li&gt;
       &lt;li&gt;inside &lt;code class=&quot;highlighter-rouge&quot;&gt;ContactController.php&lt;/code&gt;, define facades&lt;/li&gt;
-      &lt;li&gt;ex: &lt;code class=&quot;highlighter-rouge&quot;&gt;use DB;&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;use Illuminate\Support\Facades\Mail;&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;inside its public function&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul&gt;
+      &lt;li&gt;ex: &lt;code class=&quot;highlighter-rouge&quot;&gt;use DB;&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;use Illuminate\Support\Facades\Mail;&lt;/code&gt;
+      - inside its public function&lt;/li&gt;
       &lt;li&gt;assign form input values to variables
         &lt;ul&gt;
           &lt;li&gt;these are the fields defined in form&lt;/li&gt;
@@ -672,10 +1732,12 @@ Route::get(&#39;/contact/view&#39;, function() {
     &lt;ul&gt;
       &lt;li&gt;go to phpmyadmin and create a database, enter credentials, and create a table&lt;/li&gt;
       &lt;li&gt;create columns and defined the ff.&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul&gt;
       &lt;li&gt;form fields&lt;/li&gt;
       &lt;li&gt;include ID: int, auto_increment, primary&lt;/li&gt;
-      &lt;li&gt;include submitted_at: timestamp, current_timestamp&lt;/li&gt;
-      &lt;li&gt;on &lt;code class=&quot;highlighter-rouge&quot;&gt;.env&lt;/code&gt; file, configure database settings&lt;/li&gt;
+      &lt;li&gt;include submitted_at: timestamp, current_timestamp
+      - on &lt;code class=&quot;highlighter-rouge&quot;&gt;.env&lt;/code&gt; file, configure database settings&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;Setup Mailer
@@ -683,6 +1745,8 @@ Route::get(&#39;/contact/view&#39;, function() {
       &lt;li&gt;go to &lt;code class=&quot;highlighter-rouge&quot;&gt;.env&lt;/code&gt; file and input settings&lt;/li&gt;
       &lt;li&gt;we are using &lt;a href=&quot;#from-views-template&quot;&gt;From Views Template&lt;/a&gt; code&lt;/li&gt;
       &lt;li&gt;using Mail facade requires additional steps&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul&gt;
       &lt;li&gt;create a Requests by running &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan make:requests SendContact&lt;/code&gt;&lt;/li&gt;
       &lt;li&gt;inside SendContact.php, input the ff.
         &lt;ul&gt;
@@ -698,9 +1762,11 @@ Route::get(&#39;/contact/view&#39;, function() {
     &lt;ul&gt;
       &lt;li&gt;retrieve site and secret key&lt;/li&gt;
       &lt;li&gt;load grecaptcha plugin and html tag&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;script src=&#39;https://www.google.com/recaptcha/api.js&#39;&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div class=&quot;row&quot;&amp;gt;&amp;lt;div class=&quot;float-right g-recaptcha&quot; data-sitekey=&quot;6Le5PRcUAAAAAHPBCPt4JuVkhU4Ha31av4dE5lGH&quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;p class=&quot;recaptcha-response&quot;&amp;gt;&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;author validation google recaptcha code on contact form submit event&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;script src='https://www.google.com/recaptcha/api.js'&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div class=&quot;row&quot;&amp;gt;&amp;lt;div class=&quot;float-right g-recaptcha&quot; data-sitekey=&quot;6Le5PRcUAAAAAHPBCPt4JuVkhU4Ha31av4dE5lGH&quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;p class=&quot;recaptcha-response&quot;&amp;gt;&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;&lt;/code&gt;
+      - author validation google recaptcha code on contact form submit event&lt;/li&gt;
       &lt;li&gt;ref: &lt;a href=&quot;http://stackoverflow.com/questions/37294886/google-recaptcha-with-ajax-form&quot;&gt;http://stackoverflow.com/questions/37294886/google-recaptcha-with-ajax-form&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -709,8 +1775,8 @@ Route::get(&#39;/contact/view&#39;, function() {
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if (grecaptcha.getResponse().length &amp;gt; 0) {
   ajax call
 } else {
-  $(&#39;.recaptcha-response&#39;).html(&#39;&#39;);
-  $(&#39;.recaptcha-response&#39;).append(&#39;Check recaptcha before submmitting form&#39;);
+  $('.recaptcha-response').html('');
+  $('.recaptcha-response').append('Check recaptcha before submmitting form');
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -758,11 +1824,13 @@ Route::get(&#39;/contact/view&#39;, function() {
   &lt;li&gt;Run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan migrate&lt;/code&gt; to setup database tables and its columns
     &lt;ul&gt;
       &lt;li&gt;this takes the script inside and creates database table and its columns in DB&lt;/li&gt;
-      &lt;li&gt;ref: &lt;a href=&quot;https://laravel.com/docs/5.4/migrations&quot;&gt;Laravel Database: Migration&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;make sure you use PHP 7 on server-level rather than virtual (directory) level&lt;/li&gt;
-      &lt;li&gt;while running command, i came across an issue&lt;/li&gt;
-      &lt;li&gt;ref: &lt;a href=&quot;https://laravel-news.com/laravel-5-4-key-too-long-error&quot;&gt;laravel 5.4 key too long issue&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;idea: we can write our own database table migration script whenever we need to integrate a db into our forms&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul&gt;
+      &lt;li&gt;ref: &lt;a href=&quot;https://laravel.com/docs/5.4/migrations&quot;&gt;Laravel Database: Migration&lt;/a&gt;
+      - make sure you use PHP 7 on server-level rather than virtual (directory) level
+      - while running command, i came across an issue&lt;/li&gt;
+      &lt;li&gt;ref: &lt;a href=&quot;https://laravel-news.com/laravel-5-4-key-too-long-error&quot;&gt;laravel 5.4 key too long issue&lt;/a&gt;
+      - idea: we can write our own database table migration script whenever we need to integrate a db into our forms&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;Run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan make:auth&lt;/code&gt;
@@ -778,6 +1846,8 @@ Route::get(&#39;/contact/view&#39;, function() {
       &lt;li&gt;make the necessary changes (modify templates and mv to &lt;code class=&quot;highlighter-rouge&quot;&gt;/auth&lt;/code&gt;)&lt;/li&gt;
       &lt;li&gt;there are if statements that Authentication may require&lt;/li&gt;
       &lt;li&gt;make sure they are synced in&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul&gt;
       &lt;li&gt;display data for guest users&lt;/li&gt;
       &lt;li&gt;display data for logged in users&lt;/li&gt;
     &lt;/ul&gt;
@@ -786,16 +1856,18 @@ Route::get(&#39;/contact/view&#39;, function() {
     &lt;ul&gt;
       &lt;li&gt;if were using all endpoints (&lt;code class=&quot;highlighter-rouge&quot;&gt;login&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;logout&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;register&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;password email&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;password request&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;password reset&lt;/code&gt;), no need to remove &lt;code class=&quot;highlighter-rouge&quot;&gt;Route::auth&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;routes.php&lt;/code&gt; file.&lt;/li&gt;
       &lt;li&gt;Remove &lt;code class=&quot;highlighter-rouge&quot;&gt;Route::auth()&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;routes.php&lt;/code&gt; and manually declare endpoints&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul&gt;
       &lt;li&gt;ref: &lt;a href=&quot;http://robboyland.com/laravel-auth-how-to-disable-registration&quot;&gt;http://robboyland.com/laravel-auth-how-to-disable-registration&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;ex. &lt;code class=&quot;highlighter-rouge&quot;&gt;Route::get(&#39;login&#39;, &#39;Auth\AuthController@showLoginForm&#39;);&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;to display Route list, run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan route:list&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;Remove &lt;code class=&quot;highlighter-rouge&quot;&gt;Route::get(&#39;/home&#39;, &#39;HomeController@index&#39;);&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;routes.php&lt;/code&gt; file&lt;/li&gt;
-      &lt;li&gt;Remove &lt;code class=&quot;highlighter-rouge&quot;&gt;$this-&amp;gt;middleware(&#39;auth&#39;);&lt;/code&gt; on &lt;code class=&quot;highlighter-rouge&quot;&gt;app &amp;gt; Http &amp;gt; Controllers &amp;gt; HomeController.php&lt;/code&gt; file&lt;/li&gt;
+      &lt;li&gt;ex. &lt;code class=&quot;highlighter-rouge&quot;&gt;Route::get('login', 'Auth\AuthController@showLoginForm');&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;to display Route list, run &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan route:list&lt;/code&gt;
+      - Remove &lt;code class=&quot;highlighter-rouge&quot;&gt;Route::get('/home', 'HomeController@index');&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;routes.php&lt;/code&gt; file
+      - Remove &lt;code class=&quot;highlighter-rouge&quot;&gt;$this-&amp;gt;middleware('auth');&lt;/code&gt; on &lt;code class=&quot;highlighter-rouge&quot;&gt;app &amp;gt; Http &amp;gt; Controllers &amp;gt; HomeController.php&lt;/code&gt; file&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;after login success, set redirection page
     &lt;ul&gt;
-      &lt;li&gt;change path &lt;code class=&quot;highlighter-rouge&quot;&gt;protected $redirectTo = &#39;/home&#39;&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;app/Http/Controller/Auth&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;change path &lt;code class=&quot;highlighter-rouge&quot;&gt;protected $redirectTo = '/home'&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;app/Http/Controller/Auth&lt;/code&gt;&lt;/li&gt;
       &lt;li&gt;ref: &lt;a href=&quot;http://www.easylaravelbook.com/blog/2015/03/11/changing-the-laravel-redirect-location-after-login/&quot;&gt;login registration redirect fix&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;same method goes with after Registration page&lt;/li&gt;
     &lt;/ul&gt;
@@ -856,14 +1928,14 @@ Route::get(&#39;/contact/view&#39;, function() {
       &lt;li&gt;no need to add fields in default User migration script&lt;/li&gt;
       &lt;li&gt;On Roles migration script, we need:
         &lt;ul&gt;
-          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$table-&amp;gt;increments(&#39;id&#39;);&lt;/code&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$table-&amp;gt;string(&#39;name&#39;);&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$table-&amp;gt;increments('id');&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$table-&amp;gt;string('name');&lt;/code&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
       &lt;li&gt;On User Roles pivot migration script, we need:
         &lt;ul&gt;
-          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$table-&amp;gt;integer(&#39;user_id&#39;);&lt;/code&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$table-&amp;gt;integer(&#39;role_id&#39;);&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$table-&amp;gt;integer('user_id');&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$table-&amp;gt;integer('role_id');&lt;/code&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
@@ -904,11 +1976,11 @@ Route::get(&#39;/contact/view&#39;, function() {
 
 &lt;p&gt;Defining Middleware in routes is ok, but since we are going to reuse this type of authentication, we need to transfer this code from route to a middleware or use a pre-existing Laravel Middleware.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Route::get(&#39;home&#39;, function () {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Route::get('home', function () {
   if ( Auth::guest() ) {
-    return Redirect::to(&#39;auth/login&#39;);
+    return Redirect::to('auth/login');
   } else {
-    echo &#39;Welcome home &#39; . Auth::user()-&amp;gt;email . &#39;.&#39;;
+    echo 'Welcome home ' . Auth::user()-&amp;gt;email . '.';
   }
 });
 &lt;/code&gt;&lt;/pre&gt;
@@ -920,8 +1992,8 @@ Route::get(&#39;/contact/view&#39;, function() {
 
 &lt;p&gt;In &lt;code class=&quot;highlighter-rouge&quot;&gt;Route.php&lt;/code&gt;, Middleware can be define as:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Route::get(&#39;home&#39;, [&#39;middleware&#39; =&amp;gt; &#39;auth&#39;, function() {
-  echo &#39;Welcome home &#39; . Auth::user()-&amp;gt;email . &#39;.&#39;;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Route::get('home', ['middleware' =&amp;gt; 'auth', function() {
+  echo 'Welcome home ' . Auth::user()-&amp;gt;email . '.';
 }]);
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -945,10 +2017,12 @@ Route::get(&#39;/contact/view&#39;, function() {
   &lt;li&gt;Since we are going to use the same Authenticate Middleware
     &lt;ul&gt;
       &lt;li&gt;Copy and Paste the ff. section of code from &lt;code class=&quot;highlighter-rouge&quot;&gt;app &amp;gt; Http &amp;gt; Middleware &amp;gt; Authenticate.php&lt;/code&gt; at the beginning of Admin PHP class file.&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul&gt;
       &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;The Guard implementation&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Create a new filter instance&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;Copy and paste &lt;code class=&quot;highlighter-rouge&quot;&gt;use Illuminate\Contracts\Auth\Guard;&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;Copy and paste code inside handle function&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Create a new filter instance&lt;/code&gt;
+      - Copy and paste &lt;code class=&quot;highlighter-rouge&quot;&gt;use Illuminate\Contracts\Auth\Guard;&lt;/code&gt;
+      - Copy and paste code inside handle function&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;Write code at the 2nd ifelse statement&lt;/li&gt;
@@ -956,9 +2030,9 @@ Route::get(&#39;/contact/view&#39;, function() {
 &lt;/ol&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;protected $routeMiddleware = [
-  &#39;auth&#39; =&amp;gt; \App\Http\Middleware\Authenticate::class,
+  'auth' =&amp;gt; \App\Http\Middleware\Authenticate::class,
 
-  &#39;admin&#39; =&amp;gt; \App\Http\Middleware\Admin::class,
+  'admin' =&amp;gt; \App\Http\Middleware\Admin::class,
 ];
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -998,9 +2072,9 @@ Route::get(&#39;/contact/view&#39;, function() {
   &lt;li&gt;&lt;a href=&quot;https://www.sitepoint.com/creating-a-scrud-system-using-jquery-json-and-datatables/&quot;&gt;Creating a SCRUD System Using jQuery, JSON and DataTables&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Wed, 08 Feb 2017 02:58:47 -0800</pubDate>
-        <link>http://rlynjb.github.io/wandrr/Venturing-into-a-fullstack-framework-with-Laravel</link>
-        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Venturing-into-a-fullstack-framework-with-Laravel</guid>
+        <pubDate>Wed, 08 Feb 2017 10:58:47 +0000</pubDate>
+        <link>http://45.55.9.152:4000/Venturing-into-a-fullstack-framework-with-Laravel</link>
+        <guid isPermaLink="true">http://45.55.9.152:4000/Venturing-into-a-fullstack-framework-with-Laravel</guid>
         
         <category>php</category>
         
@@ -1039,17 +2113,17 @@ Route::get(&#39;/contact/view&#39;, function() {
 
 &lt;p&gt;A sample &lt;strong&gt;Gulp.js&lt;/strong&gt; task should look like this:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var gulp = require(&#39;gulp&#39;);
-var browserify = require(&#39;browserify&#39;);
-var babelify = require(&#39;babelify&#39;);
-var source = require(&#39;vinyl-source-stream&#39;);
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var gulp = require('gulp');
+var browserify = require('browserify');
+var babelify = require('babelify');
+var source = require('vinyl-source-stream');
 
-gulp.task(&#39;build&#39;, function () {
-  return browserify({entries: &#39;./app.jsx&#39;, extensions: [&#39;.jsx&#39;], debug: true})
+gulp.task('build', function () {
+  return browserify({entries: './app.jsx', extensions: ['.jsx'], debug: true})
   .transform(babelify)
   .bundle()
-  .pipe(source(&#39;bundle.js&#39;))
-  .pipe(gulp.dest(&#39;dist&#39;));
+  .pipe(source('bundle.js'))
+  .pipe(gulp.dest('dist'));
 });
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -1077,9 +2151,9 @@ gulp.task(&#39;build&#39;, function () {
   &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/32793404/es6-export-overwriting-function&quot;&gt;ES6 Export Overwriting Function&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Wed, 28 Dec 2016 03:08:39 -0800</pubDate>
-        <link>http://rlynjb.github.io/wandrr/Using-ES6-Modules-in-clientside</link>
-        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Using-ES6-Modules-in-clientside</guid>
+        <pubDate>Wed, 28 Dec 2016 11:08:39 +0000</pubDate>
+        <link>http://45.55.9.152:4000/Using-ES6-Modules-in-clientside</link>
+        <guid isPermaLink="true">http://45.55.9.152:4000/Using-ES6-Modules-in-clientside</guid>
         
         <category>javascript</category>
         
@@ -1221,9 +2295,9 @@ gulp.task(&#39;build&#39;, function () {
 &lt;hr /&gt;
 
 </description>
-        <pubDate>Tue, 27 Dec 2016 03:14:55 -0800</pubDate>
-        <link>http://rlynjb.github.io/wandrr/Getting-started-with-Magento-Theming</link>
-        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Getting-started-with-Magento-Theming</guid>
+        <pubDate>Tue, 27 Dec 2016 11:14:55 +0000</pubDate>
+        <link>http://45.55.9.152:4000/Getting-started-with-Magento-Theming</link>
+        <guid isPermaLink="true">http://45.55.9.152:4000/Getting-started-with-Magento-Theming</guid>
         
         <category>cms</category>
         
@@ -1310,454 +2384,11 @@ gulp.task(&#39;build&#39;, function () {
   &lt;li&gt;&lt;strong&gt;Tip:&lt;/strong&gt; we can have a copy of CMS install locally on out directory and mount it on Docker container/server&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Mon, 08 Aug 2016 06:31:20 -0700</pubDate>
-        <link>http://rlynjb.github.io/wandrr/Notes-on-creating-a-convenient-local-development-workflow-with-Docker</link>
-        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Notes-on-creating-a-convenient-local-development-workflow-with-Docker</guid>
+        <pubDate>Mon, 08 Aug 2016 13:31:20 +0000</pubDate>
+        <link>http://45.55.9.152:4000/Notes-on-creating-a-convenient-local-development-workflow-with-Docker</link>
+        <guid isPermaLink="true">http://45.55.9.152:4000/Notes-on-creating-a-convenient-local-development-workflow-with-Docker</guid>
         
         <category>workflow</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Breaking down Cross-Browser Testing</title>
-        <description>&lt;p&gt;Below is my note on an article on smashing magazine. Article is mostly theory but I tried to take in the important info.&lt;/p&gt;
-
-&lt;h1 id=&quot;two-main-objectives&quot;&gt;Two Main Objectives&lt;/h1&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Discovering bugs
-    &lt;ul&gt;
-      &lt;li&gt;Entails trying to break your app to find bugs to fix.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Sanity-checking
-    &lt;ul&gt;
-      &lt;li&gt;Involves verifying that majority of your audience receives the expected experience.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;know-your-statistics&quot;&gt;Know your Statistics&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Audience statistics&lt;/li&gt;
-  &lt;li&gt;Browser usage statistics&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;simplify-your-browser-usage-statistics&quot;&gt;Simplify your browser usage statistics&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Desktop Browsers&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;we don’t care about:
-    &lt;ul&gt;
-      &lt;li&gt;versions except IE&lt;/li&gt;
-      &lt;li&gt;OS&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;same argument applies with Portable Browsers&lt;/li&gt;
-  &lt;li&gt;new wave of browsers called: In-App browsers - browsers in social media platforms&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Portable Browsers&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;whats important:
-    &lt;ul&gt;
-      &lt;li&gt;version of the native Android browser used&lt;/li&gt;
-      &lt;li&gt;version of iOS a device is running
-        &lt;ul&gt;
-          &lt;li&gt;very relevant as Safari versions are intrinsically linked to iOS&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;three-phase-attack&quot;&gt;Three-Phase Attack&lt;/h1&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Reconnaissance: Find Browser-Agnostic Bugs&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Try resizing to view responsiveness. Was there a funky breakpoint anywhere?&lt;/li&gt;
-      &lt;li&gt;Zoom in and out. Have the background-positions of your image sprite been knocked askew?&lt;/li&gt;
-      &lt;li&gt;See how the application behaves with Javascript turned off. Do you still get the core content?&lt;/li&gt;
-      &lt;li&gt;See how the application looks with CSS turned off. Do the semantics of the markup still make sense?&lt;/li&gt;
-      &lt;li&gt;Try turning both Javascript and CSS off. Are you getting an acceptable experience?&lt;/li&gt;
-      &lt;li&gt;Try interacting with the application using only your keyboard. Is it possible to navigate and see all the content?&lt;/li&gt;
-      &lt;li&gt;Try throttling your connection and see how quickly the application loads. How heavy is the page load?&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Raid: Test in High-Risk Browsers First&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Statistical Analysis of Bug Distribution&lt;/li&gt;
-      &lt;li&gt;High-Risk are IE browsers&lt;/li&gt;
-      &lt;li&gt;Medium-Rish are Safari, Opera&lt;/li&gt;
-      &lt;li&gt;Low-Rish are Chrome, Firefox&lt;/li&gt;
-      &lt;li&gt;Fixing bugs in bad browsers makes your code more resilient in good browsers&lt;/li&gt;
-      &lt;li&gt;Identifying problematic browsers&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;http://caniuse.com&quot;&gt;CanIUse&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;VirtualBox&lt;/li&gt;
-      &lt;li&gt;Check on actual device or browser&lt;/li&gt;
-      &lt;li&gt;Tools to rectify major compatibility issues:&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;http://modernizr.com&quot;&gt;Modernizr&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Clearance: sanity checking&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;By this stage, we should be 80:20&lt;/li&gt;
-      &lt;li&gt;Figuratively, we’ve fixed 80% of the bugs after testing 20% of the browsers&lt;/li&gt;
-      &lt;li&gt;Now, we verify the experience of 80% of audience through testing a different 20% of browsers&lt;/li&gt;
-      &lt;li&gt;Prioritize the browsers&lt;/li&gt;
-      &lt;li&gt;Use a 3rd-party service that checks on multiple browsers and device&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2016/02/high-impact-minimal-effort-cross-browser-testing/&quot;&gt;High Impact, Minimal-Effort Cross-Browser Testing&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 03 Aug 2016 05:57:02 -0700</pubDate>
-        <link>http://rlynjb.github.io/wandrr/Breaking-down-cross-browser-testing</link>
-        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Breaking-down-cross-browser-testing</guid>
-        
-        <category>testing</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Learning React</title>
-        <description>&lt;p&gt;implementing react.js on gulp
-- do a gulp task of react.js build&lt;/p&gt;
-
-&lt;p&gt;*JSX makes us write HTML syntax in Javascript files&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;this does not run in browsers thats why we need a transpiler&lt;/li&gt;
-  &lt;li&gt;since i am usin gulp, we are going to search for a gulp plugin that transpiles JSX files to plain js files&lt;/li&gt;
-  &lt;li&gt;JSX to JS using babel&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;configuring gulp plugin babel was a bit tricky due to NPM dependency issues.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;learning react is quite overwhelming. I think with any new front-end is overwhelming due to the amount of dependencies or tools options that are available. Front-end development has indeed bloom.&lt;/p&gt;
-
-&lt;p&gt;before digging further into random articles that suggests to use this or that tool. I’ve decided to learn plain React.js. Stripping other unknown tools and focusing on the foundation, then once comfortable with plain React.js, move on to another tool and implement. Learning indeed can also be a step-by-step process.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;continuation&quot;&gt;continuation…&lt;/h3&gt;
-
-&lt;p&gt;my stack to build apps:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://facebook.github.io/react/docs/thinking-in-react.html&quot;&gt;React&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Firebase&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://css-tricks.com/learning-react-router/&quot;&gt;React Router&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://jamesknelson.com/learn-raw-react-no-jsx-flux-es6-webpack/&quot;&gt;Learn Raw React — no JSX, no Flux, no ES6, no Webpack&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.risingstack.com/the-react-way-getting-started-tutorial/&quot;&gt;The React.js Way: Getting Started Tutorial&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://buildwithreact.com/&quot;&gt;Build with React&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 28 Jul 2016 03:58:40 -0700</pubDate>
-        <link>http://rlynjb.github.io/wandrr/Learning-React</link>
-        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Learning-React</guid>
-        
-        <category>javascript</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Front-End Design Specs</title>
-        <description>&lt;p&gt;determing a workflow is hard but its even harder when we go through a laborious iterative process with designers.&lt;/p&gt;
-
-&lt;p&gt;since i have been using Zurb foundation, zurb foundation comes with a settings file that defines global variables for general design settings. This gave me the idea that responsive web design follows a certain pattern, same as Development.&lt;/p&gt;
-
-&lt;p&gt;process to determing on refining the design and developer workflow are:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;list down general design css properties
-    &lt;ul&gt;
-      &lt;li&gt;layout
-        &lt;ul&gt;
-          &lt;li&gt;max-width&lt;/li&gt;
-          &lt;li&gt;number of columns grid&lt;/li&gt;
-          &lt;li&gt;gutter width
-            &lt;ul&gt;
-              &lt;li&gt;small breakpoint&lt;/li&gt;
-              &lt;li&gt;medium breakpoint&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;typography - header
-        &lt;ul&gt;
-          &lt;li&gt;header font&lt;/li&gt;
-          &lt;li&gt;header font sizes
-            &lt;ul&gt;
-              &lt;li&gt;small breakpoint&lt;/li&gt;
-              &lt;li&gt;medium breakpoint&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;header color&lt;/li&gt;
-          &lt;li&gt;header alignment, leading, kerning&lt;/li&gt;
-          &lt;li&gt;header opacity, filter&lt;/li&gt;
-          &lt;li&gt;header font weight&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;typography - body
-        &lt;ul&gt;
-          &lt;li&gt;body font size
-            &lt;ul&gt;
-              &lt;li&gt;small breakpoint&lt;/li&gt;
-              &lt;li&gt;medium breakpoint&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;body font color&lt;/li&gt;
-          &lt;li&gt;body font family&lt;/li&gt;
-          &lt;li&gt;body line height, leading, kerning&lt;/li&gt;
-          &lt;li&gt;body font weight&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;spacing measurement
-        &lt;ul&gt;
-          &lt;li&gt;width and height
-            &lt;ul&gt;
-              &lt;li&gt;small breakpoint&lt;/li&gt;
-              &lt;li&gt;medium breakpopint&lt;/li&gt;
-              &lt;li&gt;large breakpoint&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;spacing bet object and canvas&lt;/li&gt;
-          &lt;li&gt;spacing bet multiple objects&lt;/li&gt;
-          &lt;li&gt;spacing bet text and objects&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;objects
-        &lt;ul&gt;
-          &lt;li&gt;fill color&lt;/li&gt;
-          &lt;li&gt;stroke, color, size, style&lt;/li&gt;
-          &lt;li&gt;opacity/filter&lt;/li&gt;
-          &lt;li&gt;corner radius&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;color palette
-        &lt;ul&gt;
-          &lt;li&gt;primary, secondary, tertiary, quaternary&lt;/li&gt;
-          &lt;li&gt;monotone
-            &lt;ul&gt;
-              &lt;li&gt;gray - light, medium, dark&lt;/li&gt;
-              &lt;li&gt;black&lt;/li&gt;
-              &lt;li&gt;white&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;after analyzing above data and visually looking at a design comp, these properties are already set on the provided design comp but not documented.&lt;/p&gt;
-
-&lt;p&gt;this is where PNG Express comes in, photoshop plugin tool.&lt;/p&gt;
-
-&lt;p&gt;after testing on a design comp and implementing it on theme development, it is indeed an ease for us developers.&lt;/p&gt;
-
-&lt;p&gt;so overview process would be:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;designer designs ui comp&lt;/li&gt;
-  &lt;li&gt;after design is complete, designer sets Design Specs with PNG Express&lt;/li&gt;
-  &lt;li&gt;pass the UI comp with design specs to front end developer&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;front end developer implements these measurements on css styles sheets&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;it does not need to be exact pixels, this is a good way to atleast get an estimate.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;with this in set, this also gives Front end developers to compile a Style Guide and or components that can be resuable.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h5 id=&quot;references&quot;&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2014/10/front-end-development-ode-to-specifications/&quot;&gt;A Front-End Developer’s Ode To Specifications&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.pngexpress.com/&quot;&gt;PNG Express&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 28 Jul 2016 03:58:40 -0700</pubDate>
-        <link>http://rlynjb.github.io/wandrr/Front-End-Design-Specs</link>
-        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Front-End-Design-Specs</guid>
-        
-        <category>workflow</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Front-End Workflow with Grav theme</title>
-        <description>&lt;p&gt;This blog post explains on how I have setup a custom basic Grav theme with modern front-end workflow.&lt;/p&gt;
-
-&lt;p&gt;This idea have come into mind when I was assigned a project that requires the use of a CSS framework and other plugins for animations/transitions. Since I will be building websites with the same requirements, why not create a &lt;strong&gt;Grav Starter Theme with Front-End Workflow&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;I will be updating this theme with tested CSS animations/transitions plugins that I think will play well with Grav and meets client’s business requirements.&lt;/p&gt;
-
-&lt;p&gt;For documentation and updates, refer to its github repo: &lt;a href=&quot;https://github.com/rlynjb/gravtheme-frontendflow&quot;&gt;Grav Theme - Front-End Flow&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Contents&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#before-starting&quot;&gt;Before starting&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#every-website-project-will-have&quot;&gt;Every website project will have&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#developing-starter-kit-theme&quot;&gt;Developing starter kit theme&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#gulpfilejs-setup&quot;&gt;gulpfile.js setup&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#importing-foundation-components-and-overriding-settings-file&quot;&gt;importing foundation components and overriding settings file&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;before-starting&quot;&gt;Before starting:&lt;/h3&gt;
-
-&lt;p&gt;Install the following globally as it is required to run Bower and Gulp in your local dev.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Node&lt;/li&gt;
-  &lt;li&gt;NPM or NVM if you deal with multiple node versions&lt;/li&gt;
-  &lt;li&gt;After installing Grav
-    &lt;ul&gt;
-      &lt;li&gt;refer to ff. link for Getting Started with Grav: &lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git clone&lt;/code&gt; this repo inside of &lt;code class=&quot;highlighter-rouge&quot;&gt;/user/themes/&lt;/code&gt; directory&lt;/li&gt;
-  &lt;li&gt;inside of &lt;code class=&quot;highlighter-rouge&quot;&gt;/user/themes/gravtheme-frontendflow/&lt;/code&gt; directory, run:
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm install -g&lt;/code&gt;
-        &lt;ul&gt;
-          &lt;li&gt;required to run Bower and Gulp&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bower install&lt;/code&gt;
-        &lt;ul&gt;
-          &lt;li&gt;installs 3rd-party plugins used on this theme&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gulp &amp;amp;&amp;amp; gulp watch&lt;/code&gt;
-        &lt;ul&gt;
-          &lt;li&gt;builds our sass files. We’ve carefully chose each Foundation components to avoid CSS bloats and overriding of styles.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;every-website-project-will-have&quot;&gt;Every website project will have:&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Grav + Admin core&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;To get fresh install: &lt;a href=&quot;https://getgrav.org/&quot;&gt;Get Grav&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Basic Grav Theme setup&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Follow tutorial to get started: &lt;a href=&quot;https://learn.getgrav.org/themes/theme-tutorial&quot;&gt;Get Grav - Theme Tutorial&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; file
-    &lt;ul&gt;
-      &lt;li&gt;installs &lt;strong&gt;Bower&lt;/strong&gt;, &lt;strong&gt;Gulp.js&lt;/strong&gt;, and other gulp dependencies for build system and front-end workflow aid&lt;/li&gt;
-      &lt;li&gt;go to &lt;a href=&quot;https://www.npmjs.com/&quot;&gt;npmjs.com&lt;/a&gt; to search for more packages&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bower.json&lt;/code&gt; file
-    &lt;ul&gt;
-      &lt;li&gt;installs required 3rd-party assets&lt;/li&gt;
-      &lt;li&gt;go to &lt;a href=&quot;http://bower.io&quot;&gt;bower.io&lt;/a&gt; to search for more packages&lt;/li&gt;
-      &lt;li&gt;or install packages via &lt;strong&gt;Github repos&lt;/strong&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;https://bower.io/docs/api/&quot;&gt;bower.io - api&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/19348076/installing-a-dependency-with-bower-from-url-and-specify-version&quot;&gt;Installing a dependency with Bower from URL and specify version&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;setup &lt;code class=&quot;highlighter-rouge&quot;&gt;gulpfile.js&lt;/code&gt; file
-    &lt;ul&gt;
-      &lt;li&gt;Why use &lt;strong&gt;Gulp.js&lt;/strong&gt;?
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;Sass&lt;/strong&gt; seem to not support building multiple &lt;code class=&quot;highlighter-rouge&quot;&gt;scss&lt;/code&gt; files. It require either Compass, Grunt, or libsass (same Build system concept as Gulp.js)&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;Grav’s Asset Manager&lt;/strong&gt; lacks support for sass and its still quite buggy&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Check this project’s github repo for &lt;strong&gt;package.json&lt;/strong&gt;, &lt;strong&gt;bower.json&lt;/strong&gt;, and &lt;strong&gt;gulp.js&lt;/strong&gt; updates.&lt;br /&gt;
-&lt;a href=&quot;https://github.com/rlynjb/gravtheme-frontendflow&quot;&gt;Grav Theme - Front-End Flow&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;developing-starter-kit-theme&quot;&gt;Developing starter kit theme&lt;/h3&gt;
-
-&lt;p&gt;During developing &lt;strong&gt;Grav Theme - Front-End Flow&lt;/strong&gt; starter kit theme, I have come across issues that I think worth noting.&lt;/p&gt;
-
-&lt;h3 id=&quot;gulpfilejs-setup&quot;&gt;gulpfile.js setup&lt;/h3&gt;
-
-&lt;p&gt;After installing &lt;strong&gt;foundation-sites&lt;/strong&gt; via bower. we will need to setup our &lt;code class=&quot;highlighter-rouge&quot;&gt;gulpfile.js&lt;/code&gt; file.&lt;/p&gt;
-
-&lt;p&gt;Follow the youtube video tutorial to get started:&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/De6H0eFrfvY&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;importing-foundation-components-and-overriding-settings-file&quot;&gt;importing foundation components and overriding settings file&lt;/h3&gt;
-
-&lt;p&gt;While setting it up, I’ve come across an issue. The following link helped me solved the issue.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/34537431/foundation-6-does-not-generate-any-styles&quot;&gt;stackoverflow - Foundation 6 does not generate any styles&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Another issue i came across was overriding Foundation’s settings file. It took me awhile until I figured out why its not overriding the default settings file. Solution is on my github repo&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/rlynjb/gravtheme-frontendflow&quot;&gt;GravTheme - Front End Flow theme&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 13 Jul 2016 05:09:47 -0700</pubDate>
-        <link>http://rlynjb.github.io/wandrr/Front-End-Workflow-with-Grav-theme</link>
-        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Front-End-Workflow-with-Grav-theme</guid>
-        
-        <category>static site</category>
         
         
       </item>
