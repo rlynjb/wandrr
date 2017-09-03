@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A Sample Vue.js Communication Pattern"
-date: 2017-09-02 20:18:14
+date: 2017-09-03 20:18:14
 tags:
 - vuejs
 ---
