@@ -41,6 +41,8 @@ Useful vue.js components to get started with:
   - self-explanatory
 - vue-resource
   - http request component
+- vee-validate
+  - form validation
 - json-server
   - a mock-api
 - flexbox
