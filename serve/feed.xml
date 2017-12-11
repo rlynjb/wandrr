@@ -1,0 +1,1622 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wandrr</title>
+    <description>This is a blog about travel and tech.
+</description>
+    <link>http://rlynjb.github.io/wandrr/</link>
+    <atom:link href="http://rlynjb.github.io/wandrr/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>2017-12-11 01:11:15 +0000</pubDate>
+    <lastBuildDate>2017-12-11 01:11:15 +0000</lastBuildDate>
+    <generator>Jekyll v</generator>
+    
+      <item>
+        <title>Delving into Software Development</title>
+        <description>&lt;p&gt;As far as I can remember, I was 15 yrs old when my interest grew with websites, web designs, graphic designs and the whole multimedia realm, but then, a new desciplne came about, and its Front-End Development. It wasn’t just Macromedia/Adobe Flash anymore, there is much more I can do with Web Design. I wanted to make Designs interact and be functional, and no, I don’t want them to just animate and do simple transitions.
+I don’t want Designs to look ‘just pretty’. I want to build useful applications too. I want to architect and design applications.&lt;/p&gt;
+
+&lt;p&gt;I admit, I’m lazy. In development, I want simplicity. When I learned Vim, Tmux, and the terminal. They became my main IDE tools, I was set. Development will definitely be simple for me.&lt;/p&gt;
+
+&lt;p&gt;When it comes to application development, I wanted to first know how everything connects and thus, learning a &lt;strong&gt;Build Tool&lt;/strong&gt; was a start of software development adventure for me.&lt;/p&gt;
+
+&lt;h3 id=&quot;build-tools&quot;&gt;Build Tools&lt;/h3&gt;
+
+&lt;p&gt;Build Tools are a way for us developers to take advantage of new technologies especially with JavaScript. I’ve had exprience with Gulp.js, but lately, I am going to be using &lt;strong&gt;Webpack&lt;/strong&gt; on my upcoming projects. Not only does build tools let us use latest technology, it also let us define our application structure.&lt;/p&gt;
+
+&lt;h3 id=&quot;programming-concepts&quot;&gt;Programming Concepts&lt;/h3&gt;
+
+&lt;p&gt;I know the very basics of programming concepts, basic mathematics, different types of objects, but I learned more when I started reading &lt;strong&gt;JavaScript Interview Questions&lt;/strong&gt;. And ofcourse, reading was not enough, I also had to learn how to grasp and interpret each concept. Blogging became pat of my routine. I needed to learn how to explain to my co-workers or other developers what I’m coding.&lt;/p&gt;
+
+&lt;p&gt;Reading through different articles about JavaScript concepts, I’ve also come across comments from different developers specializing in low level languages such as Python, Java, etc, comparing JavaScript with such languages. No, I’m not going to the details of it with this blog post.&lt;/p&gt;
+
+&lt;p&gt;Getting to know more about JavaScript, I was also able to build a personalization bottlecap opener platform for &lt;a href=&quot;https://www.kobalttools.com/personalized-products/personalized-bottle-cap-opener#monogram&quot;&gt;Kobalttools.com&lt;/a&gt;. Using &lt;strong&gt;jQuery&lt;/strong&gt;, &lt;strong&gt;JavaScript&lt;/strong&gt;, &lt;strong&gt;HTML5&lt;/strong&gt;, &lt;strong&gt;CSS3&lt;/strong&gt;, and &lt;strong&gt;Gulpjs&lt;/strong&gt;. Application works perfectly fine but, what about maintenance?&lt;/p&gt;
+
+&lt;h3 id=&quot;javascript-framework&quot;&gt;JavaScript Framework&lt;/h3&gt;
+
+&lt;p&gt;This has been my frustration but lately, different concepts of what comprises a &lt;strong&gt;Web Component&lt;/strong&gt; application has been clicking in. Atleast for me, its pretty tough to learn a framework if you are just doing it alone, but within a team, and with the support of your fellow developers, everything becomes easy. I’ve been using &lt;strong&gt;Vue.js&lt;/strong&gt; lately, and I love the framework. If Angularjs, Reactjs, and Backbonejs had a baby, it would &lt;strong&gt;Vue.js&lt;/strong&gt; lol. It really is just a matter of practice and being open to learning new concepts.&lt;/p&gt;
+
+&lt;p&gt;For now, since it’s only been months of using Vue.js, I try to refrain from using css frameworks/vue.js components. This is so just I will have a better understanding of how to build common UI/UX web components using Vue.js.&lt;/p&gt;
+
+&lt;p&gt;Useful vue.js components to get started with:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Vue.js&lt;/li&gt;
+  &lt;li&gt;Vuex
+    &lt;ul&gt;
+      &lt;li&gt;state management&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;vue-router
+    &lt;ul&gt;
+      &lt;li&gt;self-explanatory&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;vue-resource
+    &lt;ul&gt;
+      &lt;li&gt;http request component&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;vee-validate
+    &lt;ul&gt;
+      &lt;li&gt;form validation&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;json-server
+    &lt;ul&gt;
+      &lt;li&gt;a mock-api&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;flexbox
+    &lt;ul&gt;
+      &lt;li&gt;no more grid system percent base&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;vue-cookie
+    &lt;ul&gt;
+      &lt;li&gt;using cookie bae authenticatin?&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Some CSS framework for vue.js:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Quasar
+    &lt;ul&gt;
+      &lt;li&gt;offers Cordova and Electron build. :-)&lt;/li&gt;
+      &lt;li&gt;offers a variety of components (not recommended if learning vue.js still)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Bulma
+    &lt;ul&gt;
+      &lt;li&gt;just plain ol CSS&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;the-end-keep-coding-on&quot;&gt;The End, Keep Coding On!&lt;/h2&gt;
+</description>
+        <pubDate>2017-09-23 23:22:00 +0000</pubDate>
+        <link>http://rlynjb.github.io/wandrr/Delving-into-Software-Development</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Delving-into-Software-Development</guid>
+        
+        <category>software development</category>
+        
+        <category>app development</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>A Sample Vue.js Communication Pattern</title>
+        <description>&lt;p&gt;I’ve been learning alot about Vue.js and just grasping the concept of how components communicate. One of the hurdles I cam across when developing in Vue.js is when I would do a simple jQuery click event with class swapping of active or inactive.&lt;/p&gt;
+
+&lt;p&gt;In Vue.js, this is done complete different. A sample code below is just an outline of how some of Vue.js objects are used in components for them to interact.&lt;/p&gt;
+
+&lt;p&gt;Another good reference is: &lt;a href=&quot;https://alligator.io/vuejs/component-communication/&quot;&gt;Vue.js Component Communication Pattern&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The code below kinda gave me an Aha moment with Vue.js. Hopefully this will help you too to think in components rather than in jQuery.&lt;/p&gt;
+
+&lt;p&gt;```
+child = {
+	template: ‘#child-template’,
+	data: function () {
+	},
+	props: [‘index’, ‘key’],
+	computed: {
+		isActive: function() {
+			return this.$parent.activeIndex == this.index
+		}
+	},
+	methods: {
+		handleClick: function () {
+			this.$emit(‘childSelected’, index)
+		}
+	}
+}&lt;/p&gt;
+
+&lt;p&gt;parent = {
+	template: ‘#parent-template’,
+	data: function() {
+		activeIndex: 0
+	},
+	components: {
+		child: child
+	},
+	methods: {
+		updateSelectedChild: function(selectedChildIndex) {
+			this.activeIndex = selectedChildIndex
+		}
+	}
+}&lt;/p&gt;
+
+&lt;p&gt;// on template
+:class=”{ active: isActive }”
+@childSelected=”updateSelectedChild”
+```&lt;/p&gt;
+</description>
+        <pubDate>2017-09-03 20:18:14 +0000</pubDate>
+        <link>http://rlynjb.github.io/wandrr/A-sample-of-vuejs-communication-pattern</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/A-sample-of-vuejs-communication-pattern</guid>
+        
+        <category>vuejs</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Setting up a Node Dev Environment in DigitalOcean</title>
+        <description>&lt;p&gt;This has been a frustration for a week now. During my spare time, I’ve been trying to configure an easy way for me to develop front end nodejs projects using DigitalOcean and its One-Click apps.&lt;/p&gt;
+
+&lt;p&gt;I found out that those One-Click apps uses Ubuntu version 16.04 I believe, and these ubuntu version doesn’t play well with nodejs modules, especially with modules you have to install globally. It doesn’t find its nodejs global link for some reason. So, I came up a way to rectify this issue.&lt;/p&gt;
+
+&lt;p&gt;For best Nodejs compatibility, use Ubuntu v14.04 instead.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Install Nodejs via link
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server&quot;&gt;How to install nodejs on an ubuntu 14.04 server&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;to avoid nodejs version conflicts, its best to install and use NVM as well&lt;/li&gt;
+      &lt;li&gt;to install NVM. &lt;a href=&quot;https://www.vultr.com/docs/install-node-js-nvm-on-ubuntu-14-04&quot;&gt;Install Nodejs NVM on Ubuntu 14.04&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Install git by running &lt;code&gt;sudo apt-get install git&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Now install apache2 via link
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-14-04&quot;&gt;how to install linux apache mysql php lamp stack on ubuntu v14.04&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;So far, I’ve installed all my repo and it works well.&lt;/p&gt;
+</description>
+        <pubDate>2017-09-02 20:18:14 +0000</pubDate>
+        <link>http://rlynjb.github.io/wandrr/Setting-up-a-Node-Dev-environment-in-Digital-Ocean</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Setting-up-a-Node-Dev-environment-in-Digital-Ocean</guid>
+        
+        <category>web development</category>
+        
+        <category>app development</category>
+        
+        <category>front end development</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Ipad Pro for Development</title>
+        <description>&lt;p&gt;Inpired by this article &lt;a href=&quot;http://yieldthought.com/post/12239282034/swapped-my-macbook-for-an-ipad&quot;&gt;I swapped my MacBook for an iPad + Linode&lt;/a&gt;. I decided to take the bandwagon of developers using iPad for development. Since I specialized in Front-End Development. I just needed to add additional tools to my workflow.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-use-ipad&quot;&gt;Why use Ipad?&lt;/h3&gt;
+
+&lt;p&gt;Everybody has its reasons for using Ipad for development. My personal preference are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;its portable
+    &lt;ul&gt;
+      &lt;li&gt;I can easily toss an ipad without having to worry about internal hardware breaking&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;I always bring my backpack of laptop with me
+    &lt;ul&gt;
+      &lt;li&gt;due to vegas heat, I hate leaving my laptop in my car, with iPad, its easier to carry it around, not much weight&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;sometimes, i love going to coffee shops or eating out somewhere
+    &lt;ul&gt;
+      &lt;li&gt;its nice to have convenient access to the internet and my code&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;devices&quot;&gt;Devices:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;iPad Pro 10.5&lt;/li&gt;
+  &lt;li&gt;Bluetooth keyboard
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://support.apple.com/en-us/HT205237&quot;&gt;Helpful Keyboard Shortcuts&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Sprint unlimited data plan&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;apps&quot;&gt;Apps:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;MIHTool for debugging websites/web apps&lt;/li&gt;
+  &lt;li&gt;Reflection for SSH access to remote servers&lt;/li&gt;
+  &lt;li&gt;Digital Ocean - remote servers&lt;/li&gt;
+  &lt;li&gt;Vim - code editor&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Reflection&lt;/strong&gt; and &lt;strong&gt;Vim&lt;/strong&gt; are pretty self-explanatory tools. I’ve always use the CommandLine and Vim as my main tools. Advantages of learning Vim is that you can SSH any remote server and use that as your development environment. I’m glad I took the time to learn Vim and get myself use to the CommandLine. I love simplicity. Having these two tools, I didn’t need to have multiple softwares open to develop. And Oh Yea, I forgot to add &lt;strong&gt;Tmux&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Another tool to avoid opening multiple terminal windows is to use &lt;strong&gt;Tmux&lt;/strong&gt;. It’s a terminal multiplexer, this means you can use a single Terminal window and open multiple panes and windows inside a single terminal window.&lt;/p&gt;
+
+&lt;p&gt;So there we have it, my 3 main tools: Reflection, Vim, and Tmux.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;As for my remote server setup &lt;strong&gt;Digital Ocean droplets&lt;/strong&gt;. I’m using a LAMP server.&lt;/p&gt;
+
+&lt;p&gt;Its pretty easy to create a server image using Digital Oceans and alike services. Just create an account and follow the remaining instructions. Usually these remote server services offer a variety of preinstalled applications on their server.&lt;/p&gt;
+
+&lt;p&gt;As for what I need to setup my dev environment.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;I will need to be able to handle multiple projects using a single IP address&lt;/li&gt;
+  &lt;li&gt;Hence, I will access my projects using ports or subdirectory url&lt;/li&gt;
+  &lt;li&gt;Since my dev stack are: HTML5, CSS3, JavaScript, Node, PHP. I decided to use LAMP stack.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;method-for-setting-up-my-remote-server&quot;&gt;Method for setting up my remote server&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Log in to your Digital Ocean account&lt;/li&gt;
+  &lt;li&gt;Create a server image with LAMP on 16.04 ubuntu version&lt;/li&gt;
+  &lt;li&gt;Once Droplet is complete. Open you &lt;strong&gt;Reflection&lt;/strong&gt; app&lt;/li&gt;
+  &lt;li&gt;Access your remote server by using SSH. &lt;code&gt;ssh root@given_ip_address&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Change your unix password to your new preferred password&lt;/li&gt;
+  &lt;li&gt;After accessing your remote and server and changing your new password. Open Chrome browser or MIHTool browser and point to the given IP Address&lt;/li&gt;
+  &lt;li&gt;Install Nodejs by running &lt;code&gt;sudo apt-get install nodejs&lt;/code&gt;. This should include &lt;strong&gt;NPM&lt;/strong&gt; as well&lt;/li&gt;
+  &lt;li&gt;Now, go to your public directory where an &lt;code&gt;index.html&lt;/code&gt; is being served. &lt;code&gt;cd /var/www/html/&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;On this directory &lt;code&gt;/var/www/html/&lt;/code&gt; you can &lt;code&gt;git clone&lt;/code&gt; your projects and serve each on a part of subdirectory url&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;So this is how I am able to develop using an iPad Pro. Next review will be on &lt;strong&gt;MIHTool&lt;/strong&gt; app. This is &lt;strong&gt;Chrome Development tool&lt;/strong&gt; browser alternative for iPad.&lt;/p&gt;
+</description>
+        <pubDate>2017-08-13 20:18:14 +0000</pubDate>
+        <link>http://rlynjb.github.io/wandrr/Ipad-Pro-for-development</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Ipad-Pro-for-development</guid>
+        
+        <category>web development</category>
+        
+        <category>app development</category>
+        
+        <category>code editor</category>
+        
+        <category>front end development</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>A Method to remove Bower and use NPM for all dependencies</title>
+        <description>&lt;p&gt;This is just simple method I came up with when removing Bower since its deprecated. Alternative is NPM or Yarn.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Make sure to have a clean local repo&lt;/li&gt;
+  &lt;li&gt;Copy and Paste packages from &lt;code&gt;bower.json&lt;/code&gt; to &lt;code&gt;package.json&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Make sure to remove ^ carat symbol before a module version.
+    &lt;ul&gt;
+      &lt;li&gt;This is to maintain its original version everytime an &lt;code&gt;npm install&lt;/code&gt; is ran&lt;/li&gt;
+      &lt;li&gt;With the ^ carat symbol before a module version means it will automatically update the module to the latest version&lt;/li&gt;
+      &lt;li&gt;Also, double check on npmjs.org of module is available and which version to use&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Next is &lt;code&gt;rm bower.json&lt;/code&gt; file&lt;/li&gt;
+  &lt;li&gt;Remove existing node_modules directory if there is, &lt;code&gt;rm -rf node_modules&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Then run &lt;code&gt;sudo npm install&lt;/code&gt;, pretty self-explanatory here&lt;/li&gt;
+  &lt;li&gt;On &lt;code&gt;gulpfile.js&lt;/code&gt;, replace all instances of &lt;code&gt;bower_components&lt;/code&gt; to &lt;code&gt;node_modules&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Run &lt;code&gt;gulp&lt;/code&gt; or &lt;code&gt;gulp watch&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;if error occurs, fix it&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Test the site/app/project&lt;/li&gt;
+  &lt;li&gt;Obviously, fix errors lol&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>2017-07-27 16:54:20 +0000</pubDate>
+        <link>http://rlynjb.github.io/wandrr/Method-to-remove-bower-and-use-npm-for-all-dependencies</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Method-to-remove-bower-and-use-npm-for-all-dependencies</guid>
+        
+        <category>javascript</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>New stuff to learn</title>
+        <description>&lt;p&gt;Before delving into another new things to learn, I wanted to write a recap of what I’ve been doing lately. Can’t really include all details but atleast write a summary of my experience.
+You can read further if your interested. I blog to keep track of my learning progress about the web, I consider these as my personal note, but I don’t mind sharing.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;wordpress-and-static-sites&quot;&gt;Wordpress and Static Sites&lt;/h2&gt;
+
+&lt;p&gt;I’ve worked with alot of wordpress websites as sideline job and with designers and other developers. I noticed that everyone has their opinion about methods of how a work should get done. One important thing is, we should be able to deliver the product. It doesn’t matter how it is built, as long as it works, its good.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;When to code from scratch and when NOT to.&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;I am a fan of coding things from scratch. I take into consideration how a website/application is built. But coding from scratch is not worth it when its just for sideline.&lt;/li&gt;
+      &lt;li&gt;Things to note though are:
+        &lt;ul&gt;
+          &lt;li&gt;Plugins save my projects! lol&lt;/li&gt;
+          &lt;li&gt;Follow how Wordpress, plugins work rather than customizing a workflow from scrtach.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Learning Woocommerce with a Fancy Product Designer plugin&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Came across a project that requires online sales, so we decided to use Woocommerce.&lt;/li&gt;
+      &lt;li&gt;Components of a E-commerce website are:
+        &lt;ul&gt;
+          &lt;li&gt;Products have different variations&lt;/li&gt;
+          &lt;li&gt;Shipping&lt;/li&gt;
+          &lt;li&gt;Payment Gateway&lt;/li&gt;
+          &lt;li&gt;again, Plugins are my hero! rather than delving into APIs&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Static site generator&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Static sites are great alternative to wordpress if a website doesn’t require E-commerce. But it does require learning curve for non-techie users.&lt;/li&gt;
+      &lt;li&gt;Since static sites are new, it may not be prone to hackers like wordpress&lt;/li&gt;
+      &lt;li&gt;Example tools are:
+        &lt;ul&gt;
+          &lt;li&gt;Grav - a PHP site generator, has a really nice optional Admin dashboard.&lt;/li&gt;
+          &lt;li&gt;Jekyll - love it coz Github uses it, and you can easily publish your site for free. But doesn’t have a nice Admin Dashboard like Grav.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;front-end-tools-and-npm-community&quot;&gt;Front-End tools and NPM community&lt;/h2&gt;
+
+&lt;p&gt;So I just found out not all developers agree to the whole NPM community trend. IMO though, I love workflows and how easy it is to code with these tools. I love learning at the sametime, so I guess I fit into this type of development preference. &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Gulp.js and the whole NPM community.&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Gulp.js was the first built tool I learned. IMO, its an important tool so we can use other JavaScript/Front-End tools such as:
+        &lt;ul&gt;
+          &lt;li&gt;Template engines&lt;/li&gt;
+          &lt;li&gt;JS transpilers&lt;/li&gt;
+          &lt;li&gt;JS compilers&lt;/li&gt;
+          &lt;li&gt;CSS compilers&lt;/li&gt;
+          &lt;li&gt;workflow automation&lt;/li&gt;
+          &lt;li&gt;testing&lt;/li&gt;
+          &lt;li&gt;and more WOWs!&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Most tools above are available via NPM modules.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Alternative to Gulp.js, such as webpack, yarn, and bash scripts&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;It seems though built process are always evolving and we constantly have to change tools, thats why I am considering either consolidating my Gulp.js workflow to Webpack or author a simple built script.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;building-my-own-front-end-workflow-theme&quot;&gt;Building my own Front-End Workflow Theme&lt;/h2&gt;
+
+&lt;p&gt;I kinda figure I needed a codebase to collect solutions to common web problems that a CSS Framework was not able to accomodate. And also, to fit specifications of a project. So I decided to start a theme project called Front-End Flow (FEF) theme.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Delving deeper with Zurb Foundation&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Foundation is a great tool to start projects, I built my Gulp.js workflow to accomodate Zurb Foundation and other JavaScript framework/plugins.&lt;/li&gt;
+      &lt;li&gt;But it still lacks some solutions to common web problems.&lt;/li&gt;
+      &lt;li&gt;I may need to update FEF repo documentation though to specify these common web problems I’ve come across.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;SASS/CSS part is good but JavaScript part still needs re-coding and cleaning up&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;and converting my Gulp.js to Webpack or a bash script.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;javascript&quot;&gt;JavaScript&lt;/h2&gt;
+
+&lt;p&gt;These last 2 (JavaScript and FullStack/Ecommerce) are my favorite. This blog contains mostly about JavaScript concepts in theory, but this past year, I was able to put those theories in practice! I’m happy and glad I took the time to read and blog about JavaScript Interview Questions and took courses on FreeCodeCamp solving algorithms. I am 100% sure this is the route I want to go, JavaScript and becoming a Fullstack/Ecommerce developer!&lt;/p&gt;
+
+&lt;p&gt;Coding animations or a JavaScript SPA application, either concepts, I know I will take advantage of further practicing my coding skills and understanding of Fullstack concepts.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Demonstrated my JavaScript coding skills, creatively solving problems&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Authored code for a Personalization Platform&lt;/li&gt;
+      &lt;li&gt;Separated my JS code using ES6 import export feature&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Introduction to React.js&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;I wanted to organize my JavaScript code and modularize it.&lt;/li&gt;
+      &lt;li&gt;Coming up with code snippets to different problems is hard and I think it is worth keeping those code snippets for future use. Thats why I want to take advantage of Web Components and I heard React.js is fully developed for this usage.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;fullstackecommerce&quot;&gt;Fullstack/Ecommerce&lt;/h2&gt;
+
+&lt;p&gt;I was excited when I was able to build a simple contact form, submit it to MySQL database and display it on a Admin page. And also when I first started templating with Blade on Laravel.&lt;/p&gt;
+
+&lt;p&gt;Just using a MVC framework makes me think of possibilities I am able to build and how easy it is for me to be able to organize my code file structure and set naming conventions.&lt;/p&gt;
+
+&lt;p&gt;I’m starting to think I got this thing for Organization, cleanliness, and performance.
+Anyways, below is a recap of what I’ve accomplished and what I want to tackle next:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Basic form submission and query data with PHP and MySQL&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;This is the simple contact form and display of data.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Learned Laravel, from templating to submitting form with AJAX&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Learned how to setup Laravel&lt;/li&gt;
+      &lt;li&gt;Templating in Blade&lt;/li&gt;
+      &lt;li&gt;Storing and Querying data from JSON files rather than database. For performance purposes.&lt;/li&gt;
+      &lt;li&gt;Learned how to use AJAX in submitting form in Laravel and storing it in database.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Introduction to CRUD with Laravel&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;After having a glimpse and hands-on experience with Laravel, I was able to get an idea of how CRUD systems are structured in Laravel&lt;/li&gt;
+      &lt;li&gt;yup! I want to build an Admin Dashboard where users are able to edit data coming from a JSON file.&lt;/li&gt;
+      &lt;li&gt;kinda like building my own Jekyll or Grav but flexible enough to accomodate database&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Introduction to E-commerce system with plain PHP, Javascript&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;I was given a chance to author code for a Personalization platform. I was quite challenged with this project, solving problems creatively.&lt;/li&gt;
+      &lt;li&gt;I’ve also learned how a JavaScript application is structured with an E-commerce system
+        &lt;ul&gt;
+          &lt;li&gt;Adding to cart by storing values to PHP Session&lt;/li&gt;
+          &lt;li&gt;Using Session to keep data throughout Edit page, Add To Cart modal, Cart item page, Checkout page, and last, Order confirmation.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;So there it is, after blogging a recap of what I’ve learned, I should be able to distinguish my next set of concepts/topics to learn and skills to have under my belt.&lt;/p&gt;
+
+&lt;h3 id=&quot;moving-forward&quot;&gt;Moving forward:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Wordpress&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;s&gt;start a sideline business, hopefully it works well&lt;/s&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Building FEF Theme&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;convert gulp.js to webpack or script&lt;/li&gt;
+      &lt;li&gt;organize JS files&lt;/li&gt;
+      &lt;li&gt;use web components&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;JavaScript&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;code more, blog more on JS Interview Questions&lt;/li&gt;
+      &lt;li&gt;look into testing, interaction of application and inputting sample information&lt;/li&gt;
+      &lt;li&gt;exciting new projects to learn:
+        &lt;ul&gt;
+          &lt;li&gt;✓ 3d model product viewer
+            &lt;ul&gt;
+              &lt;li&gt;ref: &lt;a href=&quot;https://code.tutsplus.com/courses/3d-in-the-browser-with-threejs/&quot;&gt;3D in the Browser With Three.js&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;ref: &lt;a href=&quot;https://manu.ninja/webgl-3d-model-viewer-using-three-js&quot;&gt;WebGL 3D Model Viewer Using three.js&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;✓ viewport scroll to snap then animation/transition starts&lt;/li&gt;
+          &lt;li&gt;✓ build app ideas with React and Firebase&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;FullStack/E-commerce&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;s&gt;Continue building an Admin Dashboard&lt;/s&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;s&gt;the whole CRUD shibang! and a mixture of static JSON data and database&lt;/s&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;HTML5/CSS3&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;✓ learn more about SVG&lt;/li&gt;
+      &lt;li&gt;✓ implement simple CSS3 transitions&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>2017-02-22 16:29:22 +0000</pubDate>
+        <link>http://rlynjb.github.io/wandrr/New-stuff-to-learn</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/New-stuff-to-learn</guid>
+        
+        <category>3d</category>
+        
+        <category>webgl</category>
+        
+        <category>javascript</category>
+        
+        <category>crud</category>
+        
+        <category>laravel</category>
+        
+        <category>parallax</category>
+        
+        <category>ecommerce</category>
+        
+        <category>wordpress</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Venturing into a Fullstack Framework with Laravel</title>
+        <description>&lt;p&gt;Date Published: Nov 11, 2016&lt;/p&gt;
+
+&lt;p&gt;Indeed, I feel like its time to venture out of Front-End Web Development and look into a Fullstack Framework. One of my favorite framework is Keystone.js. It is a Node.js Database-driven framework. But learning a framework based off of PHP is mandatory, and so I came across Laravel. I’m not going to necessarily drift away from Keystone.js. As a Front-End Web Developer, I love Javascript and I don’t think I am going to give the language up easily.&lt;/p&gt;
+
+&lt;p&gt;My goal is to master atleast 1 or 2 Fullstack framework that is based off of 2 different language, Keystone.js and Laravel, but this blog post will focus on Laravel with a bit of comparison with Keystone.js and discusses about some of the features of what comprises a small-large scale web applications.&lt;/p&gt;
+
+&lt;p&gt;Since I’m going back and forth with this blog post, writing my experience from choosing to mastering a framework, I’ve included a table of contents below.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#comparison-chart&quot;&gt;Comparison chart: Keystone.JS and Laravel&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#learning-resources&quot;&gt;Learning Resources&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#getting-started-with-laravel&quot;&gt;Getting started with Laravel&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#understanding-laravels-front-end-workflow&quot;&gt;Understanding Laravel’s Front-End Workflow&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#intro-to-create-in-crud&quot;&gt;Intro to Create in CRUD&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#method-for-creating-a-contact-form-to-storing-to-db&quot;&gt;Method for creating a contact form to storing in db&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;ref: &lt;a href=&quot;#simple-contact-form-sending-emails&quot;&gt;Simple Contact form, Sending Emails&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#method-for-converting-static-data-in-template-to-json-object-value&quot;&gt;Method for converting static data in template to JSON object value&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;ref: &lt;a href=&quot;#coding-templates-to-populating-static-data-from-json-file&quot;&gt;Coding templates to populating static data from JSON file&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;ref: &lt;a href=&quot;#from-static-data-to-implementing-a-database&quot;&gt;From Static data to implementing a Database&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Method for building Complete CRUD&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;User Authentication and Roles
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#method-for-enabling-user-registration-login-and-authentication&quot;&gt;Method for enabling user registration, login, and authentication&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#setting-up-user-roles-and-permissions&quot;&gt;Setting up User Roles and Permissions&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#intro-to-middleware&quot;&gt;Intro to Middleware&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#method-for-creating-your-own-middleware&quot;&gt;Method for creating your own Middleware&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;CRUD Editor, plans, misc.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#defining-my-specs-for-a-custom-admin-panel&quot;&gt;Defining my specs for a custom Admin Panel&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#building-a-cms-from-scratch&quot;&gt;Building a CMS from scratch&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;comparison-chart&quot;&gt;Comparison chart&lt;/h1&gt;
+
+&lt;p&gt;I’ve also took the time to do research and write a comparison chart. Below is my researched with a high-level view of what features I look for in a framework.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Keystone.js&lt;/strong&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Laravel&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;http://keystonejs.com&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;https://laravel.com/docs/4.2/introduction&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Language&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Node.js&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;PHP&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Templating, Routing&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Swig, Jade, handlebars. Yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Blade. Yes&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;RESTful&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CRUD, Database&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes, MongoDB&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes, MySQL&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ACL&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Authentication and Session Management&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CMS&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes, Automatically generated Admin UI&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;No&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Code Readability&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Simple and Clean&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Simple and Clean&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Programming Style&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;MVC&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;MVC&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Server Maintenance&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;NVM, easy switching of Nodejs versions in server, not too much dependencies&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Application Maintenance&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;NPM, manages versions of modules in application&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Security&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;no credentials or keys are stored in code, they are stored in a separate&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Documentation&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;apidoc.js&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Community Support&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Active github repo, future releases, books, tutorials, opensource community&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;learning-resources&quot;&gt;Learning Resources&lt;/h1&gt;
+
+&lt;p&gt;Since I’m discovering Laravel and the whole PHP realm, I’ve discovered a site called &lt;a href=&quot;https://tutsplus.com/&quot;&gt;envatotuts+&lt;/a&gt; which carries Laravel tutorials from beginner to advance level.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://code.tutsplus.com/courses/get-started-with-laravel-5&quot;&gt;Get Started with Laravel 5&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://code.tutsplus.com/courses/build-a-cms-with-laravel&quot;&gt;Build a CMS with Laravel&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;and more, there are various tutorials that covers what we can do with Laravel&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;getting-started-with-laravel&quot;&gt;Getting started with Laravel&lt;/h1&gt;
+
+&lt;p&gt;I first created a github repo and followed the instructions for &lt;a href=&quot;https://laravel.com/docs/5.3/installation&quot;&gt;installing Laravel&lt;/a&gt; via Laravel Installer on my Mac.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;On my local, I just ran &lt;code&gt;php artisan serve&lt;/code&gt; to start a development environment&lt;/li&gt;
+  &lt;li&gt;Also take into consideration of Configuration. We also need to check for Directory permissions and Application Key.&lt;/li&gt;
+  &lt;li&gt;All of these information are available at &lt;a href=&quot;https://laravel.com/docs/5.3/installation&quot;&gt;https://laravel.com/docs/5.3/installation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tranferring your Laravel local code to an Ubuntu stage server was a bit of a challenge.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;There were missing php dependencies, I had to collaborate with other developers to solve this issue.&lt;/li&gt;
+  &lt;li&gt;Set its Web Document Root to its &lt;code&gt;/public&lt;/code&gt; directory.&lt;/li&gt;
+  &lt;li&gt;Copy &lt;code&gt;.env.example&lt;/code&gt; file as &lt;code&gt;.env&lt;/code&gt; file and run &lt;code&gt;php artisan key:generate&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There were no problem with transferring our Application code, it was more of setting its environment.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;understanding-laravels-front-end-workflow&quot;&gt;Understanding Laravels’ Front-End Workflow&lt;/h1&gt;
+
+&lt;p&gt;Laravel comes with a default install of Bootstrap, Vue, SASS, Webpack, and uses Gulp.js to compile its assets, although, Laravel developed its own compiling tool which is built on top of Gulp.js called &lt;strong&gt;Laravel Elixir&lt;/strong&gt;. It is an NPM module and is defined in &lt;code&gt;package.json&lt;/code&gt;. Laravel also uses NPM to install the default Front-end packages.&lt;/p&gt;
+
+&lt;p&gt;Upon readings its &lt;a href=&quot;https://laravel.com/docs/5.3/elixir&quot;&gt;documentation on Laravel Elixir&lt;/a&gt;, it seems like this tool makes it easy for developers to use Gulp.js. Though, the only drawback I forsee using Laravel Elixir is we can’t further customize our build process and we will depend on Laravel Elixir’s features.&lt;/p&gt;
+
+&lt;p&gt;Since I have a background with Front-End Development and I’ve growned accustomed to some front-end packages, I will be using my own &lt;a href=&quot;https://github.com/rlynjb/frontendflow&quot;&gt;Front-End Workflow starterkit theme&lt;/a&gt;, instead re-installing NPM and Bower packages and redefining paths and build process in my Gulp.js file.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;coding-templates-to-populating-static-data-from-json-file&quot;&gt;Coding templates to populating static data from JSON file&lt;/h1&gt;
+
+&lt;p&gt;Below is a link to an a quick and simple overview of an MVC Application structure:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://selftaughtcoders.com/from-idea-to-launch/lesson-17/laravel-5-mvc-application-in-10-minutes/&quot;&gt;Creating a Basic Laravel 5 MVC Application in 10 Minutes&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;My method usually starts off with defining a route and creating a template file for that particular route.&lt;/li&gt;
+  &lt;li&gt;Next is store sample data inside of JSON file and load file in a Controller
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://vegibit.com/creating-static-and-dynamic-web-pages-in-laravel/&quot;&gt;Creating Static And Dynamic Web Pages In Laravel&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://vegibit.com/json-in-laravel/&quot;&gt;http://vegibit.com/json-in-laravel/&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;My rule is, if a website contains less than 15 or 20 items, keep it data static
+But, if items grow to 20 or more AND will contain a CRUD method, then proceed with Database.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;from-static-data-to-implementing-a-database&quot;&gt;From Static data to implementing a Database&lt;/h1&gt;
+
+&lt;p&gt;Coming from a front-end web development and a bit of MVC background, Database concepts was new to me. Although I did dabbled a bit into sql queries, its still different from having the knowledge of Database tools available we can use in a Fullstack framework.&lt;/p&gt;
+
+&lt;p&gt;With Laravel, there are tools available that helps us manage our database. Features that came with Laravel are listed below with a bit of methodology when implementing a Database.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;When we run &lt;code&gt;php artisan make:model User --migration&lt;/code&gt; to create a Database, Laravel assumes you configured your database settings on &lt;code&gt;config/database.php&lt;/code&gt; file. The generated Model and Migration script files are not aware of its configuration settings.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;To create a Database, run &lt;code&gt;php artisan make:model User --migration&lt;/code&gt; command. This will generate a &lt;strong&gt;Eloquent ORM Model&lt;/strong&gt; and a &lt;strong&gt;Migration&lt;/strong&gt; script.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Eloquent ORM&lt;/strong&gt; - Model allows us to easily query and insert data in our tables.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Migration&lt;/strong&gt; - Creates a Table; Builds our Database Schema; Preserves Database Schema, revision control&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Seeding
+    &lt;ul&gt;
+      &lt;li&gt;is a way to create data fast. It populates data into a Database Table.&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://sheepy85.wordpress.com/2014/09/19/database-seed-migration-in-laravel-5-0/&quot;&gt;https://sheepy85.wordpress.com/2014/09/19/database-seed-migration-in-laravel-5-0/&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://www.fullstack4u.com/laravel/laravel-5-load-seed-data-from-json/&quot;&gt;http://www.fullstack4u.com/laravel/laravel-5-load-seed-data-from-json/&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=y0y3-m05Emc&quot;&gt;Understanding Database with Laravel&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;simple-contact-form-sending-emails&quot;&gt;Simple Contact form, Sending emails&lt;/h1&gt;
+
+&lt;p&gt;There are tons fo tutorials on the web about creating a conact form with Laravel but it doesn’t seem to explain the basics. The link below though,&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://code.tutsplus.com/courses/get-started-with-laravel-5/lessons/sending-emails&quot;&gt;Sending Emails&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;seem to explain the simplest and plainest method of how we can implement a Contact form in Laravel using Route &lt;code&gt;Route::get...&lt;/code&gt; and Mail Facade &lt;code&gt;Mail::send...&lt;/code&gt;.
+From this tutorial, we can further build our Contact form to use Controller for code separation and gather User input from Views. We will be able to store Contact form data in database.&lt;/p&gt;
+
+&lt;p&gt;There are 2 ways to compose an email.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Raw text&lt;/li&gt;
+  &lt;li&gt;From a View&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;raw-text&quot;&gt;Raw Text&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create a Route where we can send emails from.&lt;/li&gt;
+  &lt;li&gt;Define a Mail Facade and inside, define an instance of Illuminate Message to build mail properties.&lt;/li&gt;
+  &lt;li&gt;Sign up for Mailtrap.io and configure &lt;code&gt;.env&lt;/code&gt; file&lt;/li&gt;
+  &lt;li&gt;Now, when we visit &lt;code&gt;/contact&lt;/code&gt;, it should send test email defined inside of Mail facade.&lt;/li&gt;
+  &lt;li&gt;Mail should be sent in Raw format located under Raw tab.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;```
+Route::get(‘/contact’, function() {
+  // define a Mail facade
+  Mail::raw(‘kirby this is a test’, function($message) {
+    /*
+      inside we will have an instance of
+      Illuminate\Mail\Message&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  inside of this closure, we can set other prooerties of email
+*/
+$message-&amp;gt;subject('testing')
+        -&amp;gt;to('bill@mail.com')
+        -&amp;gt;from('non@mail.com');   });
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;return ‘email has been sent’;
+});
+```&lt;/p&gt;
+
+&lt;h3 id=&quot;from-views-template&quot;&gt;From Views template&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Define a Route again.&lt;/li&gt;
+  &lt;li&gt;Instead of Mail Facade Raw &lt;code&gt;Mail::raw...&lt;/code&gt;, we will use Mail Facade Send &lt;code&gt;Mail:send...&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Once URL is visited, it will send email to Mailtrap.io for test.&lt;/li&gt;
+  &lt;li&gt;Mail should be sent in HTML format under HTML tab.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;```
+// this will get data from view or user input
+Route::get(‘/contact/view’, function() {&lt;/p&gt;
+
+&lt;p&gt;//  param1 = path to view template
+  //  param2 = array of data
+  //  param3 = closure to setup message that we will be sending
+  Mail::send(‘conact-view’, [‘name’=&amp;gt;’Bob’], function($message) {
+    $message-&amp;gt;subject(‘testing’)
+            -&amp;gt;to(‘bill@mail.com’)
+            -&amp;gt;from(‘non@mail.com’);
+  });
+});
+```&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;intro-to-create-in-crud&quot;&gt;Intro to Create in CRUD&lt;/h1&gt;
+
+&lt;p&gt;Below are the resources I used in learning basic CRUD, form handling in Laravel, and AJAX form post.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://code.tutsplus.com/courses/get-started-with-laravel-5/lessons/handle-form-input&quot;&gt;Forms and Data Validation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://laracasts.com/discuss/channels/requests/laravel-5-cant-use-ajax-post-request&quot;&gt;Laravel 5 can’t use ajax post request&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/32718870/how-to-get-all-input-of-post-in-laravel-5&quot;&gt;How to get All input of POST in Laravel 5&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://laravel.com/docs/5.4/database&quot;&gt;Database: Getting Started&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;dealing-with-global-variables&quot;&gt;Dealing with Global variables&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/32942379/global-variable-in-laravel-controller&quot;&gt;Global variable in laravel controller&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/29715813/laravel-5-global-blade-view-variable-available-in-all-templates&quot;&gt;Laravel 5 - global Blade view variable available in all templates&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;method-for-creating-a-contact-form-to-storing-to-db&quot;&gt;Method for creating a Contact Form to storing to DB&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Template Contact form
+    &lt;ul&gt;
+      &lt;li&gt;include validation (Zurb Foundation Abide or HTML5 validation)&lt;/li&gt;
+      &lt;li&gt;include &lt;code&gt;name=&quot;&quot;&lt;/code&gt;, &lt;code&gt;maxlength=&quot;&quot;&lt;/code&gt; on input fields&lt;/li&gt;
+      &lt;li&gt;include `` before Submit input button&lt;/li&gt;
+      &lt;li&gt;provided by Laravel, a secure way to manage POST forms&lt;/li&gt;
+      &lt;li&gt;include a Thank You and Error messages&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Author JavaScript submit ajax code
+    &lt;ul&gt;
+      &lt;li&gt;include &lt;code&gt;e.preventDefault();&lt;/code&gt; to prevent page refresh&lt;/li&gt;
+      &lt;li&gt;on Ajax, serialize data coming in from form&lt;/li&gt;
+      &lt;li&gt;input url POST data in defined in routes&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Define Routes
+    &lt;ul&gt;
+      &lt;li&gt;since we are posting, use POST instead of GET&lt;/li&gt;
+      &lt;li&gt;ex: &lt;code&gt;Route::post('/contact/create', 'ContactController@create');&lt;/code&gt; &lt;/li&gt;
+      &lt;li&gt;define url and Controller and its public function that will handle database form submission and other logic associated with create task.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Create Controller
+    &lt;ul&gt;
+      &lt;li&gt;on root directory, run &lt;code&gt;php artisan make:controller ContactController&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;inside &lt;code&gt;ContactController.php&lt;/code&gt;, define facades&lt;/li&gt;
+      &lt;li&gt;ex: &lt;code&gt;use DB;&lt;/code&gt;, &lt;code&gt;use Illuminate\Support\Facades\Mail;&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;inside its public function&lt;/li&gt;
+      &lt;li&gt;assign form input values to variables
+        &lt;ul&gt;
+          &lt;li&gt;these are the fields defined in form&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;write code to store on database, ref: &lt;a href=&quot;https://laravel.com/docs/5.4/database&quot;&gt;https://laravel.com/docs/5.4/database&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;write code to send data to email, ref: &lt;a href=&quot;https://laravel.com/docs/5.4/mail&quot;&gt;https://laravel.com/docs/5.4/mail&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Setup database
+    &lt;ul&gt;
+      &lt;li&gt;go to phpmyadmin and create a database, enter credentials, and create a table&lt;/li&gt;
+      &lt;li&gt;create columns and defined the ff.&lt;/li&gt;
+      &lt;li&gt;form fields&lt;/li&gt;
+      &lt;li&gt;include ID: int, auto_increment, primary&lt;/li&gt;
+      &lt;li&gt;include submitted_at: timestamp, current_timestamp&lt;/li&gt;
+      &lt;li&gt;on &lt;code&gt;.env&lt;/code&gt; file, configure database settings&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Setup Mailer
+    &lt;ul&gt;
+      &lt;li&gt;go to &lt;code&gt;.env&lt;/code&gt; file and input settings&lt;/li&gt;
+      &lt;li&gt;we are using &lt;a href=&quot;#from-views-template&quot;&gt;From Views Template&lt;/a&gt; code&lt;/li&gt;
+      &lt;li&gt;using Mail facade requires additional steps&lt;/li&gt;
+      &lt;li&gt;create a Requests by running &lt;code&gt;php artisan make:requests SendContact&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;inside SendContact.php, input the ff.
+        &lt;ul&gt;
+          &lt;li&gt;set authorize to true&lt;/li&gt;
+          &lt;li&gt;input fields on rules function&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;create a template under &lt;code&gt;resources/views/emails/contact.blade.php&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;to test, we can use our email address temporarily&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Implement google recaptcha
+    &lt;ul&gt;
+      &lt;li&gt;retrieve site and secret key&lt;/li&gt;
+      &lt;li&gt;load grecaptcha plugin and html tag&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;&amp;lt;script src='https://www.google.com/recaptcha/api.js'&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;&amp;lt;div class=&quot;row&quot;&amp;gt;&amp;lt;div class=&quot;float-right g-recaptcha&quot; data-sitekey=&quot;6Le5PRcUAAAAAHPBCPt4JuVkhU4Ha31av4dE5lGH&quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;p class=&quot;recaptcha-response&quot;&amp;gt;&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;author validation google recaptcha code on contact form submit event&lt;/li&gt;
+      &lt;li&gt;ref: &lt;a href=&quot;http://stackoverflow.com/questions/37294886/google-recaptcha-with-ajax-form&quot;&gt;http://stackoverflow.com/questions/37294886/google-recaptcha-with-ajax-form&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;code&gt;
+if (grecaptcha.getResponse().length &amp;gt; 0) {
+  ajax call
+} else {
+  $('.recaptcha-response').html('');
+  $('.recaptcha-response').append('Check recaptcha before submmitting form');
+}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;method-for-converting-static-data-in-template-to-json-object-value&quot;&gt;Method for converting static data in template to JSON object value&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;After templating
+    &lt;ul&gt;
+      &lt;li&gt;structure your JSON data with a template file values&lt;/li&gt;
+      &lt;li&gt;use &lt;a href=&quot;http://jsoneditoronline.org&quot;&gt;http://jsoneditoronline.org&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;store file in &lt;code&gt;database/data/nameoffile.json&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Create a Controller
+    &lt;ul&gt;
+      &lt;li&gt;run &lt;code&gt;php artisan make:controller HomeController&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;define public function to contain logic for displaying data from JSON file&lt;/li&gt;
+      &lt;li&gt;write code to load JSON file and loop through JSON value&lt;/li&gt;
+      &lt;li&gt;and define template at the bottom along with passing &lt;code&gt;$data&lt;/code&gt; from looped json file&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Define Controller in Route
+    &lt;ul&gt;
+      &lt;li&gt;replace define function in route to point to controller and its public function&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;In HomeController, define variables and assign value for JSON file&lt;/li&gt;
+  &lt;li&gt;replace static data in templates to use variable from its controller&lt;/li&gt;
+  &lt;li&gt;Handle Exceptions
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://scotch.io/tutorials/creating-a-laravel-404-page-using-custom-exception-handlers&quot;&gt;https://scotch.io/tutorials/creating-a-laravel-404-page-using-custom-exception-handlers&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;method-for-enabling-user-registration-login-and-authentication&quot;&gt;Method for enabling User registration, login, and authentication&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Make sure you have configured and have access to Database&lt;/li&gt;
+  &lt;li&gt;Run &lt;code&gt;php artisan migrate&lt;/code&gt; to setup database tables and its columns
+    &lt;ul&gt;
+      &lt;li&gt;this takes the script inside and creates database table and its columns in DB&lt;/li&gt;
+      &lt;li&gt;ref: &lt;a href=&quot;https://laravel.com/docs/5.4/migrations&quot;&gt;Laravel Database: Migration&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;make sure you use PHP 7 on server-level rather than virtual (directory) level&lt;/li&gt;
+      &lt;li&gt;while running command, i came across an issue&lt;/li&gt;
+      &lt;li&gt;ref: &lt;a href=&quot;https://laravel-news.com/laravel-5-4-key-too-long-error&quot;&gt;laravel 5.4 key too long issue&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;idea: we can write our own database table migration script whenever we need to integrate a db into our forms&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Run &lt;code&gt;php artisan make:auth&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;controllers are automatically provided by Laravel&lt;/li&gt;
+      &lt;li&gt;this will generate the ff. files for authentication&lt;/li&gt;
+      &lt;li&gt;warning: this will overwrite your &lt;code&gt;HomeController&lt;/code&gt;, &lt;code&gt;home.blade.php&lt;/code&gt;, &lt;code&gt;layouts &amp;gt; app.blade.php&lt;/code&gt;, and &lt;code&gt;layouts &amp;gt; footer.blade.php&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;its best to run this command at the beginning of project or backup your code on github&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Compare Auth generated template files to your original login system files
+    &lt;ul&gt;
+      &lt;li&gt;make the necessary changes (modify templates and mv to &lt;code&gt;/auth&lt;/code&gt;)&lt;/li&gt;
+      &lt;li&gt;there are if statements that Authentication may require&lt;/li&gt;
+      &lt;li&gt;make sure they are synced in&lt;/li&gt;
+      &lt;li&gt;display data for guest users&lt;/li&gt;
+      &lt;li&gt;display data for logged in users&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Redirect guest users to your own homepage display instead of Authentication’s default login page
+    &lt;ul&gt;
+      &lt;li&gt;if were using all endpoints (&lt;code&gt;login&lt;/code&gt;, &lt;code&gt;logout&lt;/code&gt;, &lt;code&gt;register&lt;/code&gt;, &lt;code&gt;password email&lt;/code&gt;, &lt;code&gt;password request&lt;/code&gt;, &lt;code&gt;password reset&lt;/code&gt;), no need to remove &lt;code&gt;Route::auth&lt;/code&gt; from &lt;code&gt;routes.php&lt;/code&gt; file.&lt;/li&gt;
+      &lt;li&gt;Remove &lt;code&gt;Route::auth()&lt;/code&gt; from &lt;code&gt;routes.php&lt;/code&gt; and manually declare endpoints&lt;/li&gt;
+      &lt;li&gt;ref: &lt;a href=&quot;http://robboyland.com/laravel-auth-how-to-disable-registration&quot;&gt;http://robboyland.com/laravel-auth-how-to-disable-registration&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;ex. &lt;code&gt;Route::get('login', 'Auth\AuthController@showLoginForm');&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;to display Route list, run &lt;code&gt;php artisan route:list&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Remove &lt;code&gt;Route::get('/home', 'HomeController@index');&lt;/code&gt; from &lt;code&gt;routes.php&lt;/code&gt; file&lt;/li&gt;
+      &lt;li&gt;Remove &lt;code&gt;$this-&amp;gt;middleware('auth');&lt;/code&gt; on &lt;code&gt;app &amp;gt; Http &amp;gt; Controllers &amp;gt; HomeController.php&lt;/code&gt; file&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;after login success, set redirection page
+    &lt;ul&gt;
+      &lt;li&gt;change path &lt;code&gt;protected $redirectTo = '/home'&lt;/code&gt; in &lt;code&gt;app/Http/Controller/Auth&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;ref: &lt;a href=&quot;http://www.easylaravelbook.com/blog/2015/03/11/changing-the-laravel-redirect-location-after-login/&quot;&gt;login registration redirect fix&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;same method goes with after Registration page&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Add custom fields to Registration Form
+    &lt;ul&gt;
+      &lt;li&gt;ref: &lt;a href=&quot;http://www.easylaravelbook.com/blog/2015/09/25/adding-custom-fields-to-a-laravel-5-registration-form/&quot;&gt;Adding Custom Fields to a Laravel 5 Registration Form&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Transfer old registration controller code logic to the new Auth registration controller&lt;/li&gt;
+  &lt;li&gt;Protect private data or elements in templates from public view&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;code&gt;
+@if ( Auth::guest() )
+  // html elements or data here
+@else
+  // html elements or data here
+@endif
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Next is to setup Middleware&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/29173028/how-to-send-mail-after-laravel-5-default-registration&quot;&gt;How to send mail after Laravel 5 default registration?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;video ref: &lt;a href=&quot;https://www.youtube.com/watch?v=bqkt6eSsRZs&quot;&gt;https://www.youtube.com/watch?v=bqkt6eSsRZs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;setting-up-user-roles-and-permissions&quot;&gt;Setting up User Roles and Permissions&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://alexsears.com/article/adding-roles-to-laravel-users/&quot;&gt;Overview of code&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ref: &lt;a href=&quot;https://www.youtube.com/watch?v=KMR2H6-K36E&quot;&gt;Laravel User roles part1&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Setup DB creds&lt;/li&gt;
+  &lt;li&gt;we need User table/model, already in Laravel once User Authentication is configured
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;php artisan make:auth&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;we need Roles table/model
+    &lt;ul&gt;
+      &lt;li&gt;because Users will have many or more assign to a user depending on what typ eof user he is&lt;/li&gt;
+      &lt;li&gt;ex. Super Admin = has all roles, Admin = has most roles, Editor, Author, Customer&lt;/li&gt;
+      &lt;li&gt;ref: &lt;a href=&quot;https://www.zivtech.com/blog/permissions-and-roles-happier-users-and-admins&quot;&gt;Permission and roles for happier users and admins&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;create Migration script&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;run &lt;code&gt;php artisan make:migration create_roles_table --create=roles&lt;/code&gt;
+        &lt;ul&gt;
+          &lt;li&gt;handles many to many relationship of user and roles&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;no need to add fields in default User migration script&lt;/li&gt;
+      &lt;li&gt;On Roles migration script, we need:
+        &lt;ul&gt;
+          &lt;li&gt;&lt;code&gt;$table-&amp;gt;increments('id');&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;code&gt;$table-&amp;gt;string('name');&lt;/code&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;On User Roles pivot migration script, we need:
+        &lt;ul&gt;
+          &lt;li&gt;&lt;code&gt;$table-&amp;gt;integer('user_id');&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;code&gt;$table-&amp;gt;integer('role_id');&lt;/code&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;create Models script&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;run &lt;code&gt;php artisan make:model Role&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;open User model and were gonna add a relation model using public function to create a new method called &lt;strong&gt;roles()&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;open Role model and add a relation method&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Add roles values inside Roles table in phpmyadmin&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ref: &lt;a href=&quot;https://www.youtube.com/watch?v=e1_f7q1D2v0&quot;&gt;Laravel User roles part2&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;On User, create a method that checks id a user is a employee or author.&lt;/li&gt;
+  &lt;li&gt;we are going to use roles method created previously
+    &lt;ul&gt;
+      &lt;li&gt;add the ff code, helpers and main methods&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;on &lt;code&gt;routes.php&lt;/code&gt; file, add a new route to create roles for users
+    &lt;ul&gt;
+      &lt;li&gt;this controller will save roles nad users in user_role pivot table&lt;/li&gt;
+      &lt;li&gt;use to debug roles and users as well&lt;/li&gt;
+      &lt;li&gt;next we will start using our user methods in middleware, route, templates, controllers&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;intro-to-middleware&quot;&gt;Intro to Middleware&lt;/h3&gt;
+
+&lt;p&gt;Middleware is a way of protecting routes or running code before and after a route is run.&lt;/p&gt;
+
+&lt;p&gt;Defining Middleware in routes is ok, but since we are going to reuse this type of authentication, we need to transfer this code from route to a middleware or use a pre-existing Laravel Middleware.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+Route::get('home', function () {
+  if ( Auth::guest() ) {
+    return Redirect::to('auth/login');
+  } else {
+    echo 'Welcome home ' . Auth::user()-&amp;gt;email . '.';
+  }
+});
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Middlewares can be seen at &lt;code&gt;app &amp;gt; Http &amp;gt; Middleware &amp;gt; Authenticate.php&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;To Check which Middleware class to use &lt;code&gt;app &amp;gt; Http &amp;gt; Middleware &amp;gt; Kernel.php&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In &lt;code&gt;Route.php&lt;/code&gt;, Middleware can be define as:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+Route::get('home', ['middleware' =&amp;gt; 'auth', function() {
+  echo 'Welcome home ' . Auth::user()-&amp;gt;email . '.';
+}]);
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;video ref: &lt;a href=&quot;https://www.youtube.com/watch?v=bWhJJJwMvco&quot;&gt;https://www.youtube.com/watch?v=bWhJJJwMvco&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;doc ref: &lt;a href=&quot;https://laravel.com/docs/5.4/middleware&quot;&gt;Laravel Doc Middleware&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;method-for-creating-your-own-middleware&quot;&gt;Method for creating your own Middleware&lt;/h3&gt;
+
+&lt;p&gt;We can create our own Middleware. ex would be Role Permissions&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Run &lt;code&gt;php artisan make:middleware Admin&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;this generates &lt;code&gt;app &amp;gt; Http &amp;gt; Middleware &amp;gt; Admin.php&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Since we are going to use the same Authenticate Middleware
+    &lt;ul&gt;
+      &lt;li&gt;Copy and Paste the ff. section of code from &lt;code&gt;app &amp;gt; Http &amp;gt; Middleware &amp;gt; Authenticate.php&lt;/code&gt; at the beginning of Admin PHP class file.&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;The Guard implementation&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;Create a new filter instance&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Copy and paste &lt;code&gt;use Illuminate\Contracts\Auth\Guard;&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Copy and paste code inside handle function&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Write code at the 2nd ifelse statement&lt;/li&gt;
+  &lt;li&gt;Route new Middleware in &lt;code&gt;app &amp;gt; Http &amp;gt; Kernal.php&lt;/code&gt; by copy and pasting path below&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;```
+protected $routeMiddleware = [
+  ‘auth’ =&amp;gt; \App\Http\Middleware\Authenticate::class,&lt;/p&gt;
+
+&lt;p&gt;‘admin’ =&amp;gt; \App\Http\Middleware\Admin::class,
+];
+```&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;defining-my-specs-for-a-custom-admin-panel&quot;&gt;Defining my specs for a custom Admin Panel&lt;/h1&gt;
+
+&lt;p&gt;My admin panel specs are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;simple navigation (straightforward, simpler than wordpress)&lt;/li&gt;
+  &lt;li&gt;able to do CRUD unto json files&lt;/li&gt;
+  &lt;li&gt;contains just fields or forms (simple)&lt;/li&gt;
+  &lt;li&gt;display contact form data from contact form fields&lt;/li&gt;
+  &lt;li&gt;uses miminal text editor features with instructions
+    &lt;ul&gt;
+      &lt;li&gt;user will be using HTML tags&lt;/li&gt;
+      &lt;li&gt;bold text&lt;/li&gt;
+      &lt;li&gt;links&lt;/li&gt;
+      &lt;li&gt;breakline/ new line&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;image or assets uploader and manager
+    &lt;ul&gt;
+      &lt;li&gt;contains fields for seo input (img alt, title)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;building-a-cms-from-scratch&quot;&gt;Building a CMS from scratch&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.kodecrash.com/javascript/read-write-json-file-using-php/&quot;&gt;Read-Write JSON file using PHP&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.sitepoint.com/creating-a-scrud-system-using-jquery-json-and-datatables/&quot;&gt;Creating a SCRUD System Using jQuery, JSON and DataTables&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>2017-02-08 10:58:47 +0000</pubDate>
+        <link>http://rlynjb.github.io/wandrr/Venturing-into-a-fullstack-framework-with-Laravel</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Venturing-into-a-fullstack-framework-with-Laravel</guid>
+        
+        <category>php</category>
+        
+        <category>fullstack</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Using ES6 Modules in client-side</title>
+        <description>&lt;p&gt;I came into a halt where I need to split my JavaScript code. Prototyping an application, code can be done in one file but as it grows and add-on features are requested, lines of code will eventually increase. I’ve heard a few names of javascript module loaders, both for client and server. But what I really wanted to take advantage of is JavaScript’s new module feature, ‘ES6 Module’ &lt;code&gt;import&lt;/code&gt; &lt;code&gt;export&lt;/code&gt; (commonly used in Nodejs, server-side).&lt;/p&gt;
+
+&lt;p&gt;Projects I’ve been handling are focused on Front-End, so I need a module compiler for client-side. Most browsers still does not support ES6 Module feature, that’s why there are Client side JS module loaders available such as Browserify, Webpack, Rollup &lt;a href=&quot;http://stackoverflow.com/questions/19059580/client-on-node-uncaught-referenceerror-require-is-not-defined&quot;&gt;ref&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I am still learning JavaScript modules but for simplicity, I’m going to use Browserify, Babel, and Gulp.&lt;/p&gt;
+
+&lt;p&gt;Below is a step-by-step scenario of how these tools are connected and how it transforms our ES6 code.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;We write code using ES6 capabilities inclduing (but not limited to) ES6 module loading.&lt;/li&gt;
+  &lt;li&gt;Babelify translates this code to ES5-compatibility code with &lt;code&gt;require&lt;/code&gt; statements included.
+    &lt;ul&gt;
+      &lt;li&gt;Babelify is a Babel transformer for Browserify&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ES5 code with &lt;code&gt;require&lt;/code&gt; statements is transformed to the version that is fully understandable by browsers by Browserify&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://egorsmirnov.me/2015/05/25/browserify-babelify-and-es6.html&quot;&gt;ref&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Additional method….&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Gulp.js then compiles all dependencies and scripts and outputs the final (minified and compressed) javascript file.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A sample &lt;strong&gt;Gulp.js&lt;/strong&gt; task should look like this:&lt;/p&gt;
+
+&lt;p&gt;```
+var gulp = require(‘gulp’);
+var browserify = require(‘browserify’);
+var babelify = require(‘babelify’);
+var source = require(‘vinyl-source-stream’);&lt;/p&gt;
+
+&lt;p&gt;gulp.task(‘build’, function () {
+  return browserify({entries: ‘./app.jsx’, extensions: [‘.jsx’], debug: true})
+  .transform(babelify)
+  .bundle()
+  .pipe(source(‘bundle.js’))
+  .pipe(gulp.dest(‘dist’));
+});
+```&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Side note&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I’m looking forward on taking advantage of what Babel plugins has to offer to replace Browserify and Babelify.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://babeljs.io/&quot;&gt;Babeljs.io&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://exploringjs.com/es6/ch_modules.html&quot;&gt;Exploringjs.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/19059580/client-on-node-uncaught-referenceerror-require-is-not-defined&quot;&gt;Client on node: Uncaught ReferenceError: require is not defined&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://egorsmirnov.me/2015/05/25/browserify-babelify-and-es6.html&quot;&gt;Browserify, Babelify and ES6&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://babeljs.io/&quot;&gt;Babeljs.io&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://exploringjs.com/es6/ch_modules.html&quot;&gt;Exploringjs.com&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/32793404/es6-export-overwriting-function&quot;&gt;ES6 Export Overwriting Function&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>2016-12-28 11:08:39 +0000</pubDate>
+        <link>http://rlynjb.github.io/wandrr/Using-ES6-Modules-in-clientside</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Using-ES6-Modules-in-clientside</guid>
+        
+        <category>javascript</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Getting Started with Magento Theming</title>
+        <description>&lt;h3 id=&quot;before-starting-to-build-a-theme-in-magento2&quot;&gt;Before starting to build a theme in Magento2&lt;/h3&gt;
+
+&lt;p&gt;So before starting to build a theme, we need to know Magento 2’s architecture and status.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Magento 2 is extremely modularize (reminds me of Drupal)&lt;/li&gt;
+  &lt;li&gt;it is based off of Zend Framework&lt;/li&gt;
+  &lt;li&gt;Alot of Major and Minor updates/changes in each version&lt;/li&gt;
+  &lt;li&gt;and foremost, it is Not practical to theme from scratch (trust me, I tried, unless you are a certified Magento 2 developer or someone willing to put in alot of time)&lt;/li&gt;
+  &lt;li&gt;it comes with its own Front-End workflow (I think it uses Grunt, Less)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Although, from all the learning curves listed above, Magento 2 is:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;a really secure Ecommerce system&lt;/li&gt;
+  &lt;li&gt;It has everything you need to immediately setup an online store&lt;/li&gt;
+  &lt;li&gt;theming maybe tough, alot of overriding of templates (but we will try to keep CSS and JS minimal and will use our own &lt;a href=&quot;https://github.com/rlynjb/frontendflow&quot;&gt;Front-end workflow&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;setting-up-a-child-theme&quot;&gt;&lt;strong&gt;Setting up a Child Theme&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;Once Magento 2 is installed&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Enable Development Mode &lt;code&gt;sudo php bin/magento deploy:mode:set developer&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;ref: &lt;a href=&quot;http://magento.stackexchange.com/questions/13125/how-do-i-set-developer-mode-in-magento-2&quot;&gt;How di u set developer mode in magento2&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Create a directory in &lt;code&gt;/app/design/frontend/&amp;lt;company name&amp;gt;/&amp;lt;theme name&amp;gt;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Copy Magento 2 blank theme &lt;code&gt;/vendor/magento/theme-frontend-blank/&lt;/code&gt; to &lt;code&gt;/app/design/frontend/&amp;lt;company name&amp;gt;/&amp;lt;theme name&amp;gt;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Rename all theme titles and names in &lt;code&gt;composer.json&lt;/code&gt;, &lt;code&gt;registration.php&lt;/code&gt;, &lt;code&gt;theme.xml&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;in &lt;code&gt;theme.xml&lt;/code&gt; add &lt;code&gt;&amp;lt;parent&amp;gt;Magento/blank&amp;lt;/parent&amp;gt;&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Login to admin to change theme and clear-cache
+    &lt;ul&gt;
+      &lt;li&gt;locate admin URL in &lt;code&gt;/etc/config.php&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;create-a-template-for-a-page&quot;&gt;&lt;strong&gt;Create a template for a page&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Define a new page layout in &lt;code&gt;layouts.xml&lt;/code&gt; by copy &amp;amp; pasting a column tag&lt;/li&gt;
+  &lt;li&gt;Copy &lt;code&gt;1column.xml&lt;/code&gt; and rename to the name of page, ex. &lt;code&gt;homepage.xml&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Go to admin and set a page to use new page layout defined&lt;/li&gt;
+  &lt;li&gt;Clear cache in admin configuration page or cli &lt;code&gt;php bin/magento cache:flush&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Create a template &lt;code&gt;*.phtml&lt;/code&gt; inside of &lt;code&gt;/templates&lt;/code&gt; directory and use &lt;code&gt;&amp;lt;block&amp;gt;&lt;/code&gt; tag inside of &lt;code&gt;homepage.xml&lt;/code&gt; file to point to the template file&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;override-magento-2-core-templates&quot;&gt;&lt;strong&gt;Override Magento 2 core templates&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Follow Magento 2 front end developer guide&lt;/li&gt;
+  &lt;li&gt;Copy &amp;amp; paste codebase from Magento 2 github repo&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tips:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Analyze layout first&lt;/li&gt;
+  &lt;li&gt;Look at default modules under &lt;code&gt;app/code/Magento&lt;/code&gt; files and reference in &lt;code&gt;Magento_Theme&lt;/code&gt; base templates&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;loading-front-end-flow-assets&quot;&gt;&lt;strong&gt;Loading Front-End flow assets&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;After loading Front-End flow assets files, we will comment out unnecessary Blank theme styles. This is a matter of inspecting unnecessary styles and commenting it out from its default &lt;code&gt;.less&lt;/code&gt; files&lt;/p&gt;
+
+&lt;p&gt;Comment out Magento 2’s &lt;code&gt;imports&lt;/code&gt; in its root &lt;code&gt;/web/css/*.less&lt;/code&gt; file&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;web/css/styles-m.less&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;web/css/_styles.less&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;web/css/source/_sources.less&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Initially, we will keep Magento 2 Blank theme’s Grid system and remove its theme styles. Go back and forth to files above to remove styles.&lt;/p&gt;
+
+&lt;h4 id=&quot;recompile-default-blank-theme-styles-and-new-front-end-flow-styles&quot;&gt;&lt;strong&gt;Recompile default Blank theme styles and new Front-End flow styles&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Delete static files
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;rm -rf pub/static/frontend/&amp;lt;company name&amp;gt;/&amp;lt;theme name&amp;gt;/*&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;rm -rf var/cache/*&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;rm -rf var/page_cache/*&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;rm -rf var/view_preprocessed/*&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Redeploy static files
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;php bin/magento setup:static-content:deploy&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;php bin/magento cache:clean &amp;amp;&amp;amp; php bin/magento cache:flush&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;chown -R www-data:www-data var/ pub/ &amp;amp;&amp;amp; chmod -R 777 var/ pub/&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;credential-requirements&quot;&gt;&lt;strong&gt;Credential Requirements&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;As stated in its document, Secure keys do not use the normal Magento2 Marketplace username and password, rather&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Once logged in, generate public and private keys
+    &lt;ul&gt;
+      &lt;li&gt;username is Public key&lt;/li&gt;
+      &lt;li&gt;password is Private key&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Need to sign up a Magento Marketplace account to take advantage of their features or add-ons that can be install via composer&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;the-docker-way&quot;&gt;The Docker way&lt;/h3&gt;
+
+&lt;p&gt;Installing manually was tedious so I’ve decided to use install Magento 2 via Docker and Docker Compose.&lt;/p&gt;
+
+&lt;p&gt;To get a glimpse of how Docker and Docker Compose works, I’ved jotted down notes here: &lt;a href=&quot;Notes-on-creating-a-convenient-local-development-workflow-with-Docker&quot;&gt;Notes on creating a convenient Local Development Workflow with Docker&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Here is a sample &lt;code&gt;docker-compose.yml&lt;/code&gt; file that installs Magento 2 &lt;a href=&quot;https://github.com/mageinferno/magento2-docker-compose&quot;&gt;maginferno - magento2-docker-compose&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Grab a copy of Magento 2 files as well &lt;a href=&quot;https://github.com/magento/magento2.git&quot;&gt;Github - Magento&lt;/a&gt; and place it on your &lt;strong&gt;host&lt;/strong&gt; and mount the necessary directories and files unto your &lt;strong&gt;docker container&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+</description>
+        <pubDate>2016-12-27 11:14:55 +0000</pubDate>
+        <link>http://rlynjb.github.io/wandrr/Getting-started-with-Magento-Theming</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Getting-started-with-Magento-Theming</guid>
+        
+        <category>cms</category>
+        
+        <category>ecommerce</category>
+        
+        <category>magento2</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Notes on creating a convenient Local Development Workflow with Docker</title>
+        <description>&lt;p&gt;While working on a project that requires a new install of PHP and MySql, I came into a halt. It took me a day to re-configure my local development environment.&lt;/p&gt;
+
+&lt;p&gt;I then came across Docker. With this research and learning a new technology. My goal is to establish an efficient local development workflow with Docker as I did with creating &lt;a href=&quot;https://github.com/rlynjb/frontendflow&quot;&gt;Front-End Workflow Theme&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This article &lt;a href=&quot;https://www.airpair.com/docker/posts/efficiant-development-workfow-using-git-submodules-and-docker-compose&quot;&gt;Efficient development workflow using Git submodules and Docker Compose&lt;/a&gt; gave me a brief overview of what Docker and Git is capable of when architecturing your preferred local development, though, I did have to do further reading on my own to grasp Docker Engine, Docker Compose, and Git submodule (I will not be tackling this topic as I’m focus on Dockerfile and Docker Compose).&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;so-far-what-i-know-about-docker-in-regards-of-hands-on-experience-is&quot;&gt;So far, what I know about Docker in regards of hands-on experience is&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;we edit or create our source code in a directory from our local machine.
+    &lt;ul&gt;
+      &lt;li&gt;to run the app
+        &lt;ul&gt;
+          &lt;li&gt;we use Docker to start images we define in &lt;strong&gt;Dockerfile&lt;/strong&gt; and &lt;code&gt;docker-compose.yml&lt;/code&gt; file&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Docker automatically creates a &lt;code&gt;http://localhost&lt;/code&gt; or &lt;code&gt;http://0.0.0.0&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Docker uses Port for each contained apps or websites&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;collections-of-tutorials&quot;&gt;Collections of tutorials&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;install &lt;strong&gt;Docker&lt;/strong&gt; via its official site &lt;a href=&quot;https://docs.docker.com/docker-for-mac/&quot;&gt;Getting Started with Docker for Mac&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;useful-commands-and-info&quot;&gt;Useful commands and info&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Look into &lt;strong&gt;Dockerfile&lt;/strong&gt; file references&lt;/li&gt;
+  &lt;li&gt;Look into &lt;code&gt;docker-compose.yml&lt;/code&gt; file references and commandline references&lt;/li&gt;
+  &lt;li&gt;To access a container via terminal:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://askubuntu.com/questions/505506/how-to-get-bash-or-ssh-into-a-running-container-in-background-mode&quot;&gt;How to get bash or ssh into a running container in background mode?&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;sudo docker exec -i -t 665b4a1e17b6 /bin/bash #by ID&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;sudo docker exec -i -t loving_heisenberg /bin/bash #by Name&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;to start a containter &lt;code&gt;docker-compose up&lt;/code&gt; or &lt;code&gt;docker-compose up -d&lt;/code&gt; to detach from status&lt;/li&gt;
+  &lt;li&gt;to see processes: &lt;code&gt;docker ps&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;run a command inside container from host
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;docker exec &amp;lt;container_id&amp;gt; &amp;lt;command&amp;gt;&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;for-app-sample-workflow&quot;&gt;For App sample workflow&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.docker.com/compose/gettingstarted&quot;&gt;Practice Workflow with Docker compose&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;for-cms-sample-workflow&quot;&gt;For CMS sample workflow&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://visible.vc/engineering/docker-environment-for-wordpress/&quot;&gt;Practice Workflow with CMS using Docker compose&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Tip:&lt;/strong&gt; you have to be familiar with CMS directory&lt;/li&gt;
+  &lt;li&gt;We mount local directories from our machine to its Docker container/server with the use of &lt;strong&gt;volume&lt;/strong&gt; in its &lt;code&gt;docker-compose.yml&lt;/code&gt; file&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Tip:&lt;/strong&gt; we can have a copy of CMS install locally on out directory and mount it on Docker container/server&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>2016-08-08 13:31:20 +0000</pubDate>
+        <link>http://rlynjb.github.io/wandrr/Notes-on-creating-a-convenient-local-development-workflow-with-Docker</link>
+        <guid isPermaLink="true">http://rlynjb.github.io/wandrr/Notes-on-creating-a-convenient-local-development-workflow-with-Docker</guid>
+        
+        <category>workflow</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
