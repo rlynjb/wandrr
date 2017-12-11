@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Mapping out an Overview"
+title: "Mapping it out"
 date: 2017-12-11 09:25:55
 tags:
 - javascript
