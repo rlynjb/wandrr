@@ -17,6 +17,7 @@ For best Nodejs compatibility, use Ubuntu v14.04 instead.
 1. Install Nodejs via link
 	- [How to install nodejs on an ubuntu 14.04 server](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server)
 	- to avoid nodejs version conflicts, its best to install and use NVM as well
+  - to install NVM. [Install Nodejs NVM on Ubuntu 14.04](https://www.vultr.com/docs/install-node-js-nvm-on-ubuntu-14-04)
 2. Install git by running `sudo apt-get install git`
 3. Now install apache2 via link
 	- [how to install linux apache mysql php lamp stack on ubuntu v14.04](https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-14-04)
