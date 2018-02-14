@@ -76,6 +76,16 @@ tags:
   - consider Vuex modules
     - ref: [https://vuex.vuejs.org/en/modules.html](https://vuex.vuejs.org/en/modules.html)
 
+### Setting up Quasar app with Digital Ocean and Nginx
+- log into digitalocean and create a droplet with specs of
+  - Ubuntu 16, Node app
+- log into your new droplet
+- install Nginx
+  - [How to install nginx on ubuntu 16](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-16-04)
+- ff [How To Set Up a Node.js Application for Production on Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-16-04)
+- ff install guide of quasar
+  [Quasar install guide](http://quasar-framework.org/guide/)
+
 ## Architecting/Designing the Back-End
 - checkout Nuxt.js
 - Google maps/places API
