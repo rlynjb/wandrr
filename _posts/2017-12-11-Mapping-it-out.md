@@ -7,16 +7,16 @@ tags:
 - js
 ---
 
-## My method
+## Idea behind the app
 
-- Idea behind the app
-- Breaking down the idea
+## Breaking down the idea
   - Algorithms
     - There are many algorithms thats already been solved, but you can create your own
   - The UX
     - Brainstorm how will the app work. Its user experience mostly. What will the users gain.
     - Tools that can be used are: Notepad & Pen!, [Draw.io](http://draw.io)
-- Coding
+
+## Coding
   - Topics I've learned when coding are:
     - using ES6 map/filter
     - Lodash
@@ -27,7 +27,8 @@ tags:
       - avoid using `const $this = this`
       - arrow functions already takes in the scope of its parent scope/function
     - When coding, consider readability
-- Consuming API
+
+## Consuming API
   - Promises, Async
     - learned how to implement Services and how we should separate api calls.
     - Use Vuex to share states, actions, mutations, and other global helpers
