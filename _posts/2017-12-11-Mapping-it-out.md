@@ -51,7 +51,7 @@ tags:
 
 
 ## User Authentication for JWT in Vue.js
-
+- coming soon
 
 
 ## Architecting/Designing the Front-End
