@@ -8,6 +8,7 @@ tags:
 ---
 
 ## Idea behind the app
+- pen and paper first is always a brain refresher.
 
 ## Breaking down the idea
 - Algorithms
