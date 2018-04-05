@@ -97,9 +97,21 @@ For Restful API:
   - What if we want to change APIs? or its contents
   - Still learning about proper API comsumption
 
-Another method to consume API is using GraphQL
+Alternative to Restful consumption is:
 
-**Free public API
+- Another method to consume API is using GraphQL to write Schema and its Resolver.
+  - For Schema and Resolver doc, refer to [http://graphql.com](http://graphql.com)
+  - and [GraphQL tools - Connectors](https://apollographql.com/docs/graphql-tools/connectors.html)
+  - NOTE: questions to ponder
+    - How do we map third-party Rest API data to our new Schema
+      - Restructure data from third-party API data
+      - Retrieve data we only need
+    - Just a theory: this is probably implemented in the Resolver part
+- When integrating GraphQL schema to our Front-End app
+  - Best practice is to use a GraphQL client library for your chosen JavaScript framework.
+  - For Vue.js, its `vue-apollo` client
+
+**Free public API**
 
 - data.gov
 - Google Places API
@@ -153,6 +165,8 @@ Another method to consume API is using GraphQL
 
 - Firebase with Google Cloud and GraphQL
 - Laravel
+- GraphQL with Apollo Server and Express
+  - [Quick start to GraphQL with Apollo Server and Express](https://www.apollographql.com/docs/apollo-server/example.html)
 
 -----
 
