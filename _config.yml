@@ -2,7 +2,7 @@
 title: wandrr
 email: rlynjb at gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  This is a blog about travel and tech.
+  a blog about tech and maybe random stuff
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://rlynjb.github.io/wandrr" # the base hostname & protocol for your site
 twitter_username: rlynjb08
