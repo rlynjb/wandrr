@@ -7,6 +7,20 @@ tags:
 - js
 ---
 
+### Overview
+
+- Idea behind the app
+- Breaking down the idea
+- Coding
+- Consuming API
+- User Authentication for JWT in Vue.js
+- Architecting/Designing the Front-End
+- Architecting/Designing the Back-End
+- Wrapping Up
+- Setting Goals
+
+-----
+
 ## Idea behind the app
 - pen and paper first is always a brain refresher.
 
