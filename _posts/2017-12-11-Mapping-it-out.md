@@ -12,9 +12,11 @@ tags:
 - Idea behind the app
 - Breaking down the idea
 - Coding
+- Unit Testing
 - Consuming API
 - User Authentication for JWT in Vue.js
 - Architecting/Designing the Front-End
+  - Setting up Quasar framework on Digital Ocean and Nginx for development
 - Architecting/Designing the Back-End
 - Wrapping Up
 - Setting Goals
@@ -22,31 +24,64 @@ tags:
 -----
 
 ## Idea behind the app
-- pen and paper first is always a brain refresher.
+
+There are alot of applications we can build. Apps that can be use internally within a company or apps to engage public users.
+
+We can also utilize technology such as VR and AR to accomodate and Voice or Keyboard commands to navigate these apps.
+
+These are the gist of different apps and hopefully it inspires us enough to get an idea for an app.
+
+-----
 
 ## Breaking down the idea
+
+Figure out the basic functionality of an app
+
+- Outline the features and determine its input and output values
 - Algorithms
   - There are many algorithms thats already been solved, but you can create your own
 - The UX
   - Brainstorm how will the app work. Its user experience mostly. What will the users gain.
   - Tools that can be used are: Notepad & Pen!, [Draw.io](http://draw.io)
 
+-----
+
 ## Coding
+
 - Topics I've learned when coding are:
   - using ES6 map/filter
   - Lodash
   - Mapping arrays
-  - Error hadnling
+  - Error handling
     - Bailout error handling
   - Arrow functions and scoping
     - avoid using `const $this = this`
     - arrow functions already takes in the scope of its parent scope/function
   - When coding, consider readability
-- Mozilla doc for error handling
-  - ref: [Control flow and Error handling](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling)
 - also checkout Vuejs Style guide
 
+-----
+
+## Unit Testing
+
+For Vue.js, use `@vue/test-utils` and mocha-webpack
+
+- [Installation and Setup](http://zinserjan.github.io/mocha-webpack/docs/installation/setup.html)
+- [Testing SFCs with mocha-webpack](https://vue-test-utils-vuejs.org/en/guies/testing-SFCs-with-mocha-webpack.html)
+- [vue-test-utils mocha-webpack example](https://github.com/vuejs/vue-test-utils-mocha-webpack-example)
+- [Five traps to avoid while unit testing vuejs](https://engineering.doximity.com/articles/five-traps-to-avoid-while-unit-testing-vue-js)
+
+NOTE: with Environment variables, we can probably implement mock or fake
+
+- [Testing vue web application with vuex data store and rest backend](https://www.cypress.io/blog/2017/11/28/testing-vue-web-application-with-vuex-data-store-and-rest-backend)
+
+
+-----
+
 ## Consuming API
+
+For Restful API:
+
 - Promises, Async
   - learned how to implement Services and how we should separate api calls.
   - Use Vuex to share states, actions, mutations, and other global helpers
@@ -60,16 +95,25 @@ tags:
 - This is actually my first time realizing what Hypermedia are and its purpose, but I still have a few questions about it.
   - We will heavily rely on its API
   - What if we want to change APIs? or its contents
-  - Still learning about API comsumptions
-- Free public API
-  - ref: data.gov and more
+  - Still learning about proper API comsumption
 
+Another method to consume API is using GraphQL
+
+**Free public API
+
+- data.gov
+- Google Places API
+
+-----
 
 ## User Authentication for JWT in Vue.js
+
 - coming soon
 
+-----
 
 ## Architecting/Designing the Front-End
+
 - link to Vue.js communication pattern blog post
 - frameworks I work with and learned:
   - Vue.js, Vuex, Vue-router, vee-validate, vue-loader
@@ -91,7 +135,9 @@ tags:
   - consider Vuex modules
     - ref: [https://vuex.vuejs.org/en/modules.html](https://vuex.vuejs.org/en/modules.html)
 
-### Setting up Quasar app with Digital Ocean and Nginx
+
+### Setting up Quasar framework on Digital Ocean and Nginx for development
+
 - log into digitalocean and create a droplet with specs of
   - Ubuntu 16, Node app
 - log into your new droplet
@@ -101,16 +147,14 @@ tags:
 - ff install guide of quasar
   [Quasar install guide](http://quasar-framework.org/guide/)
 
-## Architecting/Designing the Back-End
-- checkout Nuxt.js
-- Google maps/places API
-- Google Cloud Platform
-  - mobile app backend as a service
-  - Firebase
-- Google App Engine Nodejs. flexible environment documentation
-- Feather.js
-  - API Framework
+-----
 
+## Architecting/Designing the Back-End
+
+- Firebase with Google Cloud and GraphQL
+- Laravel
+
+-----
 
 ## Wrapping Up
 - Use environment variables
