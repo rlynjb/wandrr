@@ -167,6 +167,7 @@ Alternative to Restful consumption is:
 
 - Firebase with Google Cloud and GraphQL
   - To connect GraphQL Apollo Server to Firebase CF, we will need to use Express.js
+  - ref: [Learning GraphQL with Firebase](https://codeburst.io/learning-graphql-with-firebase-part-1-6cb0ae1499a4)
 - Laravel
 - GraphQL with Apollo Server and Express
   - [Quick start to GraphQL with Apollo Server and Express](https://www.apollographql.com/docs/apollo-server/example.html)
