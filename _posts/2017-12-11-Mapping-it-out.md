@@ -180,20 +180,15 @@ Alternative to Restful consumption is:
 
 ## Setting Goals
 
-- To learn more or improve on architecting the structure of app.
-- To master tools we use, Quasar and Vue.js
-- Set a method in building an App
-  - Work on UI/UX first
-  - implement API
-  - use `json-server` to structure sample data and hit endpoints
-- Main goal is to improve on UI/UX of form fields and validation
-  - use Quasar since it already has pre-made components of form fields
-- [Javascript Design Patterns](https://seesparkbox.com/foundry/javascript_design_patterns)
-- Book [Vue.js Design Patterns and Best Practices](https://www.packtpub.com/web-development/vuejs-design-patterns-and-best-practices)
-- [vuejsdevelopers.com](vuejsdevelopers.com)
-- [laravel-vuejs.com](laravel-vuejs.com)
-- AR.js with vue.js
-- another extra read is [addyosmani.com/largescalejavascript](addyosmani.com/largescalejavascript)
+Its always good to set goals. Goals are what usually drives us to keep learning and improve on our craft.
+
+For mine, it would be:
+
+To extend Quasar framework. Additional features would include:
+
+- Unit Testing
+- GraphQL schema and resolver
+- GraphQL server with Apollo
 
 -----
 
