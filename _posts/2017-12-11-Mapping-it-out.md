@@ -166,6 +166,10 @@ Alternative to Restful consumption is:
 - ff install guide of quasar
   [Quasar install guide](http://quasar-framework.org/guide/)
 
+### Simple Nginx config with different port but same domain
+
+ref: [Virtual Hosts on nginx](https://gist.github.com/soheilhy/8b94347ff8336d971ad0)
+
 -----
 
 ## Architecting/Designing the Back-End
