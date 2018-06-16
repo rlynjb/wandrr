@@ -20,6 +20,11 @@ Key bind: `ctrl + w`.
 - Resize vertical pane, `:vertical resize 10`
 - Navigate through split panes, `ctrl + w ` and `hjkl`.
 
+Some basic to advance vim config
+
+- [Vim Config - Simple and Sane Config](http://vimconfig.com/)
+- [Vim is the Perfect IDE](https://dev.to/allanmacgregor/vim-is-the-perfect-ide-e80)
+
 -----
 
 # Tmux
