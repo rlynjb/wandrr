@@ -50,6 +50,7 @@ Figure out the basic functionality of an app
 - The UX
   - Brainstorm how will the app work. Its user experience mostly. What will the users gain.
   - Tools that can be used are: Notepad & Pen!, [Draw.io](http://draw.io)
+  - AppCooker app from ipad helps alot with planning UX of app. It is a prototyper and is portable. Its an ipad app meaning, I can work anywhere wherever I get an idea.
 
 -----
 
