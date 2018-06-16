@@ -5,13 +5,11 @@ date: 2018-05-15 23:03:44
 tags:
 - javascript
 - js
-- graphql
-- firebase
-- vuejs
-- quasar
+- datastructure
+- algorithm 
 ---
 
-# Setting It Up
+# Component based (Component Specification)
 
   
 -----
