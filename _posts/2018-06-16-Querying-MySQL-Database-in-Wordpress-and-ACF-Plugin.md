@@ -28,3 +28,7 @@ We've included `/G` to pretty format print out queries in terminal.
 When dealing with ACF fields.
 Where do ACF Fields live in database?
 To start off, ref: [Where do fields live in the database](https://support.advancedcustomfields.com/forums/topic/where-do-fields-live-in-the-database)
+
+A trick to transfer data from one post type to another is to use ACF fields' `add_row()` function. This example is for a repeaterfield but we can use any insert function for any type of ACF field.
+
+The trick to this is instead of mapping fields on the backend using mysql queries, we can map is via template. Since the front end is already loading the data, we can write a script that adds it to the database as well.
