@@ -29,6 +29,8 @@ Some basic to advance vim config
 
 # Tmux
 
+Key bind: `ctrl + b`.
+
 - List active tmux, `tmux -ls`
 - Attach to an active tmux, `tmux attach -t 0`
 - Detach from tmux, `tmux detach`
