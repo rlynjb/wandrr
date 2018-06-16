@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Simple CSS to create Pinterest like grid without Flexbox""
+title: "Simple CSS to create Pinterest like grid without Flexbox"
 date: 2018-06-16 11:54:14
 tags:
 - css
