@@ -41,3 +41,26 @@ To understand what is Front End Testing Pyramid:
 
 To take Unit Testing a step further with Integration Testing
 - [All you need to know about Integration Testing: SuperTest, Mocha, Chai](https://www.codementor.io/olatundegaruba/integration-testing-supertest-mocha-chai-6zbh6sefz)
+
+-----
+
+# Method for writing Unit Test (the basic)
+
+1. Start with Unit Test and use Test Doubles to to replace 3rd party modules.
+  - Isolate each function/class or unit of code.
+  - Isolate any 3rd party modules by using mock, stub, spies (these are test doubles).
+2. Open code file you want to test.
+3. Open your test file.
+4. Import file or function you want to test in your test file.
+5. Reading the constructor or methods inside a javascript object.
+  - Describe a method and add iits description inside a **mocha** `describe` handler.
+  - Read the next line of code
+  - Check if its an `if condition`, `return` or other logic.
+  - Also check [Mochajs Doc](http://www.mochajs.com) for other features.
+  - Add a description in **mocha** `it` handler of what it does.
+  - Define **System Under Test** (SUT) is the imported javascript object/class.
+6. Pass in value in imported javascript object/class or its method.
+  - We can use an node module called [Chance.js](chancejs.com/index.html) to generate random values.
+7. Check Chai docs for choices of assertions.
+  - [Chai.js](www.chaijs.com/guide/styles/)
+  - Chai contains expert, assert, should-style assertions
