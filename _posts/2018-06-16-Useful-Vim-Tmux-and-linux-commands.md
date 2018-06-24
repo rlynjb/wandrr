@@ -14,6 +14,7 @@ Key bind: `ctrl + w`.
 
 - Open terminal in vertical pane, `:vert terminal`.
 - Open terminal as of version 8, `:term`.
+- Open vim in vertical pane inside of terminal mode, `:vsplit vim`.
 - Open directory tree view, `:E` or `:Ex`
 - Go through windows on forward, `gt`.
 - Go through windows on backward, `gT`.
