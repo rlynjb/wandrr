@@ -12,11 +12,13 @@ tags:
 
 Key bind: `ctrl + w`.
 
+- Open terminal in vertical pane, `:vert terminal`.
 - Open terminal as of version 8, `:term`.
 - Open directory tree view, `:E` or `:Ex`
 - Go through windows on forward, `gt`.
 - Go through windows on backward, `gT`.
 - Open a pane vertically, `:vsplit`.
+- Resize horizontal pave, `:resize 10`.
 - Resize vertical pane, `:vertical resize 10`
 - Navigate through split panes, `ctrl + w ` and `hjkl`.
 
