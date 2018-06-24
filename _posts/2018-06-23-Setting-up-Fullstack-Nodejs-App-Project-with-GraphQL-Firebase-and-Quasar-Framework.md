@@ -23,11 +23,21 @@ tags:
 5. Go to project folder and install dependencies, `npm i`
 6. Run `quasar dev` to run local dev
 
+# Building App Ideas
+
+- [How To Build Vue Components Like A Pro](https://blog.bitsrc.io/how-to-build-vue-components-like-a-pro-fd89fd4d524d)
+
+-----
+
 # Installing GraphQL
 
 1. Run `mkdir server && touch server/index.js` to create folder and index file
 2. Install dependencies, `npm i --save express express-graphql graphql`
   - ref: [GraphQL - Running an Express GraphQL Server](https://graphql.github.io/graphql-js/running-an-express-graphql-server)
+
+# Building the Server Ideas
+
+- [Living APIs, and the Case for GraphQL](https://brandur.org/graphql)
 
 -----
 
