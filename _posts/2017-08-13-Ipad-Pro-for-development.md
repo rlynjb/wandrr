@@ -9,7 +9,7 @@ tags:
 - front end development
 ---
 
-Inpired by this article [I swapped my MacBook for an iPad + Linode](http://yieldthought.com/post/12239282034/swapped-my-macbook-for-an-ipad). I decided to take the bandwagon of developers using iPad for development. Since I specialized in Front-End Development. I just needed to add additional tools to my workflow.
+Inpired by this article [I swapped my MacBook for an iPad + Linode](http://yieldthought.com/post/12239282034/swapped-my-macbook-for-an-ipad). I decided to jump in the bandwagon of developers using iPad for development. Since I specialized in Front-End Development. I just needed to add additional tools to my workflow.
 
 ### Why use Ipad?
 
@@ -31,11 +31,14 @@ Everybody has its reasons for using Ipad for development. My personal preference
 
 ### Apps:
 
-- MIHTool for debugging websites/web apps
-- Reflection for SSH access to remote servers
+- Termius for SSH access to remote servers
+  - alternative app is Blink and Prompt which cost money
 - Digital Ocean - remote servers
-- Vim - code editor
-- Working Copy - this cost 15.99 though but its worth it
+  - this is for running Node.js server or frontend build tools
+- Vim
+  - my main code editor but since im gonna be working on ipad, I'll be switching between Vim and Working Copy
+- Working Copy
+  - this cost 15.99 though but its worth it. A code editor that is tightly integrated with Git but also has SSH upload capability.
 
 -----
 
