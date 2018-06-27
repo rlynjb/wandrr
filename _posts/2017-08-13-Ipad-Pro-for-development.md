@@ -35,6 +35,7 @@ Everybody has its reasons for using Ipad for development. My personal preference
 - Reflection for SSH access to remote servers
 - Digital Ocean - remote servers
 - Vim - code editor
+- Working Copy - this cost 15.99 though but its worth it
 
 -----
 
