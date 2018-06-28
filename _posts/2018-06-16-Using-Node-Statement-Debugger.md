@@ -41,6 +41,10 @@ When done with debugger, make sure to remove debugger statement and remove funct
 5. To launch a `repl` session, type `repl` then `enter`.
 6. To exit the `repl`, press `ctrl c`.
 
+-----
+
+Note that this only works for `.js` files. I'll further explore debugging in terminal with `.vue` files or other type of JavaScript framework files.
+
   
 -----
 
