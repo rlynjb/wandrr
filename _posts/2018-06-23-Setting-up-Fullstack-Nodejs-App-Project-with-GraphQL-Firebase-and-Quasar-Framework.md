@@ -29,11 +29,21 @@ tags:
 
 -----
 
-# Installing GraphQL
+# Installing GraphQL with Apollo Server on Heroku
 
-1. Run `mkdir server && touch server/index.js` to create folder and index file
-2. Install dependencies, `npm i --save express express-graphql graphql`
-  - ref: [GraphQL - Running an Express GraphQL Server](https://graphql.github.io/graphql-js/running-an-express-graphql-server)
+1. Create a repo for server and git clone on your dev.
+2. Follow guide below to setup Apollo Server and GraphQL
+  - [Quick start guide for Apollo Server](https://www.apollographql.com/docs/apollo-server/example.html)
+  - [Apollo Server v2](https://www.apollographql.com/docs/apollo-server/v2/getting-started.html)
+3. Guide to deploy on Heroku
+  - [Deploying with Heroku](https://www.apollographql.com/docs/apollo-server/v2/deployment/heroku.html)
+4. Start server with npm command
+  - [Default web process type](https://devcenter.heroku.com/articles/nodejs-support#default-web-process-type)
+5. Debug port on Heroku
+  - [heroku deploy fail](https://stackoverflow.com/questions/14322989/first-heroku-deploy-failed-error-code-h10)
+
+
+-----
 
 # Building the Server Ideas
 
