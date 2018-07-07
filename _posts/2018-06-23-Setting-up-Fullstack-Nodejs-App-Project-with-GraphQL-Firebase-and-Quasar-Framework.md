@@ -11,6 +11,12 @@ tags:
 - heroku
 ---
 
+### Designing UI and UX of App
+
+- Use AppCooker ipad app
+
+-----
+
 ### Method for Setting Up Quasar Framework with GraphQL and Firebase
 
 # Installing Quasar Framework
@@ -22,6 +28,13 @@ tags:
 4. Create new project with Quasar, `quasar init pj-name`
 5. Go to project folder and install dependencies, `npm i`
 6. Run `quasar dev` to run local dev
+
+# Prototyping the App
+
+- [Quasar Framework](https://quasar-framework.org)
+- [Vue.js](https://vuejs.org/)
+- [Vue Router](https://router.vuejs.org/)
+- [Vuex - State Management](https://vuex.vuejs.org/)
 
 # Building App Ideas
 
@@ -45,7 +58,7 @@ tags:
    - since playground is disabled on production and introspection mode, set `NODE_ENV` to `development`
    - [GraphQL Playground](https://www.apollographql.com/docs/apollo-server/v2/features/playground.html)
 
-# Designing and working on schema
+# Designing and working on Schema
 
 1. Open heroku app on browser
 2. Go through apollo documentation regarding schema design
