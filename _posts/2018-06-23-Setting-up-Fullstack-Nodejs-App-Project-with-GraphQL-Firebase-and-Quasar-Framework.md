@@ -6,9 +6,9 @@ tags:
 - javascript
 - js
 - graphql
-- firebase
 - vuejs
 - quasar
+- heroku
 ---
 
 ### Method for Setting Up Quasar Framework with GraphQL and Firebase
@@ -33,14 +33,17 @@ tags:
 
 1. Create a repo for server and git clone on your dev.
 2. Follow guide below to setup Apollo Server and GraphQL
-  - [Quick start guide for Apollo Server](https://www.apollographql.com/docs/apollo-server/example.html)
   - [Apollo Server v2](https://www.apollographql.com/docs/apollo-server/v2/getting-started.html)
 3. Guide to deploy on Heroku
   - [Deploying with Heroku](https://www.apollographql.com/docs/apollo-server/v2/deployment/heroku.html)
-4. Start server with npm command
+4. Start server with npm command. Add `node index.js` on `package.json` file
   - [Default web process type](https://devcenter.heroku.com/articles/nodejs-support#default-web-process-type)
-5. Debug port on Heroku
+5. Debug port on Heroku. Since Heroku automatically sets a port to every deploy.
+  - Set `process.env.PORT` on apollo server listen method `{port: process.env.PORT}`
   - [heroku deploy fail](https://stackoverflow.com/questions/14322989/first-heroku-deploy-failed-error-code-h10)
+6. Debug GraphQL playground on Heroku
+   - since playground is disabled on production and introspection mode, set `NODE_ENV` to `development`
+   - [GraphQL Playground](https://www.apollographql.com/docs/apollo-server/v2/features/playground.html)
 
 # Designing and working on schema
 
