@@ -42,6 +42,12 @@ tags:
 5. Debug port on Heroku
   - [heroku deploy fail](https://stackoverflow.com/questions/14322989/first-heroku-deploy-failed-error-code-h10)
 
+# Designing and working on schema
+
+1. Open heroku app on browser
+2. Go through apollo documentation regarding schema design
+  - [Schema Design - Apollo GraphQL](https://www.apollographql.com/docs/guides/schema-design.html)
+  
 
 -----
 
