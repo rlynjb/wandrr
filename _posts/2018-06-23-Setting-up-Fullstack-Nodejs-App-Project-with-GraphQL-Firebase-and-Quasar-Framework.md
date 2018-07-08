@@ -17,7 +17,7 @@ tags:
 
 -----
 
-# Method for Setting Up Quasar Framework with GraphQL and Firebase
+# Set up tools for Front-End Prototyping
 
 ### Installing Quasar Framework
 
@@ -29,7 +29,7 @@ tags:
 5. Go to project folder and install dependencies, `npm i`
 6. Run `quasar dev` to run local dev
 
-### Prototyping the App
+### Tools
 
 - [Quasar Framework](https://quasar-framework.org)
 - [Vue.js](https://vuejs.org/)
@@ -42,6 +42,8 @@ tags:
 - [How To Build Vue Components Like A Pro](https://blog.bitsrc.io/how-to-build-vue-components-like-a-pro-fd89fd4d524d)
 
 -----
+
+# Set up Back-End Server for data
 
 ### Installing GraphQL with Apollo Server on Heroku
 
@@ -59,16 +61,17 @@ tags:
    - since playground is disabled on production and introspection mode, set `NODE_ENV` to `development`
    - [GraphQL Playground](https://www.apollographql.com/docs/apollo-server/v2/features/playground.html)
 
-### Designing and working on Schema
+### Guide to designing and working on Schema
 
 1. Open heroku app on browser
 2. Go through apollo documentation regarding schema design
   - [Schema Design - Apollo GraphQL](https://www.apollographql.com/docs/guides/schema-design.html)
+  - [How to wrap a REST API with GraphQL](https://www.prisma.io/blog/how-to-wrap-a-rest-api-with-graphql-8bf3fb17547d/)
   
 
 -----
 
-### Building the Server Ideas
+### Building Server Ideas
 
 - [Living APIs, and the Case for GraphQL](https://brandur.org/graphql)
 
