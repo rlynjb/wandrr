@@ -67,6 +67,16 @@ tags:
 2. Go through apollo documentation regarding schema design
   - [Schema Design - Apollo GraphQL](https://www.apollographql.com/docs/guides/schema-design.html)
   - [How to wrap a REST API with GraphQL](https://www.prisma.io/blog/how-to-wrap-a-rest-api-with-graphql-8bf3fb17547d/)
+3. After going through how Schema and Resolvers work with fetching data from 3rd party API or database. Install `node-fetch`
+
+### Implementation of fetching data from 3rd-party API
+
+1. Run `npm i --save node-fetch`. This is equivalent to client sides ajax or axios.
+2. Retrieve 3rd-party API endpoint and API key
+3. Analyze response using Postman or HTTPBot
+4. Set vue component where the temporary JSON object data is defined and our GraphQL schema file side by side so we can get a clear view of both files.
+5. Convert temporary JSON object data to a graphql schema by ff. guideline above.
+6. Build the Resolver for each field or type in the Schema.
   
 
 -----
