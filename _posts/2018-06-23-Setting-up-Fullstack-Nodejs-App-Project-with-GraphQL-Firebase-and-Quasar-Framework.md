@@ -77,11 +77,8 @@ tags:
 4. Set vue component where the temporary JSON object data is defined and our GraphQL schema file side by side so we can get a clear view of both files.
 5. Convert temporary JSON object data to a graphql schema by ff. guideline above.
 6. Build the Resolver for each field or type in the Schema.
-  - Fetch data and...
-    - [node-fetch](https://github.com/bitinn/node-fetch)
-    - [GraphQL - Execution](graphql.github.io/learn/execution)
-  - Match the Response data to our Schema fields
-    - [GraphQL - Schema and Types](graphql.github.io/learn/schema)
+  - Fetch data and... [node-fetch](https://github.com/bitinn/node-fetch),[GraphQL - Execution](graphql.github.io/learn/execution)
+  - Match the Response data to our Schema fields. [GraphQL - Schema and Types](graphql.github.io/learn/schema)
   
 
 -----
