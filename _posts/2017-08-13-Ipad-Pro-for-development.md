@@ -34,8 +34,9 @@ Everybody has its reasons for using Ipad for development. My personal preference
 ### Apps:
 
 - Textastic for code editor and SSH access to remote servers
-  - from most of the IDEs i've tried, this is really awesome. It provides a tab bar above the ioad kehboard for easy access to special characters we often used in coding.
+  - from most of the IDEs i've tried, this is really awesome. It provides a tab bar above the ipad keyboard for easy access to special characters we often used in coding.
   - and they also recently included SSH terminal and a window tab for files that are opened.
+  - also this works well with Working Copy app when editing files. it automatically syncs files.
   - Vim is usually my go to editor but it can be difficult to code on ipad with it.
 - Working Copy
   - this cost 15.99 though but its worth it. A code editor that is tightly integrated with Git but also has SSH upload capability.
