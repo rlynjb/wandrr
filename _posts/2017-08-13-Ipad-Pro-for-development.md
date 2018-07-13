@@ -25,28 +25,25 @@ Everybody has its reasons for using Ipad for development. My personal preference
 ### Devices:
 
 - iPad Pro 10.5
-- Bluetooth keyboard
+- Bluetooth keyboard (optional)
 	- [Helpful Keyboard Shortcuts](https://support.apple.com/en-us/HT205237)
 - Sprint unlimited data plan
 
 ### Apps:
 
-- Termius for SSH access to remote servers
-  - alternative app is Blink and Prompt which cost money
-- Digital Ocean - remote servers
-  - this is for running Node.js server or frontend build tools
-- Vim
-  - my main code editor but since im gonna be working on ipad, I'll be switching between Vim and Working Copy
+- Textastic for code editor and SSH access to remote servers
+  - from most of the IDEs i've tried, this is really awesome. It provides a tab bar above the ioad kehboard for easy access to special characters we often used in coding.
+  - and they also recently included SSH terminal and a window tab for files that are opened.
+  - Vim is usually my go to editor but it can be difficult to code on ipad with it.
 - Working Copy
   - this cost 15.99 though but its worth it. A code editor that is tightly integrated with Git but also has SSH upload capability.
+- Inspect - Web development tool for ios
+  - this tool has pretty much of what i needed when developing front end.
+  - has an element inspector, console, responsive viewports. i prefer this better than Coda
+- Digital Ocean - remote servers
+  - this is for running Node.js server or frontend build tools
+- and other remote servers or Baas like Heroku or Firebase
 
------
-
-**Reflection** and **Vim** are pretty self-explanatory tools. I've always use the CommandLine and Vim as my main tools. Advantages of learning Vim is that you can SSH any remote server and use that as your development environment. I'm glad I took the time to learn Vim and get myself use to the CommandLine. I love simplicity. Having these two tools, I didn't need to have multiple softwares open to develop. And Oh Yea, I forgot to add **Tmux**.
-
-Another tool to avoid opening multiple terminal windows is to use **Tmux**. It's a terminal multiplexer, this means you can use a single Terminal window and open multiple panes and windows inside a single terminal window.
-
-So there we have it, my 3 main tools: Reflection, Vim, and Tmux.
 
 -----
 
@@ -73,7 +70,3 @@ As for what I need to setup my dev environment.
 7. Install Nodejs by running `sudo apt-get install nodejs`. This should include **NPM** as well
 8. Now, go to your public directory where an `index.html` is being served. `cd /var/www/html/`
 9. On this directory `/var/www/html/` you can `git clone` your projects and serve each on a part of subdirectory url
-
------
-
-So this is how I am able to develop using an iPad Pro. Next review will be on **MIHTool** app. This is **Chrome Development tool** browser alternative for iPad.

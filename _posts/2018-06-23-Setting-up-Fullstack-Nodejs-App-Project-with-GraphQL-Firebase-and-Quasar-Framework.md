@@ -79,7 +79,15 @@ tags:
 6. Build the Resolver for each field or type in the Schema.
   - Fetch data and... [node-fetch](https://github.com/bitinn/node-fetch),[GraphQL - Execution](graphql.github.io/learn/execution)
   - Match the Response data to our Schema fields. [GraphQL - Schema and Types](graphql.github.io/learn/schema)
-  
+
+### Indepth in Schema and Resolvers
+
+[splitting up files](https://medium.com/the-node-js-collection/an-update-on-es6-modules-in-node-js-42c958b890c)
+
+
+### Display data in Client-side Vue.js
+
+
 
 -----
 
