@@ -25,6 +25,8 @@ Everybody has its reasons for using Ipad for development. My personal preference
 ### Devices:
 
 - iPad Pro 10.5
+- iPad Pro Multi-window feature
+  - this is really helpful when working on files or browser setting it side by side.
 - Bluetooth keyboard (optional)
 	- [Helpful Keyboard Shortcuts](https://support.apple.com/en-us/HT205237)
 - Sprint unlimited data plan
