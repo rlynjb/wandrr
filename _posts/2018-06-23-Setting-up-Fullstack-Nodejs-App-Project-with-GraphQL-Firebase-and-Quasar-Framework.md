@@ -82,21 +82,22 @@ tags:
 
 ### Indepth in Schema and Resolvers
 
-[splitting up files](https://medium.com/the-node-js-collection/an-update-on-es6-modules-in-node-js-42c958b890c)
-
-
-### Display data in Client-side Vue.js
-
-
+- [splitting up files](https://medium.com/the-node-js-collection/an-update-on-es6-modules-in-node-js-42c958b890c)
+- [GraphQL explained](https://blog.apollographql.com/graphql-explained-5844742f195e)
+  - explains how resolvers and schema work
+- [Apollo Doc - Fetching data](https://www.apollographql.com/docs/apollo-server/v2/essentials/data.html#resolver-map)
 
 -----
 
-### Building Server Ideas
+# Display data in Client-side Vue.js
 
-- [Living APIs, and the Case for GraphQL](https://brandur.org/graphql)
+- Follow installation below and its guide doc
+  - [Apollo and GraphQL for Vue.Js](https://akryum.github.io/vue-apollo/)
 
------
+- Since I am using Quasar Framework, there is a certain way we integrate Apollo Client. It will need to be initialized or setup as a Vue Plugin.
+  - [Quasar - App Plugin](https://quasar-framework.org/guide/app-plugins.html)
 
-#### Other Resources:
-
-- [GraphQL basics and practical examples with Vue](https://medium.com/@lachlanmiller_52885/graphql-basics-and-practical-examples-with-vue-6b649b9685e0)
+- After installation, do a simple query
+  - [Apollo and Vue.js Query Doc](https://akryum.github.io/vue-apollo/guide/apollo/queries.html)
+- Another resource is
+  - [How to GraphQL - Vue Apollo](https://www.howtographql.com/vue-apollo/0-introduction/)
