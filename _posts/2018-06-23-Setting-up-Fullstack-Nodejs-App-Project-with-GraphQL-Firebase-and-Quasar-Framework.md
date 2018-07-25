@@ -104,6 +104,7 @@ tags:
 - When setting up Context, we should also consider structuring our code using Models and Connectors
   - [Models or Connectors?](https://github.com/apollographql/apollo-server/issues/118)
   - [How to structure graphql server code](https://blog.apollographql.com/how-to-build-graphql-servers-87587591ded5)
+  - [Apollographql github - Connectors and Models](https://github.com/apollographql/graphql-tools/blob/master/designs/connectors.md)
 
 -----
 
