@@ -91,6 +91,8 @@ tags:
 - when returning a value with a condition, make sure you defined the object in condition where the value is associated with.. or else, graphql will NOT query in client side eventhough it passes the playground query
 - another issue i came across is when trying to pass a token from my fetch call to another query with the same level as my result query
 
+### taking it one level higher
+
 - Graphql query with the same level runs in parallel, meaning, if our second query has a dependent data from our first query, it is not going to resolve the second query since it is not aware of its dependencies.
 - To fix this issue, we will use the 3rd argument in our resolver function which is the context argument.
 - In Context argument, we can pass along token, authentication, and other values/data that doesnt pertain to our result queries.
