@@ -99,6 +99,8 @@ tags:
 - To learn more about context and how to set it up, ff link below:
   - [Apollo Server - Fetching data with resolvers](https://www.apollographql.com/docs/apollo-server/essentials/data.html)
 
+### connector and model: server code structure
+
 - When setting up Context, we should also consider structuring our code using Models and Connectors
   - [Models or Connectors?](https://github.com/apollographql/apollo-server/issues/118)
   - [How to structure graphql server code](https://blog.apollographql.com/how-to-build-graphql-servers-87587591ded5)
