@@ -109,5 +109,6 @@ tags:
 
 - After installation, do a simple query
   - [Apollo and Vue.js Query Doc](https://akryum.github.io/vue-apollo/guide/apollo/queries.html)
+  - this is also a well documented guide for when passing argument in query setup and other scenario of graphql with vue apollo
 - Another resource is
   - [How to GraphQL - Vue Apollo](https://www.howtographql.com/vue-apollo/0-introduction/)
