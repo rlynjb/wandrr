@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "Setting up Fullstack Nodejs App Project with GraphQL, Firebase, and Quasar Framework"
+title: "Setting up Fullstack Nodejs App Project with GraphQL, Apollo Server & Client
+ and Vue.js & Quasar Framework"
 date: 2018-06-23 22:01:43
 tags:
 - javascript
@@ -87,7 +88,7 @@ tags:
   - explains how resolvers and schema work
 - [Apollo Doc - Fetching data](https://www.apollographql.com/docs/apollo-server/v2/essentials/data.html#resolver-map)
 
-* notes
+* notes:
 - when returning a value with a condition, make sure you defined the object in condition where the value is associated with.. or else, graphql will NOT query in client side eventhough it passes the playground query
 - another issue i came across is when trying to pass a token from my fetch call to another query with the same level as my result query
 
