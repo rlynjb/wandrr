@@ -9,11 +9,4 @@ tags:
 - algorithm 
 ---
 
-# Component based (Component Specification)
-
-  
------
-
-#### References:
-
-- [ReactJS Blueprints](https://www.packtpub.com/web-development/reactjs-blueprints)
+[The Top Data Structure you should know for your next coding interview](https://medium.freecodecamp.org/the-top-data-structures-you-should-know-for-your-next-coding-interview-36af0831f5e3)

@@ -12,6 +12,8 @@ tags:
 - heroku
 ---
 
+[Why GraphQL: Advantages, Disadvantages, & Alternatives](https://www.robinwieruch.de/why-graphql-advantages-disadvantages-alternatives/)
+
 # Designing UI and UX of App
 
 - Use AppCooker ipad app
