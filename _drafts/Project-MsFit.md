@@ -23,3 +23,4 @@ Interior add ons
 
 - Power station
 - Interior detailing
+- Replace broken sun visor clip with OEM
