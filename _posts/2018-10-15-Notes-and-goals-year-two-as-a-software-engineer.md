@@ -49,7 +49,9 @@ date: 2018-10-15 11:03:37
 
 ### Passive Income
 - My financial and business goals to become a Digital Nomad and live Nomadic Lifestyle
-  - Complete Apps to build multiple streamline of passive income
+- Complete Apps to build multiple streamline of passive income
+
+##### Links
 - [Side income ideas for programmers](https://www.afternerd.com/blog/side-income-programmers/)
 - [20 Passive income ideas](https://thecollegeinvestor.com/16399/20-passive-income-ideas/)
 
