@@ -21,8 +21,10 @@ date: 2018-10-15 11:03:37
 
 - Implement best practices
 - Master SOC (separation of concerns) and Modularity
-- separate business logic from code logic
+- separate business requirements from code logic and third-party implementation code
 - Study FreeCodeCamp Data Structure and Algorithms
+
+##### Links
 - [secret of being a top developer](https://medium.freecodecamp.org/the-secret-to-being-a-top-developer-is-building-things-d3d058e4e472)
 - [next step in career](https://codewithoutrules.com/2018/10/10/beyond-senior-software-engineer/)
 
@@ -31,6 +33,9 @@ date: 2018-10-15 11:03:37
 
 
 ### Data Visualization with D3.js
+- Learning about SVG
+- Structuring documents in svg
+- Different shapes in Svg
 
 ##### Links
 - [5 Mistakes to avoid custom data visualization d3.js](https://blog.sicara.com/5-mistakes-avoid-custom-data-visualization-d3-js-ac431e57aeff)
@@ -44,7 +49,14 @@ date: 2018-10-15 11:03:37
 
 ### Passive Income
 - My financial and business goals to become a Digital Nomad and live Nomadic Lifestyle
-
+  - Apps to complete to build a streamline of passive incomes:
+    - Simpl Fit - app to fight SAD and maintain a healthy habit/lifestyle
+      - similar to headspace and workout app and fitness tracker
+      - self-care app
+    - Drinkr
+    - Alt Med
+    - Fast Food Facts
+    - van life game, alt home
 - [Side income ideas for programmers](https://www.afternerd.com/blog/side-income-programmers/)
 
 
