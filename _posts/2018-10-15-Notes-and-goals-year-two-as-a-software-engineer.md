@@ -49,14 +49,7 @@ date: 2018-10-15 11:03:37
 
 ### Passive Income
 - My financial and business goals to become a Digital Nomad and live Nomadic Lifestyle
-  - Apps to complete to build a streamline of passive incomes:
-    - Simpl Fit - app to fight SAD and maintain a healthy habit/lifestyle
-      - similar to headspace and workout app and fitness tracker
-      - self-care app
-    - Drinkr
-    - Alt Med
-    - Fast Food Facts
-    - van life game, alt home
+  - Complete Apps to build multiple streamline of passive income
 - [Side income ideas for programmers](https://www.afternerd.com/blog/side-income-programmers/)
 
 
